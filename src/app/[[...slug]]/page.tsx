@@ -1,4 +1,5 @@
 import { getPageImage, source } from '@/lib/source';
+import Image from 'next/image';
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
@@ -15,7 +16,12 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage toc={page.data.toc} full={page.data.full} className='bg-white'>
+      <div className='flex flex-wrap mb-5'>
+        <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
+        <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
+      </div>
+      {/*
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
       <div className="flex flex-row gap-2 items-center border-b pb-6">
@@ -24,7 +30,8 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
           markdownUrl={`${page.url}.mdx`}
           githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
         />
-      </div>
+      </div> 
+      */}
       <DocsBody>
         <MDX
           components={getMDXComponents({
