@@ -1,0 +1,14 @@
+---
+title: "2020-11-08"
+author: "Odd Einar Haugen, Universitetet i Bergen"
+---
+
+# Innføring av datering og språkkoder i Menotas katalog
+
+[Menotas katalog](https://clarino.uib.no/menota/catalogue/menota) er nå utvidet med en kolonne for datering av håndskriftene, basert på opplysningene i header i de enkelte filene og i tilgjengelige kataloger. For norrøne håndskrifter vil det si katalogen til _Ordbog over det norrøne prosasprog_. I noen tilfeller kan dateringen virke svært ung, slik som for de tre håndskriftene av _Heimskringla_, AM 35 fol, AM 36 fol og AM 63 fol, men det er dateringen på disse _Heimskringla_-avskriftene, ikke verket, som blir gitt her. Kringla-fragmentet av _Heimskringla_, Lbs fragm. 82, har til sammenligning dateringen c. 1258–1264, som er mye nærmere tilblivelsen av _Heimskringla_.
+
+Inntil nylig brukte vi de uoffisielle språkkodene **oic** for Old Icelandic, **onw** for Old Norwegian, **osw** for Old Swedish og **oda** for Old Danish. Imidlertid har Robert K. Paulsen pekt på at det er en konflikt mellom disse kodene og den nyeste ISO-standarden. For eksempel er **onw** koden for gammelnubisk og **oda** for mbembe – hvem hadde vel tenkt på det? Så nå har vi innført trebokstavers-kodene i ISO 639-3 2007: **isl** for islandsk, **nor** for norsk, **swe** for svensk og **dan** for dansk. Koden for latin er som før **lat**. Se mer om disse kodene i [ISO 639 language codes](https://www.iso.org/iso-639-language-codes.html). Fra denne adressen kan man kjøpe en oversikt for CHF 58, eller man kan finne den kostnadsfritt på Wikipedia.
+
+Når språkkoder nå blir kombinert med datering, unngår vi å måtte trekke en vilkårlig grense mellom eldre og nyere perioder i de nordiske språkene. For ordens skyld skal det nevnes at den ISO-kompatible språkkoden **non** omfatter alle de eldre nordiske språkene, så den ville ikke kunne brukes med noen differensierende funksjon, og bruken av den reiser det samme periodiseringsproblemet som de tidligere kodene. Den enkleste løsningen er derfor å bruke de vanlige kodene for de nordiske språkene.
+
+Mange takk til Paul Meurer, Universitetsbiblioteket i Bergen, for implementeringen av datering og språkkoder i Menotas katalog.
