@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Nyhetsmelding 2020-11-08</title>
+            <author xml:id="OEH">Odd Einar Haugen, <name>Universitetet i Bergen</name></author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published in the web at <ref target="http://www.menota.org/"
+               >http://www.menota.org/</ref>/</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Nyskrevet av OEH på grunnlag av eksisterende mal for meldinger.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="en">English</language>
+            <language ident="nb">Norsk - Bokmål</language>
+            <language ident="nn">Norsk - Nynorsk</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change>
+            <date>08.11.2020</date>
+            <name>OEH</name>: Opprettet og skrev siden. </change>
+      </revisionDesc>
+   </teiHeader>
+   <text xml:lang="nb">
+      <body>
+         <head>Innføring av datering og språkkoder i Menotas katalog</head>
+         
+         <p><ref target="https://clarino.uib.no/menota/catalogue/menota">Menotas katalog</ref> er nå utvidet med en kolonne for datering av håndskriftene, basert på opplysningene i header i de enkelte filene og i tilgjengelige kataloger. For norrøne håndskrifter vil det si katalogen til <title>Ordbog over det norrøne prosasprog</title>. I noen tilfeller kan dateringen virke svært ung, slik som for de tre håndskriftene av <title>Heimskringla</title>, AM 35 fol, AM 36 fol og AM 63 fol, men det er dateringen på disse <title>Heimskringla</title>-avskriftene, ikke verket, som blir gitt her. Kringla-fragmentet av <title>Heimskringla</title>, Lbs fragm. 82, har til sammenligning dateringen c. 1258–1264, som er mye nærmere tilblivelsen av <title>Heimskringla</title>.</p>
+         <p>Inntil nylig brukte vi de uoffisielle språkkodene <hi rend="bold">oic</hi> for Old Icelandic, <hi rend="bold">onw</hi> for Old Norwegian, <hi rend="bold">osw</hi> for Old Swedish og <hi rend="bold">oda</hi> for Old Danish. Imidlertid har Robert K. Paulsen pekt på at det er en konflikt mellom disse kodene og den nyeste ISO-standarden. For eksempel er <hi rend="bold">onw</hi> koden for gammelnubisk og <hi rend="bold">oda</hi> for mbembe – hvem hadde vel tenkt på det? Så nå har vi innført trebokstavers-kodene i ISO 639-3 2007: <hi rend="bold">isl</hi> for islandsk, <hi rend="bold">nor</hi> for norsk, <hi rend="bold">swe</hi> for svensk og <hi rend="bold">dan</hi> for dansk. Koden for latin er som før <hi rend="bold">lat</hi>. Se mer om disse kodene i <ref target="https://www.iso.org/iso-639-language-codes.html">ISO 639 language codes</ref>. Fra denne adressen kan man kjøpe en oversikt for CHF 58, eller man kan finne den kostnadsfritt på Wikipedia.</p>
+         <p>Når språkkoder nå blir kombinert med datering, unngår vi å måtte trekke en vilkårlig grense mellom eldre og nyere perioder i de nordiske språkene. For ordens skyld skal det nevnes at den ISO-kompatible språkkoden <hi rend="bold">non</hi> omfatter alle de eldre nordiske språkene, så den ville ikke kunne brukes med noen differensierende funksjon, og bruken av den reiser det samme periodiseringsproblemet som de tidligere kodene. Den enkleste løsningen er derfor å bruke de vanlige kodene for de nordiske språkene.</p>
+         <p>Mange takk til Paul Meurer, Universitetsbiblioteket i Bergen, for implementeringen av datering og språkkoder i Menotas katalog.</p>
+       
+      </body>
+   </text>
+</TEI>
