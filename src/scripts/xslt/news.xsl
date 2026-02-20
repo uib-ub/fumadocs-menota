@@ -42,7 +42,7 @@
         <xsl:text>&#x0a;&lt;/div&gt;</xsl:text>
     </xsl:template>
     <xsl:template match="tei:graphic">
-        <xsl:text>  &#x0a;&lt;AutoImage</xsl:text>
+        <xsl:text>&#x0a;&lt;AutoImage</xsl:text>
         <xsl:text> src="</xsl:text>
         <xsl:value-of select="concat('/images/', @url)"/>
         <xsl:text>"</xsl:text>
@@ -52,8 +52,19 @@
         <xsl:text>/&gt;</xsl:text>
     </xsl:template>
     <xsl:template match="tei:ref">
-        <xsl:value-of select="concat('[', text(), ']')"/>
-        <xsl:value-of select="concat('(', @target, ')')"/>
+        <xsl:choose>
+            <xsl:when test="tei:graphic">
+                <xsl:text>&#x0a;&lt;Link href="</xsl:text>
+                <xsl:value-of select="@target"/>
+                <xsl:text>"&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&#x0a;&lt;/Link&gt;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="concat('[', text(), ']')"/>
+                <xsl:value-of select="concat('(', @target, ')')"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:hi[@rend='bold']">
         <xsl:text>**</xsl:text>
@@ -77,7 +88,15 @@
         <xsl:text>&lt;br/&gt;</xsl:text>
     </xsl:template>
     <xsl:template match="text()">
-        <xsl:value-of select="replace(replace(., '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"/>
+        <xsl:value-of select="
+            replace(
+                replace(
+                    replace(., '\n +', '&#x0a;'), 
+                    '&lt;', 
+                    '&amp;lt;'), 
+                '&gt;', 
+                '&amp;gt;')
+        "/>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>
