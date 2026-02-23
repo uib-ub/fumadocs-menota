@@ -27,7 +27,17 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="tei:head">
-        <xsl:text>&#x0a;# </xsl:text>
+        <xsl:choose>
+            <xsl:when test="count(ancestor::tei:div) = 0">
+                <xsl:text>&#x0a;# </xsl:text>
+            </xsl:when>
+            <xsl:when test="count(ancestor::tei:div) = 1">
+                <xsl:text>&#x0a;# </xsl:text>
+            </xsl:when>
+            <xsl:when test="count(ancestor::tei:div) = 2">
+                <xsl:text>&#x0a;## </xsl:text>
+            </xsl:when>
+        </xsl:choose>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:p">
@@ -101,15 +111,20 @@
         <xsl:text>*</xsl:text>
     </xsl:template>
     <xsl:template match="text()">
-        <xsl:value-of select="
-            replace(
-                replace(
-                    replace(., '\n +', '&#x0a;'), 
-                    '&lt;', 
-                    '&amp;lt;'), 
-                '&gt;', 
-                '&amp;gt;')
-        "/>
+        <xsl:choose>
+            <xsl:when test="ancestor::tei:head">
+                <xsl:value-of select="replace(., '\s+', ' ')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="replace(
+                        replace(
+                            replace(., '\n +', '&#x0a;'), 
+                            '&lt;', 
+                            '&amp;lt;'
+                        ), '&gt;', '&amp;gt;'
+                    )"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>

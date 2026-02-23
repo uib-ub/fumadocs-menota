@@ -7,7 +7,7 @@ export default function Figure({ caption, children }: {
             <div className="flex">
                 {children}
             </div>
-            <div className="text-xs italic">{caption}</div>
+            <div className="-mt-5 text-xs italic">{caption}</div>
         </div>
     );
 }
