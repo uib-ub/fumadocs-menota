@@ -12,15 +12,43 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
+  const contentType: 'hbx' | 'hb3' | 'main' = (slug => {
+    if (slug && slug[0] == "handbook") {
+      switch (slug[1]) {
+        case "v3":
+          return "hb3";
+        default:
+          return "hbx";
+      }
+    }
+    return 'main';
+  })(params.slug);
 
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} className='bg-white'>
-      <div className='flex flex-wrap mb-5'>
-        <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
-        <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
-      </div>
+    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white ${contentType}`}>
+      {(() => {switch (contentType) {
+        case "hb3":
+          return (
+            <div className='mb-5 border-b border-solid border-black pb-3'>
+              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
+                Menota Handbook 3.0
+              </div>
+              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
+                Guidelines for the electronic encoding of<br/>
+                Medieval Nordic primary sources
+              </div>
+            </div>
+          );
+        case "main":
+          return (
+            <div className='flex flex-wrap mb-5'>
+              <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
+              <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
+            </div>
+          );
+      }})()}
       {/*
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">{page.data.description}</DocsDescription>

@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "https://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook ch. 2 (v. 3.0): Text encoding using XML</title>
+            <editor>
+               <name>Odd Einar Haugen</name>
+            </editor>
+            <respStmt>
+               <resp>Written by</resp>
+               <name>Matthew Driscoll</name>
+            </respStmt>
+            <respStmt>
+               <resp>Revised by</resp>
+               <name>Tone Merete Bruvik</name>
+            </respStmt>
+            <respStmt>
+               <resp>Revised by</resp>
+               <name>Beeke Stegmann</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published in the web at <ref target="http://www.menota.org/"
+               >http://www.menota.org/</ref>/</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Composed in XML for the Menota handbook v. 2.0.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p></p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>28 August 2016</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>        
+         <change><date>12 December 2019</date>
+         <persName>Odd Einar Haugen</persName>: Defined this chapter as belonging to v. 3.0 of the 
+         handbook (12 December 2019)</change>
+         <change><date>10 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made various consistency changes; corrected a couple of links and added a new one; deleted a few sentences on TEI P4 (no easily accessible website for this version any more)
+         </change>
+         <change><date>8 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made various consistency changes; corrected a couple of links and added a new one; deleted a few sentences on TEI P4 (no easily accesible website for this version any more)
+         </change>
+         <change><date>5 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Revised the style of the captions and made some changes to the indents of egXML,
+            corrected an illegal egXML example
+         </change>
+         <change><date>20 November 2019</date>
+            <persName>Odd Einar Haugen</persName>: After having received an analysis of the three versions of this chapter, from v. 1 to the present v. 3.0, decided that the most appropriate list of authors should be Stegmann, Driscoll and Bruvik, and made this change in the by-line
+         </change>
+         <change><date>16 November 2019</date>
+            <persName>Beeke Stegmann</persName>: Minor corrections / suggestions
+         </change>
+       <change><date>21 October 2019</date>
+        <persName>Tarrin Wills</persName>: Minor corrections / suggestions
+       </change>
+       <change><date>29 September 2019</date>
+        <persName>Odd Einar Haugen</persName>: Added four paragraphs at the end of ch. 2.5 for a brief discussion on “gaiji” encoding
+       </change>
+       <change><date>26 September 2019</date>
+            <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, as recommended by Marco Bianchi; removed old comments in <!-- ... -->
+         </change>         
+         <change><date>01 May 2019</date>
+            <persName>Beeke Stegmann</persName>: Proofread the entire chapter and updated references and some specifications of versions and external links.
+            OBS! I combined the two chapters on TEI and TEI schemas, resulting in one less subchapter. 
+         </change>
+         <change><date>29 January 2018</date>
+            <persName>Odd Einar Haugen</persName>: Minor changes to the "figure" and "egXML" encoding for better display
+         </change>
+         <change><date>8 December 2017</date>
+            <persName>Odd Einar Haugen</persName>: Added two new attributes, me:key og me:ref, to ch. 2.9.2, using descriptions from Tarrin Wills
+            </change>
+         <change><date>19 July 2017</date>
+            <persName>Odd Einar Haugen</persName>: Linked to new .png files for Fig. 2.1 and 2.2
+         </change>
+         <change><date>27 June 2017</date>
+            <persName>Odd Einar Haugen</persName>: Added captions and numbered the two illustrations as Fig. 2.1 and 2.2
+         </change>
+         <change>
+            <date>24 June 2017</date>
+            <persName>Beeke Stegmann</persName>: Replaced me:expunged with me:suppressed
+         </change>
+         <change><date>10 March 2017</date>
+            <persName>Beeke Stegmann</persName>: Added chapter 2.10 and a paragraph about comments at the end of chapter 2.6
+         </change>
+         <change><date>9 March 2017</date>
+         <persName>Beeke Stegmann</persName>: Added a reference to chapter 12
+         </change>
+         <change>
+            <date>8 February 2017</date>
+            <persName>Odd Einar Haugen</persName>: Several minor corrections
+         </change>
+         <change>
+            <date>6 February 2017</date>
+            <persName>Beeke Stegmann</persName>: Revised sections 2.7 to 2.10.
+         </change>
+         <change>
+            <date>6 February 2017</date>
+            <persName>Beeke Stegmann</persName>: Revised sections 2.5 and 2.6 and changed examples to use valid TEI elements.
+         </change>
+         <change>
+            <date>29 December 2016</date>
+            <persName>Beeke Stegmann</persName>: Revised sections 2.1 through 2.4.
+         </change>
+         <change>
+         <date>4 October 2016</date>
+         <persName>Odd Einar Haugen</persName>: Replaced character entities (like &amp;eth;) with Unicode characters (like ð) wherever applicable
+         </change>
+         <change>
+            <date>28 August 2016</date>
+            <persName>Odd Einar Haugen</persName>: Made the first draft by copying the text of ch. 1 in v. 2.0 of the handbook and renumbered it as ch. 2 for v. 3.0
+         </change>
+      </revisionDesc>
+   </teiHeader>
+	<text xml:lang="en" n="Chapter2">
+      <body><head>Chapter 2. Text encoding using XML</head>
+
+         <p>Version 3.0</p>
+         <p>by Beeke Stegmann, Matthew Driscoll and Tone Merete Bruvik</p>
+
+<div>
+<head xml:id="sec2.1">2.1 What is XML?</head>
+
+<p>XML, Extensible Markup Language, is
+   a recommendation, endorsed by the <ref target="http://www.w3.org/XML/" type="external">World
+Wide Web Consortium</ref>, which
+defines a simple yet flexible generic syntax for document markup.
+XML, like its predecessor SGML, Standard Generalised Markup Language,
+developed by IBM in the 1970s and 1980s, allows for the definition of
+system-independent methods of representing texts of any kind in
+electronic form.</p>
+
+<p>The term <q>markup</q>, originally used
+for the (hand-written) instructions added to a manuscript or
+typescript to indicate to the compositor how the printed text was to
+look in terms of spacing, font size, use of italics and so on, has
+been carried over into electronic document processing to describe the
+codes used to indicate these same features and other aspects of
+processing. A <q>markup language</q> is therefore at its most simple a set
+of codes which are used to indicate or <q>tag</q> certain features in the
+text, normally for formatting purposes. In most modern software
+packages the markup is generated with little or no conscious effort
+on the part of the user &ndash; in many modern word processing programs,
+such as the ubiquitous Microsoft Word, the user is not even given the
+option of viewing the codes. But they are there: and to see just how
+many one need only open a document produced in, say, Word in a 
+plain text editor such as Notepad. A text of even a few short lines will be 
+prefaced by several dozen lines &ndash; possibly even pages &ndash; of code.</p>
+
+<p>The problem is that basically every program
+has its own set of codes, and it is only rarely possible to convert
+files from one to another without at least some loss of formatting.
+And it is not just the formatting that goes haywire &ndash; many exotic (read
+non-standard) characters are also likely to mutate or not be displayed at all. SGML was
+originally developed in order to avoid these problems by being
+entirely platform independent, hence G for generalised. SGML as well as XML achieve
+this by identifying the logical elements of the document rather than
+specifying the processing to be performed on it: the markup is
+descriptive, in other words, rather than procedural. With descriptive
+markup, the same document can be processed by many different pieces
+of software, each of which can apply different processing
+instructions to those parts of it that are considered
+relevant.</p>
+
+<p>SGML’s greatest success has been HTML, Hyper-Text Markup Language, the language of the World Wide
+     Web. HTML restricts document authors to a finite set of tags, however, most of which were
+     originally presentationally oriented, and is thus inappropriate for most things other than web
+     design. XML is essentially <q>trimmed down</q> SGML. It is not a single, predefined markup
+     language like HTML, but rather a metalanguage desgined for describing other languages. The
+     syntax is essentially still the same as in SGML, but some of the more complex and lesser used
+     options have been removed.</p>
+
+<p>The great advantage of XML is that
+it brings the power and flexibility of SGML to the Web; an XML
+document can be marked up entirely in accordance with the needs of
+the user and the result displayed in a standard web browser (see <ref target="#sec2.9">ch. 2.9</ref> below). 
+   The implications for philologists are
+staggering.</p> 
+
+<p>In what follows, most of the more
+relevant areas of XML markup are touched upon. For a more thorough
+grounding, one of the many printed handbooks or websites devoted to
+XML should be consulted. A good place to start would be the World
+   Wide Web Consortium’s own XML pages: <ref target="http://www.w3c.org/XML/" type="external">http://www.w3c.org/XML/</ref>.
+</p>
+
+</div>
+    
+         <div><head xml:id="sec2.2">2.2 Appearance vs. structure</head>
+
+<p>It is customary, in English and
+most other Western European languages, to use italic type in texts
+printed otherwise in plain roman to set certain things off the rest.
+<title>Hart’s rules for compositors and readers at the University Press,
+Oxford</title> (39th ed.), for example, stipulates that the titles of
+books, films, plays, works of art and periodicals (but not chapters,
+shorter poems, articles) should be printed in italic, as should the
+names of ships (but not public houses), words and short phrases in
+foreign languages (other than those, such as quiche and blitzkrieg,
+that have been sufficiently anglicised so as to render this
+unnecessary), stage directions in plays, theorems in mathematical
+works and biological and zoological nomenclature. Although Hart’s
+does not mention it, italic font is also regularly used to indicate
+emphasis, for example in novels: <q>I most certainly <hi rend="italic">didn’t</hi> ask
+him to come.</q> With ordinary word-processing softwares, all these
+things would be marked up directly, i.e. with the relevant
+codes for <q>italic-on</q> and <q>italic-off</q>. If you think of the computer
+as a glorified typewriter and are only interested in producing copies
+with the correct formatting, fine. If you wish to take advantage of
+the possibilities offered by sophisticated information retrieval
+systems, however, you are in trouble, since a search engine will not
+be able to distinguish foreign words from book titles or the names of
+ships, for the simple reason that procedural markup such as that
+produced by ordinary word-processing software only indicates how
+something is to be displayed, but not why is it to be displayed that
+way. With descriptive markup, on the other hand, elements in the text
+are tagged according to their function, e.g. as titles, names, foreign
+words or stage directions. These can then be processed in whatever way one desires, for
+example displayed in italics. By concentrating on the structure of
+the document rather than its appearance a great many possibilities
+are opened up. Elements in the text can be marked up even where one
+has no desire to format them in any special way. One might wish, for
+example, to tag the names of persons, so that a search for <q>King George</q>, 
+for example, would turn up only persons of that name rather
+than vessels or public houses.</p></div>
+         
+
+<div><head xml:id="sec2.3">2.3 Elements</head>
+
+<p>The key concept in XML markup
+is the element. An element is essentially a textual unit, the idea
+being that texts, like houses, are made up of repeated occurrences of
+basic units arranged in a hierarchical structure; longer works in
+prose will be divided into chapters or sections, and these into
+sub-sections and then further into paragraphs or words. There also may be
+lists and tables. Works of poetry may be divided into cantos or fits,
+and these into stanzas, and the stanzas into couplets, the couplets
+into lines, the lines into feet etc. The individual sections, whether
+chapters or cantos, will often have headings, which are not strictly
+speaking part of the main text, but nevertheless belong with it.
+Moreover, these elements will only combine in certain ways. A chapter
+will not begin in the middle of a paragraph, for example, or in a
+footnote.</p> 
+  
+  <p>In XML pairs of tags are used to mark off such units, a start tag and an end tag, with the text
+     in between being referred to as the element’s content. Corresponding start and end tags have
+     the same <q>name</q> that ist placed within angle brackets, with a solidus to indicate an end
+     tag. Chapters in a book, for example, could be understood as separate divisions and accordingly
+     demarcated by placing a <gi>div</gi> tag (short for division) at the beginning of each one and
+     a corresponding <gi>/div</gi> tag at the end. Within each division there would be any number of
+     paragraphs, usually tagged with <gi>p</gi>. Since XML is structured hierarchically, elements
+     can contain each other, but only in their intirety. Overlapping structures of elements are not
+     allowed (instead, so-called <hi rend="italic">milestones</hi> (empty elements) are used; see
+      <ref target="HB3_ch3.xml#sec3.12">ch. 3.12</ref> below and, in general, <ref
+      target="HB3_ch16.xml">ch. 16</ref> below).</p>
+   
+ <p>The way two elements relate to each other hierarchically is determined by the
+<hi rend="italic">schema</hi> used, which in our case would stipulate
+that a <gi>chapter</gi> must contain one or more <gi>p</gi>
+elements.  
+In any given schema, 
+there is a declaration for each element enumerating what other elements it may or must
+contain, how many of each, and if there are any constraints on the
+order. The more elements one has in one’s system the more
+complicated, and subtle, that system becomes. (For more details on the schema see 
+   <ref target="#sec2.6">ch. 2.6</ref> below.)</p>
+
+<p>To examplify the use of elements, let us have a look at how to markup the structure of the two
+   first stanzas of the Eddic poem <title>Þrymskviða</title>, rendered in normalised orthography. 
+   The text is based on the edition by Jón Helgason (1955) and the translation is the one by Carolyne
+   Larrington (1996):</p>
+
+<table rend="plain"><row>
+<cell><quote>
+   Reiðr var þá Vingþórr<lb/>
+   er hann vaknaði<lb/>
+   ok síns hamars<lb/>
+   um saknaði,<lb/>
+   skegg nam at hrista,<lb/>
+   skǫr nam at dýja,<lb/>
+   réð Jarðar burr<lb/>
+   um at þreifask.
+</quote>
+<quote>
+   Ok hann þat orða<lb/>
+   alls fyrst um kvað:<lb/>
+   Heyrðu nú, Loki<lb/>
+   hvat ek nú mæli,<lb/>
+   er eigi veit<lb/>
+   jarðar hvergi<lb/>
+   né upphimins:<lb/>
+   áss er stolinn hamri!
+</quote></cell>
+
+<cell><quote>
+   (Thor was angry<lb/>
+   when he awoke,<lb/>
+   and missed<lb/>
+   his hammer;<lb/>
+   his beard bristled,<lb/>
+   his hair stood on end,<lb/>
+   the son of Earth<lb/>
+   began to grope around.<lb/>
+</quote>
+<quote>
+   And these were the first words<lb/>
+   that he spoke:<lb/>
+   <q>Listen, Loki,<lb/>
+   to what I am saying,<lb/>
+   what no one knows<lb/>
+   neither on earth,<lb/>
+   or in heaven:<lb/>
+   the hammer of the God is stolen.</q>)<lb/>
+</quote></cell></row></table>
+            
+
+<p>The structure of this poem is clear
+enough: it is made up of two stanzas each of which contains eight
+short lines. This structure could be marked up in the following
+way:</p>
+
+   <egXML><![CDATA[<text xml:lang="en">
+  <body>
+    <lg>
+      <l>Reiðr var þá Vingþórr</l>
+      <l>er hann vaknaði</l>
+      <l>ok síns hamars</l>
+      <l>um saknaði,</l>
+      <l>skegg nam at hrista,</l>
+      <l>skör nam at dýja,</l>
+      <l>réð Jarðar burr</l>
+      <l>um at þreifask.</l>
+    </lg>
+    <lg>
+      <l>Ok hann þat orða</l>
+      <l>alls fyrst um kvað:</l>
+      <l>Heyrðu nú, Loki,</l>
+      <l>hvat ek nú mæli,</l>
+      <l>er eigi veit</l>
+      <l>jarðar hvergi</l>
+      <l>né upphimins:</l>
+      <l>áss er stolinn hamri!</l>
+    </lg>
+  </body>
+</text> ]]>
+</egXML>
+   
+   <p>Note that in this example, standard TEI elements are used: <gi>text</gi>, <gi>body</gi>, 
+      <gi>lg</gi> (short for <q>line group</q>, marks a stanza), 
+      and <gi>l</gi> (the element that marks an individual line). For more details on encoding standards and 
+      TEI see <ref target="#sec2.8">ch. 2.8</ref> below.)</p>
+<p>If we abstract from this and attempt to describe the structure of 
+   poems in general we could say that a poem consists of 
+   one or more stanzas (<gi>lg</gi>) each of which is made up of one or more lines (<gi>l</gi>). 
+   A poem will also normally have a
+title and be attributable to an author (even if that author &ndash; as in 
+the case of <title>Þrymskviða</title> &ndash; is the 
+   highly prolific <q>Anon.</q>). The name of the author will obviously not
+   always appear with the text of the poem, however, for example in a series or
+   collection, where there are several poems by the same author. 
+Therefore, we might want to allow our <gi>body</gi> element also to contain,
+   let us say, <gi>title</gi> and <gi>author</gi>.  Additional 
+elements would further be required if more than one poem were to be transcribed but still marked as separate works, for example
+  in a <gi>collection</gi> of poems. If one envisaged this collection as an anthology,
+one would probably wish to divide it into sections, in which poems by
+a particular poet were grouped together; in the case of Eddic poems, one might make a 
+division between mythological poems and heroic lays. Each of these 
+sections would have a heading and possibly some prefatory matter, giving information
+on the author. Like that, virtually any level of structural hierachy can be marked using XML elements if they are employed systematically.</p>
+
+<p>Other elements used in XML markup have
+less to do with the overall hierearchical structure of the text or document and
+are more free-floating, i.e. can appear in a variety of contexts, or in XML language: can be contained
+by a variety of elements. Such elements, often referred to as phrase-level elements, are usually more content-related. 
+Besides being able to render tagged contents in any given way, the principal use of elements and markup is to enable searches: Anything that is marked-up
+can be searched for later. One might, for
+example, wish to markup all names in the poem above. The personal name <q>Vingþórr</q> in line one of our poem could then
+   be tagged with an element we call <gi>name</gi>:</p>
+
+<egXML><![CDATA[<l>Reiðr var þá <name>Vingþórr</name></l>]]></egXML>
+   
+   <p></p>
+</div>
+     
+<div>
+
+<head xml:id="sec2.4">2.4 Attributes</head>
+
+<p>Without further information, the
+usefulness of such tagging is sometimes limited. More specific
+information about a particular element instance can be given as a so-called
+ attribute. Looking at the stanzas just cited, one might, for example,
+want to add attributes to individual elements, using convenient typologies to indicate number, genre, form,
+metre or rhyme-scheme.
+The elements <gi>lg</gi> and <gi>l</gi>, denoting stanzas and lines, could for instance be described in more detail by
+   adding an attribute for the number: <att>n</att>. 
+   One ore more attributes are added to the opening tag of elements in such a way that they follow
+   the element name, separated by a white space. The value of an attribute
+   is given in double quotations to the right of an equals sign.
+   Adding a <att>n</att> attribute (with the value <val>1</val>) to the <gi>l</gi> element of the first line would  
+      be encoded like this:</p>
+     
+     <egXML><![CDATA[<l n="1">
+  Reiðr var þá <name>Vingþórr</name>
+</l>
+]]></egXML>
+     
+<p>It might further be an advantage to indicate the type
+of name in order to distinguish personal names from the the names of
+places, ships, swords etc.:</p>
+
+<egXML><![CDATA[<l n="1">
+  Reiðr var þá <name type="person">Vingþórr</name> 
+</l>
+]]></egXML>
+
+   <p>Attributes are very useful for search and processing purposes, because they allow 
+      additional degrees of abstraction. Like elements, they are
+declared in the schema, where a list of possible attributes or kinds of attributes is
+given for each element. It is also possible to specify what type of
+value is acceptable for each attribute, as well as a default
+value if that is desired.
+</p> 
+
+</div>
+
+<div><head xml:id="sec2.5">2.5 Entities</head>
+
+<p>The aspects of XML discussed so far are all concerned with the markup of elements within the
+     document. XML also provides a mechanism for encoding and naming parts of the document’s
+     content: through entities. An entity is a kind of shorthand, a way of stating that when the
+     document is processed, a particular string of characters in the document should be replaced by
+     some other string. This other string can be of any length, from a single character to a
+     separate file containing millions of bytes, such as a text file or digital image. When using an
+     entity, the name of that entity (entity reference) is placed between an ampersand and a
+     semicolon: <hi rend="entity">&amp;entityname;</hi>. Only entities that have been declared can
+     be processed by the application.</p>
+
+<p>A single
+declaration for a general entity looks like this:</p> 
+   
+   <egXML><![CDATA[<!ENTITY vth "Vingþórr">]]></egXML> 
+
+   <p>This entity declaration instructs the processing
+      software (a parser or browser) to 
+      replace any entity reference <hi rend="entity">&amp;vth;</hi> it encounters in the XML file 
+      with the text <q>Vingþórr</q>. 
+      In the case of our single
+      poem, there is obviously no real advantage to treating the name of
+      the protagonist in this way, but in longer documents or collections of
+      documents it can be an extremely efficient way of dealing with
+      repeated content.</p> 
+   
+   <p>Entities may also contain XML markup (provided it
+      is well-formed) as well as text:</p>
+   
+   <egXML><![CDATA[<!ENTITY vth "<name type='god' subtype='áss'>Vingþórr</god>">]]></egXML>
+
+<p>An entity can further refer to an
+external file, as in the following example: </p>
+
+<egXML><![CDATA[<!ENTITY chapter1 SYSTEM "chapter1.xml">]]></egXML>
+            
+<p>Such entities are called system
+entities: instead of the replacement text, the declaration gives a <q>SYSTEM</q> keyword and a
+relative or absolute URL. The processing software will then
+replace the entity with the document found at the address given, i.e.
+insert that document into the existing document. The resulting
+document must be well-formed XML, so one must ensure that the
+document to be inserted is itself well-formed (although it need not
+have a single root element) and does not for example contain a
+prologue (i.e. XML and/or DOCTYPE declaration).</p>
+   
+<p>A third type of entities are called
+parameter entities; these are used inside markup declarations and
+need not concern us here. </p>
+
+<p>For our purposes entities are particularly useful for providing descriptive mappings for
+     non-standard characters, such as characters used in medieval manuscripts. There are standard
+     mappings for commonly used characters, such as from the western-European languages (e.g.
+     ISOlat1 and ISOlat2), as well as character sets for Greek (ISOgrk1), Cyrillic (ISOcyrl1) and
+     other alphabets. The Unicode Standard, a character coding system desigend to support worldwide
+     interchange, processing and display of written text, covers most of the world’s languages,
+     living and dead, and also allows for user-defined characters. The current version 12.0 contains
+     a total of 137,928 characters (released <date>March 5 2019</date>). Each of these characters is
+     assigned a unique code point, which can be encoded in a variety of ways. The most common format
+     is UTF-8, but the numeric value of the code points can be used to encode characters as
+     entities. Such numerical character references can be either decimal or hexidecimal; decimal
+     references begin with an ampersand and the number sign, also called hash mark (#), to which
+     hexidecimal references add an x. For example, the Unicode hexidecimal character reference for
+     the letter <q>&#x0119;</q> is <hi rend="codepoint">&amp;#x0119;</hi>, while the decimal
+     reference is <hi rend="codepoint">&amp;#281;</hi>. These standardised numerical character
+     references are supported by standard browsers and do not need to be defined as additional
+     entities. However, one may prefer to use human readable entities for such characters which are
+     not available on the keyboard used, or for reasons such as proof-reading. Instead of the code
+     point, one can, for example, use the entity <hi rend="codepoint">&amp;eogon;</hi> for
+      <q>&#x0119;</q>. It is a simple matter to define characters as general entities, giving the
+     numerical character reference as the replacement text:</p>
+
+   <egXML><![CDATA[<!ENTITY eogon "&#x0119;">]]></egXML>
+
+<p>In fact, all characters in the official part of the Unicode Standard can now be entered directly from the keyboard. See
+   <ref target="HB3_ch5.xml#sec5.2.2">ch. 5.2.2</ref> for more details on this.</p>
+   
+   <p>Even more specialized characters might not be defined as part of the Unicode Standard  &ndash; yet &ndash; 
+   and thus have to be defined as entities.
+  For instance, the producer of
+a diplomatic text edition might want to distinguish between single
+and two-storey a.  The encoder could achieve this by using two different
+entities, but with the same replacement text. That would make both variants appear
+identical when displayed, but they would be available for
+search purposes. 
+More commonly, an encoder wants to retain and also show certain features of the medieval script, as
+they are potentially relevant for the reader. This is possible as long as suitable characters have been defined. 
+Frequently, however, such specialized characters are only avaialble as part of a non-standard font, 
+for which the characters are mapped in the so-called Private Use Area (PUA). Such character references are not supported by 
+standard browsers as they can be different for each font. Instead, they need to be referenced, which is best done with entities.</p>
+   
+   <p>Special characters useful for Old Norse are created, for instance, by the <ref
+      target="http://www.mufi.info">Medieval Unicode Font Initiative (MUFI)</ref>. 
+The most commonly used ones have been compiled by Menota into a list of entities, mapping them to their Unicode PUA values
+(see also <ref target="HB3_ch5.xml#sec5.2.2">ch. 5.2.2</ref>).
+This Menota entity list is available as an external file, which can conveniently be referred to from any XML 
+document using a system entity:</p>
+   
+   <egXML><![CDATA[<!ENTITY % Menota_entities SYSTEM 
+'https://www.menota.org/menota-entities.txt'>
+%Menota_entities;]>]]></egXML>
+   
+   <p>In recent years, the TEI community has moved towards the use of the <gi>g</gi> element (for <q>gaiji</q>, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like <hi rend="entity">&amp;ocurl;</hi> for the character <q>&ocurl;</q>, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <hi rend="italic">gaiji</hi> module, as described in the TEI Guidelines P5, <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html" type="external">ch. 5.2</ref>.
+     This requires an extensive <gi>charDecl</gi> section in the header of the document defining each <q>gaiji</q> character.</p>
+   <p>As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in <ref target="HB3_ch5.xml">ch. 5</ref>, and an abundance of them will be found in e.g. <ref target="HB3_ch6.xml">ch. 6</ref>. For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called <ref target="menota-entities.txt">menota-entities.txt</ref>. Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the <hi rend="entity">&amp;ocurl;</hi> entity, for example, only a single line is required:</p>
+   
+   <egXML><![CDATA[<!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">]]></egXML>
+   
+   <p>In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, <hi rend="codepoint">E7D3</hi>. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.</p>
+   
+   <p>The <ref target="menota-entities.txt">menota-entities.txt</ref> file can be downloaded in <ref target="HB3_D_schemas.xml#secD.1.1">app. D.1.1 (2)</ref> below. </p>
+    
+  </div>
+        
+         <div> 
+                      
+            <head xml:id="sec2.6">2.6 The Text Encoding Initiative and TEI conformant schemas</head>
+               
+               <p>The most widely used XML
+                  implementation for more sophisticated text encoding is that devised
+                  by the Text Encoding Initiative (TEI), an international and
+                  interdisciplinary standard for the preparation and interchange of
+                  electronic texts. The TEI began with a planning conference which took
+                  place at Vassar College in New York on 12-13 November 1987. The
+                  participants agreed on both the desirability and feasibility of
+                  creating a common encoding scheme for use in creating new
+                  documents as well as in exchanging existing documents among text and data
+                  archives. The TEI thus began the task of developing a draft set of
+                  Guidelines for Electronic Text Encoding and Interchange, with working
+                  committees comprising scholars from all over North America and Europe
+                  drafting recommendations on various aspects of the problem. These
+                  were integrated into a first public draft, TEI P1 (P for <q>Proposal</q>),
+                  published in June 1990. A second draft (TEI P2) followed in 1992 and
+                  1993, and the first official version of the guidelines (TEI P3) was
+                  published in May 1994. The next version, TEI P4, was released in June 2002. On 1 November 2007, 
+                  TEI P5 was released in electronic form only at <ref target="http://www.tei-c.org/Guidelines/P5/" type="external">TEI
+                     Guidelines</ref>. The present version of the Menota handbook is conformant with TEI P5.</p>
+               
+               <p>The TEI began as a research effort
+                  cooperatively organised by three scholarly societies (the Association
+                  for Computers and the Humanities, the Association for Computational
+                  Linguistics, and the Association for Literary and Linguistic
+                  Computing), and funded by research grants from the US National
+                  Endowment for the Humanities, the European Union, the Canadian Social
+                  Science Research Council, the Mellon Foundation and others. In
+                  December 2000, after a year’s negotiation, a new non-profit
+                  corporation called the TEI Consortium was set up to maintain and
+                  develop the TEI standard. Four universities serve as hosts for this
+                  consortium, presently two in the United States and two in Europe. The Consortium is
+                  managed by a Board of Directors, and its technical work is overseen
+                  by an elected Council. There are numerous
+                  projects currently using the TEI encoding scheme, Menota being one of
+                  them.</p>
+            
+            
+            <p>TEI offers several schemas for defining the structure of an XML file. The schema restricts the elements allowed both in terms of their content, 
+               their attributes and relationship to each other. 
+             One of the great strengths of using TEI conformant schemas is that they provide of a number of different tag
+                  sets which can be used in a variety of combinations, according to the
+                  needs of the encoder and nature of the material being encoded. 
+                  The encoder can either use the very general TEI schema with a large number of elements and attributes,
+                  or pick and choose from it by selecting only the
+                  ones relevant to the material to
+                  be encoded, thus tailoring the schema to
+                  his or her individual needs. The Menota schema is an example of the latter, 
+                  containing a specialized subset of the elements defined in the
+                  general schema (with the addition of some local elements and attributes). </p>
+               
+               
+               <p>In TEI P4 and earlier releases, the only schema was the Document Type Definition (DTD) mentioned above. 
+               As of TEI P5, a RELAX NG (RNG) schema has been added.
+               We offer schemas of both types in <ref target="HB3_D_schemas.xml">app. D.1.1 (3) and (4)</ref>
+               to this handbook, but recommend to use the RNG schema. The function of a RNG schema is the same as that of a DTD,
+               but it allows users to make a clear distinction between TEI elements and attributes on the one hand and local elements and attributes on the other hand 
+               by way of establishing a namespace. Consequently, the encoding becomes more transparent. 
+               (The concept and possibilities of a namespace is explained in <ref target="#sec2.8">ch. 2.8</ref> below.)</p>
+            
+           
+            <p>A schema, as was said, defines the
+               structure of the document, and is thus like a grammar, detailing the
+               elements which can appear in the text and their hierarchical
+               relationship to each other. In order to ensure that this is done
+               correctly, every encoded text needs to be checked against the schema, if
+               there is one, or checked for <q>well-formedness</q> if there is not. A
+               computer program called a parser runs through the encoding and gives
+               an error message if there are errors or inconsistencies in the
+               markup, e.g. if elements are not opened and closed correctly, or used
+               in the wrong place, or if elements overlap. If the elements in a
+               document are correctly opened and closed, and non-overlapping, the
+               document is called <hi rend="bold">well-formed</hi>. A parser can determine
+               <q>well-formedness</q> without recoursing to a schema.
+               If, in addition, the content types of elements, the nesting of
+               elements and the use of attributes are all done according to the
+               specification of the schema, then the document is not only well-formed,
+               but also <hi rend="bold">valid</hi>.</p>
+            
+            <p>Validation only checks the markup &ndash;
+               not the content &ndash; of the document. A document can consist entirely of
+               gibberish and still be valid &ndash; as, indeed, can a document with no
+               content at all. The correctness of the contents remains
+               the responsibility of the transcriber.</p>
+            
+            <p>XML-aware software, such as
+               &lt;oXygen/&gt;, SoftQuad’s XMetaL or XMLSpy, generally comes with a built-in
+               validator (see <ref target="HB3_C_editors.xml">app. C</ref> for different XML editors). 
+               Separate validator programs are also available.</p>
+        
+         </div>
+
+<div>
+<head xml:id="sec2.7">2.7 Putting the pieces together</head>
+            
+            <p>The first line of our XML document
+               is the XML declaration, which tells any processing software that the
+               document is in XML:</p>
+            
+            <egXML><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></egXML>
+            
+            <p>The <att>version</att> attribute is required and the
+     standard version is currently <val>1.0</val>, but it is possible that there will be further
+     versions in the future. Two more attributes are optional: <att>encoding</att>, which specifies
+     which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
+     is assumed by all the standard browsers), and <att>standalone</att>, the possible values for
+     which are <val>yes</val> and <val>no</val> to specify if the document makes use of an external
+     schema. XML documents do not in fact require a schema, provided they are <q>well-formed</q>
+     (see below), but in most cases it is adventageous to employ a schema. In cases where there is
+     no schema the value of the <att>standalone</att> attribute should be <val>yes</val>. If the
+     attribute is omitted, on the other hand, the default value <val>no</val> is assumed.</p> 
+            
+            <p>The document’s second line, following the XML declaration, is the reference to the schema used.
+               In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 
+As of v. 3.0 of the handbook we recommend to use the RELAX NG schema, which is more flexible, yet at the same time somewhat stricter than a DTD. 
+The main difference, however, is that the (older) DTD schema cannot handle multi-level transcriptions using the Menotic elements
+               <gi>me:facs</gi>, <gi>me:dipl</gi> and <gi>me:norm</gi> (see also <ref target="HB3_D_schemas.xml">app. D</ref>).</p> 
+
+            
+   <p>The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
+      Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
+      The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
+      <q>http://www.menota.org/menotaP5.rng</q>. It can be downloaded from <ref target="HB3_D_schemas.xml#D.1.1">app. D.1.1 (4)</ref>.
+      An external RELAX NG schema, in this case the current Menota schema, is referenced like this:</p>
+   
+   <egXML><![CDATA[<?xml-model href="http://www.menota.org/menotaP5.rng"?>]]></egXML>
+   
+   <p>Some XML editors additionally have their own way of referencing external schemas, but the
+      neutral code given above should work in any event. Here is an example of a editor specific 
+      reference to the same schema (in this case &lt;oXygen/&gt;):</p>
+   
+   <egXML><![CDATA[<?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?>]]></egXML>
+
+            
+            
+ <p>Following the schema, the entities used in the document are referenced.
+    Entities can either be defined manually or provided by means of external entity lists, for instance as a system entity (see <ref target="#sec2.5">ch. 2.5</ref>.)
+    After that &ndash; finally &ndash; the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
+            </p>
+            
+            <p>A structured XML document contains different kinds of components. We have already
+     learned about <hi rend="italic">elements</hi>, containing <hi rend="italic">text</hi>, and thus
+     the actual contents. We have also seen that elements can have one or more <hi rend="italic"
+      >attributes</hi> with their various <hi rend="italic">values</hi>. Finally, XML documents may
+     also contain <hi rend="italic">comments</hi>. Comments begin with <q>&lt;!--</q> and end with
+      <q>--&gt;</q>. They are allowed anywhere in the document (but not before the XML declaration),
+     as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
+     a comment is considered as not actually part of the document &ndash; it is <q>commented out</q>
+     and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
+     to make a note to him or herself or others without it being processed.</p> 
+   
+   <p>All TEI conformant documents have as their outermost element (the so-called root element) the <gi>TEI</gi> element. 
+      Inside of the <gi>TEI</gi> element there must be
+      two elements, a header, tagged <gi>teiHeader</gi> (see <ref target="HB3_ch14.xml">ch. 14</ref>), and the text itself, tagged <gi>text</gi>.
+      The <gi>teiHeader</gi> contains
+      meta-data, i.e. information about the electronic
+      document provided, and the <gi>text</gi> contains the actual contents of the document. What
+      elements go into the <gi>text</gi> is to a great extent determined by
+      which base and additional tag sets have been chosen in the schema.</p>
+   
+   <p>In addition to purely structural
+      elements such as the ones used in the markup of our stanza above, 
+      the TEI also makes available a host of elements for
+      indicating features of typography and layout. Although these were
+      originally intended for use in the description of printed materials,
+      most if not all are equally applicable to manuscripts. There are also
+      tags which can be used for normalisation, grammatical information
+      etc. The other chapters in this handbook explain in detail how they
+      can be used. </p>
+</div>
+         
+   
+         
+         <div>
+            <head xml:id="sec2.8">2.8 The namespace: Adding elements and attributes</head>
+            
+            <p>In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
+               We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
+               (and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
+               as a <hi rend="italic">namespace</hi>, and we have consequently set up a namespace <q>me</q> for our usage 
+               (<q>me</q> being short for <q>Menota</q>).</p>
+            
+            <p>Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the <gi>TEI</gi> element:</p>
+            
+            <egXML><![CDATA[<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
+...
+</TEI>]]></egXML>
+            
+            <p>In the Menota XML files, all additional elements and attributes will be preceded by <q>me:</q>. 
+               For example, we recommend that a normalised transcription is contained in such an additional element, which we call <hi rend="italic">norm</hi>. 
+               It appears as <gi>me:norm</gi>, where the prefix identifies it as an element belonging to the Menota namespace. 
+               The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
+               anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
+               which are the additions by Menota.</p>
+            
+            <p>The following is a complete list of additional elements and attributes in <title>The Menota handbook</title>:</p>
+            
+            <div>
+               <head xml:id="sec2.8.1">2.8.1 Elements</head>
+               <p><gi>me:facs</gi> for readings on a facsimile level, cf. <ref target="HB3_ch4.xml#sec4.2">ch. 4.2</ref>.</p>
+               <p><gi>me:dipl</gi> for readings on a diplomatic level, cf. <ref target="HB3_ch4.xml#sec4.3">ch. 4.3</ref>.</p>
+               <p><gi>me:norm</gi> for readings on a normalised level, cf. <ref target="HB3_ch4.xml#sec4.4">ch. 4.4</ref>.</p>             
+               <p><gi>me:pal</gi> for readings on a paleographical level, cf. <ref target="HB3_ch4.xml#sec4.6.5.2">ch. 4.6.5.2</ref>.</p>
+               <p><gi>me:suppressed</gi> for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
+                  encoded by the <gi>del</gi> element), cf. <ref target="HB3_ch9.xml#sec9.3.2">ch. 9.3.2</ref>.</p> 
+               <p><gi>me:textSpan/</gi> for encoding any discontinous structures, thus avoiding a full set of elements 
+                  like <gi>addSpan/</gi>, <gi>delSpan/</gi>, <gi>suppliedSpan/</gi>, <gi>suppressedSpan/</gi>, etc. 
+                  Note that the attribute <att>me:category</att> is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
+                  cf. <ref target="HB3_ch16.xml#sec16.2">ch. 16.2</ref>.</p>
+               <p><gi>me:all</gi> for alliteration in encoding of verse, cf. <ref target="HB3_ch13.xml#sec13.2">ch. 13.2</ref>.</p>
+               <p><gi>me:ass</gi> for internal rhyme in encoding of verse, cf. <ref target="HB3_ch13.xml#sec13.2">ch. 13.2</ref>.</p>
+            </div>
+            
+            <div>
+               
+               <head xml:id="sec2.8.2">2.8.2 Attributes</head>
+               <p><att>me:msa</att> for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
+                  This is an attribute to the <gi>w</gi> element, cf. <ref target="HB3_ch11.xml#sec11.3">ch. 11.3</ref>.</p>
+               <p><att>me:type</att> for classification purposes. This is an attribute to the <gi>ex</gi> and <gi>am</gi> elements, 
+                  cf. <ref target="HB3_ch6.xml#sec6.1">ch. 6.1</ref>.</p>
+               <p><att>me:key</att> for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+                  in the form of a database key or similar, used as an attribute to a number of elements, cf. <ref target="HB3_ch15.xml#sec15.2.2">ch. 15.2.2</ref>.</p>
+               <p><att>me:ref</att> for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+                  in the form of one or more URIs or similar identifiers, cf. <ref target="HB3_ch15.xml#sec15.4.1">ch. 15.4.1</ref>.</p>
+               <p><att>me:level</att> for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
+                  This is an attribute to the <gi>normalization</gi> element used in the header, 
+                  cf. <ref target="HB3_ch14.xml#sec14.4">ch. 14.4</ref>.</p>
+               <p><att>me:lemmatized</att> for identifying those texts which have been lemmatised. This is an attribute to the 
+                  <gi>interpretation</gi> element used in the header, cf. <ref target="HB3_ch14.xml#sec14.4">ch. 14.4</ref>.</p>
+               <p><att>me:morphAnalyzed</att> for identifying those texts which have been morphologically analysed, 
+                  i.e. given grammatical form. This is another attribute to the <gi>interpretation</gi> element used in the header,  
+                  cf. <ref target="HB3_ch14.xml#sec14.4">ch. 14.4</ref>.</p>
+               <p><att>me:category</att> for identifying the type of a text span. This is an attribute to the <gi>me:textSpan/</gi> element 
+                  used to encode overlapping structures, cf. <ref target="HB3_ch16.xml#sec16.2">ch. 16.2</ref>.</p>               
+            </div>
+            
+         </div>     
+
+<div>
+
+
+<head xml:id="sec2.9">2.9 Displaying the text</head>
+
+<p>We have mentioned several times the possibility of displaying XML documents in standard web
+     browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
+     elements describe, ideally at least, the semantic structure of the text, rather than its
+     appearance (although there is obviously a degree of overlap). Web browsers have built-in
+     stylesheets for displaying HTML and know that in an HTML document anything tagged <gi>i</gi> is
+     to be displayed in italic. XML
+     markup is semantic (and the elements in principle user-defined), and in order for a browser to
+     display an XML document, it needs to know what formatting to apply to what elements. It needs
+     to be told, for example, that things within <gi>title</gi> tags should be displayed in italic.
+     A stylesheet does precisely that.</p>
+
+<p>There are essentially two options, Cascading Stylesheets (CSS) and Extensible Stylesheet Language
+     Transformations (XSLT). CSS is a simple, non-XML syntax used to describe the appearance of any
+     element in a document and widely in combination with HTML. XSLT, on the other hand, is itself
+     an XML application which specifies rules by which the XML document is transformed into another
+     document. The output can be in different formats, among others another XML document, but for
+     displaying purposes its most obvious use is to tranform the existing XML document into
+     something more browser-friendly such as HTML (or XHTML). Doing that, the original document
+     retains its complexity, while for viewing purposes it is changed into something browsers can
+     deal with. This transformation can be done by the browser when the XML document is called up
+     by the user; by a web server applying the transformations before serving the document; or by
+     the creator of the document, who may not wish to make it available in its orginal state.</p>
+
+<p>A stylesheet can be associated to an XML document in several ways. 
+   Most standard XML editors offer for example functions to set up personalised transformation scenarios, which 
+   apply a selected stylesheet to any given XML input and open the results in a Web browser.
+   Easier to use might be an XSLT stylesheet processing instruction (also called <q>stylesheet link</q>), 
+   which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
+   The <att>href</att> attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
+   is supposed to be associated, and 
+   depending on the stylesheet format used, the <att>type</att> attribute must be 
+   set to "text/css" or "text/xsl". There are other
+   (pseudo-) attributes, such as <att>media</att>, but they need not concern
+   us here (For instructions on how to apply an XSLT stylesheet see also <ref target="HB3_F_xslt.xml">app. F</ref>).
+   The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
+   from the web with the XML file in question:
+   </p>
+            
+<egXML><![CDATA[<?xml-stylesheet href="poem.css" type="text/css"?>]]></egXML>
+   
+   
+   <egXML><![CDATA[<?xml-stylesheet href="http://www.menota.org/menota_xslt_3_dipl.xsl type="text/xsl""?>]]></egXML> 
+            
+<p> The CSS stylesheet referred to in the first example was desgined for the markup of the poem used above. It
+indicates how each of the elements is to be displayed (using the CSS language): </p>
+
+            <egXML><![CDATA[body {
+font-family: "Book Antiqua";
+}
+
+body {
+display: block;
+font-family: "Book Antiqua";
+margin: 25pt 15pt 15pt 45pt;
+font-size: 13pt;
+line-height: 15pt}
+
+title {
+display: block;
+font-size: 18pt;
+padding: 5pt}
+
+author {
+display:none;}
+
+lg {
+display: block;
+padding: 5pt}
+
+l {display: block}
+
+name {font-style: italic}]]></egXML>
+
+
+<p>Displayed by an XML-aware browser,
+   such as <ref target="https://www.mozilla.org/en-US/firefox/" type="external">Firefox</ref> (Windows, Mac, Linux), 
+   <ref target="https://www.google.com/chrome/" type="external">Google Chrome</ref> (Windows, Mac, Linux), 
+   <ref target="https://www.apple.com/safari/" type="external">Safari</ref> (Mac), 
+   the two first stanzas of <title>Þrymskviða</title> will be displayed as in Fig. 2.1.</p>
+   
+   <p><figure rend="width60 clearboth">
+      <graphic url="ch2/Trymskvida-1.png"/>
+   </figure></p>
+   
+   <p rend="caption"><hi rend="bold">Ill. 2.1</hi>. Screen display of the first two stanzas of <title>Þrymskviða</title>.</p>
+   
+   <p>Note that browsers may display the same page slightly differently. If it does not look right in one browser, another browser may do the trick.</p>
+
+<p>XSLT is more powerful than CSS.
+With CSS one can determine exactly how the content of an element is
+to be displayed, in terms of font, colour etc., or whether it is to
+be displayed at all (one might not, for example, wish to display some
+of the administrative information contained in the TEI header). CSS will also allow
+you to insert text before and/or after an element (using the
+   <hi rend="bold">before</hi> and <hi rend="bold">after</hi> pseudo-element selectors). But that is
+about it. With XSLT, on the other hand, one can, for example,
+re-arrange the order of the elements or display the value of an
+element’s attribute instead of its actual content. 
+For the actual styling of the (re-arranged) content, XSLT ultimately uses the CSS language 
+(either built in to the same document of pulling from a separate file), meaning that
+with XSLT one has all the options of plain CSS in addition to powerful transformations.</p>
+
+<p>The above display of an Eddic stanza is the preferred one in many Nordic editions; each line
+     occupies a line in the edition, whether it is a short line (as in <hi rend="italic"
+      >fornyrðislag</hi>) or a full line (as in <hi rend="italic">ljóðaháttr</hi>). In Continental
+     and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
+     short lines making up a long line is printed as a single line in the edition, though with a
+     sizeable space between the two lines, thus:</p>
+
+<quote>
+   Reiðr var þá Vingþórr&nbsp;&nbsp;&nbsp;er hann vaknaði<lb/>
+   ok síns hamars&nbsp;&nbsp;&nbsp;um saknaði<lb/>
+   skegg nam at hrista,&nbsp;&nbsp;&nbsp;skör nam at dýja,<lb/>
+   réð Jarðar burr&nbsp;&nbsp;&nbsp;um at þreifask.<lb/>
+</quote>
+
+   <p>For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
+     line (in <hi rend="italic">ljóðaháttr</hi>) or each fifth line (in <hi rend="italic"
+      >fornyrðislag</hi>) are numbered. In an eight-line display such as the one in the screenshot
+     above, the fitfth line of the first stanza is the one beginning with <q>skegg</q>. The same
+     applies to the four-line display above, since each short line is counted, irrespective of
+     whether it is displayed in conjunction with another short line or not. To achieve a
+      <q>Neckel/Kuhn display</q> two operations are necessary, (a) every second short line in the
+     encoded text is displayed on the same line as the previous short line, and with white space in
+     between, and (b) lines are counted and a small number is positioned in the margin in front of
+     every fifth line. This adds an element of transformation to the styling that can be performed
+     in CSS using the :nth-child() selector. In XSLT this is quite simple, even if the instructions
+     may look difficult. An XSLT stylehseet transforming the text as specified in (a) and (b) would
+     look like this:</p>
+           
+<egXML><![CDATA[<xsl:template match="lg">
+<table class="stanza">
+  <xsl:for-each select="child::l[ position() mod 2 = 1]">
+    <tr>
+      <xsl:choose>
+        <xsl:when test="attribute::number mod 5 = 1">
+          <!-- The first line -->
+          <td>
+            <xsl:value-of select="parent::lg/attribute::number"/> .&#160;
+          </td>
+        </xsl:when>
+        <xsl:when test="attribute::number mod 5 = 0">
+          <!-- Line 5 -->
+          <td>
+            <xsl:attribute name="class">small</xsl:attribute>
+            <xsl:value-of select="attribute::number"/>
+          </td>
+        </xsl:when>
+        <xsl:otherwise>
+          <td></td>
+        </xsl:otherwise>
+      </xsl:choose>
+        <td><xsl:apply-templates/>&#160;&#160;
+          <xsl:apply-templates select="following-sibling::l[1]"/>
+        </td>               
+    </tr>    
+  </xsl:for-each>
+</table>
+</xsl:template>
+]]></egXML>
+            
+   <p>Displayed in an XML-aware browser, the stanzas now look like Fig. 2.2 (still also using most of the CSS styling specifications from above).</p>
+   
+   <p><figure rend="width60 clearboth">
+      <graphic url="ch2/Trymskvida-2.png"/>
+   </figure></p>
+   
+   <p rend="caption"><hi rend="bold">Ill. 2.2</hi>. Alternative screen display of the first two stanzas of <title>Þrymskviða</title>.</p>
+   
+   <p>The display is different, but the XML encoding is not changed at all. It is only a matter of transforming the encoded text using XSLT 
+   and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.
+   And the same XML file can be transformed again and again into dozens of different formats.</p> 
+   
+</div>
+         <div>
+            <head xml:id="sec2.10">2.10 Menotic stylesheets</head>
+   <p>Menota makes available XSLT stylesheets that have been optimised for displaying digital transcriptions that were produced according to the guidelines of this handbook. 
+   The stylesheets as well as an introduction to how to apply them are found in <ref target="HB3_F_xslt.xml">app. F</ref>. 
+   The latest version of the XSLT (for the present version of the handbook) now allows for sophisticated display of many manuscript-specific features on the facsimile level, 
+   such as multi-part rubrics and scaled initials. Please bear in mind, however, that preference was given to incorporate features that were deemed essential and 
+   less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
+   accordance with the handbook’s recommendations.</p>
+
+            </div>
+
+</body></text></TEI>

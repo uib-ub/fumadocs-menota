@@ -22,3 +22,12 @@ for file in $sourcedir/meldinger/*; do
     fi
 done
 
+echo "Compiling handbook v3:"
+for file in $sourcedir/handbok/v3/*; do
+    if [ -f "$file" ]; then
+        sourceID=$(basename "$file" .xml)
+        if [[ "$sourceID" =~ ^HB3_ ]]; then
+            compile handbok/v3/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v3/${sourceID}.mdx
+        fi
+    fi
+done

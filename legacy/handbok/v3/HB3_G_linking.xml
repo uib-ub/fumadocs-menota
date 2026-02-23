@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>Menota handbook appendix G (v. 3.0): Linking to external resources</title>
+    <editor>
+     <name>Odd Einar Haugen</name>
+    </editor>
+    <respStmt>
+     <resp>Written and revised by </resp>
+     <name>Tarrin Wills</name>
+    </respStmt>
+   </titleStmt>
+   <publicationStmt>
+    <p>Published in the web at <ref target="http://www.menota.org/">http://www.menota.org/</ref>/</p>
+   </publicationStmt>
+   <sourceDesc>
+    <p>Composed in XML for the Menota handbook v. 3.0.</p>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p/>
+   </projectDesc>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date>1 June 2017</date>
+   </creation>
+   <langUsage>
+    <language ident="en">English</language>
+   </langUsage>
+  </profileDesc>
+  <revisionDesc>
+   <change><date>12 December 2019</date>
+    <persName>Odd Einar Haugen</persName>: Defined this appendix as belonging to v. 3.0 of the 
+    handbook (12 December 2019)</change>
+   <change>
+    <date>5 December 2019</date>
+    <persName>Odd Einar Haugen</persName>: (1) Reorganised the tables throughout in double rows
+    so as to make the long lines and URIs in many of the celles displayable, and made a number of minor changes;
+    (2) Introduced another example in the section now called “West Norse works (prose: post-1540, poetry: post-1380)”,
+    as suggested by <persName>Tarrin Wills</persName>.</change>
+   <change>
+    <date>24 September 2019</date>
+    <persName>Tarrin Wills</persName>: Minor corrections based on changes to ONP site. </change>
+   <change>
+    <date>19 October 2017</date>
+    <persName>Tarrin Wills</persName>: Minor corrections </change>
+   <change>
+    <date>4 September 2017</date>
+    <persName>Tarrin Wills</persName>: First complete version. </change>
+   <change>
+    <date>27 July 2017</date>
+    <persName>Tarrin Wills</persName>: Additions from draft document. </change>
+  </revisionDesc>
+ </teiHeader>
+ <text xml:lang="en">
+  <body>
+   <head>Appendix G: Linking to external resources</head>
+   <p>Version 3.0 (12 December 2019)</p>
+   <p>by Tarrin Wills</p>
+   <div>
+    <head xml:id="secG.1">G.1 Authorities referenced by URN</head>
+
+    <table>
+     <row role="label">
+      <cell rend="width20">Authority</cell>
+      <cell rend="width40">Name</cell>
+      <cell rend="width40">Source</cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">dsn</hi>: </cell>
+      <cell>Danmarks stednavne </cell>
+      <cell><ref target="http://danmarksstednavne.navneforskning.ku.dk">danmarksstednavne.navneforskning.ku.dk</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">fsvldb</hi>: </cell>
+      <cell>Fornsvensk lexikalisk databas </cell>
+      <cell><ref target="https://spraakbanken.gu.se/fsvldb/">spraakbanken.gu.se/fsvldb</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">gdo</hi>: </cell>
+      <cell>Gammeldansk ordbog </cell>
+      <cell><ref target="http://gammeldanskordbog.dk">gammeldanskordbog.dk</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">handrit</hi>: </cell>
+      <cell>Handrit.is</cell>
+      <cell><ref target="http://handrit.is">handrit.is</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">kartverket</hi>: </cell>
+      <cell>Kartverket (Norge) </cell>
+      <cell><ref target="http://www.kartverket.no">kartverket.no</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">lanl</hi>: </cell>
+      <cell>Simek and Pálsson, Lexicon der altnordisches Literatur (2007)</cell>
+      <cell/>
+     </row>
+     <row>
+      <cell><hi rend="bold">lm</hi>: </cell>
+      <cell>Lantmäteriet </cell>
+      <cell><ref target="http://lantmateriet.se">lantmateriet.se</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">lmi</hi>: </cell>
+      <cell>Landmælingar Íslands </cell>
+      <cell><ref target="http://lmi.is">lmi.is</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">ngn</hi>: </cell>
+      <cell>Norske Gaardnavne </cell>
+      <cell><ref target="http://www.dokpro.uio.no/rygh_ng/rygh_felt.html">dokpro.uio.no/rygh_ng/rygh_felt.html</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">onp</hi>: </cell>
+      <cell>Ordbog over det norrøne prosasprog </cell>
+      <cell><ref target="https://onp.ku.dk">onp.ku.dk</ref></cell>
+     </row>
+     <row>
+      <cell><hi rend="bold">sbi</hi>: </cell>
+      <cell>Scandinavian Biographical Index</cell>
+      <cell/>
+     </row>
+     <row>
+      <cell><hi rend="bold">sdfe</hi>: </cell>
+      <cell>Place-names (Stednavne) from Styrelsen for Dataforsyning og Effektivisering </cell>
+      <cell><ref target="https://download.kortforsyningen.dk/content/stednavne">download.kortforsyningen.dk/content/stednavne</ref></cell>
+     </row>
+    </table>
+   </div>
+    <div>
+     <head xml:id="secG.2">G.2 Reference types</head>
+
+     <list>
+      <item><hi rend="bold">event</hi>: a sequence of related actions at a particular time and
+       place</item>
+      <item><hi rend="bold">lemma</hi>: headword form of a word</item>
+      <item><hi rend="bold">ms</hi>: manuscript, charter or other unique text-bearing object </item>
+      <item><hi rend="bold">person</hi>: a human being generally believed to live or have
+       lived</item>
+      <item><hi rend="bold">place</hi>: a named location such as a settlement or geographical
+      feature</item>
+      <item><hi rend="bold">thing</hi>: a reference to something not belonging to the other
+      categories, such as a mythological being or object, or a fictional person </item>
+      <item><hi rend="bold">work</hi>: a textual work such as a saga, poem or learned text</item>
+     </list>
+    </div>
+       
+    <div>
+     <head xml:id="secG.3">G.3 List of non-URL URI formats used</head>
+     
+     <p><hi rend="bold">Books published since c. 1970</hi></p>
+     
+     <table>
+      <row role="label">
+       <cell rend="width10">Type</cell>
+       <cell rend="width20">Authority</cell>
+       <cell rend="width40">Key format</cell>
+       <cell rend="width30">Fragment format (#)</cell>
+      </row>
+      <row>
+       <cell>urn</cell>
+       <cell>isbn</cell>
+       <cell>integer (ISBN number)</cell>
+       <cell>volume, page</cell>
+      </row>
+     </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width50">Thing referenced</cell>
+       <cell rend="width20">Source</cell>
+      </row>
+      <row>
+       <cell>urn:isbn:8270992615</cell>
+       <cell>Krömmelbein, T. Dritte grammatische Abhandlung 1998</cell>
+       <cell></cell>
+      </row>
+     </table>
+     
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Serials published since c. 1976 (including older volumes in the same journal)</hi></p>
+     
+     <table>
+      <row role="label">
+       <cell rend="width10">Type</cell>
+       <cell rend="width20">Authority</cell>
+       <cell rend="width40">Key format</cell>
+       <cell rend="width30">Fragment format (#)</cell>
+      </row>
+      <row>
+       <cell>urn</cell>
+       <cell>issn</cell>
+       <cell>integer (ISSN number)</cell>
+       <cell>volume, issue, page</cell>
+      </row>
+     </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width40">Example</cell>
+       <cell rend="width40">Thing referenced</cell>
+       <cell rend="width20">Source</cell>
+      </row>
+      <row>
+       <cell>urn:issn:03059219</cell>
+       <cell>Saga-Book of the Viking Society</cell>
+       <cell> </cell>
+      </row>
+     </table>
+     
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Electronic published research</hi></p>
+     
+     <table>
+      <row role="label">
+       <cell rend="width10">Type</cell>
+       <cell rend="width20">Authority</cell>
+       <cell rend="width40">Key format</cell>
+       <cell rend="width30">Fragment format (#)</cell>
+      </row>
+      <row>
+       <cell>doi</cell>
+       <cell> </cell>
+       <cell>doi address</cell>
+       <cell>page</cell>
+      </row>
+     </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width20">Example</cell>
+       <cell rend="width50">Thing referenced</cell>
+       <cell rend="width30">Source</cell>
+      </row>
+      <row>
+       <cell>doi:10.1093/llc/fqt045</cell>
+       <cell>Wills, ‘Relational Data Modelling of Textual Corpora’ 2013</cell>
+       <cell><ref target="https://doi.org/10.1093/llc/fqt045">doi.org/10.1093/llc/fqt045</ref></cell>
+      </row>
+     </table>
+     
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Headwords — West Norse</hi></p>
+     
+     <table>
+      <row role="label">
+       <cell rend="width20">Type</cell>
+       <cell rend="width10">Authority</cell>
+       <cell rend="width50">Key format</cell>
+       <cell rend="width20">Fragment format (#)</cell>
+      </row>
+      <row>
+       <cell>menota: lemma</cell>
+       <cell>onp</cell>
+       <cell>integer (ONP database key from O_LEMMA table)</cell>
+       <cell> </cell>
+      </row>
+     </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width20">Thing referenced</cell>
+       <cell rend="width50">Source</cell>
+      </row>
+      <row>
+       <cell>menota:lemma:onp:22938</cell>
+       <cell><hi rend="italic">forskáli</hi>, sb.</cell>
+       <cell><ref target="http://onpweb.nfi.sc.ku.dk/webart/f/fo/22938ckron.htm">onpweb.nfi.sc.ku.dk/webart/f/fo/22938ckron.htm</ref></cell>
+      </row>
+     </table>
+     
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Headwords — Old Danish</hi></p>    
+     
+   <table>
+    <row role="label">
+     <cell rend="width20">Type</cell>
+     <cell rend="width10">Authority</cell>
+     <cell rend="width50">Key format</cell>
+     <cell rend="width20">Fragment format (#)</cell>
+    </row>
+      <row>
+       <cell>menota: lemma</cell>
+       <cell>gdo</cell>
+       <cell>string[,integer]
+        (headword and optional homograph number from URL)</cell>
+       <cell> </cell>
+      </row>
+   </table>
+     
+   <table>
+    <row role="label">
+     <cell rend="width30">Example</cell>
+     <cell rend="width20">Thing referenced</cell>
+     <cell rend="width50">Source</cell>
+    </row>
+    <row>
+       <cell>menota:lemma:gdo:skin,2</cell>
+     <cell><hi rend="italic">skin</hi>, sb. for mod. Dan. ‘skin’ (not mod. ‘skind’)</cell>
+       <cell><ref target="http://gammeldanskordbog.dk/ordbog?aselect=skin,2&amp;query=%25">gammeldanskordbog.dk/ordbog?aselect=skin,2&amp;query=%25</ref></cell>
+      </row>
+   </table>
+    
+    <p>&nbsp;</p>
+    
+    <p><hi rend="bold">Headwords — Old Swedish</hi></p>    
+    
+    <table>
+     <row role="label">
+      <cell rend="width20">Type</cell>
+      <cell rend="width20">Authority</cell>
+      <cell rend="width40">Key format</cell>
+      <cell rend="width20">Fragment format (#)</cell>
+     </row>
+      <row>
+       <cell>menota: lemma</cell>
+       <cell>fsvldb (Fornsvensk lexikalisk databas)</cell>
+       <cell>string[,class[,integer]]
+        (headword + optional word class + optional homograph number
+        based on order of results from web search)</cell>
+       <cell> </cell>
+      </row>
+    </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width40">Thing referenced</cell>
+       <cell rend="width30">Source</cell>
+      </row>
+       <row>
+       <cell>menota:lemma:fsld:forskilia menota:lemma:skin,n,2</cell>
+        <cell><hi rend="italic">forskilia</hi>, vb.; <hi rend="italic">skin</hi>, sb. for ‘skin’</cell>
+       <cell><ref target="https://spraakbanken.gu.se/fsvldb/">spraakbanken.gu.se/fsvldb/</ref></cell>
+      </row>
+     </table>
+   
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Manuscripts</hi></p>     
+     
+    <table>
+     <row role="label">
+      <cell rend="width20">Type</cell>
+      <cell rend="width10">Authority</cell>
+      <cell rend="width40">Key format</cell>
+      <cell rend="width30">Fragment format (#)</cell>
+     </row>
+      <row>
+       <cell>menota: ms</cell>
+       <cell>handrit</cell>
+       <cell>xml:id (from last part of URL)</cell>
+       <cell> </cell>
+      </row>
+    </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width20">Thing referenced</cell>
+       <cell rend="width50">Source</cell>
+      </row>
+      <row>
+       <cell>menota:ms:handrit:JS04-0041</cell>
+       <cell>JS 41 4to</cell>
+       <cell><ref target="https://handrit.is/da/manuscript/view/is/JS04-0041">handrit.is/da/manuscript/view/is/JS04-0041</ref>
+       </cell>
+      </row>
+     </table>
+        
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Manuscripts</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: ms</cell>
+       <cell>onp</cell>
+       <cell>integer (ONP database key from ALREG table)</cell>
+       <cell> </cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width20">Thing referenced</cell>
+       <cell rend="width50">Source</cell>
+      </row>
+      <row>
+       <cell> menota:ms:onp:8330</cell>
+       <cell>AM 173 d A 10 4°</cell>
+       <cell><ref target="http://skaldic.abdn.ac.uk/m.php?p=onpms&amp;i=8330">skaldic.abdn.ac.uk/m.php?p=onpms&amp;i=8330</ref></cell>
+      </row>
+ </table>
+ 
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Manuscripts</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: ms</cell>
+       <cell>onp</cell>
+       <cell>string (ONP ms. siglum)</cell>
+       <cell> </cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width40">Example</cell>
+       <cell rend="width20">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:ms:onp:AM%20173%20d%20A%2010%204</cell>
+       <cell>AM 173 d A 10 4°</cell>
+       <cell><ref target="http://skaldic.abdn.ac.uk/m.php?p=onpms&amp;i=8330">skaldic.abdn.ac.uk/m.php?p=onpms&amp;i=8330</ref></cell>
+      </row>
+     </table>
+
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Manuscripts</hi></p>     
+         
+    <table>
+     <row role="label">
+      <cell rend="width20">Type</cell>
+      <cell rend="width10">Authority</cell>
+      <cell rend="width40">Key format</cell>
+      <cell rend="width30">Fragment format (#)</cell>
+     </row>
+      <row>
+       <cell>menota: ms</cell>
+       <cell>fasnl</cell>
+       <cell>xml:id</cell>
+       <cell> </cell>
+      </row>
+    </table>
+     
+     <table>
+      <row role="label">
+      <cell rend="width30">Example</cell>
+      <cell rend="width40">Thing referenced</cell>
+      <cell rend="width30">Source</cell>
+     </row>
+      <row>
+       <cell>TBA</cell>
+       <cell>TBA</cell>
+       <cell> </cell>
+      </row>
+     </table>
+ 
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">West Norse works (prose before 1540)</hi></p>     
+     
+   <table>
+    <row role="label">
+     <cell rend="width20">Type</cell>
+     <cell rend="width10">Authority</cell>
+     <cell rend="width40">Key format</cell>
+     <cell rend="width30">Fragment format (#)</cell>
+    </row>
+      <row>
+       <cell>menota: work</cell>
+       <cell>onp</cell>
+       <cell>integer (ONP’s database key, from URL, ultimately from VKTITEL table)</cell>
+       <cell>chapter (using numbering of main ed.)</cell>
+      </row>
+   </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>  
+       <cell>menota:work:onp:109#chapter=60 </cell>
+       <cell>Egils saga Skalla-Grímssonar</cell>
+       <cell><ref target="http://onpweb.nfi.sc.ku.dk/vk/vk109.htm">onpweb.nfi.sc.ku.dk/vk/vk109.htm</ref></cell>
+      </row>
+     </table>
+       
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">West Norse works (prose after 1540, poetry after 1380)</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: work</cell>
+       <cell>handrit</cell>
+       <cell>string (Handrit.is’s most frequent ‘uniform’ title)</cell>
+       <cell>chapter, section/stanza (using numbering of main ed.)</cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:work:handrit:Hrómundar+
+        rímur+Gripssonar</cell>
+       <cell>Hrómundar rímur Gripssonar</cell>
+       <cell><ref target="https://handrit.is/en/manuscript/list/uniform?v=Hrómundar+rímur+Gripssonar">https://handrit.is/en/manuscript/list/uniform?v=Hrómundar+rímur+Gripssonar
+       </ref></cell>
+      </row>
+     </table>
+      
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Other Norse works</hi></p>     
+
+<table>
+ <row role="label">
+  <cell rend="width20">Type</cell>
+  <cell rend="width10">Authority</cell>
+  <cell rend="width40">Key format</cell>
+  <cell rend="width30">Fragment format (#)</cell>
+ </row>
+      <row>
+       <cell>menota: work</cell>
+       <cell>lanl</cell>
+       <cell>string (the Lexion’s bold headword)</cell>
+       <cell/>
+      </row>
+</table>
+     
+     <table>
+       <row role="label">
+        <cell rend="width30">Example</cell>
+        <cell rend="width20">Thing referenced</cell>
+        <cell rend="width50">Source</cell>
+       </row>
+      <row>
+       <cell>menota:work:lanl:Hrómundar%20
+        saga%20Gripssonar</cell>
+       <cell>Hrómundar saga Gripssonar</cell>
+       <cell>Simek and Pálsson, Lexicon der altnordisches Literatur (2007)</cell>
+      </row>      
+     </table> 
+   
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Old Danish works</hi></p>     
+     
+<table>
+ <row role="label">
+  <cell rend="width20">Type</cell>
+  <cell rend="width10">Authority</cell>
+  <cell rend="width30">Key format</cell>
+  <cell rend="width40">Fragment format (#)</cell>
+ </row>
+      <row>
+       <cell>menota: work</cell>
+       <cell>gdo</cell>
+       <cell>integer (GDO’s hard-to-find key)</cell>
+       <cell>chapter (using numbering of main edition)</cell>
+      </row>
+</table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width20">Thing referenced</cell>
+       <cell rend="width50">Source</cell>
+      </row>
+      <row>
+       <cell>menota:work:gdo:251</cell>
+       <cell>DiplDan</cell>
+       <cell><ref target="http://gammeldanskseddelsamling.dk/forside/kilde?id=251">gammeldanskseddelsamling.dk/forside/kilde?id=251</ref></cell>
+      </row>
+     </table>
+    
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">People</hi></p>     
+     
+<table>
+ <row role="label">
+  <cell rend="width20">Type</cell>
+  <cell rend="width10">Authority</cell>
+  <cell rend="width40">Key format</cell>
+  <cell rend="width30">Fragment format (#)</cell>
+ </row>
+      <row>
+       <cell>menota: person</cell>
+       <cell>sbi</cell>
+       <cell>string (full bolded entry head)</cell>
+       <cell> </cell>
+      </row>
+</table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width40">Thing referenced</cell>
+       <cell rend="width30">Source</cell>
+      </row>
+      <row>
+       <cell>menota:person:sbi:Snorri%20Sturluson</cell>
+       <cell>Scandinavian Biographical Index</cell>
+       <cell>(there is no electronic way of referencing entries in this resource)</cell>
+      </row>
+     </table>
+      
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">People</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: person</cell>
+       <cell>handrit</cell>
+       <cell>string (handrit’s letter+number siglum, from URL)</cell>
+       <cell> </cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:person:handrit:SnoStu001</cell>
+       <cell>Snorri Sturluson</cell>
+       <cell><ref target="https://handrit.is/da/biography/view/SnoStu001">handrit.is/da/biography/view/SnoStu001</ref></cell>
+      </row>
+     </table>
+
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Danish place names (current)</hi></p>     
+     
+<table>
+ <row role="label">
+  <cell rend="width20">Type</cell>
+  <cell rend="width10">Authority</cell>
+  <cell rend="width40">Key format</cell>
+  <cell rend="width30">Fragment format (#)</cell>
+ </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>sdfe</cell>
+       <cell>integer (FEAT_ID value in shape file)</cell>
+       <cell> </cell>
+      </row>
+</table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:sdfe:159733</cell>
+       <cell>Gammel Lejre / Hleiðagarðr</cell>
+       <cell><ref target="https://download.kortforsyningen.dk/content/stednavne">download.kortforsyningen.dk/content/stednavne</ref></cell>
+      </row>
+     </table>
+     
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Danish place names (historical)</hi></p>     
+
+<table>
+ <row role="label">
+  <cell rend="width20">Type</cell>
+  <cell rend="width10">Authority</cell>
+  <cell rend="width40">Key format</cell>
+  <cell rend="width30">Fragment format (#)</cell>
+ </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>dsn</cell>
+       <cell>integer (first column in exported Excel file)</cell>
+       <cell> </cell>
+      </row>
+</table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:dsn:167334</cell>
+       <cell>Gammel Lejre / Hleiðagarðr</cell>
+       <cell><ref target="http://danmarksstednavne.navneforskning.ku.dk">danmarksstednavne.navneforskning.ku.dk</ref>
+       </cell>
+      </row>
+     </table>
+      
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Icelandic place names (current)</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>lmi</cell>
+       <cell>integer (NAMEID value in shape file)</cell>
+       <cell> </cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width40">Thing referenced</cell>
+       <cell rend="width30">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:lmi:18513</cell>
+       <cell>Helgafell (Fjall), Helgafellssveit</cell>
+       <cell><ref target="http://atlas.lmi.is/LmiData/index.php">atlas.lmi.is/LmiData/</ref></cell>
+      </row>
+     </table>
+ 
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Norwegian place names (current)</hi></p>     
+     
+ <table>
+  <row role="label">
+   <cell rend="width20">Type</cell>
+   <cell rend="width10">Authority</cell>
+   <cell rend="width40">Key format</cell>
+   <cell rend="width30">Fragment format (#)</cell>
+  </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>kartverket</cell>
+       <cell>integer (Stednummer)</cell>
+       <cell> </cell>
+      </row>
+ </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width40">Thing referenced</cell>
+       <cell rend="width30">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:kartverket:558690</cell>
+       <cell>Trondheim / Niðaróss</cell>
+       <cell><ref target="http://www.norgeskart.no">norgeskart.no</ref></cell>
+      </row>
+     </table>
+  
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Norwegian place names (historical)</hi></p>     
+ 
+  <table>
+   <row role="label">
+    <cell rend="width20">Type</cell>
+    <cell rend="width10">Authority</cell>
+    <cell rend="width40">Key format</cell>
+    <cell rend="width30">Fragment format (#)</cell>
+   </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>ngn</cell>
+       <cell>Gårdsnr, Sogn, Herred, Amt</cell>
+       <cell> </cell>
+      </row>
+  </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:ngn:70,
+        Røken,Røken,Buskeruds%20amt</cell>
+       <cell>Auvi søndre, Røken sn., Buskerud</cell>
+       <cell><ref target="http://www.dokpro.uio.no/rygh_ng/rygh_felt.html">www.dokpro.uio.no/rygh_ng/rygh_felt.html</ref></cell>
+      </row>
+  </table>
+ 
+     <p>&nbsp;</p>
+     
+     <p><hi rend="bold">Swedish place names (current)</hi></p>     
+     
+    <table>
+     <row role="label">
+      <cell rend="width20">Type</cell>
+      <cell rend="width10">Authority</cell>
+      <cell rend="width50">Key format</cell>
+      <cell rend="width20">Fragment format (#)</cell>
+     </row>
+      <row>
+       <cell>menota: place</cell>
+       <cell>lm</cell>
+       <cell>Namn, Kommun,  Län, Namntyp (only if unambiguous)</cell>
+       <cell> </cell>
+      </row>
+    </table>
+     
+     <table>
+      <row role="label">
+       <cell rend="width30">Example</cell>
+       <cell rend="width30">Thing referenced</cell>
+       <cell rend="width40">Source</cell>
+      </row>
+      <row>
+       <cell>menota:place:lm:Torsbro,
+        Uppsala,Uppsala,Bebyggelse</cell>
+       <cell>Torsbro, Uppland</cell>
+       <cell><ref target="https://kso.etjanster.lantmateriet.se">kso.etjanster.lantmateriet.se</ref></cell>
+      </row>
+     </table>
+        
+     <p>&nbsp;</p>
+     
+   </div>
+  </body>
+ </text>
+</TEI>

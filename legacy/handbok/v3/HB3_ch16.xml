@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+         	<title>Menota handbook ch. 16 (v. 3.0): Overlapping structures</title>
+           <editor>
+             <name>Odd Einar Haugen</name>
+           </editor>
+           <respStmt>
+             <resp>Written by</resp>
+             <name>Andreas Witt</name>
+           </respStmt>
+           <respStmt>
+             <resp>Written by</resp>
+             <name>Beeke Stegmann</name>
+           </respStmt>
+           <respStmt>
+             <resp>Written by</resp>
+             <name>Robert K. Paulsen</name>
+           </respStmt>
+           <respStmt>
+             <resp>Written and edited by</resp>
+             <name>Odd Einar Haugen</name>
+           </respStmt>
+         </titleStmt>
+        <publicationStmt>
+          <p>Published in the web at <ref target="http://www.menota.org/"
+            >http://www.menota.org/</ref>/</p>
+        </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Composed from the XML files of Menota handbook v. 2.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>June 2006</date> for the main part with additional editing <date>July 2019</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+        <change><date>12 December 2019</date>
+          <persName>Odd Einar Haugen</persName>: Defined this chapter as belonging to v. 3.0 of the 
+          handbook (12 December 2019)</change>
+        <change><date>6 December 2019</date>
+          <persName>Odd Einar Haugen</persName>: Various consistency changes
+        </change>
+        <change><date>5 December 2019</date>
+          <persName>Odd Einar Haugen</persName>: Revised the indentation in some of the egXML sections, 
+          and edited three of them to make the structure clearer; replaced Obl by Obligatory and Fac by Optional; added full stops at the end of cells in the tables, and upper-case letters in the first word of the same cells, corrected illegal encoding in egXML sections
+        </change>
+        <change><date>3 December 2019</date>
+          <persName>Odd Einar Haugen</persName>: Updated the captions with an initial description about what the image is intended to illustrate
+        </change>
+        <change><date>23 November 2019</date>
+          <persName>Odd Einar Haugen</persName>: Removed the line on damage in the table in 16.2, since this is covered by the gap element
+        </change>
+        <change><date>13 October 2019</date>
+          <persName>Odd Einar Haugen</persName>: Made some corrections suggested by <persName>Patrick Farrugia</persName>; inserted the “quote” element for examples that should have indentation
+        </change>
+        <change><date>28 September 2019</date>
+          <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, as recommended 
+          by <persName>Marco Bianchi</persName>; reorganised the tables with the new “table rend="xml-tables"” attribute; removed old 
+          comments in <!-- ... -->;
+        </change>
+        <change>
+          <date>15 September 2019</date>
+          <persName>Odd Einar Haugen</persName>: Made a number of changes suggested by Beeke Stegmann
+        </change>
+        <change>
+          <date>7 August 2019</date>
+          <persName>Odd Einar Haugen</persName>: Proofread the whole chapter and added the names of additional authors
+        </change>       
+        <change>
+        <date>5 August 2019</date>
+        <persName>Odd Einar Haugen</persName>: Added a short discussion of dialogue
+        </change>
+        <change>
+          <date>27 July 2019</date>
+          <persName>Odd Einar Haugen</persName>: Moved the discussion of headings from ch. 3.9 to a new subchapter 16.3, so that only the simplest cases are discussed in 3.9. 
+        </change>
+         <change>
+            <date>9 July 2019</date>
+            <persName>Odd Einar Haugen</persName>: Moved ch. 3.9 (primarily written by Andreas Witt) into this chapter and made it 16.2; wrote a new chapter 16.3; wrote the short introduction 16.1 with parts from the previous 3.9
+         </change>
+         
+      </revisionDesc>
+      
+   </teiHeader>
+   <text xml:lang="en">
+      <body>
+	<head>Ch. 16. Dealing with overlapping structures</head>
+
+        <p>Version 3.0 (12 December 2019)</p>
+         <p>by Andreas Witt, Beeke Stegmann, Robert Paulsen and Odd Einar Haugen</p>
+
+<div>
+<head xml:id="sec16.1">16.1 Introduction</head>
+   <p>There are no simple ways of encoding overlapping structures in XML, since XML is a strict tree structure in which every element must be part of a single “parent” element. For example, a word or sentence may be written over two manuscript pages. If we represent the manuscript page as an element, the words will not belong to a single page and a parser error will occur.</p>
+  <p>This problem is dealt with in <ref target="HB3_ch3.xml#sec3.12">ch. 3.12</ref> by using empty elements to represent page beginnings in the manuscript, rather than a page of text. The same is true for columns and lines, where words, sentences and paragraphs routinely overlap with the physical features of the manuscript. These elements, <gi>pb/</gi>, <gi>cb/</gi> and <gi>lb/</gi>, are empty in the sense that they are inserted at a specific point in the structure without any extension. For this reason, they are often referred to as milestones. Note the position of the slash in these elements.</p>
+   <p>In many cases, the combination of ordinary, hierarchical elements such as <gi>div</gi>, <gi>s</gi>, <gi>w</gi>, <gi>pc</gi> with the milestones exemplified here give the encoder sufficient flexibility. It is thus possible to represent in XML a text which from the point of view of its contents is divided into chapters, sentences, words and punctuation marks, and from the point of view of its embodiment in a physical document divided into pages, columns and lines. This way, the same text can easily be compared between two or more manuscripts of different length and size, as long as the division into chapters etc. is the same.</p>
+  <p>There are, however, cases where this solution does not work. This is a recognised problem in XML encoding, and it is dealt with at some length in the TEI P5 Guidelines, <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html" type="external">ch. 20</ref>.</p>
+  <p>In this chapter, we offer a similar overview and discussion in <ref target="#sec16.2">ch. 16.2</ref> below (by Andreas Witt). In the following subchapters, we discuss two particular cases, discontinuous headings in <ref target="#sec16.3">ch. 16.3</ref> (by Beeke Stegmann and Robert Paulsen) and dialogue across hierarchical borders in <ref target="#sec16.4">ch. 16.4</ref>. Finally, in <ref target="#sec16.5">ch. 16.5</ref> we broach the question of how to render certain text critical signs (the two latter subchapters by Odd Einar Haugen).</p>
+</div>
+         
+<div>
+            <head xml:id="sec16.2">16.2 Spanning and linking encoding</head>         
+  <p>In the TEI P5 Guidelines, <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html">ch. 11</ref>, the elements <gi>addSpan/</gi>, <gi>delSpan/</gi> and <gi>damageSpan/</gi> are defined. These elements are counterparts to the elements <gi>add</gi>, <gi>del</gi> and <gi>damage</gi>, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. <gi>sic</gi>, <gi>corr</gi>, <gi>unclear</gi> and <gi>supplied</gi>, but there are no corresponding <gi>sicSpan</gi>, <gi>corrSpan</gi>, <gi>unclearSpan</gi> and <gi>suppliedSpan</gi>. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element <gi>me:textSpan/</gi> and given it attributes from the classes
+              <q>att.spanning</q>, <q>att.transcriptional</q>, <q>att.typed</q> and <q>att.global</q>, and the attribute <att>me:category</att>. <hi rend="bliue">Note that we in this table include the <gi>anchor</gi> element which is used to specify the end of a span. This is explained in <ref target="#sec16.2.2">ch. 16.2.2</ref> below.</hi></p>
+            
+              <table rend="xml-elements">
+                <row role="label">
+                  <cell rend="width20">Elements &amp; attributes</cell>
+                  <cell rend="width80">Explanation</cell>
+                </row>
+               <row>
+                  <cell><gi>me:textSpan/</gi></cell>
+                  <cell>A generic element to handle overlapping text structures.</cell>
+               </row>
+               <row>
+                  <cell><att>me:category</att></cell>
+                  <cell>Specifies the type of span, restricted to this list of values:</cell>
+               </row>
+               <row>
+                  <cell><val>gap</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>gap/</gi> element, cf. <ref target="HB3_ch8.xml">ch. 8</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>unclear</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>unclear</gi> element, cf. <ref target="HB3_ch8.xml">ch. 8</ref>.</cell>
+               </row>              
+               <row>
+                  <cell><val>add</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>add</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>del</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>del</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>sic</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>sic</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>corr</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>corr</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>surplus</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>surplus</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>              
+               <row>
+                  <cell><val>supplied</val></cell>
+                  <cell>For contents that would otherwise be contained by the <gi>supplied</gi> element, cf. <ref target="HB3_ch9.xml">ch. 9</ref>.</cell>
+               </row>
+               <row>
+                  <cell><val>other</val></cell>
+                  <cell>For any other contents.</cell>
+               </row>
+               <row>
+                  <cell><att>spanTo</att></cell>
+                  <cell>Specifies the end point of the text span, using values like:</cell>
+               </row>
+               <row>
+                  <cell><val>an1</val></cell>
+                  <cell>anchor 1</cell>
+               </row>
+               <row>
+                  <cell><val>an2</val></cell>
+                  <cell>anchor 2, etc.</cell>
+               </row>
+               <row>
+                  <cell><gi>anchor/</gi></cell>
+                  <cell>An empty element (milestone) which attaches an identifier to a point within a text.</cell>
+               </row>
+               <row>
+                  <cell><att>xml:id</att></cell>
+                  <cell>Specifies the identifier corresponding to the one used in the <att>spanTo</att> attribute of the preceding <gi>me:textSpan/</gi> element, using values like:</cell>
+               </row>
+               <row>
+                  <cell><val>an1</val></cell>
+                  <cell>anchor 1</cell>
+               </row>
+               <row>
+                  <cell><val>an2</val></cell>
+                  <cell>anchor 2, etc.</cell>
+               </row>
+            </table>
+            
+            
+            <p>We will discuss an example of an overlapping structure in AM 673 b 4to (<hi
+               rend="italic">Plácitusdrápa</hi> 1), as seen in ill. 16.1.</p>
+             
+            <p>
+               <figure rend="width60 clearboth">
+                  <graphic url="ch16/AM-673-b-4to-1r,1-4.jpg" />
+               </figure></p>
+            
+  <p rend="caption"><hi rend="bold">Ill. 16.1</hi>. Overlapping in supplied text. <title>Plácitusdrápa</title>. AM 673 b 4to, f. 1r, l. 1–4.</p>
+            
+            <p>The first three lines read approximately:</p>
+            
+            <quote>genget fiornes ualdr [quaþ........fr]egr nu | mun er lægiasc miuks scalldu manra[un sli] | ca morlin<hi rend="italic">s</hi> boþe fi<hi rend="italic">n</hi>na uestu i frægre f[rest] </quote>
+            
+  <p>The letters in brackets were read by earlier editors, especially Finnur Jónsson in 1889. For this section, we will discuss the text at the end of the second line and at the start of the third. It is clear that part of each word is missing, but the damaged manuscript forms a single feature. Text can be supplied from Finnur Jónsson’s transcription, but we want to represent the illegible text as a single feature, even if it overlaps with the middle of the two words. Note that in accordance with <ref target="HB3_ch8.xml#sec8.4">ch. 8.4</ref> above, we do not encode the illegible characters with the <gi>gap/</gi> element, since there is no physical hole or the like in the parchment, but rather with the <gi>unclear</gi> element. Since the characters are illegible, they are rendered by the dotted circle. The simple encoding would be:</p>
+            
+  <egXML><![CDATA[<w>manra<unclear>◌◌</unclear></w>
+<w><unclear>◌◌</unclear><lb ed="ms" n="3"/>ca</w>]]></egXML>
+            
+            <p>If the supplied text were encoded in the conventional way, the following would produce an error:</p>
+            
+            <egXML><![CDATA[<!-- WRONG: -->
+<w>manra<supplied resp="FJ">aun</w>
+<!-- the processor stops here because this is not well-formed XML --> 
+<w>sli</supplied><lb ed="ms" n="3"/>ca</w>]]></egXML>
+            
+  <p>The <gi>supplied</gi> element, if used in its conventional way, would overlap with the <gi>w</gi> elements, meaning that the <gi>w</gi> element would close before an element inside it had closed. That would stop an XML processor from proceeding any further with the document.</p>
+            
+            <p>In these guidelines, we offer two solutions to the problem of overlapping structures. The first is more complex, but more robust. The second is simpler, but is less machine-readable and may affect the validation of the document structure in other respects. Even so, we recommend the latter solution.</p>
+            
+            <div>
+               
+               
+               <head xml:id="sec16.2.1">16.2.1 Linked segments</head>
+               
+               <p>The following approach is more sound from the point of view of an XML document, but creates extra tagging. The feature is encoded in a series of separate elements, linked together.</p>
+               
+               <p>In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the <att>xml:id</att> attribute, and they are linked together using the following attributes:</p>
+               
+              <table rend="xml-elements">
+                <row role="label">
+                  <cell rend="width20">Attributes</cell>
+                  <cell rend="width80">Contents</cell>
+                </row>
+                  <row>
+                     <cell><att>xml:id</att></cell>
+                     <cell>Provides a unique identifier for the element bearing the attribute.</cell>
+                  </row>
+                  <row>
+                     <cell><att>next</att></cell>
+                     <cell>Used at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature.</cell>
+                  </row>
+                  <row>
+                     <cell><att>prev</att></cell>
+                     <cell>Used in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature.</cell>
+                  </row>
+              </table>
+               
+               <p>The two-word example above is encoded thus:</p>
+               
+<egXML><![CDATA[<w>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+    </supplied></w>
+  <w><supplied xml:id="sup1.2" prev="sup1.1">ſli</supplied>
+    <lb ed="ms" n="3"/>ca</w>
+]]></egXML>
+               
+              <p>Adding all three textual levels, including the unclear text encoded at the facs level, we would have:</p>
+               
+               <egXML><![CDATA[<w>
+  <choice>
+    <me:facs>man<unclear xml:id="unc1.1" next="unc1.2">
+      ◌◌◌◌◌◌◌◌</unclear></me:facs>
+    <me:dipl>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+      </supplied></me:dipl>
+    <me:norm>manraun</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear xml:id="unc1.2" prev="unc1.1">ſli</unclear>
+      <lb ed="ms" n="3"/>ca</me:facs>
+    <me:dipl><supplied xml:id="sup1.2" prev="sup1.1">ſli</supplied>
+      <lb ed="ms" n="3"/>ca</me:dipl>
+    <me:norm>slí<lb ed="ms" n="3"/>ka</me:norm>
+  </choice>
+</w>]]></egXML>
+              
+              <p>For the combination of the <gi>unclear</gi> element on the facs level and the <gi>supplied </gi> element on the dipl and norm levels, please see the encoding of ill. 9.9 in <ref target="HB3_ch9.xml#sec9.3.1.1">ch. 9.3.1.1</ref>. Note that we have simplified the example above by leaving out the <att>reason</att> and <att>resp</att> attributes.</p>
+               
+               <p>It is recommended that the additional information for the feature (such as the editor responsible, type, etc.) be only included in the first element, but editors may wish to include the attributes in all elements.</p>
+               
+              <p>Note that the start of a feature is always marked by the element with the <att>next</att> attribute set, but not the <att>prev</att> attribute; and the end by the element of the same name with the <att>prev</att> attribute set but not the <att>next</att>.</p>
+               
+            </div>
+                        
+            <div>
+               <head xml:id="sec16.2.2">16.2.2 Boundary marking with empty elements</head>
+               
+              <p>Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in the TEI P5 Guidelines, <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">ch. 20</ref>, and will be applied here in a slightly modified version. As outlined above, we have introduced a generic element <gi>me:textSpan/</gi> which is specified by way of a <att>me:category</att> attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the <att>me:category</att> attribute:</p>
+               
+               <egXML><![CDATA[<me:textSpan me:category="supplied"/> ]]></egXML>
+               
+               <p>Thus, all instances of supplied text in the file will either be contained in <gi>supplied</gi> elements (in non-overlapping contexts) or in <gi>me:textSpan me:category="supplied"/</gi> elements (in overlapping contexts).</p>
+               <p>In addition to inserting the empty <gi>me:textSpan/</gi> element at the beginning of the textual span, an attribute <att>spanTo</att> is added with a suitable index, e.g.</p>
+               
+               <egXML><![CDATA[<me:textSpan me:category="supplied" spanTo="an1"/> ]]></egXML>
+               
+               <p>It now remains to mark the end of the span, i.e. the extent of the supplied text, with another empty element, the TEI <gi>anchor/</gi> element. This must be specified with an <att>xml:id</att> attribute having the same index as the <att>me:spanTo</att> attribute at the beginning of the span:</p>
+               
+               <egXML><![CDATA[<anchor xml:id="an1"/> ]]></egXML>
+               
+               <p>The full encoding will be like this:</p>
+               
+               <egXML><![CDATA[<w>man<me:textSpan me:category="supplied" spanTo="an1"/>raun</w>
+<w>ſli<anchor xml:id="an1"/><lb ed="ms" n="3"/>ca</w> ]]></egXML>
+               
+               <p>Note that the value of <att>xml:id</att> attribute must be unique within the whole document.</p>
+               
+               <p>There is no simple answer to the problem of non-hierarchical structures in XML encoding. However, we believe that using empty elements as boundary markers may prove to be the simplest and most general encoding, and it is therefore the solution we recommend. With either technique, only one method should be used in each document.</p>
+                             
+            </div>
+            
+         </div>
+
+
+<div>
+          <head xml:id="sec16.3">16.3 Discontinuous headings</head>
+          
+  <p>The element <gi>head</gi> is used for containing headings on all levels of the document. If the <gi>head</gi> element is used, it should be the first within its <gi>div</gi> element, preceding any <gi>p</gi> or <gi>lg</gi> elements. As stated in <ref target="HB3_ch3.xml#sec3.9">ch. 3.9</ref> above, there can only be one <gi>head</gi> element within a <gi>div</gi>.</p>
+  
+  <p>Unfortunately (at least from the point of view of the encoder), headings in many manuscripts are not located as a continuous stretch of text at the very beginning of the <gi>div</gi>, but they may be intercalated in the first line or at the end of several lines, including the previous <gi>div</gi> as well as the present. Below, we discuss two examples of discontinuous headings.</p>
+         
+          <p><figure rend="width75 clearboth">
+            <graphic url="ch16/HolmPerg-34-4to-10v,4-7.png" width="525" height="106"/>
+          </figure></p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 16.2</hi>. Continuous heading. <title>Landslǫg Magnúss Hákonarsonar</title>. Holm Perg 34 4to, f. 10v, l. 4–7.</p>
+          
+  <p>Ill. 16.2 is a straightforward example (which was introduced in <ref target="HB3_ch3.xml#sec3.9">ch. 3.9</ref> above). The only thing to note is that the first chapter ends in the middle of line 5 and the next chapter begins immediately afterwards. Encoding this, there would be two <gi>div</gi> elements, the first closing after the word “loglegare”, and the second opening right afterwards, starting with a <gi>head</gi> element, which encloses the red rubric. Note that the <gi>lb/</gi>element is only used once here, and that is to mark the beginning of the line, i.e. inside the first <gi>div</gi> element.</p>
+          
+  <egXML><![CDATA[<div>
+    . . .
+  <p> 
+    <lb ed="ms" n="4"/>ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna
+    <lb ed="ms" n="5"/>raðe litizt annat loglegare
+  </p>
+</div>
+<div>
+  <head>Um grið a frosta þingj Capitulus</head>
+    <p>
+      <lb ed="ms" n="6"/><c type="initial">A</c>ller þeir menn sem J frosto þings logum 
+        ok for ero skulu J griðum 
+      <lb ed="ms" n="7"/>vera hvær við annan þar til er þeir koma heim til sins hæimi
+    </p>
+    . . .
+</div>]]></egXML>
+          
+          <p>A suitable XSLT stylesheet will be able to display this piece of text according to its physical order,</p>
+          
+          <p rend="sample"> 3 ...............................<lb/> 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna<lb/> 5 raðe litizt annat loglegare <hi rend="red">Um grið a frosta þingj Capitulus</hi><lb/> 6 <hi rend="bold">A</hi>ller þeir menn sem J frosto þings logum ok for ero skulu J griðum<lb/> 7 vera hvær við annan þar til er þeir koma heim til sins hæimi<lb/> 8 .............................. <lb/>
+          </p>
+          
+          <p>as well as its logical structure, by displaying the rubric on a separate line, but otherwise in the same order as above:</p>
+          
+          <p rend="sample"> 3 ...............................<lb/> 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna<lb/> 5 raðe litizt annat loglegare<lb/> 5 <hi rend="red">Um grið a frosta þingj Capitulus</hi><lb/> 6 <hi rend="bold">A</hi>ller þeir menn sem J frosto þings logum ok for ero skulu J griðum<lb/> 7 vera hvær við annan þar til er þeir koma heim til sins hæimi<lb/> 8 .............................. <lb/>
+          </p>
+          
+          <p>Note that in the latter display, the line number 5 appears twice, since the last part of this line, the rubric, has been displayed on a separate line.</p>
+              
+          <p><figure rend="width75 clearboth">
+            <graphic url="ch16/AM-619-4to-47r,14-17.png" width="600" height="112"/>
+          </figure></p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 16.3</hi>. Dislocated heading. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 47r, l. 14–17.</p>
+          
+  <p>The chapter division between lines 15 and 16 in ill. 16.3 is not completely straightforward. The rubric in the second half of line 16 should be encoded as a <gi>head</gi> in the second <gi>div</gi> of the example. The complicating factor here is that we would like to encode (and be able to display) the fact that this rubric is located on the same line as the opening of the <gi>div</gi> which it is heading. In other words, if the manuscript is read line by line, the <gi>head</gi> is intercalated in the first sentence, “Salomon konungr gerðe fyrst || Rubric || mysteri guði...”. Our recommended encoding would be the following:</p>
+          
+          <egXML><![CDATA[<div>
+   . . .
+  <p> 
+    <lb ed="ms" n="14"/>ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir
+    <lb ed="ms" n="15"/>ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.
+  </p>
+</div>
+<div>
+  <head><lb ed="ms" n="16" rend="2"/>Jn dedicatione templi. sermo.</head>
+    <p>
+      <lb ed="ms" n="16" rend="1"/><c type="initial">S</c>alomon konungr gerðe fyrst 
+      <lb ed="ms" n="17"/>mysteri guði. ok bauð lyð ſinum at halda hotið þa er
+    </p>
+     . . .
+</div>]]></egXML>
+          
+          <p>In this encoding, the rubric is located correctly within the second <gi>div</gi> of the example, and the fact that it is physically located to the left of the beginning of the chapter text is indicated by the <att>rend</att> attribute to the <gi>lb/</gi> element. Since the first part of line 16 contains the beginning of the text in the second <gi>div</gi> and the second part of the line contains the rubric which logically precedes the text, both parts should be specified with a <gi>lb/</gi> element with attributes for line number, <val>n="16"</val>, and for their physical order, <val>rend="1"</val> and <val>rend="2"</val>. The <att>rend</att> attributes are needed to indicate that in spite of both parts being located on the same line, “Salomon konungr gerðe fyrst”, is rendered first and “In dedicatione templi. sermo.” is rendered second. These <att>rend</att> attributes were not needed in the previous example, since there was no conflict between the logical and physical order.</p>
+          <p>Note that the values for the <att>rend</att> attribute always begin with 1 and continue upwards, but usually not to a higher number than 3. Since our recommended encoding gives priority to the logical order of the text, the numbering of the <att>rend</att> attribute is needed to specify the physical order of the parts when there is a conflict between the logical and physical order &ndash; in this case that the <gi>head</gi> is located in the second part of line 16, not in the first part of the line, which one might expect from a logical point of view.</p>
+          <p>A suitable XSLT stylesheet will be able to display this piece of text according to its physical order:</p>
+          
+          <p rend="sample"> 13 ...............................<lb/> 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir<lb/> 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.<lb/> 16 <hi rend="bold">S</hi>alomon konungr gerðe fyrst <hi rend="red">Jn dedicatione templi. sermo.</hi><lb/> 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<lb/> 18 .............................. <lb/>
+          </p>
+          
+          <p>Alternatively, a suitable stylesheet will be able to display this piece of text according to its logical order:</p>
+          
+          <p rend="sample"> 13 ...............................<lb/> 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir<lb/> 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.<lb/> 15 <hi rend="red">Jn dedicatione templi. sermo.</hi><lb/> 16 <hi rend="bold">S</hi>alomon konungr gerðe fyrst<lb/> 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<lb/> 18 .............................. <lb/>
+          </p>
+            
+          <p><figure rend="width75 clearboth">
+            <graphic url="ch16/HolmPerg-34-4to-52r,2-5.png"/>
+          </figure></p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 16.4</hi>. Discontinuous and dislocated heading. <title>Landslǫg Magnúss Hákonarsonar</title>. Holm Perg 34 4to, fol. 52r, lines 2–5.</p>
+          
+          <p>The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the <att>rend</att> attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:</p>
+          
+          <egXML><![CDATA[<div>
+    . . .
+  <p> 
+    <lb ed="ms" n="2"/>nema suo sem aðr var sagt En ef meira høggr bøte markar
+    <lb ed="ms" n="3"/>spell ok landnam landz drottne nema hann lofe
+  </p>
+</div>
+<div>
+  <head><w>Um</w> <w>dugnad</w> <w>skips
+    <lb ed="ms" n="4" rend="2"/>brotz manna</w></head>
+    <p>
+      <lb ed="ms" n="4" rend="1"/><c type="initial">N</c>v þarf skip upp at setia skere
+        styri maðr <add>boð upp</add>
+      <lb ed="ms" n="5"/>suo viða at þeir verði full aflla til upp at setia ok vt 
+    </p>
+     . . .
+</div> ]]></egXML>
+          
+          <p>In this simplified example, the element <gi>w</gi> has only been used in the <gi>head</gi>, so as to illustrate the fact that the word “skips|brotzmanna” is divided over two lines. Since there is no hyphen in the manuscript, our recommended encoding of this particular word would be: </p>
+          
+          <egXML><![CDATA[<w>skips<lb ed="ms" n="4" rend="2"/>brotz manna</w>]]></egXML>
+          
+          <p>See <ref target="HB3_ch5.xml#sec5.5">ch. 5.5</ref> above for the encoding of hyphenation, including cases where there are no hyphens in the manuscript.</p>
+          <p>Once again, our stylesheet should be able to display the text according to its physical order, like here,</p>
+          
+          <p rend="sample"> 1 ...............................<lb/> 2 nema suo sem aðr var sagt En ef meira høggr bøte markar<lb/> 3 spell ok landnam landz drottne nema hann lofe <hi rend="red">Um dugnad skips-</hi><lb/> 4 <hi rend="bold"> N</hi>v þarf skip upp at setia skere styri maðr \boð upp/<hi rend="red"> brotz manna</hi><lb/> 5 suo viða at þeir verði full aflla til upp at setia ok vt<lb/> 6 .............................. <lb/>
+          </p>
+          
+          <p>as well as according to its logical order:</p>
+          
+          <p rend="sample"> 1 ...............................<lb/> 2 nema suo sem aðr var sagt En ef meira høggr bøte markar<lb/> 3 spell ok landnam landz drottne nema hann lofe<lb/> 3 <hi rend="red">Um dugnad skips-</hi><lb/> 4 <hi rend="red">brotz manna</hi><lb/> 4 <hi rend="bold">N</hi>v þarf skip upp at setia skere styri maðr \boð upp/<lb/> 5 suo viða at þeir verði full aflla til upp at setia ok vt<lb/> 6 .............................. <lb/>
+          </p>
+                   
+          <p>When double (or even triple) numbering of line beginnings is used in a transcription, one should make sure that any automatic numbering program that is run on the <gi>lb/</gi> elements is set up not to override manually given numbers.</p>
+        </div>
+        
+ <div>
+          <head xml:id="sec16.4">16.4 Dialogue across hierarchical boundaries</head>
+          
+          <p>In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the <gi>s</gi> element (dividing the text into sentences) or even one or more <gi>div</gi> elements (dividing the text into chapters). An extreme example is <title>Gylfaginning</title>, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like <title>Konungs skuggsjá</title> and <title>Barlaams saga ok Jósafats</title>. In these and many other works, the standard <gi>q</gi> element will create conflicts with other and probably more important hierarchical divisions of the text.</p>
+          <p>Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general <gi>milestone/</gi> element as a work-around. As stated in <ref target="HB3_ch3.xml#sec3.11">ch. 3.11</ref> above, the <gi>milestone/</gi> element can be specified with the <att>unit</att> and <att>rend</att> attributes:</p>
+          
+     <table rend="xml-elements">
+            <row role="label">
+              <cell rend="width20">Element and attributes</cell>
+              <cell rend="width10">Obl/Opt</cell>
+              <cell rend="width70">Contents</cell>
+            </row>
+            <row>
+              <cell><gi>milestone/</gi></cell>
+              <cell></cell>
+              <cell>Marks any break in the transcription. Attributes include:</cell>
+            </row>
+            <row>
+              <cell><att>unit</att></cell>
+              <cell>Obligatory</cell>
+              <cell>Indicates the type of break, such as <val>turn</val> (in dialogues) or more generally, <val>segment</val> or <val>section</val>.</cell>
+            </row>
+            <row>
+              <cell><att>rendition</att></cell>
+              <cell>Optional</cell>
+              <cell>Indicates how the break should be rendered. In the case of dialogues, <val>opening-quote</val> and <val>closing-quote</val> are appropriate.</cell>
+            </row>
+          </table>
+          
+          <p>As suggested in <ref target="HB3_ch3.xml#sec3.11">ch. 3.11</ref> this would be a valid encoding:</p>
+          
+          <egXML><![CDATA[<s>Eyvindr sagðisk eigi mundu brott undan ríða, 
+<milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
+<s>Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.</s><milestone 
+unit="turn" rendition="closing-quote"/>]]></egXML>
+          
+          <p>In this example, it is the division of the text in the <gi>s</gi> elements that would create a conflict with a <gi>q</gi> element. The former element has been given priority, and the <gi>milestone/</gi> element has been used as a work-around.</p>
+                    
+        </div>
+
+<div>
+<head xml:id="sec16.5">16.5 Rendition encoding</head>
+  
+  <p>When a text has been encoded with the <gi>w</gi> element for every word, conflicts sometimes arise between the division into words and several of the elements used to describe fragmentation, uncertainty, scribal intervention and the like (discussed in <ref target="HB3_ch8.xml">ch. 8</ref> and <ref target="HB3_ch9.xml">ch. 9</ref> above).</p>
+   <p>As an example, we shall use a missing passage of text which begins in one word and ends in another. The brackets mark the beginning and end of the passage:</p>
+  <quote>This is an exa[mple of a miss]ing passage</quote>
+   <p>In an encoding using the <gi>w</gi> element for each word, it is not possible to open an element where the first bracket is located and close it in the second bracket, since there will be a conflict of overlapping structures. The simplest, although most verbose, solution is to encode each word separately, i.e. either</p>
+  <quote>This is an exa[mple] [of] [a] [miss]ing passage</quote>
+   <p>or slightly less verbose</p>
+  <quote>This is an exa[mple] [of a] [miss]ing passage</quote>
+  
+  <p>The encoding suggested in this subchapter is a simplified version of 16.2.1 above, in the sense that the linking is not expressed by way of IDREF pointing but by way of the <att>rendition</att> attribute. It is a robust solution and it has been successfully implemented in the display of the Menota archive. More advanced stylesheets may be developed that can replace this solution, but for now this is our offer for any texts that should be displayed in the Menota archive, using the Corpuscle application.</p>
+  
+   <p>The solution is dependent on the intended display of the text, of which there are two types, rendering by single-characters and rendering by opening &amp; closing signs.</p>
+   
+   <div>
+      <head xml:id="sec16.5.1">16.5.1 Display by rendering of single characters</head>
+     <p>This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of <gi>unclear</gi> text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See <ref target="HB3_ch8.xml#sec8.4.2">ch. 8.4.2</ref> above. If this kind of display is chosen, no additional encoding is needed.</p>
+      
+      <p>According to the display recommended in this handbook, this solution is appropriate for the following elements:</p>
+            
+     <table rend="xml-elements">
+         <row role="label">
+            <cell rend="width20">Elements</cell>
+            <cell rend="width80">Display</cell>
+         </row>
+         <row>
+            <cell><gi>gap/</gi></cell>
+            <cell>If there is an estimate of the size of the gap, by a number of spaces, cf. <ref target="HB3_ch8.xml#sec8.2.2">ch. 8.2.2</ref>.</cell>
+         </row>
+         <row>
+            <cell><gi>space/</gi></cell>
+           <cell>If there is an estimate of the size of the space, by a number of spaces, cf. <ref target="HB3_ch8.xml#sec8.3.2">ch. 8.3.2</ref>.</cell>
+         </row>
+         <row>
+            <cell><gi>unclear</gi></cell>
+            <cell>By grey colouring, cf. <ref target="HB3_ch8.xml#sec8.4.2">ch. 8.4.2</ref>.</cell>
+         </row>         
+      </table>
+           
+<p>
+         <figure rend="width50 clearboth">
+            <graphic url="ch16/NRA-58C-1rA,24-27.jpg"/>
+         </figure></p>
+      
+     <p rend="caption"><hi rend="bold">Ill. 16.5</hi>. Unclear text. <title>Konungs skuggsjá</title>. NRA 58C, f. 1rA, 24–27.</p>
+     
+     <p>The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated in <ref target="HB3_ch9.xml#sec9.3.1.1">ch. 9.3.1.1</ref> above, while the facsimile level should record the text <q>as is</q> and the normalised level should offer a restored text, if possible, the diplomatic level may follow either of these two models. In this example, it follows the facsimile encoding in not making any restoration of the text, leaving the <gi>supplied</gi> element to the normalised level.</p>
+           
+<egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs><c type="initial">Ð</c>o a&trot;</me:facs>
+    <me:dipl>Ðo at</me:dipl>
+    <me:norm>Þóat</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ꝩıꞇ</me:facs>
+    <me:dipl>vit</me:dipl>
+    <me:norm>vit</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&slongklig;ıl<unclear>ꝺım</unclear></me:facs>
+    <me:dipl>skil<unclear>dim</unclear></me:dipl>
+    <me:norm>skyldim</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983">
+      fleira</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>um</me:facs>
+    <me:dipl>um</me:dipl>
+    <me:norm>um</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þeſ<lb ed="ms" n="27"/>se</me:facs>
+    <me:dipl>þes<lb ed="ms" n="27"/>se</me:dipl>
+    <me:norm>þes<lb ed="ms" n="27"/>si</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+     
+     <p>See the Menota archive, NRA 58C, f. 1r, col. A, l. 27, for a display of this encoding.</p>
+      
+  </div>
+   
+   <div>
+      <head xml:id="sec16.5.2">16.5.2 Display by opening and closing signs</head>
+     <p>This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the <att>rendition</att> attribute with the <val>first</val>, <val>middle</val> and <val>last</val> values.</p>
+      <p>According to the display recommended in this handbook, this solution is appropriate for the following elements:</p>
+            
+     <table rend="xml-elements">
+         <row role="label">
+            <cell rend="width20">Elements</cell>
+            <cell rend="width80">Display</cell>
+         </row>
+         <row>
+            <cell><gi>add</gi></cell>
+            <cell>By insertion signs, cf. <ref target="HB3_ch9.xml#sec9.2.1.2">ch. 9.2.1.2</ref>.</cell>
+         </row>
+         <row>
+            <cell><gi>del</gi></cell>
+            <cell>By vertical bars with quill, cf. <ref target="HB3_ch9.xml#sec9.2.2.2">ch. 9.2.2.2</ref>.</cell>
+         </row>
+         <row>
+            <cell><gi>supplied</gi></cell>
+            <cell>By square brackets or by open angle brackets, <ref target="HB3_ch9.xml#sec9.3.1.3">ch. 9.3.1.3</ref>.</cell>
+         </row>
+         <row>
+            <cell><gi>surplus</gi></cell>
+            <cell>By curly brackets, <ref target="HB3_ch9.xml#sec9.3.2.2">ch. 9.3.2.2</ref>.</cell>
+         </row>         
+      </table>
+            
+<p>In the next passage in fig 16.5, we can hardly read all the words. Beginning at the end of the next but last line, we can read</p>
+      <quote>um þes|se lond .................. þau þo</quote>
+     <p>In the following encoding, the three words “rǿða þá eru” have been supplied on the normalised level, but this sequence is left out on the facsimile and diplomatic level. However, based on the supplied text on the normalised level, the encoder has inserted them as three words in <gi>w</gi> elements. These words have been given the <att>rendition</att> attribute.</p>
+     
+      
+      <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>um</me:facs>
+    <me:dipl>um</me:dipl>
+    <me:norm>um</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þeſ<lb ed="ms" n="27"/>se</me:facs>
+    <me:dipl>þes<lb ed="ms" n="27"/>se</me:dipl>
+    <me:norm>þes<lb ed="ms" n="27"/>si</me:norm>
+  </choice>
+</w><w>
+  <choice>
+    <me:facs>lonꝺ</me:facs>
+    <me:dipl>lond</me:dipl>
+    <me:norm>lǫnd</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="first">rǿða</supplied></me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl></me:dipl>
+    <me:norm>,</me:norm>
+  </choice>
+</pc>	
+<w>
+  <choice>
+    <me:facs><unclear>◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="middle">þá</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="last">eru</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þau</me:facs>
+    <me:dipl>þau</me:dipl>
+    <me:norm>þau</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þo</me:facs>
+    <me:dipl>þo</me:dipl>
+    <me:norm>þó</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+      
+     <p>It should be pointed out that the EpiDoc project has developed a template to its XSLT stylesheet which ensures that brackets or similar signs are not displayed more than once in such cases, see <ref target="http://www.stoa.org/epidoc/gl/latest/trans-lacunasegmented.html">Editorial restoration: Segmented or adjacent lacunae</ref>.</p>
+      
+   </div>
+   
+</div>
+
+</body>
+</text>
+</TEI>

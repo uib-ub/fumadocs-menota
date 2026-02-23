@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook ch. 1 (v. 3.0): What is Menota?</title>
+            <editor>
+               <name>Odd Einar Haugen</name>
+            </editor>
+               <respStmt>
+               <resp>Written by</resp>
+               <name>Tarrin Wills</name>
+            </respStmt>
+            <respStmt>
+               <resp>Revised and edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published in the web at <ref target="http://www.menota.org/"
+               >http://www.menota.org/</ref>/</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Composed in XML for the Menota handbook v. 2.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>28 August 2016</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change>
+            <date>12 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Defined this chapter as belonging to v. 3.0 of the 
+            handbook (12 December 2019)</change>
+         <change><date>10 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made links of chapter titles
+         </change>
+         <change><date>6 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Just a bit of proofreading and consistency checking
+         </change>
+         <change><date>13 October 2019</date>
+            <persName>Odd Einar Haugen</persName>: Added a reference to the new Appendix I: Menota Light in ch. 1.4; made a couple of minor corrections suggested by <persName>Patrick Farrugia</persName>
+         </change>
+         <change><date>26 September 2019</date>
+            <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, as recommended by <persName>Marco Bianchi</persName>
+         </change>
+         <change>
+         <date>22 September 2019</date>
+         <persName>Odd Einar Haugen</persName>: (1) Revised section 1.2 so that it includes the present sequence of chapters and also the six new chapters; (2) Added sections 1.4 on the simplicity of Menota encoding 
+         </change>
+         <change>
+            <date>4 October 2016</date>
+            <persName>Odd Einar Haugen</persName>: Replaced character entities (like &amp;eth;) with Unicode characters (like ð) wherever applicable
+         </change>
+         <change>
+            <date>28 August 2016</date>
+            <persName>Odd Einar Haugen</persName>: Made the first draft by copying the text of the introduction in v. 2.0 of the handbook and renumbered it as ch. 1 for v. 3.0
+         </change>
+      </revisionDesc>
+   </teiHeader>
+	<text xml:lang="en" n="Introduction">
+      <body><head>Ch. 1. What is Menota?</head>
+
+         <p>Version 3.0 (12 December 2019)</p>
+         <p>by Tarrin Wills and Odd Einar Haugen</p>
+         <p>&nbsp;</p>
+         
+<div>
+<head xml:id="sec1.1">1.1 Electronic editing of medieval texts</head>
+<p>The purpose of these guidelines is to define a framework for machine-readable editions of medieval Nordic texts. These guidelines are recommended for any scholar who wishes to produce detailed, machine-readable editions of primary works, that is, medieval Nordic manuscripts.</p>
+
+<div>
+<head xml:id="sec1.1.1">1.1.1 Menota and traditional editing practice</head>
+<p>Editions may include a great amount of information in addition to the basic text of the manuscript: introductory material, including textual and literary contexts; the textual content, including diplomatic and/or normalised text; a variant apparatus or various manuscript versions; notes and other forms of critical apparatus; glossaries and/or indices of names. </p>
+
+<p>The present guidelines address all of these parts of an edition. The one exception is the textual or variant apparatus: as the approach of these guidelines is to encode individual manuscript versions, the textual apparatus develops as each manuscript is encoded and aligned.</p>
+
+<p>The approach taken here, however, differs from traditional editions in the way in which the additional information is included and consequently the possibilities of presentation. Traditional print editions rely on a large amount of referencing between the text and the apparatus: note references may refer the reader to the notes section; glossaries and indices refer the reader back to the main text; the textual apparatus refers usually to line and/or page numbers; and aligned texts usually rely on visual parallels, such as facing pages. The approach taken here allows all of this information to be encoded without complex referencing, allowing information about a section of text to be checked, or presented, at the same time, depending on the capabilities of the display medium. The complexity of referencing, however, is replaced with a certain amount of complexity in encoding.</p>
+</div>
+
+<div>
+<head xml:id="sec1.1.2">1.1.2 Machine-readable editions</head>
+<p>The approach of Menota differs from the production of electronic texts using word-processing or desktop publishing software because the texts are machine-readable, that is, the texts are marked up in a way that meaningful entities within a text can be read and manipulated by a computer.</p>
+
+<p>The approach taken here can be used to distinguish between different types of information in the text and consequently can extract and present the information of most interest to particular users, for example, students, literary scholars, linguists, palaeographers. A student may wish to read the normalised text; a linguist might only be interested in the word distribution, and so on.</p>
+
+<p>Using this method, one can also produce editions for different media: printed and electronic books, interactive web applications, portable devices, CD-ROMs and so on.</p>
+</div>
+
+<div>
+<head xml:id="sec1.1.3">1.1.3 Menota and other encoding schemes</head>
+   <p>Menota is based on the scheme defined by the <ref
+      target="https://tei-c.org">Text Encoding Initiative</ref>. It defines further extensions based primarily on two major differences between Medieval Nordic texts and most other comporable corpora:</p>
+
+ <p>1. A large degree of orthographical variation. This makes linguistic analysis difficult because of the difficulty in searching for words on the basis of a lemma. The compilation of glossaries, for example, cannot be done in any systematic way.</p>
+
+ <p>2. A large degree of abbreviation of letters, groups of letters, words and so on.</p>
+
+ <p>The two problems are dealt with by breaking the text into three prototypical levels, where the text is encoded in its abbreviated form, in its expanded form and in a normalised orthography. These textual levels constitute the primary difference between Menota and standard TEI. Texts can be encoded on only one of these levels (typically the diplomatic), but can easily be extended to two or more levels, thus making it more versatile than traditional editions, which are restricted to representing the text in only one way.</p>
+</div>
+</div>
+
+<div>
+<head xml:id="sec1.2">1.2 How to use these guidelines</head>
+
+<p>These guidelines provide a way of representing a text in a machine-readable and platform-independent way. They do not provide in themselves a way of publishing the text, but rather a way of encoding a text so that it can be published and analysed by other means in a variety of ways. In short, you can use these guidelines to represent characters, words and other meaningful units of text, in a way that is consistent and unambiguous. The approach is represented by the chapters:</p>
+
+   <p><ref target="HB3_ch2.xml">2. Text encoding using XML</ref></p>
+
+<p>XML is the electronic language used to represent features of the edition. It differs from the languages used by, for example, word processors and typesetting engines, in that it is used to represent types of content rather than ways of displaying the text. XML is currently the most common way of encoding textual content. Learning how XML works is perhaps the most difficult aspect of these guidelines, but once a few fundamental concepts are grasped, it is a useful tool which can be applied to a range of other areas, such as web publishing.</p>
+   
+   <p><ref target="HB3_ch3.xml">3. Document structure</ref></p>
+   
+<p>The guidelines explain how to encode the units of a document, including textual structures such as chapters, paragraphs and headings; physical features such as pages and lines in the manuscript; verse material and punctuation. Such information is fairly straightforward to represent.</p>
+
+   <p><ref target="HB3_ch4.xml">4. Levels of text representation</ref></p>
+   
+   <p>The guidelines discuss a simple and straightforward way of encoding text in a single-level transcription. However, in order to deal with the problems discussed especially in <ref target="HB3_ch8.xml">ch. 8</ref> and <ref target="HB3_ch9.xml">ch. 9</ref>, the guidelines recommends a multi-level transcription. The text is divided into three “levels”: one which attempts to represent the text as it appears in the manuscript, including abbreviation and significant letter forms (reduced to a partially-limited set, however); the second represents the text in the orthographical form of the manuscript, but expands abbreviations, generally providing a diplomatic representation of the text; and the third level involves normalisation to a set of letters, based on the actual orthographical system, but representing the phonological system as it was when the text was believed to have been composed.</p>
+   
+<p>Editors using these guidelines may wish to use any combination of the levels to encode the text.</p>
+   
+<p>Each level is encoded on a word-by-word basis.</p>
+   
+   <p><ref target="HB3_ch5.xml">5. Characters and words</ref></p>
+
+<p>The encoding of characters in an unambiguous way represents the most basic step towards producing an exchangable and machine-readable edition. It is in fact a fairly simple procedure which requires almost no knowledge of XML, but instead a basic idea of abstraction. The first thing to grasp is that the way characters are represented here is independant of individual fonts. One of the problems with many early electronic editions is that they have used non-standard fonts, and combinations of fonts in word processing programs. Once the font is obsolete, or if the software becomes obsolete, the electronic text is no longer of much use. The approach taken here overcomes these problems by representing characters either using a standard encoding or electronic references to different character types.</p>
+
+   <p><ref target="HB3_ch6.xml">6. Abbreviations</ref></p>
+
+<p>This chapter describes in detail how abbreviations and their expansions are to be represented in a Menota-compliant edition. This is of particular relevance to heavily abbreviated manuscripts such as many of the Old Icelandic ones.</p>
+
+   <p><ref target="HB3_ch7.xml">7. Initials and other illuminations</ref></p>
+   
+<p>Many manuscript contain initials occupying more than one line and often drawn in more than one colour and sometimes enhanced with illuminations. This chapter gives an overview of these graphic and artistic aspects of the manuscript and recommends ways of encoding them.</p>
+   
+   <p><ref target="HB3_ch8.xml">8. Fragmentation and uncertainty</ref></p>
+   
+<p>Manuscripts were often damaged so that an unquestionable encoding is not possible. This chapter offer recommendations for the encoding of lacunas, i.e. completely missing text, and uncertainty, i.e. text that are illegible or only partially legible.</p>
+   
+   <p><ref target="HB3_ch9.xml">9. Scribal and editorial intervention</ref></p>
+   
+<p>This chapter explains how to encode characters and words which fall outside of the normal flow of text, because they are altered by the scribe or by the editor. Such features are frequent in primary sources, but need to be encoded unambiguously so that the edition represents the status of the whole text. A major distinction is drawn between changes made by the scribe and by the modern editor.</p>
+   
+   <p><ref target="HB3_ch10.xml">10. Normalisation</ref></p>
+   
+   <p>This chapter focuses on the orthography of the normalised level described in <ref target="HB3_ch4.xml">ch. 4</ref>. In this version of the handbook, only Old Norse (i.e. Old Icelandic and Old Norwegian) are discussed and exemplified. These languages have a well established orthographic norm, although there are some minor deviations within this norm. Old Swedish and Old Danish will be treated in a later version of the handbook. For these languages, there are no similar generally accepted norms.</p>
+
+   <p><ref target="HB3_ch11.xml">11. Linguistic annotation</ref></p>
+   
+   <p>This chapter provides an approach to the linguistic encoding of a text for editors who are interested in producing search engines and glossaries. Basically, lemmatisation is the process by which every word-form in the text is linked to a single word without grammatical variation – the equivalent to a dictionary head-word or lemma. Once this process is done, the text can be searched for words, regardless of morphological or orthographical variation. Each word can be linked to a glossary, and vice-versa.</p>
+   
+   <p><ref target="HB3_ch12.xml">12. Names</ref></p>
+   
+   <p>Names can be encoded according to the TEI P5 Guidelines, <ref
+         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"
+         type="external">ch. 13</ref>, but TEIs recommendation should be specified with respect to the encoding of patronyms, surnames and nicknames frequent in Medieval Nordic sources.</p>
+   
+   <p><ref target="HB3_ch13.xml">13. Metrical structure</ref></p>
+   
+<p>This chapter, which has been virtually unchanged since v. 1.0 of the Menota Handbook, deals with the specifics of Old Norse metrics, such as alliteration and various types of rhymes.</p>
+
+   <p><ref target="HB3_ch14.xml">14. The header</ref></p>
+
+   <p>The header contains information about the text and its encoding. Such information makes it much easier to understand the relationship between the file and other types of documents by describing and categorising it. The header also contains information about the process and responsibility of creating the edition.</p>
+
+   <p><ref target="HB3_ch15.xml">15. Linking to external resources</ref></p>
+   
+   <p>This chapter deals with the linking of phenomena which have some kind of existence outside the text, and it gives recommendations for naming and locating these phenomena. Examples are people, places, events, texts, grammatically defined words, books and other manuscripts.</p>
+   
+   <p><ref target="HB3_ch16.xml">16. Dealing with overlapping structures</ref></p>
+   
+   <p>The Achilles’ heel of XML encoding is that it struggles with overlapping structures. Document structure can be encoded by use of empty elements (milestones), as described in <ref target="HB3_ch5.xml">ch. 5</ref>, but other types of overlapping structures are not as easily encoded. This chapter deals with the problem and suggests various ways of solving it.</p>
+
+</div>
+
+<div>
+<head xml:id="sec1.3">1.3 Basic content of the edition</head>
+
+<p>The content of the edition is basically the same as a print edition of a primary work. It contains:</p>
+
+   <p>1. Front matter, including a title for the work, publication information, simple information about the editor(s) responsible, a description of the editorial approach taken, detailed acknowledgements of contributions and so on. All this information is encoded in the TEI header, described in <ref target="HB3_ch14.xml">ch. 14</ref>.</p>
+
+<p>2. A table of contents. Since the encoded document represents the parts of the text, including headings, in a machine-readable way, the table of contents can be generated automatically. (For comparison, the document you are reading is encoded in XML, with each section heading marked as such – the contents at the top of the document are generated automatically from this information.)</p>
+
+   <p>3. The text itself, including the three focal levels of representing it (<ref target="HB3_ch4.xml">ch. 4</ref>), the representation of individual characters (<ref target="HB3_ch5.xml">ch. 5</ref>), abbreviations (<ref target="HB3_ch6.xml">ch. 6</ref>), higher-level structures such paragraphs and chapters, physical pages and lines (<ref target="HB3_ch3.xml">ch. 3</ref>), ornamentation (<ref target="HB3_ch7.xml">ch. 7</ref>), alterations made to the text by scribes and editors (<ref target="HB3_ch8.xml">ch. 8</ref> and <ref target="HB3_ch9.xml">ch. 9</ref>), rules for normalisation of the orthography (<ref target="HB3_ch10.xml">ch. 10</ref>), linguistic information (<ref target="HB3_ch11.xml">ch. 11</ref>), metrical structure (<ref target="HB3_ch13.xml">ch. 13</ref>), and references to people, places, and so on (<ref target="HB3_ch12.xml">ch. 12</ref> and <ref target="HB3_ch15.xml">ch. 15</ref>).</p>
+<p>4. Back matter, potentially automatically-generated, including a glossary generated from word lemmata and indices generated from other encoded information such as names.</p>
+
+</div>
+         
+         <div>
+            <head xml:id="sec1.4">1.4 Menota encoding made simple</head>
+            
+            <p>This handbook offers a rich apparatus of elements and attributes for encoding a host of aspects of medieval texts. Faced with this abundance of encoding possibilities, readers may easily feel overwhelmed. It should be emphasised that it is not necessary to encode a text on more than a single level (and a quick look at the Menota archive will show that many texts are only encoded on one level only), and it is far from necessary to add information on ornamentation, names, metrics, grammar, lexicon and the like. In short, the text itself may not contain much more than a single string of words, each word tagged by the <gi>w</gi> element, and punctuation marks, tagged by the <gi>pc</gi> element, and some information about the layout of the text, such as the division into pages, tagged by the <gi>pb/</gi> element, and lines, tagged by the <gi>lb/</gi> element. Add to this a division into chapter by the <gi>div</gi> element, and that is about it.</p>
+            <p>In <ref target="HB3_I_MenotaLight.xml">app. I</ref> below we offer a very simple example of a text that has been encoded using a minimum of elements and attributes. It is a short extract from a fragment of <title>Konungs skuggsjá</title> in NRA 58 C.</p>
+            <p>The <ref target="HB3_T1.xml">Tutorial</ref> in this handbook shows how a text can be transcribed with a minimum of XML encoding, and by use of a Perl script turned into a valid Menota XML file. </p>
+            
+</div>
+                  
+</body>
+	</text>
+</TEI>

@@ -1,0 +1,2170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook ch. 7 (v. 3.0): Initials and other illuminations</title>
+            <editor>
+               <name>Odd Einar Haugen</name>
+            </editor>
+            <respStmt>
+               <resp>Written by</resp>
+               <name>Friederike Richter</name>
+            </respStmt>
+            <respStmt>
+               <resp>Written by</resp>
+               <name>Beeke Stegmann</name>
+            </respStmt>
+            <respStmt>
+               <resp>Revised and edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published in the web at <ref target="http://www.menota.org/"
+               >http://www.menota.org/</ref>/</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Composed in XML for the Menota handbook v. 3.0.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p/>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>12 April 2017</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change><date>17 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Corrected the numbering of figures, since Fig. 7.47 appeared twice; this correction is thus restricted to the present Fig. 7.48-7.51</change>
+         <change><date>12 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Defined this chapter as belonging to v. 3.0 of the 
+            handbook (12 December 2019)</change>
+         <change><date>8 December 2019</date>
+            <persName>Beeke Stegmann</persName>: Deleted the superfluous line.
+         </change>
+         <change><date>8 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Removed a superfluous line in a table and made som changes elsewhere, as suggested by <persName>Beeke Stegmann</persName>
+         </change>
+         <change><date>7 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Removed a superfluous space element in 7.3.3; corrected all links to chapters outside the present chapter (they did not work); made some other minor changes
+         </change>
+         <change><date>22 November 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made a few minor changes, such as correcting the type of apostrophe, ' > ’
+         </change>
+         <change><date>13 October 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made a number of corrections suggested by <persName>Patrick Farrugia</persName>
+         </change>
+         <change><date>26 September 2019</date>
+            <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, 
+            as recommended by <persName>Marco Bianchi</persName>; removed old comments in <!-- ... -->
+         </change>
+         <change>
+            <date>10 September 2019</date>
+            <persName>Beeke Stegmann</persName> Corrected some minor things.
+         </change>
+         <change>
+            <date>03 September 2019</date>
+            <persName>Friederike Richter</persName> Added new example and image for gold leaf (7.40) 
+            Find new image file in folder Beeke\Figures ch7\new images 09-2019. Added photo credit.
+         </change>
+         <change>
+            <date>02-03 September 2019</date>
+            <persName>Beeke Stegmann</persName> Accepted changed by FR and adjusted XML example of chapter initial (lombard with pen flourish) and
+            for missing initial.
+         </change>
+         <change>
+            <date>02 September 2019</date>
+            <persName>Friederike Richter</persName>Went through recent changes made by Beeke Stegmann, accepted them. Added example for curtain. 
+            New image is here(more to be added): Beeke\Figures ch7\new images 09-2019. Added manuscripta.se to the image sources. 
+            Minor changes in the wording. </change> 
+         <change>
+            <date>10 July 2019</date>
+            <persName>Beeke Stegmann</persName>: Added "colour-stroked" to table in 7.3.5</change>
+         
+         <change>
+            <date>10 June 2019</date>
+            <persName>Beeke Stegmann</persName>: Merged OEH’s file from May 15th with FR and BS’s file including changes from 18 May and 16 May.
+         </change>
+         
+         <change>
+            <date>15 May 2019</date>
+            <persName>Odd Einar Haugen</persName>: (1) Revised the encoding of the captions, in accordance with other chapters of the handbook; (2) Changed the cell widths of tables 1, 3 and 4 from 30-20-50 to 40-20-40, as in tab. 2. 
+         </change>
+
+   <change>
+            <date>18 May 2019</date>
+            <persName>Beeke Stegmann</persName>: Added a few comments and suggestions for how to incorporate pen-flourished lombards.
+         </change> 
+
+         <change>
+            <date>16 May 2019</date>
+            <persName>Friederike Richter</persName>: Accepted Beeke’s recent changes. Added minor changes based on Anne-Mette Hansen’s feedback.
+         </change>
+
+         <change>
+            <date>28 February 2019</date>
+            <persName>Beeke Stegmann</persName>: Made changes according to feedback from Michael and our discussion. 
+         </change>
+         
+         <change>
+            <date>11 June 2018</date>
+            <persName>Friederike Richter</persName>: Corrected definitions in section 7.4 (Glossary). 
+         </change>
+         <change>
+            <date>10 June 2018</date>
+            <persName>Beeke Stegmann</persName>: Checked definitions in section 7.4 (Glossary). 
+         </change>
+         <change>
+            <date>6 June 2018</date>
+            <persName>Friederike Richter</persName>: Added definitions in section 7.4 (Glossary). 
+         </change>
+         <change>
+          <date>25 April 2018</date>
+          <persName>Beeke Stegmann</persName>: Checked and resolved last comments by FR and myself. 
+          Made additions to section 7.4 (Glossary). Some terms still need explanation.
+       </change>
+       
+         <change>
+            <date>19/23 April 2018</date>
+            <persName>Friederike Richter </persName>: Further smaller corrections acc. to our to-do-list/mails, corrected images acc. to our to-do-list. 
+            Took care of green comments and deleted the superfluous ones. Copied corrected image files into the folder "details for publishing jpg" (dropbox).
+         </change>
+         
+         <change>
+            <date>12 March 2018</date>
+            <persName>Friederike Richter </persName>: Corrected typos and similar minor stuff. 
+         </change>
+         
+         <change>
+            <date>28 February 2018</date>
+            <persName>Beeke Stegmann</persName>: Corrected two typos.
+         </change>
+         
+         <change>
+            <date>26/27 February 2018</date>
+            <persName>Beeke Stegmann</persName>:  Proofread whole chapter and adjusted many typos etc.
+            Updated and corrected XML-examples, tried to check for consistency. Added a few additional examples.
+            Changed text in beginning om 7.3.3 (2 instead of 3 major categories).
+            Added additional terms to glossary. Undated/adjusted section 7.5 and the formatting of links therein.
+         </change>
+         
+         <change>
+            <date>18 February 2018</date>
+            <persName>Odd Einar Haugen</persName>: Made the Photo display section a separate "div" numbered 7.5, and corrected a minor mistake in the encoding
+         </change>
+         
+         <change>
+            <date>17 February 2018</date>
+            <persName>Friederike Richter</persName>: Changed examples in the main text: the images of AM 345 fol. are now redistributed 
+            - one for overview, one for 
+            caption.  Replaced example for versals and "colours" (that in fact was an example of how to register a major initial). 
+            Prepared photo credits and sent 
+            them to Beeke to figure out where to put them. Adapted colour in "Anatomy"-diagram. Furthermore, correction of some 
+            minor inconsistencies and typos and captions.
+            Started to sketch out some info for the art historian proof readers. Replaced "foliated" with "foliate" ("beblättert").
+         </change>
+         
+         <change>
+            <date>7 February 2018</date>
+            <persName>Beeke Stegmann</persName>: Corrected a few typos, worked on text and table for versals and not indented initials. 
+            added "initial" to "colour-stroked" in the table. Corrected image numbers. Took out some comments/discussion about examples. 
+         </change>
+         
+         <change>
+            <date>7 February 2018</date>
+            <persName>Friederike Richter</persName>: Corrected links to figures. 
+            Provided new files in the dropbox-folder of most images.
+         </change>
+         
+         <change>
+            <date>7 February 2018</date>
+            <persName>Odd Einar Haugen</persName>: Increased the width to 80 % allocated to figures 7.44 and 7.47,
+            and decreased it to 50 % to the two figures now both numered as 7.45. 
+         </change>
+         
+         <change>
+            <date>6 February 2018</date>
+            <persName>Friederike Richter</persName>: replaced previous images with hopefully better quality in the folder 
+            "details for publishing jpg" where also all new images are to be found. Currently going through all comments, deleted those
+            already taken care of and thanks for adding some more splendid examples! Adapted definitions of versals a tiny bit.
+         </change>
+         <change>
+            <date>5 February 2018</date>
+            <persName>Friederike Richter</persName>: added last images and graphs, replaced "foliated initial" with "foliate initial", 
+            corrected few typos, deleted some old comments. New categories: display page, incipit, colour-stroked.
+         </change>
+         <change>
+            <date>3 February 2018</date>
+            <persName>Beeke Stegmann</persName>: Replaced "fol." in encoding examples with "f." and "fols." with "ff."; Changed
+            "Medeltidshandskrift" to "Mh." in figure captions; checked all refs and hyperlinks (links to other chapters of HB 3 do not work yet).
+         </change>
+         
+         <change>
+            <date>3 February 2018</date>
+            <persName>Beeke Stegmann</persName>: Finalized recommendations for versals; rewrote sections
+            concerning missing initials. Added missing one line figure captions (need to be checked for display), also counting 
+            the images and two graphs that are still to be inserted.
+         </change>
+ 
+         <change>
+            <date>29 January 2018</date>
+            <persName>Odd Einar Haugen</persName>: (1) Renumbered all figures from 7.1 to 7.46, and added
+            provisionally figure numbers for the first three figures (to be continued); (2) encoded figures on single 
+            lines such as fig. 7.1, 7.36, 7.37, 7.45 and 7.46 so that they are not displayed in two columns, i.e. adding
+            "rend="clearboth", and, if necessary required width in percentage, such as "rend="width450 clearboth" to 
+            the "figure" element; (3) adjusted the width of the columns in tables 1, 3 and 4; (4) changed the style
+            of the caption for the tables; (4) reorganised the "div" structure so that only major divs will be displayed
+            at the top of the chapter.
+            </change>
+         
+         <change>
+            <date>24 January 2018</date>
+            <persName>Odd Einar Haugen</persName>: (1) Revised all tables in the chapter so that they had 
+            suitable width for each column, using percentage values such as 40-20-40, 30-70, 20-80 or the like
+            in the rend values of the cells (encoded according to the documentation in Appendix H.5);
+            (2) removed unnecessary "lb" breaks in the last column of the tables; (3) revised the bibliographical
+            references in ch. 7.1 (and added these to the separate bibliography); (4) revised all "egXML" encoding so 
+            as to avoid blank lines at the top of the text box; (5) replaced all "fol." abbreviations for leaf in a manuscript, 
+            so that for example "AM 350 fol., fol. 1v" became "AM 350 fol., f. 1v", etc.; (6) replaced hyphens with en 
+            dashes in line spans, e.g "5-8" was replaced with "5–8".
+         </change>
+ 
+         <change>
+            <date>2 December 2017</date>
+            <persName>Beeke Stegmann</persName>: Minor changes to recommendations for how to encode initial size in transcription.
+         </change>
+         
+         <change>
+            <date>29 November 2017</date>
+            <persName>Friederike Richter</persName>: Minor changes following up Beeke’s latest
+            suggestions, i. a. in transcription, comments in I/J/L and versals (same chapter 7.3.3
+            Size of initial), reworked order in tables</change>
+         <change>
+            <date>28 November 2017</date>
+            <persName>Beeke Stegmann</persName>: Minor changes to tables (mostly order). Introduced guide letter in 7.2.1.2. 
+            Changed recommendations for how to encode initial size in transcription.
+         </change>
+         
+         <change><date>27 November 2017</date>
+            <persName>Friederike Richter</persName>: Minor changes in definitions of gold and
+            substitutes, re-arranged tab. 1 and 2</change>
+         
+         <change><date>5 November 2017</date>
+         <persName>Beeke Stegmann</persName>: Read through chapter for consistency and contents. 
+            Improved tables, separated info on XSLT and several levels more clearly from encoding questions.
+            Checked and updated some cross references.
+         </change>
+         <change>
+            <date>23 October 2017</date>
+            <persName>Friederike Richter</persName>: Revising wordings and definitions acc. to align text and image.
+         </change>
+         <change>
+            <date>14 October 2017</date>
+            <persName>Beeke Stegmann</persName>: Corrected typos, completed table in 7.3.5. and added missing explanations to glossary.
+         </change>
+         <change>
+            <date>10 September 2017</date>
+            <persName>Odd Einar Haugen</persName>: Added missing "ch7" in several of the graphic URLs, edited the "egXML" examples in order to improve the display (and in some cases validity)
+         </change>
+         <change>
+            <date>7 September 2017</date>
+            <persName>Friederike Richter</persName>Minor changes and additions in the text as noted at the meeting in Oslo
+         </change>  <change>
+            <date>5-6 September 2017</date>
+            <persName>Friederike Richter</persName>: Added linebreaks and images into the tables. Image-files are here: Menota-handbook\Beeke\Figures ch7\details for publishing jpg
+         </change> 
+         <change>
+            <date>28 August 2017</date>
+            <persName>Odd Einar Haugen</persName>: Added forced linebreaks in the first table by using the "lb/" element 
+            and made some minor typographical adjustments in this table
+         </change>
+         <change>
+            <date>27-28 August 2017</date>
+            <persName>Beeke Stegmann</persName>: Edited sections 7.1 and 7.2 and rearranged (simplified?) the lists and overview for what is treated where and how it should be encoded
+         </change>
+         <change>
+            <date>22 August 2017</date>
+            <persName>Friederike Richter</persName>: Rearranged 7.2. into initials and other illum, minor rework of other parts
+         </change>
+         <change>
+            <date>1 July 2017</date>
+            <persName>Odd Einar Haugen</persName>: Made further tests with respect to image size and updated links to images
+         </change>
+         <change>
+            <date>26 June 2017</date>
+            <persName>Friederike Richter</persName>: Changed title, added samples for figures in the end to test the sizes (pixel-width) of the figure-files. 
+            Added some line-breaks in the xml-examples that might or might not make sense.
+         </change>
+         <change>
+            <date>09-16 June 2017</date>
+            <persName>Friederike Richter</persName>: Improved the wording here and there.
+            Re-arranging some parts (7.2.1 Occurence and type and started on 7.2.5 Motifs and
+            composition) </change>
+         <change>
+            <date>06 June 2017</date>
+            <persName>Beeke Stegmann</persName>: Added XML examples and made smaller changes to contents.
+         </change>
+         <change>
+            <date>02 June 2017</date>
+            <persName>Beeke Stegmann</persName>: Changed the layout of tables and corrected some minor display-related things.
+         </change>
+         <change>
+            <date>26 May 2017</date>
+            <persName>Odd Einar Haugen</persName>: (1) Changed the provisional chapter number “XX” to “7” 
+            and published the chapter as part of the Menota Handbook v. 3.0; (2) Reorganised the linebreaks of the 
+            examples in ch. 7.2.2 and ch. 7.2.3 in order to optimise the screen display.
+         </change>
+         <change>
+            <date>18 May 2017</date>
+            <persName>Beeke Stegmann</persName>: Added additional features to mark-up and introduced sections on missing initials.
+         </change>
+         <change>
+            <date>17 May 2017</date>
+            <persName>Friederike Richter</persName>: Various revisions of and smaller additions to the contents.
+         </change>
+         <change>
+            <date>12 April 2016 and 15 May 2017</date>
+            <persName>Beeke Stegmann</persName>: Created XML file and introduced mark-up based on content produced in collaboration with Friederike Richter.
+         </change>
+      </revisionDesc>
+      
+   </teiHeader> 
+	<text xml:lang="en" n="Chapter7">
+	   <body>
+            <head>Chapter 7. Initials and other illuminations</head>
+	      <p>Version 3.0 (12 December 2019)</p>
+            <p>by Friederike Richter and Beeke Stegmann</p>
+               <div>
+               <head xml:id="sec7.1">7.1 How and where to encode illuminations</head>
+               <p>Medieval manuscripts often contain some degree of illumination as e.g. marginal
+                  drawings or initials. Encoding and systematic recording of the occurring
+                  illuminations enables the XML data to become a highly useful tool for scholars
+                  working from many different angles. For instance, studies in material philology
+                  and art history will highly benefit from it, because it enables scholars to
+                  search for and, thus, easily find relevant instances. What is
+                  more, the careful encoding of initials and their decoration will provide deeper
+                  insight into the indented hierarchy, structure and layout of manuscripts. In
+                  fact, one of the major advantages of including descriptions of these visual
+                  elements into digital transcriptions is the direct linking to the manuscript’s
+                  text.</p>
+               <p>In a menotic XML-file, we recommend that information on the illuminations (incl.
+                  the initials) is distributed and encoded in two designated places: </p>
+               <p> 1. in the header as part of the manuscript description (see <ref target="#sec7.2"
+                     >7.2</ref> below) and </p>
+               <p> 2. in the body as part of the transcription (see <ref target="#sec7.3"
+                  >7.3</ref> below). </p>
+               <p>While the manuscript description in the header should include a register of 
+                  all illuminations including the initials (see also <ref target="HB3_ch14.xml#sec14.3.3">
+                     ch. 14.3.3</ref>), in the transcription only initials are encoded, as they are part of the
+                  wording of the text. The register of illuminations in the header is mainly a
+                  description in prose and can even be rather elaborate (if desired and
+                  appropriate). By contrast, the encoding in the transcription is more basic and
+                  covers only a few central characteristics that are specified by means of
+                  attributes, which makes them highly searchable.</p>
+               <p>The following overview summarizes what to encode where and links to the
+                  respective subchapters of these guidelines:</p>
+                  
+               <table xml:id="tab1">
+                  <row role="label">
+                     <cell rend="width30">Where</cell>
+                     <cell rend="width70">What</cell>
+                  </row>
+                  <row>
+                     <cell>In the <hi rend="bold">manuscript description</hi><lb/>(&lt;teiHeader&gt;)</cell>
+                     <cell>All illuminations (including initials) of the manuscript are listed
+                        chronologically, giving information on:<lb/> 
+                        - <hi rend="bold">Type and occurrence</hi> of illumination (for initials <ref
+                           target="#sec7.2.1.1">ch. 7.2.1.1</ref>, for other illuminations <ref
+                              target="#sec7.2.2.1">ch. 7.2.2.1</ref>).<lb/>
+                        - Description of the <hi rend="bold">motif or decoration</hi> (for initials
+                           <ref target="#sec7.2.1.2">ch. 7.2.1.2</ref>, for other illuminations <ref
+                              target="#sec7.2.2.2">ch. 7.2.2.2</ref>; for optional further details see
+                        <ref target="#sec7.2.6">ch. 7.2.6</ref> on illumination techniques and 
+                        <ref target="#sec7.2.7">ch. 7.2.7</ref> on motifs and composition).<lb/>
+                        - <hi rend="bold">Inks and colours used</hi> (<ref target="#sec7.2.3">ch. 7.2.3</ref>).<lb/>
+                        - <hi rend="bold">Captions</hi> (<ref target="#sec7.2.4">ch. 7.2.4</ref>).<lb/>
+                        - <hi rend="bold">Hands and dating</hi> (<ref target="#sec7.2.5">ch. 7.2.5</ref>).
+                        </cell>
+                       
+                  </row>
+                  <row>
+                     <cell>In the <hi rend="bold">transcription</hi><lb/>(&lt;body&gt;) </cell>
+                     <cell>Basic characteristics of initials are encoded where they occur in the
+                        text, giving information on:<lb/>  
+                        - <hi rend="bold">The letter and its form</hi> (<ref target="#sec7.3.1">ch. 7.3.1</ref>).<lb/>
+                        - <hi rend="bold">Hierarchy of initials</hi> (<ref target="#sec7.3.2">ch. 7.3.2</ref>).<lb/>
+                        - <hi rend="bold">Initial size</hi> (<ref target="#sec7.3.3">ch. 7.3.3</ref>).<lb/>
+                        - <hi rend="bold">Colours used</hi> (<ref target="#sec7.3.4">ch. 7.3.4</ref>).<lb/>
+                        - <hi rend="bold">Artistic rendition</hi> (<ref  target="#sec7.3.5">ch. 7.3.5</ref>).<lb/>
+                        </cell>
+                        
+                  </row>
+               </table>
+               <p>Note also the glossary in the end of the chapter that helps, among others, to
+                  identify and name the different parts of an initial (see <ref target="#sec7.4"
+                     >7.4</ref>). Furthermore, we refer to the introduction to manuscript
+                  illumination by <ref target="HB3_literature.xml#Brown1994">Michelle Brown (1994)</ref>,
+                  which is available in an updated version in
+                  the <ref target="https://www.bl.uk/catalogues/illuminatedmanuscripts/glossary.asp">Glossaries 
+                     of the British Library</ref>, as well as to <ref target="HB3_literature.xml#Jakobi-Mirwald2008">Christine 
+                        Jakobi-Mirwald (2008)</ref>. Both works were used to prepare this chapter, while some definitions were
+                  adapted for the corpus of Scandinavian manuscripts.</p>
+            </div>
+	        	         
+            <div>
+               <head xml:id="sec7.2">7.2 Listing all illuminations in the header</head>
+               <p>As a minimum standard, we recommend to register all instances of illumination, including initials, 
+                  as part of the manuscript description in the header.
+                  This section describes how to register illuminations
+                  in a consecutive list covering the main informations </p>
+            
+               <p>All illuminations should be listed within the element <gi>decoDesc</gi> in the
+                  manuscript description section of the header (see also <ref target="HB3_ch14.xml#sec14.3.3"
+                     >ch. 14.3.3</ref>). A separate <gi>decoNote</gi> is used for each
+                  illumination &ndash; including the major initials. The register should be
+                  chronological, i.e. following the order of occurrence in the manuscript. </p>
+               <p>A basic list registering the illuminations within the header could look like
+                  this:</p>
+               <p>
+                  <egXML><![CDATA[<decoDesc>
+  <decoNote>
+    <p>F. <locus from="1r" to="1r">1r</locus>:
+      Full-page illumination, Christ on the cross. 
+      Colours: yellow, blue, light red. 
+      Outline: black.</p>
+  </decoNote>
+	               
+   <decoNote>
+     <p>F. <locus from="1va" to="1va">1va</locus>:
+       Historiated opening initial M depicting king Magnús, 12 l.
+       Colours: light red, blue, green, yellow.
+       Outline: black.</p>
+   </decoNote>
+
+  <decoNote>
+    <p>Ff. <locus from="1v" to="98v">1v-98v</locus>:
+      foliate chapter initials, 2–3 l.
+      Colours: alternating red, blue with black foliage.</p>
+  </decoNote>
+</decoDesc>]]></egXML>
+                  
+               </p>
+               <p>Each <gi>decoNote</gi>-entry starts with the indication of the folio (and if
+                  applicable the column) of the respective illumination, which is encoded in a
+                     <gi>locus</gi> element. Second, each <gi>decoNote</gi> should indicate the
+                  illumination type in question, e.g. full-page illumination or opening initial.
+                  These would then be supplemented with brief information on motif/ornament and
+                  colours. However, the degree of detail that can be given in the description of
+                  illuminations is virtually unlimited. For non-specialists we recommend to aim for
+                  a basic description that should not take too much time, but still gives someone
+                  who does not have access to the manuscript or images thereof a good overview as to
+                  how many and what kind of illuminations the manuscript contains. </p>
+               
+               <p>In the specifications below, initials will be discussed separately from other
+                  illumination types (see <ref target="#sec7.2.1">ch. 7.2.1</ref> for initials and
+                     <ref target="#sec7.2.2">ch. 7.2.2</ref> for other illuminations), because they
+                  partly require different terms and procedures in the respective entries. Please
+                  note, that the listing of illuminations in the header does not separate the
+                  major initials from other illuminations, but registers all instances
+                  consistently in the order of their occurrences in the manuscript. The occurrence
+                  of minor initials, on the other hand, can be summarized at the end (as in the example above). Common
+                  categories, that apply to both various initials and other illuminations may be
+                  treated subsequently (i.a. colours, captions, hands and dating). </p>
+
+	      
+	      <div>
+               <head xml:id="sec7.2.1">7.2.1 Initials</head>
+               <p>Initials are according to their hierarchy distinguished into two categories in the
+                  manuscript which are treated differently: major and minor intials (see below). It
+                  is good practice to register all major initials in the same way as other
+                  illuminations in the chronological order as they appear in the manuscript (i.e. in
+                  a separate <gi>decoNote</gi> element). Minor initials may be summarized at the
+                  end of the list in a common <gi>decoNote</gi> element for each subtype. Each
+                  entry for an intial should, as a minimum, comprise information on the following: 
+                  a) Folio/column, b) Decoration and hierarchy, c) Letter, size
+                  and colour(s).</p>
+	      </div>
+	      
+	      <div>
+               <head xml:id="sec7.2.1.1">7.2.1.1 Major and minor initials</head>
+               <p>The occurrence of the different subtypes of the initials has to be assessed for
+                  every manuscript individually. Manuscripts often comprise different initial
+                  subtypes that can be distinguished both by their hierarchy in relation to the
+                  structure of the text as well as by their size and degree of decoration. 
+                  When, however, the traditional chapter division of a text or other structural interpretations common in printed editions 
+                  do not match the hierarchy indicated in the manuscript by means of size and decoration of the initials,
+                  the subtypes are treated according to the manuscript’s own hierarchy.</p> 
+	         
+               <p>The possible subtypes for initials are: opening initial, text initial, chapter initial, paragraph
+                  initial and sentence initial (<emph rend="italics">littera notabilior</emph>). It is, however, also legitimate to
+                  only distinguish between major and minor initials. Most
+                  manuscripts do not comprise all subtypes; their occurrence can depend on
+                  the genre, the number of the works included in the manuscript, and the general
+                  degree of illumination. One has, thus, to identify which levels are present in the
+                  manuscript <emph rend="italics">and</emph> meaningful to be distinguished (see also
+                     <ref target="#sec7.3.2">7.3.2 Hierarchy of initials</ref>). </p>
+	         
+               <p>Put simply, as major initials we consider rather large and elaborate initials. They are usually
+                  opening, text or &ndash; depending on the manuscript’s structure &ndash; chapter
+                  initials. These initials will typically not appear on every page, but rather
+                  divide the written text into major sections. For each of these major initials, the letter
+                  is named, its folio (and if applicable the column) is given, the kind of initial
+                  is indicated as well as its height (i.e. number of indented lines): </p>
+               <p>&nbsp;</p>
+	         
+	         
+	         <figure rend="width60 clearboth">
+                  <graphic url="ch7/AM-45-fol-8va,19-36.jpg"/>
+	            <figDesc>⊕ Photo: The Arnamagnæan Collection, Copenhagen</figDesc>
+                  </figure>
+	         
+	         <p rend="caption"><hi rend="bold">Ill. 7.1</hi>. AM 45 fol., f. 8va, l. 19–36, foliate text initial <q>h</q>. In column b next to it 
+	            is an example of a chapter initial in this manuscript.</p>
+	         
+               <egXML><![CDATA[<decoNote>
+  <p>F. <locus from="8va" to="8va">8va</locus>: 
+    foliate text initial h, 8 l.
+    Colours: light yellow, red, light blue.</p>
+</decoNote>]]></egXML>
+	
+               <p>As minor initials we consider less elaborate, but highly frequent initials, that
+                  will typically appear more than once on a single page. Depending on the
+                  manuscript’s structure these can be paragraph and sentence initials (i.e. <hi
+                     rend="italics">littera notabilior</hi>), but in some cases also chapter
+                  intials. All occurrences of minor initials may be treated in groups, using 
+                  one <gi>decoNote</gi> element for each subtype. Such summary entries are
+                  usually placed at the end of the list of initials, simply indicating the first and
+                  the last folio of their respective occurrence and summarizing the average height
+                  (i.e. number of indented or covered lines), skipping the indication of the
+                  respective letters: </p>
+               <egXML><![CDATA[<decoDesc>
+ ...
+  <decoNote>
+    <p>Ff. <locus from="1r" to="27v">1r–27v</locus>: 
+      colour-stroked paragraph initials, 2–3 l.
+      Colours: Black with red highlighting.</p>
+  </decoNote>
+</decoDesc>]]></egXML>
+               <p>Please note that it is also of interest to register missing initials, i.e. those
+                  cases where an initial was laid out, but the allowed space was never filled.
+                  Sometimes, these instances contain guiding notes for the illuminator e.g.
+                  indicating the respective letter to be filled in (<emph rend="italics">guide
+                     letter</emph>).</p>
+               <egXML><![CDATA[<decoDesc>
+ ...
+  <decoNote>
+    <p>Ff. <locus from="2r" to="6v">2r, 3v, 5r–6v</locus>: 
+      Missing paragraph initials, 2-3 l.</p>
+  </decoNote>
+</decoDesc>]]></egXML>
+	      </div>
+	      
+	      <div>
+               <head xml:id="sec7.2.1.2">7.2.1.2 Initial forms and decoration</head>
+               <p>Initials occur in various shapes and decorations. The overview below lists
+                  characteristic  initial forms and common modes of decoration that are
+                  desirable to identify with the correct terms. Please note that the forms and
+                  decoration often occur in combination and the encoder would in these cases
+                  indicate more than one form or decoration, e.g. a dragon initial that is foliate or a pen-flourished lombard.
+                Certain forms and modes of decoration, however, are mutually exclusive, e.g. a versal cannot be inhabited.</p>
+               <table xml:id="tab2">
+               
+                  <row role="label">
+                     <cell rend="width40">Example</cell>
+                     <cell rend="width20">Form and decoration</cell>
+                     <cell rend="width40">Explanation</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-1154-fol-35r,18-32.jpg"/>
+                           <figDesc>⊕ Photo: The Royal Library, Copenhagen</figDesc>
+                        </figure>
+                        <hi rend="bold">Ill. 7.2</hi>. GKS 1154 fol., f. 35r, l. 18–32.
+                     </cell>
+                     <cell>Historiated initial</cell>
+                     <cell>The initial comprises identifiable representational motifs with an
+                        illustrative function (i.e. referring to the content of the text). It
+                        is desirable to identify the motif of a historiated initial. <lb/>
+                        <lb/>In the example: Historiated initial <q>E</q> showing the lease of land
+                        by handshake in Landsleigubálkr of King Magnús Lagabætir’s landslov
+                        in GKS 1154 fol., Hardenberg’s Codex, f. 35r, l. 18–32.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-334-fol-1v,A,1-20.jpg"/>
+                           <figDesc>⊕ Photo: The Arnamagnæan Collection, Reykjavík.</figDesc>
+                        </figure>
+                        <hi rend="bold">Ill. 7.3</hi>. AM 334 fol., f. 1va, l. 1–20.
+                     </cell>
+                     <cell>Foliate initial</cell>
+                     <cell>The initial is decorated with botanical decoration as creeping branches
+                        with leaves, buds and flowers or spiral vines. Foliage can elongate
+                        the shafts of a letter into the margins in the form of termination. 
+                        In some cases, the termination can be so much elaborated that the foliation frames the page’s text. 
+                        In contrast to borders, however, the text area is not decreased by the foliation. <lb/>
+                        <lb/>In the example: Foliate initial <q>A</q> with spiral vines and curlicue
+                        in AM 334 fol., Staðarhólsbók, f. 1va, l. 1–9.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-1154-fol-5v,15-27.jpg"/>
+                           <figDesc>⊕ Photo: The Royal Library, Copenhagen</figDesc>
+                        </figure>
+                        <hi rend="bold">Ill. 7.4</hi>. GKS 1154 fol., f. 5v, l. 15–27.
+                     </cell>
+                     <cell>Pen-flourished initial</cell>
+                     <cell>Fragile embellishment of both geometrical and foliate motifs executed as very fine hair-lines solely in
+                        (coloured) ink. Placed in the counter of the letter it is called infilling;
+                        when attached to the letter it is called external pen flourish,
+                        which often ends with tendril extenders that extend widely into the
+                        margins. <lb/>
+                        <lb/>In the example: Pen-flourished initial <q>n</q> with delicate tendrils
+                        executed with dark blue ink and pen. The body of the initial is decorated with
+                        gold leaf. Found in GKS 1154 fol., Hardenberg’s Codex, f. 5v, l.
+                        20–23. </cell>
+                  </row>
+                  
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Lbs-781-4to-6v,26-28.jpg"/>
+                           <figDesc>⊕ Photo: The National Library, Reykjavík.</figDesc>
+                        </figure>
+                        <hi rend="bold">Ill. 7.5</hi>. Lbs 781 4to, f. 6v, l. 26–28.
+                     </cell>
+                     <cell>Penwork initial</cell>
+                     <cell>Initial solely drawn with a pen (not a brush) with a subdued degree
+                        of decoration as loops and curlicues. Mostly found in early modern
+                        manuscripts using the same ink as the main text. <lb/>
+                        <lb/>In the example: Penwork initial <q>S</q>, as they often appear in early
+                        modern manuscripts, in Lbs 781 4to, f. 6v, l. 26–28.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-795-4to-24v,1-8.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.6</hi>. AM 795 4to, f. 24v, l. 1–8.
+                     </cell>
+                     <cell>Interlaced initial</cell>
+                     <cell>The body of the initial is formed by geometrically interwoven and
+                        knotted ribbons.<lb/>
+                        <lb/>In the example: Interlaced initial <q>B</q> in AM 795 4to, f. 24v, l.
+                        1–8.</cell>
+                  </row>
+                  
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Medeltidshandskrift-18-6r,13-16.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.7</hi>. Mh. 18, f. 6r, l. 13–16.
+                     </cell>
+                     <cell>Puzzle initial</cell>
+                     <cell>The body of the letter is excecuted in two (or more) contrasting
+                        colours, leaving a thin white gap inbetween. <lb/>
+                        <lb/>In the example: Puzzle initial <q>B</q> in red and blue in Lund,
+                        Medeltidshandskrift 18, f. 6r, l. 13–16. The shape of the 
+                        letter’s body is that of a lombard (see below).</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-76-8vo-23v,10-17.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.8</hi>. AM 76 8vo, f. 23v, l. 10–17.
+                     </cell>
+                     <cell>Zoomorphic initial</cell>
+                     <cell>The body or part of the initial is formed by an animal. Please
+                        indicate in the description which kind of animal it is (for dragons:
+                        see dragon initial below). <lb/>
+                        <lb/>In the example: Zoomorphic initial <q>Q</q>, the cauda of the letter is in the
+                        shape of a fish in AM 76 8vo, f. 23v, l. 10–11.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Medeltidshandskrift-6-5v,1-7.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.9</hi>. Mh. 6, f. 6v, l. 1–7.
+                     </cell>
+                     <cell>Dragon initial</cell>
+                     <cell>The body of the letter or part of it is formed by a dragon. Dragons
+                        usually have fanged jaws, feathered wings and two legs with claws. <lb/>
+                        <lb/>In the example: Two-headed dragon forming part of the body of the 
+                        foliate initial <q>a</q> in Lund, Medeltidshandskrift 6, f. 6v, l. 1–6. </cell> 
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-147-4to-89r,16-24.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.10</hi>. AM 147 4to, f. 89r, l. 16–24.
+                     </cell>
+                     <cell>Inhabited initial</cell>
+                     <cell>Human, animal or fantasy creatures are placed within the letter or its
+                        foliage, often playfully climbing in it with a solely decorative function. It is
+                        desirable to identify the kind of inhabiting creatures. Inhabited initials are 
+                        distinct from historiated initials by not illustrating or referring to the content 
+                        of the text (see also historiated initials above). <lb/>
+                        <lb/>In the example: By climbing canines inhabited initial <q>M</q> 
+                        in AM 147 4to, Heynesbók, f. 89r, l. 16–22.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-65-4to-4v,16-20.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.11</hi>. AM 65 4to, f. 4v, l. 16–20.
+                     </cell>
+                     <cell>Lombard</cell>
+                     <cell>Enlarged letter in a rather bulgy and rounded shape. The body can be
+                        plain-coloured or more elaborated and at times, further decoration such as pen flourish occurs. <lb/>
+                                                <lb/>In the example: The lombard <q>E</q> in AM 65 4to, f. 4v, l. 17–18.</cell>
+                   </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-45-fol-18va,26-38.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.12</hi>. AM 45 fol., f. 18va, l. 31–38.
+                     </cell>
+                     <cell>Versal</cell>
+                     <cell>The first letter of a line is clearly out-dented into the
+                        left margin, frequently with no or only little decoration and using the
+                        same ink as the text. Versals are usually used for minor initials and are often not
+                        much higher than what corresponds to a single line of text.
+                        Please note, however, that versals can occur on different levels of the 
+                        initial hierarchy.<lb/>
+                        <lb/>In the example: Sentence initials executed as versals at the beginning of every stanza 
+                        of Hákonarmál in AM 45 fol., f. 18va, l. 31–38.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/nks-2237-4to-4v,18-24.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.13</hi>. NKS 2237 4to, f. 4v, l. 18–24.
+                     </cell>
+                     <cell>Colour-stroked initial</cell>
+                     <cell>Sentence initials that are highlighted by an additional stroke of ink, usually in red.<lb/>
+                        <lb/>In the example: Red colour-stroked sentence initials in NKS 2237 4to, f. 4v, l. 18–24.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-56-4to-1r,5-11.jpg"/> 
+                        </figure>
+                        <hi rend="bold">Ill. 7.14</hi>. AM 56 4to, f. 1r, l. 5–11.
+                     </cell>
+                     <cell>Incipit</cell>
+                     <cell>The incipit of a text written in display script, i.e. enlarged, colored, 
+                        decorated or written in another script.<lb/>
+                        <lb/>In the example: Coloured (green, yellow, blue, red) and enlarged incipit 
+                        <q>AGNVS MEÐ</q> with red and blue pen flourish, following the pen-flourished 
+                        puzzle linitial <q>M</q> (red, blue) in AM 56 4to, f. 1r, l. 8-10.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-789-4to-2v,11-30.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.15</hi>. AM 789 4to, f. 2v, l. 11–30.
+                     </cell>
+                     <cell>Missing initial</cell>
+                     <cell>The initial has been cut out or is omitted, i.e. space has been left for it
+                        but it was never filled in. Sometimes small guide letters indicate the planned 
+                        letter to the illuminator (see also <emph rend="italics">guide letter</emph>). <lb/>
+                        <lb/>In the example: The text initial <q>M</q> has been cut out, 
+                        also removing the foliation extending 
+                        in the outer and lower margin in AM 789 4to, f. 2v, l. 13-19. </cell>                                          
+                  </row>
+                  <row>
+                     <cell>
+                     <figure>                      
+                        <graphic url="ch7/AM-557-4to-3r,26-30.jpg"/>
+                     </figure>
+                        <hi rend="bold">Ill. 7.16</hi>. AM 557 4to, f. 3r, l. 26–30.
+                     </cell>
+                     <cell>Guide letter</cell>
+                     <cell> A small letter in the margin or the indented space for the initial indicating 
+                        to the illuminator which letter to draw. Guide letters are found both in combination
+                        with executed initials and missing ones.<lb/>
+                        <lb/>In the example: The missing initial <q>Þ</q> that was planned, but never 
+                        executed as is visible from the indented four lines of the text, and the
+                        guide letter <q>þ</q> in the margin in AM 557 4to, f. 3r, l. 26–30.</cell>
+                  </row>
+                  
+                  <row>
+                     <cell> </cell>
+                     <cell>[Anything else]</cell>
+                     <cell>All other instances: Name what you see (incl. representative motifs
+                        and figural ornamentation). <lb/>
+                        <lb/></cell>
+                  </row>
+               </table>
+               <p>Table <ref target="#tab1">1</ref>. Ill. 7.2–7.16 listing the most common initial forms and
+                  and modes of decoration. </p> 
+              
+               <p>The initial form and/or decoration are incorporated into the
+                  description of the illumination type:</p>
+               <egXML><![CDATA[<decoNote>
+  <p>F. <locus from="3r" to="3r">3r:24-26</locus>: 
+    chapter initial M executed as pen-flourished lombard, 3 l.
+    Colours: blue, light red.
+  </p>
+</decoNote>]]></egXML>
+               <p>A longer and somewhat more detailed description that would obscure the readability
+                  if provided in the beginning may be given later in the <gi>decoNote</gi>
+                  (see <ref target="#sec7.2.7">ch. 7.2.7</ref>).</p>
+	      </div>
+	      
+	      <div>
+               <head xml:id="sec7.2.2">7.2.2 Other illuminations</head>  
+               <p>In the same way as for the major initials, each occurence of the other
+                  illumination types, for instance a miniature, is registered in a separate
+                     <gi>decoNote</gi> element in the header. A register entry of illuminations
+                  other than initials comprises as a minimum of the following: a) Folio/column, b) Type
+                  and motif/ornament, c) Caption (if applicable), d) Colours. </p>
+	      </div>
+	      
+	      <div>
+               <head xml:id="sec7.2.2.1">7.2.2.1 Illumination types </head>
+               <p>When registering illuminations in <gi>decoNote</gi>, the place where it occurs is given, followed by the
+                  identification of the illumination type. The different types are characterized by
+                  their position and size in relation to the written text. The following table gives
+                  an overview over the most frequent types of illuminations (other than initials) that we consider desirable to be
+                  identified. </p>
+               <table xml:id="tab3">
+                  <row role="label">
+                     <cell rend="width40">Example</cell>
+                     <cell rend="width20">Illumination type</cell>
+                     <cell rend="width40">Explanation</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-421-12mo-47v-48r.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.17</hi>. AM 421 12mo, f. 47v–48r.
+                     </cell>
+                     <cell>Full-page illumination</cell>
+                     <cell>Illumination, often framed, covering the size of the 
+                        written area elsewhere in the manuscript.<lb/>
+                        <lb/>In the example: Full-page illumination depicting the adoration of the
+                        Magi in AM 421 12mo, Marine
+                        Jesperdatter’s prayer book, f. 47v–48r.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-733-4to-5v,A,20-21.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.18</hi>. AM 733 4to, f. 5va, in between l. 20–21.
+                     </cell>
+                     <cell>Miniature</cell>
+                     <cell>Illumination within the written area that is not connected to an
+                        initial. A miniature is usually framed and its size corresponds 
+                        to the width of the column. The motif frequently illustrates a passage of the
+                        text. <lb/>
+                        <lb/>In the example: Framed miniature showing Christ on the cross with Mary and
+                        John on either side in AM 733 4to, f. 5va, in between l. 20–21.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-132-4to-29v,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.19</hi>. AM 132 4to, f. 29v, bottom margin.
+                     </cell>
+                     <cell>Marginal drawing</cell>
+                     <cell>Drawings outside the written area, usually unframed and not connected to
+                        any initial. The drawing can be placed in all four margins of a page,
+                        but appear most frequently in the outer and lower margins. The motifs
+                        can refer to the written text but can also be of playful character. <lb/>
+                        <lb/>In the example: A marginal drawing showing a bishop and a bearded
+                        grotesque figure sticking out its tongue in AM 132 4to, f. 29v,
+                        bottom margin.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-1154-fol-2v,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.20</hi>. GKS 1154 fol., f. 2v, lower margin.
+                     </cell>
+                     <cell>Bas-de-page</cell>
+                     <cell>Elaborate drawing that usually covers most of the lower margins and that
+                        is connected to a bar attached to an initial. The often playful
+                        motifs (drollery) can refer to the written text or other illuminations
+                        on the page. <lb/>
+                        <lb/> In the example: Bas-de-page with two jousting knights riding towards each
+                        other. The illumination is placed on a bar that is attached to the initial
+                        <q>F</q> in GKS 1154 fol., Hardenberg’s Codex, f. 2v, lower margin.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-71-8vo-17r.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.21</hi>. AM 71 8vo, f. 17r.
+                     </cell>
+                     <cell>Border</cell>
+                     <cell>Outstanding illuminated margins that frame the incipit of a text
+                        (or section), significantly reducing the written area of a page. They
+                        usually co-occur with extraordinary enlarged and decorated initials 
+                        (cf. incipit page). Borders can either be ornamental (foliate, inhabited)
+                        or historiated (with identifiable representative motifs). Rare in
+                        manuscripts that were produced in Scandinavia. <lb/>
+                        <lb/>In the example: Historiated border in a Dutch prayer book with a
+                        historiated initial depicting scenes from the birth of Christ in AM 71 8vo, f. 17r.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Thott-21-4to-5r.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.22</hi>. Thott 21 4to, f. 5r.
+                     </cell>
+                     <cell>Incipit page</cell>
+                     <cell>Decorated page highlighting the beginning of a text (or section) comprising
+                        the incipit in enlarged display script and an extraordinary enlarged
+                        initial. The background is usually coloured and framed. The focus is on
+                        script and there are usually no ornaments or figurative motifs exceeding/beyond the
+                        initial (cf. border). <lb/>
+                        <lb/>In the example: Framed incipit page opening Matthew’s gospel comprising a
+                        foliate initial and the incipit in display script on purple
+                        ground in Thott 21 4to, f. 5r.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-3274-a-4to-22v.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.23</hi>. GKS 3274 a 4to, f. 22v.
+                     </cell>
+                     <cell>Display page</cell>
+                     <cell>Unframed page with solely enlarged, decorated display script, often the incipit of a text (or section), 
+                        sometimes before or after a larger initial (cf. incipit page). 
+                                                <lb/>
+                        <lb/>In the example: Unframed display page with colored display script 
+                        opening Rekabálkr of Jónsbók, in GKS 3274 a 4to, f. 22v.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-4-4to-3r,11-18.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.24</hi>. AM 4 4to, f. 3r, l. 11–18.
+                     </cell>
+                     <cell>Line fillers</cell>
+                     <cell>More or less elaborate ornaments filling the unwritten whitespace of
+                        written lines, typically the last part of the line: They can be simple
+                        (coloured) lines, but sometimes they depict serpents, fish or other
+                        animals. The occurrence of line fillers can be summarized at the end
+                        of the list. <lb/>
+                        <lb/>In the example: Red and blue line fillers in AM 4 4to, f. 3r,
+                        l. 11–18.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Lbs-781-4to-17r,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.25</hi>. Lbs 781 4to, f. 17r.
+                     </cell>
+                     <cell>Frieze</cell>
+                     <cell>Ornamental horizontal element above, within or below the text, usually
+                        covering most of the width of the written area. <lb/> 
+                        <lb/>In the example: Horizontal frieze drawn with ink placed below the script
+                        and illuminations in Lbs 781 4to, f. 17r. </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Lbs-781-4to-4v,upper-left-corner.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.26</hi>. Lbs 781 4to, f. 4v, upper left corner.
+                     </cell>
+                     <cell>Cartouche</cell>
+                     <cell>Frame comprising a short caption, usually emulating three-dimensional
+                        organic forms. <lb/>
+                        <lb/>In the example: A cartouche comprising the caption of the illumination
+                        of a hand in Lbs 781 4to, f. 4v.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-3274-a-4to-250v,9-13.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.27</hi>. GKS 3274 a 4to, f. 250v, l.9–13.
+                     </cell>
+                     <cell>Vignette</cell>
+                     <cell>Small ornamental element at the end of a text, as often found in
+                        early modern manuscripts. They often co-occur with half-diamond indention of
+                        the explicit of a text. <lb/>
+                        <lb/>In the example: A vignette with a geometrical interlaced ornament below 
+                        the end of a chapter in GKS 3274 a 4to, f. 250v.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-76-8vo-11r,16-22.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.28</hi>. AM 76 8vo, f. 11r, l. 16–22.
+                     </cell>
+                     <cell>Maniculus (pl. -i)</cell>
+                     <cell>A small hand in the margin pointing at a word or phrase of the written
+                        text. <lb/>
+                        <lb/>In the example: A red maniculus in the outer margin of AM 76 8vo, f. 11r, l.
+                        16–22.</cell>
+                  </row>
+                  <row>
+                     <cell> 
+                        <figure>
+                           <graphic url="ch7/AM-132-4to-1r.jpg"/>
+                       </figure>
+                        <hi rend="bold">Ill. 7.29</hi>. AM 132 4to, f. 1r.
+                     </cell>  
+                     <cell>Missing illumination</cell>
+                     <cell>Illumination that has either been laid out, but the allowed space
+                        was never filled, or has later been scraped off or cut out. It will be
+                        registered in the header similarly to missing initials. Instances of
+                        left blank spaces can contain notes for the illuminator that indicate the
+                        planned motif. <lb/>
+                        <lb/>In the example: The full-page illumination in AM 132 4to, f. 1r was scraped 
+                        off at a later point leaving a brighter area. The outlines of the former 
+                        illumination can still be perceived, it showed a seated
+                        king with a haloed crown and in his hands an orb, an axe and a 
+                        cross-staff; probably St. Olaf.</cell>
+                  </row>
+               </table>
+	         <p>Table <ref target="#tab2">2</ref>. Ill. 7.17–7.29 showing the most common types of illumination
+	            (other than initials).</p>
+               <p>Examples applying these terms are given in the following section dealing
+                  with motifs. Please note that the occurrence of minor but highly frequent
+                  illumination types (e.g. line fillers and maniculi) can be summarized at the end
+                  of the list, similar to minor initials (see <ref target="#sec7.2.1.1"
+                     >ch. 7.2.1.1</ref>). Furthermore, it is of interest to register missing
+                  illuminations as they document conditions of manuscript production (e.g. planned, but
+                  not executed elements), intended text structure or re-use (e.g. removed at a later point in time). </p>
+	      </div>
+	      
+	      <div>
+               <head xml:id="sec7.2.2.2">7.2.2.2 Motifs</head>
+               <p>The motifs and composition of the various illuminations is normally listed using
+                  basic key words. As for the decoration of initials, a longer and more detailed description that would
+                  obscure the readability if provided in the beginning, may be given later in
+                  the same <gi>decoNote</gi> (see <ref target="#sec7.2.7">ch. 7.2.7</ref>).</p>
+	         
+               <p>Representational motifs include both objects as well as animate beings, such as
+                  humans, animals or hybrid creatures. To register these, one simply identifies what
+                  one sees (as best as possible) and briefly names the depicted objects, beings and
+                  scenes. The description is given in free text, possibly supplemented by a
+                  distinctive attribute, e.g. <q>sword</q>, <q>hanged thief</q>, <q>dog</q>,
+                     <q>bearded face</q>, <q>gryllus</q>. In case of a narrative scene a verbal
+                  phrase may be used, e.g. <q>man hitting mermaid with a sword</q>, <q>judges leading
+                     thief to the gallows</q>. Terms for some rather specific, but frequent
+                  motifs are explained in the following overview.</p>
+             
+               <table xml:id="tab4">
+                  <row role="label">
+                     <cell rend="width40">Example</cell>
+                     <cell rend="width20">Motif</cell>
+                     <cell rend="width40">Explanation</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-350-fol,15r,A,12-15.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.30</hi>. AM 350 fol., f. 15ra, l. 10–16.   
+                     </cell>
+                     <cell>Bearded face</cell>
+                     <cell>The counter of an initial is filled with a drawing of a
+                        (bearded) face. Common in chapter initials. <lb/>
+                        <lb/>In the example: A bearded face found in the counter of the initial
+                        <q>n</q> in AM 350 fol., f. 15ra, l. 12–15.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-732-b-4to-3r,below-1.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.31</hi>. AM 732 b 4to, f. 3r, below l. 1.
+                     </cell>
+                     <cell>Diagram</cell>
+                     <cell>Two-dimensional schematic representation combining script and usually
+                        rather geometrical forms as lines and circles. Please indicate the
+                        represented content. <lb/>
+                        <lb/>In the example: Diagram showing the position of the earth, sun and moon
+                         in AM 732 b 4to, f. 3r, below l. 1.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-1005-fol-5v,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.32</hi>. GKS 1005 fol., f. 5v, bottom margin.
+                     </cell>
+                     <cell>Drollery</cell>
+                     <cell>Playful and funny motifs in general, e.g. a fox hunting a rabbit,
+                        grylli or a knight fighting a snail. <lb/>
+                        <lb/>In the example: A drollery scene with a man with a helmet and twisted arms 
+                        as well as a cloven-hoofed canine chasing a bird in the bas-de-page of GKS 1005 fol.,
+                        Flateyjarbók, f. 5v, bottom margin.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-147-4to-23v,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.33</hi>. AM 147 4to, f. 23v, bottom margin.
+                     </cell>
+                     <cell>Grotesque</cell>
+                     <cell>A hybrid fantasy creature of usually human and animal components. <lb/>
+                        <lb/>In the example: A quadruped grotesque with a human head and a long
+                         tail in AM 147 4to, Heynesbók, f. 23v, bottom margin.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/GKS-1005-fol-6v,B,46-50.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.34</hi>. GKS 1005 fol., f. 6vb, 46–50.
+                     </cell>
+                     <cell>Gryllus (pl. -i)</cell>
+                     <cell>Playful grotesque creature usually broad-bottomed with two animal rear
+                        legs and a human face; often with a tail and wearing a gugel. <lb/>
+                        <lb/>In the example: Two hooded grylli in the counter of an initial of GKS 1005
+                        fol., Flateyjarbók, f. 6vb, l. 46–50.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Medeltidshandskrift-15-140v,marg-bottom.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.35</hi>. Mh. 15, f. 140v, bottom margin.
+                     </cell>
+                     <cell>Labours of the month</cell>
+                     <cell>Images of agricultural activities connected to the individual
+                        months, usually in connection with calenders. <lb/>
+                        <lb/>In the example: Haymaking with a scythe in July
+                        and harvesting the crops with a sickle in August from a
+                        calender in Lund, Medeltidshandskrift 15, f. 140v, bottom margin.</cell> 
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/AM-732-b-4to-8v,above-1.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.36</hi>. AM 732 b 4to, f. 8v. 
+                     </cell>
+                     <cell>Maps</cell>
+                     <cell>A two-dimensional representation of real or imagined places often
+                        with captions. Please indicate the represented place(s). <lb/>
+                        <lb/>In the example: A map of Jerusalem in AM 732 b 4to, f. 8v, upper half of the page. </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <figure>
+                           <graphic url="ch7/Lbs-781-4to-46r,upper-left-corner.jpg"/>
+                        </figure>
+                        <hi rend="bold">Ill. 7.37</hi>. Lbs 781 4to, f. 46r, upper left corner. 
+                     </cell>
+                     <cell>Zodiac signs</cell>
+                     <cell>Depictions of the 12 zodiac signs. Please indicate the <lb/> represented
+                        sign, i.e. Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio,
+                        Sagittarius, Capricorn, Aquarius or Pisces.<lb/>
+                        <lb/>In the example: A miniature showing the Libra of the zodiac signs in
+                        Lbs 781 4to, f. 46r, upper left corner.</cell>
+                     <cell/>
+                  </row>
+               </table>
+               <p>Table <ref target="#tab3">3</ref>. Ill. 7.30–7.37 showing common motifs found in illuminations. </p>
+	         
+               <p>The very first XML example given in ch. 7.2 above already includes a brief description of the
+                  motif(s). Such descriptions should be included in the prose description 
+                  of a <gi>decoNote</gi> when applicable, and they have their natural place right after the location and
+                   illumination type: </p>
+               <egXML><![CDATA[<decoNote>
+  <p>F. <locus from="7r" to="7r">7r</locus>: 
+    bas-de-page, two dogs running, a lamb and a bird.
+    Colours: black, dark red, white.</p>
+</decoNote>]]></egXML>
+               <p>In case of abstract motifs such as ornaments, the form and type(s) as well as potentially involved 
+                  motifs are described as best as possible. </p>
+	      </div>
+	      
+	      <div>
+            <head xml:id="sec7.2.3">7.2.3 Use of colours</head>
+            <p>It is relevant to note the usage of different shades of ink and colours and (their
+               distribution) in both initials and other illuminations. Among others, this helps understanding the indented
+               structure of a text from the hierarchy of the initials and other illuminations. This is
+               particularly relevant for readers who do not have access to either the manuscript or colour
+               photographs thereof. In the optimal case the colours and their hues are listed
+               separately for each <gi>decoNote</gi>. However, the colours may also be usefully be given 
+               in a summary, e.g. in the case of alternating use of colours as occurs frequently
+               with initials. It would be desirable to be as accurate as possible with regards to
+               naming the colours with reference to the pigments and inks used (e.g. white lead,
+               massicot, orpiment, yellow ochre, burnt sienna, minium, vermillion, madder, crimson,
+               burnt umber, azurite, cobalt blue, ultramarine, woad, malachite, verdigris, raw umber
+               etc.). Nonetheless, such identification is often not possible from the available
+               images or without scientific analysis. Therefore, if it is not possible to determine
+               the pigments used, we encourage encoders not to hesitate to use simple descriptions
+               such as <q>light blue</q> or <q>brown red</q>. If applicable, the colour hue of the
+               outline of the illumination can be listed separately in the end prefixed by
+                  <q>Outline: </q>. </p>
+            <p>For example, the below description of the illumination in AM 345 fol. on f. 1v 
+               lists information on the colours and ink following the basic description of the motif (and the caption). 
+               After that mention is made of the outline’s hue:</p>
+	         	         
+	         <figure rend="width50 clearboth">
+	            <graphic url="ch7/AM-345-fol-1v.jpg"/>
+	         </figure>
+	         <p rend="caption"><hi rend="bold">Ill. 7.38</hi>. AM 345 fol., f. 1v.</p>
+	         
+<egXML><![CDATA[<decoNote>
+  <p>F. <locus from="1v" to="1v">1v</locus>: 
+    full-page illumination, Holy King <name type="person">Óláfr</name>. 
+    Caption: <q>Olafur · Haraldz son · Noreks kongur</q>. 
+    Colours: yellow, dark green, light red, black. 
+    Outline: black, brown.</p>
+</decoNote>]]>
+</egXML>
+	         
+            <p>Note: The colours of initials are also described as part of the encoding in the
+               transcription (see <ref target="#sec7.3.4"> ch. 7.3.4</ref>). There, however, colours
+               found in individual initials are only encoded in a simple manner. Consequently, we
+               recommend to include the detailed &ndash; and potentially more specialized &ndash;
+               description in the manuscript description, i.e. as part of the header, instead. </p>
+	      </div>
+	      
+	      <div>
+            <head xml:id="sec7.2.4">7.2.4 Captions</head>
+            <p>Illuminations, including initials, can contain captions. If present, the text of
+               captions should be transcribed separately. Like other transcriptions from the
+               manuscript, transcriptions of caption are treated as quotes
+               in the header and, thus, they are wrapped in <gi>q</gi>-elements. The example
+               below shows how the caption found in the illumination on f. 1r of AM 345
+               fol. may be transcribed.</p>
+                  
+	         <figure rend="width50 clearboth">
+	            <graphic url="ch7/AM-345-fol-1r.jpg"/>
+	         </figure>
+	         <p rend="caption"><hi rend="bold">Ill. 7.39</hi>. AM 345 fol., f. 1r.</p>
+	        	                 
+            <egXML><![CDATA[<decoDesc>
+  <decoNote>
+    <p>F. <locus from="1r" to="1r">1r</locus>: full-page illumination, 
+      four kings (<name type="person">Sverrir</name>, 
+      <name type="person">Hákon</name>, 
+      <name type="person">Magnús</name>,
+      <name type="person">Eiríkr</name>). 
+      Caption: <q>Suerrer · kongur ~ Hakon kongur | Magnus · kongur 
+      ~ Eirikur · kongur</q>.
+      Colours: black, brown (outline).
+    </p>
+  </decoNote>
+ </decoDesc>]]></egXML>
+	      </div>
+	      
+	      <div>
+            <head xml:id="sec7.2.5">7.2.5 Hands and dating (if known)</head>
+            <p>In case the hand(s) and/or the dating of illuminations differ from the hand(s) or dating of the
+               adjacent main text, this information should be included if available. A mention can
+               either be made in a general statement for all illuminations or
+               given separately in the individual <gi>decoNote</gi> elements
+               in question. As in other places where information about involved people or dates occurs
+               in free text, these are marked-up using the elements <gi>name</gi> and
+                  <gi>date</gi>, respectively, with the appropriate attributes <att>type</att> and
+                  <att>when</att> or <att>notBefore</att>/<att>notAfter </att>. The encoded
+               information could look like this:</p>
+            <egXML><![CDATA[<decoNote>
+  <p>Ff. <locus from="1r" to="27v">1r-27v</locus>: 
+    penwork sentence initials, 1 l., added later (potentially 
+    by <name type="person">Jón Jónsson</name>).
+    Colour: black.</p>
+</decoNote>]]></egXML> 
+	         
+	      
+	      </div>
+	      
+	      <div>
+	            <head xml:id="sec7.2.6">7.2.6 Illumination techniques (optional)</head>
+	            <p>We consider the description of illumination techniques optional, but encourage their 
+	               inclusion if possible. In most cases it should 
+	               not take too much effort to identify the technique and if the same technique was
+	               used consistently throughout the manuscript it can be summarized. 
+	               It will give &ndash; similar to the mention of the used 
+	               colour hues &ndash; a much better impression of the decoration to a reader without 
+	               access to the manuscript or images thereof. If the techniques vary from illumination to illumination 
+	               this fact should be indicated and described in the prose of the separate <gi>decoNote</gi> elements.</p>
+	               
+	               <p>Some more common illumination techniques include:</p>  
+	            
+	            <table xml:id="tab5" cols="3">
+               <row role="label">
+                  <cell rend="width40">Example</cell>
+                  <cell rend="width20">Illumination technique</cell>
+                  <cell rend="width40">Explanation</cell>
+               </row>
+	               <row>
+	                  <cell><figure>
+	                     <graphic url="ch7/AM-322-fol-53r,B,21-28.jpg"/>
+	                  </figure>
+	                     <hi rend="bold">Ill. 7.40</hi>. AM 322 fol., f. 53rb, l. 21-28.
+	                  </cell>
+	                  <cell>Gold leaf</cell>
+	                  <cell>Thin layers of gold foil applied onto the page that can be further
+	                     decorated, i.e. by burnishing, tooling or painting/sgraffito.<lb/> 
+	                     <lb/>In the example: The body of the initial <q>n</q> 
+	                     is decorated with gold leaf and fully painted ornamentation in AM 322 fol., f. 53rb, l. 21-28. 
+	                     The gold leaf is partly peeling off today and reveals the underlying grounding.</cell>
+	               </row>
+               <row>
+                  <cell><figure>
+                     <graphic url="ch7/AM-421-12mo-71v,detail.jpg"/>
+                  </figure>
+                     <hi rend="bold">Ill. 7.41</hi>. AM 421 12mo, f. 71v.
+                  </cell>
+                  <cell>Gold substitute</cell>
+                  <cell>Metallic glimmer used as cheaper alternative to gold leaf, sometimes based on tin
+                     or silver. These glimmer particles were often soluted in binding agent and
+                     applied onto the surface with a paintbrush, frequently leaving the ground
+                      or outlines visible. Please note: The usage of yellow colour instead of gold is not meant here.<lb/> 
+                     <lb/>In the example: Liquid gold substitute applied onto the drawings, 
+                     leaving the outlines of the halos visible in AM 421 12mo, Marine Jesperdatter’s
+                     prayer book, f. 71v. Please note: In other instances in this manuscript, the substitute can appear rather 
+                     silver or even oxidised grey.</cell>
+               </row>
+               <row>
+                  <cell><figure>
+                     <graphic url="ch7/AM-442-12mo-4v,13-23.jpg"/>
+                  </figure>
+                     <hi rend="bold">Ill. 7.42</hi>. AM 442 12mo, f. 4v, l. 13–23.
+                  </cell>
+                  <cell>Fully painted</cell>
+                  <cell>Opaque colours, often blend colour hues, applied in several layers. <lb/>
+                     <lb/>In the example: The initial <q>B</q> and botanical 
+                     ornaments fully painted; light ornaments were applied on dark ground 
+                     colours in AM 442 12mo, f. 4v, l. 17–23.</cell>
+               </row>
+	               <row>
+	                  <cell><figure>
+	                     <graphic url="ch7/AM-345-fol-27r,marg-bottom-outer.jpg"/>
+	                  </figure>
+	                     <hi rend="bold">Ill. 7.43</hi>. AM 345 fol., f. 27r, bottom margin.
+	                  </cell>
+	                  <cell>Colour wash</cell>
+	                  <cell>Transparent colours usually leaving the outline drawing underneath
+	                     visible. <lb/>
+	                     <lb/>In the example: Red and green colour wash applied onto some parts of an outline drawing, 
+	                     in AM 345 fol., Reykjabók of Jónsbók, f. 27r, bottom margin.</cell>
+	               </row>
+	               <row>
+	                  <cell><figure>
+	                     <graphic url="ch7/AM-132-4to-12r,marg-bottom.jpg"/>
+	                  </figure>
+	                     <hi rend="bold">Ill. 7.44</hi>. AM 132 4to, f. 12r, bottom margin.
+	                  </cell>
+	                  <cell>Outline drawing</cell>
+	                  <cell>Lines drawn with an (ink) pen (can be colour washed). <lb/>
+	                     <lb/>In the example: Outline drawing using pen and ink in AM 132 4to, f.
+	                     12r, bottom margin.</cell>
+	               </row>
+	               <row>
+	                  <cell><figure>
+	                     <graphic url="ch7/JS-133-4to-37v,16.jpg"/>
+	                  </figure>
+	                     <hi rend="bold">Ill. 7.45</hi>. JS 133 4to, f. 37v.
+	                  </cell>
+	                  <cell>Pasted</cell>
+	                  <cell>Illuminations pasted into the manuscript, sometimes from sources other
+	                     than manuscripts, e.g. printed books.<lb/>
+	                     <lb/>In the example: Outline drawing using a pencil on tracing paper that was pasted onto 
+	                      the preexisting leaf in JS 133 4to, f. 37v.</cell>
+	               </row>
+                            <row>
+                  <cell><figure>
+                     <graphic url="ch7/AM-618-4to-37r,B,19-28.jpg"/>
+                  </figure>
+                     <hi rend="bold">Ill. 7.46</hi>. AM 618 4to, f. 37rb, l. 19–28.
+                  </cell>
+                               <cell>Reuse in palimpsest manuscript </cell>
+                               <cell>The original script was scraped away but the 
+                     illuminations were left untouched to be integrated into the new text. <lb/>
+                     <lb/>In the example: The Old French translation in the right column was scraped off and 
+                     replaced by an Old Icelandic translation keeping and that way re-using the initial <q>Q</q>
+                     in AM 618 4to, f. 37rb, l. 21–26.</cell>
+               </row>
+	            
+	               <row>
+	                  <cell><figure>
+	                     <graphic url="ch7/A-1-148r,B,1-9_montage.jpg"/>
+	                  </figure>
+	                     <hi rend="bold">Ill. 7.47</hi>. A 1, f. 148rb, l. 1–9 (closed/opened curtain).
+	                  </cell>
+	                  <cell>Curtain</cell>
+	                  <cell>A small piece of cloth is glued or sewn onto a leaf with the purpose of protecting an illumination from abrasion. <lb/>
+	                     <lb/>In the example: A small green curtain is sewn onto the parchment to protect a delicate initial that is fully painted and decorated with gold leaf. 
+	                     The curtain can be turned up to reveal the initial <q>T</q>
+	                     in Stockholm, A 1, f. 148rb, l. 1–9.</cell>
+	               </row>
+            </table>
+	            <p>Table <ref target="#tab4">4</ref>. Ill. 7.40–7.47 showing common illumination techniques. </p>
+	      </div>
+	      
+	      <div>
+            <head xml:id="sec7.2.7">7.2.7 Advanced description of motifs and composition
+               (optional)</head>
+            <p>When describing motifs one may want to provide more detail than one-word
+               descriptions can cover. In particular, the description of motifs can be improved by
+               accounting for the composition of the illumination and/or connecting them to the
+               different parts of the initial, such as the counter or the termination (see also the
+               glossary provided at the end of this chapter, <ref target="#sec7.4">ch. 7.4</ref>).
+               We recommend to always provide basic information at the beginning of each
+                  <gi>decoNote</gi>, potentially followed by more specialized details at the end
+               as shown in the following example:</p>
+            <egXML><![CDATA[<decoNote>
+  <p>F. <locus from="4v" to="4v">4va:28-30</locus>: 
+     pen-flourished inhabited chapter initial A, 3 l.
+    Colours: light red (body of the letter), dark blue (pen flourish).
+    The counter of the initial is inhabited by a two-legged creature 
+    in front of a blue grid. The creature was drawn in the same dark 
+    blue colour as the pen flourish of the initial.</p>
+</decoNote>]]></egXML>
+            <p>With regards to Christian iconography, it is desirable to identify the most
+               common motifs. While it would be sufficient to give a general identification, such as
+                  <q>Christ on the cross</q> or <q>female Saint</q>, more specific descriptions are
+               highly welcome and will increase their value for other researchers. For help
+               identifying Christian iconography we recommend the Iconclass Browser <ref
+                  type="url">http://www.iconclass.org/help/outline</ref>, a tool developed for
+               identification of iconography of art with a special focus on Christian iconography.
+               For example, if you are in doubt about what is depicted in an illumination and the
+               text does not give any clue, you can conduct a combined search in the Iconclass
+               Browser searching for the elements you can identify. A search for <q>female saint AND
+                  wheel</q>, for instance, will tell you that, according to iconographic tradition,
+               a wheel identifies either St. Catherine or St. Christina. Furthermore, the search
+               results will guide you to identify the female saint as one or the other,
+               depending on other details of the depiction.</p>
+            <p>For an exemplary and very detailed manuscript description with regards to the iconography and
+               composition of illuminations see the entry for AM 226 fol. in the online catalogue on the 
+               <ref target="https://handrit.is">handrit.is</ref> website:
+               <ref type="url">https://handrit.is/en/manuscript/view/da/AM02-226</ref>.
+               (Please note, however, that the details of the XML encoding guidelines for
+               handrit.org differ slightly from the practices recommended here.)</p>
+            <p>Finally, in the advanced description part of illuminations it is possible to
+               include more specific art-historical aspects, such as the classification of the
+               illumination style, e.g. Gothic, Insular, Romanesque or Renaissance.</p>
+         </div>
+            </div>	      
+
+<div>
+   <head xml:id="sec7.3">7.3 Encoding initials in the transcription</head>
+   
+   
+   <!-- OBS: Wir wollen in der Zukunft überlegen, ob in diesem Kapitel nicht auch behandelt werden sollte, wie die anderen Illuminationen
+   in die Transkription eingefügt werden könnten (wird wohl dem Handbuch 4.0 überlassen). Gilt auch für Beischriften.
+   Angezeigt werden können unsere Vorschläge in den verschiedenen Levels noch nicht, aber im xml kann man es sehen. Fragen:
+   1. Wo genau sollen diese innerhalb der Transkription integriert werden? Zumindest bei Illuminationen, die am Rand sind und 
+   nicht in den Textspiegel integriert sind, ist dies relevant. Am Anfang/Ende geht nicht, wegen der pot. Wortumbrüche. Hier
+   könnte man empfehlen, dass diese dort eingefügt werden, wo es den Transkribierenden am sinnvollsten erscheint. U. U. beziehen 
+   sich Randzeichnungen auch auf den Text und dann könnten diese auch an entsprechender Stelle in die Transkription eingefügt werden.
+   2. Welche Codes verwenden wir? Beekes Vorschläge sind: <figure> 
+   http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html. Darin enthalten sind:
+   a. <head> für einen deskriptivenn Bildtitel. Auch wichtig, um den Überblick bei den nachfolgenden Verlinkungen zu behalten.
+   b. <figDesc> für eine Bildbeschreibung. Da wir diese aber schon im header haben, wäre nun die Frage, ob man hier mit <ref> 
+   zu ebendieser verlinken kann und dementsprechend die <decoDesc> eine eigene xml-id bekommen.
+   c. <graphic> für einen Link zur Bilddatei. Diese kann zwar noch nicht automatisch 
+   angezeigt werden, aber vl. ja in Zukunft. http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html 
+ -->            
+            
+            <p>This section describes how to encode initials, including sentence initials (also
+               called <emph rend="italics">littera notabilior</emph>), as part of the transcription. The
+               decoration of initial letters can vary considerably, but the degree of decoration
+               (motifs/ornaments and uses of colours) is usually connected to their function. Thus,
+               a manuscript may have quite large and splendid main initials while at the same time
+               displaying more modest decoration for initials introducing subordinate sections such as paragraphs or
+               sentences. This information is worth to be marked-up in the transcription, 
+               so that it can be directly linked to the corresponding text.</p>
+                  
+                  <p>In the transcription, the mark-up of initials 
+                  and other emphasized letters is rather standardized and confined to a couple of basic categories. 
+                  We recommend to use the element <gi>c</gi>, which can take several attributes (see further below).
+                  The more detailed description of initials (usually in prose) should be given in the document header as described above
+                  (see <ref target="#sec7.2"> ch. 7.2</ref>). </p>
+   
+             <p>Since the specific characteristics of initials are visual, the special mark-up of such letters is usually restricted
+                to the facsimile level of the transcription. This is at least the case when a transcription is conducted on multiple levels.
+                When initials are marked-up on the facsimile level, that information is <emph rend="italics">not</emph> repeated on the
+                diplomatic or normalized level. Instead, initials are simply transcribed like any other letter on those levels.
+                If a transcriber, however, chooses not to transcribe a text on the facsimile level, but still wishes to include information
+                on initials, the mark-up may be used on the diplomatic level (or on the only present level in case of a single-level transcription).
+               Simple mark-up of an initial in a three-level transcription looks like this: </p>
+   
+   <egXML><![CDATA[<w>
+  <choice>
+    <me:facs><c type="initial" subtype="opening">h</c>ier</me:facs>
+    <me:dipl>hier</me:dipl>
+    <me:norm>Hér</me:norm>
+ </choice>
+</w>]]></egXML>
+                         
+               <p>Please note: Besides defining some 
+                  of the most relevant characteristics of the initials and providing that information
+                  in a consistent and thus highly valuable manner for analysis, 
+                  the initial mark-up in the transcription can be read by appropriate stylesheets 
+                  that transform the XML transcription for display. However, the display options 
+                  of XSLT stylesheets may differ, and at the current point of the technical development
+                  (that is easily accessible), the display of initials in the Menota-stylesheet
+                  is confined to a rather basic approximation.</p>
+  	      
+<div>
+<head xml:id="sec7.3.1">7.3.1 The letter and its form</head> 
+   
+   <p>An initial (as any other character) is part of the transcribed text. Therefore, 
+      it needs to be written, or rather typed, by the transcriber. In the same way as for other characters, 
+      the letter form may be noted and reproduced on the facsimile level using one of the 
+      Unicode characters. For instance, an insular capital <q>F</q> can be encoded with the entity <hi rend="entity">&amp;Fins;</hi> 
+      (for more details on characters and encoding rules see <ref target="HB3_ch5.xml#sec5.2">ch. 5.2.</ref>). The mark-up for further describing 
+      the special characteristics of the initial is then built around the character, since it is understood as a qualification of how the letter 
+      was executed in the manuscript.</p>
+   
+   <p>If an initial is missing – because it was never filled in, because it 
+      has been erased from the manuscript or because it was cut out – the missing letter is
+                  encoded in accordance with the general rules for transcription. The same 
+                  applies to initials that were added later
+                  (see <ref target="HB3_ch8.xml#sec8.3">ch. 8.3</ref> for the encoding of the <gi>space/</gi> element, and
+      <ref target="HB3_ch9.xml#sec9">ch. 9</ref> for the encoding of scribal or editorial intervention). 
+      The mark-up of the missing or added initial is wrapped in the element <gi>c</gi>
+      as normal.
+      The following example shows how a missing initial <q>N</q> is encoded using <gi>space/</gi>. 
+      The attribute <att>quantity</att> is used on <gi>space/</gi> to indicate the number of characters omitted,
+                  which is specified by the value <val>chars</val> of the attribute <att>unit</att>. 
+      
+      <egXML><![CDATA[<w>
+  <choice>
+    <me:facs><c type="noInitial" subtype="chapt">
+      <space quantity="1" unit="chars"/></c>v</me:facs>
+    <me:dipl><supplied reason="restoration" resp="BS">N</supplied>v</me:dipl>
+    <me:norm><supplied reason="restoration" resp="BS">N</supplied>ú</me:norm>
+ </choice>
+</w>]]></egXML>
+               </p>
+
+</div>
+	      
+<div>  
+<head xml:id="sec7.3.2">7.3.2 Hierarchy of initials</head>
+   
+   <figure rend="width80 clearboth">
+      <graphic url="ch7/Hierarchy.jpg"/>
+   </figure>
+   <p rend="caption"><hi rend="bold">Ill. 7.48</hi>. Hierarchy of initials exemplified in AM 351 fol., f. 2r and 72v. 
+      Red: historiated opening initial, 8 l. Yellow: pen-flourished chapter initial, 5 l. Blue: pen-flourished 
+      paragraph initials (note that the <q>I</q> is not indented), 2-3 l. Green: colour-stroked sentence initials 
+      (<emph rend="italics">littera notabilior</emph>).</p>
+      <p>In most manuscripts, structurally different types of initials and highlighted characters
+                  occur. Usually, the various types are distributed in a systematic hierarchical way
+                  and can be identified based on their size, their decoration, their location on the
+                  page and their position regarding the text’s overall structure. Going beyond the rough dichotomy 
+                  between major and minor initials, it is common to distinguish between opening
+                  initials, text initials, chapter initials, paragraph initials and sentence initials.</p> 
+      
+   <p>The attribute <att>type</att> (with the value <val>initital</val>) is used to 
+                  distinguish the character from other characters that are marked-up by means of
+                  the <gi>c</gi>-element, such as hyphens (see <ref target="HB3_ch5.xml#sec5.5">ch.
+                     5.5</ref>). The more specific attribute <att>subtype</att> will then
+         indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
+         If it is not possible to distinguish between more than major and minor initials, however, 
+         these two main subtypes may also be used. 
+         Possible values for <att>subtype</att> when used for initials
+         are thus: <val>opening</val>, <val>text</val>, <val>para</val> and <val>littNot</val> (for
+                     <emph rend="italics">littera notabilior</emph> or sentence initial) as well as 
+          <val>major</val> and <val>minor</val>.
+  Please note that some manuscripts do not display any hierarchy in the way the initials are presented (for instance when all initials 
+   are of the same size and have the same (simple) degree of ornamentation). In those cases, as well as in cases when the 
+   initial subtype has not been defined, the attribute <att>subtype</att> is omitted.</p> 
+       
+   <p>The mark-up of initial subtypes is supposed to represent the hierarchical division                
+   indicated in the manuscript by means of the initials’ size and their degree of decoration. This categorization
+   is thought to summarize the results of the encoder’s analysis considering the overall distribution 
+   and presentation of initials in a given manuscript that are specified in more detail in the attributes <att>style</att> 
+      and <att>rend</att> (see sections <ref target="#sec7.3.3">ch. 7.3.3</ref> to <ref target="#sec7.3.5">ch. 7.3.5</ref>) . 
+      The hierarchical division indicated by the size and artistic features 
+   of initials may therefore divert from the traditionally perceived structure of a text, such as chapter divisions in standard editions.
+   </p> 
+   
+      <p>If an initial is omitted or missing, this is indicated by the attribute <att>type</att> 
+         with the value <val>noInitial</val>. Even though
+         this might seem somewhat redundant if other mark-up such 
+         as <gi>space/</gi> or <gi>gap/</gi> is present, it has the advantage that, for instance
+         the subtype and the intended size of the missing initial may be encoded 
+         and thus searched for.</p>
+      
+      <table cols="3">
+         <row role="label">
+            <cell rend="width20">type</cell>
+            <cell rend="width20">subtype</cell>
+            <cell rend="width60">Defines the subtype of <hi rend="bold">c</hi>, if <hi rend="bold">type="initial"</hi></cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell>
+               <val>opening</val></cell>
+            <cell>An opening initial: The first, often largest initial of a
+               manuscript.</cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell>
+               <val>text</val></cell>
+            <cell>A large initial at the beginning of a new text (if applicable).</cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell>
+               <val>chapt</val></cell>
+            <cell>An initial at the beginning of a new chapter or major section or a
+               text.</cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell>
+               <val>para</val></cell>
+            <cell>An initial at the beginning of a paragraph or subunit of a text (if
+               applicable).</cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell><val>littNot</val></cell>
+            <cell>The character is a sentence initial (<emph rend="italic">littera notabilior</emph>): 
+               The first letter of a sentence is highlighted within
+               the line by means of colour-stroking (i.e. coloured filling of the counters
+               of the letter or a usually red stroke), has minor decoration or is written in
+               slightly enlarged display script.</cell>
+         </row>
+         <row>
+            <cell>initial</cell>
+            <cell>
+               <val>major</val></cell>
+            <cell>A major initial (without any further qualification).</cell> 
+         </row>
+         <row>
+               <cell>initial</cell>
+               <cell>
+                  <val>minor</val></cell>
+            <cell>A minor initial (without any further qualification).</cell>
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell><val>opening</val></cell>
+            <cell>The opening initial is omitted or missing.</cell>
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell>
+               <val>text</val></cell>
+            <cell>A text initial is omitted or missing.</cell>
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell>
+               <val>chapt</val></cell>
+            <cell>A chapter initial is omitted or missing.</cell>
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell>
+               <val>para</val></cell>
+            <cell>A paragraph initial is omitted or missing.</cell>
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell>
+               <val>major</val></cell>
+            <cell>A major initial is omitted or missing.</cell>  
+         </row>
+         <row>
+            <cell>noInitial</cell>
+            <cell>
+               <val>minor</val></cell>
+            <cell>A minor initial is omitted or missing.</cell>  
+         </row>
+      </table>
+      
+      
+     <p>Let us have a look at some examples:</p>
+      
+   <figure rend="width66 clearboth">
+                  <graphic url="ch7/AM-619-4to-47r,15-29.jpg"/>
+               </figure>
+   <p rend="caption"><hi rend="bold">Ill. 7.49</hi>. Puzzle chapter initial <q>S</q> (l. 16-22) and several sentence
+      initials, for instance in the word <emph rend="bold">Ða</emph> in the middle of
+      l. 18 in AM 619 4to, f. 47r, l. 15–29.</p>
+      
+         <p>In the transcription, initials are encoded in their logical place
+            within the text. In a single-level transcription, the chapter initial "S" in the 
+            first word of line 16 (second line in the picture above) is, therefore,
+            encoded as follows with regards to the type and subtype:</p>
+      
+<egXML><![CDATA[<w>
+  <c type="initial" subtype="chapt">S</c>alomon
+</w>]]></egXML>
+      
+      
+   <p>In comparison, the sentence initial in the word <emph rend="bold">Ða</emph>
+      on line 18 is encoded as:</p>
+      
+<egXML><![CDATA[<w>
+  <c type="initial" subtype="littNot">Ð</c>a
+</w>]]></egXML>
+      
+      <p>While a rather plain mark-up as shown in the two examples above would be perfectly valid, we highly recommend also to
+      describe the characters’ specific features using additional attributes.
+      We consider it good practice to indicate at least the size (see <ref target="#sec7.3.3">ch. 7.3.3</ref>) and 
+         colour(s) (see <ref target="#sec7.3.4">ch. 7.3.4</ref>) in addition to the type and subtype. 
+      </p>
+</div>
+	      
+<div>
+<head xml:id="sec7.3.3">7.3.3 Size of initial</head>  
+<p>The size of the initial is often connected to its type and function. In the transcription we
+                  recommend to indicate separately the height of different parts of the initial. All
+                  measurements are given in natural numbers corresponding to the writing lines on
+                  the same page: 1. The initial height, indicating how many lines have been indented
+                  &ndash; often corresponding to the x-height or cap height of the letter. In case
+                  the initial was laid out but never executed, it should still be possible to
+                  determine the intended initial height of the non-existing initial due to the space
+                  left blank by the scribe; 2. The ascender and descender heights, giving the number
+                  of lines that each ascender and descender (or attached shaft) extend
+                  above and below the initial height, respectively (usually in the left margin next to the text).
+                  Note: The letters <q>I/J</q> and <q>L</q> present special cases, which are
+                  discussed below.</p>
+
+<p>In XML, we recommend to indicate the size of initials as part of the <att>style</att> attribute on the
+                  element <gi>c</gi>. In order to document both its size and
+                  relative position in the written area, the value of the <emph
+                     rend="italics">initial height</emph>, i.e. the number of indented lines, 
+   is marked-up as a combination of two values. These two values denote separately how many
+                  lines the initial height extends upwards including the line on which the character has its
+                  logical position in the text (i.e. <q>up</q>), and how many lines it extends below
+                  that line (i.e. <q>down</q>).</p> 
+      
+<p>For example, in the picture below
+the initial height corresponds to eight writing lines and the character <q>A</q> belongs logically on the fourth 
+of these eight lines where it forms part of the word <q>AT</q>. In the XML mark-up we therefore indicate
+   that the initial height goes four lines up (i.e. the line that starts with <q>AT</q> is indented, and the initial height
+   extends for three more lines above that) and four lines down. The two values together give the total 
+   number of indented lines: 4+4 = 8. The initial height of the <q>A</q> from the example can thus be marked-up as shown below the image.</p>
+   
+   <figure rend="width66 clearboth">
+      <graphic url="ch7/AM-226-fol-96va,2-17.jpg"/>
+   </figure>
+   <p rend="caption"><hi rend="bold">Ill. 7.50</hi>. Historiated text initial <q>A</q>
+      in the word <emph rend="bold">AT</emph> in AM 226 fol., f. 96va, l. 2–17.</p>
+   
+<egXML><![CDATA[<c type="initial" subtype="chapt" style="u4 d4">A</c>]]></egXML>
+      
+<p>The various values of <att>style</att> are separated by white spaces, and the numbers are preceded by 
+   an identifying letter (or letter combination), in this case <q>u</q> for <emph rend="italics">up</emph> and <q>d</q> 
+   for <emph rend="italics">down</emph>. In the same 
+   way, we can indicate the size of the ascender and descender of the initial in the margin, using the preceding
+   letters <q>mu</q> (for <emph rend="italics">margin up</emph>) to denote the height of the ascender and <q>md</q> 
+   (for <emph rend="italics">margin down</emph>) to denote 
+   how far down the descender extends 
+   below the initial height. For the initial <q>A</q> the complete markup of the size then looks like this
+   (note, however, that the image does not show the entire descender, which extends far down): </p>
+      
+<egXML><![CDATA[<c type="initial" subtype="chapt" style="u3 d4 mu5 md28">A</c>]]></egXML>
+         
+<p>If any of the values are omitted they are assumed to be zero. 
+   The size of the initial <q>S</q> from ill. 7.49 
+   above can therefore be encoded as: 
+    </p>
+      
+<egXML><![CDATA[<c type="initial" subtype="chapt" style="u1 d6 md2">S</c>]]></egXML>
+      
+            <p>Note that the value of <att>style</att> is given as <q>u1 d6 md2</q>, indicating that the initial height merely
+               goes up one line (the line of the initial’s logical position) and six lines 
+               down from there.  The initial also extends below the indented initial height by two lines, which is denoted with <q>md2</q>.
+               Since no value is given for <q>mu</q>, it is assumed to be <q>mu0</q>. This is correct,  
+               because there is no ascender exceeding above the initial height. 
+            </p>
+      
+      <p> Sometimes the adjacent lines to initials, especially with<q>I/J</q>, are not indented even if the lines for 
+         other initials in the manuscript that belong to the same hierarchical level
+         are indented. This is often due to the letter’s shape that lends itself particularly well to being in the margin only. 
+         According to its degree of decoration (and potentially how far the initial stretches out into the margins)
+         it is nevertheless normally possible to identify the correct initial type. In other words, the number of indented lines
+         (the initial height) is not crucial for the functional analysis of these letters. 
+      In the XML-markup of an initial <q>I/J</q>, which does not have an indented initial height, the values for <q>u</q> and <q>d</q> 
+         are simply omitted, since they equal zero.
+      The values for <q>mu</q> and <q>MD</q> are counted relative to the line, onto which the initial logically belongs, 
+         and <q>mu</q> also counts the line of the initial’s logical placement. For instance, a text initial <q>I</q> that 
+         is not indented in the written area, but extends 8 lines into the margin (3 lines up from its logical place and 5 lines down), 
+         would be encoded as follows:
+     </p>
+   
+   <egXML><![CDATA[<c type="initial" subtype="text" style="mu3 md5">I</c>]]></egXML>
+ 
+   <p> The initial letter <q>L</q> is equally sometimes found with fewer indented lines than
+                  other letters of the same level of hierarchy. Other than for <q>I/J</q>, however,
+                  it is common that <q>L</q> is formed with an initial height of one (or tow)
+                  indented line(s) for the horizontal bar of the letter. 
+                  The values for <q>u</q> is thus often 1 (or sometimes 2), 
+          and the value for <q>mu</q> equals the number of lines the initials extents above
+      the indented line(s) as normal. </p> 
+      
+     
+      <p>When (minor) initials are executed as versals they are entirely out-dented into the margin and, thus, 
+         do not have any indented initial height either. The values for <q>u</q> and <q>d</q> are accordingly omitted as they equal zero.
+         Instead, only <q>mu</q> and <q>md</q> are encoded (in the same way as for initials that are not indented due to their letter form).  
+         Again, the size is denoted relative to the logical placement of the initial in the text counting lines up and down from
+         the line onto which the initial belongs. 
+         </p>
+           
+      <p>In case of a missing initial, the number of indented lines, i.e. the initial height (if present), is 
+         encoded in the same way as for existing initials. 
+      Since it is usually impossible to know if the initial was supposed to extend into to margins or how far, 
+      no indication is made for
+      <q>mu</q> and <q>md</q>, even if a missing initial was supposed to be <q>I/J</q> or a versal. 
+         The mark-up of a planned, but not executed chapter initial for which a total of four lines 
+      are indented (three lines upwards and one downwards), would thus be:</p>
+      
+<egXML><![CDATA[<c type="noInitial" subtype="chapt" style="u3 d1"> 
+   <space quantity="1" unit="chars"/></c>]]></egXML>
+       
+</div>
+	      
+<div>  
+<head xml:id="sec7.3.4">7.3.4 Colour(s)</head>
+      
+      <p>It is relevant to note the colour(s) of initials and other highlighted characters. 
+         If initials are monochrome, i.e. only a single colour or hue is used, one might be
+         interested in if and how the colours alternate with other initials; and in the case of 
+         multiple colours or hues, the number and 
+         distribution of these may be important with
+         regards to the structural layout of the text.
+      </p>
+      
+      <p>We recommend encoding the colour(s) of initials by adding yet another value to the
+                  attribute <att>style</att>. The value shall be preceded by <q>c</q> for <hi
+                     rend="italics">colour</hi> and can be used to describe both monochrome and
+                  polychrome initials. In case of a monochrome letter, either the simple name of that
+                  colour/hue or the more precise six-digit hexadecimal CSS colour code (preceded by #) is given. 
+                  (For standard CSS colours codes and names see e.g. 
+         <ref target="https://www.w3schools.com/cssref/css_colors.asp">https://www.w3schools.com/cssref/css_colors.asp</ref>.)
+                  A monochrome red initial would thus take the value <q>cRed</q> or <q>c#FF0000</q>.
+                  If a letter is bichrome, i.e. uses two colours, both colours are given (again
+                  either by name or hexadecimal colour code) and separated by an underscore. If an
+                  initial is truly polychrome, i.e. uses three or more different colours or hues,
+                  these are equally listed using underscores. The order in which the colours of bi-
+                  and polychrome initials are named should follow the order of importance. In other
+                  words, the only (or main) colour/hue of the actual initial, i.e. the body of the
+                  letter, is mentioned first, followed by a potential second colour of the actual
+                  initial or otherwise the main colour of the ornamentation or decoration. </p>
+      
+      <p>Expanding on the description of the initial <q>S</q> from above (ill. 7.49), 
+         its encoding with simple references to the colours used looks like this:</p> 
+   
+<egXML><![CDATA[<c type="initial" subtype="chapt" 
+  style="d6 md2 cGreen_Red_Blue">S</c>]]></egXML>
+         
+         <p>If a clear hierarchy of colours is impossible to establish, for instance if a bichrome
+                  initial is drawn with two colours that are used on equal terms, that relationship
+                  can be encoded by means of using an equals sign instead of an underscore in
+                  between the two colours. However,
+                  we recommend limiting the analysis of colours in the context of <gi>c</gi> to a
+                  general level. More specific and sophisticated descriptions of initials
+                  and the colours used should instead be placed in the manuscript description part of the
+                  header (i.e. <gi>decoDesc</gi> inside <gi>msDesc</gi>, see <ref target="#sec7.2.1">ch. 7.2.1</ref>
+            above and further <ref target="HB3_ch14.xml#sec14.3.3">ch. 14.3.3</ref>). </p>
+   
+   <p>If the encoder should be unable to determine the colour(s) employed for executing initials,
+                  for instance because they are working from black-and-white images, the indication
+                  of color is simply omitted in the transcription.</p>
+      
+</div>
+	      
+<div>  
+<head xml:id="sec7.3.5">7.3.5 Artistic rendition</head>
+         
+         <p>The attribute <att>rend</att> is used to encode the form and kind of decoration found in or
+                  around the initial. This attribute provides a general description of the initial’s
+                  artistic rendition without going into too much detail, i.e. by means of keywords only (see the list
+                  below). In basic terms the information given here should agree with the description
+                  in the header, where a more detailed prose description of the initial’s form and
+                  its ornamentation can be included (see <ref target="#sec7.2.1.2">ch. 7.2.1.2</ref> as 
+                  well as <ref target="#sec7.2.7">ch. 7.2.7</ref>).</p>
+         
+         <p>The attribute <att>rend</att> is used for indicating both the way in which an initial is drawn and the main 
+            means of decoration/ornamentation. Even the presence of guide letters can be indicated here.
+         In order to encompass all of that information, the attribute can take several values 
+         (in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. </p>
+         
+         <table cols="2">  
+                  <row role="label">
+                     <cell rend="width20">Rend</cell>
+                     <cell rend="width80">Indicates the rendition and/or composition of the character (usually
+                        initial); more than one value may be combined.</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>historiated</val></cell>
+                     <cell>Historiated initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>foliate</val></cell>
+                     <cell>foliate initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>penFlourish</val></cell>
+                     <cell>Pen-flourished initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>penwork</val></cell>
+                     <cell>Penwork initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>interlaced</val></cell>
+                     <cell>Interlaced initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>puzzle</val></cell>
+                     <cell>Puzzle initial</cell>
+                  </row>
+                  <row>
+                     <cell><val>zoomorphic</val></cell>
+                     <cell>Zoomorphic initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>dragon</val></cell>
+                     <cell>Dragon initial</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <val>inhabited</val></cell>
+                     <cell>Inhabited initial</cell>
+                  </row>
+                  <row>
+                     <cell><val>lombard</val></cell>
+                     <cell>Lombard</cell>
+                  </row>
+                  <row>
+                     <cell><val>versal</val></cell>
+                     <cell>Versal</cell>
+                  </row>
+                   <row>
+                     <cell><val>colourStroked</val></cell>
+                     <cell>colour-stroked</cell>
+                   </row>
+                      <row>
+                   <cell><val>guideLetter</val></cell>   
+                   <cell>Guide letter</cell>
+                    </row>
+                  <row>
+                     <cell>
+                        <val>other</val></cell>
+                     <cell>[Anything else]</cell>
+                  </row>
+               </table>
+         
+      
+         <p>The encoding of the puzzle chapter initial <q>S</q> from the example above (ill. 7.49 above) may thus be
+                  further expanded with the attribute <att>rend</att>
+            taking the value <val>puzzle</val>: </p>  
+         
+<egXML><![CDATA[<c type="initial" subtype="chapt" style="d6 md2 cGreen_Red_Blue" 
+  rend="puzzle">S</c>]]></egXML>
+        
+         <p>Since multiple different forms and decorations can occur in connection with
+            the same intitial, these values may be combined, using whitespace(s) for separation.
+            For example, the initial <q>A</q> from AM 226 fol. (ill. 7.50 above) can be encoded as such:
+         </p> 
+  <egXML><![CDATA[<c type="initial" subtype="chapt" style="u3 d4 mu5 md28" 
+  rend="historiated inhabited foliate">A</c>]]></egXML>
+  
+  <p>In case the encoder wishes to additionally distinguish between different degrees of the same type of ornamentation, a numbering system may
+     be used in addition to the proposed values. For example, if one wants to indicate how elaborate the pen flourish is in different initials, these 
+     can be referred to as <val>penFlourish-1</val> and <val>penFlourish-2</val>, respectively. Please note, however, that such quantifications 
+     are neither standardized nor transferable and thus 
+     only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
+     in the <gi>teiHeader</gi> if they are employed.</p>  
+</div>
+      </div>
+
+   
+   <div><head xml:id="sec7.4">7.4 Glossary</head>
+      
+      <p>The following is an alphabetically organized glossary covering the most common terms used
+               for describing initials and other illuminations used in this chapter. Terms related to the anatomy of
+      initials are moreover illustrated in ill. 7.51 below.</p>
+            <p/>
+      
+      <figure rend="width80 clearboth">
+         <graphic url="ch7/Anatomy.jpg"/>
+      </figure>
+      <p rend="caption"><hi rend="bold">Ill. 7.51</hi>. The anatomy of an initial exemplified by AM 225 fol., f. 50v, and AM 350 fol., f. 2r.</p>
+      
+      <table>
+         <row role="label">
+            <cell rend="width20">Term</cell>
+            <cell rend="width80">Explanation</cell>
+         </row>
+         <row>
+            <cell>Ascender</cell>
+            <cell>Upper stem of the letter which can be extended for several lines above the initial height until the top of the page.</cell>
+         </row>
+         <row>
+            <cell>Attached bar</cell>
+            <cell>Additional bar attached to the body of the initial elongating the ascenders/descenders.</cell>
+         </row>
+         <row>
+            <cell>Bar</cell>
+            <cell>The short horizontal strokes that are attached to the stem to form letters like “E”.</cell>
+         </row>
+         <row>
+            <cell>Body of the letter</cell>
+            <cell>The strokes that form a letter, consisting of stems, bars, spines, etc.</cell>
+         </row>
+         <row>
+            <cell>Cap height</cell>
+            <cell>Height of the initial including x-height and the ascender which are within the initial height.</cell>
+         </row>
+         <row>
+            <cell>Chapter initial</cell>
+            <cell>An initial at the beginning of a new chapter or section or a text.</cell>
+         </row>
+         <row>
+            <cell>Counter</cell>
+            <cell>Closed space surrounded by the body of the letter as in “o” or open space defined by the body a letter as the two spaces in “S”.</cell>
+         </row>
+         <row>
+            <cell>Curve</cell>
+            <cell>Rounded stroke forming the body of a letter as in the letter "S".</cell>
+         </row>
+         <row>
+            <cell>Descender</cell>
+            <cell>Lower stem of the letter which can be extended for several lines until the bottom of the page.</cell>
+         </row>
+         <row>
+            <cell>External motif</cell>
+            <cell>Ornaments outside the body of the initial (i.e. not within the counters).</cell>
+         </row>
+         <row>
+            <cell>Extender</cell>
+            <cell>Vines attached to initials elongating shafts or attached bars. </cell>
+         </row>
+         <row>
+            <cell>Frame</cell>
+            <cell>Rectangular bars encompassing the decorated background of an initial, similar to a painted picture frame.</cell>
+         </row>
+         <row>
+            <cell>Ground</cell>
+            <cell>The framed area of the initial which has an own decoration or colour and
+                     often additionally covers the area just around the letter, usually corresponding to the initial height.</cell>
+         </row>
+                 <row>
+            <cell>Infilling</cell>
+            <cell>Decoration of an initial that is placed in the counter(s) of the letter.</cell>
+         </row>
+         <row>
+            <cell>Initial</cell>
+            <cell>Illuminated letter of the manuscript text marking the beginning of a new text, chapter or paragraph.</cell>
+         </row>
+         <row>
+            <cell>Initial height</cell> 
+            <cell>Number of text lines that were indented to provide space for an initial at the beginning of the text.</cell>
+         </row>
+         <row>
+            <cell>Major initial</cell>
+            <cell>The most splendid initials of a manuscript, including opening, text and chapter initials.</cell>
+         </row>
+         <row>
+            <cell>Medallion</cell>
+            <cell>Framed rectangular or circular area at the end of initials or as an independent form, which is comprised of motifs or geometric forms.</cell>
+         </row>
+         <row>
+            <cell>Minor initial</cell>
+            <cell>Smaller initials, often more subdued in decoration and appearing more frequently, including subchapter, paragraph and sentence initials.</cell>
+         </row>
+         <row>
+            <cell>Opening initial</cell>
+            <cell>The first, often largest initial of a manuscript (often if there is only one text in the manuscript).</cell> 
+         </row>
+         <row>
+            <cell>Paragraph initial</cell>
+            <cell>An initial at the beginning of a paragraph or subunit of a text.</cell> 
+         </row>
+         <row>
+            <cell>Shaft</cell>
+            <cell>Vertical strokes that form the body of the letter. They can be elongated and terminate in spirals.</cell>
+         </row>
+         <row>
+            <cell>Sentence Initial</cell>
+            <cell>Slightly highlighted first letter of a sentence; often placed within a line (also called <emph rend="italics">littera notabilior</emph>).</cell>
+            </row>
+         <row>
+            <cell>Serif</cell>
+            <cell>Small lateral bar at the end of an initial’s main stroke similar to the fine lines on main strokes in printed serif fonts.</cell>
+         </row>
+         <row>
+            <cell>Termination</cell>
+            <cell>Terminal part of an initial that is decorated with vines, spirals or the like (usually shafts, attached bars or extenders).</cell>
+         </row>
+         <row>
+            <cell>Text initial</cell>
+            <cell>A large initial at the beginning of a new text (if there are several texts in a manuscript).</cell>
+         </row>
+         <row>
+            <cell>x-height</cell>
+            <cell>The height of a letter or a part of a letter in between the base line and the mean line, cf. the size of the letter “x”.</cell>
+         </row>
+      </table>
+      
+   </div>
+	      
+<div><head xml:id="sec7.5">7.5 Image credits</head>
+         
+      <p>Most images are taken from the online repository of the respective manuscript’s collection (exceptions mentioned). These are:</p> 
+         
+   <p><ref target="http://handrit.org">Handrit.org</ref> for the manuscripts owned by The Arnamagnæan Collection in Copenhagen as well 
+            as the National and University Library of Iceland and The Árni Magnússon Institute for 
+         Icelandic Studies, both in Reykjavík. Exceptions are the images of the following manuscripts that had not yet been made available  
+         on <ref target="http://handrit.org">Handrit.org</ref>: The Árni Magnússon Institute for Icelandic Studies, Reykjavík, AM 345 fol. (accessed via CD-ROM) and The Arnamagnæan 
+         Collection, Copenhagen, AM 421 12mo (accessed via http://haandskrift.ku.dk) and AM 322 fol. (photo by Friederike Richter).</p>
+         
+   <p><ref target="https://www.alvin-portal.org">Alvin</ref> for the manuscripts owned by Lund University Library.</p>
+   
+   <p><ref target="https://www.manuscripta.se">Manuscripta - A Digital Catalogue of Manuscripts in Sweden</ref> for the manuscripts owned by the Royal Library, Stockholm.</p>
+         
+   <p><ref target="http://www.kb.dk/da/nb/materialer/haandskrifter/HA/e-mss/mdr.html">E-manuskripter (Det Kgl. Bibliotek)</ref> for the manuscripts owned by the Royal Library, Copenhagen.</p>
+         
+      <p>The diagrams illuminating the hierarchy as well as the anatomy of the initials are by Friederike Richter, 
+         based on the images of the aforementioned repositories of the respective collections.</p>
+   </div>
+</body></text></TEI>

@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "https://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook ch. 9 (v. 3.0): Scribal and editorial intervention</title>
+           <editor>
+             <name>Odd Einar Haugen</name>
+           </editor>
+            <respStmt>
+               <resp>Written and edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+        <publicationStmt>
+          <p>Published in the web at <ref target="http://www.menota.org/"
+            >http://www.menota.org/</ref>/</p>
+        </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+           <p>Composed in XML for the Menota handbook v. 3.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>28 August 2016</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+     <revisionDesc>
+       <change><date>30 December 2025</date>
+         <persName>Odd Einar Haugen</persName>: Reorganised ch. 9.2.1 so that it was divided into two types of additions, described in 9.2.1.1 and 9.2.1.2 (in which glosses were introduced as another type of scribal addition), and proposed a display of glosses by top left and top right half brackets in ch. 9.2.1.3.</change>
+       <change><date>12 March 2021</date>
+       <persName>Odd Einar Haugen</persName>: Changed “chars” to “char” as value of the "quantity" attribute; 
+       did not change the version number of the file, since this is such a small change</change>
+       <change><date>27 April 2020</date>
+         <persName>Odd Einar Haugen</persName>: Made a minor correction to ch. 9.3.2.1 and 9.3.2.2, described in the final “Updates” section</change>
+       <change><date>12 December 2019</date>
+         <persName>Odd Einar Haugen</persName>: Defined this chapter as belonging to v. 3.0 of the 
+         handbook (12 December 2019)</change>
+       <change><date>7 December 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a few minor corrections
+       </change>
+       <change><date>5 December 2019</date>
+         <persName>Odd Einar Haugen</persName>: Changed Obl to Obligatory and Fac to Optional, and also facultative to optional,
+         added ed="ms" to all <pb/> and <lb/> in egXML sections (no examples of <cb/>
+       </change>
+       <change><date>2 December 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a minor corrections to one of the captions, Old Norwegian Homily Book > The Old Norwegian Homily Book
+       </change>
+       <change><date>22 November 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a few minor corrections, including tag > element
+       </change>
+       <change><date>13 October 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a few minor corrections suggested by <persName>Patrick Farrugia</persName>
+       </change>
+       <change><date>30 September 2019</date>
+         <persName>Odd Einar Haugen</persName>: Updated tables with the rend="xml-elements" attribute
+       </change>
+       <change><date>28 September 2019</date>
+         <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, as recommended by <persName>Marco Bianchi</persName>; made a distinction between three types of rend attributes for the “hi” element: rend="codepoint", rend="entity" and rend="descName";  removed old comments in <!-- ... -->
+       </change>
+       <change><date>14 September 2019</date>
+         <persName>Odd Einar Haugen</persName> and <persName>Nina Stensaker</persName>: Made a great number of changes after discussions with <persName>Beeke Stegmann</persName>.
+       </change>
+       <change><date>10 August 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a number of consistency changes to the chapter, and added some text on the use of "orig" + "reg" and "sic" + "corr"
+       </change>
+       <change><date>30 July 2019</date>
+         <persName>Odd Einar Haugen</persName> and <persName>Nina Stensaker</persName>: Made several changes to the chapter.
+       </change>
+       <change><date>24 July 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made another thorough revision of the whole chapter, an added a subchapter 9.4 on editorial comments.
+       </change>
+       <change><date>3 July 2019</date>
+         <persName>Odd Einar Haugen</persName>: Made a thorough revision of the whole chapter, simplyfing many subchapters and trying to follow the TEI Guidelines more closely, also checking out the EpiDoc guidelines.
+       </change>
+       <change>
+         <date>26 May 2019</date>
+         <persName>Odd Einar Haugen</persName>: (1) Wrote the text for ch. 9.2.1.2 Display of scribal additions; (2) Wrote first, tentative draft of ch. 9.5 on conflicts in the encoding; (3) made some minor changes</change>
+       <change>
+         <date>5 February 2019</date>
+         <persName>Odd Einar Haugen</persName>: A number of revisions after comments from Alex Speed Kjeldsen</change>
+       <change>
+         <date>31 January 2018</date>
+         <persName>Odd Einar Haugen</persName>: Added a new section on the "surplus" element, in addition to the "me:suppressed" element</change>
+       <change>
+         <date>30 January 2018</date>
+           <persName>Odd Einar Haugen</persName>: Minor changes to the "illustration", "egXML" and "table"encoding for better display</change>
+         <change>
+         <date>28 January 2018</date>
+         <persName>Odd Einar Haugen</persName>: (1) Revised the encoding of the "space" and "gap" elements, in line with the examples given in ch. 8</change>
+       <change>
+         <date>30 November 2017</date>
+         <persName>Odd Einar Haugen</persName>: Replaced the value "addition" with "clarification" in the "supplied" element
+       </change>
+       <change>
+         <date>14 November 2017</date>
+         <persName>Odd Einar Haugen</persName>: Added a type attribute to the "me:suppressed" element
+       </change>
+       <change>
+         <date>10 November 2017</date>
+         <persName>Odd Einar Haugen</persName>: Revised several sections
+       </change>
+       <change>
+         <date>8 November 2017</date>
+         <persName>Odd Einar Haugen</persName>: Revised and extended ch. 9.2.3.
+       </change>
+       <change>
+         <date>3 September 2017</date>
+         <persName>Odd Einar Haugen</persName>: Revised and extended ch. 9.3.1.
+       </change>
+       <change>
+         <date>18 July 2017</date>
+         <persName>Odd Einar Haugen</persName>: Reorganised and simplified the whole chapter
+       </change>
+       <change>
+         <date>13 July 2017</date>
+         <persName>Odd Einar Haugen</persName>: Reorganised the whole chapter
+       </change>
+       <change>
+         <date>25 May 2017</date>
+         <persName>Odd Einar Haugen</persName>: (1) Changed the chapter number from 7 to 9, 
+         and updated subchapters and illustration numbers accordingly
+       </change>
+       <change>
+       <date>13 November 2016</date>
+       <persName>Odd Einar Haugen</persName>: Added an illustration to a new subchapter on transpositions, and also some text with examples of how transposed text should be encoded
+     </change>
+        <change>
+          <date>10 November 2016</date>
+          <persName>Odd Einar Haugen</persName>: Added section 7.2.3 on transpositions (though not the actual text)
+        </change>
+        <change>
+          <date>26 October 2016</date>
+          <persName>Odd Einar Haugen</persName>: Replaced character entities (like &amp;eth;) with Unicode characters (like ð) wherever applicable
+        </change>
+        <change>
+          <date>28 August 2016</date>
+          <persName>Odd Einar Haugen</persName>: Made the first draft by copying the text from v. 2.0, keeping the number of the chapter unchanged
+        </change>
+      </revisionDesc>
+      
+   </teiHeader>
+   <text xml:lang="en">
+      <body><head>Chapter 9. Scribal and editorial intervention</head>
+        <p>Version 3.1 (30 December 2025) – cf. <ref target="HB3_ch9-0.xml">version 3.0</ref> (12 December 2019)</p>
+        <p>by Odd Einar Haugen</p>
+
+<div>
+<head xml:id="sec9.1">9.1 Introduction</head>
+
+<p>This chapter covers  the encoding of changes to the manuscript text made by the scribe and
+similar changes made during the
+modern transcription of the manuscript. <ref target="#sec9.2">Ch. 9.2</ref> deals with additions, deletions, transpositions
+and substitutions made by the scribe or later users of the manuscript. <ref target="#sec9.3">Ch. 9.3</ref>
+treats insertions, suppressions and corrections made by the transcriber, annotator or editor during the transcription of the manuscript text. While it can be useful to make a distinction between the roles of scribe, compiler, annotator or corrector for the first type of changes, we will in general refer to these roles as that of the scribe (or, metonymically, as that of a hand). Similarly, even if a distinction may be drawn between the modern roles 
+of transcriber, annotator and editor, we will refer to these roles as that of the editor. 
+Finally, <ref target="#sec9.4">ch. 9.4</ref> deals with comments of any kind, i.e. 
+text that comes in addition to the manuscript text.</p>
+
+</div>
+
+<div>
+<head xml:id="sec9.2">9.2 Scribal intervention</head>
+
+<p>In the manuscript text and in the margins of the manuscript, we often
+encounter different kinds of corrections that we
+would like to encode. These changes can be divided into four different groups
+depending on the nature of the change and its relevance for the reading
+of the manuscript text or our knowledge about the manuscript: (1) additions, 
+(2) deletions, (3) transpositions and (4) corrections.</p>
+
+
+<div>
+
+<head xml:id="sec9.2.1">9.2.1 Additions by the scribe</head>
+
+  <p>This section only deals with additions made by a scribal hand. Text inserted by a modern editor is dealt with in <ref target="#sec9.3.1">ch. 9.3.1</ref> below.</p>
+  <p>The element <gi>add</gi> should be used for any additions made in the manuscript, whether it was done by the scribe himself or a later compiler, annotator or corrector. Scribal additions are traditionally referred to as being “with younger hand” or the like. It may be desirable to make a distinction between the contemporaneous hand in the manuscript and any later hand, but it is not always a simple task to do so. However, the act of addition is usually easy to spot, as it is typically found above the line or in the margin. For this reason, we recommend that the type and place of the addition should be specified, but not necessarily the hand responsible for the addition</p>
+  
+  <p>We suggest that there are two different types of scribal additions, and that the encoding should reflect this distinction.</p>
+  
+ <p>(1) <hi rend="bold">Supplying of text</hi> is the addition of any piece of text which the scribe thought was missing, often not more than a few characters or words. The obvious position of such additions was immediately above the line, but they can also be found in the margin of the manuscript.</p>
+  
+  <p>(2) <hi rend="bold">Glossing of text</hi> is the addition of translated items of the text, often a single word. Glosses, too, are typically found above the line.</p>
+  
+  <table rend="xml-elements">
+    <row role="label">
+      <cell rend="width20">Elements &amp; attributes</cell>
+      <cell rend="width10">Obl/Opt</cell>
+      <cell rend="width70">Contents</cell>
+    </row>
+    <row>
+      <cell><gi>add</gi></cell>
+      <cell></cell>
+      <cell>Contains characters, words or phrases added to the manuscript text or 
+        in the margins of the manuscript by the scribe, an annotator or a
+        corrector. Attributes include:</cell>
+    </row>
+    <row>
+      <cell><att>type</att></cell>
+      <cell>Optional</cell>
+      <cell>Indicates the type of addition made. If it is a scribal supplying of text, the value would be <val>supplement</val>, if it is a scribal gloss, the value would be <val>gloss</val>.</cell>
+    </row>
+    <row>
+      <cell><att>place</att></cell>
+      <cell>Optional</cell>
+      <cell>Indicates where the addition is made. Suggested values include <val>inline</val>, <val>supralinear</val>, 
+        <val>infralinear</val> and <val>margin</val>.</cell>
+    </row> 
+    <row>
+      <cell><att>hand</att></cell>
+      <cell>Optional</cell>
+      <cell>Signifies the scribe who made the addition. Sample values may be <val>scribe</val>,
+        <val>mainscribe</val> and <val>laterscribe</val>.</cell>
+    </row>
+  </table> 
+  
+  <p>Changes in scribal hands are not considered additions. For markup of 
+    such phenomena, the <gi>handShift/</gi> element should be used (cf. <ref target="HB3_ch3.xml#sec3.14">ch. 3.14</ref> above). Note that this element is parallel to empty elements
+    like <gi>pb/</gi>, <gi>cb/</gi> and <gi>lb/</gi> in that it only points to a break in the text.</p>
+</div>
+  
+  <div>
+  
+  <head xml:id="sec9.2.1.1">9.2.1.1 Encoding of text supplied by the scribe</head>
+ 
+    <p>
+      <figure rend="width66 clearboth">
+        <graphic url="ch9/Holm-B59-6v,8-10.png"/>
+      </figure>
+    </p>
+    
+    <p rend="caption"><hi rend="bold">Ill. 9.1</hi>. Words added above the line. <title>Äldre Västgötalagen</title>. Holm B 59, f. 6v, l. 8–11.</p>    
+
+    <p>In the second line of ill. 9.1, there are no less than three supralinear words. The first is <hi rend="italic">var</hi> ‘was’, which is inserted between <hi rend="italic">Iak</hi>
+      and <hi rend="italic">þa a þingi</hi>. The encoding in a single-level transcription would be as follows:</p>
+
+<egXML><![CDATA[. . .
+<w><me:dipl>Iak</me:dipl></w>
+<add place="supralinear">
+  <w><me:dipl>var</me:dipl></w>  
+</add>
+<w><me:dipl>þa</me:dipl></w>
+<w><me:dipl>a</me:dipl></w>
+<w><me:dipl>þingi</me:dipl></w>
+. . .]]></egXML>
+    
+    <p>
+      <figure rend="width100 clearboth">
+        <graphic url="ch9/AM-619-4to-13v,8-10.jpg"/>
+      </figure>
+    </p>
+    
+    <p rend="caption"><hi rend="bold">Ill. 9.2</hi>. A word added in the margin. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 13v, l. 8–10.</p>
+
+    <p>In the second line of ill. 9.2, the word “of” is placed in the margin, indicated by a triangular insertion sign.  In a multi-level encoding, we recommend that additions are encoded on the facsimile and diplomatic level,
+      but not on the normalised level. This is an example of a word added in the margin:</p>
+    
+<egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>hældr</me:facs>
+    <me:dipl>hældr</me:dipl>
+    <me:norm>heldr</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>rænr</me:facs>
+    <me:dipl>rænr</me:dipl>
+    <me:norm>rennr</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>hugren</me:facs>
+    <me:dipl>hugren</me:dipl>
+    <me:norm>hugrinn</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>tom&rdes;</me:facs>
+    <me:dipl>tomr</me:dipl>
+    <me:norm>tómr</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><add place="margin">of</add></me:facs>
+    <me:dipl><add place="margin">of</add></me:dipl>
+    <me:norm>of</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>um</me:facs>
+    <me:dipl>um</me:dipl>
+    <me:norm>um</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>alla</me:facs>
+    <me:dipl>alla</me:dipl>
+    <me:norm>alla</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>luti</me:facs>
+    <me:dipl>luti</me:dipl>
+    <me:norm>hluti</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+    
+    <p>The location of the addition is indicated by the 
+      attribute <att>place</att>. In this example, the addition is made outside the text column and therefore described by the value <val>margin</val>. Note that we are not encoding the triangular signs as such.</p>
+    <p> Scribal additions 
+      are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
+      In some cases, however, the addition can be longer, especially when placed in the margin. These additions
+      should as far as possible be located within the main text.</p>
+    
+    <p>As discussed in <ref target="HB3_ch6.xml#sec6.5.2">ch. 6.5.2</ref> above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. <q>v.  </q> for <hi rend="italic">fimti</hi> (type c) or for reasons of space, e.g. <q>eᷤ</q> for <hi rend="italic">es</hi> (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as <hi rend="entity">&amp;ssup;</hi> for the supralinear <q>s</q> in <hi rend="entity">e&ssup;</hi> for <hi rend="italic">es</hi>. The element <gi>add</gi> is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.</p>
+  </div>
+  
+<div>
+
+  <head xml:id="sec9.2.1.2">9.2.1.2 Encoding of glosses by the scribe</head>
+
+  <p>A special kind of scribal intervention is the addition of <emph>glosses</emph>, typically above the line. In Old Norse manuscripts, Latin words or phrases in the text may be translated into Old Norse and placed as glosses above the line. Sometimes, it is the other way: an Old Norse word on the line is glossed, i.e. explained, by a Latin word above the line. We suggest that the gloss is encoded by the <gi>add</gi> element with the <att>type</att> attribute having the value <val>gloss</val>.</p>
+    <p>In the Icelandic homily book, Holm perg 15 4to, fol. 1r.9, the word <q>stirðleikstónn</q> has been glossed as <q>immitis</q> above the line. We suggest the following encoding (simplified):</p>
+    
+<egXML><![CDATA[<w>
+  <me:facs>ſtirþléicſtǫ́ɴ</me:facs>
+  <me:dipl>stirþléikstǫ́nn</me:dipl>
+  <me:norm>stirðleikstónn</me:norm>
+</w>
+<w>
+  <me:facs><add type="gloss">i<am>&bar;</am>mitis</add></me:facs>
+  <me:dipl><add type="gloss">i<ex>m</ex>mitis</add></me:dipl>
+  <me:norm><add type="gloss">immitis</add></me:norm>
+</w>]]></egXML>
+    
+  </div>
+    
+ <div>
+   <head xml:id="sec9.2.1.3">9.2.1.3 Display of scribal additions</head>
+   <p>In the stylesheet for the Menota archive, scribal additions are displayed by insertion signs, either downwards-pointing 
+     (for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript). As for glosses, we suggest using top left and top right half brackets. To the best of our knowledge, there is no commonly accepted way of indicating glosses in edited texts.</p>
+
+   <div type="display">
+       <table>
+         <row role="label">
+           <cell rend="width40">Element and attributes</cell>
+           <cell rend="width60">Display</cell>
+         </row>
+         <row>
+           <cell>&lt;add place="inline"&gt;<lb/>
+             &lt;add place="supralinear"&gt;<lb/>
+             &lt;add place="infralinear"&gt;<lb/></cell>
+           <cell>Downwards-pointing insertion signs,<lb/> e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax</cell>
+         </row>
+         <row>
+           <cell>&lt;add place="margin"&gt;</cell>
+           <cell>Upwards-pointing insertion signs,<lb/> e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti</cell>
+         </row>
+         <row>
+           <cell>&lt;add type="gloss"&gt;</cell>
+           <cell>Half upper brackets,<lb/> e.g. Septimus heitir stirðleikstónn ⸢immitis⸣, því at i hvers manns lífláti er nauð ok ótti </cell>
+         </row>
+       </table>
+     
+     <div>
+       <p>In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at <hi rend="codepoint">2E0C</hi> and <hi rend="codepoint">2E0D</hi>, the second set, ⸝...⸜, at <hi rend="codepoint">2E1D</hi> and <hi rend="codepoint">2E1C</hi>.</p>
+       <p>We suggest that it is sufficient to display two main types, so that additions 
+         within the text column (typically supralinear, but also inline and infralinear) are displayed by the first set and additions in the margin with the second set. It can be left to the photographic facsimile to show exactly how the additions have been placed.</p>
+       <p>The third set of insertion signs, ⸢...⸣, are located at <hi rend="codepoint">2E22</hi> and <hi rend="codepoint">2E23</hi> in the Unicode Standard. We suggest that a gloss is encoded directly after the glossed word on the line.</p>
+       <p>Other stylesheets may display additions with other types of signs, by a note rather than by signs, or not at all.</p>
+     </div>
+     
+   </div>
+   
+</div>
+
+<div>
+<head xml:id="sec9.2.2">9.2.2 Deletions by the scribe</head>
+
+<p>This section only deals with deletions made by a scribal hand. 
+Text suppressed by a modern editor is dealt with in <ref target="#sec9.3.2">ch. 9.3.2</ref> below.</p>
+
+  <div>
+    <head xml:id="sec9.2.2.1">9.2.2.1 Encoding of scribal deletions</head>
+    
+    <p>The element <gi>del</gi> should be used for deletions made in the manuscript by the scribe himself
+      or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.</p>
+
+    <table rend="xml-elements">
+      <row role="label">
+        <cell rend="width20">Elements &amp; attributes</cell>
+        <cell rend="width10">Obl/Opt</cell>
+        <cell rend="width70">Contents</cell>
+      </row>
+<row>
+   <cell><gi>del</gi></cell>
+  <cell/>
+   <cell>Contains a character, word or
+    passage deleted or otherwise indicated
+    as superfluous or spurious in the manuscript text by a
+    scribe, annotator or corrector. Attributes
+    include:</cell>
+  </row>
+  <row>
+    <cell><att>rend</att></cell>
+    <cell>Obligatory</cell>
+    <cell>This attribute is used to classify the deletion,
+      using any convenient typology. Sample values include <val>overstrike</val>, <val>erasure</val>
+      and <val>subpunction</val>.
+    </cell>
+</row>
+  <row>
+   <cell><att>hand</att></cell>
+    <cell>Optional</cell>
+    <cell>Signifies the scribe who made the deletion. Values include 
+      <val>scribe</val>, <val>mainscribe</val> and <val>laterscribe</val>.
+    </cell>
+  </row>
+  </table>
+    
+    <p>
+      <figure rend="width50 clearboth">
+        <graphic url="ch9/AM-243-ba-fol-5ra,24-26.jpg"/>
+      </figure>
+    </p>
+    
+    <p rend="caption"><hi rend="bold">Ill. 9.3</hi>. Characters deleted by erasure. <title>Konungs skuggsjá</title>. AM 243 bα fol, f. 5ra, l. 24–26.</p>    
+    
+    <p>In the middle line of ill. 9.3, two characters have been erased in the word <hi rend="italic">skilningar laus</hi>. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:</p>
+    
+    <egXML><![CDATA[. . .
+<w><me:dipl>þviat</me:dipl></w>
+<w><me:dipl>skilningar <del rend="erasure">sk</del>laus</me:dipl></w>
+<w><me:dipl>skepna</me:dipl></w>
+. . .]]></egXML>   
+
+    <p>In a multi-level encoding, we recommend that deletions are encoded on the facsimile
+      and diplomatic level, but not on the normalised level. This is the same recommendation as for the <gi>add</gi> element 
+      discussed above:</p>
+    
+    
+<egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>þviat</me:facs>
+    <me:dipl>þviat</me:dipl>
+    <me:norm>því at</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ſkilningar <del rend="erasure">ſk</del>lauſ</me:facs>
+    <me:dipl>skilningar <del rend="erasure">sk</del>laus</me:dipl>
+    <me:norm>skilningarlaus</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>skepna</me:facs>
+    <me:dipl>skepna</me:dipl>
+    <me:norm>skepna</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>  
+    
+<p>Text which has been encoded as deleted
+must be at least partly legible in the manuscript. If the deleted text is completely illegible we recommend that the
+deleted passage should be encoded with the <gi>gap/</gi> element,
+  described in <ref target="HB3_ch8.xml#sec8.2">ch.
+    8.2</ref> above.</p>
+    
+    <p>Sometimes, a scribe would delete a word and add another above the line. 
+      We regard this as a substitution which should be encoded with a combination of a
+      <gi>del</gi> and an <gi>add</gi> element. See <ref target="#sec9.2.4">ch. 9.2.4</ref> below.</p>
+    
+  </div>
+  <div>
+    <head xml:id="sec9.2.2.2">9.2.2.2 Display of deletions by the scribe</head>
+    
+    <p>In the stylesheet for the Menota archive, scribal deletions are displayed by vertical bars with quills. The beginning of the deletion will be indicated 
+      by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.</p>
+    
+    <div type="display">
+      <table>
+        <row role="label">
+        <cell rend="width20">Element</cell>
+        <cell rend="width80">Display</cell>
+      </row>
+      <row>
+        <cell><gi>del</gi></cell>
+        <cell>Vertical bars with quills, e.g. þviat ſkilningar ⸠ſk⸡laus ſkepna</cell>
+      </row>             
+    </table>
+      
+    </div>
+
+<div>
+  <p>In the Unicode Standard, the vertical bar with the quill to the right is located at <hi rend="codepoint">2E20</hi>, and the vertical bar with a quill to the left at <hi rend="codepoint">2E21</hi>.
+</p>
+  <p>As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the <att>rend</att> attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.</p>
+  
+  <p>Other stylesheets may display deletions by other types of signs, by a note rather than by signs, or not at all.</p>
+  
+</div>
+    
+  </div>
+
+</div>
+
+<div>
+  <head xml:id="sec9.2.3">9.2.3 Transpositions by the scribe</head>
+  
+  <p>The sequence of words in a manuscript was sometimes transposed by the scribe or by a later hand, using various types of transposition signs. In the encoding, we would like to be able to include both the original order and the transposed order.</p>
+    
+  <p><figure rend="width80 clearboth">
+    <graphic url="ch9/AM-619-4to-47r,8-10.jpg" width="600"/>
+  </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.4</hi>. Transpositions of two words. <title>The Old Norwegian Homily Book</title>. AM 619 4to, fol. 47r, l. 8–10.</p>
+  
+  <p>In ill. 9.4, there are two transposition signs, one above each of the two words <q>vaner</q> and <q>váro</q> (simplified spelling) in the middle line indicating that the sequence should rather be <q>váro vaner</q>. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.</p>
+  
+  
+  <div>
+    <head xml:id="sec9.2.3.1">9.2.3.1 Encoding of scribal transpositions</head>
+    <p>There are two pairs of elements used in this handbook, <gi>orig</gi> + <gi>reg</gi> and <gi>sic</gi> + <gi>corr</gi>. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the <gi>sic</gi> + <gi>corr</gi> elements, as exemplified in <ref target="#sec9.3.3">ch. 9.3.3</ref> below.</p>
+    
+    <table rend="xml-elements">
+      <row role="label">
+        <cell rend="width20">Elements &amp; attributes</cell>
+        <cell rend="width10">Obl/Opt</cell>
+        <cell rend="width70">Contents</cell>
+      </row>
+      <row>
+        <cell><gi>orig</gi></cell>
+        <cell></cell>
+        <cell>Contains the reading in the manuscript. Attributes include:</cell>
+      </row>
+      <row>
+        <cell><att>rend</att></cell>
+        <cell>Obligatory</cell>
+        <cell>The correction markers in the manuscript. A typical value would be <val>transposition-signs</val>.</cell>
+      </row>
+      <row>
+        <cell><gi>reg</gi></cell>
+        <cell></cell>
+        <cell>Contains the reading corrected in the manuscript. Attributes include:</cell>
+      </row>
+      <row>
+        <cell><att>type</att></cell>
+        <cell>Obligatory</cell>
+        <cell>The type of correction. We recommend the value <val>transposition</val>.</cell>
+      </row>
+      <row>
+        <cell><att>resp</att></cell>
+        <cell>Optional</cell>
+        <cell>The one who is responsible for the regularisation. Sample values include <val>scribe</val>, <val>mainscribe</val> and <val>laterscribe</val>.</cell>
+      </row>
+    </table>    
+      
+  <p>In a single-level encoding, we recommend that the original reading is given within the <gi>orig</gi> element with a <att>rend</att> attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing <gi>reg</gi> element, and both elements are contained in a <gi>choice</gi> element. The <gi>reg</gi> element should have a <att>type</att> attribute with the value <val>transposition</val>, and preferably a <att>resp</att> attribute with a suitable value, e.g. <val>mainscribe</val> or <val>laterscribe</val>, or, if a distinction is difficult to draw, just <val>scribe</val>:</p>
+  
+<egXML><![CDATA[. . .
+<choice>
+  <orig rend="transposition-signs">
+    <w><me:dipl>vaner</me:dipl></w>
+    <w><me:dipl>vꜵ́ro</me:dipl></w>
+  </orig>
+  <reg type="transposition" resp="mainscribe">
+    <w><me:dipl>vꜵ́ro</me:dipl></w>
+    <w><me:dipl>vaner</me:dipl></w>
+  </reg>
+</choice>
+. . .]]></egXML>
+  
+  <p>In a multi-level encoding, one or more words will be added within the <gi>orig</gi> as well as within the <gi>reg</gi> element:</p>
+  
+<egXML><![CDATA[. . .
+<choice>
+  <orig rend="transposition-signs">
+    <w>
+      <choice>
+        <me:facs>ꝩaner</me:facs>
+        <me:dipl>vaner</me:dipl>
+        <me:norm>vanir</me:norm>
+      </choice>
+    </w>
+    <w>
+      <choice>
+         <me:facs>ꝩꜵ́ꝛo</me:facs>
+         <me:dipl>vꜵ́ro</me:dipl>
+         <me:norm>váru</me:norm>
+      </choice>
+    </w>             
+  </orig>
+  <reg type="transposition" resp="mainscribe">
+    <w>
+      <choice>
+         <me:facs>ꝩꜵ́ꝛo</me:facs>
+         <me:dipl>vꜵ́ro</me:dipl>
+         <me:norm>váru</me:norm>
+      </choice>
+    </w>
+    <w>
+      <choice>
+         <me:facs>ꝩaner</me:facs>
+         <me:dipl>vaner</me:dipl>
+         <me:norm>vanir</me:norm>
+      </choice>
+    </w>             
+  </reg>
+</choice>
+. . .]]></egXML>
+
+  <p>If the text is annotated for morphology (or syntax), we recommend that only the words in the <gi>orig</gi> element get linguistically annotated, so as to avoid duplication of the annotation. This is a similar case to that of any text being added by the editor in the <gi>supplied</gi> element. Supplied text should also be exempted from annotation.</p>
+    
+  </div>
+  
+  <div>
+    <head xml:id="sec9.2.3.2">9.2.3.2 Display of scribal transpositions</head>
+    
+    <p>In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the <gi>orig</gi> reading is displayed on the facsimile level and the <gi>reg</gi> reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the <gi>reg</gi> reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the <gi>reg</gi> reading, while the <gi>orig</gi> reading is displayed in a note.</p>
+ 
+    <div type="display">
+      <table>
+        <row role="label">
+        <cell rend="width20">Elements</cell>
+        <cell rend="width40">Display in a single-level transcription</cell>
+        <cell rend="width40">Display in a multi-level transcription</cell>
+      </row>
+      <row>
+        <cell><gi>orig</gi></cell>
+        <cell>Displayed in a note to the whole <gi>orig</gi> sequence.</cell>
+        <cell>Displayed in the running text on the <gi>me:facs</gi> level with no indication of a transposition.</cell>
+      </row>
+      <row>
+        <cell><gi>reg</gi></cell>
+        <cell>Displayed in the running text.</cell>
+        <cell>Displayed in the running text on the <gi>me:dipl</gi> and <gi>me:norm</gi> levels, highlighted in green.</cell>
+      </row>              
+    </table>      
+    </div>
+    
+    <div>
+      <p>In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a transposition.</p>
+      <p>Other stylesheets may display transpositions differently. It is, for example, not obvious that the reading of the <gi>reg</gi> element should be given priority over the <gi>orig</gi> element, since the transposition at least in some cases may be made by a later scribe and thus not compliant with the scribe’s intentions.</p>     
+      
+    </div>
+ 
+  </div>
+  
+</div>
+
+<div>
+<head xml:id="sec9.2.4">9.2.4 Substitutions by the scribe</head>
+
+<p>This section describes the markup of text substituted by a scribe, 
+i.e. where a scribe deletes text and replaces it with some other 
+text. These actions should be encoded by a combination of the <gi>del</gi> and <gi>add</gi> 
+  elements introduced in <ref target="#sec9.2.1">ch. 9.2.1</ref> and <ref target="#sec9.2.2">ch. 9.2.2</ref> above.
+It is not always possible, however, to ascertain the relation between
+the two. If someone has deleted the originally written text inline
+this does not automatically mean that a corresponding addition above
+the line or in the margin is made by the same scribe. A correspondence 
+can be expressed by the <att>resp</att> attribute, 
+whenever the editor is able make this identification.
+ </p>
+
+  <p>A common type of substitution occurs when a scribe makes changes to one character in order to make it into another one, e.g. making an<q>e</q> into an <q>o</q>.</p>
+  
+  <p>
+    <figure rend="width80 clearboth">
+      <graphic url="ch9/AM-619-4to-26v,7-11.jpg"/>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.5</hi>. Substitution of one character with another. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 26v, l. 7–11.</p>
+  
+  <p>In the 4th line of ill. 9.5, the 5th word has been changed from <q>ſundu<hi rend="italic">m</hi></q> to <q>ſẏndu<hi rend="italic">m</hi></q>. We suggest that this action is encoded as a deletion of the <q>u</q> and the addition of the <q>y</q>. The change consists of adding a stem to the <q>u</q> and presumably a dot above it.</p>
+  
+  <p>We recommend that in a single-level encoding, the <gi>del</gi> and <gi>add</gi> elements
+    are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:</p>
+   
+  <egXML><![CDATA[. . .
+<w>
+  <me:dipl>s<del hand="mainscribe">u</del>
+    <add hand="mainscribe" place="inline">y</add>ndu<ex>m</ex></me:dipl>
+</w>
+. . .]]></egXML>
+  
+  <p>In a multi-level encoding, we recommend that the <gi>del</gi> and <gi>add</gi> elements
+    are included at the facsimile and diplomatic level, while the normalised level should
+    give the text as it was intended:</p>
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>ſ<del hand="mainscribe">u</del>
+      <add hand="mainscribe" place="inline">ẏ</add>ndu<am>&bar;</am></me:facs>
+    <me:dipl>s<del hand="mainscribe">u</del>
+      <add hand="mainscribe" place="inline">y</add>ndu<ex>m</ex></me:dipl>
+    <me:norm>syndum</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+  
+   
+  <p>
+    <figure rend="width80 clearboth">
+      <graphic url="ch9/HolmPerg-34-4to-8r,17-19.jpg"/>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.6</hi>. Substitution of one character with another written above. <title>Landslǫg Magnúss
+    Hákonarsonar</title>. Holm perg 34 4to, f. 8r, l. 17–19.</p>
+
+  <p>Another common example is the substitution by writing the replacement 
+    above (or below) the word.  In ill. 9.6,
+  in the middle of the middle line, the word “yður” has been altered, most likely by the scribe, so 
+that the original “u” has been deleted by 
+subpunctuation and an “e” has been added as the replacement character 
+above the line. This word should be marked up as follows in a single-level encoding on the diplomatic level:</p>
+
+<egXML><![CDATA[. . .
+<w>
+  <me:dipl>yð<del hand="mainscribe" rend="subpunction">u</del>
+    <add hand="mainscribe" place="supralinear">e</add>r</me:dipl>
+</w>
+. . .]]></egXML>
+
+  <p>As stated above, we recommend that in a multi-level encoding, 
+    the <gi>del</gi> and <gi>add</gi> elements
+  are included at the facsimile and diplomatic level, while the normalised level has the text as it was intended:</p>
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>yð<del hand="mainscribe" rend="subpunction">u</del>
+      <add hand="mainscribe" place="supralinear">e</add>r</me:facs>
+    <me:dipl>yð<del hand="mainscribe" rend="subpunction">u</del>
+      <add hand="mainscribe" place="supralinear">e</add>r</me:dipl>
+    <me:norm>yðr</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+  
+  <p>In this example, the corrected form <q>yðer</q> is rendered as <q>yðr</q> in normalised orthography. 
+    See the discussion on orthography in <ref target="#sec9.3.4">ch. 9.3.4</ref> below.</p>
+
+<p>If a substitution spans a structural
+  boundary, we refer to the advice in <ref target="HB3_ch16.xml#sec16.2">ch. 16.2</ref> below.</p>
+  
+  <div>
+    <head xml:id="sec9.2.4.1">9.2.4.1 Display of scribal substitutions</head>
+    <p>In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the <gi>del</gi> reading is displayed on the facsimile level and the <gi>add</gi> reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the <gi>add</gi> reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the <gi>add</gi> reading, while the <gi>del</gi> reading is displayed in a note.</p>
+    
+    <div type="display">
+      <table>
+        <row role="label">
+          <cell rend="width20">Elements</cell>
+          <cell rend="width40">Display in a single-level transcription</cell>
+          <cell rend="width40">Display in a multi-level transcription</cell>
+        </row>
+        <row>
+          <cell><gi>del</gi></cell>
+          <cell>Displayed with deletion signs, as described in <ref target="#sec9.2.1.2">ch. 9.2.1.2</ref> above.</cell>
+          <cell>Displayed in the running text on the <gi>me:facs</gi> level with no indication of a substitution.</cell>
+        </row>
+        <row>
+          <cell><gi>add</gi></cell>
+          <cell>Displayed with addition signs, as described in <ref target="#sec9.2.2.2">ch. 9.2.2.2</ref> above.</cell>
+          <cell>Displayed in the running text on the <gi>me:dipl</gi> and <gi>me:norm</gi> levels, highlighted in green.</cell>
+        </row>              
+      </table>
+    </div>
+    
+    <div>
+      <p>In a multi-level transcription, the stylesheet for the Menota archive uses the green colour on the diplomatic and normalised levels to indicate that a passage is the result of a substitution.</p>
+      <p>Other stylesheets may display substitutions differently. It is, for example, not obvious that no indication should be given on the facsimile level, especially if the substitution is thought to be part of the immediate writing process by the scribe.</p>
+    </div>
+  
+  </div><!-- 9.2.4.1 -->
+  
+</div><!-- 9.2.4 -->
+</div><!-- 9.2 -->
+
+<div>
+<head xml:id="sec9.3">9.3 Editorial intervention</head>
+
+<p>When transcribing medieval material
+we sometimes encounter text which for one reason or another should be supplied, suppressed or corrected. It may be obvious cases, such as physical damage to the manuscript which calls for restoration, but it may also be passages which look fine in the manuscript but come across as erroneous. In the following, we shall discuss three types of editorial intervention: (1) insertions, (2) suppressions and (3) corrections.</p> 
+
+<div>
+<head xml:id="sec9.3.1">9.3.1 Insertions by the editor</head>
+ 
+<p>If text seems to be missing in the manuscript, the editor can supply it using the <gi>supplied</gi> element. We suggest that there are two major types of supplied text:</p>
+
+  <p>(1) <hi rend="bold">Restoration</hi> is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the <att>reason</att> attribute and the value <val>restoration</val>. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a <att>resp</att> attribute. We regard restoration as the default type of supplied text.</p>
+  
+  <p>(2) <hi rend="bold">Emendation</hi> is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the <att>reason</att> attribute and the value <val>emendation</val>. Also here, the person who is responsible for the emendation should be identified in a <att>resp</att> attribute.</p>
+ 
+  <table rend="xml-elements">
+    <row role="label">
+      <cell rend="width20">Elements &amp; attributes</cell>
+      <cell rend="width10">Obl/Opt</cell>
+      <cell rend="width70">Contents</cell>
+    </row>
+    <row>
+      <cell><gi>supplied</gi></cell>
+      <cell></cell>
+      <cell>Signifies text supplied by
+        the editor in order to restore or emend the manuscript text.
+        Attributes include:</cell>
+    </row>
+    <row>
+      <cell><att>reason</att></cell>
+      <cell>Obligatory</cell>
+      <cell>Indicates why the text has
+        been supplied. It should be given one of the two values, <val>restoration</val> or <val>emendation</val>. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.</cell>
+    </row>
+    <row>
+      <cell><att>resp</att></cell>
+      <cell>Obligatory</cell>
+      <cell>Indicates the individual
+        responsible for the addition of characters, words or passages
+        contained within the <gi>supplied</gi> element.</cell>
+    </row>
+    <row>
+      <cell><att>source</att></cell>
+      <cell>Optional</cell>
+      <cell>States the source of the
+        supplied text if this can be located.</cell>
+    </row>
+  </table>
+ 
+<div>
+  <head xml:id="sec9.3.1.1">9.3.1.1 Encoding of restorations</head> 
+
+  <p><hi rend="bold">Restoration</hi> is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas (<ref
+    target="HB3_ch8.xml#sec8.2">ch. 8.2</ref>), empty spaces (<ref
+      target="HB3_ch8.xml#sec8.3">ch. 8.3</ref>), and unclear passages (<ref
+        target="HB3_ch8.xml#sec8.4">ch. 8.4</ref>).</p>
+    
+  <p>
+    <figure rend="width80 clearboth">
+      <graphic url="ch9/AM-677-4to-1v,1-3.jpg" width="344"/>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.7</hi>. Missing initial. <title>Gregory’s Homilies and Dialogues</title>. AM 677 4to, f. 1v, l. 1–3.</p>
+      
+  <p>In ill. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word <hi rend="italic">sá</hi> ‘this’. This is a single-level encoding on the diplomatic level:</p>
+  
+  <egXML><![CDATA[. . .
+<w><me:dipl><supplied reason="restoration" resp="encoder">
+    <c type="initial">S</c></supplied>a</me:dipl></w>
+<w><me:dipl>eiɴ</me:dipl></w>
+<w><me:dipl><ex>madr</ex></me:dipl></w>
+. . .]]></egXML>
+  
+  <p>In a multi-level encoding, the facsimile level should encode the text as is, using the <gi>space/</gi> element to record any significant space in the manuscript. The supplied reading will be given on the normalised level, while the diplomatic level may opt for either the <gi>space/</gi> or the <gi>supplied</gi> encoding, as discussed in <ref target="HB3_ch8.xml#sec8.3.1">ch. 8.3.1</ref> above. Here, the supplied reading is given on both the diplomatic and normalised levels:</p>
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs><space quantity="1" unit="chars"/>a</me:facs>
+    <me:dipl><supplied reason="restoration" resp="encoder">
+      <c type="initial">S</c></supplied>a</me:dipl>
+    <me:norm><supplied reason="restoration" resp="encoder">
+      <c type="initial">S</c></supplied>á</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>eıɴ</me:facs>
+    <me:dipl>eiɴ</me:dipl>
+    <me:norm>einn</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><am>ᛉ</am></me:facs>
+    <me:dipl><ex>madr</ex></me:dipl>
+    <me:norm>maðr</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+  
+  <p>A similar example is found in <ref target="HB3_ch8.xml#sec8.3">ch. 8.3</ref> above, from the law text AM 309 fol.</p>
+  
+  <p>
+    <figure rend="width80 clearboth">
+      <graphic url="ch8/AM-619-4to-9v,23-30.jpg"/>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.8</hi>. Damage to the parchment caused by acidity. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 9v, l. 23–30.</p>
+  
+  <p>For a slightly more extensive restoration, we may return to the example in <ref
+    target="HB3_ch8.xml#sec8.2">ch. 8.2</ref> above. This is a single-level encoding on a diplomatic level, where <q>GI1931</q> refers to Gustav Indrebø’s 1931 edition of <title>The Old Norwegian Homily Book</title>:</p>
+
+  <egXML><![CDATA[. . .
+<w><me:dipl>Fegiarn</me:dipl></w>
+<w><me:dipl><ex>maðr</ex></me:dipl></w>
+<w><me:dipl>er</me:dipl></w>
+<w><me:dipl>lícr</me:dipl></w>
+<w><me:dipl>hælviti</me:dipl></w>
+<w><me:dipl>þvi</me:dipl></w>
+<w><me:dipl>er</me:dipl></w>
+<w><me:dipl>aldrigin</me:dipl></w>
+<w><me:dipl><supplied reason="restoration" resp="GI1931">fyl</supplied>lisc</me:dipl></w>
+<pc><me:dipl>.</me:dipl></pc>
+. . .]]></egXML>
+  
+<p>In a multi-level encoding, the <gi>gap/</gi> element will be used on the facsimile level, while the <gi>supplied</gi> element offers a restoration on the normalised level and optionally on the diplomatic levels. Also here, the gap has been supplied on the diplomatic level in addition to the normalised level:</p>
+  
+ <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>þ&vins;i</me:facs>
+    <me:dipl>þvi</me:dipl>
+    <me:norm>því</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>er</me:facs>
+    <me:dipl>er</me:dipl>
+    <me:norm>er</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>aldrigin</me:facs>
+    <me:dipl>aldrigin</me:dipl>
+    <me:norm>aldrigin</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><gap reason="damage" agent="acidity" quantity="3" unit="chars"/>lisc</me:facs>
+    <me:dipl><supplied reason="restoration" resp="GI1931">fyl</supplied>lisc</me:dipl>
+    <me:norm><supplied reason="restoration" resp="GI1931">fyl</supplied>lisk</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm>.</me:norm>
+  </choice>
+</pc>
+. . .]]></egXML>
+    
+  <p>
+    <figure rend="width66 clearboth">
+      <graphic url="ch9/AM-645-4to-51v,32-35.jpg"/>
+    </figure>
+  </p>
+   
+  <p rend="caption"><hi rend="bold">Ill. 9.9</hi>. An illegible word. <title>Niðrstigningar saga</title>. AM 645 4to, f. 51v, l. 32–35.</p>
+  
+  <p>In ill. 9.9, the first character in the second line is so smudged that it has become illegible. As stated in <ref target="HB3_ch8.xml#sec8.4.1">ch. 8.4.1</ref> above, we recommended that illegible characters are encoded by a standard sign such as <hi rend="codepoint">25CC</hi> <hi rend="descName">DOTTED CIRCLE</hi>. A single-level encoding of this passage is given in <ref target="HB3_ch8.xml#sec8.4.1">ch. 8.4.1</ref>, while we here offer a multi-level encoding with supplied text on the diplomatic as well as the normalised level:</p>
+  
+  <egXML><![CDATA[<pb ed="ms" n="51v"/>
+. . .
+<lb ed="ms" n="32"/>. . .
+<w>
+  <choice>
+    <me:facs><unclear reason="smudged">◌</unclear></me:facs>
+    <me:dipl><supplied reason="restoration" resp="OEH">ok</supplied></me:dipl>
+    <me:norm><supplied reason="restoration" resp="OEH">ok</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ml<am>&bar;</am>a</me:facs>
+    <me:dipl>m<ex>æ</ex>la</me:dipl>
+    <me:norm>mǽla</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>s<am>&asup;</am></me:facs>
+    <me:dipl>s<ex>va</ex></me:dipl>
+    <me:norm>svá</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm>.</me:norm>
+  </choice>
+</pc>
+. . .]]></egXML>
+  
+<p>Note that the reading on the facsimile level uses the dotted circle for the illegible character, while the diplomatic and normalised levels offer a restoration in the <gi>supplied</gi> element.</p>  
+
+</div>
+  <div>
+    
+    <head xml:id="sec9.3.1.2">9.3.1.2 Encoding of emendations</head>
+ 
+    <p><hi rend="bold">Emendation</hi> is here used to describe the addition of one or more characters or 
+      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, <hi rend="italic">ope codicum</hi>, and emendations based on the subjective judgment of the editor, <hi rend="italic">ope ingenii</hi>. In the following, we shall give examples of both.</p>
+    
+    <p>The first example is of an emendation <hi rend="italic">ope codicum</hi>. The bottom line in ill. 9.10 reads <q>Vitt<hi rend="italic">ra</hi> er hyggiændi guðleg<hi rend="italic">ra</hi> luta sva sem gefet er man<hi rend="italic">n</hi>e</q>. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s <title>De virtutibus et vitiis</title>, had not been available, nobody might have proposed an emendation.</p>
+    
+    <p>
+      <figure rend="width80 clearboth">
+        <graphic url="ch9/AM-619-4to-14r,26-30.jpg"/>
+      </figure>
+    </p>
+    
+    <p rend="caption"><hi rend="bold">Ill. 9.10</hi>. Supplied text. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 14r, l. 26–30.</p>    
+    
+    <p>However, based on Alcuin’s version <q>Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia</q>, Gustav Indrebø added <q>ok mannlegra</q> to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of <q>humanarumque</q>, and as such it is an emendation <hi rend="italic">ope codicum</hi>. If Indrebø’s emendation is accepted, this would be a single-level encoding:</p>
+    
+    <egXML><![CDATA[. . .
+<w><me:dipl>guðleg<ex>ra</ex></me:dipl></w>
+<w><me:dipl>luta</me:dipl></w>
+<supplied reason="emendation" resp="GI1931" source="Alcuin-text">
+  <w><me:dipl>ok</me:dipl></w>
+  <w><me:dipl>mannlegra</me:dipl></w>
+</supplied>
+. . .]]></egXML>  
+    
+    <p>In a multi-level encoding, the facsimile level will be left empty for the supplied words, for the very reason that they are not in the manuscript. As discussed several times above, the normalised level should offer the supplied words, while it is optional for the diplomatic level to do so. In the following example, both of the latter levels include the supplied text:</p>
+    
+    <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>guðleg<am>&asup;</am></me:facs>
+    <me:dipl>guðleg<ex>ra</ex></me:dipl>
+    <me:norm>guðligra</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>luta</me:facs>
+    <me:dipl>luta</me:dipl>
+    <me:norm>hluta</me:norm>
+  </choice>
+</w>
+<supplied reason="emendation" resp="GI1931" source="Alcuin-text">
+  <w>
+    <choice>
+      <me:facs></me:facs>
+      <me:dipl>ok</me:dipl>
+      <me:norm>ok</me:norm>
+    </choice>
+  </w>
+  <w>
+    <choice>
+      <me:facs></me:facs>
+      <me:dipl>mannlegra</me:dipl>
+      <me:norm>mannligra</me:norm>
+    </choice>
+  </w>
+</supplied>
+. . .]]></egXML>    
+         
+    <p>The second example is of an emendation <hi rend="italic">ope ingenii</hi>. This is offered by ill. 9.11, in which the middle line reads <q>Iesus Christus, sá er nú er krossfestr, hafi þangat sent</q>.
+      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add <hi rend="italic">þik</hi>, <q>Iesus Christus, sá er nú er krossfestr, 
+        hafi <hi rend="italic">þik</hi> þangat sent</q>. The editor’s <hi rend="italic">ingenium</hi> is in this case based on the syntactic analysis of Old Norse.</p>
+            
+  <p>
+    <figure rend="width66 clearboth">
+      <graphic url="ch9/AM-645-4to-55v,5-7.jpg"/>
+    </figure>
+  </p>
+  
+    <p rend="caption"><hi rend="bold">Ill. 9.11</hi>. Supplied text. <title>Niðrstigningar saga</title>. AM 645 4to, f. 55v, l. 5–7.</p>
+  
+  <p>As suggested above, the <gi>supplied</gi> element should be specified with the 
+    attribute <att>reason</att> and the value <val>emendation</val>. This would be a single-level encoding of the last four words:</p>
+ 
+  <egXML><![CDATA[. . .
+<w><me:dipl>hafe</me:dipl></w>
+<w><me:dipl><supplied reason="emendation" 
+   resp="OEH">þik</supplied></me:dipl></w>
+<w><me:dipl>þaɴgat</me:dipl></w>
+<w><me:dipl>seɴt</me:dipl></w>
+. . .]]></egXML>  
+
+<p>In a multi-level encoding, the facsimile level will simply be empty for the supplied word, while we also here have given it on the diplomatic and normalised level:</p>
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>hafe</me:facs>
+    <me:dipl>hafe</me:dipl>
+    <me:norm>hafi</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl><supplied reason="emendation" resp="OEH">þik</supplied></me:dipl>
+    <me:norm><supplied reason="emendation" resp="OEH">þik</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þaɴgat</me:facs>
+    <me:dipl>þaɴgat</me:dipl>
+    <me:norm>þangat</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ſeɴt</me:facs>
+    <me:dipl>seɴt</me:dipl>
+    <me:norm>sent</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+
+  <p>In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.</p>
+
+</div>
+
+<div>
+    <head xml:id="sec9.3.1.3">9.3.1.3 Display of editorial insertions</head>
+  
+  <p>In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. <ref target="HB3_literature.xml#Dow1969">Dow 1969</ref>), p. 5, and the <ref
+    target="http://www.stoa.org/epidoc/gl/dev/trans-restored.html" type="external">EpiDoc Guidelines</ref>. If, however, the <gi>supplied</gi> element has the <att>reason</att> attribute and the <val>emendation</val> value, the stylesheet uses open angle brackets for the display (cf. <ref target="HB3_literature.xml#Dow1969">Dow 1969</ref>, p. 11).</p>
+  
+  <div type="display">
+    <table>
+      <row role="label">
+      <cell rend="width40">Element and attributes </cell>
+      <cell rend="width60">Display</cell>
+    </row>
+    <row>
+      <cell>&lt;supplied 
+        reason="restoration"&gt;<lb/>
+      </cell>
+      <cell>Square brackets, <hi rend="codepoint">005B</hi> and <hi rend="codepoint">005D</hi> respectively, e.g.
+        [S]á einn maðr</cell>
+    </row>
+    <row>
+      <cell>&lt;supplied 
+        reason="emendation"&gt;</cell>
+      <cell>Open angle brackets, <hi rend="codepoint">27E8</hi> and <hi rend="codepoint">27E9</hi>, e.g. 
+        hafi ⟨þik⟩ þangat sent
+      </cell>
+    </row>              
+  </table>
+  </div>
+  
+  <div>
+    <p>Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.</p>
+  </div>
+</div>
+</div>
+
+<div>
+<head xml:id="sec9.3.2">9.3.2 Suppression by the editor</head>
+
+  <p>If a piece of text is thought to be superfluous, the editor might want to indicate the superfluous passage and in effect suppress it. This is common editorial practice, although it should always be done in a way that records the suppressed passage (whether by suppression signs or by a note stating the manuscript reading).</p>
+  
+  <p>Dittographies are probably the most common cause for suppression. The TEI P5 Guidelines, <ref
+    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHOM">ch. 11.3.1.7</ref>,
+    recommends the <gi>surplus</gi> element for dittographies, and we do the same. This element can also be used to suppress passages which the editor believe are superfluous for other reasons, such as being excessive or even incoherent. As with the <gi>supplied</gi> element, this is more often than not a subjective evaluation by the editor, based on his or her understanding of the rules of grammar.</p>
+    
+  <p>As for other instances of editorial suppression, we recommend using the <gi>sic</gi> and <gi>corr</gi> elements, so that the <gi>sic</gi> element contains the suppressed reading and the <gi>corr</gi> element is left empty. This will be dealt with in <ref target="#sec9.3.3">ch. 9.3.3</ref> below.</p>
+  
+  <p><hi rend="bold">Note</hi>. Earlier versions of the Menota Handbook introduced the <gi>me:expunged</gi> element (later renamed as <gi>me:suppressed</gi>) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard <gi>surplus</gi> element or the <gi>sic</gi> and <gi>corr</gi> elements are being used for editorial suppression.</p>
+  
+<div>
+  
+    <head xml:id="sec9.3.2.1">9.3.2.1 Encoding of suppressed text</head>  
+ 
+  <table rend="xml-elements">
+    <row role="label">
+      <cell rend="width20">Elements &amp; attributes</cell>
+      <cell rend="width10">Obl/Opt</cell>
+      <cell rend="width70">Contents</cell>
+    </row>
+      <row>
+        <cell><gi>surplus</gi></cell>
+        <cell></cell>
+        <cell>Contains text which the editor believes should be recognised as superfluous.</cell>
+      </row>
+      <row>
+        <cell><att>reason</att></cell>
+        <cell>Optional</cell>
+        <cell>Indicates the reason for the piece of text being superfluous. It can be given values like <val>dittography</val>, <val>excess</val> and <val>incoherence</val>.</cell>
+      </row>
+    </table>
+  
+  <p>In the following, we give examples of <gi>surplus</gi> text due to dittography, ill. 9.12, and incoherence, ill. 9.13.</p>
+
+  <p>
+    <figure rend="width50 clearboth">
+      <graphic url="ch9/AM-243-ba-fol-2vB,18-21.png"></graphic>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.12</hi>. Dittography. <title>Konungs skuggsjá</title>. AM 243 ba fol, f. 2v, col. B, l. 18–21.</p>
+  
+  <p>In ill. 9.12, there is a dittography “sialfr sialfr” at the end of the first line and in the opening of the second. It has not been deleted by the scribe, so it is left to the editor to suppress it. This is what it would look like in a multi-level encoding:</p>  
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>ꝩaʀ</me:facs>
+    <me:dipl>vaʀ</me:dipl>
+    <me:norm>várr</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ſialꝼr</me:facs>
+    <me:dipl>sialfr</me:dipl>
+    <me:norm>sjalfr</me:norm>
+  </choice>
+</w>
+<lb ed="ms" n="19"/>
+<surplus reason="dittography">
+  <w>
+    <choice>
+      <me:facs>ſialꝼr</me:facs>
+      <me:dipl></me:dipl>
+      <me:norm></me:norm>
+    </choice>
+  </w>
+</surplus>
+<w>
+  <choice>
+    <me:facs>oc</me:facs>
+    <me:dipl>oc</me:dipl>
+    <me:norm>ok</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>  
+  
+<p>From a pragmatic point of view, the second, not the first, instance of <q>sialfr</q> has been defined as a dittography. Both instances will be displayed on the facsimile level, but only the first <q>sialfr</q> will be displayed on the diplomatic and normalised levels. For this reason, these levels are empty in the example above.</p>
+  
+  <p>
+    <figure rend="width50 clearboth">
+      <graphic url="ch9/NKS-66-8vo-73r,9-13.png"/>
+      <graphic url="ch9/NKS-66-8vo-73v,1-2.png"/>
+      </figure>
+  </p>
+ 
+  <p rend="caption"><hi rend="bold">Ill. 9.13</hi>. Incoherence. <title>Henrik Harpestreng</title>. NKS 66 8vo, f. 73r, l. 9–13 and f. 73v, l. 1–2.</p>
+  
+  <p>In ill. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the <gi>surplus</gi> element and the <val>incoherence</val> value of the <att>reason</att> attribute:</p>
+  
+  <egXML><![CDATA[. . .
+<lb ed="ms" n="11"/>
+<w><me:dipl>oc</me:dipl></w>
+<w><me:dipl>thæt</me:dipl></w>
+<w><me:dipl>dughær</me:dipl></w>
+<w><me:dipl>for</me:dipl></w>
+<w><me:dipl>spolorm</me:dipl></w>
+<w><me:dipl>of</me:dipl></w>
+<w><me:dipl>m<lb ed="ms" n="12"/>an</me:dipl></w>
+<w><me:dipl>drikær</me:dipl></w>
+<w><me:dipl>thæt</me:dipl></w>
+<w><me:dipl>ællær</me:dipl></w>
+<w><me:dipl>of</me:dipl></w>
+<w><me:dipl>m<lb ed="ms" n="13"/>an</me:dipl></w>
+<w><me:dipl>smørs</me:dipl></w>
+<w><me:dipl>mæth</me:dipl></w>
+<surplus reason="incoherence">
+  <w><me:dipl>oc</me:dipl></w>
+</surplus>
+<pb ed="ms" n="73v"/>
+<lb ed="ms" n="1"/>
+<w><me:dipl>hænnæ</me:dipl></w>
+. . .]]></egXML> 
+      
+  <p>In short, the <gi>surplus</gi> element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.</p>
+    
+  </div>
+
+ <div>
+   <head xml:id="sec9.3.2.2">9.3.2.2 Display of editorial suppression</head>
+  
+   <p>In the stylesheet for the Menota archive, text suppressed by the editor is displayed in curly brackets. Deletions by the scribe, on the other hand, is displayed in vertical bars with quills, as shown in <ref target="#sec9.2.2.2">ch. 9.2.2.2</ref> above.</p>
+   
+   <div type="display">
+     <table>
+       <row role="label">
+       <cell rend="width20">Element</cell>
+       <cell rend="width80">Display</cell>
+     </row>
+     <row>
+       <cell><gi>surplus</gi></cell>
+       <cell>Curly brackets, <hi rend="codepoint">005B</hi> and <hi rend="codepoint">005D</hi> respectively, e.g. va&rscap; sialfr {sialfr}</cell>
+     </row>             
+   </table>
+   </div>
+   
+   <div>
+     <p>Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in ill. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr {} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.</p>
+   <p>If the reason for the suppression is a dittography, as exemplified here, some printed editions will use the signs <hi rend="codepoint">2E21</hi> and <hi rend="codepoint">2E20</hi>. Since these are identical to the signs recommended for deletions by the scribe, only in the reverse order, we do not recommend this usage.</p>
+     <p>Other stylesheets will display suppressed text differently, for example by overstrike.</p>
+ 
+   </div>
+   
+ </div>
+</div>
+
+<div>
+<head xml:id="sec9.3.3">9.3.3 Corrections by the editor</head>
+
+<p>When transcribing a text, corrections
+of obvious mistakes in the manuscript text can be encoded with the
+elements <gi>sic</gi> and 
+<gi>corr</gi>, grouped within a <gi>choice</gi> element.</p>
+      
+  <table rend="xml-elements">
+    <row role="label">
+      <cell rend="width20">Elements &amp; attributes</cell>
+      <cell rend="width10">Obl/Opt</cell>
+      <cell rend="width70">Contents</cell>
+    </row>
+<row>
+   <cell><gi>sic</gi></cell>
+  <cell></cell>
+   <cell>Contains text reproduced
+    although apparently incorrect or inaccurate.</cell>
+  </row>
+  <row>
+   <cell><gi>corr</gi></cell>
+    <cell></cell>
+   <cell>Contains the correct form
+    of a passage apparently erroneous in the manuscript text.
+</cell>
+  </row>
+  <row>
+   <cell><att>resp</att></cell>
+    <cell>Obligatory</cell>
+   <cell>Indicates the individual
+    responsible for the correction of characters, words or passages
+    contained within the <gi>corr</gi> element.</cell>
+  </row>
+</table>
+  
+  <p>
+    <figure rend="width80 clearboth">
+      <graphic url="ch9/AM-619-4to-8v,23-26.jpg"/>
+    </figure>
+  </p>
+  
+  <p rend="caption"><hi rend="bold">Ill. 9.14</hi>. Correction by editor. <title>The Old Norwegian Homily Book</title>. AM 619 4to, f. 8v, l. 23–26.</p>
+
+  <p>In the third line of ill. 9.14, the editor has decided to correct <q>tíu æggiat</q> ‘with ten edges’ to <q>tuí æggiat</q> ‘with two edges, i.e. double-edged’. This is an example of a <hi rend="italic">minim</hi> correction from <hi rend="italic">iu</hi> to <hi rend="italic">ui</hi>. In a single-level transcription, the encoding is straight-forward. Note, however, that the <gi>sic</gi> and <gi>corr</gi> elements must be placed within a <gi>choice</gi> element:</p>
+
+  <egXML><![CDATA[. . .
+<w><me:dipl>hvasser</me:dipl></w>
+<w><me:dipl>sem</me:dipl></w>
+<w>
+  <me:dipl>
+    <choice>
+      <sic>tíu æggiat</sic>
+      <corr resp="Indrebo1931">tuí æggiat</corr>
+    </choice>
+  </me:dipl>
+</w>
+<w><me:dipl>sværð</me:dipl></w>
+. . .]]></egXML>
+
+  <p>In a multi-level transcription, we suggest that the <gi>sic</gi> element is located at the facsimile level, while the <gi>corr</gi> element is located at the diplomatic and normalised level:</p>
+  
+  
+  <egXML><![CDATA[. . .
+<w>
+  <choice>
+    <me:facs>hvaſſer</me:facs>
+    <me:dipl>hvasser</me:dipl>
+    <me:norm>hvassir</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ſem</me:facs>
+    <me:dipl>sem</me:dipl>
+    <me:norm>sem</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><sic>tíu æggiat</sic></me:facs>
+    <me:dipl><corr resp="Indrebo1931">tuí æggiat</corr></me:dipl>
+    <me:norm><corr resp="Indrebo1931">tvíeggjat</corr></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ſværð</me:facs>
+    <me:dipl>sværð</me:dipl>
+    <me:norm>sverð</me:norm>
+  </choice>
+</w>
+. . .]]></egXML>
+
+<p>Editors will emend the text to varying degrees. In his edition of <title>The Old Norwegian Homily Book</title> in AM 619 4to, Gustav Indrebø (1931) corrected the text in a number of cases. In the Menota archive, his corrections have been given priority, so that the manuscript readings in the <gi>sic</gi> element have been moved into notes.</p>
+  
+  
+  <div>
+    <head xml:id="sec9.3.3.1">9.3.3.1 Display of editorial corrections</head>
+    
+    <p>In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the <gi>sic</gi> reading is displayed on the facsimile level and the <gi>corr</gi> reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the <gi>corr</gi> reading, since this is the one suggested by the editor. The stylesheet therefore displays the <gi>corr</gi> reading, while the <gi>sic</gi> reading is displayed in a note.</p>
+    
+    <div type="display">
+      <table>
+        <row role="label">
+          <cell rend="width20">Elements</cell>
+          <cell rend="width40">Display in a single-level transcription</cell>
+          <cell rend="width40">Display in a multi-level transcription</cell>
+        </row>
+        <row>
+          <cell><gi>sic</gi></cell>
+          <cell>Displayed in a note to the whole <gi>sic</gi> sequence.</cell>
+          <cell>Displayed in the running text on the <gi>me:facs</gi> level with no indication of a correction.</cell>
+        </row>
+        <row>
+          <cell><gi>corr</gi></cell>
+          <cell>Displayed in the running text.</cell>
+          <cell>Displayed in the running text on the <gi>me:dipl</gi> and <gi>me:norm</gi> levels., highlighted in green.</cell>
+        </row>              
+      </table>
+      
+    </div>
+ 
+    <div>
+      <p>In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a correction.</p>
+      <p>Other stylesheets may display corrections differently. It is, for example, not obvious that no indication should be given on the facsimile level, especially if the correction is thought to be helpful for the readers of the text.</p>
+      
+    </div>
+  </div>
+
+
+
+  </div>
+   
+ 
+    
+  <div>
+    <head xml:id="sec9.3.4">9.3.4 Orthography of supplied and corrected text</head>
+    
+    <p>When the encoder would like to supply or correct text using the <gi>supplied</gi> or <gi>reg</gi> elements, the orthography will depend on the level of transcription.</p>
+    <p>On the <hi rend="bold">normalised</hi> level, one should simply follow the regularised orthography for the language in question. For Old Icelandic and Old Norwegian we recommend in general the orthography of the Old Norse Dictionary in Copenhagen. However, as discussed in <ref target="HB3_ch10.xml">ch. 10</ref> below, there may be other normalised orthographies, for example appropriate to late medieval texts.</p>
+    <p>On the <hi rend="bold">diplomatic</hi> level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of ill. 9.11 in <ref target="#sec9.3.1.2">ch. 9.3.1.2</ref> above, one might suggest that the supplied word <q>mannlegra</q> should have been rendered as <q>mannleg<hi rend="italic">ra</hi></q> in analogy with <q>guðleg<hi rend="italic">ra</hi></q>, or, perhaps, as <q>man<hi rend="italic">n</hi>leg<hi rend="italic">ra</hi></q>, assuming that a double <q>nn</q> would have been written with a single <q>n</q> with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply <q>mannlegra</q>.</p>
+    <p>Another example is the supplied text in the space left by the scribe in AM 309 fol, exemplified in ill. 8.3 in <ref target="HB3_ch8.xml#sec8.3.1">ch. 8.3.1</ref> above. Even if the scribe only left room for approximately three characters, we recommend a fully supplied reading such as <q>halfa mork</q> rather than e.g. <q>.ɟ. ᴍ.</q> on the diplomatic and normalised levels. A supplied reading like <q>.ɟ. ᴍ.</q> might however be appropriate for the facsimile level.</p>
+    
+    <p>With respect to the orthography of the diplomatic level, it would be reasonable to use the spelling <q>mork</q> in accordance with the manuscript, while a normalised spelling would be <q>halfa mǫrk</q>. This is what a multi-level encoding would look like for the phrase in question:</p>
+    
+    <egXML><![CDATA[<pb ed="ms" n="42v"/>
+. . .
+<lb ed="ms" n="18"/>
+. . .
+<w>
+  <choice>
+    <me:facs>giallde</me:facs>
+    <me:dipl>giallde</me:dipl>
+    <me:norm>gjaldi</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm></me:norm>
+  </choice>
+</pc>
+<supplied reason="restoration" resp="encoder">
+  <w>
+    <choice>
+      <me:facs><am>.ɟ.</am></me:facs>
+      <me:dipl>halfa</me:dipl>
+      <me:norm>halfa</me:norm>
+    </choice>
+  </w>
+  <w>
+    <choice>
+      <me:facs><am>ᴍ.</am></me:facs>
+      <me:dipl>mork</me:dipl>
+      <me:norm>mǫrk</me:norm>
+    </choice>
+  </w>
+</supplied>
+<w>
+  <choice>
+    <me:facs>S<am>&er;</am></me:facs>
+    <me:dipl>S<ex>ilfrs</ex></me:dipl>
+    <me:norm>silfrs</me:norm>
+  </choice>
+</w>
+. . .
+]]></egXML>
+       
+    <p>An alternative would be to add the presumed abbreviated reading <q>.ɟ. ᴍ.</q> in a note, so as to explain why two words of alltogether nine characters have been supplied for this rather small space.</p>
+                   
+</div>
+
+</div>
+  
+<div>
+    <head xml:id="sec9.4">9.4 Editorial comments</head>
+    
+    <p>Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.</p>
+  
+  <table rend="xml-elements">
+    <row role="label">
+      <cell rend="width20">Elements &amp; attributes</cell>
+      <cell rend="width10">Obl/Opt</cell>
+      <cell rend="width70">Contents</cell>
+    </row>
+    <row>
+      <cell><gi>note</gi></cell>
+      <cell></cell>
+      <cell>Contains comments to the text by the editor. Main attributes:</cell>
+    </row>
+    <row>
+      <cell><att>type</att></cell>
+      <cell>Optional</cell>
+      <cell>Stating what kind of a note it is, e.g. <val>explanation</val>, <val>variation</val>, 
+        <val>codicology</val>, <val>paleography</val>.</cell>
+    </row>
+    <row>
+      <cell><att>source</att></cell>
+      <cell>Optional</cell>
+      <cell>Stating the source for a passage in the text, particularly relevant for the <val>variation</val> value of the <att>type</att> attribute.</cell>
+    </row>    
+  </table> 
+  
+  <p>These attributes are optional, so it is possible to use the <gi>note</gi> element without any further specification of its contents.</p>
+   
+    <div>
+      <head xml:id="sec9.4.1">9.4.1 Apparatus-style comments</head>
+      
+      <p>The apparatus to many printed editions may contain different types of comments, be they of codicological, paleographical or textual nature. If a printed edition is encoded in XML according to the guidelines in this book, some of these notes can be interpreted and rendered by existing elements, such as <gi>sic</gi> + <gi>corr</gi> for any corrections by the editor. Others may be given in the form of notes, which offer a less rigid way of entering the text.</p>
+      <p>Sometimes an editor may add a <q>[sic!]</q> in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the <gi>sic</gi> and <gi>corr</gi> elements. If there is no obvious correction, one may add a note stating <q>highlighted by the editor</q> or the like.</p>
+     </div>
+    
+    <div>
+      <head xml:id="sec9.4.2">9.4.2 Explanatory comments</head>
+      
+      <p>Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text <hi rend="italic">in medias res</hi>, such as <title>Barlaams saga ok Jósafats</title> where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in <title>Konungs skuggsjá</title> in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in <title>Strengleikar</title> in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in <ref target="HB3_ch8.xml#sec8.5.2">ch. 8.5.2</ref> above.</p>
+      
+      <p>In the Menota archive, the text of Codex Wormianus is opened with a comment stating that the first page is blank. Readers are thus encouraged to move on to the next page:</p>
+
+<egXML><![CDATA[. . .
+<div>  
+  <head>Codex Wormianus: AM 242 fol</head>
+  <pb ed="ms" n="1"/>
+  <p>
+      <note type="explanation">The first page in this manuscript is blank. 
+        The text of Snorra Edda begins on p. 2.</note>
+  <pb ed="ms" n="2"/>
+     . . .
+  </p>
+</div>
+. . .]]></egXML>
+ 
+<p>In the archive, explanatory notes are displayed in the edited text in a light grey colour:</p>
+      
+      <p>
+        <figure rend="width60 clearboth">
+          <graphic url="ch9/AM-242-fol-p1-explanatory-comment.png"/>
+        </figure>
+      </p>           
+    </div>
+    
+    <div>
+      <head xml:id="sec9.4.3">9.4.3 Other types of comments</head>
+      
+      <p>There are many other types of comments that the transcriber might want to make, such as unusual paleographical traits, variant readings, linguistic peculiarities, etc. See also the <ref type="external" target=" http://www.stoa.org/epidoc/gl/latest/trans-editorsnote.html">EpiDoc Guidelines</ref> on <q>Editor’s Note</q>.</p>
+    </div>
+    
+</div>
+        
+        <div>
+          
+          <head xml:id="sec9.5">Updates to ch. 9</head>
+          
+          <p>On 30 December 2025, <ref target="#sec9.2.1">ch. 9.2.1</ref> was reorganised so that it was divided into two types of additions, described in <ref target="#sec9.2.1.1">ch. 9.2.1.1</ref> and <ref target="#sec9.2.1.2">ch. 9.2.1.2</ref> (in the latter, glosses were introduced as another type of scribal addition), and a display of glosses by top left and top right half brackets was proposed in <ref target="#sec9.2.1.3">ch. 9.2.1.3</ref>.</p>
+          <p>On 27 April 2020, in <ref target="#sec9.3.2.1">ch. 9.3.2.1</ref> the sentence “For this reason, these levels are empty in the example above” was added immediately after “... only the first <q>sialfr</q> will be displayed on the diplomatic and normalised levels”. Consequently, the encoding example above was changed so that the <gi>me:dipl</gi> and <gi>me:norm</gi> levels for the second <q>sialfr</q> were left empty.</p>
+          <p>Furthermore, in <ref target="#sec9.3.2.2">ch. 9.3.2.2</ref> the following paragraph was added immediately below the text box: “Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in ill. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr {} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.”  
+  
+          </p>
+        </div>
+ 
+ </body>
+</text>
+</TEI>

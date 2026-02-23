@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Menota handbook appendix I (v. 3.0): Menota Light</title>
+        <editor>
+          <name>Odd Einar Haugen</name>
+        </editor>
+        <respStmt>
+          <resp>Written and edited by</resp>
+          <name>Odd Einar Haugen</name>
+        </respStmt>
+        <respStmt>
+          <resp>Written and edited by</resp>
+          <name>Nina Stensaker</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Published in the web at <ref target="http://www.menota.org/"
+        >http://www.menota.org/</ref>/</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Written from scratch for v. 3.0 of the handbook</p>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <creation>
+        <date>12 October 2019</date>
+      </creation>
+      <langUsage>
+        <language ident="en">English</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change><date>12 December 2019</date>
+        <persName>Odd Einar Haugen</persName>: Defined this appendix as belonging to v. 3.0 of the 
+        handbook (12 December 2019)</change>
+      <change><date>10 December 2019</date>
+        <persName>Odd Einar Haugen</persName>: Minor changes
+      </change>
+      <change><date>6 December 2019</date>
+        <persName>Odd Einar Haugen</persName>: Various consistency changes
+      </change>
+      <change>
+        <date>12 October 2019</date>
+        <persName>Odd Einar Haugen</persName>: Set up the page, and made several revisions throughout the day
+      </change>
+      
+    </revisionDesc>
+    
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <head xml:id="secI">Appendix I: Menota Light</head>
+      
+      <p>Version 3.0 (12 December 2019)</p>
+      <p>by Odd Einar Haugen and Nina Stensaker</p>
+      
+      <div>
+        <head xml:id="secI.1">I.1 Introduction</head>
+
+        <p>This handbook is complex and  deals with a number of questions that may 
+          not arise in the practical work for many transcribers. So, as stated in the very first chapter 
+          of the handbook, a text encoded according to the Menota Guidelines need not be complicated at all. 
+          It may do with just a handful of elements and attributes.</p>
+
+        <p>In this appendix, we are offering an example of a single-level transcription of a small extract from
+       NRA 58 C, an early Norwegian fragment of <title>Konungs skuggsjá</title>. The full encoding, using all 
+          three levels of representation can be found in
+         the text archive under NRA 58 C, and the underlying XML file can be downloaded there.
+         In the present example, the transcription is on a single, diplomatic level, and there is no
+        morphological annotation. However, the way Menota organises its files, further levels 
+        can easily be added later on, and the same goes for the morphological annotation.</p>
+        
+      </div>
+       
+
+      <div>
+        <head xml:id="secI.2">I.2 The source</head>
+
+        <p>NRA 58 C is a fragment of four folios written in two columns, having a total of 2,981 words. 
+          We have selected the first 18 lines of folio 3r, column B, as our example. This extract contains 151 words, so 
+          it is in a sense a fragment of a fragment.</p>
+        
+        <p>
+          <figure rend="width40 clearboth">
+            <graphic url="samples/NRA-58-C-3r,B,1-18.jpg"/>
+          </figure>
+        </p>
+        <p rend="caption"><hi rend="bold">Ill. I.1</hi>. A fragment of <title>Konungs skuggsjá</title>. NRA 58 C, fol. 3r, col. B, l. 1–18.</p>
+         
+    </div>
+    
+        <div>
+          <head xml:id="secI.3">I.3 The encoding</head>
+          
+          <p>Below is the encoding of the text. In order to make the file easier to read, each word is set on a line of its own. 
+            The header is not included, but you may refer
+            to <ref target="HB3_ch14.xml">ch. 14</ref> for examples of minimal as well as more extensive ones.</p>
+          
+          <egXML><![CDATA[<text xml:lang="onw">
+  <body>
+    <div>
+      <p>
+        <cb ed="ms" n="B"/>
+        <lb ed="ms" n="1"/>
+        <w>En</w>
+        <w>ef</w>
+        <w>þat</w>
+        <w>lægi</w>
+        <w>ner</w>
+        <w>auðrum</w>
+        <w>londum</w>
+        <w>þa</w>
+        <lb ed="ms" n="2"/>
+        <w>mundi</w>
+        <w>þ<ex>a</ex>t</w>
+        <w>vera</w>
+        <w>kallat</w>
+        <w>þriðiungr</w>
+        <w>af</w>
+        <w>einum</w>
+        <lb ed="ms" n="3"/> 
+        <w>biscupsdome</w>
+        <pc>.</pc>
+        <w>en</w>
+        <w>þo</w>
+        <w>hafa</w>
+        <w>þeir</w>
+        <w>ser</w>
+        <w>nu</w>
+        <w>b<ex>is</ex>cup</w>
+        <lb ed="ms" n="4"/>
+        <w>þvi at</w>
+        <w>eigi</w>
+        <w>lyðir</w>
+        <w>annat</w>
+        <w>firir</w>
+        <w>sva</w>
+        <w>mikillar</w>
+        <lb ed="ms" n="5"/>
+        <w>fiarvistar</w>
+        <w>sacker</w>
+        <w>er</w>
+        <w>þeir</w>
+        <w>ero</w>
+        <w>við</w>
+        <w>aðra</w>
+        <w>me<ex>n</ex></w>
+        <lb ed="ms" n="6"/>
+        <w>En</w>
+        <w>þar</w>
+        <w>er</w>
+        <w>þu</w>
+        <w>leitar</w>
+        <w>eiptir</w>
+        <w>þvi</w>
+        <w>við</w>
+        <w>hvart</w>
+        <lb ed="ms" n="7"/>
+        <w>er</w>
+        <w>þeir</w>
+        <w>lifa</w>
+        <w>a</w>
+        <w>þvi</w>
+        <w>lande</w>
+        <pc>.</pc>
+        <w>með</w>
+        <w>þvi</w>
+        <w>at</w>
+        <w>þar</w>
+        <lb ed="ms" n="8"/>
+        <w>er</w>
+        <w>eicki</w>
+        <w>sað</w>
+        <w>a</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>lifa</w>
+        <w>þo</w>
+        <w>menn</w>
+        <w>a</w>
+        <w>þeim</w>
+        <lb ed="ms" n="9"/>
+        <w>loundum</w>
+        <pc>.</pc>
+        <w>þvi at</w>
+        <w>við</w>
+        <w>flera</w>
+        <w>lifa</w>
+        <w>menn</w>
+        <w>en</w>
+        <lb ed="ms" n="10"/>
+        <w>við</w>
+        <w>brouð</w>
+        <w>eit</w>
+        <pc>.</pc>
+        <w>En</w>
+        <w>a</w>
+        <w>þesso</w>
+        <w>lande</w>
+        <w>er</w>
+        <w>nu</w>
+        <w>røð<lb ed="ms" n="11"/>dom</w>
+        <w>vit</w>
+        <w>um</w>
+        <pc>.</pc>
+        <w>þa</w>
+        <w>er</w>
+        <w>sva</w>
+        <w>sact</w>
+        <w>ifra</w>
+        <pc>.</pc>
+        <w>at</w>
+        <w>þar</w>
+        <w>se</w>
+        <lb ed="ms" n="12"/>
+        <w>gros</w>
+        <w>goð</w>
+        <pc>.</pc>
+        <w><ex>oc</ex></w>
+        <w>ero</w>
+        <w>þar</w>
+        <w>bu</w>
+        <w>goð</w>
+        <w>oc</w>
+        <w>stor</w>
+        <pc>.</pc>
+        <w>þvi at</w>
+        <w>me<ex>n</ex></w>
+        <lb ed="ms" n="13"/>
+        <w>hafa</w>
+        <w>þar</w>
+        <w>nouta</w>
+        <w>mart</w>
+        <w>oc</w>
+        <w>souða</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>er</w>
+        <w>þar</w>
+        <lb ed="ms" n="14"/>
+        <w>smiorgærð</w>
+        <w>mikill</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>osta</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>lifa</w>
+        <w>menn</w>
+        <w>við</w>
+        <lb ed="ms" n="15"/>
+        <w>þat</w>
+        <w>mioc</w>
+        <w>oc</w>
+        <w>sva</w>
+        <w>við</w>
+        <w>kiot</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>við</w>
+        <w>alzkonar</w>
+        <lb ed="ms" n="16"/>
+        <w>veiði</w>
+        <pc>.</pc>
+        <w>bæðe</w>
+        <w>við</w>
+        <w>reina</w>
+        <w>hold</w>
+        <w>oc</w>
+        <w>hvala</w>
+        <w>oc</w>
+        <w>sela</w>
+        <lb ed="ms" n="17"/>
+        <w>oc</w>
+        <w>biarnar</w>
+        <w>hold</w>
+        <pc>.</pc>
+        <w>oc</w>
+        <w>føðaz</w>
+        <w>menn</w>
+        <w>við</w>
+        <w>þ<ex>a</ex>t</w>
+        <w>þar</w>
+        <lb ed="ms" n="18"/>
+        <w>a</w>
+        <w>lande</w>
+      </p>
+    </div>
+  </body>
+</text>]]></egXML>
+          
+        </div>
+        
+        <div>
+          <head xml:id="secI.4">I.4 Comments</head>
+          
+          <p>As can be seen in the example, the whole text is embedded in the <gi>text</gi> element. The <att>xml:lang</att> attribute which has the <val>onw</val> value states that the language is Old Norwegian. Next, the text is embedded in the <gi>body</gi> element, which allows the encoder to add a <gi>front</gi> and <gi>back</gi> section to the transcription. Next, a single <gi>div</gi> element embeds the example – usually, a <gi>div</gi> will contain longer passages than this, such as chapters. Finally, there is a <gi>p</gi> element, stating that the text is in prose, as opposed to e.g. <gi>lg</gi> for metrical text. These elements were introduced and explained in <ref target="HB3_ch3.xml">ch. 3</ref> above.</p>
+          <p>Note that the <gi>pb/</gi> and <gi>cb/</gi> elements precede the text. They have the <att>ed</att> attribute with the <val>ms</val> value, stating that the page and column beginnings refer to the source itself, and not, for example, an edition. It also has the <att>n</att> attribute specifying the line number. Note that each <gi>lb/</gi> element precedes the line to which it refers. When a word is written over two lines, such as in lines 10–11, the <gi>lb/</gi> element will be placed at the break within the word itself. See <ref target="HB3_ch3.xml#sec3.12">ch. 3.12</ref> and <ref target="HB3_ch5.xml#sec5.5">ch. 5.5</ref> above for details.</p>
+          <p>The final two elements are the domineering ones: <gi>w</gi> for each word and <gi>pc</gi> for each punctuation character. As explained in <ref target="HB3_ch3.xml#sec3.6">ch. 3.6</ref> above, the reason for embedding words in the <gi>w</gi> element is primarily to make it ready for morphological annotation. It is also a convenient way of dealing with the distinction between graphical and lexical words, as shown in <ref target="HB3_ch5.xml#sec5.3.2">ch. 5.3.2</ref> above.</p>
+<p>Then, there is only one element left, the <gi>ex</gi> element for the expansion of abbreviations. There are not many examples here, but one is found in line 2, where <q>þat</q> has been abbreviated with a bar across the ascender of the <q>þ</q>. If the transcription had been on the facsimile level, this abbreviation mark would have been encoded with the <gi>am</gi> element, leaving it to the diplomatic level to expand the mark. You may download the multi-level transcription of NRA 58 C from the Menota archive to see how this works.</p>          
+        </div>
+      
+      <div>
+        <head xml:id="secI.5">I.5 File for downloading</head>
+        
+        <p>We offer the XML file used in this appendix for downloading. This is the complete file, including the header:</p>		
+        <list>	  
+          <item><ref target="samplefiles/NRA_58_C_3rB_1-18.xml">NRA 58 C: a fragment of a fragment</ref></item>
+        </list>
+        
+        <p>Please note that some browsers may try and interpret and open this sample file. 
+          In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
+          on your browser, unless your browser has other preferences.</p>
+                  
+      </div>
+
+
+  </body>
+
+</text></TEI>

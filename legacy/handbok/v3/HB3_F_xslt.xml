@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook appendix F (v. 3.0): XSLT stylesheets</title>
+            <editor>
+               <name>Odd Einar Haugen</name>
+            </editor>
+            <respStmt>
+               <resp>Written by </resp>
+               <name>Tone Merete Bruvik</name>
+            </respStmt>
+            <respStmt>
+               <resp>Written and revised by </resp>
+            <name>Beeke Stegmann</name></respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published on the web at <ref target="http://www.menota.org/"
+               >http://www.menota.org/</ref>/</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Created by copying the corresponding file framework for v. 2.0 of the handbook</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date>2 January 2017</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change><date>30 August 2022</date>
+            <persName>Odd Einar Haugen</persName>: Added captions in separate "p" elements below the illustrations, as hs been 
+            done in the other chapters of the handbook</change>
+         <change><date>22 January 2021</date>
+            <persName>Odd Einar Haugen</persName>: Updated the date for the link to the xslt style sheet in ch. F2</change>
+         <change><date>27 February 2020</date>
+            <persName>Odd Einar Haugen</persName>: Defined this appendix as belonging to v. 3.0 of the 
+            handbook (12 December 2019)</change>
+         <change><date>12 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Defined this appendix as belonging to v. 3.0 of the 
+            handbook (12 December 2019)</change>
+         <change><date>10 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Corrected some misspellings
+         </change>
+         <change><date>6 December 2019</date>
+            <persName>Odd Einar Haugen</persName>: Various consistency changes
+         </change>
+         <change><date>13 October 2019</date>
+            <persName>Odd Einar Haugen</persName>: Made a couple of corrections suggested by <persName>Patrick Farrugia</persName>
+         </change>
+         <change><date>29 September 2019</date>
+            <persName>Odd Einar Haugen</persName>: Changed the “tag” elements to “gi” elements, 
+            as recommended by <persName>Marco Bianchi</persName>; removed parts that had been commented out in <!-- -->
+         </change>
+         <change>
+            <date>2 May 2019</date>
+            <persName>Beeke Stegmann</persName>: Proofread chapter.
+         </change>
+         <change>
+            <date>18 December 2017</date>
+            <persName>Odd Einar Haugen</persName>: Added links to new stylesheets from Beeke Stegmann
+         </change>
+         <change>
+            <date>29 October 2017</date>
+            <persName>Odd Einar Haugen</persName>: Simplified the text in ch. F.2 and added a warning about Oxygen in ch. F.3.1. 
+            It seems that the conversion described in F.3.1 requires a new version of Oxygen; it works fine with the latest version 19, but not with version 16
+         </change>
+         <change>
+            <date>1 September 2017</date>
+            <persName>Odd Einar Haugen</persName>: Corrected the link to the Menota stylesheet in F2 so that it is now working, changed the links in F3 and made a typographical change of the layout, and re-sized ill. F 1
+         </change>
+         <change>
+            <date>30 August 2017</date>
+            <persName>Beeke Stegmann</persName>: Restructured the chapter, updated links and graphs showing the link. 
+         </change>
+         <change><date>28 August 2017</date>
+            <persName>Beeke Stegmann</persName>: Corrected link for stylesheet.</change>
+         <change><date>27 August 2017</date>
+         <persName>Beeke Stegmann</persName>: Corrected typo.</change>
+         <change><date>15 August 2017</date>
+            <persName>Odd Einar Haugen</persName>: Stated that the stylesheets in F2 are available under a CC-BY 4.0 license, and made a few changes to the text in the same chapter
+         </change>
+         <change><date>20 July 2017</date>
+            <persName>Beeke Stegmann</persName>: Updated link to older stylesheets.
+         </change>
+         <change><date>18 July 2017</date>
+            <persName>Beeke Stegmann</persName>: Updated screenshots and made minor corrections.
+         </change>
+         <change><date>24 June 2017</date>
+         <persName>Beeke Stegmann</persName>: Simplified list of links to XSLT.
+         </change>
+         <change>
+            <date>17 March 2017</date>
+            <persName>Odd Einar Haugen</persName>: Updated links in section F.2
+         </change>
+         <change><date>17 March 2017</date>
+         <persName>Beeke Stegmann</persName>: Made minor changes such as adding image captions and adjusting stylesheet overview.</change>
+         <change>
+            <date>16 March 2017</date>
+            <persName>Odd Einar Haugen</persName>: Made some minor revisions to the structure of the appendix and the links
+         </change>
+         <change>
+            <date>15 March 2017</date>
+            <persName>Beeke Stegmann</persName>: Created content by rewriting and updating the material from v. 2.0 of the handbook.
+         </change>
+         <change>
+            <date>2 January 2017</date>
+            <persName>Odd Einar Haugen</persName>: Set up the page
+         </change>
+         
+      </revisionDesc>
+      
+   </teiHeader>
+   <text xml:lang="en">
+      <body>
+         <head xml:id="secF">Appendix F: XSLT stylesheets</head>
+         
+         <p>Version 3.0 (12 December 2019)</p>
+         <p>by Beeke Stegmann and Tone Merete Bruvik</p>
+                  
+         <div> <head xml:id="secF.1">F.1 Introduction</head>
+            
+            <p>XSL (Extensible Markup Language) is a language for transforming XML documents into other XML documents or other formats such as HTML.</p>
+            <p>This page contains XSL Transformations (which we shall refer to as XSLT stylesheets) to be used with Menotic XML files 
+               in order to generate user-friendly HTML. To help users modify these stylesheets, they contain a number of comments 
+               explaining the intended effects of the stylesheet.</p>
+            <p>The XSLT stylesheets on this page are based on a first version developed by Vemund Olstad (2004). Tone Merete Bruvik, Aksis, University of Bergen,
+             updated the stylesheet according to v. 2.0 of the handbook (2008). Haraldur Berharðsson, University of Iceland, has revised the stylesheet compatable with v. 2.0, in order 
+             to improve the display of e.g. initials (2014).
+             Beeke Stegmann, University of Copenhagen, developed the latest version (2017), which is compatible 
+             with v. 3.0 of the Menota Handbook and introduced substantial changes with regards to the facsimile display of XML transcriptions. Robert Kristof Paulsen,
+             University of Bergen, contributeted to the display of initials in the latest version.</p>
+            <p>Please note that the current version of the stylesheet is still a work in progress. Preference has been given to the display of features that have been deemed essential, while 
+               less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
+               accordance with the handbook’s recommendations. Also, not all information contained by the markup is suitable for rendition by a stylesheet.</p>
+            <p>All stylesheets published in this appendix are available under a <ref target="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</ref> license.</p>
+         </div>
+         
+         <div>
+            <head xml:id="secF.2">F.2 XSLT for Menotic texts</head>
+            
+            <p>The Menota stylesheet converts a text encoded with 
+               <gi>me:facs</gi>, <gi>me:dipl</gi> and/or <gi>me:norm</gi> elements into easily 
+               readable HTML display. 
+               Over the years, the Menota stylesheet has been adjusted and expanded resulting in multiple versions of <q>the stylesheet</q>. 
+               The link below is to the latest version, which is compatible with version 3.0 of the Menota handbook. 
+               (For older versions click <ref target="http://www.menota.org/HB2_F_xslt.xml">here</ref>.)</p>
+            
+            <list>
+               <item><ref target="menota_xslt_3.xsl">menota_xslt_3.xsl</ref> (date: 22 January 2021): Download link for XSLT stylesheet suited for texts encoded according to Menota 3.0 (TEI P5 conformant).
+               </item>
+            </list>
+                            
+            <p><hi rend="red">Note</hi>: Your browser may attempt to open this stylesheet if you just click on the link. In order to download it to your computer, try to right-click (on Windows) or ctrl-click (on Mac) the link instead.</p>
+            <p><ref target="#secF.3.2">App. F.3.2</ref> below gives instructions for the usage of the stylesheet.</p>
+
+         </div>    
+            <div>
+               <head xml:id="secF.3">F.3 Applying a stylesheet to your XML file</head>
+               <p>There are different ways to apply an XSLT stylesheet to an XML document. This section explains the two methods we believe most people might use. 
+               The first option is to link to an XSLT stylesheet available online, while the second is to run the conversion locally with an XSL file that must be saved on your machine.
+                  Please be aware that in both cases your computer must have a <ref target="http://www.mufi.info">MUFI compliant font</ref> installed
+                     in order to display all characters correctly, especially on the <gi>me:facs</gi> level.</p>
+               
+               <div>
+                  <head xml:id="secF.3.1">F.3.1 Online usage of stylesheet by means of link</head>
+               <p>In order to link to one of the online stylesheets, one simply inserts a stylesheet processing instruction (<q>stylesheet link</q>)
+                   at the top of the XML document, i.e. in front of the root element. Such a stylesheet link looks like this: </p>
+               
+               <egXML><![CDATA[<?xml-stylesheet type="text/xsl" href="http://www.menota.org/menota_xslt_3_facs.xsl"?>]]></egXML> 
+               
+               <p>In the above shown code line (“stylesheet link”), the <att>href</att> attribute takes the URL of the stylesheet in question as its value. The stylesheet link in the
+                  example links to the XSLT that will display the facsimile level of a Menotic transcription. In order to display the diplomatic or normalised 
+                  level of the XML transcription, one needs to use the respective URL ending in "dipl" or "norm" instead.
+                  Since the stylesheet is an XSL file, the <att>type</att> attribute of the processing instruction must be 
+                  set to <q>text/xsl</q>.</p>
+                  
+                  <p>There are three options for URLs to be used, depending on the level of transcription one
+                     wishes to display. (One URL per transcription level; to be copied into the XML file):</p>
+                  
+                  <p>1. For display of texts encoded on the the facsimile level: <hi rend="bold">http://www.menota.org/menota_xslt_3_facs.xsl</hi><lb/>
+                     2. For display of texts encoded on the the diplomatic level: <hi rend="bold">http://www.menota.org/menota_xslt_3_dipl.xsl</hi><lb/>
+                     3. For display of texts encoded on the the normalised level: <hi rend="bold">http://www.menota.org/menota_xslt_3_norm.xsl</hi></p>
+                                
+               <p>Once you have inserted the stylesheet link with the right URL, you can apply the stylesheet, i.e. perform the transformation. 
+                  Most editors have built-in functions that read such stylesheet
+                  processing instructions and execute them. In &lt;oXygen/&gt;, that function hides behind the round white button with the red triangle <q>Apply Transformation Scenario(s)</q>
+                  (see image F.1 below). Alternatively, you can press Ctrl+Shift+T (on Windows) or Cmd+Shift+T (on Mac).) 
+                  If the transformation was successful, your default 
+               internet browser will open and the transcription
+               on the selected level should be displayed in a new window.</p>
+               
+               <p>
+                  <figure rend="clearboth">
+                     <graphic url="stylesheets/Oxygen-Apply-transform-scenario.png" height="412" width="700"/>
+                     <figDesc>⊕ Illustration: Screen image from &lt;oXygen/&gt;</figDesc>
+                     <!-- <figDesc n="F.1">The button <q>Apply transformation scenario(s)</q> in &lt;oXygen/&gt;.</figDesc> -->
+                  </figure>
+               </p>
+                
+                  <p rend="caption"><hi rend="bold">Ill. F.1</hi>. The button <q>Apply transformation scenario(s)</q> in &lt;oXygen/&gt;.</p>
+                     
+                 <p>As the stylesheet is located online, one needs to have internet access for the transformation to be carried out. 
+                  Also, the transformation might not work, if your document is invalid (most likely,
+                  because you forgot to close an element somewhere). </p>
+                  
+                  <p><hi rend="red">Note</hi>: We have tested this method in different &ndash; but not all &ndash; XML editors. We have encountered issues with 
+                     some older versions of &lt;oXygen/&gt;, whereas the latest versions of that application seems to work fine.</p> 
+               
+               </div>
+               
+               <div>
+                  <head xml:id="secF.3.2">F.3.2 Download and local usage of stylesheet</head>
+                  <p>To employ the second transformation method, a local transformation, one needs to download the desired XSL file (see <ref target="#secF.2">app. F.2</ref> above.)
+               While the online method uses three different links &ndash; or rather different URLs in the same link &ndash;
+               for the individual transcription levels, with the local transformation method one merely 
+               needs to download a single file that can produce 
+               the display of all three levels, although also 
+               only one level at a time. 
+               The respective display level is instead defined by the parameter option of the stylesheet (see ill. F.3 below).</p>
+               
+               <p>Once you have downloaded and saved the XSLT stylesheet, most XML editors will, again, have built-in support for applying it.
+               In particular if you want to execute a certain transformation many times, i.e. apply the same stylesheet multiple times on one or more
+               XML files, you might want to set up a so-called <hi rend="italics">transformation scenario</hi> (see the five steps described below for how to proceed in &lt;oXygen/&gt;). 
+               Once you have created a transformation scenario, you can associate it with any XML file and apply it over and over again, 
+               i.e. execute the transformation on any suitable XML file. After successful
+               transformation the results can be displayed in a browser.
+               (In &lt;oXygen/&gt;, you apply an associated stylesheet by pressing the red triangle button <q>Apply transformation scenario(s)</q> shown in ill. F.1). </p>
+               
+               <p>Note: The XML editor might be confused if you are trying to use both transformation methods at the same time. You need to chose between 
+              using a stylesheet link that is written at the top of the XML file and an associated transformation scenario which is set up through the interface of the editor 
+               (or called by means of commands). You can select and deselect transformation scenarios in the window <q>Configure Transformation Scenario(s)</q>.
+               </p>
+               
+               <p>Working with a downloaded XSLT stylesheet allows the user to change and customise the transformation instructions in the stylesheet. 
+                  The output rules in the XSLT of the online method, in contrast, are not adjustable by the user.</p>
+                  
+                  <p><hi rend="bold">These are five steps to set up a transformation scenario in &lt;oXygen/&gt;: </hi></p>
+            
+                  <p><hi rend="bold">1</hi>. Open the window <q>Configure Transformation Scenario(s)</q> by clicking the button with the spanner 
+                     (the grey tool) and the little red triangle
+                     (located to the right of the <q>Apply transformation scenario(s)</q> button featured in ill. F.1 above).
+                     Alternatively, one can press Ctrl+Shift+C (on Windows) or Cmd+Shift+C (on Mac). Press the buttom <q>New</q> at the bottom of the list and 
+                     select <q>XML transformation with XSLT</q>.</p>
+                  
+                  <p><hi rend="bold">2</hi>. Name your scenario (here: Menota_xslt_Beeke_norm) and choose your stylesheet (here: Menota_xslt_Beeke.xsl) in the box 
+                     <q>XSL URL</q> by browsing through
+                     your files after clicking the folder button to right of the box. 
+                     The contents of the box <q>XML URL</q> should be <q>{currentFileURL}</q>, which is its default value (ill. F.2).</p>
+                   
+                  <p>
+                     <figure rend="clearboth">
+                        <graphic url="stylesheets/Oxygen-scenario-step2.png" height="448" width="544"/>
+                        <figDesc>⊕ Illustration: Screen image from &lt;oXygen/&gt;</figDesc>
+                        <!-- <figDesc n="F.2">Create a transformation scenario in &lt;oXygen/&gt;: Name the scenario and choose the URL of the XSL file.</figDesc> -->
+                     </figure>
+                  </p>
+                  
+                  <p rend="caption"><hi rend="bold">Ill. F.2</hi>. Create a transformation scenario in &lt;oXygen/&gt;: Name the scenario and choose the URL of the XSL file..</p>
+                  
+                  <p><hi rend="bold">3</hi>. Use the parameter option to set the desired value for the display parameter (<q>visning</q>). The possible values are
+                      <q>facs</q>, <q>dipl</q> or <q>norm</q>. In the example (ill. F.3), the parameter has been set to <q>norm</q>, meaning that the
+                     transformation will display the transcription on the normalised level. In order to change the setting, highlight the <q>visning</q> row and 
+                     press the buttom <q>Edit</q>.  Save your choice, click <q>OK</q> and return to the window seen in ill. F.2.</p>
+                  
+                  <p>
+                     <figure rend="clearboth">
+                        <graphic url="stylesheets/parameter-choose.gif" height="462" width="550"/>
+                        <figDesc>⊕ Illustration: Screen image from &lt;oXygen/&gt;</figDesc>
+                        <!-- <figDesc n="F.3">Set the parameter option for the parameter <q>visning</q> in order to make the stylesheet
+                           display the transcription on the facsimile, diplomatic or normalised level.</figDesc> -->
+                     </figure>
+                  </p>
+                  
+                  <p rend="caption"><hi rend="bold">Ill. F.3</hi>. Set the parameter option for the parameter <q>visning</q> in order to make the stylesheet
+                     display the transcription on the facsimile, diplomatic or normalised level.</p>
+                                  
+                  <p><hi rend="bold">4</hi>. Define a suitable output file and format in the <q>Output</q> tab by giving
+                     it a location and a name with the extension <q>.html</q>. Also remember to tick the box <q>Open in browser</q>, so that the 
+                     output can be viewed immediately in your default browser:</p>
+                  
+                  <p>
+                     <figure rend="clearboth">
+                        <graphic url="stylesheets/output-choose.gif" height="454" width="550"/>
+                        <figDesc>⊕ Illustration: Screen image from &lt;oXygen/&gt;</figDesc>
+                        <!-- <figDesc n="F.4">Define the output file, which is the basis for what will be displayed in the browser, and its location.</figDesc> -->
+                     </figure>
+                  </p>
+                  
+                  <p rend="caption"><hi rend="bold">Ill. F.4</hi>. Define the output file, which is the basis for what will be displayed in the browser, and its location.</p>
+                   
+                  <p><hi rend="bold">5</hi>. Save and apply your configurations. </p>
+                  
+                  <p>Note: If the transformation set-up or application returns errors, you might want to use a version of Saxon that is higher than v. 9, e.g. 
+                  <q>Saxon-PE 9.6.0.7</q>. Other potential sources of error are that the newer stylesheets operate with XSLT 2.0 (instead of XSLT 1.0), 
+                     which is a value that can be manually set in the editor, or that the XML file that
+                  you are trying to transform is not valid.</p>
+                  
+                  <p>Since any transformation scenario can only take one value for the parameter at a time, you might want to set up three separate scenarios for the 
+                   different parameters corresponding to the three transcription levels. All three scenarios (ideally with easily distinguishable names) 
+                   should then show up in your list of scenarios that first appears when 
+                  you open the window <q>Configure transformation scenarios</q>. Instead of having to go in and edit a single scenario every time for the parameter it is using, 
+                  having three separate scenarios allows one quickly to select the right scenario from this list and apply it to the XML file in question.</p>
+               
+               </div>
+               </div>
+       
+      </body>
+
+</text></TEI>

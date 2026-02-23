@@ -17,7 +17,7 @@
     </xsl:template>
     <xsl:template match="tei:titleStmt">
         <xsl:text>title: "</xsl:text>
-        <xsl:value-of select="replace(tei:title, '^Nyhetsmelding ', '')"/>
+        <xsl:value-of select="tei:title"/>
         <xsl:text>"&#x0a;</xsl:text>
         <xsl:if test="tei:author">
             <xsl:text>author:&#x0a;</xsl:text>
