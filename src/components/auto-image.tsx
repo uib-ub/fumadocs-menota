@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function AutoImage({ src, alt }: { src: string, alt?: string}) {
+export default function AutoImage({ src, alt }: { 
+    src: string, 
+    alt?: string
+}) {
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     return (
         <Image
