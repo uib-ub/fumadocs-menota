@@ -143,12 +143,12 @@ The location of the addition is indicated by the
       In some cases, however, the addition can be longer, especially when placed in the margin. These additions
       should as far as possible be located within the main text.
 
-As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. v.   for fimti (type c) or for reasons of space, e.g. eᷤ for es (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as &ssup; for the supralinear s in eᷤ for es. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
+As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for fimti (type c) or for reasons of space, e.g. “eᷤ” for es (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as &ssup; for the supralinear “s” in eᷤ for es. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
 ### 9.2.1.2 Encoding of glosses by the scribe
 
 A special kind of scribal intervention is the addition of glosses, typically above the line. In Old Norse manuscripts, Latin words or phrases in the text may be translated into Old Norse and placed as glosses above the line. Sometimes, it is the other way: an Old Norse word on the line is glossed, i.e. explained, by a Latin word above the line. We suggest that the gloss is encoded by the `<add>` element with the type attribute having the value gloss.
 
-In the Icelandic homily book, Holm perg 15 4to, fol. 1r.9, the word stirðleikstónn has been glossed as immitis above the line. We suggest the following encoding (simplified):
+In the Icelandic homily book, Holm perg 15 4to, fol. 1r.9, the word “stirðleikstónn” has been glossed as “immitis” above the line. We suggest the following encoding (simplified):
 ```
 &lt;w&gt;
   &lt;me:facs&gt;ſtirþléicſtǫ́ɴ&lt;/me:facs&gt;
@@ -265,7 +265,7 @@ The sequence of words in a manuscript was sometimes transposed by the scribe or 
 
 Ill. 9.4. Transpositions of two words. _The Old Norwegian Homily Book_. AM 619 4to, fol. 47r, l. 8–10.
 
-In ill. 9.4, there are two transposition signs, one above each of the two words vaner and váro (simplified spelling) in the middle line indicating that the sequence should rather be váro vaner. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.9.2.3.1 Encoding of scribal transpositions
+In ill. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.9.2.3.1 Encoding of scribal transpositions
 
 There are two pairs of elements used in this handbook, `<orig>` + `<reg>` and `<sic>` + `<corr>`. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the `<sic>` + `<corr>` elements, as exemplified in [ch. 9.3.3](#sec9.3.3) below.Elements & attributesObl/OptContents`<orig>`Contains the reading in the manuscript. Attributes include:rendObligatoryThe correction markers in the manuscript. A typical value would be transposition-signs.`<reg>`Contains the reading corrected in the manuscript. Attributes include:typeObligatoryThe type of correction. We recommend the value transposition.respOptionalThe one who is responsible for the regularisation. Sample values include scribe, mainscribe and laterscribe.
 
@@ -348,13 +348,13 @@ can be expressed by the resp attribute,
 whenever the editor is able make this identification.
  
 
-A common type of substitution occurs when a scribe makes changes to one character in order to make it into another one, e.g. making ane into an o.
+A common type of substitution occurs when a scribe makes changes to one character in order to make it into another one, e.g. making an“e” into an “o”.
 
 
 
 Ill. 9.5. Substitution of one character with another. _The Old Norwegian Homily Book_. AM 619 4to, f. 26v, l. 7–11.
 
-In the 4th line of ill. 9.5, the 5th word has been changed from ſundum to ſẏndum. We suggest that this action is encoded as a deletion of the u and the addition of the y. The change consists of adding a stem to the u and presumably a dot above it.
+In the 4th line of ill. 9.5, the 5th word has been changed from “ſundum” to “ſẏndum”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
 
 We recommend that in a single-level encoding, the `<del>` and `<add>` elements
     are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:
@@ -425,7 +425,7 @@ As stated above, we recommend that in a multi-level encoding,
 ```
 
 
-In this example, the corrected form yðer is rendered as yðr in normalised orthography. 
+In this example, the corrected form “yðer” is rendered as “yðr” in normalised orthography. 
     See the discussion on orthography in [ch. 9.3.4](#sec9.3.4) below.
 
 If a substitution spans a structural
@@ -507,7 +507,7 @@ A similar example is found in [ch. 8.3](HB3_ch8.xml#sec8.3) above, from the law 
 
 Ill. 9.8. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23–30.
 
-For a slightly more extensive restoration, we may return to the example in [ch. 8.2](HB3_ch8.xml#sec8.2) above. This is a single-level encoding on a diplomatic level, where GI1931 refers to Gustav Indrebø’s 1931 edition of _The Old Norwegian Homily Book_:
+For a slightly more extensive restoration, we may return to the example in [ch. 8.2](HB3_ch8.xml#sec8.2) above. This is a single-level encoding on a diplomatic level, where “GI1931” refers to Gustav Indrebø’s 1931 edition of _The Old Norwegian Homily Book_:
 ```
 . . .
 &lt;w&gt;&lt;me:dipl&gt;Fegiarn&lt;/me:dipl&gt;&lt;/w&gt;
@@ -612,13 +612,13 @@ Note that the reading on the facsimile level uses the dotted circle for the ille
 Emendation is here used to describe the addition of one or more characters or 
       words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, ope codicum, and emendations based on the subjective judgment of the editor, ope ingenii. In the following, we shall give examples of both.
 
-The first example is of an emendation ope codicum. The bottom line in ill. 9.10 reads Vittra er hyggiændi guðlegra luta sva sem gefet er manne. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
+The first example is of an emendation ope codicum. The bottom line in ill. 9.10 reads “Vittra er hyggiændi guðlegra luta sva sem gefet er manne”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
 
 
 
 Ill. 9.10. Supplied text. _The Old Norwegian Homily Book_. AM 619 4to, f. 14r, l. 26–30.
 
-However, based on Alcuin’s version Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia, Gustav Indrebø added ok mannlegra to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of humanarumque, and as such it is an emendation ope codicum. If Indrebø’s emendation is accepted, this would be a single-level encoding:
+However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation ope codicum. If Indrebø’s emendation is accepted, this would be a single-level encoding:
 ```
 . . .
 &lt;w&gt;&lt;me:dipl&gt;guðleg&lt;ex&gt;ra&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
@@ -668,9 +668,9 @@ In a multi-level encoding, the facsimile level will be left empty for the suppli
 ```
 
 
-The second example is of an emendation ope ingenii. This is offered by ill. 9.11, in which the middle line reads Iesus Christus, sá er nú er krossfestr, hafi þangat sent.
-      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add þik, Iesus Christus, sá er nú er krossfestr, 
-        hafi þik þangat sent. The editor’s ingenium is in this case based on the syntactic analysis of Old Norse.
+The second example is of an emendation ope ingenii. This is offered by ill. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
+      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add þik, “Iesus Christus, sá er nú er krossfestr, 
+        hafi þik þangat sent”. The editor’s ingenium is in this case based on the syntactic analysis of Old Norse.
 
 
 
@@ -789,7 +789,7 @@ In ill. 9.12, there is a dittography “sialfr sialfr” at the end of the first
 ```
 
 
-From a pragmatic point of view, the second, not the first, instance of sialfr has been defined as a dittography. Both instances will be displayed on the facsimile level, but only the first sialfr will be displayed on the diplomatic and normalised levels. For this reason, these levels are empty in the example above.
+From a pragmatic point of view, the second, not the first, instance of “sialfr” has been defined as a dittography. Both instances will be displayed on the facsimile level, but only the first “sialfr” will be displayed on the diplomatic and normalised levels. For this reason, these levels are empty in the example above.
 
 
 
@@ -848,7 +848,7 @@ respObligatoryIndicates the individual
 
 Ill. 9.14. Correction by editor. _The Old Norwegian Homily Book_. AM 619 4to, f. 8v, l. 23–26.
 
-In the third line of ill. 9.14, the editor has decided to correct tíu æggiat ‘with ten edges’ to tuí æggiat ‘with two edges, i.e. double-edged’. This is an example of a minim correction from iu to ui. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
+In the third line of ill. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a minim correction from iu to ui. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
 ```
 . . .
 &lt;w&gt;&lt;me:dipl&gt;hvasser&lt;/me:dipl&gt;&lt;/w&gt;
@@ -914,11 +914,11 @@ When the encoder would like to supply or correct text using the `<supplied>` or 
 
 On the normalised level, one should simply follow the regularised orthography for the language in question. For Old Icelandic and Old Norwegian we recommend in general the orthography of the Old Norse Dictionary in Copenhagen. However, as discussed in [ch. 10](HB3_ch10.xml) below, there may be other normalised orthographies, for example appropriate to late medieval texts.
 
-On the diplomatic level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of ill. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word mannlegra should have been rendered as mannlegra in analogy with guðlegra, or, perhaps, as mannlegra, assuming that a double nn would have been written with a single n with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply mannlegra.
+On the diplomatic level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of ill. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word “mannlegra” should have been rendered as “mannlegra” in analogy with “guðlegra”, or, perhaps, as “mannlegra”, assuming that a double “nn” would have been written with a single “n” with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply “mannlegra”.
 
-Another example is the supplied text in the space left by the scribe in AM 309 fol, exemplified in ill. 8.3 in [ch. 8.3.1](HB3_ch8.xml#sec8.3.1) above. Even if the scribe only left room for approximately three characters, we recommend a fully supplied reading such as halfa mork rather than e.g. .ɟ. ᴍ. on the diplomatic and normalised levels. A supplied reading like .ɟ. ᴍ. might however be appropriate for the facsimile level.
+Another example is the supplied text in the space left by the scribe in AM 309 fol, exemplified in ill. 8.3 in [ch. 8.3.1](HB3_ch8.xml#sec8.3.1) above. Even if the scribe only left room for approximately three characters, we recommend a fully supplied reading such as “halfa mork” rather than e.g. “.ɟ. ᴍ.” on the diplomatic and normalised levels. A supplied reading like “.ɟ. ᴍ.” might however be appropriate for the facsimile level.
 
-With respect to the orthography of the diplomatic level, it would be reasonable to use the spelling mork in accordance with the manuscript, while a normalised spelling would be halfa mǫrk. This is what a multi-level encoding would look like for the phrase in question:
+With respect to the orthography of the diplomatic level, it would be reasonable to use the spelling “mork” in accordance with the manuscript, while a normalised spelling would be “halfa mǫrk”. This is what a multi-level encoding would look like for the phrase in question:
 ```
 &lt;pb ed="ms" n="42v"/&gt;
 . . .
@@ -966,7 +966,7 @@ With respect to the orthography of the diplomatic level, it would be reasonable 
 ```
 
 
-An alternative would be to add the presumed abbreviated reading .ɟ. ᴍ. in a note, so as to explain why two words of alltogether nine characters have been supplied for this rather small space.
+An alternative would be to add the presumed abbreviated reading “.ɟ. ᴍ.” in a note, so as to explain why two words of alltogether nine characters have been supplied for this rather small space.
 ## 9.4 Editorial comments
 
 Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.Elements & attributesObl/OptContents`<note>`Contains comments to the text by the editor. Main attributes:typeOptionalStating what kind of a note it is, e.g. explanation, variation, 
@@ -977,7 +977,7 @@ These attributes are optional, so it is possible to use the `<note>` element wit
 
 The apparatus to many printed editions may contain different types of comments, be they of codicological, paleographical or textual nature. If a printed edition is encoded in XML according to the guidelines in this book, some of these notes can be interpreted and rendered by existing elements, such as `<sic>` + `<corr>` for any corrections by the editor. Others may be given in the form of notes, which offer a less rigid way of entering the text.
 
-Sometimes an editor may add a [sic!] in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the `<sic>` and `<corr>` elements. If there is no obvious correction, one may add a note stating highlighted by the editor or the like.
+Sometimes an editor may add a “[sic!]” in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the `<sic>` and `<corr>` elements. If there is no obvious correction, one may add a note stating “highlighted by the editor” or the like.
 ### 9.4.2 Explanatory comments
 
 Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text in medias res, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
@@ -1004,12 +1004,12 @@ In the archive, explanatory notes are displayed in the edited text in a light gr
 
 ### 9.4.3 Other types of comments
 
-There are many other types of comments that the transcriber might want to make, such as unusual paleographical traits, variant readings, linguistic peculiarities, etc. See also the [EpiDoc Guidelines]( http://www.stoa.org/epidoc/gl/latest/trans-editorsnote.html) on Editor’s Note.
+There are many other types of comments that the transcriber might want to make, such as unusual paleographical traits, variant readings, linguistic peculiarities, etc. See also the [EpiDoc Guidelines]( http://www.stoa.org/epidoc/gl/latest/trans-editorsnote.html) on “Editor’s Note”.
 ## Updates to ch. 9
 
 On 30 December 2025, [ch. 9.2.1](#sec9.2.1) was reorganised so that it was divided into two types of additions, described in [ch. 9.2.1.1](#sec9.2.1.1) and [ch. 9.2.1.2](#sec9.2.1.2) (in the latter, glosses were introduced as another type of scribal addition), and a display of glosses by top left and top right half brackets was proposed in [ch. 9.2.1.3](#sec9.2.1.3).
 
-On 27 April 2020, in [ch. 9.3.2.1](#sec9.3.2.1) the sentence “For this reason, these levels are empty in the example above” was added immediately after “... only the first sialfr will be displayed on the diplomatic and normalised levels”. Consequently, the encoding example above was changed so that the `<me:dipl>` and `<me:norm>` levels for the second sialfr were left empty.
+On 27 April 2020, in [ch. 9.3.2.1](#sec9.3.2.1) the sentence “For this reason, these levels are empty in the example above” was added immediately after “... only the first “sialfr” will be displayed on the diplomatic and normalised levels”. Consequently, the encoding example above was changed so that the `<me:dipl>` and `<me:norm>` levels for the second “sialfr” were left empty.
 
 Furthermore, in [ch. 9.3.2.2](#sec9.3.2.2) the following paragraph was added immediately below the text box: “Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in ill. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr {} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.”  
   

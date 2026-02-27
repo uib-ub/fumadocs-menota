@@ -59,6 +59,11 @@
         <xsl:apply-templates/>
         <xsl:text>_</xsl:text>
     </xsl:template>
+    <xsl:template match="tei:q">
+        <xsl:text>&#x201c;</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>&#x201d;</xsl:text>
+    </xsl:template>
     <xsl:template match="tei:ref">
         <xsl:text>[</xsl:text>
         <xsl:apply-templates/>

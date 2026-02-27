@@ -22,14 +22,14 @@ developed by IBM in the 1970s and 1980s, allows for the definition of
 system-independent methods of representing texts of any kind in
 electronic form.
 
-The term markup, originally used
+The term “markup”, originally used
 for the (hand-written) instructions added to a manuscript or
 typescript to indicate to the compositor how the printed text was to
 look in terms of spacing, font size, use of italics and so on, has
 been carried over into electronic document processing to describe the
 codes used to indicate these same features and other aspects of
-processing. A markup language is therefore at its most simple a set
-of codes which are used to indicate or tag certain features in the
+processing. A “markup language” is therefore at its most simple a set
+of codes which are used to indicate or “tag” certain features in the
 text, normally for formatting purposes. In most modern software
 packages the markup is generated with little or no conscious effort
 on the part of the user – in many modern word processing programs,
@@ -57,7 +57,7 @@ relevant.
 SGML’s greatest success has been HTML, Hyper-Text Markup Language, the language of the World Wide
      Web. HTML restricts document authors to a finite set of tags, however, most of which were
      originally presentationally oriented, and is thus inappropriate for most things other than web
-     design. XML is essentially trimmed down SGML. It is not a single, predefined markup
+     design. XML is essentially “trimmed down” SGML. It is not a single, predefined markup
      language like HTML, but rather a metalanguage desgined for describing other languages. The
      syntax is essentially still the same as in SGML, but some of the more complex and lesser used
      options have been removed.
@@ -90,10 +90,10 @@ that have been sufficiently anglicised so as to render this
 unnecessary), stage directions in plays, theorems in mathematical
 works and biological and zoological nomenclature. Although Hart’s
 does not mention it, italic font is also regularly used to indicate
-emphasis, for example in novels: I most certainly didn’t ask
-him to come. With ordinary word-processing softwares, all these
+emphasis, for example in novels: “I most certainly didn’t ask
+him to come.” With ordinary word-processing softwares, all these
 things would be marked up directly, i.e. with the relevant
-codes for italic-on and italic-off. If you think of the computer
+codes for “italic-on” and “italic-off”. If you think of the computer
 as a glorified typewriter and are only interested in producing copies
 with the correct formatting, fine. If you wish to take advantage of
 the possibilities offered by sophisticated information retrieval
@@ -109,7 +109,7 @@ example displayed in italics. By concentrating on the structure of
 the document rather than its appearance a great many possibilities
 are opened up. Elements in the text can be marked up even where one
 has no desire to format them in any special way. One might wish, for
-example, to tag the names of persons, so that a search for King George, 
+example, to tag the names of persons, so that a search for “King George”, 
 for example, would turn up only persons of that name rather
 than vessels or public houses.
 ## 2.3 Elements
@@ -131,7 +131,7 @@ footnote.
 
 In XML pairs of tags are used to mark off such units, a start tag and an end tag, with the text
      in between being referred to as the element’s content. Corresponding start and end tags have
-     the same name that ist placed within angle brackets, with a solidus to indicate an end
+     the same “name” that ist placed within angle brackets, with a solidus to indicate an end
      tag. Chapters in a book, for example, could be understood as separate divisions and accordingly
      demarcated by placing a `<div>` tag (short for division) at the beginning of each one and
      a corresponding `</div>` tag at the end. Within each division there would be any number of
@@ -182,12 +182,12 @@ To examplify the use of elements, let us have a look at how to markup the struct
    the son of Earth
    began to grope around.
    And these were the first words
-   that he spoke:Listen, Loki,
+   that he spoke:“Listen, Loki,
    to what I am saying,
    what no one knows
    neither on earth,
    or in heaven:
-   the hammer of the God is stolen.)
+   the hammer of the God is stolen.”)
 
 The structure of this poem is clear
 enough: it is made up of two stanzas each of which contains eight
@@ -223,7 +223,7 @@ way:
 
 
 Note that in this example, standard TEI elements are used: `<text>`, `<body>`, 
-      `<lg>` (short for line group, marks a stanza), 
+      `<lg>` (short for “line group”, marks a stanza), 
       and `<l>` (the element that marks an individual line). For more details on encoding standards and 
       TEI see [ch. 2.8](#sec2.8) below.)
 
@@ -233,7 +233,7 @@ If we abstract from this and attempt to describe the structure of
    A poem will also normally have a
 title and be attributable to an author (even if that author – as in 
 the case of _Þrymskviða_ – is the 
-   highly prolific Anon.). The name of the author will obviously not
+   highly prolific “Anon.”). The name of the author will obviously not
    always appear with the text of the poem, however, for example in a series or
    collection, where there are several poems by the same author. 
 Therefore, we might want to allow our `<body>` element also to contain,
@@ -252,7 +252,7 @@ are more free-floating, i.e. can appear in a variety of contexts, or in XML lang
 by a variety of elements. Such elements, often referred to as phrase-level elements, are usually more content-related. 
 Besides being able to render tagged contents in any given way, the principal use of elements and markup is to enable searches: Anything that is marked-up
 can be searched for later. One might, for
-example, wish to markup all names in the poem above. The personal name Vingþórr in line one of our poem could then
+example, wish to markup all names in the poem above. The personal name “Vingþórr” in line one of our poem could then
    be tagged with an element we call `<name>`:
 ```
 &lt;l&gt;Reiðr var þá &lt;name&gt;Vingþórr&lt;/name&gt;&lt;/l&gt;
@@ -323,7 +323,7 @@ declaration for a general entity looks like this:
 This entity declaration instructs the processing
       software (a parser or browser) to 
       replace any entity reference &vth; it encounters in the XML file 
-      with the text Vingþórr. 
+      with the text “Vingþórr”. 
       In the case of our single
       poem, there is obviously no real advantage to treating the name of
       the protagonist in this way, but in longer documents or collections of
@@ -345,7 +345,7 @@ external file, as in the following example:
 
 
 Such entities are called system
-entities: instead of the replacement text, the declaration gives a SYSTEM keyword and a
+entities: instead of the replacement text, the declaration gives a “SYSTEM” keyword and a
 relative or absolute URL. The processing software will then
 replace the entity with the document found at the address given, i.e.
 insert that document into the existing document. The resulting
@@ -371,13 +371,13 @@ For our purposes entities are particularly useful for providing descriptive mapp
      entities. Such numerical character references can be either decimal or hexidecimal; decimal
      references begin with an ampersand and the number sign, also called hash mark (#), to which
      hexidecimal references add an x. For example, the Unicode hexidecimal character reference for
-     the letter ę is &#x0119;, while the decimal
+     the letter “ę” is &#x0119;, while the decimal
      reference is &#281;. These standardised numerical character
      references are supported by standard browsers and do not need to be defined as additional
      entities. However, one may prefer to use human readable entities for such characters which are
      not available on the keyboard used, or for reasons such as proof-reading. Instead of the code
      point, one can, for example, use the entity &eogon; for
-      ę. It is a simple matter to define characters as general entities, giving the
+      “ę”. It is a simple matter to define characters as general entities, giving the
      numerical character reference as the replacement text:
 ```
 &lt;!ENTITY eogon "&#x0119;"&gt;
@@ -413,8 +413,8 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>` element (for gaiji, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like &ocurl; for the character , one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the gaiji module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
-     This requires an extensive `<charDecl>` section in the header of the document defining each gaiji character.
+In recent years, the TEI community has moved towards the use of the `<g>` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like &ocurl; for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the gaiji module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+     This requires an extensive `<charDecl>` section in the header of the document defining each “gaiji” character.
 
 As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the &ocurl; entity, for example, only a single line is required:
 ```
@@ -440,7 +440,7 @@ The most widely used XML
                   Guidelines for Electronic Text Encoding and Interchange, with working
                   committees comprising scholars from all over North America and Europe
                   drafting recommendations on various aspects of the problem. These
-                  were integrated into a first public draft, TEI P1 (P for Proposal),
+                  were integrated into a first public draft, TEI P1 (P for “Proposal”),
                   published in June 1990. A second draft (TEI P2) followed in 1992 and
                   1993, and the first official version of the guidelines (TEI P3) was
                   published in May 1994. The next version, TEI P4, was released in June 2002. On 1 November 2007, 
@@ -489,14 +489,14 @@ A schema, as was said, defines the
                elements which can appear in the text and their hierarchical
                relationship to each other. In order to ensure that this is done
                correctly, every encoded text needs to be checked against the schema, if
-               there is one, or checked for well-formedness if there is not. A
+               there is one, or checked for “well-formedness” if there is not. A
                computer program called a parser runs through the encoding and gives
                an error message if there are errors or inconsistencies in the
                markup, e.g. if elements are not opened and closed correctly, or used
                in the wrong place, or if elements overlap. If the elements in a
                document are correctly opened and closed, and non-overlapping, the
                document is called well-formed. A parser can determine
-               well-formedness without recoursing to a schema.
+               “well-formedness” without recoursing to a schema.
                If, in addition, the content types of elements, the nesting of
                elements and the use of attributes are all done according to the
                specification of the schema, then the document is not only well-formed,
@@ -528,7 +528,7 @@ The version attribute is required and the
      which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
      is assumed by all the standard browsers), and standalone, the possible values for
      which are yes and no to specify if the document makes use of an external
-     schema. XML documents do not in fact require a schema, provided they are well-formed
+     schema. XML documents do not in fact require a schema, provided they are “well-formed”
      (see below), but in most cases it is adventageous to employ a schema. In cases where there is
      no schema the value of the standalone attribute should be yes. If the
      attribute is omitted, on the other hand, the default value no is assumed.
@@ -542,7 +542,7 @@ The main difference, however, is that the (older) DTD schema cannot handle multi
 The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
       Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
       The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
-      http://www.menota.org/menotaP5.rng. It can be downloaded from [app. D.1.1 (4)](HB3_D_schemas.xml#D.1.1).
+      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](HB3_D_schemas.xml#D.1.1).
       An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
 ```
 &lt;?xml-model href="http://www.menota.org/menotaP5.rng"?&gt;
@@ -565,10 +565,10 @@ Following the schema, the entities used in the document are referenced.
 A structured XML document contains different kinds of components. We have already
      learned about elements, containing text, and thus
      the actual contents. We have also seen that elements can have one or more attributes with their various values. Finally, XML documents may
-     also contain comments. Comments begin with &lt;!-- and end with
-      --&gt;. They are allowed anywhere in the document (but not before the XML declaration),
+     also contain comments. Comments begin with “&lt;!--” and end with
+      “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
      as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
-     a comment is considered as not actually part of the document – it is commented out
+     a comment is considered as not actually part of the document – it is “commented out”
      and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
      to make a note to him or herself or others without it being processed.
 
@@ -595,8 +595,8 @@ In addition to purely structural
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
                We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
                (and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
-               as a namespace, and we have consequently set up a namespace me for our usage 
-               (me being short for Menota).
+               as a namespace, and we have consequently set up a namespace “me” for our usage 
+               (“me” being short for “Menota”).
 
 Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>` element:
 ```
@@ -606,7 +606,7 @@ Namespaces are specified at the very beginning of the XML code, in the case of T
 ```
 
 
-In the Menota XML files, all additional elements and attributes will be preceded by me:. 
+In the Menota XML files, all additional elements and attributes will be preceded by “me:”. 
                For example, we recommend that a normalised transcription is contained in such an additional element, which we call norm. 
                It appears as `<me:norm>`, where the prefix identifies it as an element belonging to the Menota namespace. 
                The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
@@ -690,7 +690,7 @@ There are essentially two options, Cascading Stylesheets (CSS) and Extensible St
 A stylesheet can be associated to an XML document in several ways. 
    Most standard XML editors offer for example functions to set up personalised transformation scenarios, which 
    apply a selected stylesheet to any given XML input and open the results in a Web browser.
-   Easier to use might be an XSLT stylesheet processing instruction (also called stylesheet link), 
+   Easier to use might be an XSLT stylesheet processing instruction (also called “stylesheet link”), 
    which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
    The href attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
    is supposed to be associated, and 
@@ -780,10 +780,10 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
      line (in ljóðaháttr) or each fifth line (in fornyrðislag) are numbered. In an eight-line display such as the one in the screenshot
-     above, the fitfth line of the first stanza is the one beginning with skegg. The same
+     above, the fitfth line of the first stanza is the one beginning with “skegg”. The same
      applies to the four-line display above, since each short line is counted, irrespective of
      whether it is displayed in conjunction with another short line or not. To achieve a
-      Neckel/Kuhn display two operations are necessary, (a) every second short line in the
+      “Neckel/Kuhn display” two operations are necessary, (a) every second short line in the
      encoded text is displayed on the same line as the previous short line, and with white space in
      between, and (b) lines are counted and a small number is positioned in the margin in front of
      every fifth line. This adds an element of transformation to the styling that can be performed

@@ -42,15 +42,15 @@ In a more complex encoding, the transcriber might like to identify the basic uni
 The basic unit in any transcription of an alphabetic script is the individual letters. In
           a linguistic context a distinction is often drawn between the abstract entity of a grapheme and the representation of graphs in a
           written document. Variant forms are referred to as allographs, e.g.
-          the Roman type of s and the Fraktur (black letter) type. The
+          the Roman type of “s” and the Fraktur (black letter) type. The
           terminology is analogous to the distinction between phonemes, phones and allophones. For a general
           introduction to this terminology, see e.g. [Sture Allén
             1971](HB3_literature.xml#Allen1971), [Manfred Kohrt 1985](HB3_literature.xml#Kohrt1985) or [Christa Dürscheid 2016](HB3_literature.xml#Durscheid2016).
 
 In this handbook we shall adopt the terminology of the [Unicode Standard](http://www.unicode.org/). The fundamental
-          distinction drawn is between characters and glyphs. Characters are, as Unicode defines it, the smallest components of
-            written language that have semantic value, while glyphs are the shapes that
-              characters can have when they are rendered or displayed (cf. Unicode v. 12.0, [ch. 2.2
+          distinction drawn is between characters and glyphs. Characters are, as Unicode defines it, “the smallest components of
+            written language that have semantic value”, while glyphs are “the shapes that
+              characters can have when they are rendered or displayed” (cf. Unicode v. 12.0, [ch. 2.2
                 Unicode Design Principles](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf)). 
           What the transcriber sees in a manuscript is a series
           of individual glyphs, and the act of transcribing essentially involves linking these
@@ -69,14 +69,14 @@ The Unicode Standard puts great emphasis on the fact that individual characters 
 
 
 Fig. 5.1. Various shapes (glyphs) of the characters
-          A and a in Courier, Times and Lucida typefaces.
+          “A” and “a” in Courier, Times and Lucida typefaces.
 
-Unicode draws a distinction between small (minuscule) characters such as a and
-          large (majuscule) characters such as A, since there is a possible semantic value
-          attached to each set of characters. Thus, the white house can refer to any house
-          which is white in colour, while the White House refers (normally) to one specific
+Unicode draws a distinction between small (minuscule) characters such as “a” and
+          large (majuscule) characters such as “A”, since there is a possible semantic value
+          attached to each set of characters. Thus, “the white house” can refer to any house
+          which is white in colour, while “the White House” refers (normally) to one specific
           building. It can be argued that the same applies to the distinction between regular characters,
-            a, and italics, a. For example, while Metope
+            “a”, and italics, “a”. For example, while “Metope”
           refers a poem by the Norwegian author Olaf Bull, Metope (according
           to a widespread bibliographical practice) refers to the book in which this poem is
           published (a book which, co-incidentally, bears the same name as one of the poems
@@ -132,13 +132,13 @@ Diacritical marks are often seen as forming an integral part of a base-line char
 
 Abbreviation marks, on the other hand, are usually treated as separate characters and
           encoded as characters in their own right. From a purely graphical point of view, the
-          distinction between the acute accent in é and abbreviation marks such as the
-            zigzag mark and the bar, both exemplified in fig. 5.3, is far from obvious, but
+          distinction between the acute accent in “é” and abbreviation marks such as the
+            “zigzag” mark and the bar, both exemplified in fig. 5.3, is far from obvious, but
           the semantics are different. The acute accent may in some manuscripts be used to signify
           length, but it is often used quite freely, sometimes only to distinguish one minim
           character from another. Abbreviation marks have a definite (if sometimes ambiguous)
-          meaning and can be expanded into one or more characters; the zigzag mark above h in
-          fig. 5.3 signifies er, and the bar above n signifies another n.
+          meaning and can be expanded into one or more characters; the zigzag mark above “h” in
+          fig. 5.3 signifies “er”, and the bar above “n” signifies another “n”.
 ### 5.2.1 Rules for encoding characters
 
 We recommend the following basic rules for encoding characters, irrespective of whether
@@ -156,9 +156,9 @@ We recommend the following basic rules for encoding characters, irrespective of 
 
 3. Abbreviation marks occupying a separate position on the base line are encoded in the
             same manner as alphabetical characters. This applies to e.g. LATIN SMALL LETTER P WITH
-            STROKE THROUGH DESCENDER (for per or par), as explained in [ch. 6](HB3_ch6.xml) below.
+            STROKE THROUGH DESCENDER (for “per” or “par”), as explained in [ch. 6](HB3_ch6.xml) below.
 
-4. Alphabetical characters with diacritical marks, e.g. é, are encoded in one of
+4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of
             two equivalent ways:
 
 4.1 As a base-line character + one or more combining marks. Thus the character é
@@ -172,7 +172,7 @@ We recommend the following basic rules for encoding characters, irrespective of 
 
 5.1 As a base-line character + one or more combining marks. Thus the first character in
             fig. 5.3 above would be encoded as h + &er; (the latter entity meaning
-            COMBINING ABBREVIATION MARK ER). 5.2 As a composite base-line character and
+            COMBINING ABBREVIATION MARK “ER”). 5.2 As a composite base-line character and
             encoded with a single entity. Thus the above character might be encoded with a single
             entity, e.g. as &her;.
 
@@ -180,7 +180,7 @@ As a rule, we would recommend the first solution, since the number of combinatio
             base-line characters and combining abbreviation marks is very high. Furthermore, we
             recommend that the abbreviation mark is identified by the `<am>` element (if it
             is encoded as such, typically on the facsimile level) or by the `<ex>` element
-            (if it has been expanded, in this case as er, typically on the diplomatic level).
+            (if it has been expanded, in this case as “er”, typically on the diplomatic level).
             See [ch. 4](HB3_ch4.xml) above for an explanation of levels.
 
 6. If there is more than one combining character, they are encoded in this order:
@@ -208,7 +208,7 @@ Note that the type of encoding is specifed at the very begining of an XML file. 
 
 
 entities must be used for all characters outside Basic Latin and Latin-1 Supplement.
-            Thus, a, é and þ can be entered directly, but characters like
+            Thus, “a”, “é” and “þ” can be entered directly, but characters like
             &oogon; (LATIN SMALL LETTER O WITH OGONEK) must be encoded with an entity,
             &oogon;.
 
@@ -252,15 +252,15 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 (a) Commonly used characters have a single description in Unicode. This applies to all
             base-line characters in the Latin alphabet.Glyph Encoding Code point Unicode descriptive name aa0061LATIN SMALL LETTER A
 
-(b) Composite characters may be described in more than one way. Thus, an a with acute
-              accent can be encoded as a combination of an a and a combining acute accent or
-            as a single character, a with acute accent. Both descriptions are equivalent:Glyph Entity Code point Unicode descriptive name áa + &combacute;0061 + 0301LATIN SMALL LETTER A + COMBINING ACUTE ACCENTá&aacute;00E1LATIN SMALL LETTER A WITH ACUTE
+(b) Composite characters may be described in more than one way. Thus, an “a with acute
+              accent” can be encoded as a combination of an “a” and a combining acute accent or
+            as a single character, “a with acute accent”. Both descriptions are equivalent:Glyph Entity Code point Unicode descriptive name áa + &combacute;0061 + 0301LATIN SMALL LETTER A + COMBINING ACUTE ACCENTá&aacute;00E1LATIN SMALL LETTER A WITH ACUTE
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
       Private Use Area (PUA), either as a character with its own codepoint or as a combination of
-      an existing character and a combining diacritical mark in the PUA. The ligature of k
-      and ſ is not included in the Unicode Standard (as of v. 12.0), and since there may be
-      good reasons not to encode it as a sequence of k + zero width joiner + ſ,
+      an existing character and a combining diacritical mark in the PUA. The ligature of “k”
+      and “ſ” is not included in the Unicode Standard (as of v. 12.0), and since there may be
+      good reasons not to encode it as a sequence of “k” + “zero width joiner” + “ſ”,
       we have assigned it to a codepoint in the PUA, EBAE. This practice
             is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
             for the current recommendation.Glyph  Entity Code point Descriptive name &kslonglig;EBAELATIN SMALL LIGATURE K AND LONG S
@@ -344,7 +344,7 @@ The usage of the attribute type with the value word distinguishes
             redundant in this case, since that information is also provided by the attribute. However, if 
             a character behaves like a word, such as in a sentence like “The left descender of the
             x’es in this script go below the base line”, it has inflection and could
-            easily be lemmatised as the noun x. (See [ch. 11.2](HB3_ch11.xml#sec11.2)
+            easily be lemmatised as the noun “x”. (See [ch. 11.2](HB3_ch11.xml#sec11.2)
             on lemmatisation).
 
 When displaying the text from the _First Grammatical Treatise_ on the normalised
@@ -380,8 +380,8 @@ As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a
 
 Fig. 5.4. According to 
               _Barlaams saga ok Jósafats_, falling into old sins is to behave like a dog 
-              returning to its own vomit. Note that the word ſundr in the 4th line of the illustration has been corrected to 
-              hundr by a younger hand. Holm perg 6 fol, f. 18vb, l. 18–24.
+              returning to its own vomit. Note that the word “ſundr” in the 4th line of the illustration has been corrected to 
+              “hundr” by a younger hand. Holm perg 6 fol, f. 18vb, l. 18–24.
 
 Thus, with a somewhat simplified character inventory the text in fig. 5.4 can be rendered asEn ef ver fallum i hinar fornno syndir. oc huerfum aptr. 
             til hinnar fyrrv misverka sem
@@ -392,7 +392,7 @@ Thus, with a somewhat simplified character inventory the text in fig. 5.4 can be
 Here, each word is delimited by a space (although, as discussed in [ch. 5.5](#sec5.5) below,
             a word sometimes extends over a linebreak). While the space bar in many cases would be a sufficient way of delimiting words,
            for several reasons we recommend that each word is identified with a separate
-              `<w>` element (for word). The `<w>` element functions as a
+              `<w>` element (for “word”). The `<w>` element functions as a
             container for information on levels of text representation ([ch. 4](HB3_ch4.xml) above) and morphological analysis ([ch.
             11](HB3_ch11.xml) below). In this example, each word has been identified by the `<w>` element,
             and the lemma (dictionary entry) specified as an attribute to the `<w>`
@@ -422,12 +422,12 @@ Although words as a rule are separated by spaces in medieval Nordic manuscripts,
             member of the set of word forms defined by grammars and dictionaries for the language in
             question. In the great majority of cases, graphical and lexical words are identical.
             However, we sometimes see that compounds are written as two separate words 
-            (veiði kona = veiðikona) or  that a preposition and its object may be 
-            written as a single word (aveiðiskap = á veiðiskap).
+            (“veiði kona” = “veiðikona”) or  that a preposition and its object may be 
+            written as a single word (“aveiðiskap” = “á veiðiskap”).
 
 
 
-Fig. 5.5. The ancient goddess Diana is introduced as a huntress, veiði kona, in 
+Fig. 5.5. The ancient goddess Diana is introduced as a huntress, “veiði kona”, in 
             _Barlaams saga ok Jósafats_. Holm perg 6 fol, f. 69va, l. 15–19. The word is located in the 3rd line of the illustration.
 
 If the transcriber wishes to analyse two (or more) graphical words as a single lexical
@@ -444,10 +444,10 @@ Information on e.g. lemma can be given as an attribute to the `<w>` element:
 ```
 
 
-The sequence veiði kona thus appears within a single element. In other words,
-            the transcriber interprets it as one lexical word, veiðikona. The space is left
+The sequence “veiði kona” thus appears within a single element. In other words,
+            the transcriber interprets it as one lexical word, “veiðikona”. The space is left
             untouched, so that in a display of the transcription, the sequence will still show up as
-            two graphical words, veiði and kona. However, since both graphical words
+            two graphical words, “veiði” and “kona”. However, since both graphical words
             are placed within a single element the lemma will refer to both
             parts.
 
@@ -465,15 +465,15 @@ In a multi-level encoding, the word will be transcribed with a space on the facs
 ```
 
 
-Stylesheets will simply display the whitespaces within the `<w>` element as they have been encoded, i.e. on the `<me:facs>` and `<me:dipl>` levels with a space, veiði kona, but without a space on the `<me:norm>` level, veiðikona.
+Stylesheets will simply display the whitespaces within the `<w>` element as they have been encoded, i.e. on the `<me:facs>` and `<me:dipl>` levels with a space, “veiði kona”, but without a space on the `<me:norm>` level, “veiðikona”.
 
 The converse case is a single graphical word which the transcriber would like to
-            analyse as two (or more) lexical words, e.g. aveiðiskap = á veiðiskap, as illustrated in fig. 5.6.
+            analyse as two (or more) lexical words, e.g. “aveiðiskap” = “á veiðiskap”, as illustrated in fig. 5.6.
 
 
 
 Fig. 5.6. In _Barlaams saga ok Jósafats_, the Greek god Adonis (in the text in accusative, 
-            Adonidem) is said to be keen at hunting, in normalised orthography ágjarn á veiðiskap. Holm perg 6 fol, f. 69vb, l. 12–14.
+            Adonidem) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12–14.
 
 Each lexical word should be placed within a `<w>` element, and information on
             lemma, morphological form etc. can be given within each `<w>` element. However,
@@ -491,8 +491,8 @@ Each lexical word should be placed within a `<w>` element, and information on
 
 
 In some rather marginal cases, a sequence may be encoded as both types. A simplified
-            example from Codex Regius is aravk stola which should be read as a
-              ravkstola. This sequence might be encoded in this way:
+            example from Codex Regius is “aravk stola” which should be read as “a
+              ravkstola”. This sequence might be encoded in this way:
 ```
 &lt;seg type="nb"&gt;
   &lt;w lemma="á"&gt;a&lt;/w&gt;
@@ -501,15 +501,15 @@ In some rather marginal cases, a sequence may be encoded as both types. A simpli
 ```
 
 
-This encoding shows that a in aravk stola is a lexical word, i.e. the
-            preposition á, and that ravk stola is another lexical word, i.e. the noun
-              rǫkstóll. It will allow a correct display of the sequence, since it
-            specifies that there should be no space between a and rauk stola, and the
-            space between rauk and stola is also encoded (analoguous to the encoding
-            of veiði kona above).
+This encoding shows that “a” in “aravk stola” is a lexical word, i.e. the
+            preposition “á”, and that “ravk stola” is another lexical word, i.e. the noun
+              “rǫkstóll”. It will allow a correct display of the sequence, since it
+            specifies that there should be no space between “a” and “rauk stola”, and the
+            space between “rauk” and “stola” is also encoded (analoguous to the encoding
+            of “veiði kona” above).
 
-Enclitic words may be encoded in a smiliar way, e.g. emk which should be read as
-              em + [e]k meaning ‘am I’:
+Enclitic words may be encoded in a smiliar way, e.g. “emk” which should be read as
+              “em” + “[e]k” meaning ‘am I’:
 ```
 &lt;seg type="enc"&gt;
   &lt;w lemma="vera"&gt;em&lt;/w&gt;
@@ -518,7 +518,7 @@ Enclitic words may be encoded in a smiliar way, e.g. emk which should be read as
 ```
 
 
-In some cases, it can be difficult to draw the line between the main word and the enclitic, for example when there is an assimilation between the two, ert + þú &gt; ertu ‘you are’. We recommend to give priority to the main word and leave the enclitic in a reduced form:
+In some cases, it can be difficult to draw the line between the main word and the enclitic, for example when there is an assimilation between the two, “ert” + “þú” &gt; “ertu” ‘you are’. We recommend to give priority to the main word and leave the enclitic in a reduced form:
 ```
 &lt;seg type="enc"&gt;
   &lt;w lemma="vera"&gt;ert&lt;/w&gt;
@@ -527,7 +527,7 @@ In some cases, it can be difficult to draw the line between the main word and th
 ```
 
 
-Multi-level encodings follow the same rules, e.g. scalltu ‘you shall’:
+Multi-level encodings follow the same rules, e.g. “scalltu” ‘you shall’:
 ```
 &lt;seg type="enc"&gt;
   &lt;w lemma="skulu"&gt;
@@ -548,17 +548,17 @@ Multi-level encodings follow the same rules, e.g. scalltu ‘you shall’:
 ```
 
 
-Stylesheets will display the reading with no space on the `<me:facs>` and `<me:dipl>` levels, ſcallꞇu and scalltu respectively, but with a space on the `<me:norm>` level, skalt þú.
+Stylesheets will display the reading with no space on the `<me:facs>` and `<me:dipl>` levels, “ſcallꞇu” and “scalltu” respectively, but with a space on the `<me:norm>` level, “skalt þú”.
 
 The morphological encoding of enclitic words is further discussed in [ch. 11.3.2.11](HB3_ch11.xml#sec11.3.2.11) below.
 ### 5.3.3 Encoding of word constituents
 
 The encoder might want to encode constituent parts of a word, e.g. prefixes, roots,
             derivational forms, etc. We recommend using the `<m>` element (for
-            morpheme) in such cases (cf. the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html)). This element may also be used for
-            constituent parts such as veiði and kona in the examples above. The
+            “morpheme”) in such cases (cf. the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html)). This element may also be used for
+            constituent parts such as “veiði” and “kona” in the examples above. The
               `<m>` element may contain information on level of text representation, lemma
-            etc. We shall repeat the encoding of veiði kona above:
+            etc. We shall repeat the encoding of “veiði kona” above:
 ```
 &lt;w lemma="veiðikona"&gt;veiði kona&lt;/w&gt;
 ```
@@ -576,8 +576,8 @@ Now, if the encoder wishes to add lexicographical (or other) information to the 
 
 
 This encoding would make a clear distinction between lemmata on the first level of
-            encoding, in this case veiðikona, and the base form, baseForm, of each
-            constituent part, in this case veiði and kona.
+            encoding, in this case “veiðikona”, and the base form, baseForm, of each
+            constituent part, in this case “veiði” and “kona”.
 
 Lemmatisation is further discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) below and
             is here only given as an example of a word-based type of mark-up. Grammatical
@@ -593,7 +593,7 @@ Having introduced elements for the encoding of individual characters and words, 
           [ch. 4](HB3_ch4.xml) above.ElementsExplanation`<pc>`Contains a punctuation mark.`<me:facs>`Contains a reading on a facsimile level.`<me:dipl>`Contains a reading on a diplomatic level.`<me:norm>`Contains a reading on a normalised level.`<choice>`Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and
               `<me:norm>`.
 
-Note the prefix me: which indicates that these elements
+Note the prefix “me:” which indicates that these elements
           belong to the Menota namespace and are not part of the elements defined in TEI P5 Guidelines. See
             [ch. 2.8](HB3_ch2.xml#sec2.8) above on the use of namespaces in TEI
           schemas. Since the levels of text representations offer parallel readings, we recommend that 
@@ -655,13 +655,13 @@ While punctuation on the `<me:facs>` and `<me:dipl>` levels in most cases
 
 A text transcribed asok nu sagdi hann. þat er eigi sva. sem þu segir
 
-on the `<me:dipl>` level would probably be rendered asOk nú, sagði hann, Þat er eigi svá sem þú segir.
+on the `<me:dipl>` level would probably be rendered as“Ok nú,” sagði hann, “Þat er eigi svá sem þú segir.”
 
 on the `<me:norm>` level, allowing for some variation in the type of quotation
             marks and the order of comma or full stop and quotation mark. In a fully marked-up text,
-            the dot after sva would probably be suppressed on the `<me:norm>` level,
-            while a comma after nu would be added and the dot
-            after hann would be changed into a comma. Finally, quotation marks would be added.
+            the dot after “sva” would probably be suppressed on the `<me:norm>` level,
+            while a comma after “nu” would be added and the dot
+            after “hann” would be changed into a comma. Finally, quotation marks would be added.
             However, other than punctuation characters (e.g. commas and full stops), 
             quotation marks do not need to be written out by the transcriber, as recommended in [ch. 5.6](#sec5.6) below. Instead, the element `<q>` is
             simply placed around any part in direct speach, and it is left to the stylesheet to
@@ -767,9 +767,9 @@ In some cases, a dot should be interpreted as an abbreviation mark rather than a
 on the `<me:facs>` level would probably be rendered asnu fann konongr engan mann þar
 
 on the `<me:dipl>` level. In a fully marked-up text, the abbreviated word
-              kgr. would be encoded within an `<am>` element around the dot (the abbreviation mark) 
+              “kgr.” would be encoded within an `<am>` element around the dot (the abbreviation mark) 
             on the `<me:facs>` level, while it would be
-            expanded into onon (or onun) on the `<me:dipl>` level:
+            expanded into “onon” (or “onun”) on the `<me:dipl>` level:
 ```
 &lt;w&gt;
   &lt;choice&gt;
@@ -821,8 +821,8 @@ In certain cases, a word abbreviated with a dot may occur at the end of a senten
 
 This dot would be interpreted as an abbreviation mark and possibly also as a
             punctuation mark. On the `<me:facs>` level it would be encoded as no more than a   
-            dot (inside an `<am>` element), while on the `<me:dipl>` level it would be suppressed when kgr. had
-            been expanded to konongr. The encoder might, however, add a dot as a punctuation
+            dot (inside an `<am>` element), while on the `<me:dipl>` level it would be suppressed when “kgr.” had
+            been expanded to “konongr”. The encoder might, however, add a dot as a punctuation
             mark within a `<pc>` element. That would certainly be the case on the
             `<me:norm>` level, possibly also on the `<me:dipl>` level, but not on the 
             `<me:facs>` level:
@@ -872,7 +872,7 @@ This dot would be interpreted as an abbreviation mark and possibly also as a
 ```
 
 
-With this markup, a dot will be displayed after the word konungr on all three levels, but the dot
+With this markup, a dot will be displayed after the word “konungr” on all three levels, but the dot
             on the `<me:facs>` level is classified as an abbreviation mark (since it occurs
             within the `<am>` element), while the dot on the `<me:dipl>` and the
             `<me:norm>` levels is classified as a punctuation mark (since it occurs within
@@ -920,7 +920,7 @@ If a stylesheet displays the text line by line, such as the one used in the Meno
           the two types of hyphenation, such as the Menota stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3). The one exception is the `<me:facs>` level, where hyphens that are in the manuscript should always be displayed. For examples, see [ch. 5.5.3](#sec5.5.3) below.
 
 At the normalised level, there will sometimes be hard hyphens such as in the name
-            Egill Skalla-Grímssonar (also spelt Egill Skallagrímssonar). This type of
+            “Egill Skalla-Grímssonar” (also spelt “Egill Skallagrímssonar”). This type of
           hyphen should be encoded with the ordinary hyphen character:
 ```
 This is how the name &lt;w&gt;Egill&lt;/w&gt; 
@@ -939,7 +939,7 @@ The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](HB3_ch4
 
 Fig. 5.7. Hyphenation in a manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 1–4.
 
-This is how the hyphenated word hæ-góma (normalised hégóma) in lines 3–4
+This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in lines 3–4
             in fig. 5.7 should be encoded on the diplomatic level:
 ```
 &lt;w&gt;
@@ -953,7 +953,7 @@ This is how the hyphenated word hæ-góma (normalised hégóma) in lines 3–4
 Fig. 5.8. Missing hyphenation in a manuscript. _Henrik
             Harpestreng_. NKS 66 8vo, f. 116r, l. 1–3.
 
-The non-hyphenated word hwilk-kæ in fig. 5.8, lines 2–3 should receive this
+The non-hyphenated word “hwilk-kæ” in fig. 5.8, lines 2–3 should receive this
             encoding, not recording any hyphenation:
 ```
 &lt;w&gt;
@@ -989,9 +989,9 @@ When the hyphen is missing, as in fig. 5.8 above, we recommend that the encoder 
 ```
 
 
-In this example, the encoder might decide to render the word as hwilkæ on the
+In this example, the encoder might decide to render the word as “hwilkæ” on the
             normalised level, assuming that the line beginning in the manuscript had led to the
-            dittography hwilkkæ.
+            dittography “hwilkkæ”.
 
 Note that a line beginning will appear several times in a multi-level transcriptions, if it
             occurs within a word. Great caution must therefore be taken with automatic numbering of
@@ -1024,7 +1024,7 @@ In the Menota archive, hyphens in a manuscript will be displayed with a hyphen o
          16 skal lendr maðr eða umboðs·
          17 maðr konungs láta skera boð. En sá
 
-At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>`. However, since umboðs maðr has been analysed as one word, a middot is displayed on the `<me:dipl>` and `<me:norm>` levels.
+At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>`. However, since “umboðs maðr” has been analysed as one word, a middot is displayed on the `<me:dipl>` and `<me:norm>` levels.
 
 In the three Menota stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook, hyphens in a manuscript are displayed only on the `<me:facs>` level, since at this level, line beginnings are displayed according to the manuscript. On the `<me:dipl>` and `<me:norm>` levels, hyphens in the manuscript are not displayed, since the text is rendered in continuous lines on these levels. As for missing hyphenation, no hyphen is displayed on the `<me:facs>`, nor is any hyphen displayed on the `<me:dipl>` and `<me:norm>` levels. However, since the text is rendered in continuous lines on the latter two levels, words will be displayed without any breaks. See the examples below.Facs : approximate display using the Menota stylesheet in App. F10  oc æro þæír þa ȷmıſkun konongs
          11  oc ſuare þæír ꝼírí þat er aꞇ lo-
@@ -1040,7 +1040,7 @@ In the three Menota stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of 
          eða umboðsmaðr konungs láta skera boð. En sá
        
 
-When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in lo-gum (end of line 11) is displayed only on the `<me:facs>` level, otherwise not. Neither is the missing hyphen in vmboðs maðr (end of line 16) indicated on any level, but since umboðs maðr has been encoded in a single `<w>` element, it is displayed as a single word on the `<me:dipl>` and `<me:norm>` levels.
+When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>` element, it is displayed as a single word on the `<me:dipl>` and `<me:norm>` levels.
 ## 5.6 Direct speech and quotations
 
 We recommend that direct speech is encoded

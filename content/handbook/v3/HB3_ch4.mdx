@@ -345,10 +345,10 @@ and displayed as
                fornu.
 
 Note that at this level all characters have been encoded using official Unicode code
-               points. So rather than encoding the character ð with the entity
-                  &eth; it has been encoded simply as ð, using its code point in
-               Latin-1 Supplement, 00F0. The only exception here is the o ogonek, which for
-               practical purposes has been encoded with the entity &oogon;, even if this
+               points. So rather than encoding the character “ð” with the entity
+                  “&eth;” it has been encoded simply as “ð”, using its code point in
+               Latin-1 Supplement, 00F0. The only exception here is the “o ogonek”, which for
+               practical purposes has been encoded with the entity “&oogon;”, even if this
                character, too, has a Unicode code point, 01EB in Latin Extended-B. A suitable
                keyboard layout is helpful for the actual typing of some of these characters, but in
                general, all Medieval Nordic texts can be encoded without resorting to entities as
@@ -360,7 +360,7 @@ While this handbook contains a number of examples of texts that have been transc
 
 The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>` element and each punctuation mark in a `<pc>` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>`, `<me:dipl>` or `<me:norm>`.
 
-Note: The me prefix can only be used with a RELAX NG
+Note: The “me” prefix can only be used with a RELAX NG
                schema. It must be left out in texts which will be validated against a DTD.
 
 Ill. 4.2. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on grið, ‘peace’. AM 619 4to, f. 2v, l. 15–21.
@@ -536,7 +536,7 @@ Occasionally, all three levels are identical:FacsimileTranscriptionsRenderings&l
                         &lt;me:dipl&gt;mæla&lt;/me:dipl&gt; &lt;me:norm&gt;mæla&lt;/me:norm&gt; mæla mæla mæla&lt;me:facs&gt;kona&lt;/me:facs&gt;
                         &lt;me:dipl&gt;kona&lt;/me:dipl&gt; &lt;me:norm&gt;kona&lt;/me:norm&gt; kona kona kona
 
-If the text is normalised according to the rules of ONP, however, the verb mæla would be spelt with an accent over the vowel, mǽla (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
+If the text is normalised according to the rules of ONP, however, the verb mæla would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
 ### 4.6.3 Structural properties
 
 Page beginnings (`<pb/>`), column beginnings (`<cb/>`), and line beginnings
@@ -761,5 +761,5 @@ The three levels discussed here can be seen as focal in the
 
 [Guðvarður Már Gunnlaugsson
                      2003](HB3_literature.xml#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
-                     For example, a level between the diplomatic and normalised, usually called halvdiplomatrisk
+                     For example, a level between the diplomatic and normalised, usually called “halvdiplomatrisk”
                      (semi-diplomatic), is the standard level in many of the Arnmagnæan editions.
