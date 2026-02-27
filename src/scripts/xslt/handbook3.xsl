@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tei="http://www.tei-c.org/ns/1.0">
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
     <xsl:template match="/">
@@ -17,7 +18,7 @@
     </xsl:template>
     <xsl:template match="tei:titleStmt">
         <xsl:text>title: "</xsl:text>
-        <xsl:value-of select="replace(tei:title, '^Nyhetsmelding ', '')"/>
+        <xsl:value-of select="tei:title"/>
         <xsl:text>"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
@@ -46,13 +47,32 @@
         </xsl:choose>
         <xsl:apply-templates/>
     </xsl:template>
+    <xsl:template match="tei:div">
+        <xsl:apply-templates/>
+    </xsl:template>
     <xsl:template match="tei:p">
         <xsl:text>&#x0a;&#x0a;</xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
-    <xsl:template match="tei:egXML">
-        <xsl:text>&#x0a;```xml&#x0a;</xsl:text>
-        <!--xsl:apply-templates/-->
+    <xsl:template match="tei:title">
+        <xsl:text>_</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>_</xsl:text>
+    </xsl:template>
+    <xsl:template match="tei:ref">
+        <xsl:text>[</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>]</xsl:text>
+        <xsl:value-of select="concat('(', @target, ')')"/>
+    </xsl:template>
+    <xsl:template match="tei:gi">
+        <xsl:text>`&lt;</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>&gt;`</xsl:text>
+    </xsl:template>
+    <xsl:template match="tei_samples:egXML">
+        <xsl:text>&#x0a;```&#x0a;</xsl:text>
+        <xsl:apply-templates/>
         <xsl:text>&#x0a;```&#x0a;</xsl:text>
     </xsl:template>
     <xsl:template match="text()">
@@ -63,5 +83,4 @@
     <xsl:template match="tei:publicationStmt"/>
     <xsl:template match="tei:sourceDesc"/>
     <xsl:template match="tei:encodingDesc"/>
-    <xsl:template match="tei:div"/>
 </xsl:stylesheet>

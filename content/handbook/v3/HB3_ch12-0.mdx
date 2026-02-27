@@ -9,6 +9,391 @@ author:
 
 Version 3.0 (12 December 2019)
 
-This version of the chapter has been superseded by version 3.1 (12 October 2022)
+This version of the chapter has been superseded by [version 3.1](HB3_ch12.xml#) (12 October 2022)
 
 by Karl G. Johansson and Marco Bianchi
+## 12.1 Introduction
+
+Medieval manuscripts contain an abundance of names: personal names for historical,
+               fictional and mythological beings, place names relating to historical as well as to
+               mythological locations, animal names for domestic, wild and mythological creatures,
+               and artefact names for weapons, ships, buildings, etc. In the following, the encoding
+               of names is presented according to the recommendations in the TEI P5
+               Guidelines, [ch. 13](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html).
+
+The basic element for encoding names of any type is `<name>`, supplied with the
+                  type and ref attributes.Elements & attributesObl/OptExplanation`<name>`Contains a name, i.e. a proper noun or a noun phrase.typeOptionalIndicates what type of name it is.refOptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).
+
+Some examples from Old Norse sources:
+```
+&lt;name&gt;Egill Skalla-Grímsson&lt;/name&gt;
+&lt;name&gt;Borg&lt;/name&gt;
+&lt;name&gt;Sleipnir&lt;/name&gt;
+&lt;name&gt;Skiðblaðnir&lt;/name&gt;
+```
+
+
+A distinction may be drawn between e.g. personal names, place names, animal names and
+               artefact names by using the type attribute:
+```
+&lt;name type="person"&gt;Egill Skalla-Grímsson&lt;/name&gt;
+&lt;name type="place"&gt;Borg&lt;/name&gt;
+&lt;name type="animal"&gt;Sleipnir&lt;/name&gt;
+&lt;name type="artefact"&gt;Skiðblaðnir&lt;/name&gt;
+```
+
+
+For many encoders, the `<name>` element is all that is needed for a simple
+               identification of names in the text. The type attribute may be added
+               simultaneously or at a later stage.
+
+For a more detailed encoding of personal names and place names, we recommend using
+               the elements `<persName>` and `<placeName>` respectively. They should be
+               treated as strictly equivalent with the `<name>` element and the type
+               attribute with the values person and place. 
+
+Thus, ...
+```
+&lt;name type="person"&gt;Egill Skalla-Grímsson&lt;/name&gt;
+```
+
+
+... is equivalent to ...
+```
+&lt;persName&gt;Egill Skalla-Grímsson&lt;/persName&gt;
+```
+
+
+... and ...
+```
+&lt;name type="place"&gt;Borg&lt;/name&gt;
+```
+
+
+... is equivalent to...
+```
+&lt;placeName&gt;Borg&lt;/placeName&gt;
+```
+
+
+The element `<persName>` can contain several other elements and can thus be used
+               for a more detailed name analysis, e.g. for making a distinction between forenames,
+               patronymica and surnames. This level of detail is recommended in the header (cf. [ch. 14](HB3_ch14.xml)), and will also be necessary for any encoding
+               of a text which should make the basis for a name index. In a similar way, the element
+                  `<placeName>` can contain elements for various types of geographical
+               locations. For both elements, TEI P5 Guidelines offers an additional tagset, which will be
+               discussed and exemplified below.
+
+Usually, XML elements for different types of names are used instead of
+               `<w>` elements. Under certain circumstances, however, it is convenient to use both
+               in combination. This is especially the case in linguistically annotated
+               transcriptions (cf. [ch. 11](HB3_ch11.xml));  for an example of
+                a transcription of this type, see [ch. 15.4.5](HB3_ch15.xml#sec15.4.5)).
+## 12.2 Personal names
+
+Personal names may be divided into several categories, depending on the source and
+               the naming conventions of the time.Elements & attributesObl/OptExplanation`<persName>`The name of a person, consisting of one or more words.typeOptionalIndicates the type of name. Suggested values: historical, mythological.
+                  refOptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).`<forename>`The first name of a person.`<addName>`An additional name of a person.typeOptionalIndicates the type of name. Suggested values: epithet, metronym,
+                     mythological, nickname, patronym.`<surname>`The family name of a person, excluding patronyms and metronyms.`<roleName>`The name for a role held by a person.typeOptionalIndicates the role of the person, e.g. in the form of a title. Suggested
+                     value: political.
+### 12.2.1 Forenames and patronymica
+
+Forenames are encoded with the element `<forename>` contained in the
+                     `<persName>` element:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Egill&lt;/forename&gt;
+&lt;/persName&gt;
+```
+
+
+We recommend that patronymica, i.e. a father’s name such as Haraldsson or
+                  Haraldsdóttir, should be encoded with the element `<addName>` and the
+                     type attribute set to patronym:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Egill&lt;/forename&gt;
+  &lt;addName type="patronym"&gt;Skalla-Grímsson&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+Note that the patronym Skalla-Grímsson is often spelt without a hyphen,
+                  Skallagrímsson.
+
+It could probably be questioned whether Egill Skalla-Grímsson should be considered
+                  a historical or a fictional person when he appears in _Egils saga
+                     Skalla-Grímssonar_. The type attribute might be used to
+                  specify this:
+```
+&lt;persName type="historical"&gt;
+  &lt;forename&gt;Egill&lt;/forename&gt;
+  &lt;addName type="patronym"&gt;Skalla-Grímsson&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+Mythological and legendary names could be seen as forming a group, once again
+                  using the type attribute to establish the category. This example is
+                  found in the _Poetic Edda_:
+```
+&lt;persName type="mythological"&gt;
+  &lt;forename&gt;Loki&lt;/forename&gt;
+  &lt;addName type="metronym"&gt;Laufeyjarson&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+As Loki has the second name from his mother Laufey, the value of the attribute is
+                     metronym (meaning that it is derived from the name of the person’s
+                  mother).
+### 12.2.2 Surnames
+
+In the Scandinavian and Old Icelandic material, surnames were introduced in the
+                  14th and 15th centuries, in most cases for people belonging to the elite. These
+                  names could be encoded with the `<surname>` element:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Bengt&lt;/forename&gt;
+  &lt;addName type="patronym"&gt;Jönsson&lt;/addName&gt;
+  &lt;surname&gt;Oxenstierna&lt;/surname&gt;
+&lt;/persName&gt;
+```
+
+### 12.2.3 Nicknames, Epithets and Titles
+
+Medieval texts contain an abundancy of nicknames, epithets and titles. With the
+                  additional tagset these could be treated in the same manner as forenames and
+                  surnames, with the elements `<addName>` and `<roleName>`. In
+                     _Egils saga Skalla-Grímssonar_, a man named Þorgils gjallandi ‘the
+                  screaming’ appears. His nickname might be encoded as a type of
+                  `<addName>`:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Þorgils&lt;/forename&gt;
+  &lt;addName type="nickname"&gt;gjallandi&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+Epithets indicating the providence of a person should also be encoded with the
+                     `<addName>` element, specified by the type attribute. Thus,
+                  Eyvindr austmaðr Bjarnarson in _Njáls saga_ has austmaðr as an
+                  epithet and Bjarnarson as his patronym:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Eyvindr&lt;/forename&gt;
+  &lt;addName type="epithet"&gt;austmaðr&lt;/addName&gt;
+  &lt;addName type="patronym"&gt;Bjarnarson&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+Titles such as konungr, jarl and hersir could be encoded by
+                  using the `<roleName>` element in addition to the `<addName>`
+                  element:
+```
+&lt;persName&gt;
+  &lt;forename&gt;Óláfr&lt;/forename&gt;
+  &lt;roleName type="political"&gt;konungr&lt;/roleName&gt;
+  &lt;addName type="patronym"&gt;Tryggvason&lt;/addName&gt;
+&lt;/persName&gt;
+```
+
+
+The type attribute indicates that the title is considered to refer to
+                  the political system of the Old Norwegian society.
+### 12.2.4 Sorting names
+
+If an index is generated from the XML transcription, it might be useful to add
+                  information on how to alphabetise names consisting of several elements. This is
+                  achieved with the sort-attribute and numeric values.
+```
+&lt;persName&gt;
+  &lt;forename sort="2"&gt;Bengt&lt;/forename&gt;
+  &lt;addName sort="3" type="patronym"&gt;Jönsson&lt;/addName&gt;
+  &lt;surname sort="1"&gt;Oxenstierna&lt;/surname&gt;
+&lt;/persName&gt;
+```
+
+### 12.2.5 Identifying historical individuals
+
+The xml:id attribute could be used to link the occurrence of a name to the
+                  individual it denotes, either internally or externally. 12.2.5.1 Internal referencing
+
+Biographical data can be stored in the header of the XML file. The unique
+                     xml:id defined for each biographical entry could then be used to link
+                     occurrences of a name to it.
+```
+&lt;profileDesc&gt;
+  &lt;particDesc&gt;
+    &lt;listPerson type="historical"&gt;
+      &lt;person xml:id="Njall"&gt;
+        &lt;persName&gt;
+          &lt;forename&gt;Njáll&lt;/forename&gt;
+          &lt;addName type=”patronym”&gt;Þorgeirsson&lt;/addName&gt;
+        &lt;/persName&gt;
+      &lt;/person&gt;
+      &lt;person xml:id="..."&gt;
+        . . .
+      &lt;/person&gt;
+    &lt;/listperson&gt;
+  &lt;/particDesc&gt;
+&lt;/profileDesc&gt;
+```
+
+
+The corresponding markup in the body of the XML file would then be:
+```
+&lt;persName xml:id="#Njall"&gt;
+  &lt;forename&gt;Njáll&lt;/forename&gt;
+&lt;/persName&gt;
+```
+
+
+See the TEI P5 Guidelines, [ch. 13.3](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERS), for an extensive description of biographical data.12.2.5.2 External referencing
+
+References to external biographical resources can be put either into the header
+                     or directly into the transcription. The following two solutions both link the
+                     Njáll’s name to his Wikidata entry:
+```
+&lt;!-- HEADER --&gt;
+  &lt;person xml:id="Njall https://www.wikidata.org/wiki/Q2642621"&gt;
+&lt;!-- BODY --&gt;
+  &lt;persName xml:id="#Njall"&gt;
+    &lt;forename&gt;Njáll&lt;/forename&gt;
+  &lt;/persName&gt;
+```
+
+
+Or, without internal reference to the header:
+```
+&lt;persName xml:id="https://www.wikidata.org/wiki/Q2642621"&gt;
+  &lt;forename&gt;Njáll&lt;/forename&gt;
+&lt;/persName&gt;
+```
+
+
+See [ch. 15.4.5](HB3_ch15.xml#sec15.4.5) for suggested external
+                     resources and more examples, and also [ch. 14.3.6](HB3_ch14.xml#sec14.3.6).
+## 12.3 Place names
+
+The encoding of place names should be rather straight-forward, but there are a few
+               things that need to be mentioned and exemplified. The starting point is the
+               above-mentioned encoding of all place names with the element `<name>` and an
+               attribute type with the value place:
+```
+&lt;name type="place"&gt;Borg&lt;/name&gt;
+```
+
+
+A more detailed encoding is achieved by the additional tagset. We recommend that this
+               tagset is used in cases when place names are to be more thoroughly encoded:ElementsExplanation`<placeName>`A name of a specific location.`<settlement>`The name of the smallest component of a place name expressed as a hierarchy
+                     of geo-political or administrative units.`<region>`Larger or administratively superior to the settlement and smaller or
+                     administratively less important than the country.`<country>`Larger or administratively superior to the region.
+
+All of the above mentioned elements can be linked to the place they denote by means
+               of a ref-attribute with identifiers, i.e. xml:ids or external URIs.
+
+The additional element `<settlement>` adds information about administrative
+               units, i.e. farms, villages or cities. In this example, we have chosen Skara, one of
+               the oldest cities of modern-day Sweden:
+```
+&lt;placeName&gt;
+  &lt;settlement&gt;Skara&lt;/settlement&gt;
+&lt;/placeName&gt;
+```
+
+
+A region is a larger administrative unit than the district or settlement, as e.g. the
+               province of Västergötland, in the medieval material referred to as Vestra
+                  Gautland:
+```
+&lt;placeName&gt;
+  &lt;region&gt;Vestra Gautland&lt;/region&gt;
+&lt;/placeName&gt;
+```
+
+
+The region of Västergötland forms a part of the country referred to as Svíþjóð in
+               medieval texts:
+```
+&lt;placeName&gt;
+  &lt;country&gt;Svíþjóð&lt;/country&gt;
+&lt;/placeName&gt;
+```
+
+### 12.3.1 Identifying places
+
+Similar to personal names, attestations of place names can be linked to authority
+                  records describing the place itself with a ref attribute. See [ch. 15.4.6](HB3_ch15.xml#sec15.4.6) below and the TEI P5 Guidelines, 
+                  [ch. 13.3.4](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDGEOG).
+## 12.4 Other names
+
+There are other groups of names that might be singled out in the encoding. In the
+               following, we present suggestions as to how animal names and names of artefacts could
+               be treated. The type attribute is used liberally to enhance
+               searchability.
+### 12.4.1 Animal names
+
+Medieval texts contain names for horses, dogs and other domestic animals. These
+                  could be encoded with the `<name>` element and the type
+                  attribute. On a basic level we would suggest that all animal names are marked with
+                  the attribute value animal:
+```
+&lt;name type="animal"&gt;Freyfaxi&lt;/name&gt;
+```
+
+
+It should also be possible to give more specific information in the
+                     type attribute. The name Freyfaxi might be specified as
+                  the name of a horse:
+```
+&lt;name type="horse"&gt;Freyfaxi&lt;/name&gt;
+```
+
+
+There are also names of animals in relation to myths and legends. For example,
+                  Sigurðr Fáfnisbani had a horse named Grani. If we wish to encode a mythological or
+                  legendary name this could be done by specifying the value horse of the
+                     type attribute, and legendary in a subtype
+                  attribute:
+```
+&lt;name type="horse" subtype="legendary"&gt;Grani&lt;/name&gt;
+```
+
+
+There is no element `<animalName>` on par with `<persName>` and
+                     `<placeName>`. For all but the most detailed encodings, we suggest that
+                  the type value animal is sufficient.
+### 12.4.2 Artefact names
+
+There are a number of names for artefacts in the medieval material, e.g. for
+                  weapons and ships. These names could be encoded in the same fashion as the ones
+                  described above. The ship belonging to the god Freyr in _Snorra Edda_
+                  could then be encoded as follows:
+```
+&lt;name type="artefact"&gt;Skiðblaðnir&lt;/name&gt;
+```
+
+
+This artefact could be specified as a ship:
+```
+&lt;name type="ship"&gt;Skiðblaðnir&lt;/name&gt;
+```
+
+
+And it could further be encoded as a mythological name:
+```
+&lt;name type="ship" subtype="mythological"&gt;Skiðblaðnir&lt;/name&gt;
+```
+
+
+In most cases, we believe that the attribute value artefact is
+                  sufficient. However, if a text contains many object names it might be convenient to
+                  use the element `<objectName>` for a more clear-cut distinction between names
+                  of artefacts and other types of names. 
+
+Similar to personal names and place names, objects’ names can be linked to the objects they denote by means of a
+                     ref attribute with identifiers pointing to an internal registry or
+                  an external resource, i.e. xml:ids or external URIs.

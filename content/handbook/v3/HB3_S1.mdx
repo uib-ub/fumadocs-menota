@@ -12,3 +12,52 @@ Version 3.0 (12 December 2019)
 by Odd Einar Haugen and Robert K. Paulsen
 
  
+## S.1 Introduction
+
+This page contains a number of samples for the tutorial, such as a facsimile of a primary source, advice on special characters, a skeleton XML file, a Perl script for converting a simplified transcription into XML, and a selection of XSLT style sheets specifically for the [Tutorial](HB3_T1.xml).
+
+ 
+## S.2 Facsimiles
+
+For the tutorial, we offer a photographic facsimile of fol. 57v of AM 619 4to, The Old Norwegian homily book (ca. 1200–1225). On this page, Miracle 5 begins with the initial “S” in line 7. Please follow the instructions in your browser for downloading the facsimile.[Download image of fol. 57v of AM 619 4to](samples/AM-619-4to-57v.jpg)
+
+If you would like to transcribe more, you can try your luck with the legend of Cosdroe and Heraclius in the same manuscript. It begins with the initial “C” in line 26 of fol. 65v and ends in line 29 at the bottom of fol. 66r:[Download image of fol. 65v of AM 619 4to](samples/AM-619-4to-65v.jpg)[Download image of fol. 66r of AM 619 4to](samples/AM-619-4to-66r.jpg)
+
+Need some help with understanding the writing? The whole manuscript has been published in a diplomatic transcription in the Menota archive, with corresponding facsimiles. Have a look at the catalogue:[Catalogue of manuscripts in Menota](http://clarino.uib.no/menota/catalogue/menota)
+
+ 
+## S.3 Special characters
+
+The characters in the modern Nordic languages are available in almost all fonts and can be entered by most keyboards, such as
+
+á, é, í, ó, ú, ý, ö, ø, æ, þ, ðÁ, É, Í, Ó, Ú, Ý, Ö, Þ, Ð
+
+However, some of these characters may not be immediatley accessible for all users and there are a number of other characters which will be missing in most fonts. In XML documents, any characters can be entered by way of entities, such as &aacute; for “á”, and this convention is a simple way of dealing with any special characters, at least until the Unicode Standard and specialised fonts have been investigated. For the tutorial in the handbook, we offer a short list of such entities:[Useful entites for transcribing an Old Norwegian manuscript](samples/ON-Entities.pdf)
+
+For a wide range of characters and useful fonts (several of which are free), please consult [app A](HB3_A_characters.xml) and [app. B](HB3_B_fonts.xml) of this handbook.
+
+ 
+## S.4 Skeleton XML file
+
+This XML file should be used for the transcription. It is highly recommended that your computer is connected to the Internet, so that Oxygen can continuously validate your file. As long as there is a green box in the upper right corner, the file is valid. If this box turns into yellow, the file is still OK, but contains undeclared entities. If it becomes red, there is a mistake in the encoding, so the file is no longer valid. If this happens, you should immediately try and correct the file, and if you do not succeed in this, move backwards in the versions until the file once again is valid. Oxygen will allow you multiple undo’s.
+
+Download the skeleton XML file here:[XML file ready for transcription](samples/etf.xml) (file name: etf.xml)
+
+ 
+## S.5 MenotaBlitzS script
+
+MenotaBlitzS is a Perl script developed by Robert K. Paulsen. When installed, it will convert a simplified transcription to a valid XML file in a matter of seconds, as explained in the [Tutorial T.3](HB3_T1.xml#secT.3). If you have been transcribing directly in XML, as explained in the [Tutorial T.2](HB3_T1.xml#secT.2), you should skip this stage.
+
+Download the menotaBlitzS script here:[MenotaBlitzS script](samples/menotaBlitzS.plx) (file name: menotaBlitzS.plx)
+
+ 
+## S.6 XSLT stylesheets
+
+We offer three XSLT stylesheets (edited by Haraldur Bernharðsson), one for each of the three focal levels in Menota. If you have selected the simplified transcription explained in the [Tutorial T.3](HB3_T1.xml), you can use the stylesheet for the facsimile level if you want to display the text line by line, or the stylesheet for the diplomatic level if you want to display the text in unbroken lines.[Stylesheet for the facsimile level](samples/menotaP5_HB_revised_facs.xsl) (file name: menotaP5_HB_revised_facs.xsl)[Stylesheet for the diplomatic level](samples/menotaP5_HB_revised_dipl.xsl) (file name: menotaP5_HB_revised_dipl.xsl)[Stylesheet for the normalised level](samples/menotaP5_HB_revised_norm.xsl) (file name: menotaP5_HB_revised_norm.xsl)
+
+ 
+## S.7 Tools not working?
+
+In case you did not succeed in the transcription of the text, the conversion to XML or in using the XSLT stylesheet, you may have a look at these files:[1. Simplified XML transcription of Miracle 5](samples/AM-619-4to-57v.xml) (file name: AM-619-4to-57v.xml)[2. Converted XML file of the transcription using the Perl script](samples/AM-619-4to-57v_prl.xml) (file name: AM-619-4to-57v_prl.xml)[3.1 HTML output of the converted XML file using the facsimile level stylesheet](samples/AM-619-4to-57v_facs.html) (file name: AM-619-4to-57v_facs.html)[3.2 HTML output of the converted XML file using the diplomatic level stylesheet](samples/AM-619-4to-57v_dipl.html) (file name: AM-619-4to-57v_dipl.html)
+
+ 

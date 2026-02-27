@@ -3,28 +3,28 @@
 @import 'fumadocs-ui/css/preset.css';
 
 @font-face {
-    font-family: 'Andron';
+    font-family: 'Handbook';
     src: url('@/lib/webfonts/andron-mega-corpus-regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Andron';
+    font-family: 'Handbook';
     src: url('@/lib/webfonts/andron-mega-corpus-italic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Andron';
+    font-family: 'Handbook';
     src: url('@/lib/webfonts/andron-mega-corpus-semibold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Andron';
+    font-family: 'Handbook';
     src: url('@/lib/webfonts/andron-mega-corpus-semibold-italic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
@@ -32,7 +32,7 @@
 
 #nd-docs-layout {
     background-color: white;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Verdana', sans-serif;
 }
 
 h1 {
@@ -63,11 +63,6 @@ div.prose > p {
     text-align: justify;
 }
 
-.hb3 div.prose > p {
-    font-size: 1em;
-    font-family: Andron, serif;
-}
-
 ol {
     padding-left: 3em;
     font-size: 0.8em;
@@ -90,4 +85,13 @@ ol a, ul a, p a {
 
 strong {
     font-weight: bold;
+}
+
+.hb3 div.prose p {
+    font-size: 1em;
+    font-family: 'Handbook', serif;
+}
+
+.hb3 ol {
+    font-size: 1em;
 }

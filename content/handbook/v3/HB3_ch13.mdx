@@ -12,3 +12,213 @@ author:
 Version 3.0 (12 December 2019)
 
 by Jon Gunnar Jørgensen, Jonna Louis-Jensen and Tarrin Wills
+## 13.1 Encoding of metrical structures
+
+It is recommended that passages of verse in manuscripts should be 
+   encoded as such. The basic encoding of verse is covered in [ch. 3.8](HB3_ch3.xml#sec3.8)
+   above, where it is recommended that verse be encoded in line groups (i.e. stanzas) and lines.
+
+The following section extends the basic mark-up of verse to include: (1) references to the relevant stanza 
+within the whole poetic corpus, so that poetry can be cross-referenced between manuscript versions; and (2) markup
+of metrical features within verses and lines.
+
+There are good reasons to establish
+a system for the encoding of metrics in the medieval manuscripts even
+if this structure is not generally represented graphically in the
+manuscripts. For many users of the established text the stanzas are
+of great interest and it is therefore practical to mark them in a way
+that makes it possible to find and delimit them from the surrounding
+text. A more detailed encoding of the stanzas can open up for new
+ways of research on different metrical variants, concerning e.g.
+alliteration, internal rhyme and stress.
+
+The same rules that apply for prose
+are relevant also for the encoding of stanzas. In addition to these
+rules we suggest codes that facilitate the search for and
+identification of stanzas. We also give guidelines as to the encoding
+of the metrics. It should be pointed out, however, that these codes
+would have to be given a more detailed form if the stanzas should be
+analysed in a more detailed way.
+
+The verse will normally be marked up only at the `<me:dipl>` and `<me:norm>` levels of the transcription. 
+For the `<me:facs>` level, verse will be included as if prose, in accordance with the practice of the 
+medieval manuscripts.
+## 13.2 Elements and attributes
+
+On the primary level we recommend
+that the stanzas are encoded with the following elements and
+attributes:Elements & attributesObl/OptExplanation`<lg>`Marks the stanza in
+         relation to the surrounding prose text.
+      nOblIndicates the identity of
+         the stanza within the manuscript, i.e. its number in the
+         manuscript, using values such as 1, 2, 3.
+      xml:idOptionalIndicates the identity of
+         the stanza within the medieval poetic corpus. The id should refer to a standard edition of the works. 
+         Menota recommends using the sigla for verses used by the Skaldic Poetry project 
+         ([https://skaldic.abdn.ac.uk/db.php](https://skaldic.abdn.ac.uk/db.php))
+         for non-Eddic verse, and the numbering in [Neckel and Kuhn 1983](HB3_literature.xml#Kuhn1983)
+ for Eddic verse. If no standard corpus
+         contains the verse (e.g. rímur), it should be indicated by a separate typology. 
+      typeOptionalIndicates the general
+         metrical form of the stanza, e.g.
+         dróttkvætt or
+         fornyrðislag.`<l>`Marks the line within the
+         stanza.nOblIndicates the line number
+         within the stanza, using values such as 1, 2, 3. Lines are broken according to Norse-Icelandic conventions, that is, 
+         alliterative lines are treated as two lines, with a break at the caesura.typeOptionalIndicates the type of line for formatting purposes; the implied value, normal, is not indented; use b-line for the b-line of eddic metres which should have the caesura represented by a long space; use ljod-long for ljóðaháttr long lines, which should have a line break and be indented.metOptionalIndicates the metrical
+         form of the line. The form should be according to a standard typology, e.g. types A–E of 
+         the common germanic verse form. Sub-types can also be represented, using, e.g. [Gade 1995](HB3_literature.xml#Gade1995).
+         Alternatively, the actual scansion of the line can be represented using a series of symbols 
+         (e.g. ‘/’ for a lift, ‘\’ for a secondary stress, ‘x’ for a dip and ‘|’ for a syntactic 
+         caesura; or cf. the [MUFI character 
+            recommendation](HB3_literature.xml#MUFIrec) for metrical symbols).
+      `<me:all>`Indicates the alliteration
+         of the line.
+      `<me:ass>`Indicates the internal rhymes
+         of the line, where relevant.
+      
+## 13.3 Encoding example
+
+The following example is from _Guta saga_ (ed. by [Peel 1999](HB3_literature.xml#Peel1999), p. 2), in which the correction of the word reð has been suppressed for the sake of simplicity:
+Hann reþ draum þinna so:
+Alt ir baugum bundit
+Boland al þitta varþa
+ok faum þria syni aiga
+
+
+The basic encoding of a verse within a prose work is thus:
+```
+&lt;p&gt;
+  &lt;w&gt;Hann&lt;/w&gt;
+  &lt;w&gt;reþ&lt;/w&gt;
+  &lt;w&gt;dra&lt;lb ed="ms" n="16"/&gt;um&lt;/w&gt;
+  &lt;w&gt;þinna&lt;/w&gt;
+  &lt;w&gt;so&lt;/w&gt;
+  &lt;pc&gt;.&lt;/pc&gt;
+&lt;/p&gt;
+&lt;lg n="1" xml:id="Guta-v1" type="germ"&gt;
+  &lt;l n="1"&gt;
+    &lt;w&gt;Alt&lt;/w&gt;
+    &lt;w&gt;ír&lt;/w&gt;
+    &lt;w&gt;baugum&lt;/w&gt;
+    &lt;w&gt;bundit&lt;/w&gt;
+    &lt;lb ed="ms" n="17"/&gt;
+  &lt;/l&gt;
+  &lt;l n="2"&gt;
+    &lt;w&gt;bo land&lt;/w&gt;
+    &lt;w&gt;al&lt;/w&gt;
+    &lt;w&gt;þitta&lt;/w&gt;
+    &lt;w&gt;warþa&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="3"&gt;
+    &lt;w&gt;oc&lt;/w&gt;
+    &lt;w&gt;faum&lt;/w&gt;
+    &lt;pb ed="ms" n="1v"/&gt;
+    &lt;w&gt;þria&lt;/w&gt;
+    &lt;w&gt;syni&lt;/w&gt;
+    &lt;w&gt;aiga&lt;/w&gt;
+  &lt;/l&gt;
+&lt;/lg&gt;
+
+```
+
+
+The verse is numbered as the first in the manuscript, and the value of xml:id is according to its own typology (this verse 
+does not occur in most poetic corpora). The value of type simply represents that this is in the common Germanic metre. No
+attempt has been made here to do more detailed metrical analysis.
+
+The following example is of a more complex, skaldic example from _Skáldskaparmál_ in AM 748 II 4to. The verse (from Bragi Boddason’s _Ragnarsdrápa_ (stanza 5) is thus:
+þar
+    sua at
+    giordu
+    gyrdan
+
+    golfhaulkuis 
+    sa
+    fylkis
+   
+    segls
+    naglfara 
+    siglur
+   
+    saums
+    anduanar
+    standa
+   
+    urdu  
+    snemst 
+    ok
+    saurli
+   
+    samrada
+    þeir 
+    hamdir
+   
+    halum
+    herdi 
+    mylum
+   
+    hergautz 
+    vínum
+    bardir.
+
+
+The transcription is encoded thus (long “s” is normalised to “s”; encoded at the diplomatic level):
+```
+&lt;lg n="3" xml:id="Bragi-Rdr-5" type="dróttkvætt"&gt;
+  &lt;l n="1" met="A3-2"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;þ&lt;ex&gt;ar&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;s&lt;ex&gt;ua&lt;/ex&gt; at&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;&lt;me:ass&gt;iord&lt;/me:ass&gt;u&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;&lt;me:ass&gt;yrd&lt;/me:ass&gt;an&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="2" met="X"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;olfh&lt;me:ass&gt;aul&lt;lb ed="ms" n="19"/&gt;k&lt;/me:ass&gt;
+      uis&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;sa&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;f&lt;me:ass&gt;ylk&lt;/me:ass&gt;is&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="3" met="D2"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;egl&lt;/me:ass&gt;s&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;naglf&lt;ex&gt;ar&lt;/ex&gt;a&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;igl&lt;/me:ass&gt;ur&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="4" met="D2"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;aums&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:ass&gt;and&lt;/me:ass&gt;uana&lt;add place="supralinear"&gt;r&lt;/add&gt;
+      &lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;st&lt;me:ass&gt;and&lt;/me:ass&gt;a&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="5" met="X"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;urdu&lt;/me:dipl&gt;&lt;/w&gt; &lt;lb ed="ms" n="20"/&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;nemst&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;&lt;ex&gt;ok&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;aurli&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="6" met="X"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;am&lt;/me:ass&gt;rada&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;þ&lt;ex&gt;ei&lt;/ex&gt;r&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;h&lt;me:ass&gt;am&lt;/me:ass&gt;d&lt;ex&gt;ir&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="7" met="A1-1"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;me:ass&gt;al&lt;/me:ass&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;ex&gt;er&lt;/ex&gt;di&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;m&lt;me:ass&gt;yl&lt;/me:ass&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
+  &lt;/l&gt;
+  &lt;l n="8" met="X"&gt;
+    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;ex&gt;er&lt;/ex&gt;gautz&lt;/me:dipl&gt;&lt;/w&gt; 
+    &lt;w&gt;&lt;me:dipl&gt;vín&lt;lb ed="ms" n="21"/&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
+    &lt;w&gt;&lt;me:dipl&gt;bardir&lt;/me:dipl&gt;&lt;/w&gt;&lt;pc&gt;.&lt;/pc&gt;
+  &lt;/l&gt;
+&lt;/lg&gt;
+```
+
+
+The value of n is 3, as this is the third verse recorded in the manuscript. The verse’s xml:id is the siglum from the  
+   [Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is dróttkvætt, 
+but this categorisation is unnecessary, as the link to the skaldic project also provides information on the metrical category of each verse. 
+Each line is encoded with the `<l>` element, with the line number given and the metrical categorisation (here, from
+   [Gade 1995](HB3_literature.xml#Gade1995); X means 
+uncategorised).
+
+The alliterative staves are indicated using the `<me:all>` element, and the internal rhymes using `<me:ass>`. Both elements are defined by Menota and belong to the Menota namespace (cf. [ch. 2.8](HB3_ch2.xml#sec2.8) above).

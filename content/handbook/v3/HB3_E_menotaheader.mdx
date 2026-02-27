@@ -10,3 +10,790 @@ author:
 Version 3.0 (12 December 2019)
 
 by Odd Einar Haugen and Beeke Stegmann
+## E.1 Introduction
+
+We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount
+					of information about the text, its background and its encoding. This should be entered in
+					the `<teiHeader>`, which is an integral and essential part of any XML/TEI document.
+				While not required, a longer header with more detailed information on the manuscript source is highly welcomed.
+
+Below are three examples of headers for Medieval Nordic texts. The first two examples are so-called minimal headers
+				   with basic recommended information, the first being a
+					header for a primary source with only a single text; the other for a source with more than
+					one text. The third example is a longer header with more codicological detail. 
+                                                        It should be noted, however, that a minimal header of a multi-text file can also become rather long when specifying the individual texts that are contained in the manuscript.
+
+Cf. the TEI P5 Guidelines,
+				  [ch. 2](http://tei.oucs.ox.ac.uk/release/doc/tei-p5-doc/en/html/HD.html) for 
+				   a discussion of headers in general, specifically [ch. 2.6](http://tei.oucs.ox.ac.uk/release/doc/tei-p5-doc/en/html/HD.html#HD7) for the notion of minimal and recommended headers.
+
+As of v. 3.0 of The Menota Handbook we recommend that you use 
+a RELAX NG schema when encoding a text rather than a DTD (Document Type Declaration). These schemas are explained in 
+			   [app. D](HB3_D_schemas.xml).
+
+The schema being used in a file is declared at the very beginning of the file. The headers that can be 
+                            downloaded in [app. E.5](#secE.5) below are all using the RELAX NG schema, and can thus be used as models.
+## E.2 Minimal header for a source with a single text
+
+Although many medieval manuscripts contain more than one text, there are some manuscripts which only
+					contain a single piece of text. That is also generally true of charters (diplomas). We have
+					chosen Holm perg 6 fol (also referred to as Sth. perg. fol. nr 6) as an example of a
+					single-text source. This manuscript carries the text of _Barlaams ok Josaphats
+					saga_, although with some parts missing.
+
+Please note that the distinction between single-text and multi-text sources is not
+					straightforward and ultimately rests on the definition of key concepts such as
+					“text” and “work”. If in doubt, we recommend using
+					the established categories in catalogues and indices, e.g. the index volume of 
+				  [Ordbog over det norrøne prosasprog](HB3_literature.xml#ONP) (Copenhagen 1989).
+
+We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative process of
+					text encoding can be documented in the header. This text was initially transcribed and edited in an
+					electronic version by Magnus Rindal in the late 1970ies (the printed edition in 1981 was
+					generated from this file). Subsequently, Jon Erik Hagen and Odd Einar Haugen lemmatised
+					the text, i.e. added information about lemma and grammatical form for each running word.
+					Finally, Christian-Emil Ore converted the file from its original customised format into
+					Menotic XML. The four people who contributed to the making of the present electronic
+					version of the text should be credited accordingly.
+```
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+&lt;teiHeader xml:lang="eng"&gt;
+  &lt;fileDesc&gt;
+    &lt;titleStmt&gt;
+      &lt;title&gt;Barlaams ok Josaphats saga : Holm perg 6 fol : A digital edition&lt;/title&gt;
+      &lt;editor&gt;  
+        &lt;name type="person"&gt;Magnus Rindal&lt;/name&gt;
+        &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+      &lt;/editor&gt;
+      &lt;respStmt&gt;
+        &lt;resp&gt;Transcription&lt;/resp&gt;
+        &lt;name&gt;  
+          &lt;name type="person"&gt;Magnus Rindal&lt;/name&gt;
+          &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+        &lt;/name&gt;
+      &lt;/respStmt&gt;
+      &lt;respStmt&gt;
+        &lt;resp&gt;Lemmatisation and morphological encoding&lt;/resp&gt;
+        &lt;name&gt;  
+          &lt;name type="person"&gt;Jon Erik Hagen&lt;/name&gt;
+          &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+        &lt;/name&gt;
+      &lt;/respStmt&gt;
+      &lt;respStmt&gt;
+        &lt;resp&gt;Lemmatisation and morphological encoding&lt;/resp&gt;
+        &lt;name&gt;  
+          &lt;name type="person"&gt;Odd Einar Haugen&lt;/name&gt;
+          &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+        &lt;/name&gt;
+      &lt;/respStmt&gt;
+      &lt;respStmt&gt;
+        &lt;resp&gt;Conversion to Menotic XML&lt;/resp&gt;
+        &lt;name&gt;  
+          &lt;name type="person"&gt;Christian Emil Ore&lt;/name&gt;
+          &lt;orgName type="affiliation"&gt;University of Oslo&lt;/orgName&gt;
+        &lt;/name&gt;
+      &lt;/respStmt&gt;
+    &lt;/titleStmt&gt;
+    &lt;editionStmt&gt;
+      &lt;edition n="1.0.1"&gt;Version 1.0.1, &lt;date when="2016-11-22"&gt;22 November 2016&lt;/date&gt;
+      &lt;/edition&gt;
+    &lt;/editionStmt&gt;
+    &lt;extent n="76411"&gt;76411 words&lt;/extent&gt;
+    &lt;publicationStmt&gt;
+      &lt;distributor&gt;Medieval Nordic Text Archive&lt;/distributor&gt;
+      &lt;idno type="Menota"&gt;Ms. 1&lt;/idno&gt;
+      &lt;date when="2004-03-01"&gt;1 March 2004&lt;/date&gt;
+      &lt;availability status="free"&gt;
+        &lt;licence target="http://creativecommons.org/licenses/by-sa/4.0/"&gt;
+          CC-BY-SA 4.0&lt;/licence&gt;
+          &lt;p&gt;License accepted by Magnus Rindal in a mail to Odd Einar 
+          Haugen 3 November 2015.&lt;/p&gt;
+      &lt;/availability&gt;
+    &lt;/publicationStmt&gt;
+    &lt;sourceDesc&gt;
+      &lt;msDesc&gt;
+        &lt;msIdentifier&gt;
+          &lt;country  key="SE"&gt;Sweden&lt;/country&gt;
+          &lt;settlement&gt;Stockholm&lt;/settlement&gt;
+          &lt;repository&gt;Kungliga Biblioteket&lt;/repository&gt;
+          &lt;idno&gt;Holm perg 6 fol&lt;/idno&gt;
+          &lt;msName&gt;Barlaams ok Josaphats saga&lt;/msName&gt;
+        &lt;/msIdentifier&gt;
+        &lt;msContents&gt;
+          &lt;msItem n="1"&gt;
+            &lt;locus from="1r" to="102v"&gt;ff. 1r–102v (pp. 1–204)&lt;/locus&gt;
+            &lt;title type="main"&gt;Barlaams ok Josaphats saga&lt;/title&gt;
+            &lt;title type="abbreviated"&gt;Barl&lt;/title&gt;
+            &lt;textLang mainLang="onw"&gt;Old Norwegian&lt;/textLang&gt;
+          &lt;/msItem&gt;
+        &lt;/msContents&gt;
+        &lt;physDesc&gt;
+          &lt;objectDesc form="codex"&gt;
+            &lt;supportDesc&gt;
+              &lt;support&gt;
+                &lt;p&gt;&lt;material&gt;Parchment&lt;/material&gt;, but with 
+                    five younger &lt;material&gt;paper&lt;/material&gt; leaves 
+                    added; two at the front (the last being blank) and 
+                    three at the back.&lt;/p&gt;
+              &lt;/support&gt;
+              &lt;extent&gt;102 parchment leaves and 5 paper leaves; 
+                  210 mm (height) by 155 mm (width).&lt;/extent&gt;
+              &lt;foliation&gt;
+                &lt;p&gt;The manuscript is paginated on the recto pages 
+                    of the parchment leaves, 1–204.&lt;/p&gt;
+              &lt;/foliation&gt;
+            &lt;/supportDesc&gt;
+          &lt;/objectDesc&gt;
+        &lt;/physDesc&gt;
+        &lt;history&gt;
+          &lt;origin&gt;
+            &lt;p&gt;Written in &lt;origPlace&gt;Eastern Norway&lt;/origPlace&gt; 
+                &lt;origDate notBefore="1250" notAfter="1300"&gt;c. 1275&lt;/origDate&gt;.
+            &lt;/p&gt;
+          &lt;/origin&gt;
+        &lt;/history&gt;
+      &lt;/msDesc&gt;
+    &lt;/sourceDesc&gt;
+  &lt;/fileDesc&gt;
+  &lt;encodingDesc&gt;
+    &lt;projectDesc&gt;
+      &lt;p&gt;This manuscript text has been encoded according to the standard 
+        set out in &lt;title&gt;The Menota Handbook&lt;/title&gt; (version 3.0), at 
+        &lt;ref target="http://www.menota.org/handbook"&gt;
+        http://www.menota.org/handbook&lt;/ref&gt; as of &lt;date&gt;2019-05-10&lt;/date&gt;.&lt;/p&gt;
+        &lt;p&gt;The encoded text has numbered page beginnings and line beginnings according
+         to the manuscript.&lt;/p&gt;
+    &lt;/projectDesc&gt;
+    &lt;editorialDecl&gt;
+      &lt;correction status="high"&gt;
+        &lt;p&gt;This text was proofread by &lt;persName&gt;Magnus Rindal&lt;/persName&gt;  
+          and colleagues before the publication of the printed version in 1981. It is 
+          unlikely that it contains any significant number of errors. However, it
+          can not be ruled out that the subsequent conversion of the file may have
+          introduced some systemic errors.&lt;/p&gt;
+      &lt;/correction&gt;
+      &lt;normalization me:level="dipl"&gt;
+        &lt;p&gt;This text has been encoded on a diplomatic level, according to the practice  
+          by Norsk Historisk kjeldeskrift-Institutt.&lt;/p&gt;
+      &lt;/normalization&gt;
+      &lt;interpretation me:lemmatized="completely" me:morphAnalyzed="completely"&gt;
+        &lt;p&gt;The complete text has been lemmatised and morphologically analysed  
+           according to the rules specified in ch. 11 of the Menota Handbook, v. 3.0.&lt;/p&gt;
+      &lt;/interpretation&gt;     
+    &lt;/editorialDecl&gt;
+  &lt;/encodingDesc&gt;
+  &lt;profileDesc&gt;
+    &lt;langUsage&gt;
+      &lt;language ident="onw"&gt;Old Norwegian&lt;/language&gt;
+    &lt;/langUsage&gt;
+    &lt;handNotes&gt;
+      &lt;handNote xml:id="h1"/&gt;
+      &lt;handNote xml:id="h2"/&gt;
+    &lt;/handNotes&gt;
+  &lt;/profileDesc&gt;
+  &lt;revisionDesc&gt;
+    &lt;change&gt;
+      &lt;date&gt;2019-05-12&lt;/date&gt;
+      &lt;name&gt;Odd Einar Haugen&lt;/name&gt;, 
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;: 
+        Made some minor changes to the header so that it could be
+        published as an example header in v. 3.0 of the handbook.
+    &lt;change&gt;
+    &lt;/change&gt;
+    &lt;change&gt;
+      &lt;date&gt;1980&lt;/date&gt;
+      &lt;name&gt;Magnus Rindal&lt;/name&gt;
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;: 
+        Finalised the electronic text and prepared it for publication 
+        in book form (published by Norsk Historisk 
+        Kjeldeskrift-Institutt in 1981).
+    &lt;/change&gt;
+  &lt;/revisionDesc&gt;
+&lt;/teiHeader&gt;
+```
+
+
+The `<body>` follows immediately after the header. This is where the actual transcription
+						is located. Note that the `<div>` element is used to organise the various
+						sections of the manuscript, in this case the individual chapters.
+```
+&lt;text xml:lang="onw"&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;p&gt;The text of the first chapter goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;p&gt;&lt;handShift new="h2"/&gt;The text of the second chapter goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;p&gt;The text of the third chapter goes here.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+```
+
+
+The source text is placed within the `<text>` element. The attribute xml:lang
+						specifies the language of the text (cf. `<profileDesc>` above). If the text
+						contains sporadic words or sentences in another language, e.g. Latin, the attribute
+						xml:lang can be used to specify these exception from the rule, whether on the level of
+						the word, `<w>`, paragraph, `<p>` or chapter, `<div>`.
+
+This header is also an example of how change of scribal hands in the source can be recorded. Note
+						that rather than putting each hand in an element of its own (which would cause problems
+						of overlapping) the actual change is recorded using a milestone element,
+					  `<handShift/>`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
+					  Note that the number of hands must be recorded in the
+							`<profileDesc>` element of the header.
+## E.3 Minimal header for a source with multiple texts
+
+AM 242 fol – often referred to as _Codex Wormianus_ or
+			    _Órmsbók_ – is a good example of a multi-text source. It
+					contains the prose version of _Edda_ (by Snorri Sturlusonar), the four
+					grammatical treatises, and a few other poetic texts (_Maríukvæði_,
+						_Rígsþula_ and _ókennd heiti_). _Edda Snorra Sturlusonar_ is usually
+					divided into four sections; the _Prologue_, _Gylfaginning_,
+						_Skaldskaparmál_ and _Háttatal_.
+
+The header of a multi-text source should specify the various parts of the source within
+			    the `<msContents>` element. Here, each part is described as an item,
+			    `<msItem>`, and  in the text, `<div>` elements identify the corresponding parts of the
+			    source.
+
+Sometimes, there are complications with respect to the sequence of the manuscript items. In the present manuscript, _Háttatal_ is not placed in
+					conjunction with the other sections of _Edda Snorra Sturlusonar_, but towards the end of
+					the manuscript, and _Maríukvæði_ has been
+					divided into two parts with a few other texts intervening. 
+
+The body follows immediately after the header. This is where the actual transcription
+						is located. Note that `<div>` elements are used to organise the various parts of
+						the manuscript, referring to the divisons set out in the `<msContents>` element
+						of the header.
+```
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+&lt;teiHeader xml:lang="eng"&gt;
+  &lt;fileDesc&gt;
+    &lt;titleStmt&gt;
+      &lt;title&gt;Edda Snorra Sturlusonar, the four grammatical treatises, Maríukvæði, 
+        Háttatal, Rígsþula, and Ókennd heiti : AM 242 fol (Codex Wormianus) : 
+        a digital edition&lt;/title&gt;
+      &lt;editor&gt;  
+        &lt;name type="person"&gt;Karl G. Johansson&lt;/name&gt;
+        &lt;orgName type="affiliation"&gt;University of Oslo&lt;/orgName&gt;
+      &lt;/editor&gt;
+      &lt;respStmt&gt;
+        &lt;resp&gt;Transcription and encoding&lt;/resp&gt;
+          &lt;name&gt;  
+            &lt;name type="person"&gt;Karl G. Johansson&lt;/name&gt;
+            &lt;orgName type="affiliation"&gt;University of O&lt;/orgName&gt;
+          &lt;/name&gt;
+      &lt;/respStmt&gt;
+    &lt;/titleStmt&gt;
+    &lt;editionStmt&gt;
+      &lt;edition n="1.0"&gt;Version 1.0, &lt;date when="2016-04-01"&gt;1 April 2016&lt;/date&gt;
+      &lt;/edition&gt;
+    &lt;/editionStmt&gt;
+    &lt;extent n="62586"&gt;62586 words&lt;/extent&gt;
+    &lt;publicationStmt&gt;
+      &lt;distributor&gt;Medieval Nordic Text Archive&lt;/distributor&gt;
+      &lt;idno type="Menota"&gt;Ms. 2&lt;/idno&gt;
+      &lt;date when="2006-12-19"&gt;19 December 2006&lt;/date&gt;
+      &lt;availability status="free"&gt;
+        &lt;licence target="http://creativecommons.org/licenses/by-sa/4.0/"&gt;
+          CC-BY-SA 4.0&lt;/licence&gt;
+        &lt;p&gt;Licence accepted by Karl G. Johansson in a mail to Odd Einar Haugen
+           2 November 2015.&lt;/p&gt;
+      &lt;/availability&gt;
+    &lt;/publicationStmt&gt;
+    &lt;sourceDesc&gt;
+      &lt;msDesc&gt;
+        &lt;msIdentifier&gt;
+          &lt;country key="DK"&gt;Denmark&lt;/country&gt;
+          &lt;settlement&gt;Copenhagen&lt;/settlement&gt;
+          &lt;repository&gt;The Arnamagnæan Collection&lt;/repository&gt;
+          &lt;idno&gt;AM 242 fol&lt;/idno&gt;
+          &lt;msName type="nickname" xml:lang="lat"&gt;Codex Wormianus&lt;/msName&gt;
+        &lt;/msIdentifier&gt;
+        &lt;msContents&gt;
+          &lt;msItem n="1"&gt;
+              &lt;locus from="1v" to="35v"&gt;pp. 2–82 (including paper leaves)&lt;/locus&gt;
+              &lt;title&gt;Edda Snorra Sturlusonar&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;SnE&lt;/title&gt;
+              &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+            &lt;msItem n="1.1"&gt;
+              &lt;locus from="1v" to="4v"&gt;pp. 2–8&lt;/locus&gt;
+              &lt;title&gt;Prologus&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="1.2"&gt;
+              &lt;locus from="4v" to="20r"&gt;pp. 8–44&lt;/locus&gt;
+              &lt;title&gt;Gylfaginning&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="1.3"&gt;
+              &lt;locus from="20v" to="35v"&gt;pp. 44–82&lt;/locus&gt;
+              &lt;title&gt;Skáldskaparmál&lt;/title&gt;
+            &lt;/msItem&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="2"&gt;
+              &lt;locus from="36r" to="54r"&gt;pp. 83–119&lt;/locus&gt;
+              &lt;title&gt;The four grammatical treatises&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;Gramm&lt;/title&gt;
+              &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+            &lt;msItem n="2.1"&gt;
+              &lt;locus from="36r" to="36r"&gt;p. 83&lt;/locus&gt;
+              &lt;title&gt;Prologus&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;GrammProl&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="2.2"&gt;
+              &lt;locus from="36v" to="39v"&gt;pp. 84–90&lt;/locus&gt;
+              &lt;title&gt;First grammatical treatise&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;Gramm1&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="2.3"&gt;
+              &lt;locus from="40r" to="41v"&gt;pp. 91–93&lt;/locus&gt;
+              &lt;title&gt;Second grammatical treatise&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;Gramm2&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="2.4"&gt;
+              &lt;locus from="41v" to="50r"&gt;pp. 94–111&lt;/locus&gt;
+              &lt;title&gt;Third grammatical treatise&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;Gramm3&lt;/title&gt;
+            &lt;/msItem&gt;
+            &lt;msItem n="2.5"&gt;
+              &lt;locus from="50r" to="54r"&gt;pp. 111–119&lt;/locus&gt;
+              &lt;title&gt;Fourth grammatical treatise&lt;/title&gt;
+              &lt;title type="abbreviated"&gt;Gramm4&lt;/title&gt;
+            &lt;/msItem&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="3"&gt;
+            &lt;locus from="54v" to="54v"&gt;p. 120&lt;/locus&gt;
+            &lt;title&gt;Maríukvæði&lt;/title&gt;
+            &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="4" defective="true"&gt;
+            &lt;locus from="55r" to="60v"&gt;pp. 121–154 (including paper leaves)&lt;/locus&gt;
+            &lt;title&gt;Háttatal&lt;/title&gt;
+            &lt;title type="abbreviated"&gt;SnE&lt;/title&gt;
+            &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="5" defective="true"&gt;
+            &lt;locus from="61r" to="61v"&gt;pp. 155–156&lt;/locus&gt;
+            &lt;title&gt;Rígsþula&lt;/title&gt;
+            &lt;title type="abbreviated"&gt;Edda&lt;/title&gt;
+            &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="6" defective="true"&gt;
+            &lt;locus from="62r" to="63r"&gt;pp. 167–169&lt;/locus&gt;
+            &lt;title&gt;Ókennd heiti (Orms-eddu-brot)&lt;/title&gt;
+            &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+          &lt;/msItem&gt;
+          &lt;msItem n="7"&gt;
+            &lt;locus from="63v" to="63v"&gt;p. 170&lt;/locus&gt;
+            &lt;title&gt;Maríukvæði&lt;/title&gt;
+            &lt;textLang mainLang="oic"&gt;Old Icelandic&lt;/textLang&gt;
+          &lt;/msItem&gt;
+        &lt;/msContents&gt;
+        &lt;physDesc&gt;
+          &lt;objectDesc form="codex"&gt;
+            &lt;supportDesc&gt;
+              &lt;support&gt;
+                &lt;p&gt;&lt;material&gt;Parchment&lt;/material&gt;, but with some &lt;material&gt;paper
+                  &lt;/material&gt; leaves added in the 17th century for the purpose of completing 
+                  the text (pp. 61–72, 121–138, 151–154, 157–166).&lt;/p&gt;
+              &lt;/support&gt;
+              &lt;extent&gt;85 leaves, including the younger paper leaves; 280 mm (height) 
+                by 202 mm (width).&lt;/extent&gt;                               
+              &lt;foliation&gt;
+                &lt;p&gt;The manuscript, including the younger paper leaves, is paginated on 
+                  the recto pages, 1–169.&lt;/p&gt;
+              &lt;/foliation&gt;
+            &lt;/supportDesc&gt;
+          &lt;/objectDesc&gt;
+        &lt;/physDesc&gt;
+        &lt;history&gt;
+          &lt;origin&gt;
+            &lt;p&gt;Written in &lt;origPlace&gt;Iceland&lt;/origPlace&gt; in &lt;origDate notBefore="1350" 
+              notAfter="1400"&gt;the second half of the 14th century&lt;/origDate&gt;; there are 
+              many later additions, principally from the 17th century.&lt;/p&gt;
+          &lt;/origin&gt;
+        &lt;/history&gt;
+      &lt;/msDesc&gt;
+    &lt;/sourceDesc&gt;
+  &lt;/fileDesc&gt;
+  &lt;encodingDesc&gt;
+    &lt;projectDesc&gt;
+      &lt;p&gt;This encoding follows the standard set out in &lt;title&gt;The
+           Menota handbook&lt;/title&gt; (version 3.0), at &lt;ref
+           target="http://www.menota.org/handbook"&gt;
+           http://www.menota.org/handbook&lt;/ref&gt; as of &lt;date&gt;2019-05-10&lt;/date&gt;.&lt;/p&gt;
+      &lt;p&gt;The encoded text has numbered page beginnings and line beginnings according to the
+           manuscript.&lt;/p&gt;
+    &lt;/projectDesc&gt;
+    &lt;editorialDecl&gt;
+      &lt;correction status="high"&gt;
+        &lt;p&gt;This text has been proofread by &lt;persName&gt;Karl G. Johansson&lt;/persName&gt;, 
+            &lt;orgName type="affiliation"&gt;University of Oslo&lt;/orgName&gt;.&lt;/p&gt;
+      &lt;/correction&gt;
+      &lt;normalization me:level="dipl facs"&gt;&lt;p&gt;This text has been encoded on a facsimile and 
+        diplomatic level.&lt;/p&gt;&lt;/normalization&gt;
+      &lt;interpretation me:lemmatized="none" me:morphAnalyzed="none"&gt;
+        &lt;p&gt;This text has not been lemmatised or morphologically analysed.&lt;/p&gt;
+      &lt;/interpretation&gt;
+    &lt;/editorialDecl&gt;
+  &lt;/encodingDesc&gt;
+  &lt;profileDesc&gt;
+    &lt;langUsage&gt;
+      &lt;language ident="oic"&gt;Old Icelandic&lt;/language&gt;
+    &lt;/langUsage&gt;
+  &lt;/profileDesc&gt;
+  &lt;revisionDesc&gt;
+    &lt;change&gt;
+      &lt;date&gt;2019-05-12&lt;/date&gt;
+      &lt;name&gt;
+        &lt;persName&gt;Odd Einar Haugen&lt;/persName&gt;
+        &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+      &lt;/name&gt;: Made some minor changes to the header so that it could be 
+          published as an example header in v. 3.0 of the handbook.
+    &lt;/change&gt;
+    &lt;change&gt;
+      &lt;date&gt;2004-05-10&lt;/date&gt;
+      &lt;name&gt;
+        &lt;persName&gt;Karl G. Johansson&lt;/persName&gt;
+        &lt;orgName type="affiliation"&gt;University of Oslo&lt;/orgName&gt;
+      &lt;/name&gt;: Revised the transcription in accordance with the Menota handbook 
+         and the corresponding Document Type Definition.
+    &lt;/change&gt;
+  &lt;/revisionDesc&gt;
+&lt;/teiHeader&gt;  
+&lt;text xml:lang="oic"&gt;
+  &lt;body&gt;
+    &lt;div n="1.1"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Prologus&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 1.1 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="1.2"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Gylfaginning&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 1.2 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="1.3"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Skáldskaparmál&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 1.3 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="2.1"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Prologus&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 2.1 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="2.2"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;The first grammatical treatise&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 2.2 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="2.3"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;The second grammatical treatise&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 2.3 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="2.4"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;The third grammatical treatise&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 2.4 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="2.5"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;The fourth grammatical treatise&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 2.5 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="3"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Maríukvæði (1)&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 3 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="4"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Háttatal&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 4, Háttatal, goes here. Note that Háttatal is regarded as part of Edda  
+      Snorra Sturlusonar, but since it has been inserted here by the scribe/redactor of the 
+      manuscript it has been numbered as No. 4 according to its position in the manuscript.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="5"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Rígsþula&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 5 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="6"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Ókennd heiti&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 6 goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div n="7"&gt;
+      &lt;head&gt;
+        &lt;supplied&gt;Maríukvæði (2)&lt;/supplied&gt;
+      &lt;/head&gt;
+      &lt;p&gt;The text of part 7 goes here. This is in fact the second part of Maríukvæði, but
+      it has been numbered according to its position in the manuscript; cf. part 4 above.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/text&gt;
+```
+
+
+The source text is placed within the `<text>` element. The attribute xml:lang
+							specifies the language of the text (cp. `<msContents>` above). If the text
+							contains sporadic words or sentences in another language, e.g. Latin, the attribute
+							xml:lang can be used to specify these exception from the rule, whether on the level of
+							the word, `<w>`, paragraph, `<p>` or chapter, `<div>`.
+
+The divisions of the text correspond to the list of `<msItem>` elements in
+								`<msContents>` above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
+
+The `<head>` element specifies the title of the work (or a part of it). If the title is given as a 
+					    rubric in the manuscript, a type attribute can be used with the value rubric (as exemplified 
+					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
+					    add a title in the `<supplied>` element (as has been done above). 
+## E.4 Detailed header with more codicological information
+
+As the third example we have
+		      chosen Copenhagen, Royal Library, NKS 235 g 4to which is a fragment of a single leaf. 
+		      It carries a part of _Konungs skuggssjá_.
+
+This header demonstrates how to provide more codicological information 
+		        about a source manuscript and it shows the usage of the recommended mark-up.
+		      Originally, the file was produced for the Menota archive by Nina Stensaker with
+		      a minimal header. For the purpose of demonstrating a more detailed header, it has 
+		      later been expanded.
+```
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+&lt;teiHeader xml:lang="eng"&gt;
+  &lt;fileDesc&gt;
+    &lt;titleStmt&gt;
+      &lt;title&gt;A fragment of Konungs skuggsjá : NKS 235 g 4to : A digital 
+        edition&lt;/title&gt;
+    &lt;editor&gt;
+      &lt;name type="person"&gt;Nina Stensaker&lt;/name&gt;
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+    &lt;/editor&gt;
+    &lt;respStmt&gt;
+      &lt;resp&gt;Transcription&lt;/resp&gt;
+      &lt;name type="person"&gt;Nina Stensaker&lt;/name&gt;
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+    &lt;/respStmt&gt; 
+    &lt;respStmt&gt;
+      &lt;resp&gt;Conversion of transcription to XML&lt;/resp&gt;
+      &lt;name type="person"&gt;Robert K. Paulsen&lt;/name&gt;
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+    &lt;/respStmt&gt;
+    &lt;respStmt&gt;
+      &lt;resp&gt;Project overview&lt;/resp&gt;
+      &lt;name type="person"&gt;Odd Einar Haugen&lt;/name&gt;
+      &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+    &lt;/respStmt&gt;
+  &lt;/titleStmt&gt;		            
+    &lt;editionStmt&gt;
+      &lt;edition n="1.1"&gt;Version 1.1 &lt;date when="2018-02-01"&gt;1 February 
+      2018&lt;/date&gt;.&lt;/edition&gt;
+    &lt;/editionStmt&gt;
+    &lt;extent n="824"&gt;824 words&lt;/extent&gt;	            
+    &lt;publicationStmt&gt;
+      &lt;distributor&gt;Medieval Nordic Text Archive&lt;/distributor&gt;
+      &lt;idno type="Menota"&gt;Ms. 38&lt;/idno&gt;
+      &lt;date when="2016-07-19"&gt;19 July 2016&lt;/date&gt;
+      &lt;availability status="free"&gt;
+        &lt;licence target="http://creativecommons.org/licenses/by-sa/4.0/"&gt;
+          CC-BY-SA 4.0&lt;/licence&gt;
+        &lt;p&gt;Licence accepted by the editor Nina Stensaker in a meeting with 
+          Odd Einar Haugen, 12 May 2016.&lt;/p&gt;
+      &lt;/availability&gt;
+    &lt;/publicationStmt&gt;
+    &lt;notesStmt&gt;
+      &lt;note&gt;Produced as part of my master’s thesis on Konungs skuggsjá 
+        at &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;.
+      &lt;/note&gt;
+    &lt;/notesStmt&gt;
+    &lt;sourceDesc&gt;
+      &lt;bibl facs="yes"&gt;Photographic facsimiles of the whole fragment from 
+        the Royal Library (Kongelige Bibliotek) in Copenhagen.&lt;/bibl&gt;
+      &lt;msDesc&gt;
+        &lt;msIdentifier&gt;
+          &lt;country key="DK"&gt;Denmark&lt;/country&gt;
+          &lt;settlement&gt;Copenhagen&lt;/settlement&gt;
+          &lt;repository&gt;Det Kongelige Bibliotek&lt;/repository&gt;
+          &lt;idno&gt;NKS 235 g 4to&lt;/idno&gt;
+          &lt;msName&gt;A fragment of Konungs skuggsjá&lt;/msName&gt;
+        &lt;/msIdentifier&gt;
+        &lt;msContents&gt;
+          &lt;msItem n="1"&gt;
+            &lt;locus from="1r" to="1v"&gt;1r–1v&lt;/locus&gt;
+            &lt;title type="main"&gt;Konungs skuggsjá&lt;/title&gt;
+            &lt;title type="abbreviated"&gt;Kgs&lt;/title&gt;
+            &lt;incipit defective="true"&gt;ſꝩa heımſkır ꝼrenꝺꝛ þeır er epꞇír 
+              lıꝩa.&lt;/incipit&gt;
+            &lt;explicit defective="true"&gt;þo aꞇ hann ſe mıok ꝩıꞇr ſıalꝼr eꝼ þaꞇ 
+              haꝼðe&lt;/explicit&gt;
+            &lt;textLang mainLang="onw"&gt;Old Norwegian&lt;/textLang&gt;
+            &lt;note&gt;Fragment. See the edition by Ludvig Holm-Olsen (1983), 
+              p. 140, for textual correspondence with the main manuscript, 
+              AM 243 b alfa fol.&lt;/note&gt;
+          &lt;/msItem&gt;
+        &lt;/msContents&gt;
+        &lt;physDesc&gt;
+          &lt;objectDesc form="fragment"&gt;
+            &lt;supportDesc&gt;
+              &lt;support&gt;
+                &lt;p&gt;&lt;material&gt;Parchment&lt;/material&gt;.&lt;/p&gt;
+              &lt;/support&gt;
+              &lt;extent&gt;1 leaf; ca 282 mm (height) by 216
+                mm (width).&lt;/extent&gt;
+              &lt;foliation&gt;
+                &lt;p&gt;The fragment is not foliated or paginated.&lt;/p&gt;
+              &lt;/foliation&gt;
+              &lt;collation&gt;One singleton.&lt;/collation&gt;
+              &lt;condition&gt;&lt;p&gt;The leaf is very worn and has many stains.&lt;/p&gt;
+                &lt;p&gt;It had been reused in a book binding, which caused 
+                  discoloration and wear that is worse on f. 
+                  &lt;locus from="1v" to="1v"&gt;1v&lt;/locus&gt;.&lt;/p&gt;
+                &lt;p&gt;Some of the words are difficult to read due to the  
+                  condition of the fragment.&lt;/p&gt;
+              &lt;/condition&gt;
+            &lt;/supportDesc&gt;
+            &lt;layoutDesc&gt;
+              &lt;layout columns="2" writtenLines="27"&gt;
+                &lt;p&gt;The text is written in two columns with 27 lines each.&lt;/p&gt;
+                &lt;p&gt;There are approximately 8 to 10 words per line.&lt;/p&gt;
+              &lt;/layout&gt;
+            &lt;/layoutDesc&gt;
+          &lt;/objectDesc&gt;		                  
+          &lt;handDesc hands="1"&gt;
+            &lt;handNote scope="sole" script="Textualis"&gt;The fragment was 
+              written by a single unidentified scribe.&lt;/handNote&gt;
+          &lt;/handDesc&gt;		                  
+          &lt;decoDesc&gt;
+            &lt;decoNote type="initial"&gt;
+              &lt;p&gt;Fol. &lt;locus from="1vb" to="1vb"&gt;1vb:7-1vb:12&lt;/locus&gt;: 
+                Major pen flourished  initial Þ. Main colour: bright red; pen 
+                flourish in light blue and bright red.&lt;/p&gt;
+            &lt;/decoNote&gt;
+            &lt;decoNote type="littNot"&gt;
+              &lt;p&gt;Fols. &lt;locus from="1ra" to="1vb"&gt;1r-1v&lt;/locus&gt;: The are 
+                sentence initials throughout the text of the fragment. The sentence 
+                initials are executed in at time very delicate penwork.&lt;/p&gt;
+            &lt;/decoNote&gt;
+            &lt;decoNote type="paratext"&gt;
+              &lt;p&gt;Fol. &lt;locus from="1vb" to="1vb"&gt;1vb:7-1vb:7&lt;/locus&gt;: The  
+                only preserved rubric is written in bright red ink and followed by  
+                a line filler in light blue.&lt;/p&gt;
+            &lt;/decoNote&gt;
+          &lt;/decoDesc&gt;
+          &lt;additions&gt;
+            &lt;p&gt;There are a few later additions on fol. &lt;locus from="1v" to="1v"&gt;
+              1v&lt;/locus&gt;. In the top and bottom margin, a later hand added the monogram 
+              &lt;q&gt;DGS&lt;/q&gt;, underneath which the year &lt;q&gt;1636&lt;/q&gt; can be made out.
+              There is further some illegible writing in the outer margin as well 
+              as pen trials in the lower margin.&lt;/p&gt;
+          &lt;/additions&gt;		                  
+          &lt;bindingDesc&gt;
+            &lt;binding contemporary="false"&gt;&lt;p&gt;The fragment is bound in a later 
+              half binding with brown leather on the spine and the corners and black
+              and green marbled paper on the boards.&lt;/p&gt;&lt;/binding&gt;   
+          &lt;/bindingDesc&gt;
+        &lt;/physDesc&gt;
+        &lt;history&gt;
+          &lt;origin&gt;
+            &lt;p&gt;The fragment was written in &lt;origPlace&gt;Norway&lt;/origPlace&gt;
+              &lt;origDate notBefore="1250" notAfter="1280"&gt;c. 1260-1270&lt;/origDate&gt;.&lt;/p&gt;
+          &lt;/origin&gt;
+          &lt;/history&gt;
+      &lt;/msDesc&gt;
+    &lt;/sourceDesc&gt;
+  &lt;/fileDesc&gt;
+  &lt;encodingDesc&gt;       
+    &lt;projectDesc&gt;
+      &lt;p&gt;This encoding follows the standard set out in &lt;title&gt;
+        The Menota Handbook&lt;/title&gt; (version 3.0), at &lt;ref
+         target="http://www.menota.org/handbook"&gt;
+         http://www.menota.org/handbook&lt;/ref&gt; as of 
+         &lt;date&gt;2019-05-10&lt;/date&gt;.&lt;/p&gt;
+       &lt;p&gt;The encoded text has numbered page beginnings, column beginnings 
+         and line beginnings according to the manuscript.&lt;/p&gt;
+    &lt;/projectDesc&gt;
+    &lt;editorialDecl&gt;
+      &lt;correction status="high"&gt;
+      &lt;p&gt;This text has been transcribed directly from photographic colour
+        facsimiles of the manuscript.&lt;/p&gt;
+      &lt;/correction&gt;
+      &lt;normalization me:level="facs dipl norm"&gt;
+        &lt;p&gt;This text has been encoded on all three focal levels: facsimile, 
+          diplomatic and normalised.&lt;/p&gt;
+      &lt;/normalization&gt;
+      &lt;interpretation me:lemmatized="none" me:morphAnalyzed="none"&gt;
+        &lt;p&gt;This text has not yet been annotated.&lt;/p&gt;
+      &lt;/interpretation&gt;
+    &lt;/editorialDecl&gt;
+  &lt;/encodingDesc&gt;
+  &lt;profileDesc&gt;
+    &lt;langUsage&gt;
+      &lt;language ident="onw"&gt;Old Norwegian&lt;/language&gt;
+    &lt;/langUsage&gt;
+  &lt;/profileDesc&gt;
+  &lt;revisionDesc&gt;
+    &lt;change&gt;
+      &lt;date&gt;2019-05-12&lt;/date&gt;
+      &lt;name&gt;
+        &lt;persName&gt;Odd Einar Haugen&lt;/persName&gt;
+        &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+      &lt;/name&gt;: Made some minor changes to the header so that it could be 
+        published as an example header in v. 3.0 of the handbook.
+    &lt;/change&gt;
+    &lt;change&gt;
+      &lt;date&gt;2018-01-22&lt;/date&gt;
+      &lt;name&gt;
+        &lt;persName&gt;Nina Stensaker&lt;/persName&gt;
+        &lt;orgName type="affiliation"&gt;University of Bergen&lt;/orgName&gt;
+      &lt;/name&gt;: Finished the encoding on all three focal levels.
+    &lt;/change&gt;
+    &lt;change&gt;
+      &lt;date&gt;2017-08-09&lt;/date&gt;
+      &lt;name&gt;
+        &lt;persName&gt;Beeke Stegmann&lt;/persName&gt;
+        &lt;orgName type="affiliation"&gt;University of Copenhagen&lt;/orgName&gt;
+      &lt;/name&gt;: Added more codicological detail about the manuscript in the header.
+    &lt;/change&gt;   
+  &lt;/revisionDesc&gt;
+&lt;/teiHeader&gt;
+```
+
+
+The body follows immediately after the header. This is where the actual transcription
+		          is located. Note that `<div>` elements are used to organise the various parts of
+		          the manuscript, referring to the divisions set out in the `<msContents>` element
+		          of the header. 
+```
+&lt;text xml:lang="onw"&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;p&gt;The text goes here....&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/text&gt;
+```
+
+## E.5  Sample XML headers for download
+
+We offer the three headers in this chapter for download:[The header of Holm perg 6 fol as a sample XML file](samplefiles/Holm_perg_6_fol.xml)[The header of AM 242 fol as a sample XML file](samplefiles/AM_242_fol.xml)[The header of NKS 235 g 4to as a sample XML file](samplefiles/NKS_235_g_4to.xml)
+
+Please note that some browsers may try and interpret and open these sample files. 
+          In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
+          on your browser, unless your browser has other preferences.

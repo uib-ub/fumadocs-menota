@@ -10,3 +10,252 @@ author:
 Version 3.0 (12 December 2019)
 
 by Marco Bianchi
+## H.1 Introduction
+
+Version 3 of the Menota handbook is transformed to html with the stylesheet
+               handbook_v3.xsl. The stylesheet outputs clean box-based html5. Generally, all
+                  rend are converted to html classes. All styling is taken care of by
+               menota_handbook_3.css.
+## H.2 The HTML
+
+handbook_v3.xls produces clean html5 without any form styling in html code. The
+               html skeleton:
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="page"&gt;
+      &lt;div id="main-wrapper"&gt;
+        &lt;div id="header-wrapper"&gt;
+          &lt;header&gt; &lt;/header&gt;
+          &lt;nav&gt; Site-navigation&lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div id="content-wrapper"&gt;
+          &lt;section id="sidebar" role="navigation"&gt;Page-MENU&lt;/section&gt;
+          &lt;main id="content"&gt;
+            &lt;article&gt;HANDBOOK ENTRIES&lt;/article&gt;
+          &lt;/main&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;footer&gt;&lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+
+## H.3 The CSS
+
+The css sheets use css3 but should degrade gracefully in non-compliant browsers. The
+               main typeface for handbook v3 is Andron, which is read in with css
+                  font-face and thus does not need to be installed on users’ computers.
+                  font-face is supported in all major modern browsers. Non compliant
+               browsers will display a serif-font. 
+
+Handbook v3 uses one css sheet: menota_handbook_3.css
+
+Breaking points for small screens are set at 960px (width of header items and main
+               content 100%) and 450px in portrait mode (larger main font-size).
+## H.4 XML markup
+
+In the tables below supported xml markup and its corresponding html output is listed.
+               All values of rend and xml:id will be passed to html
+                  class and id respectively, unless otherwise noted.
+### H.4.1 CSS Block elementstei:xmlhtmlfunctionCommentcode`<pre>``<code>`Code example[See H.7 on styling of code](#secH.7)rendinlineInline code example`<eg>``<pre>``<code>`Example of code[See H.7 on styling of code](#secH.7)rendinlineInline code example`<egXML>``<pre>``<code>`Example of xml code[See H.7 on styling of code](#secH.7)rendinlineInline code example`<figure>``<figure>`IllustrationTypically, a `<figure>` element contains a `<graphic>` and a
+                        `<figDesc>` element. [See H.6 on styling of images](#secH.6)rendleftalignThe figure is placed to the left, with text floating to the rightrightalignThe figure is placed to the right, with text floating to the leftcenterThe figure is placed in the center. No floating occurs.`<figure>`/`<figDesc>`&lt;figcaption span class="imagelabel"&gt;Figure captionShould be used together with a sibling `<graphic>` and a parent
+                           `<figure>`n[number]&lt;figcaption&gt;&lt;span
+                           class="imagelabel"&gt;Fig. &lt;span
+                           class="imageid"&gt;2.1&lt;&gt;/span&gt;.&lt;/span&gt;Caption&lt;/figcaption&gt;Usage in xml: 
+```
+&lt;figDesc n="2.1"&gt;Caption&lt;/figDesc&gt;
+```
+, i.e. the
+                        figure’s number should passed through n and not be put between
+                        the `<figDesc>` tags`<graphic>``<img>`ImageIf used together with a parent element `<figure>`, the image element
+                        will be wrapped in a `<figure>` element together with its caption. It
+                        may, however, also be used alone.rend`<head>``<h1>`, `<h2>`, `<h3>`, `<h4>`, `<head>`Heading`<h1>`–`<h4>` are chosen according to their position in
+                        the dom. If the position does not match, a generic div
+                           class="head" is output. rendxml:idWhen no xml:id is passed, the xsl will introduce an
+                           id with a random value`<l>``<li>`List item`<lg>``<ul>`Unordered list`<list>``<ul>`ListUnordered listrendnumbered`<ol>`Ordered listOrdered (= numbered) listtypetype is converted to a css class for backwards
+                        compatibility with earlier style sheetsxml:id`<list>`/`<item>``<li>`List item`<p>``<p>`Paragraphrendsample`<blockquote>`Blockquotexml:id`<quote>``<blockquote>`Blockquote`<table>``<table>`Table[See H.5 on styling of tables](#secH.5)rendxml-elementsThis value can be used for tables with lists of xml-elements and their
+                        attributes. [See H.5.1 for more information](#secH.5.1)abbrThis value can be used for tables with explanations of abbreviations and
+                        other glyphs. [See H.5.2 for more information](#secH.5.2)xml:id`<table>`/`<row>``<tr>`Table rowrendxml:idrolelabel`<tr>`/`<th>`Table headeri.e. table header`<table>`/`<cell>``<td>` or `<th>`Table cell`<th>` when the parent `<row>`role=labelrend
+### H.4.2 CSS Inline elementstei:xmlhtmlFunctionComment`<att>`
+```
+&lt;span
+                           class="attribute"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;
+```
+xml/html attribute In a table
+                        with rend=xml-elements attributes in the first columns
+                        are automatically indented 1em. [See H.7 on styling of code](#secH.7). `<emph>``<em>`Emphasis`<gi>`
+```
+&lt;span
+                           class="tag"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;
+```
+xml/html element[See H.7 on styling of code](#secH.7)`<hi>``<span>`Highlightedrendbold`<b>`If rend contains multiple values, bold is passed to
+                           
+```
+&lt;span class="bold
+                        [othervalue]"&gt;
+```
+code`<code>`If rend contains multiple values, code is passed to
+                           
+```
+&lt;span class="code [othervalue]"&gt;
+```
+[See H.7 on styling of code](#secH.7)codepoint&lt;span
+                        class="codepoint"&gt;&lt;code&gt;U+01eb&lt;/code&gt;&lt;/span&gt;A Unicode codepoint: U+01ebLowercase letters are transformed to uppercase letters in the css stylesheet.descName&lt;span
+                        class="descname"&gt;&lt;code&gt;LATIN SMALL LETTER O WITH OGONEK&lt;/code&gt;&lt;/span&gt;A Unicode descriptive name: LATIN SMALL LETTER O WITH OGONEKLowercase letters are transformed to uppercase letters in the css stylesheet.entity&lt;span
+                        class="entity"&gt;&lt;code&gt;&amp;oogon;&lt;/code&gt;&lt;/span&gt;A Unicode entity: &oogon;glyph&lt;span class="glyph"&gt;Characters marked upp with glyph are displayed in a deviant color. See also the section about [styling tables](#secH.5.2).italic`<i>`If rend contains multiple values, italic is passed
+                        to 
+```
+&lt;span class="italic
+                        [othervalue]"&gt;
+```
+red&lt;span class="red"&gt;blue&lt;span class="blue"&gt;initial&lt;span class="initial"&gt;`<lb/>``<br/>`Line break`<q>``<q>`Quoted`<ref>``<a>`Referencetargethrefrend`<tag>`
+```
+&lt;code&gt;&lt;span
+                           class="tag"&gt;@att&lt;/span&gt;&lt;/code&gt;
+```
+Tagged content[See H.7 on styling of code](#secH.7)`<title>``<cite>`Title of a work`<val>`
+```
+&lt;span class="value"&gt;'value'&lt;/span&gt;
+```
+Value of a xml/html element[See H.7 on styling of code](#secH.7). In a table
+                        with rend=xml-elements values in the first columns are
+                        automatically indented 2em
+### H.4.3 Generic values for rend
+
+The following rend values can be given to any xml-element with support
+                  for rend:blue (blue font color)bold (bold style)code (monospace font)red (red font color)style (italic style)
+
+The following rend values can be given to any xml-element that
+                  translates into a block-element in html/css and supports the
+                  rend attribute. Percentages are always relative to the width of the
+                  parent element’s width. The available values for rend behave the
+                  following way at different screen resolutions:rend=...defaultmedium screenssmall screensalignleftalign:leftalignrightalign:rightaligncentercenteredcentertext-align:centerclearbothfloat:none; clear:both (forces the element to be placed on a new line,
+                        i.e surrounding text will not float around the element)width10width:10%`<figure>` width:50%`<figure>` width:100%width20width:20%`<figure>` width:50%`<figure>` width:100%width25width:25%`<figure>` width:50%`<figure>` width:100%width30width:30%`<figure>` width:50%`<figure>` width:100%width33width:33,33%`<figure>` width:50%`<figure>` width:100%width40width:40%`<figure>` width:50%`<figure>` width:100%width50width:50%`<figure>` width:100%width60width:60%`<figure>` width:100%`<figure>` width:100%width66width:66,66%`<figure>` width:100%`<figure>` width:100%width70width:70%`<figure>` width:100%`<figure>` width:100%width75width:75%`<figure>` width:100%`<figure>` width:100%width80width:80%`<figure>` width:100%`<figure>` width:100%width90width:90%`<figure>` width:100%`<figure>` width:100%width100width:100%`<figure>` width:100%`<figure>` width:100%
+## H.5 Styling tables
+
+Tables are structured according to the following pattern in html:
+```
+&lt;table&gt;
+  &lt;colgroup&gt;
+    &lt;col style="width20"&gt;
+    &lt;col style="width80"&gt;
+  &lt;/colgroup&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+```
+
+
+The `<colgroup>` element is created dynamically if the first row contains cells
+               with the attribute rend. This means that the column widths of the
+               html table can be controlled with the attribute rend in the cells of the
+               first table row. Below is the xml code of the html table above:
+```
+&lt;table&gt;
+  &lt;row rend="label"&gt;
+    &lt;cell rend="width20"&gt;&lt;/cell&gt;
+    &lt;cell rend="width80"&gt;&lt;/cell&gt;
+  &lt;/row&gt;
+  &lt;row&gt;
+    &lt;cell&gt;&lt;/cell&gt;
+    &lt;cell&gt;&lt;/cell&gt;
+  &lt;/row&gt;
+&lt;/table&gt;
+```
+
+### H.5.1 Styling tables with explanations of xml-elements
+
+A table with explanations of xml-elements and their attributes ([such as H.4.1 above](#tab.1)) can be given
+                     rend=xml-elements in the `<table>` element. The
+                  xls stylesheet tries to wrap all rows with a `<gi>` or a tag in
+                  the first cell into a `<tbody>` element together with the following rows.
+                  Such tables must adhere to the following principles: The `<table>` tag must have a rend with the value
+                        xml-elementsThe first cell of the first row in each block must contain a `<gi>`  or
+                     a `<tag>` elementThe first cells of all other rows in a block must not contain any
+                        `<gi>` element (otherwise, the respective row will be treated as the
+                     first row in a block)
+
+Strings marked with `<att>` and `<val>` in the first cell of each row
+                  are indented automatically.
+### H.5.2 Styling glyph tables
+
+Tables with explanations of abbreviations and other glyphs can be marked upp with
+                     table rend="abbr". In such tables, cells containing a tag hi
+                     rend="glyph" (and nothing else) are rendered differently.
+## H.6 Styling images
+
+An image and its caption should be structured as follows:
+```
+&lt;figure rend="leftalign width33"&gt;
+  &lt;graphic url="path/to/image.jpg" /&gt;
+  &lt;figDesc n="1.2"&gt;Figure Caption&lt;/figDesc&gt;
+&lt;/figure&gt;
+```
+
+
+The position and width of the image can be controlled with `<rend>` in the
+               wrapping `<figure>` element. By default, `<figure>` is displayed floating
+               to the left of the text at a width of 50% with a border around the containing
+               elements. The figure’s number should passed through n in `<figDesc>`.
+               The xslt adds automatically a figure label. The above `<figDesc>` will thus be
+               rendered as “Fig. 1.2: Figure Caption”.
+
+If used without a wrapping `<figure>` element, images placed in a
+                  `<graphic>` element are displayed at their original size without any
+               border
+## H.7 Styling code
+
+Block level code elements are wrapped into a html `<pre>` tag that preserves
+               line breaks, white spaces and indentations. Such elements should thus not follow the
+               indentation of surrounding xml. The following coding of a CDATA section with
+               surrounding xml ...
+```
+&lt;p&gt;Some text before the code&lt;/p&gt;
+  &lt;egXML&gt;&lt;![CDATA[&lt;figure rend="leftalign width33"&gt;
+   &lt;graphic url="path/to/image.jpg"/&gt;
+   &lt;figDesc n="1.2"&gt;Figure Caption&lt;/figDesc&gt;
+   &lt;/figure&gt;]]&gt;
+  &lt;/egXML&gt;
+&lt;p&gt;Some text after the code&lt;/p&gt;
+```
+
+
+... will be output as:
+```
+&lt;figure rend="leftalign width33"&gt;
+  &lt;graphic url="path/to/image.jpg" /&gt;
+  &lt;figDesc n="1.2"&gt;Figure Caption&lt;/figDesc&gt;
+&lt;/figure&gt;
+```
+
+
+By default, code within `<eg>`, `<egXML>` and `<code>` is displayed as
+               a block element. With rend=inline it can be forced to be
+               treated as an inline element. Alternatively, the markup 
+```
+&lt;hi
+                  rend="code"&gt;
+```
+ or `<tag>` may be used for inline code.
+
+Xml elements, attributes and values should be tagged with their respective semantic
+               markup: `<gi>`, `<att>` and `<val>`.
+## H.8 Table of Contents
+
+A table of contents is added automatically in the beginning of each page. The table
+               includes all second level headers.
