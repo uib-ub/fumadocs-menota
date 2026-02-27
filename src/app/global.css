@@ -2,6 +2,34 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+@font-face {
+    font-family: 'Andron';
+    src: url('@/lib/webfonts/andron-mega-corpus-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Andron';
+    src: url('@/lib/webfonts/andron-mega-corpus-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Andron';
+    src: url('@/lib/webfonts/andron-mega-corpus-semibold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Andron';
+    src: url('@/lib/webfonts/andron-mega-corpus-semibold-italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
 #nd-docs-layout {
     background-color: white;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -37,7 +65,7 @@ div.prose > p {
 
 .hb3 div.prose > p {
     font-size: 1em;
-    font-family: 'Andron Mega Corpus', serif;
+    font-family: Andron, serif;
 }
 
 ol {
