@@ -125,9 +125,9 @@
                 <xsl:text>&lt;/em&gt;</xsl:text>
             </xsl:when>
             <xsl:when test="@rend='glyph'">
-                <xsl:text>&lt;Glyph s="</xsl:text>
-                <xsl:value-of select="."/>
-                <xsl:text>"/&gt;</xsl:text>
+                <xsl:text>&lt;Glyph&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&lt;/Glyph&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>

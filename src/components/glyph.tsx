@@ -1,3 +1,3 @@
-export default function Glyph({s}: {s: string}) {
-    return <span className="text-2xl">{s}</span>
+export default function Glyph({ children }: { children: React.ReactNode }) {
+    return <span className="text-2xl">{children}</span>;
 }
