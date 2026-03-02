@@ -3,6 +3,7 @@ import InlineImage from '@/components/inline-image';
 import AutoImage from '@/components/auto-image';
 import Caption from '@/components/caption';
 import Figure from '@/components/figure';
+import Glyph from '@/components/glyph';
 import Quote from '@/components/quote';
 import type { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
@@ -14,6 +15,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     AutoImage,
     Caption,
     Figure,
+    Glyph,
     Image,
     InlineImage,
     Link,

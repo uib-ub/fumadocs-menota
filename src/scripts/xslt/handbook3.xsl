@@ -124,6 +124,11 @@
                 <xsl:apply-templates/>
                 <xsl:text>_</xsl:text>
             </xsl:when>
+            <xsl:when test="@rend='glyph'">
+                <xsl:text>&lt;Glyph s="</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>"/&gt;</xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
             </xsl:otherwise>
