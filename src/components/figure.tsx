@@ -1,3 +1,5 @@
+import Caption from "@/components/caption";
+
 export default function Figure({ caption, children }: { 
     caption?: string,
     children: React.ReactNode 
@@ -7,7 +9,7 @@ export default function Figure({ caption, children }: {
             <div className="flex">
                 {children}
             </div>
-            <div className="-mt-5 text-xs italic">{caption}</div>
+            {caption ? <Caption>{caption}</Caption> : null}
         </div>
     );
 }

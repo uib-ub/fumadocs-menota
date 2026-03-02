@@ -228,8 +228,12 @@ From a logical point of view, a heading is located at the beginning of a new cha
 
 
 
-Ill. 3.1. A chapter heading. _Landslǫg Magnúss
-               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1–10.
+<Figure>
+<AutoImage src="/images/hb3/ch3/HolmPerg-34-4to-10v,1-10.jpg" alt="ch3/HolmPerg-34-4to-10v,1-10.jpg"/>
+</Figure>
+
+<Caption title="Ill. 3.1">. A chapter heading. _Landslǫg Magnúss
+               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1–10.</Caption>
 
 In ill. 3.1, the heading, which is written in red, is located after the end of one chapter and at the beginning of a new chapter.
                The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
@@ -259,7 +263,11 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 
 
 
-3.2. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15–24.
+<Figure>
+<AutoImage src="/images/hb3/ch3/AM-619-4to-47r,15-24.jpg" alt="ch3/AM-619-4to-47r,15-24.jpg"/>
+</Figure>
+
+<Caption title="3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15–24.</Caption>
 
 The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (_littera notabilior_) should be encoded with the `<c>` element.
 
@@ -290,7 +298,7 @@ There are several other ways of solving this type of conflict, as we discuss at 
 ## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;
 ### 3.12.1 Page beginnings and column beginnings
 
-TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute `@n` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n` attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
+TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute `@n` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n` attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 ElementsContents`<pb ed="ms" n="1r"/>`Folio one, recto page, begins here,`<cb ed="ms" n="A"/>`the first column begins here,`<cb ed="ms" n="B"/>`and the second column begins here.. . .`<pb ed="ms" n="1v"/>`Folio one, verso page, begins here,`<cb ed="ms" n="A"/>`the first column of the verso page begins here,`<cb ed="ms" n="B"/>`and the second column begins here.
 
 Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the `@ed` attribute with a suitable value:
@@ -299,12 +307,12 @@ Page beginning information from, for example, a printed standard edition, can be
 ```
 
 
-Some of the texts in the Menota archive have been encoded with more than one document structure, such as _Konungs skuggsjá_ in AM 243 bα fol. In addition to the document structure of the manuscript, ed="ms", it has the Arnamagnæan pagination, ed="AM", the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), ed="FJ_utg", and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), ed="H-O".
+Some of the texts in the Menota archive have been encoded with more than one document structure, such as _Konungs skuggsjá_ in AM 243 bα fol. In addition to the document structure of the manuscript, **ed="ms"**, it has the Arnamagnæan pagination, **ed="AM"**, the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), **ed="FJ_utg"**, and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), **ed="H-O"**.
 
 The relevant editions should be declared in the header. As a rule, we suggest that the edition is identified by the initials of the editor + the year of publication, e.g. FJ1920-1921, LHO1945, etc.
 ### 3.12.2 Line beginnings
 
-Line beginnings are also indicated with an empty element, the `<lb/>`, which is placed at the beginning of a new line and may be numbered by using the `@n` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
+Line beginnings are also indicated with an empty element, the `<lb/>`, which is placed at the beginning of a new line and may be numbered by using the `@n` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
 ```xml
 <lb ed="ms" n="1"/>Line number one begins here.
 ```

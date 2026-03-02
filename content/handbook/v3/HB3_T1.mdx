@@ -11,7 +11,7 @@ Version 3.0 (12 December 2019)
 
 by Robert K. Paulsen and Odd Einar Haugen
 
- 
+&#x00a0;
 ## T.1 Introduction
 
 This is a tutorial for the transcription of a text from a facsimile of the primary
@@ -42,7 +42,7 @@ For those who would like to transcribe the text in a simplified interface, it is
 Finally, it will be helpful to have a skeleton XML file to work with, as well as a
                suitable facsimile for the transcription. We offer both in the [Samples](HB3_S1.xml).
 
- 
+&#x00a0;
 ## T.2 Transcribing directly in an XML editor
 
 This can be done simply by copying an existing, valid XML file from the archive, preferably 
@@ -52,7 +52,7 @@ This can be done simply by copying an existing, valid XML file from the archive,
                it becomes invalid. In some cases, it can be difficult to spot the mistake, so it may be quicker 
                to revert to an earlier, valid version of the file. 
 
- 
+&#x00a0;
 ## T.3 Simplified transcription & conversion to XML
 
 This is the transcription procedure developed by Robert K. Paulsen in Bergen. In this
@@ -60,11 +60,11 @@ This is the transcription procedure developed by Robert K. Paulsen in Bergen. In
                can be extended to cover a facsimile level transcription, too.
 ### T.3.1 Simplified transcription
 
-Begin the transcription by opening the skeleton XML file called etf.xml from [Samples S.4](HB3_S1.xml#secS.4). As you might have
+Begin the transcription by opening the skeleton XML file called **etf.xml** from [Samples S.4](HB3_S1.xml#secS.4). As you might have
                   guessed, the file name means “empty transcription file”. However, when saving this
                   file, you should give it a more descriptive name. If you have been using the
                   facsimile from the Old Norwegian Homily Book (AM 619 4to), f. 57v, offered in
-                  the [Samples](HB3_S1.xml) page, you might call it AM-619-4to-57v.xml.
+                  the [Samples](HB3_S1.xml) page, you might call it **AM-619-4to-57v.xml**.
 
 When transcribing on the diplomatic level, follow these simple rules:
 
@@ -112,7 +112,7 @@ When transcribing on the diplomatic level, follow these simple rules:
 5.2 If there is no hyphen, simply transcribe the word without
                   a hypen, e.g. “kon:5:ungr”.
 
- 
+&#x00a0;
 ### T.3.2 Conversion to XML
 
 After having transcribed the text (or part of it) as explained above, you can use
@@ -126,92 +126,140 @@ In order to run menotaBlitzS, you need to have a Perl interpreter installed on
                   your computer. If you are using Microsoft Windows, we recommend [Strawberry Perl](http://strawberryperl.com). If
                   you are using Mac OS or Unix/Linux, a Perl interpreter should already be installed
                   on your computer. To check if you already have a Perl interpreter on your
-                  computer, open the Command prompt (the Terminal on Mac OS), enter perl -v and press the return key. If you get something like the screen in
-                  Ill. A, you are good to go:⊕ Illustration: Screen image from a Windows computer
+                  computer, open the Command prompt (the Terminal on Mac OS), enter **perl -v** and press the return key. If you get something like the screen in
+                  Ill. A, you are good to go:
 
-Ill. A.1. Perl is installed on your Windows computer.⊕ Illustration: Screen image from a Mac computer
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-A-Windows.png" alt="tutorial/Samples-A-Windows.png"/>
+</Figure>
 
-Ill. A.2. Perl is installed on your Mac computer.
+<Caption title="Ill. A.1">. Perl is installed on your Windows computer.</Caption>
 
-The actual converter script menotaBlitzS.plx and the empty
+<Figure caption={`⊕ Illustration: Screen image from a Mac computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-A-Mac.png" alt="tutorial/Samples-A-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. A.2">. Perl is installed on your Mac computer.</Caption>
+
+The actual converter script **menotaBlitzS.plx** and the empty
                   transcription file which you will use as a template to write your transcription,
-                  are available for download on the Menota website. Make sure you
-                     save both of them in the same folder!
+                  are available for download on the Menota website. **Make sure you
+                     save both of them in the same folder!**
 
 2. Running menotaBlitzS
 
 Once you have written your transcription according to the guidelines described on
                   the Menota website, you can use menotaBlitzS to convert the transcription to valid
                   Menota XML. In order to do so, you have to call the program from the Command
-                  prompt (Windows) or Terminal (Mac), as shown in ill. B:⊕ Illustration: Screen image from a Windows computer
+                  prompt (Windows) or Terminal (Mac), as shown in ill. B:
 
-Ill. B.1. Opening the Command prompt window on a Windows computer.⊕ Illustration: Screen image from a Mac computer
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-B-Windows.png" alt="tutorial/Samples-B-Windows.png"/>
+</Figure>
 
-Ill. B.2. Opening the Terminal window on a Mac computer.
+<Caption title="Ill. B.1">. Opening the Command prompt window on a Windows computer.</Caption>
+
+<Figure caption={`⊕ Illustration: Screen image from a Mac computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-B-Mac.png" alt="tutorial/Samples-B-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. B.2">. Opening the Terminal window on a Mac computer.</Caption>
 
 2.1. Open the command prompt (Windows) or Terminal (Mac). It
                   should look something like ill. B above. On the Mac, you can locate the Terminal
                   application by using Spotlight.
 
 2.2. You will have to manually access the directory (folder)
-                  in which you have saved the menotaBlitzS.plx script and your
-                  transcription file. You move through the directories by typing in cd (for change directory), a space and then the path to your target
+                  in which you have saved the **menotaBlitzS.plx** script and your
+                  transcription file. You move through the directories by typing in **cd** (for change directory), a space and then the path to your target
                   directory. Then you hit the return key, and voilà, you are in the designated
                   directory.
 
-Let us assume your transcription and the menotaBlitzS.plx
-                  script are saved in a folder called Transkripsjoner, which is
-                  contained in a folder Prosjekt, which is located on drive O:\ (on a Windows computer) or on the desktop (on a Mac).
+Let us assume your transcription and the **menotaBlitzS.plx**
+                  script are saved in a folder called **Transkripsjoner**, which is
+                  contained in a folder **Prosjekt**, which is located on drive **O:\** (on a Windows computer) or on the **desktop** (on a Mac).
 
-On a Windows computer you enter cd
-                     O:/Prosjekt/Transkripsjoner, while on a Mac you enter cd
-                     desktop, hit the return, enter cd Prosjekt on the
-                  next line, hit the return once more, and enter cd
-                     Transkripsjoner, as shown in ill. C below.⊕ Illustration: Screen image from a Windows computer
+On a Windows computer you enter **cd
+                     O:/Prosjekt/Transkripsjoner**, while on a Mac you enter **cd
+                     desktop**, hit the return, enter **cd Prosjekt** on the
+                  next line, hit the return once more, and enter **cd
+                     Transkripsjoner**, as shown in ill. C below.
 
-Ill. C.1. Locating the folder with the menotaBlitzS program on a Windows
-                  computer.⊕ Illustration: Screen image from a Mac computer
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-C-Windows.png" alt="tutorial/Samples-C-Windows.png"/>
+</Figure>
 
-Ill. C.2. Locating the folder with the menotaBlitzS program on a Mac
-                  computer.
+<Caption title="Ill. C.1">. Locating the folder with the menotaBlitzS program on a Windows
+                  computer.</Caption>
+
+<Figure caption={`⊕ Illustration: Screen image from a Mac computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-C-Mac.png" alt="tutorial/Samples-C-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. C.2">. Locating the folder with the menotaBlitzS program on a Mac
+                  computer.</Caption>
 
 2.3. Now that you have successfully opened the directory, you
-                  can run the program. To do so, you simply hit enter, type perl
-                     menotaBlitzS.plx, as shown in ill. D, and press the return key once more.
+                  can run the program. To do so, you simply hit enter, type **perl
+                     menotaBlitzS.plx**, as shown in ill. D, and press the return key once more.
                   Please note that in the illustration, the programme is called “menotaBlitz.plx”,
-                  but the correct name is “menotaBlitzS.plx”.⊕ Illustration: Screen image from a Windows computer
+                  but the correct name is “menotaBlitzS.plx”.
 
-Ill. D.1. Running the menotaBlitzS program on a Windows computer.⊕ Illustration: Screen image from a Mac computer
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-D-Windows.png" alt="tutorial/Samples-D-Windows.png"/>
+</Figure>
 
-Ill. D.2. Running the menotaBlitzS program on a Mac computer.
+<Caption title="Ill. D.1">. Running the menotaBlitzS program on a Windows computer.</Caption>
+
+<Figure caption={`⊕ Illustration: Screen image from a Mac computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-D-Mac.png" alt="tutorial/Samples-D-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. D.2">. Running the menotaBlitzS program on a Mac computer.</Caption>
 
 2.4. The program will ask you to type in the name of your
-                  transcription file, including its file extension .xml. As
-                  suggested in T 3.1 above, you might have called it AM-619-4to-57v.xml.⊕ Illustration: Screen image from a Windows computer
+                  transcription file, including its file extension **.xml**. As
+                  suggested in T 3.1 above, you might have called it **AM-619-4to-57v.xml**.
 
-Ill. E.1. Specifying the file name on a Windows computer.⊕ Illustration: Screen image from a Mac computer
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-E-Windows.png" alt="tutorial/Samples-E-Windows.png"/>
+</Figure>
 
-Ill. E.2. Specifying the file name on a Mac computer.
+<Caption title="Ill. E.1">. Specifying the file name on a Windows computer.</Caption>
+
+<Figure caption={`⊕ Illustration: Screen image from a Mac computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-E-Mac.png" alt="tutorial/Samples-E-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. E.2">. Specifying the file name on a Mac computer.</Caption>
 
 2.5. Specify the file name as shown in ill. E, and press the
                   return key again.
 
-2.6. Now the program runs. This might take a few seconds.⊕ Illustration: Screen image from a Windows computer
+2.6. Now the program runs. This might take a few seconds.
 
-Ill. F.1. Announcing the result of the Perl conversion on a Windows
-                  computer.⊕ Illustration: Screen image from a Windows Mac
+<Figure caption={`⊕ Illustration: Screen image from a Windows computer`}>
+<AutoImage src="/images/hb3/tutorial/Samples-F-Windows.png" alt="tutorial/Samples-F-Windows.png"/>
+</Figure>
 
-Ill. F.2. Announcing the result of the Perl conversion on a Mac
-                  computer.
+<Caption title="Ill. F.1">. Announcing the result of the Perl conversion on a Windows
+                  computer.</Caption>
+
+<Figure caption={`⊕ Illustration: Screen image from a Windows Mac`}>
+<AutoImage src="/images/hb3/tutorial/Samples-F-Mac.png" alt="tutorial/Samples-F-Mac.png"/>
+</Figure>
+
+<Caption title="Ill. F.2">. Announcing the result of the Perl conversion on a Mac
+                  computer.</Caption>
 
 2.7. When the program is done, it will inform you that it has
                   created a new file containing your transcription converted to valid Menota XML, as
                   shown in ill. F. You will find it in the same folder that contains your
-                  transcription file and the Perl script. Assuming you have used the file name AM-619-4to-57v.xml, the converted file will be called AM-619-4to-57v_prl.xml.
+                  transcription file and the Perl script. Assuming you have used the file name **AM-619-4to-57v.xml**, the converted file will be called **AM-619-4to-57v_prl.xml**.
 
 Congratulations!
 
- 
+&#x00a0;
 ## T.4 Making the XML readable: Using an XSLT stylesheet
 
 The final step towards a readable transcription is to use an XSLT stylesheet, so that the XML file can 
@@ -219,7 +267,7 @@ The final step towards a readable transcription is to use an XSLT stylesheet, so
                This procedure is described in detail in [app. F.3](HB3_F_xslt.xml#secF.3) so it 
                need not be re-iterated here.
 
- 
+&#x00a0;
 ## T.5 Encoding a Medieval Nordic text
 
 The following PDF tutorial has been made for students not familiar with Medieval Nordic manuscripts. 
@@ -231,4 +279,4 @@ The following PDF tutorial has been made for students not familiar with Medieval
 Note that this tutorial is a somewhat large file (11 MB), so it might be downloaded to your computer, 
                not displayed in a new window. 
 
- 
+&#x00a0;

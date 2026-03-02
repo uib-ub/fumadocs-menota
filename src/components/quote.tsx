@@ -1,3 +1,3 @@
 export default function Quote({ children }: { children: React.ReactNode }) {
-    return <div className="italic">{children}</div>;
+    return <div className="pl-5 italic">{children}</div>;
 }

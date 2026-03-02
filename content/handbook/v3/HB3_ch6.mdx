@@ -63,21 +63,21 @@ Abbreviations are usually divided into four categories (see, e.g., [Hreinn Bened
                   more detailed classification, [Kristian
                      Kålund 1907](HB3_literature.xml#Kalund1907), pp. viii–x):
 
-(1) Suspensions. The first part of the word, often the
+(1) **Suspensions**. The first part of the word, often the
                   initial letter only, is written out, followed by a dot or similar mark, e.g.,
                      “ſ.” = ſ_onr_ ‘son’. The plural may be
                   represented by a doubling of the initial letter, e.g., “ſſ.” =
                      ſ_ynir_ ‘sons’.
 
-(2) Contractions. Some letters are left out, but the initial
+(2) **Contractions**. Some letters are left out, but the initial
                   and final letters are written out, often one or more of the intermediate as well.
                   The abbreviation is often indicated with a horizontal bar above the word.
 
-(3) Interlinear marks. The interlinear abbreviation is
+(3) **Interlinear marks**. The interlinear abbreviation is
                   usually a vowel representing either _r_ or _v_ + the vowel itself or a consonant representing _a_
                   + the consonant itself.
 
-(4) Special signs (brevigraphs). These signs are usually
+(4) **Special signs (brevigraphs)**. These signs are usually
                   placed on the base line and are thus akin to ordinary letters. The Tironian
                      notae belong to this category.
 
@@ -436,13 +436,13 @@ Interlinear (superscript) characters are used in various ways, not always as
                   abbreviations. According to [Andrea de Leeuw van
                      Weenen 2000](HB3_literature.xml#Weenen2000), pp. 36–43 there are four types:
 
-(a) as abbreviation
+**(a) as abbreviation**
 
 This type is discussed in [ch. 6.4.7](#sec6.4.7) above. Here, we
                   recommend the usage of the `<am>` element and entities such as
                   `&asup;` and the like.
 
-(b) as addition
+**(b) as addition**
 
 When superscript characters are used for adding characters which are missing on
                   the base line we recommend that they are encoded by use of the element
@@ -459,7 +459,7 @@ When superscript characters are used for adding characters which are missing on
                   element.
 Manuscript formDisplay in an editionEncodinghanͣhan⸌a⸍han&lt;add place="supralinear"&gt;a&lt;/add&gt;
 
-(c) as complementation of Roman numbers
+**(c) as complementation of Roman numbers**
 
 Inflected forms of Roman numbers are sometimes specified by interlinear
                   characters. In these cases, the interlinear characters are not placed above any
@@ -468,9 +468,9 @@ Inflected forms of Roman numbers are sometimes specified by interlinear
                   these interlinear characters are combining, so in order to avoid a position above
                   the last base line character, an empty space entity, `&nbsp;`, has been added
                   before each raised character:
-Manuscript formDisplay in an editionEncodingv.  v.  v.&nbsp;&trotsup;&nbsp;&inodotsup;
+Manuscript formDisplay in an editionEncodingv.&ensp;&ensp;v.&ensp;&ensp;v.&nbsp;&trotsup;&nbsp;&inodotsup;
 
-(d) as space savers
+**(d) as space savers**
 
 Especially at the end of a line one or more characters may be placed above the
                   last word to save place and complete the line. In these cases, we suggest that
@@ -533,8 +533,8 @@ We recommended that sporadic ligatures should not be encoded by use of separate
                      `@type="lig"`. A sporadic ligature is basically a joining of two
                   base line characters which together do not reflect a separate phonological value.
                   This is the case with ligatures such as “s+k” and “p+p” which in this
-                  respect are identical to “s” + “k” and
-                     “p” + “p”.
+                  respect are identical to “s”&ensp;+&ensp;“k” and
+                     “p”&ensp;+&ensp;“p”.
 
 See [ch. 4.3](HB3_ch4.xml#sec4.3) above for further examples.
 Manuscript formExpanded formEncodingpp`<seg type="lig">`pp`</seg>`

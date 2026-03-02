@@ -25,11 +25,11 @@ The electronic transcription of a manuscript text aims to accurately reproduce t
                transcription recording minute details. 
 
 For the purposes of transcribing medieval Norse texts, three different levels of
-               transcription may be defined:A facsimile level (`<me:facs>`): A letter-by-letter
+               transcription may be defined:**A facsimile level** (`<me:facs>`): A letter-by-letter
                   transcription with a selection of palaeographic characteristics and the retention
-                  of abbreviations as in the manuscript.A diplomatic level (`<me:dipl>`): A
+                  of abbreviations as in the manuscript.**A diplomatic level** (`<me:dipl>`): A
                   letter-by-letter transcription with a small selection of palaeographic features
-                  and the expansion and identification of abbreviations.A normalised level (`<me:norm>`): A transcription
+                  and the expansion and identification of abbreviations.**A normalised level** (`<me:norm>`): A transcription
                   in normalised orthography.
 
 The choice of level of transcription ultimately depends on the aims of the edition
@@ -96,7 +96,7 @@ In most facsimile transcriptions it would seem appropriate to reproduce the
                abbreviation, the ◌͛ (&er;) and ◌ (&ercurl;) varieties of the _er_ abbreviation or ◌ᷓ (&ra;) vs. ◌ (&rabar;) for _ra_, _ar_ or _va_. The
                reproduction of the Insular “ꝼ” and the flat-topped “ꞇ” has practical application
                in the transcription, as they can accommodate a superscript abbreviation symbol.
-ManuscriptFacsimile transcriptiond ꝺ ðd ꝺ ðe e f ꝼf ꝼm m r ꝛr ꝛs ſs ſt ꞇt ꞇv ꝩv ꝩ⁊ ⁊ ◌͛   ◌◌͛   ◌◌ᷓ   ◌◌ᷓ   ◌
+ManuscriptFacsimile transcriptiond ꝺ ðd ꝺ ðe e f ꝼf ꝼm m r ꝛr ꝛs ſs ſt ꞇt ꞇv ꝩv ꝩ⁊ ⁊ ◌͛ &ensp; ◌◌͛ &ensp; ◌◌ᷓ &ensp; ◌◌ᷓ &ensp; ◌
 
 Depending on the aims of the transcription, the editor may choose to go a step
                further and distinguish between, for instance, the principal variants of the letter
@@ -126,9 +126,13 @@ A short extract from an Old Icelandic manuscript, AM 233 a fol (mid 14th century
 
 
 
-Ill. 4.1. _Niðrstigningar saga_, an Old Norse
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM233afol-28v,1-2.gif" alt="ch4/AM233afol-28v,1-2.gif"/>
+</Figure>
+
+<Caption title="Ill. 4.1">. _Niðrstigningar saga_, an Old Norse
                translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
-               l. 1–2.
+               l. 1–2.</Caption>
 
 On the facsimile level, the text is transcribed character by character, line by line.
                Allographic variation is to a great extent reflected in the transcription, and
@@ -144,9 +148,9 @@ at &fins;ylg&ra; a&drot;am ok &aolig;llu&bar; helgu&bar; &hstrok;s at lei&drot;a
 
 and displayed (subject to an appropriate font) as
 
-       ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ
                ꝼylgᷓ aꝺam ok ꜵllū <br/>
-        helgū ħs at
+ &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;helgū ħs at
                leıꝺa þa ı ꝑaꝺıſum hína ꝼornu.
 
 At the facsimile level, the transcriber ought to encode the manuscript exactly as it
@@ -311,9 +315,9 @@ at leida þa i p<ex>ar</ex>adi&slong;um hína fornu.
 
 and displayed as
 
-     d_ro_ttin_n_
+&ensp;&ensp;&ensp;&ensp;&ensp;d_ro_ttin_n_
                vá baud michaele hof_ud_ engli. at fylg_ia_ adam ok ꜵllu_m_<br/>
-     helgu_m_ h_an_s at leıda þa i p_ar_adiſum hína
+&ensp;&ensp;&ensp;&ensp;&ensp;helgu_m_ h_an_s at leıda þa i p_ar_adiſum hína
                fornu.
 
 In what is often called semi-diplomatic editions, such as the majority in the series
@@ -351,9 +355,9 @@ helgum hans at leiða þá í paradísum hina fornu.
 
 and displayed as
 
-     Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam
+&ensp;&ensp;&ensp;&ensp;&ensp;Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam
                ok ǫllum<br/>
-      helgum hans at leiða þá í paradísum hina
+ &ensp;&ensp;&ensp;&ensp;&ensp;helgum hans at leiða þá í paradísum hina
                fornu.
 
 Note that at this level all characters have been encoded using official Unicode code
@@ -373,10 +377,14 @@ ElementsContents`<w>`Contains a word.`<pc>`Contains a punctuation mark.`<me:facs
 
 The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>` element and each punctuation mark in a `<pc>` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>`, `<me:dipl>` or `<me:norm>`.
 
-Note: The “me” prefix can only be used with a RELAX NG
+**Note**: The “me” prefix can only be used with a RELAX NG
                schema. It must be left out in texts which will be validated against a DTD.
 
-Ill. 4.2. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on _grið_, ‘peace’. AM 619 4to, f. 2v, l. 15–21.
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM-619-4to-2v,15-21.jpg" alt="ch4/AM-619-4to-2v,15-21.jpg"/>
+</Figure>
+
+<Caption title="Ill. 4.2">. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on _grið_, ‘peace’. AM 619 4to, f. 2v, l. 15–21.</Caption>
 
 The following example from the _Old Norwegian Homily Book_ in ill. 4.2 above renders the text on a diplomatic level. It is a single-level encoding, and since it is on the diplomatic level, we would refer to it as a _single-level encoding on the diplomatic level._
 ```xml
@@ -784,22 +792,26 @@ The display of levels varies with the stylesheets being used, but probably all s
 
 
 
-Ill. 4.3. _Niðrstigningar saga_, an Old Norse
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM233afol-28v,1-2.gif" alt="ch4/AM233afol-28v,1-2.gif"/>
+</Figure>
+
+<Caption title="Ill. 4.3">. _Niðrstigningar saga_, an Old Norse
                      translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
-                     l. 1–2. This is identical to ill. 4.1 above, repeated here for the sake of convenience.
+                     l. 1–2. This is identical to ill. 4.1 above, repeated here for the sake of convenience.</Caption>
 
 This is an approximate rendering of the display in the Menota archive of the text in ill. 4.3:
-Facsimile display1 ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ ꝼylgᷓ aꝺam ok ꜵllū<br/>
+Facsimile display1&ensp;ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ ꝼylgᷓ aꝺam ok ꜵllū<br/>
 
-                           2 helgū ħs at leıꝺa þa ı ꝑaꝺıſum hína ꝼornu.
+                           2&ensp;helgū ħs at leıꝺa þa ı ꝑaꝺıſum hína ꝼornu.
                         
-Diplomatic display1 drottinn vá baud michaele hofud engli. at fylgia adam ok ꜵllum<br/>
+Diplomatic display1&ensp;drottinn vá baud michaele hofud engli. at fylgia adam ok ꜵllum<br/>
 
-                           2 helgum hans at leıda þa i paradiſum hína fornu.
+                           2&ensp;helgum hans at leıda þa i paradiſum hína fornu.
                         
-Normalised display1 Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam ok ǫllum<br/>
+Normalised display1&ensp;Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam ok ǫllum<br/>
 
-                           2 helgum hans at leiða þá í paradísum hina fornu.
+                           2&ensp;helgum hans at leiða þá í paradísum hina fornu.
                         
 
 For reasons of line alignment in the Menota archive, the stylesheet will present 
@@ -810,7 +822,7 @@ As stated above, the elements `<me:facs>`, `<me:dipl>` and
                      `<me:norm>` are not defined in TEI, but are part of the namespace we
                      have defined for Menota texts. Please see the schemas in [app. D](HB3_D_schemas.xml).
 
-The three levels discussed here can be seen as focal in the
+The three levels discussed here can be seen as **focal** in the
                      sense that they are typical and frequently used levels of text representations in
                      Medieval Nordic editions (as defined in [Haugen
                         2004](HB3_literature.xml#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>`

@@ -12,7 +12,7 @@ by Tarrin Wills
 ## 15.1 Introduction
 
 This Chapter defines how to refer to phenomena in texts that have some kind of existence
-     outside the text — both electronically naming and locating the thing referenced. These include the following phenomena and their
+     outside the text —&ensp;both electronically **naming** and **locating** the thing referenced. These include the following phenomena and their
      associated TEI elements: people `<name>``<handDesc>``<person>`;places `<name>``<placeName>``<place>`;events `<name>``<event>`;texts `<text>``<name>``<msItem>`;parts and versions of texts `<div>`, `<lg>`; words and their corresponding headwords (lemmas) `<w>`; scholarly books and articles `<bibl>`; manuscripts `<msDesc>``<msIdentifier>``<name>`
 
 (The Names and Dates module gives elements for `<person>`, `<place>` and
@@ -20,7 +20,7 @@ This Chapter defines how to refer to phenomena in texts that have some kind of e
      handbook: use `<name>` with the `@type` attribute.)
 
 In this chapter an external phenomenon falling under one of these categories (person, word,
-     place, etc.) is referred to simply as the thing and can be distinguished
+     place, etc.) is referred to simply as the **thing** and can be distinguished
      from the words or features in a particular text which in some way reference or mention the
      phenomenon.
 
@@ -90,7 +90,7 @@ Uniform Resource Identifier (URI) is a standard for identifying things or resour
        consistent naming of resources. These standards are well documented — this section is for
        discussing particular issues for Menota texts and applications.
 
-This chapter uses both methods — names and locations — for identifying resources
+This chapter uses both methods —&ensp;names and locations — for identifying resources
        identifying and associated with the phenomena listed above. Naming methods provide a simpler
        and more consistent method for identifying things in the encoded text, but locating methods
        provide a means for finding more information about the thing, including metadata that can be
@@ -169,17 +169,17 @@ Open resources (e.g. Wikipedia, Open Street Map) allow users to enter and edit i
       Wikidata service to provide a way of referencing the thing itself rather than the various
       pages which document it. If you find a relevant page on, e.g. Helgafell, you should look up
       Wikidata (wikidata.org) and use the URI given there ([https://www.wikidata.org/wiki/Q972971](http://www.wikidata.org/wiki/Q972971)
-      — which also gives a geolocation, for example).Sometimes it can be difficult to find the desired reference in Wikidata, even in cases
+      —&ensp;which also gives a geolocation, for example).Sometimes it can be difficult to find the desired reference in Wikidata, even in cases
       where a Wikipedia page has been identified. In such cases the API can help, e.g. [https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&
        titles=Battle_of_Stiklestad&normalize=1](https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Battle_of_Stiklestad&normalize=1) (JSON output). Here
        sites=enwiki identifies that this corresponds to a page in the English language
-      version of Wikipedia (the first part of the Wikipedia hostname in the URL (en.wikipedia.org) and titles=Battle_of_Stiklestad uses the exact format of
-      the page in the Wikipedia URL (https://en.wikipedia.org/wiki/Battle_of_Stiklestad). The resulting identifier (Q83078) can be used to
+      version of Wikipedia (the first part of the Wikipedia hostname in the URL (**en**.wikipedia.org) and titles=Battle_of_Stiklestad uses the exact format of
+      the page in the Wikipedia URL (https://**en**.wikipedia.org/wiki/**Battle_of_Stiklestad**). The resulting identifier (Q83078) can be used to
       construct the Wikidata URI: [https://www.wikidata.org/wiki/Q83078](http://www.wikidata.org/wiki/Q83078), and should be the same regardless of the
       language of the entry.Where Wikidata is not available, or in other resources (such as Handrit.is) which contain
       different language versions of the same item, you should link to the article according to the
-      following language priority: English, Swedish, Danish, Norwegian (bokmål), Norwegian
-       (nynorsk), Icelandic — that is, according to the size of the
+      following language priority: **English**, **Swedish**, **Danish**, **Norwegian (bokmål)**, **Norwegian
+       (nynorsk)**, **Icelandic** — that is, according to the size of the
       language community represented by each language, restricted to the languages of the Menota
       project. In other words, if there is an article on the thing in English, that should be used,
       regardless of whether the English article is longer or more accurate than the others.
@@ -237,7 +237,7 @@ Items without these official URNs (e.g. because they predate the ISBN system) sh
         [https://handrit.is/en/bibliography/view/Smastykker11](https://handrit.is/en/bibliography/view/Smastykker11)). You should also use the
        Menota-defined URN based on this identifier:
        menota:bibl:handrit:Smastykker11).Worldcat (e.g. [http://www.worldcat.org/oclc/925766862](http://www.worldcat.org/oclc/925766862), [http://www.worldcat.org/oclc/13481601](http://www.worldcat.org/oclc/13481601)
-       — remove all parts of the path part of the URL except 'oclc/[number]'). Worldcat may include
+       —&ensp;remove all parts of the path part of the URL except 'oclc/[number]'). Worldcat may include
        multiple entries for the same work. To prioritise, follow the link ‘view all
        editions/formats’ and choose the first item in the list that is in fact the same item. Then
        select the ‘permalink’ button to copy the URL.Haithi Trust ([https://catalog.hathitrust.org/Record/008550198](https://catalog.hathitrust.org/Record/008550198))
@@ -282,7 +282,7 @@ West Norse words should be referenced using the Ordbog over det norrøne
        for a particular word, look it up under ‘Word’ / ‘Ord’ and click on the word. The URL can be
        used to reference the lemma.
 
-e.g. forskáli[https://onp.ku.dk/onp/onp.php?o22938](https://onp.ku.dk/onp/onp.php?o22938) — in this item the identifier
+e.g. **forskáli**[https://onp.ku.dk/onp/onp.php?o22938](https://onp.ku.dk/onp/onp.php?o22938) — in this item the identifier
        (database key) is the integer at the end, namely ‘22938’. The permalink (click on the link icon
        – it is simply the URL with ‘onp/onp.php?’ part removed)
        can be used to reference
@@ -327,7 +327,7 @@ The authoritative source for the Old Swedish lexicon, the Fornsvensk lexikalisk 
 ONP’s database ([https://onp.ku.dk/v](https://onp.ku.dk/v) gives a comprehensive and unambiguous overview of
        this group of prose works. E.g. _Egils saga Skallagrímssonar_: use ONP’s permalink URL
        (https://onp.ku.dk/v109) or key
-        (menota:work:onp:109 — the ‘109’ is the key, taken from the previous URL).
+        (menota:work:onp:109 —&ensp;the ‘109’ is the key, taken from the previous URL).
 
 Sometimes it will be more useful to use a particular version of the text listed under the
        sigla above, particularly for charters and other texts where the sub-categorisation in ONP is
@@ -355,7 +355,7 @@ GDO has a comprehensive collection of references to the Old Danish corpus, but i
        siglum, you will get a URL like:
        http://gammeldanskseddelsamling.dk/forside/kilde?qid=463079&id=251&portlet_word_or_source=source&portlet_alphabetical=1
        but only the id= part of the query string is required to look up the reference
-       (http://gammeldanskseddelsamling.dk/forside/kilde?id=251 — DiplDan). The integer following
+       (http://gammeldanskseddelsamling.dk/forside/kilde?id=251 —&ensp;DiplDan). The integer following
        id= is the database code which can be used in the name: menota:work:gdo:251.15.4.3.4 Chapters and sections of prose works
 
 Different versions and different editions use different numbering for divisions within a
@@ -404,7 +404,7 @@ Some works, particularly postmedieval ones, may be found in Simek and Pálsson�
        altnordisches Literatur (2007). In cases where there is ambiguity in the names above (such as
        in Handrit.is’s ‘uniform’ titles, the entry head form of the work may be used in the
        following name format (only the bold part of the head should be used, and cross references
-       should be resolved —  use only the forms with a full article, not the form followed by a
+       should be resolved —&ensp; use only the forms with a full article, not the form followed by a
        cross-reference arrow):
 
 menota:work:lanl:Hrómundar%20saga%20Gripssonar for Hrómundar saga
@@ -416,7 +416,7 @@ This particular work includes almost all West Norse prose works, Eddic poems and
 
 Authoritative online resources are available for naming and referencing manuscripts relevant
       to the Old West Norse textual corpus. They should be used in the following way, and in the
-      following order of priority — that is, only use lower priority sources where you are unable to
+      following order of priority —&ensp;that is, only use lower priority sources where you are unable to
       find the manuscript in a higher priority source.15.4.4.1 Handrit.is
 
 [Handrit.is](https://handrit.is) contains records on a large number of
@@ -431,7 +431,7 @@ The XML files may be in one or more of English, Danish or Icelandic, and the URL
        may unfortunately differ according to the language, but any entry should contain sufficient
        information to identify the item and to establish basic metadata and relations.
 
-Modify the URL so that the interface language is always English (handrit.is/en — not
+Modify the URL so that the interface language is always English (handrit.is/en —&ensp;not
        handrit.is/da or handrit.is/is), and choose the language of the catalogue entry according to
        the priority shown in 15.3 (English, Danish, Icelandic). E.g.
 ```xml
@@ -486,7 +486,7 @@ A consistent naming system for divisions of manuscripts allows for two-way seman
        the Skaldic project’s corpus and an image of the page on Handrit.is or the forthcoming
        digitised photograph library from AMS in Copenhagen. Numbering of manuscript pages across
        catalogues and editions is not very consistent for a large number of documents, and most
-       systems use the numbering as the only reference point to the page in the manuscript — that
+       systems use the numbering as the only reference point to the page in the manuscript —&ensp;that
        is, there is rarely a machine-readable referencing system that would translate between
        different numbering systems for a particular manuscript.
 
@@ -639,7 +639,7 @@ menota:place:lm:Torsbro,Uppsala,Uppsala,Bebyggelse (Torsbro, Uppland)
 
 But other names may be ambiguous by this method, e.g. Nöbbele, Växjö, Kronoborgs län
        (Bebyggelse) matches six distinct places, in which case you should use the resources
-       documented in the next section to identify the actual place.15.4.6.5 Unofficial and historical places: sources15.4.6.5.1 Open Street Map
+       documented in the next section to identify the actual place.15.4.6.5 Unofficial and historical places: sources**15.4.6.5.1 Open Street Map**
 
 OSM is the main open geographical resource in use today. It allows places to be indicated
         by points, lines, areas (polygons) or groups of areas, and referenced with a numerical key.
@@ -650,7 +650,7 @@ OSM is the main open geographical resource in use today. It allows places to be 
         https://www.openstreetmap.org/way/219229751 — hall site at Gammel Lejre), but there is some
         uncertainty in such attributions. Open Historical Map appears to be a similar project but
         with a historical focus that is deliberately excluded from OSM. There appears to be very
-        limited data for the Nordic countries at this stage. 15.4.6.5.2 Geonames.org
+        limited data for the Nordic countries at this stage. **15.4.6.5.2 Geonames.org**
 
 This site predates Open Street Map and has a similar user-contributed data set. It is easy
         to edit and has a simple API, but only allows places to be indicated by points or squares on
@@ -662,7 +662,7 @@ This site predates Open Street Map and has a similar user-contributed data set. 
         should be entered and referenced using the site’s interface. 
 
 NB save separately any entered information including coordinates as other users can easily
-        delete your contributions to this service.15.4.6.5.3 Wikipedia / Wikidata
+        delete your contributions to this service.**15.4.6.5.3 Wikipedia / Wikidata**
 
 Wikidata (check Wikipedia first) can be used as a last resort as many places, including
         historical and legendary places are often documented there. Wikidata also has a consistent
@@ -689,7 +689,7 @@ Events such as battles and journeys may be documented in various encyclopediae, 
       names and naming schemes to ensure that no current entry exists). 
 
 E.g. https://www.wikidata.org/wiki/Q83078 (cf.
-       https://en.wikipedia.org/wiki/Battle_of_Stiklestad — Battle of Stiklarstaðir) —
+       https://en.wikipedia.org/wiki/Battle_of_Stiklestad —&ensp;Battle of Stiklarstaðir) —
       see also [ch. 15.3](#sec15.3) above.
 ### 15.4.8 Mythological and legendary figures, or anything else
 

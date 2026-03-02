@@ -516,12 +516,12 @@ A schema, as was said, defines the
                markup, e.g. if elements are not opened and closed correctly, or used
                in the wrong place, or if elements overlap. If the elements in a
                document are correctly opened and closed, and non-overlapping, the
-               document is called well-formed. A parser can determine
+               document is called **well-formed**. A parser can determine
                “well-formedness” without recoursing to a schema.
                If, in addition, the content types of elements, the nesting of
                elements and the use of attributes are all done according to the
                specification of the schema, then the document is not only well-formed,
-               but also valid.
+               but also **valid**.
 
 Validation only checks the markup –
                not the content – of the document. A document can consist entirely of
@@ -771,7 +771,11 @@ Displayed by an XML-aware browser,
 
 
 
-Ill. 2.1. Screen display of the first two stanzas of _Þrymskviða_.
+<Figure>
+<AutoImage src="/images/hb3/ch2/Trymskvida-1.png" alt="ch2/Trymskvida-1.png"/>
+</Figure>
+
+<Caption title="Ill. 2.1">. Screen display of the first two stanzas of _Þrymskviða_.</Caption>
 
 Note that browsers may display the same page slightly differently. If it does not look right in one browser, another browser may do the trick.
 
@@ -781,7 +785,7 @@ to be displayed, in terms of font, colour etc., or whether it is to
 be displayed at all (one might not, for example, wish to display some
 of the administrative information contained in the TEI header). CSS will also allow
 you to insert text before and/or after an element (using the
-   before and after pseudo-element selectors). But that is
+   **before** and **after** pseudo-element selectors). But that is
 about it. With XSLT, on the other hand, one can, for example,
 re-arrange the order of the elements or display the value of an
 element’s attribute instead of its actual content. 
@@ -795,10 +799,10 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
      short lines making up a long line is printed as a single line in the edition, though with a
      sizeable space between the two lines, thus:
 <Quote>
- Reiðr var þá Vingþórr   er hann vaknaði<br/>
- ok síns hamars   um saknaði<br/>
- skegg nam at hrista,   skör nam at dýja,<br/>
- réð Jarðar burr   um at þreifask.<br/>
+ Reiðr var þá Vingþórr&ensp;&ensp;&ensp;er hann vaknaði<br/>
+ ok síns hamars&ensp;&ensp;&ensp;um saknaði<br/>
+ skegg nam at hrista,&ensp;&ensp;&ensp;skör nam at dýja,<br/>
+ réð Jarðar burr&ensp;&ensp;&ensp;um at þreifask.<br/>
 
 </Quote>
 
@@ -852,7 +856,11 @@ Displayed in an XML-aware browser, the stanzas now look like Fig. 2.2 (still als
 
 
 
-Ill. 2.2. Alternative screen display of the first two stanzas of _Þrymskviða_.
+<Figure>
+<AutoImage src="/images/hb3/ch2/Trymskvida-2.png" alt="ch2/Trymskvida-2.png"/>
+</Figure>
+
+<Caption title="Ill. 2.2">. Alternative screen display of the first two stanzas of _Þrymskviða_.</Caption>
 
 The display is different, but the XML encoding is not changed at all. It is only a matter of transforming the encoded text using XSLT 
    and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.

@@ -67,11 +67,11 @@ In the above shown code line (“stylesheet link”), the `@href` attribute take
 There are three options for URLs to be used, depending on the level of transcription one
                      wishes to display. (One URL per transcription level; to be copied into the XML file):
 
-1. For display of texts encoded on the the facsimile level: http://www.menota.org/menota_xslt_3_facs.xsl<br/>
+1. For display of texts encoded on the the facsimile level: **http://www.menota.org/menota_xslt_3_facs.xsl**<br/>
 
-                     2. For display of texts encoded on the the diplomatic level: http://www.menota.org/menota_xslt_3_dipl.xsl<br/>
+                     2. For display of texts encoded on the the diplomatic level: **http://www.menota.org/menota_xslt_3_dipl.xsl**<br/>
 
-                     3. For display of texts encoded on the the normalised level: http://www.menota.org/menota_xslt_3_norm.xsl
+                     3. For display of texts encoded on the the normalised level: **http://www.menota.org/menota_xslt_3_norm.xsl**
 
 Once you have inserted the stylesheet link with the right URL, you can apply the stylesheet, i.e. perform the transformation. 
                   Most editors have built-in functions that read such stylesheet
@@ -81,9 +81,13 @@ Once you have inserted the stylesheet link with the right URL, you can apply the
                internet browser will open and the transcription
                on the selected level should be displayed in a new window.
 
-⊕ Illustration: Screen image from &lt;oXygen/&gt;
 
-Ill. F.1. The button “Apply transformation scenario(s)” in &lt;oXygen/&gt;.
+
+<Figure caption={`⊕ Illustration: Screen image from <oXygen/>`}>
+<AutoImage src="/images/hb3/stylesheets/Oxygen-Apply-transform-scenario.png" alt="stylesheets/Oxygen-Apply-transform-scenario.png"/>
+</Figure>
+
+<Caption title="Ill. F.1">. The button “Apply transformation scenario(s)” in &lt;oXygen/&gt;.</Caption>
 
 As the stylesheet is located online, one needs to have internet access for the transformation to be carried out. 
                   Also, the transformation might not work, if your document is invalid (most likely,
@@ -117,42 +121,54 @@ Note: The XML editor might be confused if you are trying to use both transformat
 Working with a downloaded XSLT stylesheet allows the user to change and customise the transformation instructions in the stylesheet. 
                   The output rules in the XSLT of the online method, in contrast, are not adjustable by the user.
 
-These are five steps to set up a transformation scenario in &lt;oXygen/&gt;: 
+**These are five steps to set up a transformation scenario in &lt;oXygen/&gt;: **
 
-1. Open the window “Configure Transformation Scenario(s)” by clicking the button with the spanner 
+**1**. Open the window “Configure Transformation Scenario(s)” by clicking the button with the spanner 
                      (the grey tool) and the little red triangle
                      (located to the right of the “Apply transformation scenario(s)” button featured in ill. F.1 above).
                      Alternatively, one can press Ctrl+Shift+C (on Windows) or Cmd+Shift+C (on Mac). Press the buttom “New” at the bottom of the list and 
                      select “XML transformation with XSLT”.
 
-2. Name your scenario (here: Menota_xslt_Beeke_norm) and choose your stylesheet (here: Menota_xslt_Beeke.xsl) in the box 
+**2**. Name your scenario (here: Menota_xslt_Beeke_norm) and choose your stylesheet (here: Menota_xslt_Beeke.xsl) in the box 
                      “XSL URL” by browsing through
                      your files after clicking the folder button to right of the box. 
                      The contents of the box “XML URL” should be “\{currentFileURL\}”, which is its default value (ill. F.2).
 
-⊕ Illustration: Screen image from &lt;oXygen/&gt;
 
-Ill. F.2. Create a transformation scenario in &lt;oXygen/&gt;: Name the scenario and choose the URL of the XSL file..
 
-3. Use the parameter option to set the desired value for the display parameter (“visning”). The possible values are
+<Figure caption={`⊕ Illustration: Screen image from <oXygen/>`}>
+<AutoImage src="/images/hb3/stylesheets/Oxygen-scenario-step2.png" alt="stylesheets/Oxygen-scenario-step2.png"/>
+</Figure>
+
+<Caption title="Ill. F.2">. Create a transformation scenario in &lt;oXygen/&gt;: Name the scenario and choose the URL of the XSL file..</Caption>
+
+**3**. Use the parameter option to set the desired value for the display parameter (“visning”). The possible values are
                       “facs”, “dipl” or “norm”. In the example (ill. F.3), the parameter has been set to “norm”, meaning that the
                      transformation will display the transcription on the normalised level. In order to change the setting, highlight the “visning” row and 
                      press the buttom “Edit”.  Save your choice, click “OK” and return to the window seen in ill. F.2.
 
-⊕ Illustration: Screen image from &lt;oXygen/&gt;
 
-Ill. F.3. Set the parameter option for the parameter “visning” in order to make the stylesheet
-                     display the transcription on the facsimile, diplomatic or normalised level.
 
-4. Define a suitable output file and format in the “Output” tab by giving
+<Figure caption={`⊕ Illustration: Screen image from <oXygen/>`}>
+<AutoImage src="/images/hb3/stylesheets/parameter-choose.gif" alt="stylesheets/parameter-choose.gif"/>
+</Figure>
+
+<Caption title="Ill. F.3">. Set the parameter option for the parameter “visning” in order to make the stylesheet
+                     display the transcription on the facsimile, diplomatic or normalised level.</Caption>
+
+**4**. Define a suitable output file and format in the “Output” tab by giving
                      it a location and a name with the extension “.html”. Also remember to tick the box “Open in browser”, so that the 
                      output can be viewed immediately in your default browser:
 
-⊕ Illustration: Screen image from &lt;oXygen/&gt;
 
-Ill. F.4. Define the output file, which is the basis for what will be displayed in the browser, and its location.
 
-5. Save and apply your configurations. 
+<Figure caption={`⊕ Illustration: Screen image from <oXygen/>`}>
+<AutoImage src="/images/hb3/stylesheets/output-choose.gif" alt="stylesheets/output-choose.gif"/>
+</Figure>
+
+<Caption title="Ill. F.4">. Define the output file, which is the basis for what will be displayed in the browser, and its location.</Caption>
+
+**5**. Save and apply your configurations. 
 
 Note: If the transformation set-up or application returns errors, you might want to use a version of Saxon that is higher than v. 9, e.g. 
                   “Saxon-PE 9.6.0.7”. Other potential sources of error are that the newer stylesheets operate with XSLT 2.0 (instead of XSLT 1.0), 

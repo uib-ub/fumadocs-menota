@@ -51,8 +51,23 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:p">
-        <xsl:text>&#x0a;&#x0a;</xsl:text>
-        <xsl:apply-templates/>
+        <xsl:choose>
+            <xsl:when test="@rend='caption'">
+                <xsl:text>&#x0a;&lt;Caption</xsl:text>
+                <xsl:if test="tei:hi[@rend='bold'][position() = 1]">
+                    <xsl:text> title="</xsl:text>
+                    <xsl:value-of select="tei:hi[@rend='bold'][position() = 1]"/>
+                    <xsl:text>"</xsl:text>
+                </xsl:if>
+                <xsl:text>&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&lt;/Caption&gt;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>&#x0a;&#x0a;</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:lb">
         <xsl:text>&lt;br/&gt;&#x0a;</xsl:text>
@@ -93,6 +108,16 @@
         <xsl:choose>
             <xsl:when test="@rend='entity' or @rend='codepoint'">
                 <xsl:value-of select="concat('`', ., '`')"/>
+            </xsl:when>
+            <xsl:when test="@rend='bold'">
+                <xsl:choose>
+                    <xsl:when test="parent::tei:p[@rend='caption'] and position() = 1"/>
+                    <xsl:otherwise>
+                        <xsl:text>**</xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text>**</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="@rend='italic'">
                 <xsl:text>_</xsl:text>
@@ -141,23 +166,44 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <xsl:template match="tei:figure">
+        <xsl:text>&#x0a;&#x0a;&lt;Figure</xsl:text>
+        <xsl:if test="tei:figDesc">
+            <xsl:text> caption={`</xsl:text>
+            <xsl:value-of select="tei:figDesc"/>
+            <xsl:text>`}</xsl:text>
+        </xsl:if>
+        <xsl:text>&gt;</xsl:text>
+        <xsl:for-each select="tei:graphic">
+            <xsl:text>&#x0a;&lt;AutoImage</xsl:text>
+            <xsl:text> src="</xsl:text>
+            <xsl:value-of select="concat('/images/hb3/', @url)"/>
+            <xsl:text>"</xsl:text>
+            <xsl:text> alt="</xsl:text>
+            <xsl:value-of select="@url"/>
+            <xsl:text>"</xsl:text>
+            <xsl:text>/&gt;</xsl:text>
+        </xsl:for-each>
+        <xsl:text>&#x0a;&lt;/Figure&gt;&#x0a;</xsl:text>
+    </xsl:template>
     <xsl:template match="text()">
         <xsl:variable name="text1" select="replace(replace(., '\{', '\\{'), '\}', '\\}')"/>
         <xsl:variable 
             name="text2" 
             select="replace(replace($text1, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"
         />
-        <xsl:variable name="text3">
+        <xsl:variable name="text3" select="replace($text2, '&#x00a0;', '&amp;ensp;')"/>
+        <xsl:variable name="text4">
             <xsl:choose>
                 <xsl:when test="ancestor::tei:quote">
-                    <xsl:value-of select="replace($text2, '\s+', ' ')"/>
+                    <xsl:value-of select="replace($text3, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$text2"/>
+                    <xsl:value-of select="$text3"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:value-of select="$text3"/>
+        <xsl:value-of select="$text4"/>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>
