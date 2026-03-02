@@ -33,8 +33,8 @@ The first part of the `<fileDesc>` supplies the necessary bibliographical inform
   Please note: The description of the source for transcription (done in the element `<sourceDesc>`) is also part of the `<fileDesc>`. 
     However, in order to improve legibility, that part is treated in a separate subchapter (see [ch. 14.3](#sec14.3) below).
 ### 14.2.1 Title statement
-Elements & attributesObl/OptExplanation`<titleStmt>`Information on the title, editor and other people who have been responsible for the edition.`<title>`The title of the work.`<editor>`The name of the (main) editor of the encoded work.roleOptionalThe role of an editor, in particular in case the editor is an institution or project.`<orgName>`The name of an organisation.typeObligatorySpecifies that the organisation is the institution with which the editor is affiliated, 
-    using the the value affiliation.`<respStmt>`A statment of responsibility.`<resp>`Type of responsibility, e.g. transcription, conversion, proof-reading.
+Elements & attributesObl/OptExplanation`<titleStmt>`Information on the title, editor and other people who have been responsible for the edition.`<title>`The title of the work.`<editor>`The name of the (main) editor of the encoded work.`@role`OptionalThe role of an editor, in particular in case the editor is an institution or project.`<orgName>`The name of an organisation.`@type`ObligatorySpecifies that the organisation is the institution with which the editor is affiliated, 
+    using the the value `"affiliation"`.`<respStmt>`A statment of responsibility.`<resp>`Type of responsibility, e.g. transcription, conversion, proof-reading.
 
 In the `<titleStmt>`, the `<title>` element gives the title of the document. In the case of a digital transcription, 
   it should specify the primary source (manuscript) on which the transcription is based, and, where applicable, the title of the work transcribed. 
@@ -93,7 +93,7 @@ See moreover section [ch. 14.3.6](#sec14.3.6) below.
 
 Multiple main editors should either be listed either in alphabetical order, if equally responsible, or in order of importance concerning the editing work.
 
-Institutions as well as individuals may be given as editors. If an institution is regarded as the editor, it should be specified by the attribute role:
+Institutions as well as individuals may be given as editors. If an institution is regarded as the editor, it should be specified by the attribute `@role`:
 ```xml
 <editor role="institution">
   <orgName>Språksamlingane</orgName>
@@ -113,7 +113,7 @@ The institution “Språksamlingane” is now located at the University of Berge
 ```
 
 
-For an individual editor, the role with the value person is optional, but may be inserted for clarity. If an `<editor>` element  does not have any role attribute, 
+For an individual editor, the `@role` with the value `"person"` is optional, but may be inserted for clarity. If an `<editor>` element  does not have any `@role` attribute, 
 it is assumed to describe a person.
 
 If other people than the main editor(s) contributed to the work, this is specified in one or more responsibility statements (`<respStmt>`). This also applies to cases where an institution is regarded as an the editor.
@@ -147,13 +147,13 @@ The TEI P5 Guidelines, [ch. 2.2.1](https://www.tei-c.org/release/doc/tei-p5-doc/
     `<titleStmt>`. 
     Since almost all Medieval Nordic texts are anonymous we suggest that this element is optional.
 ### 14.2.2 Edition statement
-Elements & attributesObl/OptExplanation`<editionStmt>`A statement of the edition.`<edition>`A description of the edition (i.e. version), typically by means of a number.nObligatoryThe number of the edition.`<date>`The date for the publication of the present work (edition).whenObligatoryDate in the format year-month-day, e.g. 2019-10-15’.
+Elements & attributesObl/OptExplanation`<editionStmt>`A statement of the edition.`<edition>`A description of the edition (i.e. version), typically by means of a number.`@n`ObligatoryThe number of the edition.`<date>`The date for the publication of the present work (edition).`@when`ObligatoryDate in the format year-month-day, e.g. `"2019-10-15’"`.
 
 The `<editionStmt>` should be used to specify whether the present text is a new or a revised edition of the 
   electronic text as described in the title statement above. Here, “edition” is to be understood as “version”. 
-  The version number should be given in the n attribute with the usual number 
-  system, i.e. 1.0, 1.0.1, 1.1, 1.2, etc., while the date of the version 
-  should be given in the format year-month-day in the attribute when, e.g. 2004-02-01.
+  The version number should be given in the `@n` attribute with the usual number 
+  system, i.e. `"1.0"`, `"1.0.1"`, `"1.1"`, `"1.2"`, etc., while the date of the version 
+  should be given in the format year-month-day in the attribute `@when`, e.g. `"2004-02-01"`.
 
 A complete edition statement may be as simple as this:
 ```xml
@@ -165,24 +165,24 @@ A complete edition statement may be as simple as this:
 ```
 
 ### 14.2.3 Extent
-Elements & attributesObl/OptExplanation`<extent>`The size of the file, preferably specified in  words.nObligatoryThe number of words (or any other measure).
+Elements & attributesObl/OptExplanation`<extent>`The size of the file, preferably specified in  words.`@n`ObligatoryThe number of words (or any other measure).
 
-The `<extent>` element specifies the size of the file. The exact number of words should be given in the n attribute as well as in plain text within the element, e.g.: 
+The `<extent>` element specifies the size of the file. The exact number of words should be given in the `@n` attribute as well as in plain text within the element, e.g.: 
 ```xml
 <extent n="76411">76411 words</extent>
 
 ```
 
 ### 14.2.4 Publication statement
-Elements & attributesObl/OptExplanation`<publicationStmt>`A statement of the publication.`<distributor>`A reference to the distributor, e.g. Medieval Nordic Text Archive.`<idno>`A reference (identification number), e.g. “Ms. 1”.typeOptionalThe type of reference, e.g. Menota.`<date>`The date for the publication of the present work (edition).whenObligatoryDate in the format year-month-day, e.g. 2019-10-15.`<availability>`A description of the conditions for the distribution and use of the text.statusObligatoryThe type of availability, typically with the values free, restricted or unknown.
+Elements & attributesObl/OptExplanation`<publicationStmt>`A statement of the publication.`<distributor>`A reference to the distributor, e.g. Medieval Nordic Text Archive.`<idno>`A reference (identification number), e.g. “Ms. 1”.`@type`OptionalThe type of reference, e.g. `"Menota"`.`<date>`The date for the publication of the present work (edition).`@when`ObligatoryDate in the format year-month-day, e.g. `"2019-10-15"`.`<availability>`A description of the conditions for the distribution and use of the text.`@status`ObligatoryThe type of availability, typically with the values `"free"`, `"restricted"` or `"unknown"`.
 
 The `<publisher>` element specifies the body (publisher, archive) which has made the text available, e.g. the Medieval Nordic Text Archive (Menota).
 
-The `<idno>` is a unique identification of the text. For texts in the Menota archive the attribute value will be Menota, and the contents of the element 
+The `<idno>` is a unique identification of the text. For texts in the Menota archive the attribute value will be `"Menota"`, and the contents of the element 
   will be an acquisition number, beginning with Ms. 1. Note that this information will be supplied by Menota, if the text is being deposited in this archive.
 
-The `<availability>` element specifies the accessibility of the text. We recommend adding a status 
-  attribute with one of the three values free, restricted, unknown
+The `<availability>` element specifies the accessibility of the text. We recommend adding a `@status` 
+  attribute with one of the three values `"free"`, `"restricted"`, `"unknown"`
   (cf. the TEI P5 Guidelines, [ch. 2.2.4](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24)).
 
 Further specifications can be added in a `<p>` element. Almost all texts in the Menota archive are now available under an open CC license, and this should be stated in a `<license>` element with link to the Creative Commons website. Details on the transferral of this license should be added in a `<p>`  element. A complete publication statement may thus look like this:
@@ -296,7 +296,7 @@ based on the places where they had been made or where he got them
 from or the people whom he knew to have possessed them.
 Occasionally a manuscript can have several such names, in which case multiple `<msName>` elements are used, or perhaps
 rather several forms of the name, typically in different languages.
-The latter can be distinguished from each other by means of the xml:lang attribute, which is
+The latter can be distinguished from each other by means of the `@xml:lang` attribute, which is
 available on all TEI elements.
 
 A 
@@ -317,12 +317,12 @@ Collection may look like this:
 ```
 
 
-The key attribute to the `<country>` element can take values such as IS for Iceland, 
-    NO for Norway, SE for Sweden, 
-    DK for Denmark, and so on according to ISO 3166-1 alpha-2.
+The `@key` attribute to the `<country>` element can take values such as `"IS"` for Iceland, 
+    `"NO"` for Norway, `"SE"` for Sweden, 
+    `"DK"` for Denmark, and so on according to ISO 3166-1 alpha-2.
 
 In addition to the commonly used shelfmark, this example also has an `<altIdentifier>`, giving the running number from Kålund’s printed catalogue. 
- That this reference is to Kålund’s catalogue can be seen from the type attribute with the abbreviation “KKKat” as its value. The `<msName>`
+ That this reference is to Kålund’s catalogue can be seen from the `@type` attribute with the abbreviation “KKKat” as its value. The `<msName>`
 elements additionally give two forms of the manuscript’s nickname, one in Latin, one in Icelandic.
 ### 14.3.2 Intellectual content 
 
@@ -342,9 +342,9 @@ elements. This is useful where separate items (or subitems) in a manuscript are
 grouped under a single title or rubric, for example in collections of
 prayers.
 
-A defective attribute, with
-possible values of true, false, unknown or
-unspecified, is available on `<msItem>`, providing the means 
+A `@defective` attribute, with
+possible values of `"true"`, `"false"`, `"unknown"` or
+`"unspecified"`, is available on `<msItem>`, providing the means 
   of distinguishing between texts which are fragmentary
 and those which are not. The attribute is also available on the
 specialised elements `<incipit>` and
@@ -456,17 +456,17 @@ example of a brief `<handDesc>` element for a manuscript written by a single scr
 ```
 
 
-Please note: The use of the element `<term>` with its attribute type as in the example is optional.
+Please note: The use of the element `<term>` with its attribute `@type` as in the example is optional.
   Such encoding allows for more precise searching than
 would be possible with free text, but is obviously dependent on there
 being a commonly agreed taxonomy.
 
 The next example (below) is taken from a manuscript written by six different scribes, where a
 `<handNote>` element is used to describe each individual
-hand.  The script attribute on `<handNote>` is
-employed to indicate the type of script. Note also the scope attribute,
-with the possible values of major, minor and
-  sole.
+hand.  The `@script` attribute on `<handNote>` is
+employed to indicate the type of script. Note also the `@scope` attribute,
+with the possible values of `"major"`, `"minor"` and
+  `"sole"`.
   Finally, the `<locus>`
     element, which we have already encountered in `<msItem>`, is used to
     indicate specifically which parts of a manuscript are written in a
@@ -668,17 +668,17 @@ The discussion in this subchapter follows the TEI P5 Guidelines. Note that [ch. 
 
 Wherever names occur (both in the header and the text), they can be tagged using 
   phrase-level elements such as the
-`<name>` element, usually with a type attribute to indicate
+`<name>` element, usually with a `@type` attribute to indicate
 whether they are the names of persons, places or organisations (such
 as religious orders). (For other phrase-level elements designed for names see [ch. 10](HB3_ch10.xml) above.) 
   If desired, more information about persons or places may also be
-provided by means of linking to a authoritative, more detailed description using the attribute key.
+provided by means of linking to a authoritative, more detailed description using the attribute `@key`.
   This requires, however, that that particular key has been defined elsewhere, for instance
 in a `<listPerson>` element within the
   header’s `<ProfileDesc>` (see [ch. 14.5](#sec14.5) below). 
  The `<listPerson>` element can contain one or more
-`<person>` elements, which are identified by a unique value of the xml:id attribute. The
-  same value is then given in the key attribute of any `<name>` element that is pointing to the longer description. 
+`<person>` elements, which are identified by a unique value of the `@xml:id` attribute. The
+  same value is then given in the `@key` attribute of any `<name>` element that is pointing to the longer description. 
   The contents of the individual `<person>` elements in `<listPerson>`
 provide information on birth, death, residence, occupation and so on, either
 as one or more paragraphs of running prose, or through the use of
@@ -714,11 +714,11 @@ could for example look like this:
 ```
 
 
-Please note that the value of the attribute sex has in the Old Norse scholarly world traditionally been encoded based on the ISO standard 
+Please note that the value of the attribute `@sex` has in the Old Norse scholarly world traditionally been encoded based on the ISO standard 
     [Representation of Human Sexes](http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip),
-    in which 0 indicates “unknown”; 1“male”; 2“female”; and 9“not applicable”
-    even though the this standard is now widely considered inadequate. Alternative values are M for male, F for female, 
-    O for other, N for none or not applicable, and U for unknown.
+    in which `"0"` indicates “unknown”; `"1"`“male”; `"2"`“female”; and `"9"`“not applicable”
+    even though the this standard is now widely considered inadequate. Alternative values are `"M"` for male, `"F"` for female, 
+    `"O"` for other, `"N"` for none or not applicable, and `"U"` for unknown.
 
 
     Once a reference description of a name is available – either in the `<profileDesc>` of the header in the same XML document or 
@@ -748,7 +748,7 @@ however, and people are frequently reluctant to accept as
 “neutral” an overtly “foreign” form of the name
 of some local saint or hero. Within the `<person>` element any
 number of variant forms of a name can be given in multiple `<persName>` elements.
-  These can be specified as being for a certain language using xml:lang attributes, 
+  These can be specified as being for a certain language using `@xml:lang` attributes, 
   but otherwise no
 prioritisation, and hence, less likelihood of offense.
 
@@ -797,8 +797,8 @@ file:
 ```
 
 
-Again, using the unique value of xml:id, a `<bibl>` element anywhere in a XML file (that has access to the detailed record)
-  can refer to that information using the `<ref>` element with an identifying target attribute as follows:
+Again, using the unique value of `@xml:id`, a `<bibl>` element anywhere in a XML file (that has access to the detailed record)
+  can refer to that information using the `<ref>` element with an identifying `@target` attribute as follows:
 ```xml
 <bibl>
   <ref target="StudIsl24">Ólafur Halldórsson 1966</ref>, 
@@ -815,18 +815,18 @@ The `<encodingDesc>` should document the relationship between the electronic edi
 The `<projectDesc>` can be used to specify in prose the standard of the encoding, e.g.
   “This text has been encoded according to the standard set out in _The Menota Handbook_, version 3.0, at https://menota.org/handbook.xml”.
 
-The `<editorialDecl>` uses the `<correction>` element with the status attribute to specify the level of quality control. 
+The `<editorialDecl>` uses the `<correction>` element with the `@status` attribute to specify the level of quality control. 
     Attribute values (according to TEI) are “high”, “medium”, “low”, and “unknown”. 
     The TEI P5 Guidelines, [ch. 2.3.3](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD53), 
     offer these definitions for the possible values:
   high: the text has been thoroughly checked and proofreadmedium: the text has been checked at least oncelow: the text has not been checkedunknown: the correction status of the text is unknown
 
-Once the status attribute is given a value, the `<correction>` element may be empty.  
+Once the `@status` attribute is given a value, the `<correction>` element may be empty.  
     However, if desired, further specification can be given in prose within a `<p>` element.
 
-Next within the `<editorialDecl>`element, a `<normalization>` element with a Menota-specific me:level attribute 
-  is used to specify the level on which the text is encoded. The prototypical levels are facs, dipl and norm, 
-  but other levels can also be used in the transcription and should thus be specified, e.g. a pal level. 
+Next within the `<editorialDecl>`element, a `<normalization>` element with a Menota-specific `@me:level` attribute 
+  is used to specify the level on which the text is encoded. The prototypical levels are `"facs"`, `"dipl"` and `"norm"`, 
+  but other levels can also be used in the transcription and should thus be specified, e.g. a `"pal"` level. 
   (See [ch. 4](HB3_ch4.xml) on levels of text representation.) 
   Also here, a description in prose may be added in a `<p>` element. 
   Note that more than one level may be specified, simply separating the values by whitespaces:
@@ -843,10 +843,10 @@ Next within the `<editorialDecl>`element, a `<normalization>` element with a Men
 
 Finally within the `<editorialDecl>` element, an `<interpretation>` 
 	  element is used to specify the amount of lexical and grammatical information in the encoded text. 
-	  We suggest two attributes, me:lemmatized and me:morphAnalyzed, both with the values completely, 
-	  partly and none, but an additional description in prose may be added in a `<p>` element.
-	  A lemmatised text will have lemmata (i.e. dictionary entries) added in the lemma attribute of the 
-	  `<w>` element, while a morphologically analysed text will have grammatical forms specified in the me:msa attribute of the same element. 
+	  We suggest two attributes, `@me:lemmatized` and `@me:morphAnalyzed`, both with the values `"completely"`, 
+	  `"partly"` and `"none"`, but an additional description in prose may be added in a `<p>` element.
+	  A lemmatised text will have lemmata (i.e. dictionary entries) added in the `@lemma` attribute of the 
+	  `<w>` element, while a morphologically analysed text will have grammatical forms specified in the `@me:msa` attribute of the same element. 
 	  See [ch. 5.3](HB3_ch5.xml#sec5.3) for a general overview and [ch. 11](HB3_ch11.xml) 
 	  for details on this lexical and morphological encoding.
 
@@ -884,7 +884,7 @@ A complete `<encodingDesc>` may look like this:
 
 The `<profileDesc>` is an optional part of the header. We recommend that
  the language(s) used in the source are listed here within the element `<langUsage>`. 
-  `<langUsage>` contains one or more `<language>` elements with a ident attribute each. The value of ident
+  `<langUsage>` contains one or more `<language>` elements with a `@ident` attribute each. The value of `@ident`
   should be a three-letter code, where possible based on the international standard ISO 639-3:2007.
 
 ISO 639-3:2007 contains a list of three-letter abbreviations of language names. In addition

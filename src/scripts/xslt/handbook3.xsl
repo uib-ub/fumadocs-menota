@@ -83,6 +83,27 @@
         <xsl:apply-templates/>
         <xsl:text>&gt;`</xsl:text>
     </xsl:template>
+    <xsl:template match="tei:att">
+        <xsl:value-of select="concat('`@', ., '`')"/>
+    </xsl:template>
+    <xsl:template match="tei:val">
+        <xsl:value-of select="concat('`&quot;', ., '&quot;`')"/>
+    </xsl:template>
+    <xsl:template match="tei:hi">
+        <xsl:choose>
+            <xsl:when test="@rend='entity' or @rend='codepoint'">
+                <xsl:value-of select="concat('`', ., '`')"/>
+            </xsl:when>
+            <xsl:when test="@rend='italic'">
+                <xsl:text>_</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>_</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     <xsl:template match="tei_samples:egXML">
         <xsl:choose>
             <xsl:when test="@rend='inline'">

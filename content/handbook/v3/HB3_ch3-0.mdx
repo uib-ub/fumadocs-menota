@@ -29,19 +29,19 @@ Viewed as physical objects, rather than as vehicles for texts, manuscripts have 
      implications for the text itself this division should be indicated, and will also generally
      form part of the `<msDesc>` element, found in the document header.
 
-At the same time, of course, manuscripts obviously do contain texts, which is the reason why most of us are interested in them in the first place. A single manuscript will often contain more than one work, each of which may, in the case of lengthy prose works such as sagas, be divided into chapters or sections. In the case of Medieval Icelandic poetry, rímur for example, a single work (rímnaflokkur) will usually consist of several cantos or fits, each containing a number of stanzas, made up of a number of lines. It may be necessary to group these lines in some other ways as well. The stanzas comprising the mansöngur should be distinguished from the main body of the fit, for example, while to facilitate certain types of metrical analysis it might be desirable to divide the individual stanzas into couplets. Some types of poetry, such as the vikivakakvæði, will have a refrain or burden, which should ideally also be distinguished from the narrative section(s) of the stanza.
+At the same time, of course, manuscripts obviously do contain texts, which is the reason why most of us are interested in them in the first place. A single manuscript will often contain more than one work, each of which may, in the case of lengthy prose works such as sagas, be divided into chapters or sections. In the case of Medieval Icelandic poetry, _rímur_ for example, a single work (_rímnaflokkur_) will usually consist of several cantos or fits, each containing a number of stanzas, made up of a number of lines. It may be necessary to group these lines in some other ways as well. The stanzas comprising the _mansöngur_ should be distinguished from the main body of the fit, for example, while to facilitate certain types of metrical analysis it might be desirable to divide the individual stanzas into couplets. Some types of poetry, such as the _vikivakakvæði_, will have a refrain or burden, which should ideally also be distinguished from the narrative section(s) of the stanza.
 
 XML has at its foundation the notion of a text as a single hierarchical structure, which means that it does not work well where there are several concurrent hierarchies, as is obviously the case when one wishes for example to indicate the line divisions both in a poem and in the manuscript in which the poem is contained. The [TEI
                Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this problem, enabling both the structure of the document and the structure of the text to be encoded.
 ### 3.1.1 Hierarchical divisions
 
-The principal means of representing hierarchy is the `<div>` (i.e. “division”) element. `<div>` elements may freely nest within each other. The `<div>` element has, in addition to the universally available id and n attributes, a type attribute, which specifies the name conventionally given to the level of division, e.g. chapter, stanza, couplet, if attempting to represent the structure of the text, or page, column, line if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the type attribute in the `<div>` element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
+The principal means of representing hierarchy is the `<div>` (i.e. “division”) element. `<div>` elements may freely nest within each other. The `<div>` element has, in addition to the universally available `@id` and `@n` attributes, a `@type` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"`, `"stanza"`, `"couplet"`, if attempting to represent the structure of the text, or `"page"`, `"column"`, `"line"` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type` attribute in the `<div>` element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
 
-The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>` elements, `<div type="canto">` for the cantos or fits, `<div type="part">` for the parts (for example the mansöngvar), `<div type="stanza">` for the stanzas, and `<div type="line">` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">` for each set. A simpler form of mark-up is possible, however. Instead of `<div>` elements, the `<l>` element (for “line”) and the `<lg>` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>` element for larger structural units. The type attribute is then used to identify the type of unit, e.g. stanza, couplet, like in `<lg type="stanza">`. Here again the type need
-                  only be defined once. Lines and line-groups can also be numbered and identified using the n and id attributes.
+The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>` elements, `<div type="canto">` for the cantos or fits, `<div type="part">` for the parts (for example the _mansöngvar_), `<div type="stanza">` for the stanzas, and `<div type="line">` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">` for each set. A simpler form of mark-up is possible, however. Instead of `<div>` elements, the `<l>` element (for “line”) and the `<lg>` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>` element for larger structural units. The `@type` attribute is then used to identify the type of unit, e.g. `"stanza"`, `"couplet"`, like in `<lg type="stanza">`. Here again the type need
+                  only be defined once. Lines and line-groups can also be numbered and identified using the `@n` and `@id` attributes.
 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>` elements, which are then
-                  given the appropriate type attributes, e.g. page, column or line, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>`, `<cb/>` and `<lb/>`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
+                  given the appropriate `@type` attributes, e.g. `"page"`, `"column"` or `"line"`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>`, `<cb/>` and `<lb/>`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
 ElementsContents`<text>`, `<body>`Main divisions of the text,`<div>`division into chapters (multiple levels are encoded by nesting elements),`<p>`prose paragraphs,`<w>`words,`<pc>`punctuation marks,`<lg>`, `<l>`line groups and lines (for stanzas),`<head>`headings,`<pb/>`, `<cb/>`, `<lb/>`page, column and line beginnings.
@@ -85,7 +85,7 @@ Each major section of a text, `<front>`, `<body>` and `<back>`, must have a mini
 Further division of the `<body>` block is achieved through `<div>` elements, with one level nesting inside the other as the transcriber moves down through the hierarchical structure of the text.
 ### 3.3.1 Type- and level-specified &lt;div&gt; elements
 
-In a complex document, `<div>` elements may be specified by type and n attributes. In this example, the three first chapters of a work have been contained in `<div>` elements at the same hierarchical level (siblings):
+In a complex document, `<div>` elements may be specified by `@type` and `@n` attributes. In this example, the three first chapters of a work have been contained in `<div>` elements at the same hierarchical level (siblings):
 ElementsContents`<div type="chapter" n="1">` . . . `</div>`Chapter one goes here,`<div type="chapter" n="2">` . . . `</div>`chapter two goes here,`<div type="chapter" n="3">` . . . `</div>`chapter three goes here (and so on).
 ### 3.3.2 Unspecified &lt;div&gt; elements
 
@@ -108,7 +108,7 @@ The `<p>` element may appear in other contexts, such as in the `<teiHeader>` ele
 The text within a paragraph may be divided into sentences, `<s>`:
 ElementsContents`<p>`A new paragraph starts here,`<s>` . . . `</s>`first sentence,`<s>` . . . `</s>`second sentence,`<s>` . . . `</s>`third sentence,`</p>`the paragraph ends here.
 
-Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. Rignir ‘It rains’. In the case of sentences linked by conjunctions (such as ok, en and eða) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian.
+Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. _Rignir_ ‘It rains’. In the case of sentences linked by conjunctions (such as _ok_, _en_ and _eða_) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian.
 ## 3.6 Words: &lt;w&gt;
 
 Although words need not be delimited by anything else than white space, we recommend
@@ -116,7 +116,7 @@ Although words need not be delimited by anything else than white space, we recom
      as well as for any morphological (and lexicographical) annotation.
 ElementsContents`<p>`A new paragraph starts here,`<w>` . . . `</w>`first word,`<w>` . . . `</w>`second word,`<w>` . . . `</w>`third word,`</p>`the paragraph ends here.
 
-If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>` element may be given several morphological attributes, in particular lemma for the dictionary entry and me:msa for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
+If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>` element may be given several morphological attributes, in particular `@lemma` for the dictionary entry and `@me:msa` for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
 
 Another motivation for delimiting words by the `<w>` element is the fact that a number of graphical words (i.e. sequences of characters with space on either side) should be split or merged according to standard dictionaries, e.g. “aveiðiskap” for “á veiðiskap” and “veiði kona” for “veiðikona”. Splitting and merging of graphical words will be discussed in [ch. 5.3](HB3_ch5.xml#sec5.3) below. The encoding of word constituents will also be discussed here.
 
@@ -194,7 +194,7 @@ In fig. 3.1, the heading, which is written in red, is located after the end of o
 ```
 
 
-The fact that the heading is a rubric has been encoded by the type="rubric" attribute.
+The fact that the heading is a rubric has been encoded by the `@type="rubric"` attribute.
 
 Unfortunately (from the point of view of the encoder) many manuscripts locate headings so that they are in conflict with this simple sequencing, for example by positioning them at the end of more than one line, or even in the middle of a line containing the beginning of one chapter and the end of the previous chapter. Examples of these complications are discussed in some detail in [ch. 16.3](HB3_ch16.xml#sec16.3) below.
 ## 3.10 Initials and highlighted characters: &lt;c&gt;
@@ -205,7 +205,7 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 
 Fig. 3.2. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15–24.
 
-The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (littera notabilior) should be encoded with the `<c>` element.
+The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (_littera notabilior_) should be encoded with the `<c>` element.
 
 The `<c>` element is discussed in [ch. 5.2.3](HB3_ch5.xml#sec5.2.3) below, while [ch. 7](HB3_ch7.xml) explains the encoding of graphical elements of initials.
 
@@ -221,7 +221,7 @@ A quotation mark can be regarded as a type of punctuation character, `<pc>`, but
 
 In some cases, there may be a structural conflict between the opening and closing of a `<q>` element, such as in this example, if it were to be encoded for `<s>` as well as for `<q>`:Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
 
-A possibe work-around is to use the general empty element `<milestone/>` with the obligatory unit attribute and a rendition attribute specifying the opening and closing quotation mark:
+A possibe work-around is to use the general empty element `<milestone/>` with the obligatory `@unit` attribute and a `@rendition` attribute specifying the opening and closing quotation mark:
 ```xml
 <s>Eyvindr sagðisk eigi mundu brott undan ríða, 
 <milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
@@ -234,21 +234,21 @@ There are several other ways of solving this type of conflict, as we discuss at 
 ## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;
 ### 3.12.1 Page beginnings and column beginnings
 
-TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute n which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the n attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the n attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
+TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute `@n` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n` attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 ElementsContents`<pb ed="ms" n="1r"/>`Folio one, recto page, begins here,`<cb ed="ms" n="A"/>`the first column begins here,`<cb ed="ms" n="B"/>`and the second column begins here.. . .`<pb ed="ms" n="1v"/>`Folio one, verso page, begins here,`<cb ed="ms" n="A"/>`the first column of the verso page begins here,`<cb ed="ms" n="B"/>`and the second column begins here.
 
-Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the ed attribute with a suitable value:
+Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the `@ed` attribute with a suitable value:
 ```xml
 <pb ed="Standard Edition" n="1"/>
 ```
 
 
-Some of the texts in the Menota archive have been encoded with more than one document structure, such as Konungs skuggsjá in AM 243 bα fol. In addition to the document structure of the manuscript, ed="ms", it has the Arnamagnæan pagination, ed="AM", the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), ed="FJ_utg", and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), ed="H-O".
+Some of the texts in the Menota archive have been encoded with more than one document structure, such as _Konungs skuggsjá_ in AM 243 bα fol. In addition to the document structure of the manuscript, ed="ms", it has the Arnamagnæan pagination, ed="AM", the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), ed="FJ_utg", and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), ed="H-O".
 
 The relevant editions should be declared in the header. As a rule, we suggest that the edition is identified by the initials of the editor + the year of publication, e.g. FJ1920-1921, LHO1945, etc.
 ### 3.12.2 Line beginnings
 
-Line beginnings are also indicated with an empty element, the `<lb/>`, which is placed at the beginning of a new line and may be numbered by using the n attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
+Line beginnings are also indicated with an empty element, the `<lb/>`, which is placed at the beginning of a new line and may be numbered by using the `@n` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
 ```xml
 <lb ed="ms" n="1"/>Line number one begins here.
 ```
@@ -267,7 +267,7 @@ etc.
 
 In other words, there should be as many `<pb/>` elements as there are pages, as many `<cb/>` elements as there are columns, and as many `<lb/>` elements as there are lines. We strongly discourage the use of the `<lb/>` element in the same way as the `<br>` element in HTML, in which there typically is one `<br>` element less than the number of lines (as the `<br>` element is inserted between the lines).
 
-As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the ed attribute.
+As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the `@ed` attribute.
 
 It is not uncommon for a word to be continued on the next line, with or without a hyphenation mark in the margin. In a single-level encoding, the `<lb/>` element will be located within the relevant `<w>` element, and in a multi-level encoding it will be repeated for each level. See examples of this in [ch. 5.5](HB3_ch5.xml#sec5.5) below.
 ## 3.13 Alternative encoding: &lt;choice&gt;

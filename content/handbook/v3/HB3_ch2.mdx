@@ -90,7 +90,7 @@ that have been sufficiently anglicised so as to render this
 unnecessary), stage directions in plays, theorems in mathematical
 works and biological and zoological nomenclature. Although Hart’s
 does not mention it, italic font is also regularly used to indicate
-emphasis, for example in novels: “I most certainly didn’t ask
+emphasis, for example in novels: “I most certainly _didn’t_ ask
 him to come.” With ordinary word-processing softwares, all these
 things would be marked up directly, i.e. with the relevant
 codes for “italic-on” and “italic-off”. If you think of the computer
@@ -137,11 +137,11 @@ In XML pairs of tags are used to mark off such units, a start tag and an end tag
      a corresponding `</div>` tag at the end. Within each division there would be any number of
      paragraphs, usually tagged with `<p>`. Since XML is structured hierarchically, elements
      can contain each other, but only in their intirety. Overlapping structures of elements are not
-     allowed (instead, so-called milestones (empty elements) are used; see
+     allowed (instead, so-called _milestones_ (empty elements) are used; see
       [ch. 3.12](HB3_ch3.xml#sec3.12) below and, in general, [ch. 16](HB3_ch16.xml) below).
 
 The way two elements relate to each other hierarchically is determined by the
-schema used, which in our case would stipulate
+_schema_ used, which in our case would stipulate
 that a `<chapter>` must contain one or more `<p>`
 elements.  
 In any given schema, 
@@ -290,11 +290,11 @@ information about a particular element instance can be given as a so-called
 want to add attributes to individual elements, using convenient typologies to indicate number, genre, form,
 metre or rhyme-scheme.
 The elements `<lg>` and `<l>`, denoting stanzas and lines, could for instance be described in more detail by
-   adding an attribute for the number: n. 
+   adding an attribute for the number: `@n`. 
    One ore more attributes are added to the opening tag of elements in such a way that they follow
    the element name, separated by a white space. The value of an attribute
    is given in double quotations to the right of an equals sign.
-   Adding a n attribute (with the value 1) to the `<l>` element of the first line would  
+   Adding a `@n` attribute (with the value `"1"`) to the `<l>` element of the first line would  
       be encoded like this:
 ```xml
 <l n="1">
@@ -331,7 +331,7 @@ The aspects of XML discussed so far are all concerned with the markup of element
      some other string. This other string can be of any length, from a single character to a
      separate file containing millions of bytes, such as a text file or digital image. When using an
      entity, the name of that entity (entity reference) is placed between an ampersand and a
-     semicolon: &entityname;. Only entities that have been declared can
+     semicolon: `&entityname;`. Only entities that have been declared can
      be processed by the application.
 
 A single
@@ -343,7 +343,7 @@ declaration for a general entity looks like this:
 
 This entity declaration instructs the processing
       software (a parser or browser) to 
-      replace any entity reference &vth; it encounters in the XML file 
+      replace any entity reference `&vth;` it encounters in the XML file 
       with the text “Vingþórr”. 
       In the case of our single
       poem, there is obviously no real advantage to treating the name of
@@ -392,12 +392,12 @@ For our purposes entities are particularly useful for providing descriptive mapp
      entities. Such numerical character references can be either decimal or hexidecimal; decimal
      references begin with an ampersand and the number sign, also called hash mark (#), to which
      hexidecimal references add an x. For example, the Unicode hexidecimal character reference for
-     the letter “ę” is &#x0119;, while the decimal
-     reference is &#281;. These standardised numerical character
+     the letter “ę” is `&#x0119;`, while the decimal
+     reference is `&#281;`. These standardised numerical character
      references are supported by standard browsers and do not need to be defined as additional
      entities. However, one may prefer to use human readable entities for such characters which are
      not available on the keyboard used, or for reasons such as proof-reading. Instead of the code
-     point, one can, for example, use the entity &eogon; for
+     point, one can, for example, use the entity `&eogon;` for
       “ę”. It is a simple matter to define characters as general entities, giving the
      numerical character reference as the replacement text:
 ```xml
@@ -434,16 +434,16 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like &ocurl; for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the gaiji module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+In recent years, the TEI community has moved towards the use of the `<g>` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the _gaiji_ module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
      This requires an extensive `<charDecl>` section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the &ocurl; entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
 
 
-In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, E7D3. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
+In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, `E7D3`. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
 
 The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1) below. 
 ## 2.6 The Text Encoding Initiative and TEI conformant schemas
@@ -543,16 +543,16 @@ The first line of our XML document
 ```
 
 
-The version attribute is required and the
-     standard version is currently 1.0, but it is possible that there will be further
-     versions in the future. Two more attributes are optional: encoding, which specifies
+The `@version` attribute is required and the
+     standard version is currently `"1.0"`, but it is possible that there will be further
+     versions in the future. Two more attributes are optional: `@encoding`, which specifies
      which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
-     is assumed by all the standard browsers), and standalone, the possible values for
-     which are yes and no to specify if the document makes use of an external
+     is assumed by all the standard browsers), and `@standalone`, the possible values for
+     which are `"yes"` and `"no"` to specify if the document makes use of an external
      schema. XML documents do not in fact require a schema, provided they are “well-formed”
      (see below), but in most cases it is adventageous to employ a schema. In cases where there is
-     no schema the value of the standalone attribute should be yes. If the
-     attribute is omitted, on the other hand, the default value no is assumed.
+     no schema the value of the `@standalone` attribute should be `"yes"`. If the
+     attribute is omitted, on the other hand, the default value `"no"` is assumed.
 
 The document’s second line, following the XML declaration, is the reference to the schema used.
                In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 
@@ -584,9 +584,9 @@ Following the schema, the entities used in the document are referenced.
             
 
 A structured XML document contains different kinds of components. We have already
-     learned about elements, containing text, and thus
-     the actual contents. We have also seen that elements can have one or more attributes with their various values. Finally, XML documents may
-     also contain comments. Comments begin with “&lt;!--” and end with
+     learned about _elements_, containing _text_, and thus
+     the actual contents. We have also seen that elements can have one or more _attributes_ with their various _values_. Finally, XML documents may
+     also contain _comments_. Comments begin with “&lt;!--” and end with
       “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
      as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
      a comment is considered as not actually part of the document – it is “commented out”
@@ -616,7 +616,7 @@ In addition to purely structural
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
                We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
                (and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
-               as a namespace, and we have consequently set up a namespace “me” for our usage 
+               as a _namespace_, and we have consequently set up a namespace “me” for our usage 
                (“me” being short for “Menota”).
 
 Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>` element:
@@ -628,7 +628,7 @@ Namespaces are specified at the very beginning of the XML code, in the case of T
 
 
 In the Menota XML files, all additional elements and attributes will be preceded by “me:”. 
-               For example, we recommend that a normalised transcription is contained in such an additional element, which we call norm. 
+               For example, we recommend that a normalised transcription is contained in such an additional element, which we call _norm_. 
                It appears as `<me:norm>`, where the prefix identifies it as an element belonging to the Menota namespace. 
                The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
                anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
@@ -650,7 +650,7 @@ The following is a complete list of additional elements and attributes in _The M
 
 `<me:textSpan/>` for encoding any discontinous structures, thus avoiding a full set of elements 
                   like `<addSpan/>`, `<delSpan/>`, `<suppliedSpan/>`, `<suppressedSpan/>`, etc. 
-                  Note that the attribute me:category is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
+                  Note that the attribute `@me:category` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
                   cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
 
 `<me:all>` for alliteration in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
@@ -658,30 +658,30 @@ The following is a complete list of additional elements and attributes in _The M
 `<me:ass>` for internal rhyme in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
 ### 2.8.2 Attributes
 
-me:msa for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
+`@me:msa` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
                   This is an attribute to the `<w>` element, cf. [ch. 11.3](HB3_ch11.xml#sec11.3).
 
-me:type for classification purposes. This is an attribute to the `<ex>` and `<am>` elements, 
+`@me:type` for classification purposes. This is an attribute to the `<ex>` and `<am>` elements, 
                   cf. [ch. 6.1](HB3_ch6.xml#sec6.1).
 
-me:key for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+`@me:key` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
                   in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](HB3_ch15.xml#sec15.2.2).
 
-me:ref for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+`@me:ref` for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
                   in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](HB3_ch15.xml#sec15.4.1).
 
-me:level for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
+`@me:level` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
                   This is an attribute to the `<normalization>` element used in the header, 
                   cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
 
-me:lemmatized for identifying those texts which have been lemmatised. This is an attribute to the 
+`@me:lemmatized` for identifying those texts which have been lemmatised. This is an attribute to the 
                   `<interpretation>` element used in the header, cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
 
-me:morphAnalyzed for identifying those texts which have been morphologically analysed, 
+`@me:morphAnalyzed` for identifying those texts which have been morphologically analysed, 
                   i.e. given grammatical form. This is another attribute to the `<interpretation>` element used in the header,  
                   cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
 
-me:category for identifying the type of a text span. This is an attribute to the `<me:textSpan/>` element 
+`@me:category` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>` element 
                   used to encode overlapping structures, cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
 ## 2.9 Displaying the text
 
@@ -713,11 +713,11 @@ A stylesheet can be associated to an XML document in several ways.
    apply a selected stylesheet to any given XML input and open the results in a Web browser.
    Easier to use might be an XSLT stylesheet processing instruction (also called “stylesheet link”), 
    which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
-   The href attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
+   The `@href` attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
    is supposed to be associated, and 
-   depending on the stylesheet format used, the type attribute must be 
+   depending on the stylesheet format used, the `@type` attribute must be 
    set to "text/css" or "text/xsl". There are other
-   (pseudo-) attributes, such as media, but they need not concern
+   (pseudo-) attributes, such as `@media`, but they need not concern
    us here (For instructions on how to apply an XSLT stylesheet see also [app. F](HB3_F_xslt.xml)).
    The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
    from the web with the XML file in question:
@@ -790,7 +790,7 @@ For the actual styling of the (re-arranged) content, XSLT ultimately uses the CS
 with XSLT one has all the options of plain CSS in addition to powerful transformations.
 
 The above display of an Eddic stanza is the preferred one in many Nordic editions; each line
-     occupies a line in the edition, whether it is a short line (as in fornyrðislag) or a full line (as in ljóðaháttr). In Continental
+     occupies a line in the edition, whether it is a short line (as in _fornyrðislag_) or a full line (as in _ljóðaháttr_). In Continental
      and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
      short lines making up a long line is printed as a single line in the edition, though with a
      sizeable space between the two lines, thus:
@@ -803,7 +803,7 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
 </Quote>
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
-     line (in ljóðaháttr) or each fifth line (in fornyrðislag) are numbered. In an eight-line display such as the one in the screenshot
+     line (in _ljóðaháttr_) or each fifth line (in _fornyrðislag_) are numbered. In an eight-line display such as the one in the screenshot
      above, the fitfth line of the first stanza is the one beginning with “skegg”. The same
      applies to the four-line display above, since each short line is counted, irrespective of
      whether it is displayed in conjunction with another short line or not. To achieve a

@@ -17,7 +17,7 @@ This Chapter defines how to refer to phenomena in texts that have some kind of e
 
 (The Names and Dates module gives elements for `<person>`, `<place>` and
       `<event>`, but these are generally unnecessary for the purposes of projects using this
-     handbook: use `<name>` with the type attribute.)
+     handbook: use `<name>` with the `@type` attribute.)
 
 In this chapter an external phenomenon falling under one of these categories (person, word,
      place, etc.) is referred to simply as the thing and can be distinguished
@@ -62,25 +62,25 @@ Note that the methods outlined in this chapter involve a large amount of searchi
 ### 15.2.1 Attributes used for linking
 
 The methods defined here utilise the TEI-defined attributes for linking to external
-      resources: ref, key for elements for which they are valid (e.g.
+      resources: `@ref`, `@key` for elements for which they are valid (e.g.
        `<name>`), and the additional Menota-defined equivalents for other elements,
-       me:ref, me:key.
+       `@me:ref`, `@me:key`.
 
-The content of the two differs: key contains information defined by the project
-      and can only be resolved (i.e. the referent found) within the project; ref contains
+The content of the two differs: `@key` contains information defined by the project
+      and can only be resolved (i.e. the referent found) within the project; `@ref` contains
       universal identifiers (URIs) which can be resolved according to the general principles of
       URIs.
-### 15.2.2 Internally defined references: key and
-       me:key
+### 15.2.2 Internally defined references: `@key` and
+       `@me:key`
 
-The TEI key attribute is intended to contain an identifier such as a database key
+The TEI `@key` attribute is intended to contain an identifier such as a database key
       which is unique for the particular type of resource represented by the element which contains
       it. For example, a `<name>` might contain a number that represents the database key for
       the person or place the element refers to.
 
-The advantage of using a key over a ref is that the notation can be
+The advantage of using a `@key` over a `@ref` is that the notation can be
       much simpler and easier to process, with less chance of alternative references to the same
-      thing. But using ref gives universal references without the need for an internal
+      thing. But using `@ref` gives universal references without the need for an internal
       authority file (although use of one is nevertheless recommended).
 ### 15.2.3 Universal references: URIs, URLs and URNs 15.2.3.1 URIs 
 
@@ -110,12 +110,12 @@ URLs are normally found in the web browser location bar and can be copied and pa
        notation above when the copy and paste is performed, and no further intervention is therefore
        needed from the encoder. There are some exceptions, however.
 
-The standard delimiter of key/value pairs in the query string section of URLs is &
+The standard delimiter of key/value pairs in the query string section of URLs is `&`
        (ampersand), which is normally shown in its unencoded form in a web browser location bar, and
        therefore where most users are likely to find the URLs documented in this section. However,
        using ampersand on its own is not valid XML (&amp; should be used) but many
        interface languages such as PHP do not recognise this notation if it is passed unparsed to a
-       web application. You will need to convert & in URIs to &amp; but also
+       web application. You will need to convert `&` in URIs to &amp; but also
        ensure that the application converts them back for linking for end-users (web browsers
        normally do this automatically).
 
@@ -207,7 +207,7 @@ You can use [web.archive.org](https://web.archive.org/web/) to archive and
 ### 15.4.1 Bibliographic items
 
 Bibliographic items are normally marked up with the `<bibl>` element, which should
-      contain a me:ref value to identify the work
+      contain a `@me:ref` value to identify the work
 
 Bibliographic items with a DOI, ISBN, or journals with an ISSN, should be referenced using
       the official URN or URI in the first instance:doi:10.1093/llc/fqt045 (Wills, ‘Relational Data Modelling of Textual
@@ -268,7 +268,7 @@ Word lemmas should be referenced as dictionary headwords, using additional infor
        unambiguous linking. The referencing system will therefore be dependent on the particular
        language of the text.
 
-The reference should be included in the me:ref attribute as part of the
+The reference should be included in the `@me:ref` attribute as part of the
         `<w>` element. Note that in this type of resource, the reference is not in fact to
        the element itself (the word in a particular text), but to the headword to which it belongs.
        There may be instances where the word in question may require a link to an equivalent word
@@ -321,7 +321,7 @@ The authoritative source for the Old Swedish lexicon, the Fornsvensk lexikalisk 
        have an interface for finding database keys. Unambiguous headwords should use the Menota URN
        format, e.g. menota:lemma:fsld:forskilia. To distinguish between homographs,
        word class and other morphosyntactic information should be included using the
-        me:msa attribute for the word. 
+        `@me:msa` attribute for the word. 
 ### 15.4.3 Literary works and their parts15.4.3.1 Pre-1540 West Norse prose works
 
 ONP’s database ([https://onp.ku.dk/v](https://onp.ku.dk/v) gives a comprehensive and unambiguous overview of
@@ -334,7 +334,7 @@ Sometimes it will be more useful to use a particular version of the text listed 
        in fact a distinct document rather than an alternative version. To find the relevant URI,
        select the relevant version/text from the list under the work and use the permalink there.
         E.g. the theta fragment of _Egils
-        saga_ (Eg162θ(2001)) can be referenced by the URL:
+        saga_ (_Eg162θ(2001)_) can be referenced by the URL:
        https://onp.ku.dk/r11195 or the name:
         menota:workversion:onp:11195.15.4.3.2 Post-1540 West Norse prose works
 
@@ -371,8 +371,8 @@ Different versions and different editions use different numbering for divisions 
         http://heimskringla.no/wiki/Egils_saga_Skalla-Gr%C3%ADmssonar#chapter=60 (Eg
        ch. 60; menota:work:onp:109#chapter=60.
 
-For resources that have named HTML or XML divisions (using xml:id or
-        name), these should be used in the fragment section of the URL and will be
+For resources that have named HTML or XML divisions (using `@xml:id` or
+        `@name`), these should be used in the fragment section of the URL and will be
        processed when the application accesses the page. Other references will not be processed by
        the referenced resources, but can be used internally by Menota projects to reference parts of
        prose works: ‘chapter’ is used in the example above, and this or other divisions, if found in
@@ -422,7 +422,7 @@ Authoritative online resources are available for naming and referencing manuscri
 [Handrit.is](https://handrit.is) contains records on a large number of
        manuscripts in the field, and is the only online catalogue of a very large number of younger
        Icelandic manuscripts. The manuscripts are catalogued as TEI/XML files, and the
-        xml:id value in the `<msDesc>` element for each of these will contain a
+        `@xml:id` value in the `<msDesc>` element for each of these will contain a
        unique identifier, which is also used in the URL on the site, e.g. [https://handrit.is/da/manuscript/view/is/JS04-0041](https://handrit.is/da/manuscript/view/is/JS04-0041). This
        produces the name menota:ms:handrit:JS04-0041.
 
@@ -708,7 +708,7 @@ E.g. [https://www.wikidata.org/wiki/Q131196](https://www.wikidata.org/wiki/Q1311
 
 Such names or identifications may be the subject of controversy, such as the identification
       of the mythological figure Rígr with Heimdallr in AM 242 fol. The Wikipedia page for ‘Ríg
-      (Norse deity)’ redirects to the entry for the poem Rígsþula, but an
+      (Norse deity)’ redirects to the entry for the poem _Rígsþula_, but an
       entry for the apparent god himself exists on Wikidata ([https://www.wikidata.org/wiki/Q15843446](https://www.wikidata.org/wiki/Q15843446)). When beginning this chapter, there was no
       reference to Heimdallr here, but using the facility to define relations on Wikidata, the
       author of the present chapter has added a new statement to the Wikidata entry: ‘said to be the

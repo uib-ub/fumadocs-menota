@@ -31,13 +31,13 @@ The encoding of abbreviations is discussed in the TEI P5 Guidelines, [ch. 11](ht
                in this handbook, we suggest that it is sufficient to only use the elements `<am>` and `<ex>` 
                for the encoding and expansion of abbreviations.
 
-The `<am>` element may have a me:type attribute specifying what kind
+The `<am>` element may have a `@me:type` attribute specifying what kind
                of abbreviation it is. The same applies to the `<ex>` element. We have not given
                examples of these attributes in the present chapter, but users may refer to the
                typology in [ch. 6.2](#sec6.2) below if they would like to make a
                more detailed encoding.
-Elements & attributesObl/OptExplanation`<am>`Contains the abbreviation sign used in the manuscript.me:typeOptionalSpecifies the type of abbreviation.`<ex>`Contains the expansion inserted by the editor, replacing the abbreviation
-                     marker.me:typeOptionalSpecifies the type of expansion.
+Elements & attributesObl/OptExplanation`<am>`Contains the abbreviation sign used in the manuscript.`@me:type`OptionalSpecifies the type of abbreviation.`<ex>`Contains the expansion inserted by the editor, replacing the abbreviation
+                     marker.`@me:type`OptionalSpecifies the type of expansion.
 
 In a multi-level transcription, the `<am>` element typically belongs to the
                facsimile level (`<me:facs>`), while the `<ex>` element belongs to the
@@ -65,16 +65,16 @@ Abbreviations are usually divided into four categories (see, e.g., [Hreinn Bened
 
 (1) Suspensions. The first part of the word, often the
                   initial letter only, is written out, followed by a dot or similar mark, e.g.,
-                     “ſ.” = ſonr ‘son’. The plural may be
+                     “ſ.” = ſ_onr_ ‘son’. The plural may be
                   represented by a doubling of the initial letter, e.g., “ſſ.” =
-                     ſynir ‘sons’.
+                     ſ_ynir_ ‘sons’.
 
 (2) Contractions. Some letters are left out, but the initial
                   and final letters are written out, often one or more of the intermediate as well.
                   The abbreviation is often indicated with a horizontal bar above the word.
 
 (3) Interlinear marks. The interlinear abbreviation is
-                  usually a vowel representing either r or v + the vowel itself or a consonant representing a
+                  usually a vowel representing either _r_ or _v_ + the vowel itself or a consonant representing _a_
                   + the consonant itself.
 
 (4) Special signs (brevigraphs). These signs are usually
@@ -102,7 +102,7 @@ All abbreviations are referred to with entity names, with the exception of full
                      “&” and “;”, and we have tried to give as short and mnemonic
                   names as possible. As a rule, we have based the entity name on the typical
                   expansion of the abbreviation. Thus, the cross mark which is an abbreviation for
-                  kross is given the entity name &cross;.
+                  _kross_ is given the entity name `&cross;`.
 
 We aim at synchronizing our use of entities with those recommended by ISO, but
                   since there presently are no abbreviation entities in ISO, we are left to our own
@@ -137,44 +137,44 @@ Abbreviation marks on the base line behave as any other character. The typology 
                these abbreviation marks is discussed and exemplified below.
 ### 6.3.1 The “et” mark
 
-The Tironian nota resembling the number “7” (or the
-                  character “z” with or without a crossbar) used for the conjunction et ‘and’ in Latin is frequently used to denote the
-                  corresponding conjunction ok ‘and’ in Old Norse. We
-                  recommend using the entity name &et;, reflecting the Latin origin of
+The Tironian _nota_ resembling the number “7” (or the
+                  character “z” with or without a crossbar) used for the conjunction _et_ ‘and’ in Latin is frequently used to denote the
+                  corresponding conjunction _ok_ ‘and’ in Old Norse. We
+                  recommend using the entity name `&et;`, reflecting the Latin origin of
                   the abbreviation. In [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) this character is located at
-                  204A in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
+                  `204A` in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
 
 There are two major variants of this sign. If the transcriber wishes to make a
-                  distinction between these, we suggest using &et; for the sign without a
-                  crossbar and &gt;&etslash; for the sign with a crossbar. The code point for
-                  the latter is F158.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode point⁊ok&lt;am&gt;&et;&lt;/am&gt;&lt;ex&gt;ok&lt;/ex&gt;204Aok&lt;am&gt;&etslash;&lt;/am&gt;&lt;ex&gt;ok&lt;/ex&gt;F158
+                  distinction between these, we suggest using `&et;` for the sign without a
+                  crossbar and `>&etslash;` for the sign with a crossbar. The code point for
+                  the latter is `F158`.
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode point⁊_ok_&lt;am&gt;&et;&lt;/am&gt;&lt;ex&gt;ok&lt;/ex&gt;`204A`_ok_&lt;am&gt;&etslash;&lt;/am&gt;&lt;ex&gt;ok&lt;/ex&gt;`F158`
 ### 6.3.2 The “ed” mark
 
-In Latin, the semicolon was used for e + dental consonant,
-                  as in the conjunction sed. In Old Norse, it is very often
-                  used in the preposition með ‘with’. We recommend
-                  &sem; as entity name.
+In Latin, the semicolon was used for _e_ + dental consonant,
+                  as in the conjunction _sed_. In Old Norse, it is very often
+                  used in the preposition _með_ ‘with’. We recommend
+                  `&sem;` as entity name.
 
 In [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) the semicolon is located at 003B in the range [Basic
                      Latin](http://www.unicode.org/charts/PDF/U0000.pdf). When the semicolon is used as a punctuation mark, it should be
                   transcribed as such, i.e., simply as “;”. When it is used as an abbreviation
-                  mark we recommend that it is transcribed with an entity, &sem;. Note
+                  mark we recommend that it is transcribed with an entity, `&sem;`. Note
                   that there is another form of this abbreviation mark, looking like the number
                   “3”. This is included in the [MUFI character
-                     recommendation](HB3_literature.xml#MUFIrec) v. 4.0 at codepoint F155 and can be encoded with
-                  the entity &etfin;.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointmmeðm&lt;am&gt;&sem;&lt;/am&gt;m&lt;ex&gt;eð&lt;/ex&gt;F1AC
+                     recommendation](HB3_literature.xml#MUFIrec) v. 4.0 at codepoint `F155` and can be encoded with
+                  the entity `&etfin;`.
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointmm_eð_m&lt;am&gt;&sem;&lt;/am&gt;m&lt;ex&gt;eð&lt;/ex&gt;`F1AC`
 ### 6.3.3 The “con” mark
 
-A sign resembling a backwards “c” was often used for con in Latin and kon in Norse words. This
+A sign resembling a backwards “c” was often used for _con_ in Latin and _kon_ in Norse words. This
                   “con” mark is similar to 0254 LATIN SMALL LETTER 
                      OPEN O in the range [IPA Extensions](https://www.unicode.org/charts/PDF/U0250.pdf) of [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) and may be identified with this character. Alternatively,
-                  it may be rendered by 2184LATIN SMALL LETTER 
+                  it may be rendered by `2184`LATIN SMALL LETTER 
                      REVERSED C in the range [Number Forms](https://www.unicode.org/charts/PDF/U2150.pdf).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointɔakona&lt;am&gt;&oopen;&lt;/am&gt;a&lt;ex&gt;kon&lt;/ex&gt;a0254
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointɔa_kon_a&lt;am&gt;&oopen;&lt;/am&gt;a&lt;ex&gt;kon&lt;/ex&gt;a`0254`
 
 See the [MUFI character 
                   recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for other variants of the “con” mark (descending
@@ -183,51 +183,51 @@ See the [MUFI character
 
 The sequence “rum” was often abbreviated with a character resembling a small
                   version of the number 4 (in fact, it is the round “r” with a stroke across
-                  its tail). We recommend the entity name &rum; and a separate code point
+                  its tail). We recommend the entity name `&rum;` and a separate code point
                   in the Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointfoꝝforumfo&lt;am&gt;&rum;&lt;/am&gt;fo&lt;ex&gt;rum&lt;/ex&gt;F154
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointfoꝝfo_rum_fo&lt;am&gt;&rum;&lt;/am&gt;fo&lt;ex&gt;rum&lt;/ex&gt;`F154`
 ### 6.3.5 The cross mark
 
-The word kross was sometimes abbreviated with the cross
-                  symbol, which we suggest calling &cross;. This kross mark can be identified with 271DLATIN
+The word _kross_ was sometimes abbreviated with the cross
+                  symbol, which we suggest calling `&cross;`. This _kross_ mark can be identified with `271D`LATIN
                      CROSS in the range [Dingbats](http://www.unicode.org/charts/PDF/U2700.pdf) of [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode point✝kross&lt;am&gt;&cross;&lt;/am&gt;&lt;ex&gt;kross&lt;/ex&gt;271D
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode point✝_kross_&lt;am&gt;&cross;&lt;/am&gt;&lt;ex&gt;kross&lt;/ex&gt;`271D`
 ### 6.3.6 The “m” rune
 
-The runic character for “m” was sometimes used for the word maðr (including case forms with the stem mann-). We recommend the entity name &mMedrun;. The 
+The runic character for “m” was sometimes used for the word _maðr_ (including case forms with the stem _mann-_). We recommend the entity name `&mMedrun;`. The 
                   [Unicode 
                      Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) has defined a selection of 89 runes from the Older
                   and Younger Futhark in the [Runic](http://www.unicode.org/charts/PDF/U16A0.pdf) range. This range includes the “m” rune.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᛘmaðr&lt;am&gt;&mMedrun;<br/>
-&lt;/am&gt;&lt;ex&gt;maðr&lt;/ex&gt;16D8
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᛘ_maðr_&lt;am&gt;&mMedrun;<br/>
+&lt;/am&gt;&lt;ex&gt;maðr&lt;/ex&gt;`16D8`
 
 The runic character may appear with interlinear marks (“a”, “i”,
-                     “e”, “n”, “z”) for various inflected forms of the word maðr, e.g., manna, manni/manne, mann, mannz. The encoding of this type is
+                     “e”, “n”, “z”) for various inflected forms of the word _maðr_, e.g., _manna_, _manni_/_manne_, _mann_, _mannz_. The encoding of this type is
                   discussed in [ch. 6.4.7](#sec6.4.7) below. 
 ### 6.3.7 The “f” rune
 
-The runic character for “f” was sometimes used for the word fé. In analogy with the use of the “m” rune, we suggest the
-                  entity name &fMedrun;.
+The runic character for “f” was sometimes used for the word _fé_. In analogy with the use of the “m” rune, we suggest the
+                  entity name `&fMedrun;`.
 
 The “f” rune is included in the [Runic](http://www.unicode.org/charts/PDF/U16A0.pdf) range of [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᚠfé&lt;am&gt;&fMedrun;&lt;/am&gt;&lt;ex&gt;fé&lt;/ex&gt;16A0
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᚠ_fé_&lt;am&gt;&fMedrun;&lt;/am&gt;&lt;ex&gt;fé&lt;/ex&gt;`16A0`
 ### 6.3.8 Dot (full stop)
 
 Dots were often used as abbreviation marks, typically for suspensions, e.g.
-                     “ſ.” for sonr (or segja, svara). We recommend that the dot is transcribed in the same
+                     “ſ.” for _sonr_ (or _segja_, _svara_). We recommend that the dot is transcribed in the same
                   manner as a full stop, i.e. with the “.” mark in [Basic
                      Latin](http://www.unicode.org/charts/PDF/U0000.pdf). Thus, no entity name is called for. The dots sometimes appear on
                   both sides of the abbreviated word, as in “.ſ.”. Both dots serve to indiate
                   an abbreviation and consequently both are left out of the transcription when the
                   abbreviation is expanded. The two `<am>` elements are thus replaced by a single
                   `<ex>` element, as shown below.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointſ.ſonrſ&lt;am&gt;.&lt;/am&gt;ſ&lt;ex&gt;onr&lt;/ex&gt;002E.ſ.ſonr&lt;am&gt;.&lt;/am&gt;<br/>
-ſ&lt;am&gt;.&lt;/am&gt;ſ&lt;ex&gt;onr&lt;/ex&gt;002E.kgr.konungr&lt;am&gt;.&lt;/am&gt;<br/>
-kgr&lt;am&gt;.&lt;/am&gt;k&lt;ex&gt;onun&lt;/ex&gt;gr002E
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointſ.ſ_onr_ſ&lt;am&gt;.&lt;/am&gt;ſ&lt;ex&gt;onr&lt;/ex&gt;`002E`.ſ.ſ_onr_&lt;am&gt;.&lt;/am&gt;<br/>
+ſ&lt;am&gt;.&lt;/am&gt;ſ&lt;ex&gt;onr&lt;/ex&gt;`002E`.kgr.k_onun_gr&lt;am&gt;.&lt;/am&gt;<br/>
+kgr&lt;am&gt;.&lt;/am&gt;k&lt;ex&gt;onun&lt;/ex&gt;gr`002E`
 
 If the transcriber wishes to distinguish between the dot used as an abbreviation
                   mark and the dot used as a punctuation mark, we suggest that the entity name
-                  &period; could be used in the former case and “.” in the
+                  `&period;` could be used in the former case and “.” in the
                   latter. However, we believe that there will arise a number of cases where it is
                   difficult to decide whether the dot in the manuscript is a mark of abbreviation,
                   punctuation or both, e.g. when a suspended word is the last word in a sentence. We
@@ -242,18 +242,18 @@ The colon is sometimes, though not often, used as a mark of suspension, in the
                   same manner as the dot (full stop). In analogy with the encoding of dots we
                   suggest transcribing the colon simply as a colon, i.e., without using an
                   entity.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointRognv:RognvaldrRognv&lt;am&gt;:&lt;/am&gt;Rognv&lt;ex&gt;aldr&lt;/ex&gt;003A
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointRognv:RognvaldrRognv&lt;am&gt;:&lt;/am&gt;Rognv&lt;ex&gt;aldr&lt;/ex&gt;`003A`
 ### 6.3.10 Small capitals
 
 In Old Icelandic, small capitals were used to denote geminated (long) consonants
                   or they were simply used ornamentally (especially in Old Norwegian).
                   Small capitals denoting geminate consonants, such as “ɢ” for the long
-                  or geminate gg in contrast to “g” denoting the short
-                     g, are comparable to Ancient Greek “ω”
-                  denoting the long vowel ō in contrast to “o”
-                  denoting the short vowel o, or “η” for the long
-                  vowel ē in contrast to “ε” denoting the
-                  short e. The small capitals should, therefore, not be
+                  or geminate _gg_ in contrast to “g” denoting the short
+                     _g_, are comparable to Ancient Greek “ω”
+                  denoting the long vowel _ō_ in contrast to “o”
+                  denoting the short vowel _o_, or “η” for the long
+                  vowel _ē_ in contrast to “ε” denoting the
+                  short _e_. The small capitals should, therefore, not be
                   treated as abbreviations but rather as symbols in their own right and encoded as
                   small capitals on both facsimile and diplomatic levels. The use of small capitals
                   is rarely consistent and systematic and sometimes they may stand for consonants
@@ -285,15 +285,15 @@ The horizontal bar is from a historical point of view the earliest form of an
                      “m” or “n” and is often referred to as a “nasal stroke”, but it
                   is also used in a number of other contexts, as a mark of suspension or
                   contraction. We recommend using the same entity name in all instances,
-                  &bar;. The unmarked position of the bar is above the immediately
+                  `&bar;`. The unmarked position of the bar is above the immediately
                   preceding character.
 
-This horizontal bar is partially similar to 0304COMBINING
-                  MACRON and 0305COMBINING OVERLINE in the range [Combining
+This horizontal bar is partially similar to `0304`COMBINING
+                  MACRON and `0305`COMBINING OVERLINE in the range [Combining
                      Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf)of
                      [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/), and may be identified with the latter.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointūumu&lt;am&gt;&bar;&lt;/am&gt;u&lt;ex&gt;m&lt;/ex&gt;0305allāallanalla&lt;am&gt;&bar;&lt;/am&gt;alla&lt;ex&gt;n&lt;/ex&gt;0305en̅ennen&lt;am&gt;&bar;&lt;/am&gt;en&lt;ex&gt;n&lt;/ex&gt;0305p̅preſtrp&lt;am&gt;&bar;&lt;/am&gt;p&lt;ex&gt;reſtr&lt;/ex&gt;0305ꝥþatþ&lt;am&gt;&bar;&lt;/am&gt;þ&lt;ex&gt;at&lt;/ex&gt;0305ħhannh&lt;am&gt;&bar;&lt;/am&gt;h&lt;ex&gt;ann&lt;/ex&gt;0305
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointūu_m_u&lt;am&gt;&bar;&lt;/am&gt;u&lt;ex&gt;m&lt;/ex&gt;`0305`allāalla_n_alla&lt;am&gt;&bar;&lt;/am&gt;alla&lt;ex&gt;n&lt;/ex&gt;`0305`en̅en_n_en&lt;am&gt;&bar;&lt;/am&gt;en&lt;ex&gt;n&lt;/ex&gt;`0305`p̅p_reſtr_p&lt;am&gt;&bar;&lt;/am&gt;p&lt;ex&gt;reſtr&lt;/ex&gt;`0305`ꝥþ_at_þ&lt;am&gt;&bar;&lt;/am&gt;þ&lt;ex&gt;at&lt;/ex&gt;`0305`ħh_ann_h&lt;am&gt;&bar;&lt;/am&gt;h&lt;ex&gt;ann&lt;/ex&gt;`0305`
 
 In the last two examples, the bar crosses the ascender of the characters
                      “þ” and “h”. In our view, this is only a coincidence, since the
@@ -301,43 +301,43 @@ In the last two examples, the bar crosses the ascender of the characters
                   is a character with an ascender, the bar will simply cross this stroke.
 
 The unmarked position of the bar is above the base line character, and this is
-                  therefore part of the definition of the entity &bar;. In some cases the
+                  therefore part of the definition of the entity `&bar;`. In some cases the
                   bar may be placed below the base line character. Here, we suggest the entity name
-                  &barbl; (for “bar below”).
+                  `&barbl;` (for “bar below”).
 
-The horizontal bar below is partially similar to 0331COMBINING MACRON BELOW or 0332COMBINING LOW
+The horizontal bar below is partially similar to `0331`COMBINING MACRON BELOW or `0332`COMBINING LOW
                      LINE in the range [Combining
                      Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf) of
                      [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/), and may be identified with the latter.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointꝧþeirþ&lt;am&gt;&barbl;&lt;/am&gt;þ&lt;ex&gt;eir&lt;/ex&gt;0305ꝑperp&lt;am&gt;&barbl;&lt;/am&gt;p&lt;ex&gt;er&lt;/ex&gt;0305
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointꝧþ_eir_þ&lt;am&gt;&barbl;&lt;/am&gt;þ&lt;ex&gt;eir&lt;/ex&gt;`0305`ꝑp_er_p&lt;am&gt;&barbl;&lt;/am&gt;p&lt;ex&gt;er&lt;/ex&gt;`0305`
 
 It is possible to identify various shapes of the horizontal bar. In general we
                   recommend that the transcriber should not make more distinctions than strictly
                   necessary. If the transcriber for some reason would like to create a typology of
-                  bar forms, we suggest that this is done by numbering, &bar-1;,
-                  &bar-2;, &bar-3;, etc. 
+                  bar forms, we suggest that this is done by numbering, `&bar-1;`,
+                  `&bar-2;`, `&bar-3;`, etc. 
                   The meaning of each entity must be
                   explained in the header of the transcription and specified in the entity list (cf.
                      [app. D](HB3_D_schemas.xml) below)
 ### 6.4.2 Flourish
 
 The flourish may be described as a horizontal bar with a return. It appears in the
-                  abbreviation of the Latin word pro in contradistinction to
+                  abbreviation of the Latin word _pro_ in contradistinction to
                      “per”, which typically is abbreviated with a simple horizontal bar. We
-                  suggest using the entity name &combflour; and recommend that it is
+                  suggest using the entity name `&combflour;` and recommend that it is
                   given a separate code point in the Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointꝓꝼaꞇprofatp&lt;am&gt;&combflour;&lt;/am&gt;&fins;a&trot;p&lt;ex&gt;ro&lt;/ex&gt;fatF1C6
-### 6.4.3 The us mark
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointꝓꝼaꞇp_ro_fatp&lt;am&gt;&combflour;&lt;/am&gt;&fins;a&trot;p&lt;ex&gt;ro&lt;/ex&gt;fat`F1C6`
+### 6.4.3 The _us_ mark
 
-Originally a Tironian nota, a mark resembling a small
-                  version of the number “9” is often used for us. It is
+Originally a Tironian _nota_, a mark resembling a small
+                  version of the number “9” is often used for _us_. It is
                   usually placed in a raised position, though not always clearly above the preceding
                   character. Since the typical position of this mark is above the base line, we
-                  regard it as a combining mark and suggest the entity name &us; and
+                  regard it as a combining mark and suggest the entity name `&us;` and
                   recommend that it is given a separate code point in the Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointh᷒hush&lt;am&gt;&us;&lt;/am&gt;h&lt;ex&gt;us&lt;/ex&gt;F15Bla᷒lausla&lt;am&gt;&us;&lt;/am&gt;la&lt;ex&gt;us&lt;/ex&gt;F15B
-### 6.4.4 The er mark
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointh᷒h_us_h&lt;am&gt;&us;&lt;/am&gt;h&lt;ex&gt;us&lt;/ex&gt;`F15B`la᷒la_us_la&lt;am&gt;&us;&lt;/am&gt;la&lt;ex&gt;us&lt;/ex&gt;`F15B`
+### 6.4.4 The _er_ mark
 
 A mark resembling a zigzag was frequently used as abbreviation of a front vowel
                   (including diphtongs) + “r”, e.g. “ir”, “er”, “eir”,
@@ -347,52 +347,52 @@ A mark resembling a zigzag was frequently used as abbreviation of a front vowel
                   This abbreviation mark has now become part of the Unicode Standard (based on its
                   usage in Lithuanian) in the range [Combining
                      diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointv͛averav&lt;am&gt;&er;&lt;/am&gt;av&lt;ex&gt;er&lt;/ex&gt;a035Bvaverav&lt;am&gt;&ercurl;&lt;/am&gt;av&lt;ex&gt;er&lt;/ex&gt;aF1C8heꝼhefirhe&fins;&lt;am&gt;&ercurl;&lt;/am&gt;hef&lt;ex&gt;ir&lt;/ex&gt;F1C8
-### 6.4.5 The ra mark
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointv͛av_er_av&lt;am&gt;&er;&lt;/am&gt;av&lt;ex&gt;er&lt;/ex&gt;a`035B`vav_er_av&lt;am&gt;&ercurl;&lt;/am&gt;av&lt;ex&gt;er&lt;/ex&gt;a`F1C8`heꝼhef_ir_he&fins;&lt;am&gt;&ercurl;&lt;/am&gt;hef&lt;ex&gt;ir&lt;/ex&gt;`F1C8`
+### 6.4.5 The _ra_ mark
 
 Originally an open form of the character “a”, this mark was used as an
-      abbreviation for ra or va. One variant resembles
+      abbreviation for _ra_ or _va_. One variant resembles
       the Greek letter Omega and another variant an Omega with a horizontal bar above. We suggest
-      using the entity name &ra; for the first type and &rabar; for the second. We recommend that the latter is given a separate code
+      using the entity name `&ra;` for the first type and `&rabar;` for the second. We recommend that the latter is given a separate code
       point in the Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointsᷓsvas&lt;am&gt;&ra;&lt;/am&gt;s&lt;ex&gt;va&lt;/ex&gt;1DD3ꝼfra&fins;&lt;am&gt;&rabar;&lt;/am&gt;f&lt;ex&gt;ra&lt;/ex&gt;F1C1
-### 6.4.6 The ur mark
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointsᷓs_va_s&lt;am&gt;&ra;&lt;/am&gt;s&lt;ex&gt;va&lt;/ex&gt;`1DD3`ꝼf_ra_&fins;&lt;am&gt;&rabar;&lt;/am&gt;f&lt;ex&gt;ra&lt;/ex&gt;`F1C1`
+### 6.4.6 The _ur_ mark
 
-The syllable ur (sometimes yr) can
+The syllable _ur_ (sometimes _yr_) can
       be abbreviated by a mark resembling a small version of the numeral “2”. A second form of
       this mark resemble a tilde, and a third form a horizontal version of the number “8”
       (equal to the lemniskate symbol), cf. [Hreinn Benediktsson
        1965](HB3_literature.xml#Benediktsson1965), p. 91. Due to the considerable variation in form we suggest that it might be
-      useful to distinguish between three main forms, using the entity &urrot; for the first type, &ur; for the second and &urlemn; for the third. The code points are respectively F153, 1DD1 and F1C2 (the first and the third of these in the Private Use Area).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointockockurock&lt;am&gt;&urrot;&lt;/am&gt;ock&lt;ex&gt;ur&lt;/ex&gt;F153b᷑þburþb&lt;am&gt;&ur;&lt;/am&gt;þb&lt;ex&gt;ur&lt;/ex&gt;þ1DD1ſpþeſpurþeſp&lt;am&gt;&urlemn;&lt;/am&gt;þeſp&lt;ex&gt;ur&lt;/ex&gt;þeF1C2
+      useful to distinguish between three main forms, using the entity `&urrot;` for the first type, `&ur;` for the second and `&urlemn;` for the third. The code points are respectively `F153`, `1DD1` and `F1C2` (the first and the third of these in the Private Use Area).
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointockock_ur_ock&lt;am&gt;&urrot;&lt;/am&gt;ock&lt;ex&gt;ur&lt;/ex&gt;`F153`b᷑þb_ur_þb&lt;am&gt;&ur;&lt;/am&gt;þb&lt;ex&gt;ur&lt;/ex&gt;þ`1DD1`ſpþeſp_ur_þeſp&lt;am&gt;&urlemn;&lt;/am&gt;þeſp&lt;ex&gt;ur&lt;/ex&gt;þe`F1C2`
 ### 6.4.7 Interlinear characters
 
 Interlinear characters are a common type of abbreviation. An interlinear vowel
-                  typically represents a consonant (often r) + the vowel
-                  itself, while an interlinear consonant typically represents a vowel (often a) + the consonant itself. We suggest that interlinear
+                  typically represents a consonant (often _r_) + the vowel
+                  itself, while an interlinear consonant typically represents a vowel (often _a_) + the consonant itself. We suggest that interlinear
                   abbreviation marks are named by the character itself + “sup” (for
-                  “superscript”), e.g. &asup; (interlinear “a”),
-                  &osup; (interlinear “o”), &rscapsup; (interlinear
+                  “superscript”), e.g. `&asup;` (interlinear “a”),
+                  `&osup;` (interlinear “o”), `&rscapsup;` (interlinear
                   small capital “r”), etc.
 
 [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) includes a selection of more than 30 superscript
-                  characters in the ranges [Combining Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf), 0363–036F and [Combining
-                        Diacritical Marks Supplement](https://unicode.org/charts/PDF/U1DC0.pdf), 1DD4–1DF4.
+                  characters in the ranges [Combining Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf), `0363–036F` and [Combining
+                        Diacritical Marks Supplement](https://unicode.org/charts/PDF/U1DC0.pdf), `1DD4–1DF4`.
                   We suggest that these characters are used to display interlinear characters and
                   that characters outside this selection are given separate code points in the
                   Private Use Area. See the [MUFI 
                      character recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for further specifications.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointbͦgborgb&lt;am&gt;&osup;&lt;/am&gt;gb&lt;ex&gt;or&lt;/ex&gt;g0366mͣmannam&lt;am&gt;&asup;&lt;/am&gt;m&lt;ex&gt;anna&lt;/ex&gt;0363vþavirþav&lt;am&gt;&inodotsup;&lt;/am&gt;þav&lt;ex&gt;ir&lt;/ex&gt;þa0365þegͬþegarþeg&lt;am&gt;&rsup;&lt;/am&gt;þeg&lt;ex&gt;ar&lt;/ex&gt;036C
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointbͦgb_or_gb&lt;am&gt;&osup;&lt;/am&gt;gb&lt;ex&gt;or&lt;/ex&gt;g`0366`mͣm_anna_m&lt;am&gt;&asup;&lt;/am&gt;m&lt;ex&gt;anna&lt;/ex&gt;`0363`vþav_ir_þav&lt;am&gt;&inodotsup;&lt;/am&gt;þav&lt;ex&gt;ir&lt;/ex&gt;þa`0365`þegͬþeg_ar_þeg&lt;am&gt;&rsup;&lt;/am&gt;þeg&lt;ex&gt;ar&lt;/ex&gt;`036C`
 
 The runic character “m”, which itself can be used as an abbreviation (cf.
                      [ch. 6.3.6](#sec6.3.6) above), can appear with an interlinear
                   abbreviation mark. The encoding follows the pattern above.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᛘͣmanna&lt;am&gt;&mMedrun;<br/>
-&asup;&lt;/am&gt;&lt;ex&gt;manna&lt;/ex&gt;16D8 + 0363
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointᛘͣ_manna_&lt;am&gt;&mMedrun;<br/>
+&asup;&lt;/am&gt;&lt;ex&gt;manna&lt;/ex&gt;`16D8 + 0363`
 
-Since the first entity, &mMedrun;, is defined as a base line character
-                  and the second, &asup;, as an interlinear mark placed above the
+Since the first entity, `&mMedrun;`, is defined as a base line character
+                  and the second, `&asup;`, as an interlinear mark placed above the
                   immediately preceding base line character, there will be no doubt as to the
                   positioning. 
 ### 6.4.8 Superscript dots
@@ -401,18 +401,18 @@ Superscript dots are sometimes used to denote length. It is a moot question
                   whether this is a type of abbreviation, but in any case the transcriber should use
                   an entity for the encoding. We recommend that superscript dots are transcribed in
                   analogy with other combining abbreviation marks and suggest using the entity name
-                  &combdot; (for combining dot above).
+                  `&combdot;` (for `combining dot above`).
 
 [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) has a combining dot above in the range [Combining
                      diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointleġıaleggialeg&lt;am&gt;&combdot;&lt;/am&gt;&inodot;aleg&lt;ex&gt;g&lt;/ex&gt;ia0307
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointleġıaleg_g_ialeg&lt;am&gt;&combdot;&lt;/am&gt;&inodot;aleg&lt;ex&gt;g&lt;/ex&gt;ia`0307`
 ## 6.5 Special cases
 ### 6.5.1 Nomina sacra
 
 In some cases, the whole word must be analysed as an abbreviation. This applies to
-                  the traditional nomina sacra, i.e. abbreviations for sacred
-                  words such as Iesus and Christus.
+                  the traditional _nomina sacra_, i.e. abbreviations for sacred
+                  words such as _Iesus_ and _Christus_.
                   These contain characters which originally were Greek but might be taken for Latin
                   characters. For example, the “p” in “xpm” is originally a Greek
                      “rho” (“r”).
@@ -421,9 +421,9 @@ We believe these abbreviations should be encoded as a sequence of the individual
                   base line characters and one or more combining bars above. In the examples below,
                   the originally Greek base line characters have been identified with the
                   similar-looking Latin characters. Greek characters might also have been used in
-                  the encoding (such as &igr; for GREEK SMALL LETTER
+                  the encoding (such as `&igr;` for GREEK SMALL LETTER
                      IOTA, etc.).
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointıciesus&lt;am&gt;ıh&bar;c;&lt;/am&gt;&lt;ex&gt;iesus&lt;/ex&gt;0305xp̅mchristum&lt;am&gt;xp&bar;m&lt;/am&gt;&lt;ex&gt;christum&lt;/ex&gt;0305
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointıc_iesus_&lt;am&gt;ıh&bar;c;&lt;/am&gt;&lt;ex&gt;iesus&lt;/ex&gt;`0305`xp̅m_christum_&lt;am&gt;xp&bar;m&lt;/am&gt;&lt;ex&gt;christum&lt;/ex&gt;`0305`
 
 Typically in abbreviations of this sort, the bar extends over neighbouring
       letters. To replicate that, the combining bar above can be encoded as part of the 
@@ -440,13 +440,13 @@ Interlinear (superscript) characters are used in various ways, not always as
 
 This type is discussed in [ch. 6.4.7](#sec6.4.7) above. Here, we
                   recommend the usage of the `<am>` element and entities such as
-                  &asup; and the like.
+                  `&asup;` and the like.
 
 (b) as addition
 
 When superscript characters are used for adding characters which are missing on
                   the base line we recommend that they are encoded by use of the element
-                     `<add>` and the attribute place="supralinear" (cf. [ch. 9.2.1.1](HB3_ch9.xml#sec9.2.1.1)). One might argue that if the
+                     `<add>` and the attribute `@place="supralinear"` (cf. [ch. 9.2.1.1](HB3_ch9.xml#sec9.2.1.1)). One might argue that if the
                   scribe has added the superscript character as part of the writing process, it
                   should not be regarded as an addition, but rather as an ordinary character which
                   just happened to be placed over the line. However, it is difficult to make a
@@ -454,8 +454,8 @@ When superscript characters are used for adding characters which are missing on
                   process and characters that were added later, maybe shortly afterwards, whether by
                   the same scribe or by another scribe. As a general rule we therefore recommend
                   encoding supralinear characters by the `<add>` element and the attribute
-                     place="supralinear". There is no need for an entity of the type
-                  &asup; since the location of the character is indicated by the
+                     `@place="supralinear"`. There is no need for an entity of the type
+                  `&asup;` since the location of the character is indicated by the
                   element.
 Manuscript formDisplay in an editionEncodinghanͣhan⸌a⸍han&lt;add place="supralinear"&gt;a&lt;/add&gt;
 
@@ -464,9 +464,9 @@ Manuscript formDisplay in an editionEncodinghanͣhan⸌a⸍han&lt;add place="sup
 Inflected forms of Roman numbers are sometimes specified by interlinear
                   characters. In these cases, the interlinear characters are not placed above any
                   base line character but merely raised above the base line. We suggest encoding
-                  them by appropriate entities, such as &trotsup; and &inodotsup;. Note that
+                  them by appropriate entities, such as `&trotsup;` and `&inodotsup;`. Note that
                   these interlinear characters are combining, so in order to avoid a position above
-                  the last base line character, an empty space entity, &nbsp;, has been added
+                  the last base line character, an empty space entity, `&nbsp;`, has been added
                   before each raised character:
 Manuscript formDisplay in an editionEncodingv.  v.  v.&nbsp;&trotsup;&nbsp;&inodotsup;
 
@@ -475,7 +475,7 @@ Manuscript formDisplay in an editionEncodingv.  v.  v.&nbsp;&tro
 Especially at the end of a line one or more characters may be placed above the
                   last word to save place and complete the line. In these cases, we suggest that
                   they are interpreted and encoded as part of the writing process, thus not using
-                  the `<add>` element, but by superscript entities, such as &ssup; for a
+                  the `<add>` element, but by superscript entities, such as `&ssup;` for a
                   superscript “s”. 
 Manuscript formDisplay in an editionEncodingeᷤeᷤe&ssup;
 ### 6.5.3 Missing abbreviation mark
@@ -495,26 +495,26 @@ There are a few examples of base line characters which are abbreviated with an
                   abbreviation mark which is itself abbreviated. An example is the base line
                   character “m” with an interlinear “o” which in turn has a horizontal
                   bar. According to rule 6 in [ch. 5.2.1](HB3_ch5.xml#sec5.2.1)
-                  above this abbreviation should be encoded as the sequence m +
-                  &osup; + &bar;.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionmͦ̅monnomm&lt;am&gt;&osup;&bar;&lt;/am&gt;m&lt;ex&gt;onnom&lt;/ex&gt;
+                  above this abbreviation should be encoded as the sequence `m` +
+                  `&osup;` + `&bar;`.
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionmͦ̅m_onnom_m&lt;am&gt;&osup;&bar;&lt;/am&gt;m&lt;ex&gt;onnom&lt;/ex&gt;
 
-Since &osup; is defined as a combining character, it follows that it is
+Since `&osup;` is defined as a combining character, it follows that it is
                   placed above the immediately preceding character, in this case “m”, and since
-                  &bar; is also defined as a combining character, it follows that it
-                  is placed above &osup;. There is therefore no doubt as to the
+                  `&bar;` is also defined as a combining character, it follows that it
+                  is placed above `&osup;`. There is therefore no doubt as to the
                   positioning of each part. 
 ### 6.5.5 Extension of abbreviation marks
 
 As a rule, combining abbreviation marks are associated with a single base line
-                  character. Thus, the sequence m&osup; means that the interlinear
+                  character. Thus, the sequence `m&osup;` means that the interlinear
                   character “o” is seen as being placed above “m” and not above any other
                   character. However, some abbreviation marks extend over more than one character.
-                  For example, the word “kirkia” may be abbreviated with
+                  For example, the word “k_ir_kia” may be abbreviated with
                   a horizontal bar crossing both the first and the second “k”. We believe it is
                   sufficient to associate the abbreviation mark with only one of these characters,
                   preferably the first.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionk̅k̅ıakirkiak&lt;am&gt;&bar;&lt;/am&gt;<br/>
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionk̅k̅ıak_ir_kiak&lt;am&gt;&bar;&lt;/am&gt;<br/>
 k&inodot;ak&lt;ex&gt;ir&lt;/ex&gt;kia
 
 It is possible to encode this word in such a way that the bar is associated with
@@ -522,15 +522,15 @@ It is possible to encode this word in such a way that the bar is associated with
                   that a single abbreviation mark may appear as two distinct marks (unless it is
                   somehow stated that the two marks belong together). Thus, this is a more complex
                   and possibly misleading solution.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionk̅k̅ıakirkiak&lt;am&gt;&bar;&lt;/am&gt;k&lt;am&gt;&bar;&lt;/am&gt;&inodot;ak&lt;ex&gt;ir&lt;/ex&gt;kia
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionk̅k̅ıak_ir_kiak&lt;am&gt;&bar;&lt;/am&gt;k&lt;am&gt;&bar;&lt;/am&gt;&inodot;ak&lt;ex&gt;ir&lt;/ex&gt;kia
 
-On the other hand, it should be noted that this a case where 0305COMBINING OVERLINE is appropriate, since it connects to left and
+On the other hand, it should be noted that this a case where `0305`COMBINING OVERLINE is appropriate, since it connects to left and
                   right. Cf. the reference in [ch. 6.4.1](#sec6.4.1) above.
 ### 6.5.6 Sporadic ligatures with abbreviation marks
 
 We recommended that sporadic ligatures should not be encoded by use of separate
                   entities but by the element `<seg>` with the attribute
-                     type="lig". A sporadic ligature is basically a joining of two
+                     `@type="lig"`. A sporadic ligature is basically a joining of two
                   base line characters which together do not reflect a separate phonological value.
                   This is the case with ligatures such as “s+k” and “p+p” which in this
                   respect are identical to “s” + “k” and
@@ -544,42 +544,42 @@ However, some ligatures are formed in such a manner that it is difficult to
                      “h”, “k” and “þ”. In these cases, we suggest that it is
                   advisable to use individual entities. These characters must be referred to the
                   Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointhanſ&lt;am&gt;&hslonglig;&lt;/am&gt;h&lt;ex&gt;an&lt;/ex&gt;ſEBADkonungſ&lt;am&gt;&kslonglig;&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſEBAEþeſſ&lt;am&gt;&thornslonglig;<br/>
-&lt;/am&gt;þ&lt;ex&gt;eſ&lt;/ex&gt;ſE734
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointh_an_ſ&lt;am&gt;&hslonglig;&lt;/am&gt;h&lt;ex&gt;an&lt;/ex&gt;ſ`EBAD`k_onung_ſ&lt;am&gt;&kslonglig;&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſ`EBAE`þ_eſ_ſ&lt;am&gt;&thornslonglig;<br/>
+&lt;/am&gt;þ&lt;ex&gt;eſ&lt;/ex&gt;ſ`E734`
 
 Often, a horizontal bar is used across these ligatures. The bar may be encoded
-                  separately with its usual entity, &bar; (cf. [ch.
+                  separately with its usual entity, `&bar;` (cf. [ch.
                      6.4.1](#sec6.4.1) above) or with a character located in the Private Use Area.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointkonungſ&lt;am&gt;&kslonglig;<br/>
-&bar;&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſEBAE + 0305konungſ&lt;am&gt;&kslongligbar;<br/>
-&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſE7C8
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointk_onung_ſ&lt;am&gt;&kslonglig;<br/>
+&bar;&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſ`EBAE + 0305`k_onung_ſ&lt;am&gt;&kslongligbar;<br/>
+&lt;/am&gt;k&lt;ex&gt;onung&lt;/ex&gt;ſ`E7C8`
 ### 6.5.7 The character “r” as interlinear ligature
 
 A quite special type of abbreviation is interlinear “r” in ligature with e.g.
                      “þ”. The encoding is similar to the examples in [ch. 6.5.6](#sec6.5.6) above.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointþar&lt;am&gt;þ&rsup;&lt;/am&gt;þ&lt;ex&gt;a&lt;/ex&gt;rE8C1
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointþ_a_r&lt;am&gt;þ&rsup;&lt;/am&gt;þ&lt;ex&gt;a&lt;/ex&gt;r`E8C1`
 ### 6.5.8 Sharp “s”
 
 In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
-                  e.g. for skilling, smør and
-                     son. The German character “sharp s” is defined in
+                  e.g. for _skilling_, _smør_ and
+                     _son_. The German character “sharp s” is defined in
                      [The
-                        Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) as 00DFLATIN SMALL LETTER SHARP S in the range [Latin-1
-                     Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend using the ISO entity &szlig; also
+                        Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) as `00DF`LATIN SMALL LETTER SHARP S in the range [Latin-1
+                     Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend using the ISO entity `&szlig;` also
                   when this character is used as an abbreviation mark. The element`<am>` will
                   indicate clearly that it is an abbreviation mark, not an ordinary character. See
                   the discussion on the full stop in [ch. 6.3.8](#sec6.3.8)
                   above.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointHakonßHakonsonHakon&lt;am&gt;&szlig;<br/>
-&lt;/am&gt;Hakon&lt;ex&gt;son&lt;/ex&gt;00DF
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointHakonßHakon_son_Hakon&lt;am&gt;&szlig;<br/>
+&lt;/am&gt;Hakon&lt;ex&gt;son&lt;/ex&gt;`00DF`
 ### 6.5.9 The semicolon abbreviation
 
 In Old Swedish, the semicolon character is often used as an abbreviation for the
                   front vowel “e” or “æ” + the dental “t” or “dh”, typically in words like “medh”
-                  and “thet” (Old Norse með and þat).
+                  and “thet” (Old Norse _með_ and _þat_).
                   The expansion of the abbreviated syllable varies, and will in many cases be based
                   on the usage in the individual manuscripts.
-Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointmꝫmedhm&lt;am&gt;&etfin;&lt;/am&gt;m&lt;ex&gt;edh&lt;/ex&gt;A76Bthꝫthetth&lt;am&gt;&etfin;&lt;/am&gt;th&lt;ex&gt;et&lt;/ex&gt;A76B
+Abbreviated formExpanded formEncoding of abbreviationEncoding of expansionCode pointmꝫm_edh_m&lt;am&gt;&etfin;&lt;/am&gt;m&lt;ex&gt;edh&lt;/ex&gt;`A76B`thꝫth_et_th&lt;am&gt;&etfin;&lt;/am&gt;th&lt;ex&gt;et&lt;/ex&gt;`A76B`
 
 There is a long-standing tradition for rendering this abbreviation character as
                   “z”, e.g. “mz” and “thz”. This goes back to 17th century editions of medieval

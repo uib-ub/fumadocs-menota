@@ -38,16 +38,16 @@ The element `<add>` should be used for additions made in the manuscript by the s
   or a later compiler, annotator or corrector. The latter additions are traditionally referred to as being “with younger hand” or the like. It may be desirable to make a distinction between the contemporaneous hand in the manuscript and any later hand, but it is not always a simple task to do so. However, the act of addition is usually easy to spot, as it is typically found above the line or in the margin. For this reason, we recommend that  the place of the addition should always be specified, but not necessarily the hand responsible for the addition.
 Elements & attributesObl/OptContents`<add>`Contains characters, words or phrases added to the manuscript text or 
     in the margins of the manuscript by the scribe, an annotator or a
-    corrector. Attributes include:placeObligatoryIndicates where the addition is made. Suggested values include inline, supralinear, 
-      infralinear and margin.handOptionalSignifies the scribe who made the addition. Sample values may be scribe,
-      mainscribe and laterscribe.
+    corrector. Attributes include:`@place`ObligatoryIndicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, 
+      `"infralinear"` and `"margin"`.`@hand`OptionalSignifies the scribe who made the addition. Sample values may be `"scribe"`,
+      `"mainscribe"` and `"laterscribe"`.
 
 
 
 Fig. 9.1. Words added above the line. _Äldre Västgötalagen_. Holm B 59, f. 6v, l. 8–11.
 
-In the second line of fig. 9.1, there are no less than three supralinear words. The first is var ‘was’, which is inserted between Iak
-      and þa a þingi. The encoding in a single-level transcription would be as follows:
+In the second line of fig. 9.1, there are no less than three supralinear words. The first is _var_ ‘was’, which is inserted between _Iak_
+      and _þa a þingi_. The encoding in a single-level transcription would be as follows:
 ```xml
 . . .
 <w><me:dipl>Iak</me:dipl></w>
@@ -130,14 +130,14 @@ In the second line of fig. 9.2, the word “of” is placed in the margin, indic
 
 
 The location of the addition is indicated by the 
-      attribute place. In this example, the addition is made outside the text column and therefore described by the value margin. Note that we are not encoding the triangular signs as such.
+      attribute `@place`. In this example, the addition is made outside the text column and therefore described by the value `"margin"`. Note that we are not encoding the triangular signs as such.
 
  Scribal additions 
       are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
       In some cases, however, the addition can be longer, especially when placed in the margin. These additions
       should as far as possible be located within the main text.
 
-As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for fimti (type c) or for reasons of space, e.g. “eᷤ” for es (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as &ssup; for the supralinear “s” in eᷤ for es. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
+As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for _fimti_ (type c) or for reasons of space, e.g. “eᷤ” for _es_ (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as `&ssup;` for the supralinear “s” in `eᷤ` for _es_. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
 
 Furthermore, changes in scribal hands are not considered additions. For markup of 
   such phenomena, the `<handShift/>` element should be used (cf. [ch. 3.14](HB3_ch3.xml#sec3.14) above). Note that this element is parallel to empty elements
@@ -154,7 +154,7 @@ Downwards-pointing insertion signs,<br/>
  e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax&lt;add place="margin"&gt;Upwards-pointing insertion signs,<br/>
  e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti
 
-In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at 2E0C and 2E0D, while the second set, ⸝...⸜, are located at 2E1D and 2E1C.
+In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at `2E0C` and `2E0D`, while the second set, ⸝...⸜, are located at `2E1D` and `2E1C`.
 
 We suggest that it is sufficient to display two main types, so that additions 
          within the text column (typically supralinear, but also inline and infralinear) are displayed by the first set and additions in the margin with the second set. It can be left to the photographic facsimile to show exactly how the additions have been placed.
@@ -173,18 +173,18 @@ Elements & attributesObl/OptContents`<del>`Contains a character, word or
     passage deleted or otherwise indicated
     as superfluous or spurious in the manuscript text by a
     scribe, annotator or corrector. Attributes
-    include:rendObligatoryThis attribute is used to classify the deletion,
-      using any convenient typology. Sample values include overstrike, erasure
-      and subpunction.
-    handOptionalSignifies the scribe who made the deletion. Values include 
-      scribe, mainscribe and laterscribe.
+    include:`@rend`ObligatoryThis attribute is used to classify the deletion,
+      using any convenient typology. Sample values include `"overstrike"`, `"erasure"`
+      and `"subpunction"`.
+    `@hand`OptionalSignifies the scribe who made the deletion. Values include 
+      `"scribe"`, `"mainscribe"` and `"laterscribe"`.
     
 
 
 
 Fig. 9.3. Characters deleted by erasure. _Konungs skuggsjá_. AM 243 bα fol, f. 5ra, l. 24–26.
 
-In the middle line of fig. 9.3, two characters have been erased in the word skilningar laus. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:
+In the middle line of fig. 9.3, two characters have been erased in the word _skilningar laus_. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:
 ```xml
 . . .
 <w><me:dipl>þviat</me:dipl></w>
@@ -238,10 +238,10 @@ In the stylesheet for the Menota archive, scribal deletions are displayed by ver
       by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
 ElementDisplay`<del>`Vertical bars with quills, e.g. þviat ſkilningar ⸠ſk⸡laus ſkepna
 
-In the Unicode Standard, the vertical bar with the quill to the right is located at 2E20, and the vertical bar with a quill to the left at 2E21.
+In the Unicode Standard, the vertical bar with the quill to the right is located at `2E20`, and the vertical bar with a quill to the left at `2E21`.
 
 
-As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the rend attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.
+As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the `@rend` attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.
 
 Other stylesheets may display deletions by other types of signs, by a note rather than by signs, or not at all.
 ### 9.2.3 Transpositions by the scribe
@@ -255,9 +255,9 @@ Fig. 9.4. Transpositions of two words. _The Old Norwegian Homily Book_. AM 619 4
 In fig. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.9.2.3.1 Encoding of scribal transpositions
 
 There are two pairs of elements used in this handbook, `<orig>` + `<reg>` and `<sic>` + `<corr>`. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the `<sic>` + `<corr>` elements, as exemplified in [ch. 9.3.3](#sec9.3.3) below.
-Elements & attributesObl/OptContents`<orig>`Contains the reading in the manuscript. Attributes include:rendObligatoryThe correction markers in the manuscript. A typical value would be transposition-signs.`<reg>`Contains the reading corrected in the manuscript. Attributes include:typeObligatoryThe type of correction. We recommend the value transposition.respOptionalThe one who is responsible for the regularisation. Sample values include scribe, mainscribe and laterscribe.
+Elements & attributesObl/OptContents`<orig>`Contains the reading in the manuscript. Attributes include:`@rend`ObligatoryThe correction markers in the manuscript. A typical value would be `"transposition-signs"`.`<reg>`Contains the reading corrected in the manuscript. Attributes include:`@type`ObligatoryThe type of correction. We recommend the value `"transposition"`.`@resp`OptionalThe one who is responsible for the regularisation. Sample values include `"scribe"`, `"mainscribe"` and `"laterscribe"`.
 
-In a single-level encoding, we recommend that the original reading is given within the `<orig>` element with a rend attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing `<reg>` element, and both elements are contained in a `<choice>` element. The `<reg>` element should have a type attribute with the value transposition, and preferably a resp attribute with a suitable value, e.g. mainscribe or laterscribe, or, if a distinction is difficult to draw, just scribe:
+In a single-level encoding, we recommend that the original reading is given within the `<orig>` element with a `@rend` attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing `<reg>` element, and both elements are contained in a `<choice>` element. The `<reg>` element should have a `@type` attribute with the value `"transposition"`, and preferably a `@resp` attribute with a suitable value, e.g. `"mainscribe"` or `"laterscribe"`, or, if a distinction is difficult to draw, just `"scribe"`:
 ```xml
 . . .
 <choice>
@@ -333,7 +333,7 @@ It is not always possible, however, to ascertain the relation between
 the two. If someone has deleted the originally written text inline
 this does not automatically mean that a corresponding addition above
 the line or in the margin is made by the same scribe. A correspondence 
-can be expressed by the resp attribute, 
+can be expressed by the `@resp` attribute, 
 whenever the editor is able make this identification.
  
 
@@ -343,7 +343,7 @@ A common type of substitution occurs when a scribe makes changes to one characte
 
 Fig. 9.5. Substitution of one character with another. _The Old Norwegian Homily Book_. AM 619 4to, f. 26v, l. 7–11.
 
-In the 4th line of fig. 9.5, the 5th word has been changed from “ſundum” to “ſẏndum”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
+In the 4th line of fig. 9.5, the 5th word has been changed from “ſundu_m_” to “ſẏndu_m_”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
 
 We recommend that in a single-level encoding, the `<del>` and `<add>` elements
     are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:
@@ -434,15 +434,15 @@ we sometimes encounter text which for one reason or another should be supplied, 
 
 If text is missing in the manuscript, the editor can supply it using the `<supplied>` element. We suggest that there are two major types of supplied text:
 
-(1) Restoration is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the reason attribute and the value restoration. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a resp attribute. We regard restoration as the default type of supplied text.
+(1) Restoration is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the `@reason` attribute and the value `"restoration"`. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a `@resp` attribute. We regard restoration as the default type of supplied text.
 
-(2) Emendation is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the reason attribute and the value emendation. Also here, the person who is responsible for the emendation should be identified in a resp attribute.
+(2) Emendation is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the `@reason` attribute and the value `"emendation"`. Also here, the person who is responsible for the emendation should be identified in a `@resp` attribute.
 Elements & attributesObl/OptContents`<supplied>`Signifies text supplied by
         the editor in order to restore or emend the manuscript text.
-        Attributes include:reasonObligatoryIndicates why the text has
-        been supplied. It should be given one of the two values, restoration or emendation. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.respObligatoryIndicates the individual
+        Attributes include:`@reason`ObligatoryIndicates why the text has
+        been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.`@resp`ObligatoryIndicates the individual
         responsible for the addition of characters, words or passages
-        contained within the `<supplied>` element.sourceOptionalStates the source of the
+        contained within the `<supplied>` element.`@source`OptionalStates the source of the
         supplied text if this can be located.9.3.1.1 Encoding of restorations
 
 Restoration is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](HB3_ch8.xml#sec8.2)), empty spaces ([ch. 8.3](HB3_ch8.xml#sec8.3)), and unclear passages ([ch. 8.4](HB3_ch8.xml#sec8.4)).
@@ -451,7 +451,7 @@ Restoration is a common feature in the transcription of manuscripts. The various
 
 Fig. 9.7. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.
 
-In fig. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word sá ‘this’. This is a single-level encoding on the diplomatic level:
+In fig. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word _sá_ ‘this’. This is a single-level encoding on the diplomatic level:
 ```xml
 . . .
 <w><me:dipl><supplied reason="restoration" resp="encoder">
@@ -561,7 +561,7 @@ In a multi-level encoding, the `<gap/>` element will be used on the facsimile le
 
 Fig. 9.9. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.
 
-In fig. 9.9, the first character in the second line is so smudged that it has become illegible. As stated in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1) above, we recommended that illegible characters are encoded by a standard sign such as 25CCDOTTED CIRCLE. A single-level encoding of this passage is given in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1), while we here offer a multi-level encoding with supplied text on the diplomatic as well as the normalised level:
+In fig. 9.9, the first character in the second line is so smudged that it has become illegible. As stated in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1) above, we recommended that illegible characters are encoded by a standard sign such as `25CC`DOTTED CIRCLE. A single-level encoding of this passage is given in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1), while we here offer a multi-level encoding with supplied text on the diplomatic as well as the normalised level:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -601,15 +601,15 @@ In fig. 9.9, the first character in the second line is so smudged that it has be
 Note that the reading on the facsimile level uses the dotted circle for the illegible character, while the diplomatic and normalised levels offer a restoration in the `<supplied>` element.9.3.1.2 Encoding of emendations
 
 Emendation is here used to describe the addition of one or more characters or 
-      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, ope codicum, and emendations based on the subjective judgment of the editor, ope ingenii. In the following, we shall give examples of both.
+      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, _ope codicum_, and emendations based on the subjective judgment of the editor, _ope ingenii_. In the following, we shall give examples of both.
 
-The first example is of an emendation ope codicum. The bottom line in fig. 9.10 reads “Vittra er hyggiændi guðlegra luta sva sem gefet er manne”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
+The first example is of an emendation _ope codicum_. The bottom line in fig. 9.10 reads “Vitt_ra_ er hyggiændi guðleg_ra_ luta sva sem gefet er man_n_e”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
 
 
 
 Fig. 9.10. Supplied text. _The Old Norwegian Homily Book_. AM 619 4to, f. 14r, l. 26–30.
 
-However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation ope codicum. If Indrebø’s emendation is accepted, this would be a single-level encoding:
+However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation _ope codicum_. If Indrebø’s emendation is accepted, this would be a single-level encoding:
 ```xml
 . . .
 <w><me:dipl>guðleg<ex>ra</ex></me:dipl></w>
@@ -659,16 +659,16 @@ In a multi-level encoding, the facsimile level will be left empty for the suppli
 ```
 
 
-The second example is of an emendation ope ingenii. This is offered by fig. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
-      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add þik, “Iesus Christus, sá er nú er krossfestr, 
-        hafi þik þangat sent”. The editor’s ingenium is in this case based on the syntactic analysis of Old Norse.
+The second example is of an emendation _ope ingenii_. This is offered by fig. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
+      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add _þik_, “Iesus Christus, sá er nú er krossfestr, 
+        hafi _þik_ þangat sent”. The editor’s _ingenium_ is in this case based on the syntactic analysis of Old Norse.
 
 
 
 Fig. 9.11. Supplied text. _Niðrstigningar saga_. AM 645 4to, f. 55v, l. 5–7.
 
 As suggested above, the `<supplied>` element should be specified with the 
-    attribute reason and the value emendation. This would be a single-level encoding of the last four words:
+    attribute `@reason` and the value `"emendation"`. This would be a single-level encoding of the last four words:
 ```xml
 . . .
 <w><me:dipl>hafe</me:dipl></w>
@@ -717,12 +717,12 @@ In a multi-level encoding, the facsimile level will simply be empty for the supp
 
 In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.9.3.1.3 Display of editorial insertions
 
-In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>` element has the reason attribute and the emendation value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
+In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>` element has the `@reason` attribute and the `"emendation"` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
 Element and attributes Display&lt;supplied 
         reason="restoration"&gt;<br/>
-Square brackets, 005B and 005D respectively, e.g.
+Square brackets, `005B` and `005D` respectively, e.g.
         [S]á einn maðr&lt;supplied 
-        reason="emendation"&gt;Open angle brackets, 27E8 and 27E9, e.g. 
+        reason="emendation"&gt;Open angle brackets, `27E8` and `27E9`, e.g. 
         hafi ⟨þik⟩ þangat sent
       
 
@@ -737,7 +737,7 @@ Dittographies are probably the most common cause for suppression. The TEI P5 Gui
 As for other instances of editorial suppression, we recommend using the `<sic>` and `<corr>` elements, so that the `<sic>` element contains the suppressed reading and the `<corr>` element is left empty. This will be dealt with in [ch. 9.3.3](#sec9.3.3) below.
 
 Note. Earlier versions of the Menota Handbook introduced the `<me:expunged>` element (later renamed as `<me:suppressed>`) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard `<surplus>` element or the `<sic>` and `<corr>` elements are being used for editorial suppression.9.3.2.1 Encoding of suppressed text
-Elements & attributesObl/OptContents`<surplus>`Contains text which the editor believes should be recognised as superfluous.reasonOptionalIndicates the reason for the piece of text being superfluous. It can be given values like dittography, excess and incoherence.
+Elements & attributesObl/OptContents`<surplus>`Contains text which the editor believes should be recognised as superfluous.`@reason`OptionalIndicates the reason for the piece of text being superfluous. It can be given values like `"dittography"`, `"excess"` and `"incoherence"`.
 
 In the following, we give examples of `<surplus>` text due to dittography, fig. 9.12, and incoherence, fig. 9.13.
 
@@ -789,7 +789,7 @@ From a pragmatic point of view, the second, not the first, instance of “sialfr
 
 Fig. 9.13. Incoherence. _Henrik Harpestreng_. NKS 66 8vo, f. 73r, l. 9–13 and f. 73v, l. 1–2.
 
-In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the `<surplus>` element and the incoherence value of the reason attribute:
+In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the `<surplus>` element and the `"incoherence"` value of the `@reason` attribute:
 ```xml
 . . .
 <lb ed="ms" n="11"/>
@@ -820,11 +820,11 @@ In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really
 In short, the `<surplus>` element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.9.3.2.2 Display of editorial suppression
 
 In the stylesheet for the Menota archive, text suppressed by the editor is displayed in curly brackets. Deletions by the scribe, on the other hand, is displayed in vertical bars with quills, as shown in [ch. 9.2.2.2](#sec9.2.2.2) above.
-ElementDisplay`<surplus>`Curly brackets, 005B and 005D respectively, e.g. vaʀ sialfr \{sialfr\}
+ElementDisplay`<surplus>`Curly brackets, `005B` and `005D` respectively, e.g. vaʀ sialfr \{sialfr\}
 
 Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in fig. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr \{\} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.
 
-If the reason for the suppression is a dittography, as exemplified here, some printed editions will use the signs 2E21 and 2E20. Since these are identical to the signs recommended for deletions by the scribe, only in the reverse order, we do not recommend this usage.
+If the reason for the suppression is a dittography, as exemplified here, some printed editions will use the signs `2E21` and `2E20`. Since these are identical to the signs recommended for deletions by the scribe, only in the reverse order, we do not recommend this usage.
 
 Other stylesheets will display suppressed text differently, for example by overstrike.
 ### 9.3.3 Corrections by the editor
@@ -836,7 +836,7 @@ elements `<sic>` and
 Elements & attributesObl/OptContents`<sic>`Contains text reproduced
     although apparently incorrect or inaccurate.`<corr>`Contains the correct form
     of a passage apparently erroneous in the manuscript text.
-respObligatoryIndicates the individual
+`@resp`ObligatoryIndicates the individual
     responsible for the correction of characters, words or passages
     contained within the `<corr>` element.
 
@@ -844,7 +844,7 @@ respObligatoryIndicates the individual
 
 Fig. 9.14. Correction by editor. _The Old Norwegian Homily Book_. AM 619 4to, f. 8v, l. 23–26.
 
-In the third line of fig. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a minim correction from iu to ui. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
+In the third line of fig. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a _minim_ correction from _iu_ to _ui_. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
 ```xml
 . . .
 <w><me:dipl>hvasser</me:dipl></w>
@@ -911,7 +911,7 @@ When the encoder would like to supply or correct text using the `<supplied>` or 
 
 On the normalised level, one should simply follow the regularised orthography for the language in question. For Old Icelandic and Old Norwegian we recommend in general the orthography of the Old Norse Dictionary in Copenhagen. However, as discussed in [ch. 10](HB3_ch10.xml) below, there may be other normalised orthographies, for example appropriate to late medieval texts.
 
-On the diplomatic level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of fig. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word “mannlegra” should have been rendered as “mannlegra” in analogy with “guðlegra”, or, perhaps, as “mannlegra”, assuming that a double “nn” would have been written with a single “n” with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply “mannlegra”.
+On the diplomatic level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of fig. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word “mannlegra” should have been rendered as “mannleg_ra_” in analogy with “guðleg_ra_”, or, perhaps, as “man_n_leg_ra_”, assuming that a double “nn” would have been written with a single “n” with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply “mannlegra”.
 
 Another example is the supplied text in the space left by the scribe in AM 309 fol, exemplified in fig. 8.3 in [ch. 8.3.1](HB3_ch8.xml#sec8.3.1) above. Even if the scribe only left room for approximately three characters, we recommend a fully supplied reading such as “halfa mork” rather than e.g. “.ɟ. ᴍ.” on the diplomatic and normalised levels. A supplied reading like “.ɟ. ᴍ.” might however be appropriate for the facsimile level.
 
@@ -967,8 +967,8 @@ An alternative would be to add the presumed abbreviated reading “.ɟ. ᴍ.” 
 ## 9.4 Editorial comments
 
 Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.
-Elements & attributesObl/OptContents`<note>`Contains comments to the text by the editor. Main attributes:typeOptionalStating what kind of a note it is, e.g. explanation, variation, 
-        codicology, paleography.sourceOptionalStating the source for a passage in the text, particularly relevant for the variation value of the type attribute.
+Elements & attributesObl/OptContents`<note>`Contains comments to the text by the editor. Main attributes:`@type`OptionalStating what kind of a note it is, e.g. `"explanation"`, `"variation"`, 
+        `"codicology"`, `"paleography"`.`@source`OptionalStating the source for a passage in the text, particularly relevant for the `"variation"` value of the `@type` attribute.
 
 These attributes are optional, so it is possible to use the `<note>` element without any further specification of its contents.
 ### 9.4.1 Apparatus-style comments
@@ -978,7 +978,7 @@ The apparatus to many printed editions may contain different types of comments, 
 Sometimes an editor may add a “[sic!]” in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the `<sic>` and `<corr>` elements. If there is no obvious correction, one may add a note stating “highlighted by the editor” or the like.
 ### 9.4.2 Explanatory comments
 
-Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text in medias res, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
+Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text _in medias res_, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
 
 In the Menota archive, the text of Codex Wormianus is opened with a comment stating that the first page is blank. Readers are thus encouraged to move on to the next page:
 ```xml

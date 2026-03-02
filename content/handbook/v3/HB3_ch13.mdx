@@ -50,23 +50,23 @@ that the stanzas are encoded with the following elements and
 attributes:
 Elements & attributesObl/OptExplanation`<lg>`Marks the stanza in
          relation to the surrounding prose text.
-      nOblIndicates the identity of
+      `@n`OblIndicates the identity of
          the stanza within the manuscript, i.e. its number in the
-         manuscript, using values such as 1, 2, 3.
-      xml:idOptionalIndicates the identity of
+         manuscript, using values such as `"1"`, `"2"`, `"3"`.
+      `@xml:id`OptionalIndicates the identity of
          the stanza within the medieval poetic corpus. The id should refer to a standard edition of the works. 
          Menota recommends using the sigla for verses used by the Skaldic Poetry project 
          ([https://skaldic.abdn.ac.uk/db.php](https://skaldic.abdn.ac.uk/db.php))
          for non-Eddic verse, and the numbering in [Neckel and Kuhn 1983](HB3_literature.xml#Kuhn1983)
  for Eddic verse. If no standard corpus
          contains the verse (e.g. rímur), it should be indicated by a separate typology. 
-      typeOptionalIndicates the general
+      `@type`OptionalIndicates the general
          metrical form of the stanza, e.g.
-         dróttkvætt or
-         fornyrðislag.`<l>`Marks the line within the
-         stanza.nOblIndicates the line number
-         within the stanza, using values such as 1, 2, 3. Lines are broken according to Norse-Icelandic conventions, that is, 
-         alliterative lines are treated as two lines, with a break at the caesura.typeOptionalIndicates the type of line for formatting purposes; the implied value, normal, is not indented; use b-line for the b-line of eddic metres which should have the caesura represented by a long space; use ljod-long for ljóðaháttr long lines, which should have a line break and be indented.metOptionalIndicates the metrical
+         `"dróttkvætt"` or
+         `"fornyrðislag."``<l>`Marks the line within the
+         stanza.`@n`OblIndicates the line number
+         within the stanza, using values such as `"1"`, `"2"`, `"3"`. Lines are broken according to Norse-Icelandic conventions, that is, 
+         alliterative lines are treated as two lines, with a break at the caesura.`@type`OptionalIndicates the type of line for formatting purposes; the implied value, `"normal"`, is not indented; use `"b-line"` for the b-line of eddic metres which should have the caesura represented by a long space; use `"ljod-long"` for _ljóðaháttr_ long lines, which should have a line break and be indented.`@met`OptionalIndicates the metrical
          form of the line. The form should be according to a standard typology, e.g. types A–E of 
          the common germanic verse form. Sub-types can also be represented, using, e.g. [Gade 1995](HB3_literature.xml#Gade1995).
          Alternatively, the actual scansion of the line can be represented using a series of symbols 
@@ -136,8 +136,8 @@ The basic encoding of a verse within a prose work is thus:
 ```
 
 
-The verse is numbered as the first in the manuscript, and the value of xml:id is according to its own typology (this verse 
-does not occur in most poetic corpora). The value of type simply represents that this is in the common Germanic metre. No
+The verse is numbered as the first in the manuscript, and the value of `@xml:id` is according to its own typology (this verse 
+does not occur in most poetic corpora). The value of `@type` simply represents that this is in the common Germanic metre. No
 attempt has been made here to do more detailed metrical analysis.
 
 The following example is of a more complex, skaldic example from _Skáldskaparmál_ in AM 748 II 4to. The verse (from Bragi Boddason’s _Ragnarsdrápa_ (stanza 5) is thus:
@@ -213,8 +213,8 @@ The transcription is encoded thus (long “s” is normalised to “s”; encode
 ```
 
 
-The value of n is 3, as this is the third verse recorded in the manuscript. The verse’s xml:id is the siglum from the  
-   [Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is dróttkvætt, 
+The value of `@n` is 3, as this is the third verse recorded in the manuscript. The verse’s `@xml:id` is the siglum from the  
+   [Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is `"dróttkvætt"`, 
 but this categorisation is unnecessary, as the link to the skaldic project also provides information on the metrical category of each verse. 
 Each line is encoded with the `<l>` element, with the line number given and the metrical categorisation (here, from
    [Gade 1995](HB3_literature.xml#Gade1995); “X” means 
