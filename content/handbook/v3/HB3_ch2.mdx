@@ -90,7 +90,7 @@ that have been sufficiently anglicised so as to render this
 unnecessary), stage directions in plays, theorems in mathematical
 works and biological and zoological nomenclature. Although Hart’s
 does not mention it, italic font is also regularly used to indicate
-emphasis, for example in novels: “I most certainly _didn’t_ ask
+emphasis, for example in novels: “I most certainly <em>didn’t</em> ask
 him to come.” With ordinary word-processing softwares, all these
 things would be marked up directly, i.e. with the relevant
 codes for “italic-on” and “italic-off”. If you think of the computer
@@ -137,11 +137,11 @@ In XML pairs of tags are used to mark off such units, a start tag and an end tag
      a corresponding `</div>` tag at the end. Within each division there would be any number of
      paragraphs, usually tagged with `<p>`. Since XML is structured hierarchically, elements
      can contain each other, but only in their intirety. Overlapping structures of elements are not
-     allowed (instead, so-called _milestones_ (empty elements) are used; see
+     allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
       [ch. 3.12](HB3_ch3.xml#sec3.12) below and, in general, [ch. 16](HB3_ch16.xml) below).
 
 The way two elements relate to each other hierarchically is determined by the
-_schema_ used, which in our case would stipulate
+<em>schema</em> used, which in our case would stipulate
 that a `<chapter>` must contain one or more `<p>`
 elements.  
 In any given schema, 
@@ -434,7 +434,7 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the _gaiji_ module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+In recent years, the TEI community has moved towards the use of the `<g>` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
      This requires an extensive `<charDecl>` section in the header of the document defining each “gaiji” character.
 
 As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;` entity, for example, only a single line is required:
@@ -584,9 +584,9 @@ Following the schema, the entities used in the document are referenced.
             
 
 A structured XML document contains different kinds of components. We have already
-     learned about _elements_, containing _text_, and thus
-     the actual contents. We have also seen that elements can have one or more _attributes_ with their various _values_. Finally, XML documents may
-     also contain _comments_. Comments begin with “&lt;!--” and end with
+     learned about <em>elements</em>, containing <em>text</em>, and thus
+     the actual contents. We have also seen that elements can have one or more <em>attributes</em> with their various <em>values</em>. Finally, XML documents may
+     also contain <em>comments</em>. Comments begin with “&lt;!--” and end with
       “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
      as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
      a comment is considered as not actually part of the document – it is “commented out”
@@ -616,7 +616,7 @@ In addition to purely structural
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
                We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
                (and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
-               as a _namespace_, and we have consequently set up a namespace “me” for our usage 
+               as a <em>namespace</em>, and we have consequently set up a namespace “me” for our usage 
                (“me” being short for “Menota”).
 
 Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>` element:
@@ -628,7 +628,7 @@ Namespaces are specified at the very beginning of the XML code, in the case of T
 
 
 In the Menota XML files, all additional elements and attributes will be preceded by “me:”. 
-               For example, we recommend that a normalised transcription is contained in such an additional element, which we call _norm_. 
+               For example, we recommend that a normalised transcription is contained in such an additional element, which we call <em>norm</em>. 
                It appears as `<me:norm>`, where the prefix identifies it as an element belonging to the Menota namespace. 
                The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
                anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
@@ -794,7 +794,7 @@ For the actual styling of the (re-arranged) content, XSLT ultimately uses the CS
 with XSLT one has all the options of plain CSS in addition to powerful transformations.
 
 The above display of an Eddic stanza is the preferred one in many Nordic editions; each line
-     occupies a line in the edition, whether it is a short line (as in _fornyrðislag_) or a full line (as in _ljóðaháttr_). In Continental
+     occupies a line in the edition, whether it is a short line (as in <em>fornyrðislag</em>) or a full line (as in <em>ljóðaháttr</em>). In Continental
      and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
      short lines making up a long line is printed as a single line in the edition, though with a
      sizeable space between the two lines, thus:
@@ -807,7 +807,7 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
 </Quote>
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
-     line (in _ljóðaháttr_) or each fifth line (in _fornyrðislag_) are numbered. In an eight-line display such as the one in the screenshot
+     line (in <em>ljóðaháttr</em>) or each fifth line (in <em>fornyrðislag</em>) are numbered. In an eight-line display such as the one in the screenshot
      above, the fitfth line of the first stanza is the one beginning with “skegg”. The same
      applies to the four-line display above, since each short line is counted, irrespective of
      whether it is displayed in conjunction with another short line or not. To achieve a

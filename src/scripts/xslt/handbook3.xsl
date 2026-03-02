@@ -120,9 +120,9 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="@rend='italic'">
-                <xsl:text>_</xsl:text>
+                <xsl:text>&lt;em&gt;</xsl:text>
                 <xsl:apply-templates/>
-                <xsl:text>_</xsl:text>
+                <xsl:text>&lt;/em&gt;</xsl:text>
             </xsl:when>
             <xsl:when test="@rend='glyph'">
                 <xsl:text>&lt;Glyph s="</xsl:text>

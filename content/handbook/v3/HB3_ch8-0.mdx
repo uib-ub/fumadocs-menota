@@ -54,7 +54,7 @@ The size of a lacuna varies considerably and may be nothing more than a
 ### 8.2.1. Encoding of lacunas
 
 Whenever the manuscript contains a lacuna we suggest using the element
-                  `<gap/>`, whatever the extent of the lacuna. We use the term _lacuna_ in a strict sense, referring to any part of a manuscript which is physically missing. This element has several  attributes, specifying size and reason for the lacuna:
+                  `<gap/>`, whatever the extent of the lacuna. We use the term <em>lacuna</em> in a strict sense, referring to any part of a manuscript which is physically missing. This element has several  attributes, specifying size and reason for the lacuna:
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
@@ -72,7 +72,7 @@ Whenever the manuscript contains a lacuna we suggest using the element
                         damage, if it can be identified. Values can be `"rubbing"`, `"smoke"`, `"fungus"` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
 
 
-In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn _maðr_ er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
+In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn <em>maðr</em> er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
 
 
 
@@ -142,13 +142,13 @@ In [ch. 8.5](#sec8.5) below, examples of larger lacunas are given.
 
 Stylesheets will vary with respect to the display of the `<gap/>` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
 
-In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC`DOTTED CIRCLE. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + _one line missing_ + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
+In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC`DOTTED CIRCLE. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
 
 A suitable stylesheet will be able to pick values from the attributes of the `<gap/>` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
 
 | Element | Smaller lacunas | Larger lacunas |
 |-----|-----|-----|
-| `<gap/>` | By a number of dotted circles,  ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + _one line missing_ + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
+| `<gap/>` | By a number of dotted circles,  ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
 
 
 Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD`SMALL BASE LINE ZERO SIGN, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
@@ -181,7 +181,7 @@ In fig. 8.3, the scribe of _Landslǫg Magnúss
                be paid, so that it could be supplied at a later stage. Perhaps his exemplars were
                conflicting here and he wanted to add the specific amount after having compared
                sources. From other manuscripts of this law text we know that the
-               amount was half a mark (_mǫrk_ f.).
+               amount was half a mark (<em>mǫrk</em> f.).
 
 
 
@@ -251,7 +251,7 @@ A single-level transcription on the diplomatic level would look like this if the
 
 Since the scribe left room for approximately three characters, he would obviously not have written “halfa mork” in full, but perhaps something like “.ɟ. ᴍ.”. However, when supplying text, we recommend to make it as readable as possible. See [ch. 9.3.4](HB3_ch9.xml#sec9.3.4) below for a brief discussion of the orthography of supplied (and corrected) text.
 
-In another example, fig. 8.4, there is an empty space for an initial. This is often seen in manuscripts, since initials typically were drawn after the main text was written. Here, the space is evidently intended for the single character “S” in the word _sá_ ‘this’.
+In another example, fig. 8.4, there is an empty space for an initial. This is often seen in manuscripts, since initials typically were drawn after the main text was written. Here, the space is evidently intended for the single character “S” in the word <em>sá</em> ‘this’.
 
 
 
@@ -335,7 +335,7 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 <Caption title="Ill. 8.5">. A word which is difficult to read. _Blasíuss saga_. AM 655 IX 4to, f. 2r, l. 1–5.</Caption>
 
-In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb _veita_ ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>` element will be placed within the `<w>` element, but when the uncertain passage contains one or more words, the `<unclear>` element will be located outside.
+In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb <em>veita</em> ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>` element will be placed within the `<w>` element, but when the uncertain passage contains one or more words, the `<unclear>` element will be located outside.
 
 A single-level transcription on the diplomatic level of this line is shown below. Note that we here,  the `<unclear>` element is placed outside the `<w>` element:
 ```xml
@@ -391,7 +391,7 @@ In fig. 8.6, the first character in the second line is so smudged that it has be
 ```
 
 
-From the context, one can assume that the illegible character is the Tironean _nota_ for “ok”, and that it thus is a whole word which is illegible. For this reason, the dotted circle has been placed inside a `<w>` element.
+From the context, one can assume that the illegible character is the Tironean <em>nota</em> for “ok”, and that it thus is a whole word which is illegible. For this reason, the dotted circle has been placed inside a `<w>` element.
 
 In this example, we can be fairly certain that the unclear passage is a single word, so the `<unclear>` element is located within a single `<w>` element. In other cases, we can see that many words are missing but we may not have access to other manuscripts of the text. If it thus is impossible to estimate the number of words, we suggest leaving out the `<w>` element within the `<unclear>` element, only specifying by the number of dotted circles how many characters seem to be missing. Assuming that all the words in the first line of fig. 8.6 were illegible apart from “at fagna miog” and that the number of missing characters was estimated to be 28, the encoding would be as follows:
 ```xml

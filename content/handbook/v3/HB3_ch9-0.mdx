@@ -56,8 +56,8 @@ The element `<add>` should be used for additions made in the manuscript by the s
 
 <Caption title="Fig. 9.1">. Words added above the line. _Äldre Västgötalagen_. Holm B 59, f. 6v, l. 8–11.</Caption>
 
-In the second line of fig. 9.1, there are no less than three supralinear words. The first is _var_ ‘was’, which is inserted between _Iak_
-      and&ensp;_þa a þingi_. The encoding in a single-level transcription would be as follows:
+In the second line of fig. 9.1, there are no less than three supralinear words. The first is <em>var</em> ‘was’, which is inserted between <em>Iak</em>
+      and&ensp;<em>þa a þingi</em>. The encoding in a single-level transcription would be as follows:
 ```xml
 . . .
 <w><me:dipl>Iak</me:dipl></w>
@@ -151,7 +151,7 @@ The location of the addition is indicated by the
       In some cases, however, the addition can be longer, especially when placed in the margin. These additions
       should as far as possible be located within the main text.
 
-As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for _fimti_ (type c) or for reasons of space, e.g. “eᷤ” for _es_ (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as `&ssup;` for the supralinear “s” in `eᷤ` for _es_. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
+As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for <em>fimti</em> (type c) or for reasons of space, e.g. “eᷤ” for <em>es</em> (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as `&ssup;` for the supralinear “s” in `eᷤ` for <em>es</em>. The element `<add>` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
 
 Furthermore, changes in scribal hands are not considered additions. For markup of 
   such phenomena, the `<handShift/>` element should be used (cf. [ch. 3.14](HB3_ch3.xml#sec3.14) above). Note that this element is parallel to empty elements
@@ -213,7 +213,7 @@ The element `<del>` should be used for deletions made in the manuscript by the s
 
 <Caption title="Fig. 9.3">. Characters deleted by erasure. _Konungs skuggsjá_. AM 243 bα fol, f. 5ra, l. 24–26.</Caption>
 
-In the middle line of fig. 9.3, two characters have been erased in the word _skilningar laus_. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:
+In the middle line of fig. 9.3, two characters have been erased in the word <em>skilningar laus</em>. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:
 ```xml
 . . .
 <w><me:dipl>þviat</me:dipl></w>
@@ -397,7 +397,7 @@ A common type of substitution occurs when a scribe makes changes to one characte
 
 <Caption title="Fig. 9.5">. Substitution of one character with another. _The Old Norwegian Homily Book_. AM 619 4to, f. 26v, l. 7–11.</Caption>
 
-In the 4th line of fig. 9.5, the 5th word has been changed from “ſundu_m_” to “ſẏndu_m_”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
+In the 4th line of fig. 9.5, the 5th word has been changed from “ſundu<em>m</em>” to “ſẏndu<em>m</em>”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
 
 We recommend that in a single-level encoding, the `<del>` and `<add>` elements
     are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:
@@ -525,7 +525,7 @@ If text is missing in the manuscript, the editor can supply it using the `<suppl
 
 <Caption title="Fig. 9.7">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
 
-In fig. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word _sá_ ‘this’. This is a single-level encoding on the diplomatic level:
+In fig. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word <em>sá</em> ‘this’. This is a single-level encoding on the diplomatic level:
 ```xml
 . . .
 <w><me:dipl><supplied reason="restoration" resp="encoder">
@@ -683,9 +683,9 @@ In fig. 9.9, the first character in the second line is so smudged that it has be
 Note that the reading on the facsimile level uses the dotted circle for the illegible character, while the diplomatic and normalised levels offer a restoration in the `<supplied>` element.9.3.1.2 Encoding of emendations
 
 **Emendation** is here used to describe the addition of one or more characters or 
-      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, _ope codicum_, and emendations based on the subjective judgment of the editor, _ope ingenii_. In the following, we shall give examples of both.
+      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, <em>ope codicum</em>, and emendations based on the subjective judgment of the editor, <em>ope ingenii</em>. In the following, we shall give examples of both.
 
-The first example is of an emendation _ope codicum_. The bottom line in fig. 9.10 reads “Vitt_ra_ er hyggiændi guðleg_ra_ luta sva sem gefet er man_n_e”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
+The first example is of an emendation <em>ope codicum</em>. The bottom line in fig. 9.10 reads “Vitt<em>ra</em> er hyggiændi guðleg<em>ra</em> luta sva sem gefet er man<em>n</em>e”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
 
 
 
@@ -695,7 +695,7 @@ The first example is of an emendation _ope codicum_. The bottom line in fig. 9.1
 
 <Caption title="Fig. 9.10">. Supplied text. _The Old Norwegian Homily Book_. AM 619 4to, f. 14r, l. 26–30.</Caption>
 
-However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation _ope codicum_. If Indrebø’s emendation is accepted, this would be a single-level encoding:
+However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation <em>ope codicum</em>. If Indrebø’s emendation is accepted, this would be a single-level encoding:
 ```xml
 . . .
 <w><me:dipl>guðleg<ex>ra</ex></me:dipl></w>
@@ -745,9 +745,9 @@ In a multi-level encoding, the facsimile level will be left empty for the suppli
 ```
 
 
-The second example is of an emendation _ope ingenii_. This is offered by fig. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
-      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add _þik_, “Iesus Christus, sá er nú er krossfestr, 
-        hafi _þik_ þangat sent”. The editor’s _ingenium_ is in this case based on the syntactic analysis of Old Norse.
+The second example is of an emendation <em>ope ingenii</em>. This is offered by fig. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
+      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add <em>þik</em>, “Iesus Christus, sá er nú er krossfestr, 
+        hafi <em>þik</em> þangat sent”. The editor’s <em>ingenium</em> is in this case based on the syntactic analysis of Old Norse.
 
 
 
@@ -967,7 +967,7 @@ elements `<sic>` and
 
 <Caption title="Fig. 9.14">. Correction by editor. _The Old Norwegian Homily Book_. AM 619 4to, f. 8v, l. 23–26.</Caption>
 
-In the third line of fig. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a _minim_ correction from _iu_ to _ui_. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
+In the third line of fig. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a <em>minim</em> correction from <em>iu</em> to <em>ui</em>. In a single-level transcription, the encoding is straight-forward. Note, however, that the `<sic>` and `<corr>` elements must be placed within a `<choice>` element:
 ```xml
 . . .
 <w><me:dipl>hvasser</me:dipl></w>
@@ -1039,7 +1039,7 @@ When the encoder would like to supply or correct text using the `<supplied>` or 
 
 On the **normalised** level, one should simply follow the regularised orthography for the language in question. For Old Icelandic and Old Norwegian we recommend in general the orthography of the Old Norse Dictionary in Copenhagen. However, as discussed in [ch. 10](HB3_ch10.xml) below, there may be other normalised orthographies, for example appropriate to late medieval texts.
 
-On the **diplomatic** level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of fig. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word “mannlegra” should have been rendered as “mannleg_ra_” in analogy with “guðleg_ra_”, or, perhaps, as “man_n_leg_ra_”, assuming that a double “nn” would have been written with a single “n” with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply “mannlegra”.
+On the **diplomatic** level, the orthography should follow the manuscript in question. Whenever the transcriber is in doubt, it is advisable to select the most transparent and readable form. For example, in the encoding of the bottom line of fig. 9.11 in [ch. 9.3.1.2](#sec9.3.1.2) above, one might suggest that the supplied word “mannlegra” should have been rendered as “mannleg<em>ra</em>” in analogy with “guðleg<em>ra</em>”, or, perhaps, as “man<em>n</em>leg<em>ra</em>”, assuming that a double “nn” would have been written with a single “n” with a bar above. In our view, this level of reconstruction is too detailed and not really helpful. We recommend simply “mannlegra”.
 
 Another example is the supplied text in the space left by the scribe in AM 309 fol, exemplified in fig. 8.3 in [ch. 8.3.1](HB3_ch8.xml#sec8.3.1) above. Even if the scribe only left room for approximately three characters, we recommend a fully supplied reading such as “halfa mork” rather than e.g. “.ɟ. ᴍ.” on the diplomatic and normalised levels. A supplied reading like “.ɟ. ᴍ.” might however be appropriate for the facsimile level.
 
@@ -1112,7 +1112,7 @@ The apparatus to many printed editions may contain different types of comments, 
 Sometimes an editor may add a “[sic!]” in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the `<sic>` and `<corr>` elements. If there is no obvious correction, one may add a note stating “highlighted by the editor” or the like.
 ### 9.4.2 Explanatory comments
 
-Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text _in medias res_, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
+Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text <em>in medias res</em>, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
 
 In the Menota archive, the text of Codex Wormianus is opened with a comment stating that the first page is blank. Readers are thus encouraged to move on to the next page:
 ```xml

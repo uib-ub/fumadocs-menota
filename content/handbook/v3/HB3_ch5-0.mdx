@@ -43,7 +43,7 @@ The basic unit in any transcription of an alphabetic script is the individual le
           a linguistic context a distinction is often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a
           written document. Variant forms are referred to as **allographs**, e.g.
           the Roman type of “s” and the Fraktur (black letter) type. The
-          terminology is analogous to the distinction between _phonemes_, _phones_ and _allophones_. For a general
+          terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general
           introduction to this terminology, see e.g. [Sture Allén
             1971](HB3_literature.xml#Allen1971), [Manfred Kohrt 1985](HB3_literature.xml#Kohrt1985) or [Christa Dürscheid 2016](HB3_literature.xml#Durscheid2016).
 
@@ -80,8 +80,8 @@ Unicode draws a distinction between small (minuscule) characters such as “a”
           attached to each set of characters. Thus, “the white house” can refer to any house
           which is white in colour, while “the White House” refers (normally) to one specific
           building. It can be argued that the same applies to the distinction between regular characters,
-            “a”, and italics, “_a_”. For example, while “Metope”
-          refers a poem by the Norwegian author Olaf Bull, _Metope_ (according
+            “a”, and italics, “<em>a</em>”. For example, while “Metope”
+          refers a poem by the Norwegian author Olaf Bull, <em>Metope</em> (according
           to a widespread bibliographical practice) refers to the book in which this poem is
           published (a book which, co-incidentally, bears the same name as one of the poems
           contained in the book). However, Unicode does not regard italics (or bold type) as
@@ -94,7 +94,7 @@ Medieval Nordic manuscripts and charters were written in the Latin alphabet from
           There was also a large number of abbreviation marks in use, especially in Old Icelandic
           and Old Norwegian manuscripts. Some abbreviation marks behave as ordinary characters in the
           sense that they occupy a separate position on the base line, such as the Tironian note for 
-          _ok_ ‘and’. We recommend that ordinary base-line characters and abbreviation base-line 
+          <em>ok</em> ‘and’. We recommend that ordinary base-line characters and abbreviation base-line 
           characters are encoded as individual, separate characters. In addition to the ordinary base-line characters, there were quite 
           a few diacritical marks, which were placed above (or through or below) another character. There were also many 
           abbreviation marks which appeared in similar positions. For this reason, we suggest that the rules
@@ -118,7 +118,7 @@ We believe that it is possible to identify a base line in all texts, as shown in
 
 If there are marks of any sort placed above, through or below any base-line character, we
           recommend that these marks are transcribed
-          immediately _after_ the base-line character. In general, we refer to
+          immediately <em>after</em> the base-line character. In general, we refer to
           these marks as diacritics. As mentioned above, abbreviation marks are also frequently
           placed in diacritical positions. Assuming that
           the sign above `h` should be referred to with the entity
@@ -300,7 +300,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
-            should be borne in mind, however, that the great majority of characters _are_ defined in Unicode, and in many transcriptions the need for
+            should be borne in mind, however, that the great majority of characters <em>are</em> defined in Unicode, and in many transcriptions the need for
             special characters in the PUA will not arise. With appropriate fonts, the transcriber
             does not need to spend much time on technicalities of this type.
 
@@ -394,7 +394,7 @@ When displaying the text from the _First Grammatical Treatise_ on the normalised
             level, one might  choose to render the
             contents of the `<c>` element in italics, which would be possible with the suggested mark-up:
 <Quote>
-_X_, hann er samsettr í látinu af _c_ ok _s_.
+<em>X</em>, hann er samsettr í látinu af <em>c</em> ok <em>s</em>.
 </Quote>
 
 Individual characters are moreover marked-up as such, when the character in question
@@ -446,7 +446,7 @@ As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a
 
 Thus, with a somewhat simplified character inventory the text in fig. 5.4 can be rendered as
 <Quote>
-En ef ver fallum i hinar for_n_no syndir. oc huerfum aptr. til hi_n_nar fyrrv misverka sem hundr til spyu sinnar. þa ka_n_n lettlega at vera. at oss ku_n_ni til ha_n_nda at berazt. sem i guðspiall|eno segir.
+En ef ver fallum i hinar for<em>n</em>no syndir. oc huerfum aptr. til hi<em>n</em>nar fyrrv misverka sem hundr til spyu sinnar. þa ka<em>n</em>n lettlega at vera. at oss ku<em>n</em>ni til ha<em>n</em>nda at berazt. sem i guðspiall|eno segir.
 </Quote>
 
 Here, each word is delimited by a space (although, as discussed in [ch. 5.5](#sec5.5) below,
@@ -512,7 +512,7 @@ The sequence “veiði kona” thus appears within a single element. In other wo
             the transcriber interprets it as one lexical word, “veiðikona”. The space is left
             untouched, so that in a display of the transcription, the sequence will still show up as
             two graphical words, “veiði” and “kona”. However, since both graphical words
-            are placed within a single element the _lemma_ will refer to both
+            are placed within a single element the <em>lemma</em> will refer to both
             parts.
 
 In a multi-level encoding, the word will be transcribed with a space on the facsimile and diplomatic levels, 
@@ -541,7 +541,7 @@ The converse case is a single graphical word which the transcriber would like to
 </Figure>
 
 <Caption title="Fig. 5.6">. In _Barlaams saga ok Jósafats_, the Greek god Adonis (in the text in accusative, 
-            _Adonidem_) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12–14.</Caption>
+            <em>Adonidem</em>) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12–14.</Caption>
 
 Each lexical word should be placed within a `<w>` element, and information on
             lemma, morphological form etc. can be given within each `<w>` element. However,
@@ -680,7 +680,7 @@ Note the prefix “me:” which indicates that these elements
 In [ch. 5.3.1](#sec5.3.1) above, we said that a text can be encoded
             character by character. Punctuation marks are simply inserted where they occur in the
             manuscript, even if the position is wrong according to modern rules. If the actual
-            punctuation in _Barlaams saga ok Jósafats_ is added, the example above
+            punctuation in <em>Barlaams saga ok Jósafats</em> is added, the example above
             looks like this:
 <Quote>
 En ef ver fallum i hinar fornno syndir. oc huerfum aptr. til hinna fyrrv misverka sem hundr til spyu sinnar. þa kann lettlega at vera. at oss kunni til hannda at berazt. sem i guðspialleno segir.
@@ -853,7 +853,7 @@ nu fann kgr. engan mann þar
 
 on the `<me:facs>` level would probably be rendered as
 <Quote>
-nu fann k_onon_gr engan mann þar
+nu fann k<em>onon</em>gr engan mann þar
 </Quote>
 
 on the `<me:dipl>` level. In a fully marked-up text, the abbreviated word
@@ -1230,7 +1230,7 @@ Texts may also contain quotations from other sources. These are usually not indi
 
  Since the graphical form of quotation marks varies widely, we recommend encoding dialogue with the `<q>` element and leave it to the style sheet to decide which type of quotation mark to be displayed.
 
-The `<q>` element is placed outside the word(s) in the dialogue, irrespective of whether the encoding is on one or more levels. This is a simplifed single-level example from _Niðrstigningar saga_ in the fragment AM 233 a fol:
+The `<q>` element is placed outside the word(s) in the dialogue, irrespective of whether the encoding is on one or more levels. This is a simplifed single-level example from <em>Niðrstigningar saga</em> in the fragment AM 233 a fol:
 ```xml
 <w>Þeir</w>
 <w>spurðu</w>
@@ -1308,7 +1308,7 @@ Ideally, the style sheet should display nested quotations with different marks, 
 “This city is called ‘Jorvík’,” he said.
 </Quote>
 
-As stated above, some texts contain quotations. If the encoder wants to identify these, we recommend the `<quote>` element. This is a new example from _Niðrstigningar saga_ in AM 233 a fol:
+As stated above, some texts contain quotations. If the encoder wants to identify these, we recommend the `<quote>` element. This is a new example from <em>Niðrstigningar saga</em> in AM 233 a fol:
 ```xml
 . . .
 <w>svá</w>
