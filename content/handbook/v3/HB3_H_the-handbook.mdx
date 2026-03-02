@@ -174,7 +174,13 @@ In the tables below supported xml markup and its corresponding html output is li
 ### H.4.3 Generic values for `@rend`
 
 The following `@rend` values can be given to any xml-element with support
-                  for `@rend`:`"blue"` (blue font color)`"bold"` (bold style)`"code"` (monospace font)`"red"` (red font color)`"style"` (italic style)
+                  for `@rend`:
+
+- `"blue"` (blue font color)
+- `"bold"` (bold style)
+- `"code"` (monospace font)
+- `"red"` (red font color)
+- `"style"` (italic style)
 
 The following `@rend` values can be given to any xml-element that
                   translates into a block-element in html/css and supports the
@@ -253,9 +259,13 @@ A table with explanations of xml-elements and their attributes ([such as H.4.1 a
                      `@rend`=`"xml-elements"` in the `<table>` element. The
                   xls stylesheet tries to wrap all rows with a `<gi>` or a tag in
                   the first cell into a `<tbody>` element together with the following rows.
-                  Such tables must adhere to the following principles: The `<table>` tag must have a `@rend` with the value
-                        `"xml-elements"`The first cell of the first row in each block must contain a `<gi>`  or
-                     a `<tag>` elementThe first cells of all other rows in a block must not contain any
+                  Such tables must adhere to the following principles: 
+
+- The `<table>` tag must have a `@rend` with the value
+                        `"xml-elements"`
+- The first cell of the first row in each block must contain a `<gi>`  or
+                     a `<tag>` element
+- The first cells of all other rows in a block must not contain any
                         `<gi>` element (otherwise, the respective row will be treated as the
                      first row in a block)
 

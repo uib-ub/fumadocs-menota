@@ -96,11 +96,10 @@
     </xsl:template>
     <xsl:template match="tei:list">
         <xsl:text>&#x0a;</xsl:text>
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="tei:item">
-        <xsl:text>&#x0a;- </xsl:text>
-        <xsl:apply-templates/>
+        <xsl:for-each select="tei:item">
+            <xsl:text>&#x0a;- </xsl:text>
+            <xsl:apply-templates/>
+        </xsl:for-each>
     </xsl:template>
     <xsl:template match="tei:lb">
         <xsl:text>&lt;br/&gt;</xsl:text>

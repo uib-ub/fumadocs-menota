@@ -143,6 +143,13 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <xsl:template match="tei:list">
+        <xsl:text>&#x0a;</xsl:text>
+        <xsl:for-each select="tei:item">
+            <xsl:text>&#x0a;- </xsl:text>
+            <xsl:apply-templates/>
+        </xsl:for-each>
+    </xsl:template>
     <xsl:template match="tei:table">
         <xsl:choose>
             <xsl:when test="@rend='plain'">

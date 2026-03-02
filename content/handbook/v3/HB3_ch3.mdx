@@ -418,7 +418,9 @@ Quotation from other sources should be tagged with the `<quote>` element. This i
 
 A quotation mark can be regarded as a type of punctuation character, `<pc>`, but since quotation marks are displayed in so many different ways, we suggest that it is convenient to use an element of its own for quotation marks. See the discussion and examples in [ch. 5.6](HB3_ch5.xml#sec5.6) below.
 
-In some cases, there may be a structural conflict between the opening and closing of a `<q>` element, such as in this example, if it were to be encoded for `<s>` as well as for `<q>`:Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
+In some cases, there may be a structural conflict between the opening and closing of a `<q>` element, such as in this example, if it were to be encoded for `<s>` as well as for `<q>`:
+
+- Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
 
 A possibe work-around is to use the general empty element `<milestone/>` with the obligatory `@unit` attribute and a `@rendition` attribute specifying the opening and closing quotation mark:
 ```xml
