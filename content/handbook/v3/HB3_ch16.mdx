@@ -26,7 +26,8 @@ In this chapter, we offer a similar overview and discussion in [ch. 16.2](#sec16
 ## 16.2 Spanning and linking encoding
 
 In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), the elements `<addSpan/>`, `<delSpan/>` and `<damageSpan/>` are defined. These elements are counterparts to the elements `<add>`, `<del>` and `<damage>`, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. `<sic>`, `<corr>`, `<unclear>` and `<supplied>`, but there are no corresponding `<sicSpan>`, `<corrSpan>`, `<unclearSpan>` and `<suppliedSpan>`. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element `<me:textSpan/>` and given it attributes from the classes
-              “att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute me:category. Note that we in this table include the `<anchor>` element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.Elements & attributesExplanation`<me:textSpan/>`A generic element to handle overlapping text structures.me:categorySpecifies the type of span, restricted to this list of values:gapFor contents that would otherwise be contained by the `<gap/>` element, cf. [ch. 8](HB3_ch8.xml).unclearFor contents that would otherwise be contained by the `<unclear>` element, cf. [ch. 8](HB3_ch8.xml).addFor contents that would otherwise be contained by the `<add>` element, cf. [ch. 9](HB3_ch9.xml).delFor contents that would otherwise be contained by the `<del>` element, cf. [ch. 9](HB3_ch9.xml).sicFor contents that would otherwise be contained by the `<sic>` element, cf. [ch. 9](HB3_ch9.xml).corrFor contents that would otherwise be contained by the `<corr>` element, cf. [ch. 9](HB3_ch9.xml).surplusFor contents that would otherwise be contained by the `<surplus>` element, cf. [ch. 9](HB3_ch9.xml).suppliedFor contents that would otherwise be contained by the `<supplied>` element, cf. [ch. 9](HB3_ch9.xml).otherFor any other contents.spanToSpecifies the end point of the text span, using values like:an1anchor 1an2anchor 2, etc.`<anchor/>`An empty element (milestone) which attaches an identifier to a point within a text.xml:idSpecifies the identifier corresponding to the one used in the spanTo attribute of the preceding `<me:textSpan/>` element, using values like:an1anchor 1an2anchor 2, etc.
+              “att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute me:category. Note that we in this table include the `<anchor>` element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
+Elements & attributesExplanation`<me:textSpan/>`A generic element to handle overlapping text structures.me:categorySpecifies the type of span, restricted to this list of values:gapFor contents that would otherwise be contained by the `<gap/>` element, cf. [ch. 8](HB3_ch8.xml).unclearFor contents that would otherwise be contained by the `<unclear>` element, cf. [ch. 8](HB3_ch8.xml).addFor contents that would otherwise be contained by the `<add>` element, cf. [ch. 9](HB3_ch9.xml).delFor contents that would otherwise be contained by the `<del>` element, cf. [ch. 9](HB3_ch9.xml).sicFor contents that would otherwise be contained by the `<sic>` element, cf. [ch. 9](HB3_ch9.xml).corrFor contents that would otherwise be contained by the `<corr>` element, cf. [ch. 9](HB3_ch9.xml).surplusFor contents that would otherwise be contained by the `<surplus>` element, cf. [ch. 9](HB3_ch9.xml).suppliedFor contents that would otherwise be contained by the `<supplied>` element, cf. [ch. 9](HB3_ch9.xml).otherFor any other contents.spanToSpecifies the end point of the text span, using values like:an1anchor 1an2anchor 2, etc.`<anchor/>`An empty element (milestone) which attaches an identifier to a point within a text.xml:idSpecifies the identifier corresponding to the one used in the spanTo attribute of the preceding `<me:textSpan/>` element, using values like:an1anchor 1an2anchor 2, etc.
 
 We will discuss an example of an overlapping structure in AM 673 b 4to (Plácitusdrápa 1), as seen in ill. 16.1.
 
@@ -34,21 +35,24 @@ We will discuss an example of an overlapping structure in AM 673 b 4to (Plácitu
 
 Ill. 16.1. Overlapping in supplied text. _Plácitusdrápa_. AM 673 b 4to, f. 1r, l. 1–4.
 
-The first three lines read approximately:genget fiornes ualdr [quaþ........fr]egr nu | mun er lægiasc miuks scalldu manra[un sli] | ca morlins boþe finna uestu i frægre f[rest] 
+The first three lines read approximately:
+<Quote>
+genget fiornes ualdr [quaþ........fr]egr nu | mun er lægiasc miuks scalldu manra[un sli] | ca morlins boþe finna uestu i frægre f[rest] 
+</Quote>
 
 The letters in brackets were read by earlier editors, especially Finnur Jónsson in 1889. For this section, we will discuss the text at the end of the second line and at the start of the third. It is clear that part of each word is missing, but the damaged manuscript forms a single feature. Text can be supplied from Finnur Jónsson’s transcription, but we want to represent the illegible text as a single feature, even if it overlaps with the middle of the two words. Note that in accordance with [ch. 8.4](HB3_ch8.xml#sec8.4) above, we do not encode the illegible characters with the `<gap/>` element, since there is no physical hole or the like in the parchment, but rather with the `<unclear>` element. Since the characters are illegible, they are rendered by the dotted circle. The simple encoding would be:
-```
-&lt;w&gt;manra&lt;unclear&gt;◌◌&lt;/unclear&gt;&lt;/w&gt;
-&lt;w&gt;&lt;unclear&gt;◌◌&lt;/unclear&gt;&lt;lb ed="ms" n="3"/&gt;ca&lt;/w&gt;
+```xml
+<w>manra<unclear>◌◌</unclear></w>
+<w><unclear>◌◌</unclear><lb ed="ms" n="3"/>ca</w>
 ```
 
 
 If the supplied text were encoded in the conventional way, the following would produce an error:
-```
-&lt;!-- WRONG: --&gt;
-&lt;w&gt;manra&lt;supplied resp="FJ"&gt;aun&lt;/w&gt;
-&lt;!-- the processor stops here because this is not well-formed XML --&gt; 
-&lt;w&gt;sli&lt;/supplied&gt;&lt;lb ed="ms" n="3"/&gt;ca&lt;/w&gt;
+```xml
+<!-- WRONG: -->
+<w>manra<supplied resp="FJ">aun</w>
+<!-- the processor stops here because this is not well-formed XML --> 
+<w>sli</supplied><lb ed="ms" n="3"/>ca</w>
 ```
 
 
@@ -59,38 +63,39 @@ In these guidelines, we offer two solutions to the problem of overlapping struct
 
 The following approach is more sound from the point of view of an XML document, but creates extra tagging. The feature is encoded in a series of separate elements, linked together.
 
-In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the xml:id attribute, and they are linked together using the following attributes:AttributesContentsxml:idProvides a unique identifier for the element bearing the attribute.nextUsed at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature.prevUsed in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature.
+In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the xml:id attribute, and they are linked together using the following attributes:
+AttributesContentsxml:idProvides a unique identifier for the element bearing the attribute.nextUsed at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature.prevUsed in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature.
 
 The two-word example above is encoded thus:
-```
-&lt;w&gt;man&lt;supplied source="FJ" xml:id="sup1.1" next="sup1.2"&gt;raun
-    &lt;/supplied&gt;&lt;/w&gt;
-  &lt;w&gt;&lt;supplied xml:id="sup1.2" prev="sup1.1"&gt;ſli&lt;/supplied&gt;
-    &lt;lb ed="ms" n="3"/&gt;ca&lt;/w&gt;
+```xml
+<w>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+    </supplied></w>
+  <w><supplied xml:id="sup1.2" prev="sup1.1">ſli</supplied>
+    <lb ed="ms" n="3"/>ca</w>
 
 ```
 
 
 Adding all three textual levels, including the unclear text encoded at the facs level, we would have:
-```
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;man&lt;unclear xml:id="unc1.1" next="unc1.2"&gt;
-      ◌◌◌◌◌◌◌◌&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;man&lt;supplied source="FJ" xml:id="sup1.1" next="sup1.2"&gt;raun
-      &lt;/supplied&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;manraun&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;unclear xml:id="unc1.2" prev="unc1.1"&gt;ſli&lt;/unclear&gt;
-      &lt;lb ed="ms" n="3"/&gt;ca&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;supplied xml:id="sup1.2" prev="sup1.1"&gt;ſli&lt;/supplied&gt;
-      &lt;lb ed="ms" n="3"/&gt;ca&lt;/me:dipl&gt;
-    &lt;me:norm&gt;slí&lt;lb ed="ms" n="3"/&gt;ka&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
+```xml
+<w>
+  <choice>
+    <me:facs>man<unclear xml:id="unc1.1" next="unc1.2">
+      ◌◌◌◌◌◌◌◌</unclear></me:facs>
+    <me:dipl>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+      </supplied></me:dipl>
+    <me:norm>manraun</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear xml:id="unc1.2" prev="unc1.1">ſli</unclear>
+      <lb ed="ms" n="3"/>ca</me:facs>
+    <me:dipl><supplied xml:id="sup1.2" prev="sup1.1">ſli</supplied>
+      <lb ed="ms" n="3"/>ca</me:dipl>
+    <me:norm>slí<lb ed="ms" n="3"/>ka</me:norm>
+  </choice>
+</w>
 ```
 
 
@@ -102,29 +107,29 @@ Note that the start of a feature is always marked by the element with the next a
 ### 16.2.2 Boundary marking with empty elements
 
 Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in the TEI P5 Guidelines, [ch. 20](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html), and will be applied here in a slightly modified version. As outlined above, we have introduced a generic element `<me:textSpan/>` which is specified by way of a me:category attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the me:category attribute:
-```
-&lt;me:textSpan me:category="supplied"/&gt; 
+```xml
+<me:textSpan me:category="supplied"/> 
 ```
 
 
 Thus, all instances of supplied text in the file will either be contained in `<supplied>` elements (in non-overlapping contexts) or in `<me:textSpan me:category="supplied"/>` elements (in overlapping contexts).
 
 In addition to inserting the empty `<me:textSpan/>` element at the beginning of the textual span, an attribute spanTo is added with a suitable index, e.g.
-```
-&lt;me:textSpan me:category="supplied" spanTo="an1"/&gt; 
+```xml
+<me:textSpan me:category="supplied" spanTo="an1"/> 
 ```
 
 
 It now remains to mark the end of the span, i.e. the extent of the supplied text, with another empty element, the TEI `<anchor/>` element. This must be specified with an xml:id attribute having the same index as the me:spanTo attribute at the beginning of the span:
-```
-&lt;anchor xml:id="an1"/&gt; 
+```xml
+<anchor xml:id="an1"/> 
 ```
 
 
 The full encoding will be like this:
-```
-&lt;w&gt;man&lt;me:textSpan me:category="supplied" spanTo="an1"/&gt;raun&lt;/w&gt;
-&lt;w&gt;ſli&lt;anchor xml:id="an1"/&gt;&lt;lb ed="ms" n="3"/&gt;ca&lt;/w&gt; 
+```xml
+<w>man<me:textSpan me:category="supplied" spanTo="an1"/>raun</w>
+<w>ſli<anchor xml:id="an1"/><lb ed="ms" n="3"/>ca</w> 
 ```
 
 
@@ -142,33 +147,46 @@ Unfortunately (at least from the point of view of the encoder), headings in many
 Ill. 16.2. Continuous heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, f. 10v, l. 4–7.
 
 Ill. 16.2 is a straightforward example (which was introduced in [ch. 3.9](HB3_ch3.xml#sec3.9) above). The only thing to note is that the first chapter ends in the middle of line 5 and the next chapter begins immediately afterwards. Encoding this, there would be two `<div>` elements, the first closing after the word “loglegare”, and the second opening right afterwards, starting with a `<head>` element, which encloses the red rubric. Note that the `<lb/>`element is only used once here, and that is to mark the beginning of the line, i.e. inside the first `<div>` element.
-```
-&lt;div&gt;
+```xml
+<div>
     . . .
-  &lt;p&gt; 
-    &lt;lb ed="ms" n="4"/&gt;ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna
-    &lt;lb ed="ms" n="5"/&gt;raðe litizt annat loglegare
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;head&gt;Um grið a frosta þingj Capitulus&lt;/head&gt;
-    &lt;p&gt;
-      &lt;lb ed="ms" n="6"/&gt;&lt;c type="initial"&gt;A&lt;/c&gt;ller þeir menn sem J frosto þings logum 
+  <p> 
+    <lb ed="ms" n="4"/>ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna
+    <lb ed="ms" n="5"/>raðe litizt annat loglegare
+  </p>
+</div>
+<div>
+  <head>Um grið a frosta þingj Capitulus</head>
+    <p>
+      <lb ed="ms" n="6"/><c type="initial">A</c>ller þeir menn sem J frosto þings logum 
         ok for ero skulu J griðum 
-      &lt;lb ed="ms" n="7"/&gt;vera hvær við annan þar til er þeir koma heim til sins hæimi
-    &lt;/p&gt;
+      <lb ed="ms" n="7"/>vera hvær við annan þar til er þeir koma heim til sins hæimi
+    </p>
     . . .
-&lt;/div&gt;
+</div>
 ```
 
 
 A suitable XSLT stylesheet will be able to display this piece of text according to its physical order,
 
- 3 ............................... 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna 5 raðe litizt annat loglegare Um grið a frosta þingj Capitulus 6 Aller þeir menn sem J frosto þings logum ok for ero skulu J griðum 7 vera hvær við annan þar til er þeir koma heim til sins hæimi 8 .............................. 
+ 3 ...............................<br/>
+ 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna<br/>
+ 5 raðe litizt annat loglegare Um grið a frosta þingj Capitulus<br/>
+ 6 Aller þeir menn sem J frosto þings logum ok for ero skulu J griðum<br/>
+ 7 vera hvær við annan þar til er þeir koma heim til sins hæimi<br/>
+ 8 .............................. <br/>
+
 
 as well as its logical structure, by displaying the rubric on a separate line, but otherwise in the same order as above:
 
- 3 ............................... 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna 5 raðe litizt annat loglegare 5 Um grið a frosta þingj Capitulus 6 Aller þeir menn sem J frosto þings logum ok for ero skulu J griðum 7 vera hvær við annan þar til er þeir koma heim til sins hæimi 8 .............................. 
+ 3 ...............................<br/>
+ 4 ok þeir er með honom samþyckia nema kononge með hinna vitrazto manna<br/>
+ 5 raðe litizt annat loglegare<br/>
+ 5 Um grið a frosta þingj Capitulus<br/>
+ 6 Aller þeir menn sem J frosto þings logum ok for ero skulu J griðum<br/>
+ 7 vera hvær við annan þar til er þeir koma heim til sins hæimi<br/>
+ 8 .............................. <br/>
+
 
 Note that in the latter display, the line number 5 appears twice, since the last part of this line, the rubric, has been displayed on a separate line.
 
@@ -177,22 +195,22 @@ Note that in the latter display, the line number 5 appears twice, since the last
 Ill. 16.3. Dislocated heading. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 14–17.
 
 The chapter division between lines 15 and 16 in ill. 16.3 is not completely straightforward. The rubric in the second half of line 16 should be encoded as a `<head>` in the second `<div>` of the example. The complicating factor here is that we would like to encode (and be able to display) the fact that this rubric is located on the same line as the opening of the `<div>` which it is heading. In other words, if the manuscript is read line by line, the `<head>` is intercalated in the first sentence, “Salomon konungr gerðe fyrst || Rubric || mysteri guði...”. Our recommended encoding would be the following:
-```
-&lt;div&gt;
+```xml
+<div>
    . . .
-  &lt;p&gt; 
-    &lt;lb ed="ms" n="14"/&gt;ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir
-    &lt;lb ed="ms" n="15"/&gt;ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;head&gt;&lt;lb ed="ms" n="16" rend="2"/&gt;Jn dedicatione templi. sermo.&lt;/head&gt;
-    &lt;p&gt;
-      &lt;lb ed="ms" n="16" rend="1"/&gt;&lt;c type="initial"&gt;S&lt;/c&gt;alomon konungr gerðe fyrst 
-      &lt;lb ed="ms" n="17"/&gt;mysteri guði. ok bauð lyð ſinum at halda hotið þa er
-    &lt;/p&gt;
+  <p> 
+    <lb ed="ms" n="14"/>ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir
+    <lb ed="ms" n="15"/>ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.
+  </p>
+</div>
+<div>
+  <head><lb ed="ms" n="16" rend="2"/>Jn dedicatione templi. sermo.</head>
+    <p>
+      <lb ed="ms" n="16" rend="1"/><c type="initial">S</c>alomon konungr gerðe fyrst 
+      <lb ed="ms" n="17"/>mysteri guði. ok bauð lyð ſinum at halda hotið þa er
+    </p>
      . . .
-&lt;/div&gt;
+</div>
 ```
 
 
@@ -202,41 +220,54 @@ Note that the values for the rend attribute always begin with 1 and continue upw
 
 A suitable XSLT stylesheet will be able to display this piece of text according to its physical order:
 
- 13 ............................... 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ. 16 Salomon konungr gerðe fyrst Jn dedicatione templi. sermo. 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er 18 .............................. 
+ 13 ...............................<br/>
+ 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir<br/>
+ 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.<br/>
+ 16 Salomon konungr gerðe fyrst Jn dedicatione templi. sermo.<br/>
+ 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<br/>
+ 18 .............................. <br/>
+
 
 Alternatively, a suitable stylesheet will be able to display this piece of text according to its logical order:
 
- 13 ............................... 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ. 15 Jn dedicatione templi. sermo. 16 Salomon konungr gerðe fyrst 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er 18 .............................. 
+ 13 ...............................<br/>
+ 14 ge gefen utan enda við miscunn drotens várs Iesu Crist þes er lifir<br/>
+ 15 ok rikir með fæðr ok hælgum anda æin guð utan enda ameɴ.<br/>
+ 15 Jn dedicatione templi. sermo.<br/>
+ 16 Salomon konungr gerðe fyrst<br/>
+ 17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<br/>
+ 18 .............................. <br/>
+
 
 
 
 Ill. 16.4. Discontinuous and dislocated heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, fol. 52r, lines 2–5.
 
 The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the rend attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
-```
-&lt;div&gt;
+```xml
+<div>
     . . .
-  &lt;p&gt; 
-    &lt;lb ed="ms" n="2"/&gt;nema suo sem aðr var sagt En ef meira høggr bøte markar
-    &lt;lb ed="ms" n="3"/&gt;spell ok landnam landz drottne nema hann lofe
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;head&gt;&lt;w&gt;Um&lt;/w&gt; &lt;w&gt;dugnad&lt;/w&gt; &lt;w&gt;skips
-    &lt;lb ed="ms" n="4" rend="2"/&gt;brotz manna&lt;/w&gt;&lt;/head&gt;
-    &lt;p&gt;
-      &lt;lb ed="ms" n="4" rend="1"/&gt;&lt;c type="initial"&gt;N&lt;/c&gt;v þarf skip upp at setia skere
-        styri maðr &lt;add&gt;boð upp&lt;/add&gt;
-      &lt;lb ed="ms" n="5"/&gt;suo viða at þeir verði full aflla til upp at setia ok vt 
-    &lt;/p&gt;
+  <p> 
+    <lb ed="ms" n="2"/>nema suo sem aðr var sagt En ef meira høggr bøte markar
+    <lb ed="ms" n="3"/>spell ok landnam landz drottne nema hann lofe
+  </p>
+</div>
+<div>
+  <head><w>Um</w> <w>dugnad</w> <w>skips
+    <lb ed="ms" n="4" rend="2"/>brotz manna</w></head>
+    <p>
+      <lb ed="ms" n="4" rend="1"/><c type="initial">N</c>v þarf skip upp at setia skere
+        styri maðr <add>boð upp</add>
+      <lb ed="ms" n="5"/>suo viða at þeir verði full aflla til upp at setia ok vt 
+    </p>
      . . .
-&lt;/div&gt; 
+</div> 
 ```
 
 
 In this simplified example, the element `<w>` has only been used in the `<head>`, so as to illustrate the fact that the word “skips|brotzmanna” is divided over two lines. Since there is no hyphen in the manuscript, our recommended encoding of this particular word would be: 
-```
-&lt;w&gt;skips&lt;lb ed="ms" n="4" rend="2"/&gt;brotz manna&lt;/w&gt;
+```xml
+<w>skips<lb ed="ms" n="4" rend="2"/>brotz manna</w>
 ```
 
 
@@ -244,25 +275,40 @@ See [ch. 5.5](HB3_ch5.xml#sec5.5) above for the encoding of hyphenation, includi
 
 Once again, our stylesheet should be able to display the text according to its physical order, like here,
 
- 1 ............................... 2 nema suo sem aðr var sagt En ef meira høggr bøte markar 3 spell ok landnam landz drottne nema hann lofe Um dugnad skips- 4  Nv þarf skip upp at setia skere styri maðr \boð upp/ brotz manna 5 suo viða at þeir verði full aflla til upp at setia ok vt 6 .............................. 
+ 1 ...............................<br/>
+ 2 nema suo sem aðr var sagt En ef meira høggr bøte markar<br/>
+ 3 spell ok landnam landz drottne nema hann lofe Um dugnad skips-<br/>
+ 4  Nv þarf skip upp at setia skere styri maðr \boð upp/ brotz manna<br/>
+ 5 suo viða at þeir verði full aflla til upp at setia ok vt<br/>
+ 6 .............................. <br/>
+
 
 as well as according to its logical order:
 
- 1 ............................... 2 nema suo sem aðr var sagt En ef meira høggr bøte markar 3 spell ok landnam landz drottne nema hann lofe 3 Um dugnad skips- 4 brotz manna 4 Nv þarf skip upp at setia skere styri maðr \boð upp/ 5 suo viða at þeir verði full aflla til upp at setia ok vt 6 .............................. 
+ 1 ...............................<br/>
+ 2 nema suo sem aðr var sagt En ef meira høggr bøte markar<br/>
+ 3 spell ok landnam landz drottne nema hann lofe<br/>
+ 3 Um dugnad skips-<br/>
+ 4 brotz manna<br/>
+ 4 Nv þarf skip upp at setia skere styri maðr \boð upp/<br/>
+ 5 suo viða at þeir verði full aflla til upp at setia ok vt<br/>
+ 6 .............................. <br/>
+
 
 When double (or even triple) numbering of line beginnings is used in a transcription, one should make sure that any automatic numbering program that is run on the `<lb/>` elements is set up not to override manually given numbers.
 ## 16.4 Dialogue across hierarchical boundaries
 
 In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the `<s>` element (dividing the text into sentences) or even one or more `<div>` elements (dividing the text into chapters). An extreme example is _Gylfaginning_, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like _Konungs skuggsjá_ and _Barlaams saga ok Jósafats_. In these and many other works, the standard `<q>` element will create conflicts with other and probably more important hierarchical divisions of the text.
 
-Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general `<milestone/>` element as a work-around. As stated in [ch. 3.11](HB3_ch3.xml#sec3.11) above, the `<milestone/>` element can be specified with the unit and rend attributes:Element and attributesObl/OptContents`<milestone/>`Marks any break in the transcription. Attributes include:unitObligatoryIndicates the type of break, such as turn (in dialogues) or more generally, segment or section.renditionOptionalIndicates how the break should be rendered. In the case of dialogues, opening-quote and closing-quote are appropriate.
+Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general `<milestone/>` element as a work-around. As stated in [ch. 3.11](HB3_ch3.xml#sec3.11) above, the `<milestone/>` element can be specified with the unit and rend attributes:
+Element and attributesObl/OptContents`<milestone/>`Marks any break in the transcription. Attributes include:unitObligatoryIndicates the type of break, such as turn (in dialogues) or more generally, segment or section.renditionOptionalIndicates how the break should be rendered. In the case of dialogues, opening-quote and closing-quote are appropriate.
 
 As suggested in [ch. 3.11](HB3_ch3.xml#sec3.11) this would be a valid encoding:
-```
-&lt;s&gt;Eyvindr sagðisk eigi mundu brott undan ríða, 
-&lt;milestone unit="turn" rendition="opening-quote"/&gt;því at ek veit eigi hverir þessir eru.&lt;/s&gt;
-&lt;s&gt;Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.&lt;/s&gt;&lt;milestone 
-unit="turn" rendition="closing-quote"/&gt;
+```xml
+<s>Eyvindr sagðisk eigi mundu brott undan ríða, 
+<milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
+<s>Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.</s><milestone 
+unit="turn" rendition="closing-quote"/>
 ```
 
 
@@ -271,11 +317,20 @@ In this example, it is the division of the text in the `<s>` elements that would
 
 When a text has been encoded with the `<w>` element for every word, conflicts sometimes arise between the division into words and several of the elements used to describe fragmentation, uncertainty, scribal intervention and the like (discussed in [ch. 8](HB3_ch8.xml) and [ch. 9](HB3_ch9.xml) above).
 
-As an example, we shall use a missing passage of text which begins in one word and ends in another. The brackets mark the beginning and end of the passage:This is an exa[mple of a miss]ing passage
+As an example, we shall use a missing passage of text which begins in one word and ends in another. The brackets mark the beginning and end of the passage:
+<Quote>
+This is an exa[mple of a miss]ing passage
+</Quote>
 
-In an encoding using the `<w>` element for each word, it is not possible to open an element where the first bracket is located and close it in the second bracket, since there will be a conflict of overlapping structures. The simplest, although most verbose, solution is to encode each word separately, i.e. eitherThis is an exa[mple] [of] [a] [miss]ing passage
+In an encoding using the `<w>` element for each word, it is not possible to open an element where the first bracket is located and close it in the second bracket, since there will be a conflict of overlapping structures. The simplest, although most verbose, solution is to encode each word separately, i.e. either
+<Quote>
+This is an exa[mple] [of] [a] [miss]ing passage
+</Quote>
 
-or slightly less verboseThis is an exa[mple] [of a] [miss]ing passage
+or slightly less verbose
+<Quote>
+This is an exa[mple] [of a] [miss]ing passage
+</Quote>
 
 The encoding suggested in this subchapter is a simplified version of 16.2.1 above, in the sense that the linking is not expressed by way of IDREF pointing but by way of the rendition attribute. It is a robust solution and it has been successfully implemented in the display of the Menota archive. More advanced stylesheets may be developed that can replace this solution, but for now this is our offer for any texts that should be displayed in the Menota archive, using the Corpuscle application.
 
@@ -284,58 +339,59 @@ The solution is dependent on the intended display of the text, of which there ar
 
 This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of `<unclear>` text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See [ch. 8.4.2](HB3_ch8.xml#sec8.4.2) above. If this kind of display is chosen, no additional encoding is needed.
 
-According to the display recommended in this handbook, this solution is appropriate for the following elements:ElementsDisplay`<gap/>`If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](HB3_ch8.xml#sec8.2.2).`<space/>`If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](HB3_ch8.xml#sec8.3.2).`<unclear>`By grey colouring, cf. [ch. 8.4.2](HB3_ch8.xml#sec8.4.2).
+According to the display recommended in this handbook, this solution is appropriate for the following elements:
+ElementsDisplay`<gap/>`If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](HB3_ch8.xml#sec8.2.2).`<space/>`If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](HB3_ch8.xml#sec8.3.2).`<unclear>`By grey colouring, cf. [ch. 8.4.2](HB3_ch8.xml#sec8.4.2).
 
 
 
 Ill. 16.5. Unclear text. _Konungs skuggsjá_. NRA 58C, f. 1rA, 24–27.
 
 The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) above, while the facsimile level should record the text “as is” and the normalised level should offer a restored text, if possible, the diplomatic level may follow either of these two models. In this example, it follows the facsimile encoding in not making any restoration of the text, leaving the `<supplied>` element to the normalised level.
-```
+```xml
 . . .
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;c type="initial"&gt;Ð&lt;/c&gt;o a&trot;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;Ðo at&lt;/me:dipl&gt;
-    &lt;me:norm&gt;Þóat&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;ꝩıꞇ&lt;/me:facs&gt;
-    &lt;me:dipl&gt;vit&lt;/me:dipl&gt;
-    &lt;me:norm&gt;vit&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&slongklig;ıl&lt;unclear&gt;ꝺım&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;skil&lt;unclear&gt;dim&lt;/unclear&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;skyldim&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;unclear&gt;◌◌◌◌◌&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;unclear&gt;◌◌◌◌◌&lt;/unclear&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;&lt;supplied reason="restoration" resp="Holm-Olsen, 1983"&gt;
-      fleira&lt;/supplied&gt;&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;um&lt;/me:facs&gt;
-    &lt;me:dipl&gt;um&lt;/me:dipl&gt;
-    &lt;me:norm&gt;um&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;þeſ&lt;lb ed="ms" n="27"/&gt;se&lt;/me:facs&gt;
-    &lt;me:dipl&gt;þes&lt;lb ed="ms" n="27"/&gt;se&lt;/me:dipl&gt;
-    &lt;me:norm&gt;þes&lt;lb ed="ms" n="27"/&gt;si&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
+<w>
+  <choice>
+    <me:facs><c type="initial">Ð</c>o a&trot;</me:facs>
+    <me:dipl>Ðo at</me:dipl>
+    <me:norm>Þóat</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ꝩıꞇ</me:facs>
+    <me:dipl>vit</me:dipl>
+    <me:norm>vit</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&slongklig;ıl<unclear>ꝺım</unclear></me:facs>
+    <me:dipl>skil<unclear>dim</unclear></me:dipl>
+    <me:norm>skyldim</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983">
+      fleira</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>um</me:facs>
+    <me:dipl>um</me:dipl>
+    <me:norm>um</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þeſ<lb ed="ms" n="27"/>se</me:facs>
+    <me:dipl>þes<lb ed="ms" n="27"/>se</me:dipl>
+    <me:norm>þes<lb ed="ms" n="27"/>si</me:norm>
+  </choice>
+</w>
 . . .
 ```
 
@@ -345,78 +401,82 @@ See the Menota archive, NRA 58C, f. 1r, col. A, l. 27, for a display of this enc
 
 This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the rendition attribute with the first, middle and last values.
 
-According to the display recommended in this handbook, this solution is appropriate for the following elements:ElementsDisplay`<add>`By insertion signs, cf. [ch. 9.2.1.2](HB3_ch9.xml#sec9.2.1.2).`<del>`By vertical bars with quill, cf. [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2).`<supplied>`By square brackets or by open angle brackets, [ch. 9.3.1.3](HB3_ch9.xml#sec9.3.1.3).`<surplus>`By curly brackets, [ch. 9.3.2.2](HB3_ch9.xml#sec9.3.2.2).
+According to the display recommended in this handbook, this solution is appropriate for the following elements:
+ElementsDisplay`<add>`By insertion signs, cf. [ch. 9.2.1.2](HB3_ch9.xml#sec9.2.1.2).`<del>`By vertical bars with quill, cf. [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2).`<supplied>`By square brackets or by open angle brackets, [ch. 9.3.1.3](HB3_ch9.xml#sec9.3.1.3).`<surplus>`By curly brackets, [ch. 9.3.2.2](HB3_ch9.xml#sec9.3.2.2).
 
-In the next passage in fig 16.5, we can hardly read all the words. Beginning at the end of the next but last line, we can readum þes|se lond .................. þau þo
+In the next passage in fig 16.5, we can hardly read all the words. Beginning at the end of the next but last line, we can read
+<Quote>
+um þes|se lond .................. þau þo
+</Quote>
 
 In the following encoding, the three words “rǿða þá eru” have been supplied on the normalised level, but this sequence is left out on the facsimile and diplomatic level. However, based on the supplied text on the normalised level, the encoder has inserted them as three words in `<w>` elements. These words have been given the rendition attribute.
-```
+```xml
 . . .
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;um&lt;/me:facs&gt;
-    &lt;me:dipl&gt;um&lt;/me:dipl&gt;
-    &lt;me:norm&gt;um&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;þeſ&lt;lb ed="ms" n="27"/&gt;se&lt;/me:facs&gt;
-    &lt;me:dipl&gt;þes&lt;lb ed="ms" n="27"/&gt;se&lt;/me:dipl&gt;
-    &lt;me:norm&gt;þes&lt;lb ed="ms" n="27"/&gt;si&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;lonꝺ&lt;/me:facs&gt;
-    &lt;me:dipl&gt;lond&lt;/me:dipl&gt;
-    &lt;me:norm&gt;lǫnd&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;unclear&gt;◌◌◌◌&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;unclear&gt;◌◌◌◌&lt;/unclear&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;&lt;supplied reason="restoration" resp="Holm-Olsen, 1983" 
-      rendition="first"&gt;rǿða&lt;/supplied&gt;&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;pc&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;,&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/pc&gt;	
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;unclear&gt;◌◌&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;unclear&gt;◌◌&lt;/unclear&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;&lt;supplied reason="restoration" resp="Holm-Olsen, 1983" 
-      rendition="middle"&gt;þá&lt;/supplied&gt;&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;unclear&gt;◌◌◌&lt;/unclear&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;unclear&gt;◌◌◌&lt;/unclear&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;&lt;supplied reason="restoration" resp="Holm-Olsen, 1983" 
-      rendition="last"&gt;eru&lt;/supplied&gt;&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;þau&lt;/me:facs&gt;
-    &lt;me:dipl&gt;þau&lt;/me:dipl&gt;
-    &lt;me:norm&gt;þau&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;þo&lt;/me:facs&gt;
-    &lt;me:dipl&gt;þo&lt;/me:dipl&gt;
-    &lt;me:norm&gt;þó&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
+<w>
+  <choice>
+    <me:facs>um</me:facs>
+    <me:dipl>um</me:dipl>
+    <me:norm>um</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þeſ<lb ed="ms" n="27"/>se</me:facs>
+    <me:dipl>þes<lb ed="ms" n="27"/>se</me:dipl>
+    <me:norm>þes<lb ed="ms" n="27"/>si</me:norm>
+  </choice>
+</w><w>
+  <choice>
+    <me:facs>lonꝺ</me:facs>
+    <me:dipl>lond</me:dipl>
+    <me:norm>lǫnd</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="first">rǿða</supplied></me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl></me:dipl>
+    <me:norm>,</me:norm>
+  </choice>
+</pc>	
+<w>
+  <choice>
+    <me:facs><unclear>◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="middle">þá</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear>◌◌◌</unclear></me:facs>
+    <me:dipl><unclear>◌◌◌</unclear></me:dipl>
+    <me:norm><supplied reason="restoration" resp="Holm-Olsen, 1983" 
+      rendition="last">eru</supplied></me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þau</me:facs>
+    <me:dipl>þau</me:dipl>
+    <me:norm>þau</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þo</me:facs>
+    <me:dipl>þo</me:dipl>
+    <me:norm>þó</me:norm>
+  </choice>
+</w>
 . . .
 ```
 

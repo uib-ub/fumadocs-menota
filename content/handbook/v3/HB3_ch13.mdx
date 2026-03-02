@@ -47,7 +47,8 @@ medieval manuscripts.
 
 On the primary level we recommend
 that the stanzas are encoded with the following elements and
-attributes:Elements & attributesObl/OptExplanation`<lg>`Marks the stanza in
+attributes:
+Elements & attributesObl/OptExplanation`<lg>`Marks the stanza in
          relation to the surrounding prose text.
       nOblIndicates the identity of
          the stanza within the manuscript, i.e. its number in the
@@ -80,45 +81,57 @@ attributes:Elements & attributesObl/OptExplanation`<lg>`Marks the stanza in
 ## 13.3 Encoding example
 
 The following example is from _Guta saga_ (ed. by [Peel 1999](HB3_literature.xml#Peel1999), p. 2), in which the correction of the word “reð” has been suppressed for the sake of simplicity:
-Hann reþ draum þinna so:
-Alt ir baugum bundit
-Boland al þitta varþa
-ok faum þria syni aiga
+
+<table>
+<tbody>
+<tr>
+<td>
+<Quote>
+ Hann reþ draum þinna so:<br/>
+<br/>
+ Alt ir baugum bundit<br/>
+ Boland al þitta varþa<br/>
+ ok faum þria syni aiga 
+</Quote>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 The basic encoding of a verse within a prose work is thus:
-```
-&lt;p&gt;
-  &lt;w&gt;Hann&lt;/w&gt;
-  &lt;w&gt;reþ&lt;/w&gt;
-  &lt;w&gt;dra&lt;lb ed="ms" n="16"/&gt;um&lt;/w&gt;
-  &lt;w&gt;þinna&lt;/w&gt;
-  &lt;w&gt;so&lt;/w&gt;
-  &lt;pc&gt;.&lt;/pc&gt;
-&lt;/p&gt;
-&lt;lg n="1" xml:id="Guta-v1" type="germ"&gt;
-  &lt;l n="1"&gt;
-    &lt;w&gt;Alt&lt;/w&gt;
-    &lt;w&gt;ír&lt;/w&gt;
-    &lt;w&gt;baugum&lt;/w&gt;
-    &lt;w&gt;bundit&lt;/w&gt;
-    &lt;lb ed="ms" n="17"/&gt;
-  &lt;/l&gt;
-  &lt;l n="2"&gt;
-    &lt;w&gt;bo land&lt;/w&gt;
-    &lt;w&gt;al&lt;/w&gt;
-    &lt;w&gt;þitta&lt;/w&gt;
-    &lt;w&gt;warþa&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="3"&gt;
-    &lt;w&gt;oc&lt;/w&gt;
-    &lt;w&gt;faum&lt;/w&gt;
-    &lt;pb ed="ms" n="1v"/&gt;
-    &lt;w&gt;þria&lt;/w&gt;
-    &lt;w&gt;syni&lt;/w&gt;
-    &lt;w&gt;aiga&lt;/w&gt;
-  &lt;/l&gt;
-&lt;/lg&gt;
+```xml
+<p>
+  <w>Hann</w>
+  <w>reþ</w>
+  <w>dra<lb ed="ms" n="16"/>um</w>
+  <w>þinna</w>
+  <w>so</w>
+  <pc>.</pc>
+</p>
+<lg n="1" xml:id="Guta-v1" type="germ">
+  <l n="1">
+    <w>Alt</w>
+    <w>ír</w>
+    <w>baugum</w>
+    <w>bundit</w>
+    <lb ed="ms" n="17"/>
+  </l>
+  <l n="2">
+    <w>bo land</w>
+    <w>al</w>
+    <w>þitta</w>
+    <w>warþa</w>
+  </l>
+  <l n="3">
+    <w>oc</w>
+    <w>faum</w>
+    <pb ed="ms" n="1v"/>
+    <w>þria</w>
+    <w>syni</w>
+    <w>aiga</w>
+  </l>
+</lg>
 
 ```
 
@@ -128,89 +141,75 @@ does not occur in most poetic corpora). The value of type simply represents that
 attempt has been made here to do more detailed metrical analysis.
 
 The following example is of a more complex, skaldic example from _Skáldskaparmál_ in AM 748 II 4to. The verse (from Bragi Boddason’s _Ragnarsdrápa_ (stanza 5) is thus:
-þar
-    sua at
-    giordu
-    gyrdan
 
-    golfhaulkuis 
-    sa
-    fylkis
-   
-    segls
-    naglfara 
-    siglur
-   
-    saums
-    anduanar
-    standa
-   
-    urdu  
-    snemst 
-    ok
-    saurli
-   
-    samrada
-    þeir 
-    hamdir
-   
-    halum
-    herdi 
-    mylum
-   
-    hergautz 
-    vínum
-    bardir.
+<table>
+<tbody>
+<tr>
+<td>
+<Quote>
+ þar sua at giordu gyrdan<br/>
+ golfhaulkuis sa fylkis<br/>
+ segls naglfara siglur<br/>
+ saums anduanar standa<br/>
+ urdu snemst ok saurli<br/>
+ samrada þeir hamdir<br/>
+ halum herdi mylum<br/>
+ hergautz vínum bardir. 
+</Quote>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 The transcription is encoded thus (long “s” is normalised to “s”; encoded at the diplomatic level):
-```
-&lt;lg n="3" xml:id="Bragi-Rdr-5" type="dróttkvætt"&gt;
-  &lt;l n="1" met="A3-2"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;þ&lt;ex&gt;ar&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;s&lt;ex&gt;ua&lt;/ex&gt; at&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;&lt;me:ass&gt;iord&lt;/me:ass&gt;u&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;&lt;me:ass&gt;yrd&lt;/me:ass&gt;an&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="2" met="X"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;g&lt;/me:all&gt;olfh&lt;me:ass&gt;aul&lt;lb ed="ms" n="19"/&gt;k&lt;/me:ass&gt;
-      uis&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;sa&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;f&lt;me:ass&gt;ylk&lt;/me:ass&gt;is&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="3" met="D2"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;egl&lt;/me:ass&gt;s&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;naglf&lt;ex&gt;ar&lt;/ex&gt;a&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;igl&lt;/me:ass&gt;ur&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="4" met="D2"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;aums&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:ass&gt;and&lt;/me:ass&gt;uana&lt;add place="supralinear"&gt;r&lt;/add&gt;
-      &lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;st&lt;me:ass&gt;and&lt;/me:ass&gt;a&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="5" met="X"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;urdu&lt;/me:dipl&gt;&lt;/w&gt; &lt;lb ed="ms" n="20"/&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;nemst&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;&lt;ex&gt;ok&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;aurli&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="6" met="X"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;s&lt;/me:all&gt;&lt;me:ass&gt;am&lt;/me:ass&gt;rada&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;þ&lt;ex&gt;ei&lt;/ex&gt;r&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;h&lt;me:ass&gt;am&lt;/me:ass&gt;d&lt;ex&gt;ir&lt;/ex&gt;&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="7" met="A1-1"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;me:ass&gt;al&lt;/me:ass&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;ex&gt;er&lt;/ex&gt;di&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;m&lt;me:ass&gt;yl&lt;/me:ass&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
-  &lt;/l&gt;
-  &lt;l n="8" met="X"&gt;
-    &lt;w&gt;&lt;me:dipl&gt;&lt;me:all&gt;h&lt;/me:all&gt;&lt;ex&gt;er&lt;/ex&gt;gautz&lt;/me:dipl&gt;&lt;/w&gt; 
-    &lt;w&gt;&lt;me:dipl&gt;vín&lt;lb ed="ms" n="21"/&gt;um&lt;/me:dipl&gt;&lt;/w&gt;
-    &lt;w&gt;&lt;me:dipl&gt;bardir&lt;/me:dipl&gt;&lt;/w&gt;&lt;pc&gt;.&lt;/pc&gt;
-  &lt;/l&gt;
-&lt;/lg&gt;
+```xml
+<lg n="3" xml:id="Bragi-Rdr-5" type="dróttkvætt">
+  <l n="1" met="A3-2">
+    <w><me:dipl>þ<ex>ar</ex></me:dipl></w>
+    <w><me:dipl>s<ex>ua</ex> at</me:dipl></w>
+    <w><me:dipl><me:all>g</me:all><me:ass>iord</me:ass>u</me:dipl></w>
+    <w><me:dipl><me:all>g</me:all><me:ass>yrd</me:ass>an</me:dipl></w>
+  </l>
+  <l n="2" met="X">
+    <w><me:dipl><me:all>g</me:all>olfh<me:ass>aul<lb ed="ms" n="19"/>k</me:ass>
+      uis</me:dipl></w> 
+    <w><me:dipl>sa</me:dipl></w>
+    <w><me:dipl>f<me:ass>ylk</me:ass>is</me:dipl></w>
+  </l>
+  <l n="3" met="D2">
+    <w><me:dipl><me:all>s</me:all><me:ass>egl</me:ass>s</me:dipl></w>
+    <w><me:dipl>naglf<ex>ar</ex>a</me:dipl></w> 
+    <w><me:dipl><me:all>s</me:all><me:ass>igl</me:ass>ur</me:dipl></w>
+  </l>
+  <l n="4" met="D2">
+    <w><me:dipl><me:all>s</me:all>aums</me:dipl></w>
+    <w><me:dipl><me:ass>and</me:ass>uana<add place="supralinear">r</add>
+      </me:dipl></w>
+    <w><me:dipl>st<me:ass>and</me:ass>a</me:dipl></w>
+  </l>
+  <l n="5" met="X">
+    <w><me:dipl>urdu</me:dipl></w> <lb ed="ms" n="20"/> 
+    <w><me:dipl><me:all>s</me:all>nemst</me:dipl></w> 
+    <w><me:dipl><ex>ok</ex></me:dipl></w>
+    <w><me:dipl><me:all>s</me:all>aurli</me:dipl></w>
+  </l>
+  <l n="6" met="X">
+    <w><me:dipl><me:all>s</me:all><me:ass>am</me:ass>rada</me:dipl></w>
+    <w><me:dipl>þ<ex>ei</ex>r</me:dipl></w> 
+    <w><me:dipl>h<me:ass>am</me:ass>d<ex>ir</ex></me:dipl></w>
+  </l>
+  <l n="7" met="A1-1">
+    <w><me:dipl><me:all>h</me:all><me:ass>al</me:ass>um</me:dipl></w>
+    <w><me:dipl><me:all>h</me:all><ex>er</ex>di</me:dipl></w> 
+    <w><me:dipl>m<me:ass>yl</me:ass>um</me:dipl></w>
+  </l>
+  <l n="8" met="X">
+    <w><me:dipl><me:all>h</me:all><ex>er</ex>gautz</me:dipl></w> 
+    <w><me:dipl>vín<lb ed="ms" n="21"/>um</me:dipl></w>
+    <w><me:dipl>bardir</me:dipl></w><pc>.</pc>
+  </l>
+</lg>
 ```
 
 

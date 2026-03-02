@@ -42,23 +42,37 @@ While the manuscript description in the header should include a register of
                   attributes, which makes them highly searchable.
 
 The following overview summarizes what to encode where and links to the
-                  respective subchapters of these guidelines:WhereWhatIn the manuscript description(&lt;teiHeader&gt;)All illuminations (including initials) of the manuscript are listed
-                        chronologically, giving information on: 
-                        - Type and occurrence of illumination (for initials [ch. 7.2.1.1](#sec7.2.1.1), for other illuminations [ch. 7.2.2.1](#sec7.2.2.1)).
+                  respective subchapters of these guidelines:
+WhereWhatIn the manuscript description<br/>
+(&lt;teiHeader&gt;)All illuminations (including initials) of the manuscript are listed
+                        chronologically, giving information on:<br/>
+ 
+                        - Type and occurrence of illumination (for initials [ch. 7.2.1.1](#sec7.2.1.1), for other illuminations [ch. 7.2.2.1](#sec7.2.2.1)).<br/>
+
                         - Description of the motif or decoration (for initials
                            [ch. 7.2.1.2](#sec7.2.1.2), for other illuminations [ch. 7.2.2.2](#sec7.2.2.2); for optional further details see
                         [ch. 7.2.6](#sec7.2.6) on illumination techniques and 
-                        [ch. 7.2.7](#sec7.2.7) on motifs and composition).
-                        - Inks and colours used ([ch. 7.2.3](#sec7.2.3)).
-                        - Captions ([ch. 7.2.4](#sec7.2.4)).
+                        [ch. 7.2.7](#sec7.2.7) on motifs and composition).<br/>
+
+                        - Inks and colours used ([ch. 7.2.3](#sec7.2.3)).<br/>
+
+                        - Captions ([ch. 7.2.4](#sec7.2.4)).<br/>
+
                         - Hands and dating ([ch. 7.2.5](#sec7.2.5)).
-                        In the transcription(&lt;body&gt;) Basic characteristics of initials are encoded where they occur in the
-                        text, giving information on:  
-                        - The letter and its form ([ch. 7.3.1](#sec7.3.1)).
-                        - Hierarchy of initials ([ch. 7.3.2](#sec7.3.2)).
-                        - Initial size ([ch. 7.3.3](#sec7.3.3)).
-                        - Colours used ([ch. 7.3.4](#sec7.3.4)).
-                        - Artistic rendition ([ch. 7.3.5](#sec7.3.5)).
+                        In the transcription<br/>
+(&lt;body&gt;) Basic characteristics of initials are encoded where they occur in the
+                        text, giving information on:<br/>
+  
+                        - The letter and its form ([ch. 7.3.1](#sec7.3.1)).<br/>
+
+                        - Hierarchy of initials ([ch. 7.3.2](#sec7.3.2)).<br/>
+
+                        - Initial size ([ch. 7.3.3](#sec7.3.3)).<br/>
+
+                        - Colours used ([ch. 7.3.4](#sec7.3.4)).<br/>
+
+                        - Artistic rendition ([ch. 7.3.5](#sec7.3.5)).<br/>
+
 
 Note also the glossary in the end of the chapter that helps, among others, to
                   identify and name the different parts of an initial (see [7.4](#sec7.4)). Furthermore, we refer to the introduction to manuscript
@@ -84,28 +98,28 @@ A basic list registering the illuminations within the header could look like
                   this:
 
 
-```
-&lt;decoDesc&gt;
-  &lt;decoNote&gt;
-    &lt;p&gt;F. &lt;locus from="1r" to="1r"&gt;1r&lt;/locus&gt;:
+```xml
+<decoDesc>
+  <decoNote>
+    <p>F. <locus from="1r" to="1r">1r</locus>:
       Full-page illumination, Christ on the cross. 
       Colours: yellow, blue, light red. 
-      Outline: black.&lt;/p&gt;
-  &lt;/decoNote&gt;
+      Outline: black.</p>
+  </decoNote>
 	               
-   &lt;decoNote&gt;
-     &lt;p&gt;F. &lt;locus from="1va" to="1va"&gt;1va&lt;/locus&gt;:
+   <decoNote>
+     <p>F. <locus from="1va" to="1va">1va</locus>:
        Historiated opening initial M depicting king Magnús, 12 l.
        Colours: light red, blue, green, yellow.
-       Outline: black.&lt;/p&gt;
-   &lt;/decoNote&gt;
+       Outline: black.</p>
+   </decoNote>
 
-  &lt;decoNote&gt;
-    &lt;p&gt;Ff. &lt;locus from="1v" to="98v"&gt;1v-98v&lt;/locus&gt;:
+  <decoNote>
+    <p>Ff. <locus from="1v" to="98v">1v-98v</locus>:
       foliate chapter initials, 2–3 l.
-      Colours: alternating red, blue with black foliage.&lt;/p&gt;
-  &lt;/decoNote&gt;
-&lt;/decoDesc&gt;
+      Colours: alternating red, blue with black foliage.</p>
+  </decoNote>
+</decoDesc>
 ```
 
 
@@ -171,12 +185,12 @@ Put simply, as major initials we consider rather large and elaborate initials. T
 
 Ill. 7.1. AM 45 fol., f. 8va, l. 19–36, foliate text initial “h”. In column b next to it 
 	            is an example of a chapter initial in this manuscript.
-```
-&lt;decoNote&gt;
-  &lt;p&gt;F. &lt;locus from="8va" to="8va"&gt;8va&lt;/locus&gt;: 
+```xml
+<decoNote>
+  <p>F. <locus from="8va" to="8va">8va</locus>: 
     foliate text initial h, 8 l.
-    Colours: light yellow, red, light blue.&lt;/p&gt;
-&lt;/decoNote&gt;
+    Colours: light yellow, red, light blue.</p>
+</decoNote>
 ```
 
 
@@ -189,15 +203,15 @@ As minor initials we consider less elaborate, but highly frequent initials, that
                   the last folio of their respective occurrence and summarizing the average height
                   (i.e. number of indented or covered lines), skipping the indication of the
                   respective letters: 
-```
-&lt;decoDesc&gt;
+```xml
+<decoDesc>
  ...
-  &lt;decoNote&gt;
-    &lt;p&gt;Ff. &lt;locus from="1r" to="27v"&gt;1r–27v&lt;/locus&gt;: 
+  <decoNote>
+    <p>Ff. <locus from="1r" to="27v">1r–27v</locus>: 
       colour-stroked paragraph initials, 2–3 l.
-      Colours: Black with red highlighting.&lt;/p&gt;
-  &lt;/decoNote&gt;
-&lt;/decoDesc&gt;
+      Colours: Black with red highlighting.</p>
+  </decoNote>
+</decoDesc>
 ```
 
 
@@ -206,14 +220,14 @@ Please note that it is also of interest to register missing initials, i.e. those
                   Sometimes, these instances contain guiding notes for the illuminator e.g.
                   indicating the respective letter to be filled in (guide
                      letter).
-```
-&lt;decoDesc&gt;
+```xml
+<decoDesc>
  ...
-  &lt;decoNote&gt;
-    &lt;p&gt;Ff. &lt;locus from="2r" to="6v"&gt;2r, 3v, 5r–6v&lt;/locus&gt;: 
-      Missing paragraph initials, 2-3 l.&lt;/p&gt;
-  &lt;/decoNote&gt;
-&lt;/decoDesc&gt;
+  <decoNote>
+    <p>Ff. <locus from="2r" to="6v">2r, 3v, 5r–6v</locus>: 
+      Missing paragraph initials, 2-3 l.</p>
+  </decoNote>
+</decoDesc>
 ```
 
 ### 7.2.1.2 Initial forms and decoration
@@ -223,88 +237,121 @@ Initials occur in various shapes and decorations. The overview below lists
                   desirable to identify with the correct terms. Please note that the forms and
                   decoration often occur in combination and the encoder would in these cases
                   indicate more than one form or decoration, e.g. a dragon initial that is foliate or a pen-flourished lombard.
-                Certain forms and modes of decoration, however, are mutually exclusive, e.g. a versal cannot be inhabited.ExampleForm and decorationExplanation⊕ Photo: The Royal Library, CopenhagenIll. 7.2. GKS 1154 fol., f. 35r, l. 18–32.
+                Certain forms and modes of decoration, however, are mutually exclusive, e.g. a versal cannot be inhabited.
+ExampleForm and decorationExplanation⊕ Photo: The Royal Library, CopenhagenIll. 7.2. GKS 1154 fol., f. 35r, l. 18–32.
                      Historiated initialThe initial comprises identifiable representational motifs with an
                         illustrative function (i.e. referring to the content of the text). It
-                        is desirable to identify the motif of a historiated initial. In the example: Historiated initial “E” showing the lease of land
+                        is desirable to identify the motif of a historiated initial. <br/>
+<br/>
+In the example: Historiated initial “E” showing the lease of land
                         by handshake in Landsleigubálkr of King Magnús Lagabætir’s landslov
                         in GKS 1154 fol., Hardenberg’s Codex, f. 35r, l. 18–32.⊕ Photo: The Arnamagnæan Collection, Reykjavík.Ill. 7.3. AM 334 fol., f. 1va, l. 1–20.
                      Foliate initialThe initial is decorated with botanical decoration as creeping branches
                         with leaves, buds and flowers or spiral vines. Foliage can elongate
                         the shafts of a letter into the margins in the form of termination. 
                         In some cases, the termination can be so much elaborated that the foliation frames the page’s text. 
-                        In contrast to borders, however, the text area is not decreased by the foliation. In the example: Foliate initial “A” with spiral vines and curlicue
+                        In contrast to borders, however, the text area is not decreased by the foliation. <br/>
+<br/>
+In the example: Foliate initial “A” with spiral vines and curlicue
                         in AM 334 fol., Staðarhólsbók, f. 1va, l. 1–9.⊕ Photo: The Royal Library, CopenhagenIll. 7.4. GKS 1154 fol., f. 5v, l. 15–27.
                      Pen-flourished initialFragile embellishment of both geometrical and foliate motifs executed as very fine hair-lines solely in
                         (coloured) ink. Placed in the counter of the letter it is called infilling;
                         when attached to the letter it is called external pen flourish,
                         which often ends with tendril extenders that extend widely into the
-                        margins. In the example: Pen-flourished initial “n” with delicate tendrils
+                        margins. <br/>
+<br/>
+In the example: Pen-flourished initial “n” with delicate tendrils
                         executed with dark blue ink and pen. The body of the initial is decorated with
                         gold leaf. Found in GKS 1154 fol., Hardenberg’s Codex, f. 5v, l.
                         20–23. ⊕ Photo: The National Library, Reykjavík.Ill. 7.5. Lbs 781 4to, f. 6v, l. 26–28.
                      Penwork initialInitial solely drawn with a pen (not a brush) with a subdued degree
                         of decoration as loops and curlicues. Mostly found in early modern
-                        manuscripts using the same ink as the main text. In the example: Penwork initial “S”, as they often appear in early
+                        manuscripts using the same ink as the main text. <br/>
+<br/>
+In the example: Penwork initial “S”, as they often appear in early
                         modern manuscripts, in Lbs 781 4to, f. 6v, l. 26–28.Ill. 7.6. AM 795 4to, f. 24v, l. 1–8.
                      Interlaced initialThe body of the initial is formed by geometrically interwoven and
-                        knotted ribbons.In the example: Interlaced initial “B” in AM 795 4to, f. 24v, l.
+                        knotted ribbons.<br/>
+<br/>
+In the example: Interlaced initial “B” in AM 795 4to, f. 24v, l.
                         1–8.Ill. 7.7. Mh. 18, f. 6r, l. 13–16.
                      Puzzle initialThe body of the letter is excecuted in two (or more) contrasting
-                        colours, leaving a thin white gap inbetween. In the example: Puzzle initial “B” in red and blue in Lund,
+                        colours, leaving a thin white gap inbetween. <br/>
+<br/>
+In the example: Puzzle initial “B” in red and blue in Lund,
                         Medeltidshandskrift 18, f. 6r, l. 13–16. The shape of the 
                         letter’s body is that of a lombard (see below).Ill. 7.8. AM 76 8vo, f. 23v, l. 10–17.
                      Zoomorphic initialThe body or part of the initial is formed by an animal. Please
                         indicate in the description which kind of animal it is (for dragons:
-                        see dragon initial below). In the example: Zoomorphic initial “Q”, the cauda of the letter is in the
+                        see dragon initial below). <br/>
+<br/>
+In the example: Zoomorphic initial “Q”, the cauda of the letter is in the
                         shape of a fish in AM 76 8vo, f. 23v, l. 10–11.Ill. 7.9. Mh. 6, f. 6v, l. 1–7.
                      Dragon initialThe body of the letter or part of it is formed by a dragon. Dragons
-                        usually have fanged jaws, feathered wings and two legs with claws. In the example: Two-headed dragon forming part of the body of the 
+                        usually have fanged jaws, feathered wings and two legs with claws. <br/>
+<br/>
+In the example: Two-headed dragon forming part of the body of the 
                         foliate initial “a” in Lund, Medeltidshandskrift 6, f. 6v, l. 1–6. Ill. 7.10. AM 147 4to, f. 89r, l. 16–24.
                      Inhabited initialHuman, animal or fantasy creatures are placed within the letter or its
                         foliage, often playfully climbing in it with a solely decorative function. It is
                         desirable to identify the kind of inhabiting creatures. Inhabited initials are 
                         distinct from historiated initials by not illustrating or referring to the content 
-                        of the text (see also historiated initials above). In the example: By climbing canines inhabited initial “M” 
+                        of the text (see also historiated initials above). <br/>
+<br/>
+In the example: By climbing canines inhabited initial “M” 
                         in AM 147 4to, Heynesbók, f. 89r, l. 16–22.Ill. 7.11. AM 65 4to, f. 4v, l. 16–20.
                      LombardEnlarged letter in a rather bulgy and rounded shape. The body can be
-                        plain-coloured or more elaborated and at times, further decoration such as pen flourish occurs. In the example: The lombard “E” in AM 65 4to, f. 4v, l. 17–18.Ill. 7.12. AM 45 fol., f. 18va, l. 31–38.
+                        plain-coloured or more elaborated and at times, further decoration such as pen flourish occurs. <br/>
+<br/>
+In the example: The lombard “E” in AM 65 4to, f. 4v, l. 17–18.Ill. 7.12. AM 45 fol., f. 18va, l. 31–38.
                      VersalThe first letter of a line is clearly out-dented into the
                         left margin, frequently with no or only little decoration and using the
                         same ink as the text. Versals are usually used for minor initials and are often not
                         much higher than what corresponds to a single line of text.
                         Please note, however, that versals can occur on different levels of the 
-                        initial hierarchy.In the example: Sentence initials executed as versals at the beginning of every stanza 
+                        initial hierarchy.<br/>
+<br/>
+In the example: Sentence initials executed as versals at the beginning of every stanza 
                         of Hákonarmál in AM 45 fol., f. 18va, l. 31–38.Ill. 7.13. NKS 2237 4to, f. 4v, l. 18–24.
-                     Colour-stroked initialSentence initials that are highlighted by an additional stroke of ink, usually in red.In the example: Red colour-stroked sentence initials in NKS 2237 4to, f. 4v, l. 18–24.Ill. 7.14. AM 56 4to, f. 1r, l. 5–11.
+                     Colour-stroked initialSentence initials that are highlighted by an additional stroke of ink, usually in red.<br/>
+<br/>
+In the example: Red colour-stroked sentence initials in NKS 2237 4to, f. 4v, l. 18–24.Ill. 7.14. AM 56 4to, f. 1r, l. 5–11.
                      IncipitThe incipit of a text written in display script, i.e. enlarged, colored, 
-                        decorated or written in another script.In the example: Coloured (green, yellow, blue, red) and enlarged incipit 
+                        decorated or written in another script.<br/>
+<br/>
+In the example: Coloured (green, yellow, blue, red) and enlarged incipit 
                         “AGNVS MEÐ” with red and blue pen flourish, following the pen-flourished 
                         puzzle linitial “M” (red, blue) in AM 56 4to, f. 1r, l. 8-10.Ill. 7.15. AM 789 4to, f. 2v, l. 11–30.
                      Missing initialThe initial has been cut out or is omitted, i.e. space has been left for it
                         but it was never filled in. Sometimes small guide letters indicate the planned 
-                        letter to the illuminator (see also guide letter). In the example: The text initial “M” has been cut out, 
+                        letter to the illuminator (see also guide letter). <br/>
+<br/>
+In the example: The text initial “M” has been cut out, 
                         also removing the foliation extending 
                         in the outer and lower margin in AM 789 4to, f. 2v, l. 13-19. Ill. 7.16. AM 557 4to, f. 3r, l. 26–30.
                      Guide letter A small letter in the margin or the indented space for the initial indicating 
                         to the illuminator which letter to draw. Guide letters are found both in combination
-                        with executed initials and missing ones.In the example: The missing initial “Þ” that was planned, but never 
+                        with executed initials and missing ones.<br/>
+<br/>
+In the example: The missing initial “Þ” that was planned, but never 
                         executed as is visible from the indented four lines of the text, and the
                         guide letter “þ” in the margin in AM 557 4to, f. 3r, l. 26–30.[Anything else]All other instances: Name what you see (incl. representative motifs
-                        and figural ornamentation). 
+                        and figural ornamentation). <br/>
+<br/>
+
 
 Table [1](#tab1). Ill. 7.2–7.16 listing the most common initial forms and
                   and modes of decoration. 
 
 The initial form and/or decoration are incorporated into the
                   description of the illumination type:
-```
-&lt;decoNote&gt;
-  &lt;p&gt;F. &lt;locus from="3r" to="3r"&gt;3r:24-26&lt;/locus&gt;: 
+```xml
+<decoNote>
+  <p>F. <locus from="3r" to="3r">3r:24-26</locus>: 
     chapter initial M executed as pen-flourished lombard, 3 l.
     Colours: blue, light red.
-  &lt;/p&gt;
-&lt;/decoNote&gt;
+  </p>
+</decoNote>
 ```
 
 
@@ -324,26 +371,35 @@ When registering illuminations in `<decoNote>`, the place where it occurs is giv
                   identification of the illumination type. The different types are characterized by
                   their position and size in relation to the written text. The following table gives
                   an overview over the most frequent types of illuminations (other than initials) that we consider desirable to be
-                  identified. ExampleIllumination typeExplanationIll. 7.17. AM 421 12mo, f. 47v–48r.
+                  identified. 
+ExampleIllumination typeExplanationIll. 7.17. AM 421 12mo, f. 47v–48r.
                      Full-page illuminationIllumination, often framed, covering the size of the 
-                        written area elsewhere in the manuscript.In the example: Full-page illumination depicting the adoration of the
+                        written area elsewhere in the manuscript.<br/>
+<br/>
+In the example: Full-page illumination depicting the adoration of the
                         Magi in AM 421 12mo, Marine
                         Jesperdatter’s prayer book, f. 47v–48r.Ill. 7.18. AM 733 4to, f. 5va, in between l. 20–21.
                      MiniatureIllumination within the written area that is not connected to an
                         initial. A miniature is usually framed and its size corresponds 
                         to the width of the column. The motif frequently illustrates a passage of the
-                        text. In the example: Framed miniature showing Christ on the cross with Mary and
+                        text. <br/>
+<br/>
+In the example: Framed miniature showing Christ on the cross with Mary and
                         John on either side in AM 733 4to, f. 5va, in between l. 20–21.Ill. 7.19. AM 132 4to, f. 29v, bottom margin.
                      Marginal drawingDrawings outside the written area, usually unframed and not connected to
                         any initial. The drawing can be placed in all four margins of a page,
                         but appear most frequently in the outer and lower margins. The motifs
-                        can refer to the written text but can also be of playful character. In the example: A marginal drawing showing a bishop and a bearded
+                        can refer to the written text but can also be of playful character. <br/>
+<br/>
+In the example: A marginal drawing showing a bishop and a bearded
                         grotesque figure sticking out its tongue in AM 132 4to, f. 29v,
                         bottom margin.Ill. 7.20. GKS 1154 fol., f. 2v, lower margin.
                      Bas-de-pageElaborate drawing that usually covers most of the lower margins and that
                         is connected to a bar attached to an initial. The often playful
                         motifs (drollery) can refer to the written text or other illuminations
-                        on the page.  In the example: Bas-de-page with two jousting knights riding towards each
+                        on the page. <br/>
+<br/>
+ In the example: Bas-de-page with two jousting knights riding towards each
                         other. The illumination is placed on a bar that is attached to the initial
                         “F” in GKS 1154 fol., Hardenberg’s Codex, f. 2v, lower margin.Ill. 7.21. AM 71 8vo, f. 17r.
                      BorderOutstanding illuminated margins that frame the incipit of a text
@@ -351,43 +407,61 @@ When registering illuminations in `<decoNote>`, the place where it occurs is giv
                         usually co-occur with extraordinary enlarged and decorated initials 
                         (cf. incipit page). Borders can either be ornamental (foliate, inhabited)
                         or historiated (with identifiable representative motifs). Rare in
-                        manuscripts that were produced in Scandinavia. In the example: Historiated border in a Dutch prayer book with a
+                        manuscripts that were produced in Scandinavia. <br/>
+<br/>
+In the example: Historiated border in a Dutch prayer book with a
                         historiated initial depicting scenes from the birth of Christ in AM 71 8vo, f. 17r.Ill. 7.22. Thott 21 4to, f. 5r.
                      Incipit pageDecorated page highlighting the beginning of a text (or section) comprising
                         the incipit in enlarged display script and an extraordinary enlarged
                         initial. The background is usually coloured and framed. The focus is on
                         script and there are usually no ornaments or figurative motifs exceeding/beyond the
-                        initial (cf. border). In the example: Framed incipit page opening Matthew’s gospel comprising a
+                        initial (cf. border). <br/>
+<br/>
+In the example: Framed incipit page opening Matthew’s gospel comprising a
                         foliate initial and the incipit in display script on purple
                         ground in Thott 21 4to, f. 5r.Ill. 7.23. GKS 3274 a 4to, f. 22v.
                      Display pageUnframed page with solely enlarged, decorated display script, often the incipit of a text (or section), 
                         sometimes before or after a larger initial (cf. incipit page). 
-                                                In the example: Unframed display page with colored display script 
+                                                <br/>
+<br/>
+In the example: Unframed display page with colored display script 
                         opening Rekabálkr of Jónsbók, in GKS 3274 a 4to, f. 22v.Ill. 7.24. AM 4 4to, f. 3r, l. 11–18.
                      Line fillersMore or less elaborate ornaments filling the unwritten whitespace of
                         written lines, typically the last part of the line: They can be simple
                         (coloured) lines, but sometimes they depict serpents, fish or other
                         animals. The occurrence of line fillers can be summarized at the end
-                        of the list. In the example: Red and blue line fillers in AM 4 4to, f. 3r,
+                        of the list. <br/>
+<br/>
+In the example: Red and blue line fillers in AM 4 4to, f. 3r,
                         l. 11–18.Ill. 7.25. Lbs 781 4to, f. 17r.
                      FriezeOrnamental horizontal element above, within or below the text, usually
-                        covering most of the width of the written area. In the example: Horizontal frieze drawn with ink placed below the script
+                        covering most of the width of the written area. <br/>
+<br/>
+In the example: Horizontal frieze drawn with ink placed below the script
                         and illuminations in Lbs 781 4to, f. 17r. Ill. 7.26. Lbs 781 4to, f. 4v, upper left corner.
                      CartoucheFrame comprising a short caption, usually emulating three-dimensional
-                        organic forms. In the example: A cartouche comprising the caption of the illumination
+                        organic forms. <br/>
+<br/>
+In the example: A cartouche comprising the caption of the illumination
                         of a hand in Lbs 781 4to, f. 4v.Ill. 7.27. GKS 3274 a 4to, f. 250v, l.9–13.
                      VignetteSmall ornamental element at the end of a text, as often found in
                         early modern manuscripts. They often co-occur with half-diamond indention of
-                        the explicit of a text. In the example: A vignette with a geometrical interlaced ornament below 
+                        the explicit of a text. <br/>
+<br/>
+In the example: A vignette with a geometrical interlaced ornament below 
                         the end of a chapter in GKS 3274 a 4to, f. 250v.Ill. 7.28. AM 76 8vo, f. 11r, l. 16–22.
                      Maniculus (pl. -i)A small hand in the margin pointing at a word or phrase of the written
-                        text. In the example: A red maniculus in the outer margin of AM 76 8vo, f. 11r, l.
+                        text. <br/>
+<br/>
+In the example: A red maniculus in the outer margin of AM 76 8vo, f. 11r, l.
                         16–22.Ill. 7.29. AM 132 4to, f. 1r.
                      Missing illuminationIllumination that has either been laid out, but the allowed space
                         was never filled, or has later been scraped off or cut out. It will be
                         registered in the header similarly to missing initials. Instances of
                         left blank spaces can contain notes for the illuminator that indicate the
-                        planned motif. In the example: The full-page illumination in AM 132 4to, f. 1r was scraped 
+                        planned motif. <br/>
+<br/>
+In the example: The full-page illumination in AM 132 4to, f. 1r was scraped 
                         off at a later point leaving a brighter area. The outlines of the former 
                         illumination can still be perceived, it showed a seated
                         king with a haloed crown and in his hands an orb, an axe and a 
@@ -417,32 +491,50 @@ Representational motifs include both objects as well as animate beings, such as
                      “bearded face”, “gryllus”. In case of a narrative scene a verbal
                   phrase may be used, e.g. “man hitting mermaid with a sword”, “judges leading
                      thief to the gallows”. Terms for some rather specific, but frequent
-                  motifs are explained in the following overview.ExampleMotifExplanationIll. 7.30. AM 350 fol., f. 15ra, l. 10–16.   
+                  motifs are explained in the following overview.
+ExampleMotifExplanationIll. 7.30. AM 350 fol., f. 15ra, l. 10–16.   
                      Bearded faceThe counter of an initial is filled with a drawing of a
-                        (bearded) face. Common in chapter initials. In the example: A bearded face found in the counter of the initial
+                        (bearded) face. Common in chapter initials. <br/>
+<br/>
+In the example: A bearded face found in the counter of the initial
                         “n” in AM 350 fol., f. 15ra, l. 12–15.Ill. 7.31. AM 732 b 4to, f. 3r, below l. 1.
                      DiagramTwo-dimensional schematic representation combining script and usually
                         rather geometrical forms as lines and circles. Please indicate the
-                        represented content. In the example: Diagram showing the position of the earth, sun and moon
+                        represented content. <br/>
+<br/>
+In the example: Diagram showing the position of the earth, sun and moon
                          in AM 732 b 4to, f. 3r, below l. 1.Ill. 7.32. GKS 1005 fol., f. 5v, bottom margin.
                      DrolleryPlayful and funny motifs in general, e.g. a fox hunting a rabbit,
-                        grylli or a knight fighting a snail. In the example: A drollery scene with a man with a helmet and twisted arms 
+                        grylli or a knight fighting a snail. <br/>
+<br/>
+In the example: A drollery scene with a man with a helmet and twisted arms 
                         as well as a cloven-hoofed canine chasing a bird in the bas-de-page of GKS 1005 fol.,
                         Flateyjarbók, f. 5v, bottom margin.Ill. 7.33. AM 147 4to, f. 23v, bottom margin.
-                     GrotesqueA hybrid fantasy creature of usually human and animal components. In the example: A quadruped grotesque with a human head and a long
+                     GrotesqueA hybrid fantasy creature of usually human and animal components. <br/>
+<br/>
+In the example: A quadruped grotesque with a human head and a long
                          tail in AM 147 4to, Heynesbók, f. 23v, bottom margin.Ill. 7.34. GKS 1005 fol., f. 6vb, 46–50.
                      Gryllus (pl. -i)Playful grotesque creature usually broad-bottomed with two animal rear
-                        legs and a human face; often with a tail and wearing a gugel. In the example: Two hooded grylli in the counter of an initial of GKS 1005
+                        legs and a human face; often with a tail and wearing a gugel. <br/>
+<br/>
+In the example: Two hooded grylli in the counter of an initial of GKS 1005
                         fol., Flateyjarbók, f. 6vb, l. 46–50.Ill. 7.35. Mh. 15, f. 140v, bottom margin.
                      Labours of the monthImages of agricultural activities connected to the individual
-                        months, usually in connection with calenders. In the example: Haymaking with a scythe in July
+                        months, usually in connection with calenders. <br/>
+<br/>
+In the example: Haymaking with a scythe in July
                         and harvesting the crops with a sickle in August from a
                         calender in Lund, Medeltidshandskrift 15, f. 140v, bottom margin.Ill. 7.36. AM 732 b 4to, f. 8v. 
                      MapsA two-dimensional representation of real or imagined places often
-                        with captions. Please indicate the represented place(s). In the example: A map of Jerusalem in AM 732 b 4to, f. 8v, upper half of the page. Ill. 7.37. Lbs 781 4to, f. 46r, upper left corner. 
-                     Zodiac signsDepictions of the 12 zodiac signs. Please indicate the  represented
+                        with captions. Please indicate the represented place(s). <br/>
+<br/>
+In the example: A map of Jerusalem in AM 732 b 4to, f. 8v, upper half of the page. Ill. 7.37. Lbs 781 4to, f. 46r, upper left corner. 
+                     Zodiac signsDepictions of the 12 zodiac signs. Please indicate the <br/>
+ represented
                         sign, i.e. Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio,
-                        Sagittarius, Capricorn, Aquarius or Pisces.In the example: A miniature showing the Libra of the zodiac signs in
+                        Sagittarius, Capricorn, Aquarius or Pisces.<br/>
+<br/>
+In the example: A miniature showing the Libra of the zodiac signs in
                         Lbs 781 4to, f. 46r, upper left corner.
 
 Table [3](#tab3). Ill. 7.30–7.37 showing common motifs found in illuminations. 
@@ -451,12 +543,12 @@ The very first XML example given in ch. 7.2 above already includes a brief descr
                   motif(s). Such descriptions should be included in the prose description 
                   of a `<decoNote>` when applicable, and they have their natural place right after the location and
                    illumination type: 
-```
-&lt;decoNote&gt;
-  &lt;p&gt;F. &lt;locus from="7r" to="7r"&gt;7r&lt;/locus&gt;: 
+```xml
+<decoNote>
+  <p>F. <locus from="7r" to="7r">7r</locus>: 
     bas-de-page, two dogs running, a lamb and a bird.
-    Colours: black, dark red, white.&lt;/p&gt;
-&lt;/decoNote&gt;
+    Colours: black, dark red, white.</p>
+</decoNote>
 ```
 
 
@@ -487,14 +579,14 @@ For example, the below description of the illumination in AM 345 fol. on f. 1v
                After that mention is made of the outline’s hue:
 
 Ill. 7.38. AM 345 fol., f. 1v.
-```
-&lt;decoNote&gt;
-  &lt;p&gt;F. &lt;locus from="1v" to="1v"&gt;1v&lt;/locus&gt;: 
-    full-page illumination, Holy King &lt;name type="person"&gt;Óláfr&lt;/name&gt;. 
-    Caption: &lt;q&gt;Olafur · Haraldz son · Noreks kongur&lt;/q&gt;. 
+```xml
+<decoNote>
+  <p>F. <locus from="1v" to="1v">1v</locus>: 
+    full-page illumination, Holy King <name type="person">Óláfr</name>. 
+    Caption: <q>Olafur · Haraldz son · Noreks kongur</q>. 
     Colours: yellow, dark green, light red, black. 
-    Outline: black, brown.&lt;/p&gt;
-&lt;/decoNote&gt;
+    Outline: black, brown.</p>
+</decoNote>
 
 ```
 
@@ -514,20 +606,20 @@ Illuminations, including initials, can contain captions. If present, the text of
                fol. may be transcribed.
 
 Ill. 7.39. AM 345 fol., f. 1r.
-```
-&lt;decoDesc&gt;
-  &lt;decoNote&gt;
-    &lt;p&gt;F. &lt;locus from="1r" to="1r"&gt;1r&lt;/locus&gt;: full-page illumination, 
-      four kings (&lt;name type="person"&gt;Sverrir&lt;/name&gt;, 
-      &lt;name type="person"&gt;Hákon&lt;/name&gt;, 
-      &lt;name type="person"&gt;Magnús&lt;/name&gt;,
-      &lt;name type="person"&gt;Eiríkr&lt;/name&gt;). 
-      Caption: &lt;q&gt;Suerrer · kongur ~ Hakon kongur | Magnus · kongur 
-      ~ Eirikur · kongur&lt;/q&gt;.
+```xml
+<decoDesc>
+  <decoNote>
+    <p>F. <locus from="1r" to="1r">1r</locus>: full-page illumination, 
+      four kings (<name type="person">Sverrir</name>, 
+      <name type="person">Hákon</name>, 
+      <name type="person">Magnús</name>,
+      <name type="person">Eiríkr</name>). 
+      Caption: <q>Suerrer · kongur ~ Hakon kongur | Magnus · kongur 
+      ~ Eirikur · kongur</q>.
       Colours: black, brown (outline).
-    &lt;/p&gt;
-  &lt;/decoNote&gt;
- &lt;/decoDesc&gt;
+    </p>
+  </decoNote>
+ </decoDesc>
 ```
 
 ### 7.2.5 Hands and dating (if known)
@@ -541,13 +633,13 @@ In case the hand(s) and/or the dating of illuminations differ from the hand(s) o
                   `<date>`, respectively, with the appropriate attributes type and
                   when or notBefore/notAfter . The encoded
                information could look like this:
-```
-&lt;decoNote&gt;
-  &lt;p&gt;Ff. &lt;locus from="1r" to="27v"&gt;1r-27v&lt;/locus&gt;: 
+```xml
+<decoNote>
+  <p>Ff. <locus from="1r" to="27v">1r-27v</locus>: 
     penwork sentence initials, 1 l., added later (potentially 
-    by &lt;name type="person"&gt;Jón Jónsson&lt;/name&gt;).
-    Colour: black.&lt;/p&gt;
-&lt;/decoNote&gt;
+    by <name type="person">Jón Jónsson</name>).
+    Colour: black.</p>
+</decoNote>
 ```
 
 ### 7.2.6 Illumination techniques (optional)
@@ -561,34 +653,51 @@ We consider the description of illumination techniques optional, but encourage t
 	               access to the manuscript or images thereof. If the techniques vary from illumination to illumination 
 	               this fact should be indicated and described in the prose of the separate `<decoNote>` elements.
 
-Some more common illumination techniques include:ExampleIllumination techniqueExplanationIll. 7.40. AM 322 fol., f. 53rb, l. 21-28.
+Some more common illumination techniques include:
+ExampleIllumination techniqueExplanationIll. 7.40. AM 322 fol., f. 53rb, l. 21-28.
 	                  Gold leafThin layers of gold foil applied onto the page that can be further
-	                     decorated, i.e. by burnishing, tooling or painting/sgraffito.In the example: The body of the initial “n” 
+	                     decorated, i.e. by burnishing, tooling or painting/sgraffito.<br/>
+<br/>
+In the example: The body of the initial “n” 
 	                     is decorated with gold leaf and fully painted ornamentation in AM 322 fol., f. 53rb, l. 21-28. 
 	                     The gold leaf is partly peeling off today and reveals the underlying grounding.Ill. 7.41. AM 421 12mo, f. 71v.
                   Gold substituteMetallic glimmer used as cheaper alternative to gold leaf, sometimes based on tin
                      or silver. These glimmer particles were often soluted in binding agent and
                      applied onto the surface with a paintbrush, frequently leaving the ground
-                      or outlines visible. Please note: The usage of yellow colour instead of gold is not meant here.In the example: Liquid gold substitute applied onto the drawings, 
+                      or outlines visible. Please note: The usage of yellow colour instead of gold is not meant here.<br/>
+<br/>
+In the example: Liquid gold substitute applied onto the drawings, 
                      leaving the outlines of the halos visible in AM 421 12mo, Marine Jesperdatter’s
                      prayer book, f. 71v. Please note: In other instances in this manuscript, the substitute can appear rather 
                      silver or even oxidised grey.Ill. 7.42. AM 442 12mo, f. 4v, l. 13–23.
-                  Fully paintedOpaque colours, often blend colour hues, applied in several layers. In the example: The initial “B” and botanical 
+                  Fully paintedOpaque colours, often blend colour hues, applied in several layers. <br/>
+<br/>
+In the example: The initial “B” and botanical 
                      ornaments fully painted; light ornaments were applied on dark ground 
                      colours in AM 442 12mo, f. 4v, l. 17–23.Ill. 7.43. AM 345 fol., f. 27r, bottom margin.
 	                  Colour washTransparent colours usually leaving the outline drawing underneath
-	                     visible. In the example: Red and green colour wash applied onto some parts of an outline drawing, 
+	                     visible. <br/>
+<br/>
+In the example: Red and green colour wash applied onto some parts of an outline drawing, 
 	                     in AM 345 fol., Reykjabók of Jónsbók, f. 27r, bottom margin.Ill. 7.44. AM 132 4to, f. 12r, bottom margin.
-	                  Outline drawingLines drawn with an (ink) pen (can be colour washed). In the example: Outline drawing using pen and ink in AM 132 4to, f.
+	                  Outline drawingLines drawn with an (ink) pen (can be colour washed). <br/>
+<br/>
+In the example: Outline drawing using pen and ink in AM 132 4to, f.
 	                     12r, bottom margin.Ill. 7.45. JS 133 4to, f. 37v.
 	                  PastedIlluminations pasted into the manuscript, sometimes from sources other
-	                     than manuscripts, e.g. printed books.In the example: Outline drawing using a pencil on tracing paper that was pasted onto 
+	                     than manuscripts, e.g. printed books.<br/>
+<br/>
+In the example: Outline drawing using a pencil on tracing paper that was pasted onto 
 	                      the preexisting leaf in JS 133 4to, f. 37v.Ill. 7.46. AM 618 4to, f. 37rb, l. 19–28.
                   Reuse in palimpsest manuscript The original script was scraped away but the 
-                     illuminations were left untouched to be integrated into the new text. In the example: The Old French translation in the right column was scraped off and 
+                     illuminations were left untouched to be integrated into the new text. <br/>
+<br/>
+In the example: The Old French translation in the right column was scraped off and 
                      replaced by an Old Icelandic translation keeping and that way re-using the initial “Q”
                      in AM 618 4to, f. 37rb, l. 21–26.Ill. 7.47. A 1, f. 148rb, l. 1–9 (closed/opened curtain).
-	                  CurtainA small piece of cloth is glued or sewn onto a leaf with the purpose of protecting an illumination from abrasion. In the example: A small green curtain is sewn onto the parchment to protect a delicate initial that is fully painted and decorated with gold leaf. 
+	                  CurtainA small piece of cloth is glued or sewn onto a leaf with the purpose of protecting an illumination from abrasion. <br/>
+<br/>
+In the example: A small green curtain is sewn onto the parchment to protect a delicate initial that is fully painted and decorated with gold leaf. 
 	                     The curtain can be turned up to reveal the initial “T”
 	                     in Stockholm, A 1, f. 148rb, l. 1–9.
 
@@ -604,15 +713,15 @@ When describing motifs one may want to provide more detail than one-word
                We recommend to always provide basic information at the beginning of each
                   `<decoNote>`, potentially followed by more specialized details at the end
                as shown in the following example:
-```
-&lt;decoNote&gt;
-  &lt;p&gt;F. &lt;locus from="4v" to="4v"&gt;4va:28-30&lt;/locus&gt;: 
+```xml
+<decoNote>
+  <p>F. <locus from="4v" to="4v">4va:28-30</locus>: 
      pen-flourished inhabited chapter initial A, 3 l.
     Colours: light red (body of the letter), dark blue (pen flourish).
     The counter of the initial is inhabited by a two-legged creature 
     in front of a blue grid. The creature was drawn in the same dark 
-    blue colour as the pen flourish of the initial.&lt;/p&gt;
-&lt;/decoNote&gt;
+    blue colour as the pen flourish of the initial.</p>
+</decoNote>
 ```
 
 
@@ -664,14 +773,14 @@ Since the specific characteristics of initials are visual, the special mark-up o
                 If a transcriber, however, chooses not to transcribe a text on the facsimile level, but still wishes to include information
                 on initials, the mark-up may be used on the diplomatic level (or on the only present level in case of a single-level transcription).
                Simple mark-up of an initial in a three-level transcription looks like this: 
-```
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;c type="initial" subtype="opening"&gt;h&lt;/c&gt;ier&lt;/me:facs&gt;
-    &lt;me:dipl&gt;hier&lt;/me:dipl&gt;
-    &lt;me:norm&gt;Hér&lt;/me:norm&gt;
- &lt;/choice&gt;
-&lt;/w&gt;
+```xml
+<w>
+  <choice>
+    <me:facs><c type="initial" subtype="opening">h</c>ier</me:facs>
+    <me:dipl>hier</me:dipl>
+    <me:norm>Hér</me:norm>
+ </choice>
+</w>
 ```
 
 
@@ -706,15 +815,15 @@ If an initial is missing – because it was never filled in, because it
                   which is specified by the value chars of the attribute unit. 
       
       
-```
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;&lt;c type="noInitial" subtype="chapt"&gt;
-      &lt;space quantity="1" unit="chars"/&gt;&lt;/c&gt;v&lt;/me:facs&gt;
-    &lt;me:dipl&gt;&lt;supplied reason="restoration" resp="BS"&gt;N&lt;/supplied&gt;v&lt;/me:dipl&gt;
-    &lt;me:norm&gt;&lt;supplied reason="restoration" resp="BS"&gt;N&lt;/supplied&gt;ú&lt;/me:norm&gt;
- &lt;/choice&gt;
-&lt;/w&gt;
+```xml
+<w>
+  <choice>
+    <me:facs><c type="noInitial" subtype="chapt">
+      <space quantity="1" unit="chars"/></c>v</me:facs>
+    <me:dipl><supplied reason="restoration" resp="BS">N</supplied>v</me:dipl>
+    <me:norm><supplied reason="restoration" resp="BS">N</supplied>ú</me:norm>
+ </choice>
+</w>
 ```
 
 ### 7.3.2 Hierarchy of initials
@@ -760,7 +869,8 @@ If an initial is omitted or missing, this is indicated by the attribute type
          this might seem somewhat redundant if other mark-up such 
          as `<space/>` or `<gap/>` is present, it has the advantage that, for instance
          the subtype and the intended size of the missing initial may be encoded 
-         and thus searched for.typesubtypeDefines the subtype of c, if type="initial"initialopeningAn opening initial: The first, often largest initial of a
+         and thus searched for.
+typesubtypeDefines the subtype of c, if type="initial"initialopeningAn opening initial: The first, often largest initial of a
                manuscript.initialtextA large initial at the beginning of a new text (if applicable).initialchaptAn initial at the beginning of a new chapter or major section or a
                text.initialparaAn initial at the beginning of a paragraph or subunit of a text (if
                applicable).initiallittNotThe character is a sentence initial (littera notabilior): 
@@ -779,19 +889,19 @@ In the transcription, initials are encoded in their logical place
             within the text. In a single-level transcription, the chapter initial "S" in the 
             first word of line 16 (second line in the picture above) is, therefore,
             encoded as follows with regards to the type and subtype:
-```
-&lt;w&gt;
-  &lt;c type="initial" subtype="chapt"&gt;S&lt;/c&gt;alomon
-&lt;/w&gt;
+```xml
+<w>
+  <c type="initial" subtype="chapt">S</c>alomon
+</w>
 ```
 
 
 In comparison, the sentence initial in the word Ða
       on line 18 is encoded as:
-```
-&lt;w&gt;
-  &lt;c type="initial" subtype="littNot"&gt;Ð&lt;/c&gt;a
-&lt;/w&gt;
+```xml
+<w>
+  <c type="initial" subtype="littNot">Ð</c>a
+</w>
 ```
 
 
@@ -832,8 +942,8 @@ of these eight lines where it forms part of the word “AT”. In the XML mark-u
 
 Ill. 7.50. Historiated text initial “A”
       in the word AT in AM 226 fol., f. 96va, l. 2–17.
-```
-&lt;c type="initial" subtype="chapt" style="u4 d4"&gt;A&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" style="u4 d4">A</c>
 ```
 
 
@@ -846,8 +956,8 @@ The various values of style are separated by white spaces, and the numbers are p
    how far down the descender extends 
    below the initial height. For the initial “A” the complete markup of the size then looks like this
    (note, however, that the image does not show the entire descender, which extends far down): 
-```
-&lt;c type="initial" subtype="chapt" style="u3 d4 mu5 md28"&gt;A&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" style="u3 d4 mu5 md28">A</c>
 ```
 
 
@@ -855,8 +965,8 @@ If any of the values are omitted they are assumed to be zero.
    The size of the initial “S” from ill. 7.49 
    above can therefore be encoded as: 
     
-```
-&lt;c type="initial" subtype="chapt" style="u1 d6 md2"&gt;S&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" style="u1 d6 md2">S</c>
 ```
 
 
@@ -880,8 +990,8 @@ Note that the value of style is given as “u1 d6 md2”, indicating that the in
          is not indented in the written area, but extends 8 lines into the margin (3 lines up from its logical place and 5 lines down), 
          would be encoded as follows:
      
-```
-&lt;c type="initial" subtype="text" style="mu3 md5"&gt;I&lt;/c&gt;
+```xml
+<c type="initial" subtype="text" style="mu3 md5">I</c>
 ```
 
 
@@ -907,9 +1017,9 @@ In case of a missing initial, the number of indented lines, i.e. the initial hei
       “mu” and “md”, even if a missing initial was supposed to be “I/J” or a versal. 
          The mark-up of a planned, but not executed chapter initial for which a total of four lines 
       are indented (three lines upwards and one downwards), would thus be:
-```
-&lt;c type="noInitial" subtype="chapt" style="u3 d1"&gt; 
-   &lt;space quantity="1" unit="chars"/&gt;&lt;/c&gt;
+```xml
+<c type="noInitial" subtype="chapt" style="u3 d1"> 
+   <space quantity="1" unit="chars"/></c>
 ```
 
 ### 7.3.4 Colour(s)
@@ -940,9 +1050,9 @@ We recommend encoding the colour(s) of initials by adding yet another value to t
 
 Expanding on the description of the initial “S” from above (ill. 7.49), 
          its encoding with simple references to the colours used looks like this:
-```
-&lt;c type="initial" subtype="chapt" 
-  style="d6 md2 cGreen_Red_Blue"&gt;S&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" 
+  style="d6 md2 cGreen_Red_Blue">S</c>
 ```
 
 
@@ -972,15 +1082,16 @@ The attribute rend is used to encode the form and kind of decoration found in or
 The attribute rend is used for indicating both the way in which an initial is drawn and the main 
             means of decoration/ornamentation. Even the presence of guide letters can be indicated here.
          In order to encompass all of that information, the attribute can take several values 
-         (in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. RendIndicates the rendition and/or composition of the character (usually
+         (in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. 
+RendIndicates the rendition and/or composition of the character (usually
                         initial); more than one value may be combined.historiatedHistoriated initialfoliatefoliate initialpenFlourishPen-flourished initialpenworkPenwork initialinterlacedInterlaced initialpuzzlePuzzle initialzoomorphicZoomorphic initialdragonDragon initialinhabitedInhabited initiallombardLombardversalVersalcolourStrokedcolour-strokedguideLetterGuide letterother[Anything else]
 
 The encoding of the puzzle chapter initial “S” from the example above (ill. 7.49 above) may thus be
                   further expanded with the attribute rend
             taking the value puzzle: 
-```
-&lt;c type="initial" subtype="chapt" style="d6 md2 cGreen_Red_Blue" 
-  rend="puzzle"&gt;S&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" style="d6 md2 cGreen_Red_Blue" 
+  rend="puzzle">S</c>
 ```
 
 
@@ -988,9 +1099,9 @@ Since multiple different forms and decorations can occur in connection with
             the same intitial, these values may be combined, using whitespace(s) for separation.
             For example, the initial “A” from AM 226 fol. (ill. 7.50 above) can be encoded as such:
          
-```
-&lt;c type="initial" subtype="chapt" style="u3 d4 mu5 md28" 
-  rend="historiated inhabited foliate"&gt;A&lt;/c&gt;
+```xml
+<c type="initial" subtype="chapt" style="u3 d4 mu5 md28" 
+  rend="historiated inhabited foliate">A</c>
 ```
 
 
@@ -1008,7 +1119,8 @@ The following is an alphabetically organized glossary covering the most common t
 
 
 
-Ill. 7.51. The anatomy of an initial exemplified by AM 225 fol., f. 50v, and AM 350 fol., f. 2r.TermExplanationAscenderUpper stem of the letter which can be extended for several lines above the initial height until the top of the page.Attached barAdditional bar attached to the body of the initial elongating the ascenders/descenders.BarThe short horizontal strokes that are attached to the stem to form letters like “E”.Body of the letterThe strokes that form a letter, consisting of stems, bars, spines, etc.Cap heightHeight of the initial including x-height and the ascender which are within the initial height.Chapter initialAn initial at the beginning of a new chapter or section or a text.CounterClosed space surrounded by the body of the letter as in “o” or open space defined by the body a letter as the two spaces in “S”.CurveRounded stroke forming the body of a letter as in the letter "S".DescenderLower stem of the letter which can be extended for several lines until the bottom of the page.External motifOrnaments outside the body of the initial (i.e. not within the counters).ExtenderVines attached to initials elongating shafts or attached bars. FrameRectangular bars encompassing the decorated background of an initial, similar to a painted picture frame.GroundThe framed area of the initial which has an own decoration or colour and
+Ill. 7.51. The anatomy of an initial exemplified by AM 225 fol., f. 50v, and AM 350 fol., f. 2r.
+TermExplanationAscenderUpper stem of the letter which can be extended for several lines above the initial height until the top of the page.Attached barAdditional bar attached to the body of the initial elongating the ascenders/descenders.BarThe short horizontal strokes that are attached to the stem to form letters like “E”.Body of the letterThe strokes that form a letter, consisting of stems, bars, spines, etc.Cap heightHeight of the initial including x-height and the ascender which are within the initial height.Chapter initialAn initial at the beginning of a new chapter or section or a text.CounterClosed space surrounded by the body of the letter as in “o” or open space defined by the body a letter as the two spaces in “S”.CurveRounded stroke forming the body of a letter as in the letter "S".DescenderLower stem of the letter which can be extended for several lines until the bottom of the page.External motifOrnaments outside the body of the initial (i.e. not within the counters).ExtenderVines attached to initials elongating shafts or attached bars. FrameRectangular bars encompassing the decorated background of an initial, similar to a painted picture frame.GroundThe framed area of the initial which has an own decoration or colour and
                      often additionally covers the area just around the letter, usually corresponding to the initial height.InfillingDecoration of an initial that is placed in the counter(s) of the letter.InitialIlluminated letter of the manuscript text marking the beginning of a new text, chapter or paragraph.Initial heightNumber of text lines that were indented to provide space for an initial at the beginning of the text.Major initialThe most splendid initials of a manuscript, including opening, text and chapter initials.MedallionFramed rectangular or circular area at the end of initials or as an independent form, which is comprised of motifs or geometric forms.Minor initialSmaller initials, often more subdued in decoration and appearing more frequently, including subchapter, paragraph and sentence initials.Opening initialThe first, often largest initial of a manuscript (often if there is only one text in the manuscript).Paragraph initialAn initial at the beginning of a paragraph or subunit of a text.ShaftVertical strokes that form the body of the letter. They can be elongated and terminate in spirals.Sentence InitialSlightly highlighted first letter of a sentence; often placed within a line (also called littera notabilior).SerifSmall lateral bar at the end of an initial’s main stroke similar to the fine lines on main strokes in printed serif fonts.TerminationTerminal part of an initial that is decorated with vines, spirals or the like (usually shafts, attached bars or extenders).Text initialA large initial at the beginning of a new text (if there are several texts in a manuscript).x-heightThe height of a letter or a part of a letter in between the base line and the mean line, cf. the size of the letter “x”.
 ## 7.5 Image credits
 

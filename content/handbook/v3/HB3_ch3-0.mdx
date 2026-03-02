@@ -43,34 +43,37 @@ The complex structure of a work such as a set of rímur could be represented by 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>` elements, which are then
                   given the appropriate type attributes, e.g. page, column or line, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>`, `<cb/>` and `<lb/>`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
 
-The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:ElementsContents`<text>`, `<body>`Main divisions of the text,`<div>`division into chapters (multiple levels are encoded by nesting elements),`<p>`prose paragraphs,`<w>`words,`<pc>`punctuation marks,`<lg>`, `<l>`line groups and lines (for stanzas),`<head>`headings,`<pb/>`, `<cb/>`, `<lb/>`page, column and line beginnings.
+The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
+ElementsContents`<text>`, `<body>`Main divisions of the text,`<div>`division into chapters (multiple levels are encoded by nesting elements),`<p>`prose paragraphs,`<w>`words,`<pc>`punctuation marks,`<lg>`, `<l>`line groups and lines (for stanzas),`<head>`headings,`<pb/>`, `<cb/>`, `<lb/>`page, column and line beginnings.
 
-We will also discuss a few other elements which are relevant for the document structure:ElementsContents`<c>`Any character of note,`<q>`direct speech,`<quote>`quotations from external sources,`<choice>`grouping of alternative encoding,`<handShift/>`change of scribal hand.
+We will also discuss a few other elements which are relevant for the document structure:
+ElementsContents`<c>`Any character of note,`<q>`direct speech,`<quote>`quotations from external sources,`<choice>`grouping of alternative encoding,`<handShift/>`change of scribal hand.
 ## 3.2 Main divisions of a TEI document
 
 The following presentation is based on the TEI P5 Guidelines, [ch. 4](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html).
 
-A TEI document is always at its highest level enclosed by the start tag `<TEI>` and the end tag `</TEI>`. Within the `<TEI>` element, two other elements appear in a fixed order, namely the `<teiHeader>` and the `<text>` elements. Within the `<text>` element, the body text may appear, enclosed in the element `<body>`. If the text has front matter, there will be an element `<front>`, placed before `<body>` containing it. Similarly, there may be an element `<back>`, placed after `<body>` and containing back matter. The elements `<teiHeader>`, `<text>` and `<body>` are required in any TEI-conformant document, while `<front>` and `<back>` are optional. This, then, is the basic structure of a TEI document:ElementsContents`<TEI>`The TEI document begins here,`<teiHeader>` . . . `</teiHeader>`the header goes here,`<text>`the text itself begins here,`<front>` . . . `</front>`any front matter goes here,`<body>` . . . `</body>`the main body of the text goes here,`<back>` . . . `</back>`any back matter goes here,`</text>`the text ends here,`</TEI>`the TEI document ends here.
+A TEI document is always at its highest level enclosed by the start tag `<TEI>` and the end tag `</TEI>`. Within the `<TEI>` element, two other elements appear in a fixed order, namely the `<teiHeader>` and the `<text>` elements. Within the `<text>` element, the body text may appear, enclosed in the element `<body>`. If the text has front matter, there will be an element `<front>`, placed before `<body>` containing it. Similarly, there may be an element `<back>`, placed after `<body>` and containing back matter. The elements `<teiHeader>`, `<text>` and `<body>` are required in any TEI-conformant document, while `<front>` and `<back>` are optional. This, then, is the basic structure of a TEI document:
+ElementsContents`<TEI>`The TEI document begins here,`<teiHeader>` . . . `</teiHeader>`the header goes here,`<text>`the text itself begins here,`<front>` . . . `</front>`any front matter goes here,`<body>` . . . `</body>`the main body of the text goes here,`<back>` . . . `</back>`any back matter goes here,`</text>`the text ends here,`</TEI>`the TEI document ends here.
 ### 3.2.1 Another possible first division of the text: More than one &lt;text&gt; element
 
 The transcriber may want to divide a document into more than one text. This can be done with the `<group>` element, which should be contained in the top level `<text>` element taking the place of `<body>` in the simpler scheme illustrated above. The following structure appears:
-```
-&lt;text xml:lang="en"&gt;
-  &lt;front&gt;. . .&lt;/front&gt;
-  &lt;group&gt;
-    &lt;text xml:lang="en"&gt;
-      &lt;front&gt;. . .&lt;/front&gt;
-      &lt;body&gt;. . .&lt;/body&gt;
-      &lt;back&gt;. . .&lt;/back&gt;
-    &lt;/text&gt;
-    &lt;text xml:lang="en"&gt;
-      &lt;front&gt;. . .&lt;/front&gt;
-      &lt;body&gt;. . .&lt;/body&gt;
-      &lt;back&gt;. . .&lt;/back&gt;
-    &lt;/text&gt;
-  &lt;/group&gt;
-  &lt;back&gt;. . .&lt;/back&gt;
-&lt;/text&gt;
+```xml
+<text xml:lang="en">
+  <front>. . .</front>
+  <group>
+    <text xml:lang="en">
+      <front>. . .</front>
+      <body>. . .</body>
+      <back>. . .</back>
+    </text>
+    <text xml:lang="en">
+      <front>. . .</front>
+      <body>. . .</body>
+      <back>. . .</back>
+    </text>
+  </group>
+  <back>. . .</back>
+</text>
 ```
 
 
@@ -82,30 +85,36 @@ Each major section of a text, `<front>`, `<body>` and `<back>`, must have a mini
 Further division of the `<body>` block is achieved through `<div>` elements, with one level nesting inside the other as the transcriber moves down through the hierarchical structure of the text.
 ### 3.3.1 Type- and level-specified &lt;div&gt; elements
 
-In a complex document, `<div>` elements may be specified by type and n attributes. In this example, the three first chapters of a work have been contained in `<div>` elements at the same hierarchical level (siblings):ElementsContents`<div type="chapter" n="1">` . . . `</div>`Chapter one goes here,`<div type="chapter" n="2">` . . . `</div>`chapter two goes here,`<div type="chapter" n="3">` . . . `</div>`chapter three goes here (and so on).
+In a complex document, `<div>` elements may be specified by type and n attributes. In this example, the three first chapters of a work have been contained in `<div>` elements at the same hierarchical level (siblings):
+ElementsContents`<div type="chapter" n="1">` . . . `</div>`Chapter one goes here,`<div type="chapter" n="2">` . . . `</div>`chapter two goes here,`<div type="chapter" n="3">` . . . `</div>`chapter three goes here (and so on).
 ### 3.3.2 Unspecified &lt;div&gt; elements
 
-It is also possible to use `<div>` elements without specifying their type:ElementsContents`<div>` . . . `</div>`Chapter one goes here,`<div>` . . . `</div>`chapter two goes here,`<div>` . . . `</div>`chapter three goes here (and so on).
+It is also possible to use `<div>` elements without specifying their type:
+ElementsContents`<div>` . . . `</div>`Chapter one goes here,`<div>` . . . `</div>`chapter two goes here,`<div>` . . . `</div>`chapter three goes here (and so on).
 ### 3.3.3 Nesting &lt;div&gt; elements
 
-Note that `<div>` elements may nest inside each other. For example, the levels of work, chapter and then paragraph can be encoded in the following manner:ElementsContents`<div type="work">`The whole work starts here,`<div type="chapter">`the first subdivision starts here (nested),`<p>` . . . `</p>`one paragraph of the subdivision goes here,`</div>`end of the subdivision,`</div>`end of the work.
+Note that `<div>` elements may nest inside each other. For example, the levels of work, chapter and then paragraph can be encoded in the following manner:
+ElementsContents`<div type="work">`The whole work starts here,`<div type="chapter">`the first subdivision starts here (nested),`<p>` . . . `</p>`one paragraph of the subdivision goes here,`</div>`end of the subdivision,`</div>`end of the work.
 
 While `<div>` elements may nest as shown here, `<p>` elements may not. They must be encoded sequentially, i.e. as siblings.
 ## 3.4 Paragraph text: &lt;p&gt;
 
-The basic-level element for prose text is the paragraph, `<p>`. Typically, the deepest level `<div>` element will contain one or more `<p>` elements:ElementsContents`<div>`A new chapter starts here,`<head>` . . . `</head>`this contains the heading,`<p>` . . . `</p>`first paragraph,`<p>` . . . `</p>`second paragraph,`<p>` . . . `</p>`third paragraph,`</div>`the chapter ends here.
+The basic-level element for prose text is the paragraph, `<p>`. Typically, the deepest level `<div>` element will contain one or more `<p>` elements:
+ElementsContents`<div>`A new chapter starts here,`<head>` . . . `</head>`this contains the heading,`<p>` . . . `</p>`first paragraph,`<p>` . . . `</p>`second paragraph,`<p>` . . . `</p>`third paragraph,`</div>`the chapter ends here.
 
 The `<p>` element may appear in other contexts, such as in the `<teiHeader>` element. It may also contain a number of other elements, but – as underlined above – it may not contain other `<p>` elements, i.e. it is not allowed to nest.
 ## 3.5 Sentences: &lt;s&gt;
 
-The text within a paragraph may be divided into sentences, `<s>`:ElementsContents`<p>`A new paragraph starts here,`<s>` . . . `</s>`first sentence,`<s>` . . . `</s>`second sentence,`<s>` . . . `</s>`third sentence,`</p>`the paragraph ends here.
+The text within a paragraph may be divided into sentences, `<s>`:
+ElementsContents`<p>`A new paragraph starts here,`<s>` . . . `</s>`first sentence,`<s>` . . . `</s>`second sentence,`<s>` . . . `</s>`third sentence,`</p>`the paragraph ends here.
 
 Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. Rignir ‘It rains’. In the case of sentences linked by conjunctions (such as ok, en and eða) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian.
 ## 3.6 Words: &lt;w&gt;
 
 Although words need not be delimited by anything else than white space, we recommend
      placing each word in a `<w>` element. This will be helpful for word constituent analysis
-     as well as for any morphological (and lexicographical) annotation.ElementsContents`<p>`A new paragraph starts here,`<w>` . . . `</w>`first word,`<w>` . . . `</w>`second word,`<w>` . . . `</w>`third word,`</p>`the paragraph ends here.
+     as well as for any morphological (and lexicographical) annotation.
+ElementsContents`<p>`A new paragraph starts here,`<w>` . . . `</w>`first word,`<w>` . . . `</w>`second word,`<w>` . . . `</w>`third word,`</p>`the paragraph ends here.
 
 If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>` element may be given several morphological attributes, in particular lemma for the dictionary entry and me:msa for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
 
@@ -116,16 +125,19 @@ If the text is transcribed on a single level, typically the diplomatic level, no
 Hyphenation of words is discussed in [ch. 5.5](HB3_ch5.xml#sec5.5) below.
 ## 3.7 Punctuation: &lt;pc&gt;
 
-We recommend that punctuation characters are encoded in the same manner as words.ElementsContents`<w>` . . . `</w>`one word,`<w>` . . . `</w>`another word,`<pc>` . . . `</pc>`a punctuation mark,`<w>` . . . `</w>`a new word appears here,`<w>` . . . `</w>`and one more.
+We recommend that punctuation characters are encoded in the same manner as words.
+ElementsContents`<w>` . . . `</w>`one word,`<w>` . . . `</w>`another word,`<pc>` . . . `</pc>`a punctuation mark,`<w>` . . . `</w>`a new word appears here,`<w>` . . . `</w>`and one more.
 
 If the text is transcribed on a single level, typically the diplomatic level, no specification within the `<pc>` element needs to be made. However, if the transcription comprises more than one level of transcription, each level should be clearly marked. The procedure is identical to the one specified for words above. See [ch. 5.4](HB3_ch5.xml#sec5.4) below for more details.
 ## 3.8 Metrical text: &lt;lg&gt; and &lt;l&gt;
 
 The elements discussed here are defined and explained in the TEI P5 Guidelines, [ch. 6](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html).
 
-Texts in verse should be encoded using `<lg>` (line group), which in turn contains one or more `<l>` elements (lines). As with `<div>`, `<lg>` elements can nest. According to the TEI Guidelines, `<lg>` is a sibling of, i.e. at at the same level as, `<p>`, and cannot be contained within it (unless it appears within a `<q>` element). Example:ElementsContents. . . `</p>`A paragraph ends here,`<lg>`a line group starts here,`<l>` . . . `</l>`first line,`<l>` . . . `</l>`second line,`<l>` . . . `</l>`third line,`</lg>`the line group ends here,`<p>` . . .and a new paragraph starts here.
+Texts in verse should be encoded using `<lg>` (line group), which in turn contains one or more `<l>` elements (lines). As with `<div>`, `<lg>` elements can nest. According to the TEI Guidelines, `<lg>` is a sibling of, i.e. at at the same level as, `<p>`, and cannot be contained within it (unless it appears within a `<q>` element). Example:
+ElementsContents. . . `</p>`A paragraph ends here,`<lg>`a line group starts here,`<l>` . . . `</l>`first line,`<l>` . . . `</l>`second line,`<l>` . . . `</l>`third line,`</lg>`the line group ends here,`<p>` . . .and a new paragraph starts here.
 
-Nesting of `<lg>` elements is useful for marking up longer poems. When a poem consists of two levels of line groups one may encode its structure as shown here:ElementsContents`<lg type="stanza">`Here a line group on level one begins, a stanza,`<lg type="couplet">`here a subgroup starts, a couplet,`<l>` . . . `</l>`the first line,`<l>` . . . `</l>`second line,`</lg>`and here the subgroup ends, the first of the couplets.`<lg>`Here a new subgroup starts,`<l>` . . . `</l>`line,`<l>` . . . `</l>`line,`</lg>`here the second subgroup ends,`</lg>`and here the level one line group ends.
+Nesting of `<lg>` elements is useful for marking up longer poems. When a poem consists of two levels of line groups one may encode its structure as shown here:
+ElementsContents`<lg type="stanza">`Here a line group on level one begins, a stanza,`<lg type="couplet">`here a subgroup starts, a couplet,`<l>` . . . `</l>`the first line,`<l>` . . . `</l>`second line,`</lg>`and here the subgroup ends, the first of the couplets.`<lg>`Here a new subgroup starts,`<l>` . . . `</l>`line,`<l>` . . . `</l>`line,`</lg>`here the second subgroup ends,`</lg>`and here the level one line group ends.
 
 The `<lg>` and `<l>` elements may have several attributes, among other things for encoding information about rhyme or other metrical phenomena. See [ch. 13](HB3_ch13.xml) of this handbook for a more detailed presentation of metrical encoding.
 
@@ -134,10 +146,12 @@ Having `<p>` and `<lg>` as siblings can create problems for the encoding of
      as part of direct speech. However, rather than including `<lg>` directly within the
       `<p>` element (which would not be valid), we recommend inserting the `<p>` and
       `<lg>` elements within `<div>` elements, using one `<div>` for each of
-     them:ElementsContents`<div type="chapter" n="1">`A chapter opens here,`<div type="text">`beginning with some prose text, indicated by a `<div>` element.`<p>` . . . `</p>`The text goes here,`</div>`and ends here, indicated by the `<div>` element.`<div type="stanza">`Then a poem begins, indicated by a new `<div>` element`<lg>`with a linegroup (a stanza)`<l>` . . . `</l>`containing some lines.`</lg>`The linegroup ends here,`</div>` . . .and the poem (i.e. the `<div>` element) also ends here.`<div type="text">`A new piece of prose text begins, indicated by a new `<div>` element.`<p>` . . . `</p>`The text goes here,`</div>`and ends here, indicated by the `<div>` element.`</div>`The chapter ends here.
+     them:
+ElementsContents`<div type="chapter" n="1">`A chapter opens here,`<div type="text">`beginning with some prose text, indicated by a `<div>` element.`<p>` . . . `</p>`The text goes here,`</div>`and ends here, indicated by the `<div>` element.`<div type="stanza">`Then a poem begins, indicated by a new `<div>` element`<lg>`with a linegroup (a stanza)`<l>` . . . `</l>`containing some lines.`</lg>`The linegroup ends here,`</div>` . . .and the poem (i.e. the `<div>` element) also ends here.`<div type="text">`A new piece of prose text begins, indicated by a new `<div>` element.`<p>` . . . `</p>`The text goes here,`</div>`and ends here, indicated by the `<div>` element.`</div>`The chapter ends here.
 ## 3.9 Headings: &lt;head&gt;
 
-The element `<head>` is used for containing headings on all levels of the document.ElementsContents`<div>`Here a chapter begins,`<head>` . . . `</head>`its heading,`<p>` . . . `</p>`the first paragraph of the chapter,`<p>` . . . `</p>`the second paragraph,`</div>`and here the chapter ends.
+The element `<head>` is used for containing headings on all levels of the document.
+ElementsContents`<div>`Here a chapter begins,`<head>` . . . `</head>`its heading,`<p>` . . . `</p>`the first paragraph of the chapter,`<p>` . . . `</p>`the second paragraph,`</div>`and here the chapter ends.
 
 The level of a heading follows
 from the enclosing element. A `<head>` element within a level
@@ -145,12 +159,12 @@ three `<div>` element, is a heading for a level three partition
 of the text.
 
 It is not required that a `<div>` contains a head, but if the `<head>` element is being used within a `<div>`, it should be the first element, followed by one or more `<p>` (or `<lg>`) elements. There can only be one `<head>` element within a `<div>`:
-```
-&lt;div&gt;
-  &lt;head&gt;. . .&lt;/head&gt;
-  &lt;p&gt;. . .&lt;/p&gt;
-  &lt;p&gt;. . .&lt;p&gt;
-&lt;/div&gt;
+```xml
+<div>
+  <head>. . .</head>
+  <p>. . .</p>
+  <p>. . .<p>
+</div>
 ```
 
 
@@ -163,20 +177,20 @@ Fig. 3.1. A chapter heading. _Landslǫg Magnúss
 
 In fig. 3.1, the heading, which is written in red, is located after the end of one chapter and at the beginning of a new chapter.
                The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
-```
-&lt;div&gt;
+```xml
+<div>
    . . .
-  &lt;p&gt;
+  <p>
     raðe litizt annat loglegare
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;div type="chapter"&gt;
-&lt;head type="rubric"&gt;Um grið a frosta þingi Capitulus&lt;/head&gt;
-  &lt;p&gt;
+  </p>
+</div>
+<div type="chapter">
+<head type="rubric">Um grið a frosta þingi Capitulus</head>
+  <p>
     Aller þeir menn sem i frosto þings logum oc for ero skulu i griðum
-  &lt;/p&gt;
+  </p>
     . . . 
-&lt;/div&gt;
+</div>
 ```
 
 
@@ -200,18 +214,19 @@ See also [Kirsten Berg 2010](HB3_literature.xml#Berg2010), pp. 60–66, for a di
 
 Dialogue are usually set out by quotation marks in edited copy, and in the encoding of a text, we recommend that the `<q>` element should be used for identifying dialogue. Medieval manuscripts did not use quotation marks, so adding quotation marks is an editorial intervention which basically belongs to the normalised level of text encoding.
 
-Quotation from other sources should be tagged with the `<quote>` element. This is obviously another type of editorial intervention.ElementContents`<q>`Contains a part of a dialogue, typically in the form of direct speech.`<quote>`Contains a quotation from another source.
+Quotation from other sources should be tagged with the `<quote>` element. This is obviously another type of editorial intervention.
+ElementContents`<q>`Contains a part of a dialogue, typically in the form of direct speech.`<quote>`Contains a quotation from another source.
 
 A quotation mark can be regarded as a type of punctuation character, `<pc>`, but since quotation marks are displayed in so many different ways, we suggest that it is convenient to use an element of its own for quotation marks. See the discussion and examples in [ch. 5.6](HB3_ch5.xml#sec5.6) below.
 
 In some cases, there may be a structural conflict between the opening and closing of a `<q>` element, such as in this example, if it were to be encoded for `<s>` as well as for `<q>`:Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
 
 A possibe work-around is to use the general empty element `<milestone/>` with the obligatory unit attribute and a rendition attribute specifying the opening and closing quotation mark:
-```
-&lt;s&gt;Eyvindr sagðisk eigi mundu brott undan ríða, 
-&lt;milestone unit="turn" rendition="opening-quote"/&gt;því at ek veit eigi hverir þessir eru.&lt;/s&gt;
-&lt;s&gt;Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.&lt;/s&gt;&lt;milestone 
-unit="turn" rendition="closing-quote"/&gt;
+```xml
+<s>Eyvindr sagðisk eigi mundu brott undan ríða, 
+<milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
+<s>Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.</s><milestone 
+unit="turn" rendition="closing-quote"/>
 ```
 
 
@@ -219,11 +234,12 @@ There are several other ways of solving this type of conflict, as we discuss at 
 ## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;
 ### 3.12.1 Page beginnings and column beginnings
 
-TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute n which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the n attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the n attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:ElementsContents`<pb ed="ms" n="1r"/>`Folio one, recto page, begins here,`<cb ed="ms" n="A"/>`the first column begins here,`<cb ed="ms" n="B"/>`and the second column begins here.. . .`<pb ed="ms" n="1v"/>`Folio one, verso page, begins here,`<cb ed="ms" n="A"/>`the first column of the verso page begins here,`<cb ed="ms" n="B"/>`and the second column begins here.
+TEI uses the empty element `<pb/>` to indicate a page beginning. This element has an attribute n which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the n attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>`, should also be indicated in manuscripts with two or more columns. Recommended values for the n attribute of the `<cb/>` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
+ElementsContents`<pb ed="ms" n="1r"/>`Folio one, recto page, begins here,`<cb ed="ms" n="A"/>`the first column begins here,`<cb ed="ms" n="B"/>`and the second column begins here.. . .`<pb ed="ms" n="1v"/>`Folio one, verso page, begins here,`<cb ed="ms" n="A"/>`the first column of the verso page begins here,`<cb ed="ms" n="B"/>`and the second column begins here.
 
 Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the ed attribute with a suitable value:
-```
-&lt;pb ed="Standard Edition" n="1"/&gt;
+```xml
+<pb ed="Standard Edition" n="1"/>
 ```
 
 
@@ -233,18 +249,18 @@ The relevant editions should be declared in the header. As a rule, we suggest th
 ### 3.12.2 Line beginnings
 
 Line beginnings are also indicated with an empty element, the `<lb/>`, which is placed at the beginning of a new line and may be numbered by using the n attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an ed="ms" attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
-```
-&lt;lb ed="ms" n="1"/&gt;Line number one begins here.
+```xml
+<lb ed="ms" n="1"/>Line number one begins here.
 ```
 
 
 Each page, column and line should be identified with an element at the very beginning. So for a manuscript with two columns, the three first lines in the first column on the back of the third leaf (folio) would be encoded in this manner:
-```
-&lt;pb ed="ms" n="3v"/&gt;
-&lt;cb ed="ms" n="A"/&gt;
-&lt;lb ed="ms" n="1"/&gt;This is the first line.
-&lt;lb ed="ms" n="2"/&gt;This is the second line.
-&lt;lb ed="ms" n="3"/&gt;This is the third line.
+```xml
+<pb ed="ms" n="3v"/>
+<cb ed="ms" n="A"/>
+<lb ed="ms" n="1"/>This is the first line.
+<lb ed="ms" n="2"/>This is the second line.
+<lb ed="ms" n="3"/>This is the third line.
 etc.
 ```
 

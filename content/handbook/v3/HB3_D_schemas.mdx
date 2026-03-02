@@ -7,7 +7,8 @@ author:
 
 # Appendix D: Schemas
 
-Version 3.0 (12 December 2019)
+Version 3.0 (12 December 2019)<br/>
+
          Entity list in D.1.1 last updated 9 August 2024
 
 by Tone Merete Bruvik, Odd Einar Haugen and Øyvind Liland Gjesdal
@@ -87,17 +88,17 @@ Please note that the links below have been updated after Menota was moved from O
 As of TEI P5, a Menotic XML file should refer to two external files, one schema and
                one list of entities. The beginning of the file using the Menota P5 DTD schema should
                look like this:
-```
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
 [
-&lt;!ENTITY % Menota_entities SYSTEM
-'http://www.menota.org/menota-entities.txt'   &gt;
+<!ENTITY % Menota_entities SYSTEM
+'http://www.menota.org/menota-entities.txt'   >
 %Menota_entities;]
-&gt;
-&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"&gt;
+>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
 ....
-&lt;/TEI&gt;
+</TEI>
 
 ```
 
@@ -107,35 +108,35 @@ Remember that if you would like to use specific Menota elements or attributes
 
 The beginning of the file using the Menota P5 RELAX NG schema might look like this if
                your are using Oxygen:
-```
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?&gt;
-&lt;!DOCTYPE TEI 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?>
+<!DOCTYPE TEI 
 [
-&lt;!ENTITY % Menota_entities SYSTEM
-'http://www.menota.org/menota-entities.txt'   &gt;
-%Menota_entities;]&gt;
+<!ENTITY % Menota_entities SYSTEM
+'http://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
 
-&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
 ....
-&lt;/TEI&gt;
+</TEI>
 
 ```
 
 
 If you are using another editor, the reference to the schema will be different. This is one way of doing it:
-```
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-model href="http://www.menota.org/menotaP5.rng"?&gt;
-&lt;!DOCTYPE TEI
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.menota.org/menotaP5.rng"?>
+<!DOCTYPE TEI
 [
-&lt;!ENTITY % Menota_entities SYSTEM 'http://www.menota.org/menota-entities.txt'&gt;
-%Menota_entities;]&gt;
-&lt;?xml-stylesheet type="text/xsl" href="..."?&gt;
+<!ENTITY % Menota_entities SYSTEM 'http://www.menota.org/menota-entities.txt'>
+%Menota_entities;]>
+<?xml-stylesheet type="text/xsl" href="..."?>
 
-&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
 ....
-&lt;/TEI&gt;
+</TEI>
 
 ```
 
@@ -147,19 +148,19 @@ Please note the namespace references in the TEI root element when the RELAX NG s
                declared. When using the RELAX NG schema, all elements and attributes belonging to
                the Menota namespace have to use the prefix “me:” in order to be valid,
                e.g.:
-```
-&lt;interpretation me:lemmatized="completely" me:morphAnalyzed="completely"&gt;
-  &lt;p&gt;The complete text has been lemmatised and morphologically analysed 
-  according to the rules specified in ch. 11 of the Menota Handbook, v. 3.0.&lt;/p&gt;
-&lt;/interpretation &gt;
+```xml
+<interpretation me:lemmatized="completely" me:morphAnalyzed="completely">
+  <p>The complete text has been lemmatised and morphologically analysed 
+  according to the rules specified in ch. 11 of the Menota Handbook, v. 3.0.</p>
+</interpretation >
                 ...
-&lt;w&gt;
-  &lt;choice&gt;
-    &lt;me:facs&gt;karin&lt;am&gt;&us;&lt;/am&gt;&lt;/me:facs&gt;
-    &lt;me:dipl&gt;karin&lt;ex&gt;us&lt;/ex&gt;&lt;/me:dipl&gt;
-    &lt;me:norm&gt;Karinus&lt;/me:norm&gt;
-  &lt;/choice&gt;
-&lt;/w&gt;
+<w>
+  <choice>
+    <me:facs>karin<am>&us;</am></me:facs>
+    <me:dipl>karin<ex>us</ex></me:dipl>
+    <me:norm>Karinus</me:norm>
+  </choice>
+</w>
                 			
 
 ```

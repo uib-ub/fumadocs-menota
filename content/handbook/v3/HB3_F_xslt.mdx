@@ -53,8 +53,8 @@ There are different ways to apply an XSLT stylesheet to an XML document. This se
 
 In order to link to one of the online stylesheets, one simply inserts a stylesheet processing instruction (“stylesheet link”)
                    at the top of the XML document, i.e. in front of the root element. Such a stylesheet link looks like this: 
-```
-&lt;?xml-stylesheet type="text/xsl" href="http://www.menota.org/menota_xslt_3_facs.xsl"?&gt;
+```xml
+<?xml-stylesheet type="text/xsl" href="http://www.menota.org/menota_xslt_3_facs.xsl"?>
 ```
 
 
@@ -67,8 +67,10 @@ In the above shown code line (“stylesheet link”), the href attribute takes t
 There are three options for URLs to be used, depending on the level of transcription one
                      wishes to display. (One URL per transcription level; to be copied into the XML file):
 
-1. For display of texts encoded on the the facsimile level: http://www.menota.org/menota_xslt_3_facs.xsl
-                     2. For display of texts encoded on the the diplomatic level: http://www.menota.org/menota_xslt_3_dipl.xsl
+1. For display of texts encoded on the the facsimile level: http://www.menota.org/menota_xslt_3_facs.xsl<br/>
+
+                     2. For display of texts encoded on the the diplomatic level: http://www.menota.org/menota_xslt_3_dipl.xsl<br/>
+
                      3. For display of texts encoded on the the normalised level: http://www.menota.org/menota_xslt_3_norm.xsl
 
 Once you have inserted the stylesheet link with the right URL, you can apply the stylesheet, i.e. perform the transformation. 

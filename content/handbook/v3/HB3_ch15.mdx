@@ -101,7 +101,8 @@ In the URI string certain characters are reserved for identifying parts of the s
        (percent) and a two digit hexadecimal representation of the character. Because this chapter
        normally only describes variation in the last part of the URI, where there is normally no
        ambiguity with respect to periods and slashes, in most cases the only characters needing
-       encoding will be the following:CharacterURI encodingspace%20% (percent)%25: (colon)%3A15.2.3.2 URLs 
+       encoding will be the following:
+CharacterURI encodingspace%20% (percent)%25: (colon)%3A15.2.3.2 URLs 
 
 URLs are normally found in the web browser location bar and can be copied and pasted into
        an XML file for use in relevant attributes. Normally the required characters are
@@ -139,7 +140,8 @@ Instead, an unofficial notation should be used, using menota: as the protocol se
        that curates it, followed by the standardised, unique identifier for the authority. The
        syntax is as follows:menota:[type of resource]:[authority abbreviation]:[unique name or identifier]
 
-Examples of Menota-defined names:URN formatTypeDescriptionmenota:person:sbi:Snorri%20SturlusonpersonName in the form found in the Scandinavian Biographical Index.menota:place:ds:167334placeIdentifier ‘ID’ from Danmarks Stednavne data.menota:lemma:onp:23709wordIdentifier from Ordbog over det norrøne prosasprog.
+Examples of Menota-defined names:
+URN formatTypeDescriptionmenota:person:sbi:Snorri%20SturlusonpersonName in the form found in the Scandinavian Biographical Index.menota:place:ds:167334placeIdentifier ‘ID’ from Danmarks Stednavne data.menota:lemma:onp:23709wordIdentifier from Ordbog over det norrøne prosasprog.
 
 These are discussed in detail below. Where URNs are used, it is recommended that a URL be
        included in addition. This allows the thing to be both named and located.
@@ -213,9 +215,9 @@ Bibliographic items with a DOI, ISBN, or journals with an ISSN, should be refere
         1998)urn:issn:03059219 (Saga-Book of the Viking Society)
 
 But you should also include the URL to locate the item, e.g.
-```
-&lt;bibl me:ref="doi:10.1093/llc/fqt045 https://doi.org/10.1093/llc/fqt045"&gt;
-(Wills, ‘Relational Data Modelling of Textual Corpora’ 2013)&lt;/bibl&gt;
+```xml
+<bibl me:ref="doi:10.1093/llc/fqt045 https://doi.org/10.1093/llc/fqt045">
+(Wills, ‘Relational Data Modelling of Textual Corpora’ 2013)</bibl>
 
 ```
 
@@ -241,12 +243,12 @@ Items without these official URNs (e.g. because they predate the ISBN system) sh
        select the ‘permalink’ button to copy the URL.Haithi Trust ([https://catalog.hathitrust.org/Record/008550198](https://catalog.hathitrust.org/Record/008550198))
 
 More than one URL can be included, but include in order of priority, e.g.:
-```
-Translated &lt;q&gt;die notwendige Verkürzung von Wörten&lt;/q&gt; in 
-&lt;bibl me:ref="urn:isbn:8270992615#page=155 
+```xml
+Translated <q>die notwendige Verkürzung von Wörten</q> in 
+<bibl me:ref="urn:isbn:8270992615#page=155 
 http://skaldic.abdn.ac.uk/m.php?p=bibl&amp;i=1168 
-http://www.worldcat.org/oclc/925766862"&gt;Krömmelbein’s (1998, 155) 
-edition of the treatise&lt;/bibl&gt;.
+http://www.worldcat.org/oclc/925766862">Krömmelbein’s (1998, 155) 
+edition of the treatise</bibl>.
 
 ```
 
@@ -285,8 +287,8 @@ e.g. forskáli[https://onp.ku.dk/onp/onp.php?o22938](https://onp.ku.dk/onp/onp.p
        – it is simply the URL with ‘onp/onp.php?’ part removed)
        can be used to reference
        the lemma.
-```
-&lt;w lemma="forskáli" me:ref="https://onp.ku.dk/o22938"&gt;forskali&lt;/w&gt;
+```xml
+<w lemma="forskáli" me:ref="https://onp.ku.dk/o22938">forskali</w>
 
 ```
 
@@ -432,12 +434,12 @@ The XML files may be in one or more of English, Danish or Icelandic, and the URL
 Modify the URL so that the interface language is always English (handrit.is/en — not
        handrit.is/da or handrit.is/is), and choose the language of the catalogue entry according to
        the priority shown in 15.3 (English, Danish, Icelandic). E.g.
-```
-&lt;msDesc me:ref="menota:ms:handrit:JS04-0041 https://handrit.is/en/manuscript/view/is/JS04-0041"&gt;
-  &lt;msIdentifier&gt;
-    &lt;idno&gt;JS 41 4to&lt;/idno&gt;
-  &lt;/msIdentifer&gt;
-&lt;/msDesc&gt;
+```xml
+<msDesc me:ref="menota:ms:handrit:JS04-0041 https://handrit.is/en/manuscript/view/is/JS04-0041">
+  <msIdentifier>
+    <idno>JS 41 4to</idno>
+  </msIdentifer>
+</msDesc>
 
 ```
 
@@ -525,27 +527,27 @@ Other figures, such as many people appearing in saga narratives, are not documen
       systematically in these external resources. In such cases, you can use or create a Wikipedia
       or Wikidata entry and use the resulting Wikidata URI to reference the person, e.g. (Lbs Frag
       82, 1v/7):
-```
-&lt;persName ref="https://www.wikidata.org/wiki/Q940404"&gt;
-  &lt;forename&gt;
-    &lt;w lemma="Valþjófr" me:ref="menota:lemma:onp:83796" me:msa="xNP gM nS cN sI"&gt;
-      &lt;choice&gt;
-        &lt;me:facs&gt;Valþıoꝼr&lt;/me:facs&gt;
-        &lt;me:dipl&gt;Valþiofr&lt;/me:dipl&gt;
-        &lt;me:norm&gt;Valþjófr&lt;/me:norm&gt;
-      &lt;/choice&gt;
-    &lt;/w&gt;
-  &lt;/forename&gt;
-  &lt;roleName type="political"&gt;
-    &lt;w lemma="jarl" me:ref="menota:lemma:onp:41394" me:msa="xNC gM nS cN sI"&gt;
-      &lt;choice&gt;
-        &lt;me:facs&gt;&lt;am&gt;.&lt;/am&gt;&jnodot;&lt;am&gt;.&lt;/am&gt;&lt;/me:facs&gt;
-        &lt;me:dipl&gt;j&lt;ex&gt;arl&lt;/ex&gt;&lt;/me:dipl&gt;
-        &lt;me:norm&gt;jarl&lt;/me:norm&gt;
-      &lt;/choice&gt;
-    &lt;/w&gt;
-  &lt;/roleName&gt;
-&lt;/persName&gt;
+```xml
+<persName ref="https://www.wikidata.org/wiki/Q940404">
+  <forename>
+    <w lemma="Valþjófr" me:ref="menota:lemma:onp:83796" me:msa="xNP gM nS cN sI">
+      <choice>
+        <me:facs>Valþıoꝼr</me:facs>
+        <me:dipl>Valþiofr</me:dipl>
+        <me:norm>Valþjófr</me:norm>
+      </choice>
+    </w>
+  </forename>
+  <roleName type="political">
+    <w lemma="jarl" me:ref="menota:lemma:onp:41394" me:msa="xNC gM nS cN sI">
+      <choice>
+        <me:facs><am>.</am>&jnodot;<am>.</am></me:facs>
+        <me:dipl>j<ex>arl</ex></me:dipl>
+        <me:norm>jarl</me:norm>
+      </choice>
+    </w>
+  </roleName>
+</persName>
 
 ```
 

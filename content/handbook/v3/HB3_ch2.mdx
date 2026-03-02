@@ -155,69 +155,90 @@ To examplify the use of elements, let us have a look at how to markup the struct
    first stanzas of the Eddic poem _Þrymskviða_, rendered in normalised orthography. 
    The text is based on the edition by Jón Helgason (1955) and the translation is the one by Carolyne
    Larrington (1996):
-   Reiðr var þá Vingþórr
-   er hann vaknaði
-   ok síns hamars
-   um saknaði,
-   skegg nam at hrista,
-   skǫr nam at dýja,
-   réð Jarðar burr
-   um at þreifask.
 
-   Ok hann þat orða
-   alls fyrst um kvað:
-   Heyrðu nú, Loki
-   hvat ek nú mæli,
-   er eigi veit
-   jarðar hvergi
-   né upphimins:
-   áss er stolinn hamri!
+<table>
+<tbody>
+<tr>
+<td>
+<Quote>
+ Reiðr var þá Vingþórr<br/>
+ er hann vaknaði<br/>
+ ok síns hamars<br/>
+ um saknaði,<br/>
+ skegg nam at hrista,<br/>
+ skǫr nam at dýja,<br/>
+ réð Jarðar burr<br/>
+ um at þreifask. 
+</Quote>
+<Quote>
+ Ok hann þat orða<br/>
+ alls fyrst um kvað:<br/>
+ Heyrðu nú, Loki<br/>
+ hvat ek nú mæli,<br/>
+ er eigi veit<br/>
+ jarðar hvergi<br/>
+ né upphimins:<br/>
+ áss er stolinn hamri! 
+</Quote>
+</td>
+<td>
+<Quote>
+ (Thor was angry<br/>
+ when he awoke,<br/>
+ and missed<br/>
+ his hammer;<br/>
+ his beard bristled,<br/>
+ his hair stood on end,<br/>
+ the son of Earth<br/>
+ began to grope around.<br/>
 
-   (Thor was angry
-   when he awoke,
-   and missed
-   his hammer;
-   his beard bristled,
-   his hair stood on end,
-   the son of Earth
-   began to grope around.
-   And these were the first words
-   that he spoke:“Listen, Loki,
-   to what I am saying,
-   what no one knows
-   neither on earth,
-   or in heaven:
-   the hammer of the God is stolen.”)
+</Quote>
+<Quote>
+ And these were the first words<br/>
+ that he spoke:<br/>
+“Listen, Loki,<br/>
+ to what I am saying,<br/>
+ what no one knows<br/>
+ neither on earth,<br/>
+ or in heaven:<br/>
+ the hammer of the God is stolen.”)<br/>
+
+</Quote>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 The structure of this poem is clear
 enough: it is made up of two stanzas each of which contains eight
 short lines. This structure could be marked up in the following
 way:
-```
-&lt;text xml:lang="en"&gt;
-  &lt;body&gt;
-    &lt;lg&gt;
-      &lt;l&gt;Reiðr var þá Vingþórr&lt;/l&gt;
-      &lt;l&gt;er hann vaknaði&lt;/l&gt;
-      &lt;l&gt;ok síns hamars&lt;/l&gt;
-      &lt;l&gt;um saknaði,&lt;/l&gt;
-      &lt;l&gt;skegg nam at hrista,&lt;/l&gt;
-      &lt;l&gt;skör nam at dýja,&lt;/l&gt;
-      &lt;l&gt;réð Jarðar burr&lt;/l&gt;
-      &lt;l&gt;um at þreifask.&lt;/l&gt;
-    &lt;/lg&gt;
-    &lt;lg&gt;
-      &lt;l&gt;Ok hann þat orða&lt;/l&gt;
-      &lt;l&gt;alls fyrst um kvað:&lt;/l&gt;
-      &lt;l&gt;Heyrðu nú, Loki,&lt;/l&gt;
-      &lt;l&gt;hvat ek nú mæli,&lt;/l&gt;
-      &lt;l&gt;er eigi veit&lt;/l&gt;
-      &lt;l&gt;jarðar hvergi&lt;/l&gt;
-      &lt;l&gt;né upphimins:&lt;/l&gt;
-      &lt;l&gt;áss er stolinn hamri!&lt;/l&gt;
-    &lt;/lg&gt;
-  &lt;/body&gt;
-&lt;/text&gt; 
+```xml
+<text xml:lang="en">
+  <body>
+    <lg>
+      <l>Reiðr var þá Vingþórr</l>
+      <l>er hann vaknaði</l>
+      <l>ok síns hamars</l>
+      <l>um saknaði,</l>
+      <l>skegg nam at hrista,</l>
+      <l>skör nam at dýja,</l>
+      <l>réð Jarðar burr</l>
+      <l>um at þreifask.</l>
+    </lg>
+    <lg>
+      <l>Ok hann þat orða</l>
+      <l>alls fyrst um kvað:</l>
+      <l>Heyrðu nú, Loki,</l>
+      <l>hvat ek nú mæli,</l>
+      <l>er eigi veit</l>
+      <l>jarðar hvergi</l>
+      <l>né upphimins:</l>
+      <l>áss er stolinn hamri!</l>
+    </lg>
+  </body>
+</text> 
 
 ```
 
@@ -254,8 +275,8 @@ Besides being able to render tagged contents in any given way, the principal use
 can be searched for later. One might, for
 example, wish to markup all names in the poem above. The personal name “Vingþórr” in line one of our poem could then
    be tagged with an element we call `<name>`:
-```
-&lt;l&gt;Reiðr var þá &lt;name&gt;Vingþórr&lt;/name&gt;&lt;/l&gt;
+```xml
+<l>Reiðr var þá <name>Vingþórr</name></l>
 ```
 
 
@@ -275,10 +296,10 @@ The elements `<lg>` and `<l>`, denoting stanzas and lines, could for instance be
    is given in double quotations to the right of an equals sign.
    Adding a n attribute (with the value 1) to the `<l>` element of the first line would  
       be encoded like this:
-```
-&lt;l n="1"&gt;
-  Reiðr var þá &lt;name&gt;Vingþórr&lt;/name&gt;
-&lt;/l&gt;
+```xml
+<l n="1">
+  Reiðr var þá <name>Vingþórr</name>
+</l>
 
 ```
 
@@ -286,10 +307,10 @@ The elements `<lg>` and `<l>`, denoting stanzas and lines, could for instance be
 It might further be an advantage to indicate the type
 of name in order to distinguish personal names from the the names of
 places, ships, swords etc.:
-```
-&lt;l n="1"&gt;
-  Reiðr var þá &lt;name type="person"&gt;Vingþórr&lt;/name&gt; 
-&lt;/l&gt;
+```xml
+<l n="1">
+  Reiðr var þá <name type="person">Vingþórr</name> 
+</l>
 
 ```
 
@@ -315,8 +336,8 @@ The aspects of XML discussed so far are all concerned with the markup of element
 
 A single
 declaration for a general entity looks like this:
-```
-&lt;!ENTITY vth "Vingþórr"&gt;
+```xml
+<!ENTITY vth "Vingþórr">
 ```
 
 
@@ -332,15 +353,15 @@ This entity declaration instructs the processing
 
 Entities may also contain XML markup (provided it
       is well-formed) as well as text:
-```
-&lt;!ENTITY vth "&lt;name type='god' subtype='áss'&gt;Vingþórr&lt;/god&gt;"&gt;
+```xml
+<!ENTITY vth "<name type='god' subtype='áss'>Vingþórr</god>">
 ```
 
 
 An entity can further refer to an
 external file, as in the following example: 
-```
-&lt;!ENTITY chapter1 SYSTEM "chapter1.xml"&gt;
+```xml
+<!ENTITY chapter1 SYSTEM "chapter1.xml">
 ```
 
 
@@ -379,8 +400,8 @@ For our purposes entities are particularly useful for providing descriptive mapp
      point, one can, for example, use the entity &eogon; for
       “ę”. It is a simple matter to define characters as general entities, giving the
      numerical character reference as the replacement text:
-```
-&lt;!ENTITY eogon "&#x0119;"&gt;
+```xml
+<!ENTITY eogon "&#x0119;">
 ```
 
 
@@ -406,10 +427,10 @@ The most commonly used ones have been compiled by Menota into a list of entities
 (see also [ch. 5.2.2](HB3_ch5.xml#sec5.2.2)).
 This Menota entity list is available as an external file, which can conveniently be referred to from any XML 
 document using a system entity:
-```
-&lt;!ENTITY % Menota_entities SYSTEM 
-'https://www.menota.org/menota-entities.txt'&gt;
-%Menota_entities;]&gt;
+```xml
+<!ENTITY % Menota_entities SYSTEM 
+'https://www.menota.org/menota-entities.txt'>
+%Menota_entities;]>
 ```
 
 
@@ -417,8 +438,8 @@ In recent years, the TEI community has moved towards the use of the `<g>` elemen
      This requires an extensive `<charDecl>` section in the header of the document defining each “gaiji” character.
 
 As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the &ocurl; entity, for example, only a single line is required:
-```
-&lt;!-- LATIN SMALL LETTER O WITH CURL --&gt; &lt;!ENTITY ocurl "&#xE7D3;"&gt;
+```xml
+<!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
 
 
@@ -517,8 +538,8 @@ XML-aware software, such as
 The first line of our XML document
                is the XML declaration, which tells any processing software that the
                document is in XML:
-```
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 ```
 
 
@@ -544,16 +565,16 @@ The Menota schema is designed to cover the relevant elements needed for encoding
       The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
       “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](HB3_D_schemas.xml#D.1.1).
       An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
-```
-&lt;?xml-model href="http://www.menota.org/menotaP5.rng"?&gt;
+```xml
+<?xml-model href="http://www.menota.org/menotaP5.rng"?>
 ```
 
 
 Some XML editors additionally have their own way of referencing external schemas, but the
       neutral code given above should work in any event. Here is an example of a editor specific 
       reference to the same schema (in this case &lt;oXygen/&gt;):
-```
-&lt;?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?&gt;
+```xml
+<?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?>
 ```
 
 
@@ -599,10 +620,10 @@ In this handbook, we are following the recommendations in the TEI Guidelines P5 
                (“me” being short for “Menota”).
 
 Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>` element:
-```
-&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0"&gt;
+```xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
 ...
-&lt;/TEI&gt;
+</TEI>
 ```
 
 
@@ -701,18 +722,18 @@ A stylesheet can be associated to an XML document in several ways.
    The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
    from the web with the XML file in question:
    
-```
-&lt;?xml-stylesheet href="poem.css" type="text/css"?&gt;
+```xml
+<?xml-stylesheet href="poem.css" type="text/css"?>
 ```
 
-```
-&lt;?xml-stylesheet href="http://www.menota.org/menota_xslt_3_dipl.xsl type="text/xsl""?&gt;
+```xml
+<?xml-stylesheet href="http://www.menota.org/menota_xslt_3_dipl.xsl type="text/xsl""?>
 ```
 
 
  The CSS stylesheet referred to in the first example was desgined for the markup of the poem used above. It
 indicates how each of the elements is to be displayed (using the CSS language): 
-```
+```xml
 body {
 font-family: "Book Antiqua";
 }
@@ -773,10 +794,13 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
      and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
      short lines making up a long line is printed as a single line in the edition, though with a
      sizeable space between the two lines, thus:
-   Reiðr var þá Vingþórr   er hann vaknaði
-   ok síns hamars   um saknaði
-   skegg nam at hrista,   skör nam at dýja,
-   réð Jarðar burr   um at þreifask.
+<Quote>
+ Reiðr var þá Vingþórr   er hann vaknaði<br/>
+ ok síns hamars   um saknaði<br/>
+ skegg nam at hrista,   skör nam at dýja,<br/>
+ réð Jarðar burr   um at þreifask.<br/>
+
+</Quote>
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
      line (in ljóðaháttr) or each fifth line (in fornyrðislag) are numbered. In an eight-line display such as the one in the screenshot
@@ -790,36 +814,36 @@ For ease of reference, lines are numbered, but in stanzas of normal length only 
      in CSS using the :nth-child() selector. In XSLT this is quite simple, even if the instructions
      may look difficult. An XSLT stylehseet transforming the text as specified in (a) and (b) would
      look like this:
-```
-&lt;xsl:template match="lg"&gt;
-&lt;table class="stanza"&gt;
-  &lt;xsl:for-each select="child::l[ position() mod 2 = 1]"&gt;
-    &lt;tr&gt;
-      &lt;xsl:choose&gt;
-        &lt;xsl:when test="attribute::number mod 5 = 1"&gt;
-          &lt;!-- The first line --&gt;
-          &lt;td&gt;
-            &lt;xsl:value-of select="parent::lg/attribute::number"/&gt; .&#160;
-          &lt;/td&gt;
-        &lt;/xsl:when&gt;
-        &lt;xsl:when test="attribute::number mod 5 = 0"&gt;
-          &lt;!-- Line 5 --&gt;
-          &lt;td&gt;
-            &lt;xsl:attribute name="class"&gt;small&lt;/xsl:attribute&gt;
-            &lt;xsl:value-of select="attribute::number"/&gt;
-          &lt;/td&gt;
-        &lt;/xsl:when&gt;
-        &lt;xsl:otherwise&gt;
-          &lt;td&gt;&lt;/td&gt;
-        &lt;/xsl:otherwise&gt;
-      &lt;/xsl:choose&gt;
-        &lt;td&gt;&lt;xsl:apply-templates/&gt;&#160;&#160;
-          &lt;xsl:apply-templates select="following-sibling::l[1]"/&gt;
-        &lt;/td&gt;               
-    &lt;/tr&gt;    
-  &lt;/xsl:for-each&gt;
-&lt;/table&gt;
-&lt;/xsl:template&gt;
+```xml
+<xsl:template match="lg">
+<table class="stanza">
+  <xsl:for-each select="child::l[ position() mod 2 = 1]">
+    <tr>
+      <xsl:choose>
+        <xsl:when test="attribute::number mod 5 = 1">
+          <!-- The first line -->
+          <td>
+            <xsl:value-of select="parent::lg/attribute::number"/> .&#160;
+          </td>
+        </xsl:when>
+        <xsl:when test="attribute::number mod 5 = 0">
+          <!-- Line 5 -->
+          <td>
+            <xsl:attribute name="class">small</xsl:attribute>
+            <xsl:value-of select="attribute::number"/>
+          </td>
+        </xsl:when>
+        <xsl:otherwise>
+          <td></td>
+        </xsl:otherwise>
+      </xsl:choose>
+        <td><xsl:apply-templates/>&#160;&#160;
+          <xsl:apply-templates select="following-sibling::l[1]"/>
+        </td>               
+    </tr>    
+  </xsl:for-each>
+</table>
+</xsl:template>
 
 ```
 

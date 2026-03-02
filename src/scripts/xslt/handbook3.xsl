@@ -54,6 +54,9 @@
         <xsl:text>&#x0a;&#x0a;</xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
+    <xsl:template match="tei:lb">
+        <xsl:text>&lt;br/&gt;&#x0a;</xsl:text>
+    </xsl:template>
     <xsl:template match="tei:title">
         <xsl:text>_</xsl:text>
         <xsl:apply-templates/>
@@ -63,6 +66,11 @@
         <xsl:text>&#x201c;</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>&#x201d;</xsl:text>
+    </xsl:template>
+    <xsl:template match="tei:quote">
+        <xsl:text>&#x0a;&lt;Quote&gt;&#x0a;</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>&#x0a;&lt;/Quote&gt;</xsl:text>
     </xsl:template>
     <xsl:template match="tei:ref">
         <xsl:text>[</xsl:text>
@@ -76,12 +84,57 @@
         <xsl:text>&gt;`</xsl:text>
     </xsl:template>
     <xsl:template match="tei_samples:egXML">
-        <xsl:text>&#x0a;```&#x0a;</xsl:text>
-        <xsl:apply-templates/>
-        <xsl:text>&#x0a;```&#x0a;</xsl:text>
+        <xsl:choose>
+            <xsl:when test="@rend='inline'">
+                <xsl:text>`</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>`</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>&#x0a;```xml&#x0a;</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>&#x0a;```&#x0a;</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:table">
+        <xsl:choose>
+            <xsl:when test="@rend='plain'">
+                <xsl:text>&#x0a;&#x0a;&lt;table&gt;</xsl:text>
+                <xsl:text>&#x0a;&lt;tbody&gt;</xsl:text>
+                <xsl:for-each select="tei:row">
+                    <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:text>&#x0a;&lt;td&gt;</xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text>&#x0a;&lt;/td&gt;</xsl:text>
+                    </xsl:for-each>
+                    <xsl:text>&#x0a;&lt;/tr&gt;</xsl:text>
+                </xsl:for-each>
+                <xsl:text>&#x0a;&lt;/tbody&gt;</xsl:text>
+                <xsl:text>&#x0a;&lt;/table&gt;&#x0a;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>&#x0a;</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="text()">
-        <xsl:value-of select="replace(replace(., '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"/>
+        <xsl:variable name="text1">
+            <xsl:choose>
+                <xsl:when test="ancestor::tei:quote">
+                    <xsl:value-of select="replace(., '\s+', ' ')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="text2">
+            <xsl:value-of select="replace(replace($text1, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"/>
+        </xsl:variable>
+        <xsl:value-of select="$text2"/>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>

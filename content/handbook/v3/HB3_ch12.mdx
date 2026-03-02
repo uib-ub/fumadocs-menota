@@ -20,36 +20,37 @@ Medieval manuscripts contain an abundance of names: personal names for historica
                Guidelines, [ch. 13](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html).
 
 The basic element for encoding names of any type is `<name>`, supplied with the
-                  type and ref attributes.Elements & attributesObl/OptExplanation`<name>`Contains a name, i.e. a proper noun or a noun phrase.typeOptionalIndicates what type of name it is.refOptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).
+                  type and ref attributes.
+Elements & attributesObl/OptExplanation`<name>`Contains a name, i.e. a proper noun or a noun phrase.typeOptionalIndicates what type of name it is.refOptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).
 
 Note that the `<name>` element may contain a `<w>` element, which will be the case in most Menota texts. This `<w>` element will in a number of Menota texts contain a morphological annotation of the word, by way of the lemma and me:msa attributes. See [ch. 11](HB3_ch11.xml) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
-```
-&lt;name&gt;
-  &lt;w lemma="Egill" me:msa="xNP"&gt;
-    &lt;me:dipl&gt;Egils&lt;/me:dipl&gt;
-  &lt;/w&gt;
-&lt;/name&gt;
+```xml
+<name>
+  <w lemma="Egill" me:msa="xNP">
+    <me:dipl>Egils</me:dipl>
+  </w>
+</name>
 ```
 
 
 In this simplified example, the text is rendered on a single, diplomatic level, indicated by the `<me:dipl>` element, and the annotation only states the lemma and the word class.
 
 In the rest of the present chapter, we will only give examples of the encoding of the `<name>` element, disregarding the inclusion of the `<w>` element.
-```
-&lt;name&gt;Egill Skalla-Grímsson&lt;/name&gt;
-&lt;name&gt;Borg&lt;/name&gt;
-&lt;name&gt;Sleipnir&lt;/name&gt;
-&lt;name&gt;Skiðblaðnir&lt;/name&gt;
+```xml
+<name>Egill Skalla-Grímsson</name>
+<name>Borg</name>
+<name>Sleipnir</name>
+<name>Skiðblaðnir</name>
 ```
 
 
 A distinction may be drawn between e.g. personal names, place names, animal names and
                artefact names by using the type attribute:
-```
-&lt;name type="person"&gt;Egill Skalla-Grímsson&lt;/name&gt;
-&lt;name type="place"&gt;Borg&lt;/name&gt;
-&lt;name type="animal"&gt;Sleipnir&lt;/name&gt;
-&lt;name type="artefact"&gt;Skiðblaðnir&lt;/name&gt;
+```xml
+<name type="person">Egill Skalla-Grímsson</name>
+<name type="place">Borg</name>
+<name type="animal">Sleipnir</name>
+<name type="artefact">Skiðblaðnir</name>
 ```
 
 
@@ -63,26 +64,26 @@ For a more detailed encoding of personal names and place names, we recommend usi
                attribute with the values person and place. 
 
 Thus, ...
-```
-&lt;name type="person"&gt;Egill Skalla-Grímsson&lt;/name&gt;
+```xml
+<name type="person">Egill Skalla-Grímsson</name>
 ```
 
 
 ... is equivalent to ...
-```
-&lt;persName&gt;Egill Skalla-Grímsson&lt;/persName&gt;
+```xml
+<persName>Egill Skalla-Grímsson</persName>
 ```
 
 
 ... and ...
-```
-&lt;name type="place"&gt;Borg&lt;/name&gt;
+```xml
+<name type="place">Borg</name>
 ```
 
 
 ... is equivalent to...
-```
-&lt;placeName&gt;Borg&lt;/placeName&gt;
+```xml
+<placeName>Borg</placeName>
 ```
 
 
@@ -102,7 +103,8 @@ Usually, XML elements for different types of names are used instead of
 ## 12.2 Personal names
 
 Personal names may be divided into several categories, depending on the source and
-               the naming conventions of the time.Elements & attributesObl/OptExplanation`<persName>`The name of a person, consisting of one or more words.typeOptionalIndicates the type of name. Suggested values: historical, mythological.
+               the naming conventions of the time.
+Elements & attributesObl/OptExplanation`<persName>`The name of a person, consisting of one or more words.typeOptionalIndicates the type of name. Suggested values: historical, mythological.
                   refOptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).`<forename>`The first name of a person.`<addName>`An additional name of a person.typeOptionalIndicates the type of name. Suggested values: epithet, metronym,
                      mythological, nickname, patronym.`<surname>`The family name of a person, excluding patronyms and metronyms.`<roleName>`The name for a role held by a person.typeOptionalIndicates the role of the person, e.g. in the form of a title. Suggested
                      value: political.
@@ -110,21 +112,21 @@ Personal names may be divided into several categories, depending on the source a
 
 Forenames are encoded with the element `<forename>` contained in the
                      `<persName>` element:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Egill&lt;/forename&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Egill</forename>
+</persName>
 ```
 
 
 We recommend that patronymica, i.e. a father’s name such as Haraldsson or
                   Haraldsdóttir, should be encoded with the element `<addName>` and the
                      type attribute set to patronym:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Egill&lt;/forename&gt;
-  &lt;addName type="patronym"&gt;Skalla-Grímsson&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Egill</forename>
+  <addName type="patronym">Skalla-Grímsson</addName>
+</persName>
 ```
 
 
@@ -135,22 +137,22 @@ It could probably be questioned whether Egill Skalla-Grímsson should be conside
                   a historical or a fictional person when he appears in _Egils saga
                      Skalla-Grímssonar_. The type attribute might be used to
                   specify this:
-```
-&lt;persName type="historical"&gt;
-  &lt;forename&gt;Egill&lt;/forename&gt;
-  &lt;addName type="patronym"&gt;Skalla-Grímsson&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName type="historical">
+  <forename>Egill</forename>
+  <addName type="patronym">Skalla-Grímsson</addName>
+</persName>
 ```
 
 
 Mythological and legendary names could be seen as forming a group, once again
                   using the type attribute to establish the category. This example is
                   found in the _Poetic Edda_:
-```
-&lt;persName type="mythological"&gt;
-  &lt;forename&gt;Loki&lt;/forename&gt;
-  &lt;addName type="metronym"&gt;Laufeyjarson&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName type="mythological">
+  <forename>Loki</forename>
+  <addName type="metronym">Laufeyjarson</addName>
+</persName>
 ```
 
 
@@ -162,12 +164,12 @@ As Loki has the second name from his mother Laufey, the value of the attribute i
 In the Scandinavian and Old Icelandic material, surnames were introduced in the
                   14th and 15th centuries, in most cases for people belonging to the elite. These
                   names could be encoded with the `<surname>` element:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Bengt&lt;/forename&gt;
-  &lt;addName type="patronym"&gt;Jönsson&lt;/addName&gt;
-  &lt;surname&gt;Oxenstierna&lt;/surname&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Bengt</forename>
+  <addName type="patronym">Jönsson</addName>
+  <surname>Oxenstierna</surname>
+</persName>
 ```
 
 ### 12.2.3 Nicknames, Epithets and Titles
@@ -178,11 +180,11 @@ Medieval texts contain an abundancy of nicknames, epithets and titles. With the
                      _Egils saga Skalla-Grímssonar_, a man named Þorgils gjallandi ‘the
                   screaming’ appears. His nickname might be encoded as a type of
                   `<addName>`:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Þorgils&lt;/forename&gt;
-  &lt;addName type="nickname"&gt;gjallandi&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Þorgils</forename>
+  <addName type="nickname">gjallandi</addName>
+</persName>
 ```
 
 
@@ -190,24 +192,24 @@ Epithets indicating the providence of a person should also be encoded with the
                      `<addName>` element, specified by the type attribute. Thus,
                   Eyvindr austmaðr Bjarnarson in _Njáls saga_ has “austmaðr” as an
                   epithet and “Bjarnarson” as his patronym:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Eyvindr&lt;/forename&gt;
-  &lt;addName type="epithet"&gt;austmaðr&lt;/addName&gt;
-  &lt;addName type="patronym"&gt;Bjarnarson&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Eyvindr</forename>
+  <addName type="epithet">austmaðr</addName>
+  <addName type="patronym">Bjarnarson</addName>
+</persName>
 ```
 
 
 Titles such as “konungr”, “jarl” and “hersir” could be encoded by
                   using the `<roleName>` element in addition to the `<addName>`
                   element:
-```
-&lt;persName&gt;
-  &lt;forename&gt;Óláfr&lt;/forename&gt;
-  &lt;roleName type="political"&gt;konungr&lt;/roleName&gt;
-  &lt;addName type="patronym"&gt;Tryggvason&lt;/addName&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename>Óláfr</forename>
+  <roleName type="political">konungr</roleName>
+  <addName type="patronym">Tryggvason</addName>
+</persName>
 ```
 
 
@@ -218,12 +220,12 @@ The type attribute indicates that the title is considered to refer to
 If an index is generated from the XML transcription, it might be useful to add
                   information on how to alphabetise names consisting of several elements. This is
                   achieved with the sort-attribute and numeric values.
-```
-&lt;persName&gt;
-  &lt;forename sort="2"&gt;Bengt&lt;/forename&gt;
-  &lt;addName sort="3" type="patronym"&gt;Jönsson&lt;/addName&gt;
-  &lt;surname sort="1"&gt;Oxenstierna&lt;/surname&gt;
-&lt;/persName&gt;
+```xml
+<persName>
+  <forename sort="2">Bengt</forename>
+  <addName sort="3" type="patronym">Jönsson</addName>
+  <surname sort="1">Oxenstierna</surname>
+</persName>
 ```
 
 ### 12.2.5 Identifying historical individuals
@@ -234,30 +236,30 @@ The xml:id attribute could be used to link the occurrence of a name to the
 Biographical data can be stored in the header of the XML file. The unique
                      xml:id defined for each biographical entry could then be used to link
                      occurrences of a name to it.
-```
-&lt;profileDesc&gt;
-  &lt;particDesc&gt;
-    &lt;listPerson type="historical"&gt;
-      &lt;person xml:id="Njall"&gt;
-        &lt;persName&gt;
-          &lt;forename&gt;Njáll&lt;/forename&gt;
-          &lt;addName type=”patronym”&gt;Þorgeirsson&lt;/addName&gt;
-        &lt;/persName&gt;
-      &lt;/person&gt;
-      &lt;person xml:id="..."&gt;
+```xml
+<profileDesc>
+  <particDesc>
+    <listPerson type="historical">
+      <person xml:id="Njall">
+        <persName>
+          <forename>Njáll</forename>
+          <addName type=”patronym”>Þorgeirsson</addName>
+        </persName>
+      </person>
+      <person xml:id="...">
         . . .
-      &lt;/person&gt;
-    &lt;/listperson&gt;
-  &lt;/particDesc&gt;
-&lt;/profileDesc&gt;
+      </person>
+    </listperson>
+  </particDesc>
+</profileDesc>
 ```
 
 
 The corresponding markup in the body of the XML file would then be:
-```
-&lt;persName xml:id="#Njall"&gt;
-  &lt;forename&gt;Njáll&lt;/forename&gt;
-&lt;/persName&gt;
+```xml
+<persName xml:id="#Njall">
+  <forename>Njáll</forename>
+</persName>
 ```
 
 
@@ -266,21 +268,21 @@ See the TEI P5 Guidelines, [ch. 13.3](https://www.tei-c.org/release/doc/tei-p5-d
 References to external biographical resources can be put either into the header
                      or directly into the transcription. The following two solutions both link the
                      Njáll’s name to his Wikidata entry:
-```
-&lt;!-- HEADER --&gt;
-  &lt;person xml:id="Njall https://www.wikidata.org/wiki/Q2642621"&gt;
-&lt;!-- BODY --&gt;
-  &lt;persName xml:id="#Njall"&gt;
-    &lt;forename&gt;Njáll&lt;/forename&gt;
-  &lt;/persName&gt;
+```xml
+<!-- HEADER -->
+  <person xml:id="Njall https://www.wikidata.org/wiki/Q2642621">
+<!-- BODY -->
+  <persName xml:id="#Njall">
+    <forename>Njáll</forename>
+  </persName>
 ```
 
 
 Or, without internal reference to the header:
-```
-&lt;persName xml:id="https://www.wikidata.org/wiki/Q2642621"&gt;
-  &lt;forename&gt;Njáll&lt;/forename&gt;
-&lt;/persName&gt;
+```xml
+<persName xml:id="https://www.wikidata.org/wiki/Q2642621">
+  <forename>Njáll</forename>
+</persName>
 ```
 
 
@@ -292,13 +294,14 @@ The encoding of place names should be rather straight-forward, but there are a f
                things that need to be mentioned and exemplified. The starting point is the
                above-mentioned encoding of all place names with the element `<name>` and an
                attribute type with the value place:
-```
-&lt;name type="place"&gt;Borg&lt;/name&gt;
+```xml
+<name type="place">Borg</name>
 ```
 
 
 A more detailed encoding is achieved by the additional tagset. We recommend that this
-               tagset is used in cases when place names are to be more thoroughly encoded:ElementsExplanation`<placeName>`A name of a specific location.`<settlement>`The name of the smallest component of a place name expressed as a hierarchy
+               tagset is used in cases when place names are to be more thoroughly encoded:
+ElementsExplanation`<placeName>`A name of a specific location.`<settlement>`The name of the smallest component of a place name expressed as a hierarchy
                      of geo-political or administrative units.`<region>`Larger or administratively superior to the settlement and smaller or
                      administratively less important than the country.`<country>`Larger or administratively superior to the region.
 
@@ -308,29 +311,29 @@ All of the above mentioned elements can be linked to the place they denote by me
 The additional element `<settlement>` adds information about administrative
                units, i.e. farms, villages or cities. In this example, we have chosen Skara, one of
                the oldest cities of modern-day Sweden:
-```
-&lt;placeName&gt;
-  &lt;settlement&gt;Skara&lt;/settlement&gt;
-&lt;/placeName&gt;
+```xml
+<placeName>
+  <settlement>Skara</settlement>
+</placeName>
 ```
 
 
 A region is a larger administrative unit than the district or settlement, as e.g. the
                province of Västergötland, in the medieval material referred to as “Vestra
                   Gautland”:
-```
-&lt;placeName&gt;
-  &lt;region&gt;Vestra Gautland&lt;/region&gt;
-&lt;/placeName&gt;
+```xml
+<placeName>
+  <region>Vestra Gautland</region>
+</placeName>
 ```
 
 
 The region of Västergötland forms a part of the country referred to as Svíþjóð in
                medieval texts:
-```
-&lt;placeName&gt;
-  &lt;country&gt;Svíþjóð&lt;/country&gt;
-&lt;/placeName&gt;
+```xml
+<placeName>
+  <country>Svíþjóð</country>
+</placeName>
 ```
 
 ### 12.3.1 Identifying places
@@ -350,16 +353,16 @@ Medieval texts contain names for horses, dogs and other domestic animals. These
                   could be encoded with the `<name>` element and the type
                   attribute. On a basic level we would suggest that all animal names are marked with
                   the attribute value animal:
-```
-&lt;name type="animal"&gt;Freyfaxi&lt;/name&gt;
+```xml
+<name type="animal">Freyfaxi</name>
 ```
 
 
 It should also be possible to give more specific information in the
                      type attribute. The name “Freyfaxi” might be specified as
                   the name of a horse:
-```
-&lt;name type="horse"&gt;Freyfaxi&lt;/name&gt;
+```xml
+<name type="horse">Freyfaxi</name>
 ```
 
 
@@ -368,8 +371,8 @@ There are also names of animals in relation to myths and legends. For example,
                   legendary name this could be done by specifying the value horse of the
                      type attribute, and legendary in a subtype
                   attribute:
-```
-&lt;name type="horse" subtype="legendary"&gt;Grani&lt;/name&gt;
+```xml
+<name type="horse" subtype="legendary">Grani</name>
 ```
 
 
@@ -382,20 +385,20 @@ There are a number of names for artefacts in the medieval material, e.g. for
                   weapons and ships. These names could be encoded in the same fashion as the ones
                   described above. The ship belonging to the god Freyr in _Snorra Edda_
                   could then be encoded as follows:
-```
-&lt;name type="artefact"&gt;Skiðblaðnir&lt;/name&gt;
+```xml
+<name type="artefact">Skiðblaðnir</name>
 ```
 
 
 This artefact could be specified as a ship:
-```
-&lt;name type="ship"&gt;Skiðblaðnir&lt;/name&gt;
+```xml
+<name type="ship">Skiðblaðnir</name>
 ```
 
 
 And it could further be encoded as a mythological name:
-```
-&lt;name type="ship" subtype="mythological"&gt;Skiðblaðnir&lt;/name&gt;
+```xml
+<name type="ship" subtype="mythological">Skiðblaðnir</name>
 ```
 
 
