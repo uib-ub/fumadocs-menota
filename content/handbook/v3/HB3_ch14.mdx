@@ -17,7 +17,14 @@ This chapter deals with the first major part of any Menota XML file, the header.
   The header should describe the file so that meta level information about the text itself, its source, its encoding and its revisions are sufficiently documented. 
   The header has four major parts:
 
-ElementsContents`<fileDesc>`A file description.`<encodingDesc>`An encoding description.`<profileDesc>`A text profile.`<revisionDesc>`A revision history.
+
+| Elements | Contents |
+|-----|-----|
+| `<fileDesc>` | A file description. |
+| `<encodingDesc>` | An encoding description. |
+| `<profileDesc>` | A text profile. |
+| `<revisionDesc>` | A revision history. |
+
 
 This chapter will discuss the recommended (minimal) amount of information for each of the four parts. Due to practical considerations, 
   the `<fileDesc>` is treated in two separate subsections, one dealing with the meta-level information on the file history, the other
@@ -33,8 +40,19 @@ The first part of the `<fileDesc>` supplies the necessary bibliographical inform
   Please note: The description of the source for transcription (done in the element `<sourceDesc>`) is also part of the `<fileDesc>`. 
     However, in order to improve legibility, that part is treated in a separate subchapter (see [ch. 14.3](#sec14.3) below).
 ### 14.2.1 Title statement
-Elements & attributesObl/OptExplanation`<titleStmt>`Information on the title, editor and other people who have been responsible for the edition.`<title>`The title of the work.`<editor>`The name of the (main) editor of the encoded work.`@role`OptionalThe role of an editor, in particular in case the editor is an institution or project.`<orgName>`The name of an organisation.`@type`ObligatorySpecifies that the organisation is the institution with which the editor is affiliated, 
-    using the the value `"affiliation"`.`<respStmt>`A statment of responsibility.`<resp>`Type of responsibility, e.g. transcription, conversion, proof-reading.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<titleStmt>` |  | Information on the title, editor and other people who have been responsible for the edition. |
+| `<title>` |  | The title of the work. |
+| `<editor>` |  | The name of the (main) editor of the encoded work. |
+| `@role` | Optional | The role of an editor, in particular in case the editor is an institution or project. |
+| `<orgName>` |  | The name of an organisation. |
+| `@type` | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, 
+    using the the value `"affiliation"`. |
+| `<respStmt>` |  | A statment of responsibility. |
+| `<resp>` |  | Type of responsibility, e.g. transcription, conversion, proof-reading. |
+
 
 In the `<titleStmt>`, the `<title>` element gives the title of the document. In the case of a digital transcription, 
   it should specify the primary source (manuscript) on which the transcription is based, and, where applicable, the title of the work transcribed. 
@@ -147,7 +165,15 @@ The TEI P5 Guidelines, [ch. 2.2.1](https://www.tei-c.org/release/doc/tei-p5-doc/
     `<titleStmt>`. 
     Since almost all Medieval Nordic texts are anonymous we suggest that this element is optional.
 ### 14.2.2 Edition statement
-Elements & attributesObl/OptExplanation`<editionStmt>`A statement of the edition.`<edition>`A description of the edition (i.e. version), typically by means of a number.`@n`ObligatoryThe number of the edition.`<date>`The date for the publication of the present work (edition).`@when`ObligatoryDate in the format year-month-day, e.g. `"2019-10-15’"`.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<editionStmt>` |  | A statement of the edition. |
+| `<edition>` |  | A description of the edition (i.e. version), typically by means of a number. |
+| `@n` | Obligatory | The number of the edition. |
+| `<date>` |  | The date for the publication of the present work (edition). |
+| `@when` | Obligatory | Date in the format year-month-day, e.g. `"2019-10-15’"`. |
+
 
 The `<editionStmt>` should be used to specify whether the present text is a new or a revised edition of the 
   electronic text as described in the title statement above. Here, “edition” is to be understood as “version”. 
@@ -165,7 +191,12 @@ A complete edition statement may be as simple as this:
 ```
 
 ### 14.2.3 Extent
-Elements & attributesObl/OptExplanation`<extent>`The size of the file, preferably specified in  words.`@n`ObligatoryThe number of words (or any other measure).
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<extent>` |  | The size of the file, preferably specified in  words. |
+| `@n` | Obligatory | The number of words (or any other measure). |
+
 
 The `<extent>` element specifies the size of the file. The exact number of words should be given in the `@n` attribute as well as in plain text within the element, e.g.: 
 ```xml
@@ -174,7 +205,18 @@ The `<extent>` element specifies the size of the file. The exact number of words
 ```
 
 ### 14.2.4 Publication statement
-Elements & attributesObl/OptExplanation`<publicationStmt>`A statement of the publication.`<distributor>`A reference to the distributor, e.g. Medieval Nordic Text Archive.`<idno>`A reference (identification number), e.g. “Ms. 1”.`@type`OptionalThe type of reference, e.g. `"Menota"`.`<date>`The date for the publication of the present work (edition).`@when`ObligatoryDate in the format year-month-day, e.g. `"2019-10-15"`.`<availability>`A description of the conditions for the distribution and use of the text.`@status`ObligatoryThe type of availability, typically with the values `"free"`, `"restricted"` or `"unknown"`.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<publicationStmt>` |  | A statement of the publication. |
+| `<distributor>` |  | A reference to the distributor, e.g. Medieval Nordic Text Archive. |
+| `<idno>` |  | A reference (identification number), e.g. “Ms. 1”. |
+| `@type` | Optional | The type of reference, e.g. `"Menota"`. |
+| `<date>` |  | The date for the publication of the present work (edition). |
+| `@when` | Obligatory | Date in the format year-month-day, e.g. `"2019-10-15"`. |
+| `<availability>` |  | A description of the conditions for the distribution and use of the text. |
+| `@status` | Obligatory | The type of availability, typically with the values `"free"`, `"restricted"` or `"unknown"`. |
+
 
 The `<publisher>` element specifies the body (publisher, archive) which has made the text available, e.g. the Medieval Nordic Text Archive (Menota).
 
@@ -227,25 +269,33 @@ and `<biblItem>`.)
 
 Within `<msDesc>`
 the following six elements are available, of which only the first is required:
-Elements & attributesExplanation`<msIdentifier>`Groups information that uniquely identifies the manuscript, i.e.
+
+| Elements & attributes | Explanation |
+|-----|-----|
+| `<msIdentifier>` | Groups information that uniquely identifies the manuscript, i.e.
    its location, holding institution and shelfmark.
-         `<msContents>`Contains an itemised list of the intellectual content of the
+          |
+| `<msContents>` | Contains an itemised list of the intellectual content of the
    manuscript or manuscript part, either as a series of paragraphs or as 
    a series of structured manuscript items, possibly including transcriptions of rubrics,
    incipits, explicits etc., as well as primary bibliographic
    references.
-         `<physDesc>`Groups
+          |
+| `<physDesc>` | Groups
    information concerning all physical aspects of the manuscript or
    manuscript part, its material, size, format, script, decoration,
    binding, marginalia etc.
-         `<history>`Provides
+          |
+| `<history>` | Provides
    information on the history of the manuscript or manuscript part,
    its origin, provenance and acquisition by its holding
    institution.
-         `<additional>`Groups other information about the manuscript, in particular,
+          |
+| `<additional>` | Groups other information about the manuscript, in particular,
    administrative information relating to its availability, custodial
    history, surrogates etc.
-         `<msPart>`Contains
+          |
+| `<msPart>` | Contains
    in essence a nested `<msDesc>`, in cases of
    composite manuscripts now regarded as constituting a single unit
    but made up of two or more parts which were originally physically
@@ -253,7 +303,8 @@ Elements & attributesExplanation`<msIdentifier>`Groups information that uniquely
    the individual parts will normally be quite different, a
    `<msPart>` element can contain all the elements listed
    here, including additional `<msPart>` elements.
-         
+          |
+
 
 Within each of these elements a
 number of sub-elements is available; `<msContents>`, for
@@ -819,7 +870,12 @@ The `<editorialDecl>` uses the `<correction>` element with the `@status` attribu
     Attribute values (according to TEI) are “high”, “medium”, “low”, and “unknown”. 
     The TEI P5 Guidelines, [ch. 2.3.3](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD53), 
     offer these definitions for the possible values:
-  high: the text has been thoroughly checked and proofreadmedium: the text has been checked at least oncelow: the text has not been checkedunknown: the correction status of the text is unknown
+  
+
+- high: the text has been thoroughly checked and proofread
+- medium: the text has been checked at least once
+- low: the text has not been checked
+- unknown: the correction status of the text is unknown
 
 Once the `@status` attribute is given a value, the `<correction>` element may be empty.  
     However, if desired, further specification can be given in prose within a `<p>` element.

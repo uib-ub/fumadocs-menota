@@ -143,6 +143,13 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <xsl:template match="tei:list">
+        <xsl:text>&#x0a;</xsl:text>
+        <xsl:for-each select="tei:item">
+            <xsl:text>&#x0a;- </xsl:text>
+            <xsl:apply-templates/>
+        </xsl:for-each>
+    </xsl:template>
     <xsl:template match="tei:table">
         <xsl:choose>
             <xsl:when test="@rend='plain'">
@@ -159,6 +166,24 @@
                 </xsl:for-each>
                 <xsl:text>&#x0a;&lt;/tbody&gt;</xsl:text>
                 <xsl:text>&#x0a;&lt;/table&gt;&#x0a;</xsl:text>
+            </xsl:when>
+            <xsl:when test="tei:row[@role='label']">
+                <xsl:text>&#x0a;</xsl:text>
+                <xsl:for-each select="tei:row">
+                    <xsl:text>&#x0a;|</xsl:text>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:text> </xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text> |</xsl:text>
+                    </xsl:for-each>
+                    <xsl:if test="@role='label'">
+                        <xsl:text>&#x0a;|</xsl:text>
+                        <xsl:for-each select="tei:cell">
+                            <xsl:text>-----|</xsl:text>
+                        </xsl:for-each>
+                    </xsl:if>
+                </xsl:for-each>
+                <xsl:text>&#x0a;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>&#x0a;</xsl:text>

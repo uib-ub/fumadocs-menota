@@ -27,7 +27,28 @@ In this chapter, we offer a similar overview and discussion in [ch. 16.2](#sec16
 
 In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), the elements `<addSpan/>`, `<delSpan/>` and `<damageSpan/>` are defined. These elements are counterparts to the elements `<add>`, `<del>` and `<damage>`, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. `<sic>`, `<corr>`, `<unclear>` and `<supplied>`, but there are no corresponding `<sicSpan>`, `<corrSpan>`, `<unclearSpan>` and `<suppliedSpan>`. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element `<me:textSpan/>` and given it attributes from the classes
               “att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute `@me:category`. Note that we in this table include the `<anchor>` element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
-Elements & attributesExplanation`<me:textSpan/>`A generic element to handle overlapping text structures.`@me:category`Specifies the type of span, restricted to this list of values:`"gap"`For contents that would otherwise be contained by the `<gap/>` element, cf. [ch. 8](HB3_ch8.xml).`"unclear"`For contents that would otherwise be contained by the `<unclear>` element, cf. [ch. 8](HB3_ch8.xml).`"add"`For contents that would otherwise be contained by the `<add>` element, cf. [ch. 9](HB3_ch9.xml).`"del"`For contents that would otherwise be contained by the `<del>` element, cf. [ch. 9](HB3_ch9.xml).`"sic"`For contents that would otherwise be contained by the `<sic>` element, cf. [ch. 9](HB3_ch9.xml).`"corr"`For contents that would otherwise be contained by the `<corr>` element, cf. [ch. 9](HB3_ch9.xml).`"surplus"`For contents that would otherwise be contained by the `<surplus>` element, cf. [ch. 9](HB3_ch9.xml).`"supplied"`For contents that would otherwise be contained by the `<supplied>` element, cf. [ch. 9](HB3_ch9.xml).`"other"`For any other contents.`@spanTo`Specifies the end point of the text span, using values like:`"an1"`anchor 1`"an2"`anchor 2, etc.`<anchor/>`An empty element (milestone) which attaches an identifier to a point within a text.`@xml:id`Specifies the identifier corresponding to the one used in the `@spanTo` attribute of the preceding `<me:textSpan/>` element, using values like:`"an1"`anchor 1`"an2"`anchor 2, etc.
+
+| Elements & attributes | Explanation |
+|-----|-----|
+| `<me:textSpan/>` | A generic element to handle overlapping text structures. |
+| `@me:category` | Specifies the type of span, restricted to this list of values: |
+| `"gap"` | For contents that would otherwise be contained by the `<gap/>` element, cf. [ch. 8](HB3_ch8.xml). |
+| `"unclear"` | For contents that would otherwise be contained by the `<unclear>` element, cf. [ch. 8](HB3_ch8.xml). |
+| `"add"` | For contents that would otherwise be contained by the `<add>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"del"` | For contents that would otherwise be contained by the `<del>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"sic"` | For contents that would otherwise be contained by the `<sic>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"corr"` | For contents that would otherwise be contained by the `<corr>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"surplus"` | For contents that would otherwise be contained by the `<surplus>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"supplied"` | For contents that would otherwise be contained by the `<supplied>` element, cf. [ch. 9](HB3_ch9.xml). |
+| `"other"` | For any other contents. |
+| `@spanTo` | Specifies the end point of the text span, using values like: |
+| `"an1"` | anchor 1 |
+| `"an2"` | anchor 2, etc. |
+| `<anchor/>` | An empty element (milestone) which attaches an identifier to a point within a text. |
+| `@xml:id` | Specifies the identifier corresponding to the one used in the `@spanTo` attribute of the preceding `<me:textSpan/>` element, using values like: |
+| `"an1"` | anchor 1 |
+| `"an2"` | anchor 2, etc. |
+
 
 We will discuss an example of an overlapping structure in AM 673 b 4to (_Plácitusdrápa_ 1), as seen in ill. 16.1.
 
@@ -68,7 +89,13 @@ In these guidelines, we offer two solutions to the problem of overlapping struct
 The following approach is more sound from the point of view of an XML document, but creates extra tagging. The feature is encoded in a series of separate elements, linked together.
 
 In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the `@xml:id` attribute, and they are linked together using the following attributes:
-AttributesContents`@xml:id`Provides a unique identifier for the element bearing the attribute.`@next`Used at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature.`@prev`Used in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature.
+
+| Attributes | Contents |
+|-----|-----|
+| `@xml:id` | Provides a unique identifier for the element bearing the attribute. |
+| `@next` | Used at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature. |
+| `@prev` | Used in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature. |
+
 
 The two-word example above is encoded thus:
 ```xml
@@ -317,7 +344,13 @@ When double (or even triple) numbering of line beginnings is used in a transcrip
 In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the `<s>` element (dividing the text into sentences) or even one or more `<div>` elements (dividing the text into chapters). An extreme example is _Gylfaginning_, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like _Konungs skuggsjá_ and _Barlaams saga ok Jósafats_. In these and many other works, the standard `<q>` element will create conflicts with other and probably more important hierarchical divisions of the text.
 
 Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general `<milestone/>` element as a work-around. As stated in [ch. 3.11](HB3_ch3.xml#sec3.11) above, the `<milestone/>` element can be specified with the `@unit` and `@rend` attributes:
-Element and attributesObl/OptContents`<milestone/>`Marks any break in the transcription. Attributes include:`@unit`ObligatoryIndicates the type of break, such as `"turn"` (in dialogues) or more generally, `"segment"` or `"section"`.`@rendition`OptionalIndicates how the break should be rendered. In the case of dialogues, `"opening-quote"` and `"closing-quote"` are appropriate.
+
+| Element and attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<milestone/>` |  | Marks any break in the transcription. Attributes include: |
+| `@unit` | Obligatory | Indicates the type of break, such as `"turn"` (in dialogues) or more generally, `"segment"` or `"section"`. |
+| `@rendition` | Optional | Indicates how the break should be rendered. In the case of dialogues, `"opening-quote"` and `"closing-quote"` are appropriate. |
+
 
 As suggested in [ch. 3.11](HB3_ch3.xml#sec3.11) this would be a valid encoding:
 ```xml
@@ -356,7 +389,13 @@ The solution is dependent on the intended display of the text, of which there ar
 This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of `<unclear>` text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See [ch. 8.4.2](HB3_ch8.xml#sec8.4.2) above. If this kind of display is chosen, no additional encoding is needed.
 
 According to the display recommended in this handbook, this solution is appropriate for the following elements:
-ElementsDisplay`<gap/>`If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](HB3_ch8.xml#sec8.2.2).`<space/>`If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](HB3_ch8.xml#sec8.3.2).`<unclear>`By grey colouring, cf. [ch. 8.4.2](HB3_ch8.xml#sec8.4.2).
+
+| Elements | Display |
+|-----|-----|
+| `<gap/>` | If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](HB3_ch8.xml#sec8.2.2). |
+| `<space/>` | If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](HB3_ch8.xml#sec8.3.2). |
+| `<unclear>` | By grey colouring, cf. [ch. 8.4.2](HB3_ch8.xml#sec8.4.2). |
+
 
 
 
@@ -422,7 +461,14 @@ See the Menota archive, NRA 58C, f. 1r, col. A, l. 27, for a display of this enc
 This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the `@rendition` attribute with the `"first"`, `"middle"` and `"last"` values.
 
 According to the display recommended in this handbook, this solution is appropriate for the following elements:
-ElementsDisplay`<add>`By insertion signs, cf. [ch. 9.2.1.2](HB3_ch9.xml#sec9.2.1.2).`<del>`By vertical bars with quill, cf. [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2).`<supplied>`By square brackets or by open angle brackets, [ch. 9.3.1.3](HB3_ch9.xml#sec9.3.1.3).`<surplus>`By curly brackets, [ch. 9.3.2.2](HB3_ch9.xml#sec9.3.2.2).
+
+| Elements | Display |
+|-----|-----|
+| `<add>` | By insertion signs, cf. [ch. 9.2.1.2](HB3_ch9.xml#sec9.2.1.2). |
+| `<del>` | By vertical bars with quill, cf. [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2). |
+| `<supplied>` | By square brackets or by open angle brackets, [ch. 9.3.1.3](HB3_ch9.xml#sec9.3.1.3). |
+| `<surplus>` | By curly brackets, [ch. 9.3.2.2](HB3_ch9.xml#sec9.3.2.2). |
+
 
 In the next passage in fig 16.5, we can hardly read all the words. Beginning at the end of the next but last line, we can read
 <Quote>

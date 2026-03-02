@@ -269,12 +269,21 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 (a) Commonly used characters have a single description in Unicode. This applies to all
             base-line characters in the Latin alphabet.
-Glyph Encoding Code point Unicode descriptive name a`a``0061`LATIN SMALL LETTER A
+
+| Glyph  | Encoding  | Code point  | Unicode descriptive name  |
+|-----|-----|-----|-----|
+| a | `a` | `0061` | LATIN SMALL LETTER A |
+
 
 (b) Composite characters may be described in more than one way. Thus, an “a with acute
               accent” can be encoded as a combination of an “a” and a combining acute accent or
             as a single character, “a with acute accent”. Both descriptions are equivalent:
-Glyph Entity Code point Unicode descriptive name á`a + &combacute;``0061 + 0301`LATIN SMALL LETTER A + COMBINING ACUTE ACCENTá`&aacute;``00E1`LATIN SMALL LETTER A WITH ACUTE
+
+| Glyph  | Entity  | Code point  | Unicode descriptive name  |
+|-----|-----|-----|-----|
+| á | `a + &combacute;` | `0061 + 0301` | LATIN SMALL LETTER A + COMBINING ACUTE ACCENT |
+| á | `&aacute;` | `00E1` | LATIN SMALL LETTER A WITH ACUTE |
+
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
       Private Use Area (PUA), either as a character with its own codepoint or as a combination of
@@ -284,7 +293,11 @@ Glyph Entity Code point Unicode descriptive name á`a + &combacute;``0061 + 0301
       we have assigned it to a codepoint in the PUA, `EBAE`. This practice
             is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
             for the current recommendation.
-Glyph  Entity Code point Descriptive name `&kslonglig;``EBAE`LATIN SMALL LIGATURE K AND LONG S
+
+| Glyph  |  Entity  | Code point  | Descriptive name  |
+|-----|-----|-----|-----|
+|  | `&kslonglig;` | `EBAE` | LATIN SMALL LIGATURE K AND LONG S |
+
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
             should be borne in mind, however, that the great majority of characters _are_ defined in Unicode, and in many transcriptions the need for
@@ -341,7 +354,15 @@ In some cases, a character should be encoded as such. That kind of separate mark
             The TEI P5 Guidelines recommend the element
             `<c>` for this type of encoding, and we recommend using
             the attribute `@type` (and potential others) for further specification.
-Elements & attributesObl/OptExplanation`<c>`Contains an individual character.`@type`ObligatoryType of character. Suggested values:`"word"`The character is a full word.`"initial"`The character is an initial.`"hyphen"`The character is a hyphen.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<c>` |  | Contains an individual character. |
+| `@type` | Obligatory | Type of character. Suggested values: |
+| `"word"` |  | The character is a full word. |
+| `"initial"` |  | The character is an initial. |
+| `"hyphen"` |  | The character is a hyphen. |
+
 
 A character should, for instance, be encoded as such when it forms a word in itself
             instead of merely being part of a larger word. This can be the case if a character is 
@@ -393,7 +414,18 @@ Finally, hypens – where they occur in manuscripts – are encoded with
 
 The fundamental concept of the word is discussed in [ch. 3.6](HB3_ch3.xml#sec3.6) above, and in [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
             of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
-Elements & attributesObl/OptExplanation`<w>`Contains an individual word.`@lemma`OptionalStates the lexical citation form of a word.`<m>`Contains a morpheme, i.e. a part of a word.`@baseForm`OptionalStates the base form of a morpheme.`<seg>`Groups one or more segments of text, e.g. words.`@type`OptionalStates the type of segmentation. Suggested values:`"nb"`No break`"enc"`Enclitic
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<w>` |  | Contains an individual word. |
+| `@lemma` | Optional | States the lexical citation form of a word. |
+| `<m>` |  | Contains a morpheme, i.e. a part of a word. |
+| `@baseForm` | Optional | States the base form of a morpheme. |
+| `<seg>` |  | Groups one or more segments of text, e.g. words. |
+| `@type` | Optional | States the type of segmentation. Suggested values: |
+| `"nb"` |  | No break |
+| `"enc"` |  | Enclitic |
+
 
 As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a clearly
             identifiable space between each word. This obviously facilitates the work for the
@@ -627,8 +659,16 @@ Having introduced elements for the encoding of individual characters and words, 
           encode punctuation marks on more than one level of representation, such as the three levels 
           `<me:facs>`, `<me:dipl>` and `<me:norm>` introduced in 
           [ch. 4](HB3_ch4.xml) above.
-ElementsExplanation`<pc>`Contains a punctuation mark.`<me:facs>`Contains a reading on a facsimile level.`<me:dipl>`Contains a reading on a diplomatic level.`<me:norm>`Contains a reading on a normalised level.`<choice>`Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and
-              `<me:norm>`.
+
+| Elements | Explanation |
+|-----|-----|
+| `<pc>` | Contains a punctuation mark. |
+| `<me:facs>` | Contains a reading on a facsimile level. |
+| `<me:dipl>` | Contains a reading on a diplomatic level. |
+| `<me:norm>` | Contains a reading on a normalised level. |
+| `<choice>` | Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and
+              `<me:norm>`. |
+
 
 Note the prefix “me:” which indicates that these elements
           belong to the Menota namespace and are not part of the elements defined in TEI P5 Guidelines. See
@@ -950,7 +990,17 @@ When there is no hyphen, we do not think it is necessary to add a hyphen in the 
           element. A hyphen can then be supplied by the stylesheet at one or more levels, based on the
           position of the `<lb/>` element within a `<w>` element. We suggest that a missing hyphen should not be
           displayed on the facsimile level, but on the diplomatic and normalised levels.
-Elements & attributesObl/OptExplanation`<c>`Contains a character.`@type`ObligatoryStates the type of character. Obligatory when used to encode a hyphen in the margin. Recommended value:`"hyphen"`States that there is a hyphen in the margin of the manuscript.`@resp`OptionalStates who is responsible for the hyphenation. Suggested values:`"scribe"`The scribe of the manuscript.`"mainscribe"`The main scribe of the manuscript (if more than one).`"laterscribe"`A later scribe.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<c>` |  | Contains a character. |
+| `@type` | Obligatory | States the type of character. Obligatory when used to encode a hyphen in the margin. Recommended value: |
+| `"hyphen"` |  | States that there is a hyphen in the margin of the manuscript. |
+| `@resp` | Optional | States who is responsible for the hyphenation. Suggested values: |
+| `"scribe"` |  | The scribe of the manuscript. |
+| `"mainscribe"` |  | The main scribe of the manuscript (if more than one). |
+| `"laterscribe"` |  | A later scribe. |
+
 
 If there is a hyphen in the margin of the line, we suggest this encoding:
 ```xml
@@ -1063,7 +1113,10 @@ Note that a line beginning will appear several times in a multi-level transcript
 The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook.
 
 In the **Menota archive**, hyphens in a manuscript will be displayed with a hyphen on all levels, while missing hyphens will not be displayed with any character on the `<me:facs>` level, but (as a help for the users) with a middot (`00B7`) on the `<me:dipl>` and `<me:norm>` levels. This is an approximate display:
-FacsDiplNorm10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
+
+| Facs | Dipl | Norm |
+|-----|-----|-----|
+| 10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
 
          11&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
 
@@ -1078,7 +1131,7 @@ FacsDiplNorm10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
          16&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
 
          17&ensp;maðꝛ gs laꞇa ſkera boð. en ſa
-       10&ensp;oc æro þæir þa imiskun konongs<br/>
+        | 10&ensp;oc æro þæir þa imiskun konongs<br/>
 
          11&ensp;oc suare þæir firi þat er at lo-<br/>
 
@@ -1092,7 +1145,7 @@ FacsDiplNorm10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
 
          16&ensp;skall lænðr maðr. æða vmboðs·<br/>
 
-         17&ensp;maðr konongs lata skera boð. en sa10&ensp;oc eru þeir þá í miskunn konungs.<br/>
+         17&ensp;maðr konongs lata skera boð. en sa | 10&ensp;oc eru þeir þá í miskunn konungs.<br/>
 
          11&ensp;Ok svari þeir fyrir þat er at lǫ-<br/>
 
@@ -1106,12 +1159,16 @@ FacsDiplNorm10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
 
          16&ensp;skal lendr maðr eða umboðs·<br/>
 
-         17&ensp;maðr konungs láta skera boð. En sá
+         17&ensp;maðr konungs láta skera boð. En sá |
+
 
 At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>`. However, since “umboðs maðr” has been analysed as one word, a middot is displayed on the `<me:dipl>` and `<me:norm>` levels.
 
 In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook, hyphens in a manuscript are displayed only on the `<me:facs>` level, since at this level, line beginnings are displayed according to the manuscript. On the `<me:dipl>` and `<me:norm>` levels, hyphens in the manuscript are not displayed, since the text is rendered in continuous lines on these levels. As for missing hyphenation, no hyphen is displayed on the `<me:facs>`, nor is any hyphen displayed on the `<me:dipl>` and `<me:norm>` levels. However, since the text is rendered in continuous lines on the latter two levels, words will be displayed without any breaks. See the examples below.
-Facs : approximate display using the Menota stylesheet in App. F10&ensp;&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
+
+| Facs : approximate display using the Menota stylesheet in App. F |
+|-----|
+| 10&ensp;&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
 
          11&ensp;&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
 
@@ -1126,17 +1183,26 @@ Facs : approximate display using the Menota stylesheet in App. F10&ensp;&ensp;oc
          16&ensp;&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
 
          17&ensp;&ensp;maðꝛ gs laꞇa ſkera boð. en ſa
-       
-Dipl : approximate display using the Menota stylesheet in App. Foc æro þæir þa imiskun konongs oc suare þæir firi þat er at logum aigu at suara<br/>
+        |
+
+
+| Dipl : approximate display using the Menota stylesheet in App. F |
+|-----|
+| oc æro þæir þa imiskun konongs oc suare þæir firi þat er at logum aigu at suara<br/>
 NU ef hærs er uon jlanð vart. þa skulu mænn vita vorð ræiða. þa skall lænðr maðr.<br/>
 
          æða vmboðsmaðr konongs lata skera boð. en sa
-       
-Norm : approximate display using the Menota stylesheet in App. Foc eru þeir þá í miskunn konungs. Ok svari þeir fyrir þat er at lǫgum eigu at svara.<br/>
+        |
+
+
+| Norm : approximate display using the Menota stylesheet in App. F |
+|-----|
+| oc eru þeir þá í miskunn konungs. Ok svari þeir fyrir þat er at lǫgum eigu at svara.<br/>
 Nú ef hers er ván í land várt, þá skulu menn vitavǫrð reiða. Þá skal lendr maðr<br/>
 
          eða umboðsmaðr konungs láta skera boð. En sá
-       
+        |
+
 
 When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>` element, it is displayed as a single word on the `<me:dipl>` and `<me:norm>` levels.
 ## 5.6 Direct speech and quotations
@@ -1151,8 +1217,16 @@ We recommend that direct speech is encoded
 Texts may also contain quotations from other sources. These are usually not indicated by 
           quotation marks, but might be displayed by italics or the like, or perhaps by a note. Stylesheets 
           will vary with respect to the display of quotations.
-Elements & attributesObl/OptExplanation`<q>`Direct speech. Contains a part of a dialogue.`@type`OptionalMay be used to indicate whether the offset passage is spoken or thought, or to 
-              characterise it more finely. Sample values:`"spoken"`The part of the dialogue is spoken.`"thought"`The part of the dialogue is thought.`<quote>`Contains a quotation from another source.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<q>` |  | Direct speech. Contains a part of a dialogue. |
+| `@type` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to 
+              characterise it more finely. Sample values: |
+| `"spoken"` |  | The part of the dialogue is spoken. |
+| `"thought"` |  | The part of the dialogue is thought. |
+| `<quote>` |  | Contains a quotation from another source. |
+
 
  Since the graphical form of quotation marks varies widely, we recommend encoding dialogue with the `<q>` element and leave it to the style sheet to decide which type of quotation mark to be displayed.
 
@@ -1260,7 +1334,18 @@ The source of the quotation may be given in a `<note>` element, as shown above.
 ## 5.7 Numerals
 
 We recommend that numerals are encoded using the `<num>` element, irrespective of their form – as Roman numerals, as Hindu-Aarabic numerals (i.e. our “modern” numerals) or spelt out in Latin characters:
-Elements & attributesObl/OptExplanation`<num>`Contains a numeral, including any delimiters.`@type`OptionalStates the type of numeral. Recommended values:`"cardinal"`A cardinal number, like “one”, “two”, “three”. . .`"ordinal"`An ordinal number, like “first”, “second”, “third”. . .`@val`OptionalStates the actual number in Hindu-Aarabic numerals. Suggested values:`"1"`The numeral has the value 1.`"2"`The numeral has the value 2.etc.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<num>` |  | Contains a numeral, including any delimiters. |
+| `@type` | Optional | States the type of numeral. Recommended values: |
+| `"cardinal"` |  | A cardinal number, like “one”, “two”, “three”. . . |
+| `"ordinal"` |  | An ordinal number, like “first”, “second”, “third”. . . |
+| `@val` | Optional | States the actual number in Hindu-Aarabic numerals. Suggested values: |
+| `"1"` |  | The numeral has the value 1. |
+| `"2"` |  | The numeral has the value 2. |
+|  |  | etc. |
+
 
 Roman numerals are typically delimited by a dot immediately
           before and after the number:
