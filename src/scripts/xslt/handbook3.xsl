@@ -121,20 +121,22 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="text()">
-        <xsl:variable name="text1">
+        <xsl:variable name="text1" select="replace(replace(., '\{', '\\{'), '\}', '\\}')"/>
+        <xsl:variable 
+            name="text2" 
+            select="replace(replace($text1, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"
+        />
+        <xsl:variable name="text3">
             <xsl:choose>
                 <xsl:when test="ancestor::tei:quote">
-                    <xsl:value-of select="replace(., '\s+', ' ')"/>
+                    <xsl:value-of select="replace($text2, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="."/>
+                    <xsl:value-of select="$text2"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="text2">
-            <xsl:value-of select="replace(replace($text1, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"/>
-        </xsl:variable>
-        <xsl:value-of select="$text2"/>
+        <xsl:value-of select="$text3"/>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>
