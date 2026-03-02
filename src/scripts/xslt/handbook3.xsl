@@ -225,7 +225,7 @@
         <xsl:variable name="text3" select="replace($text2, '&#x00a0;', '&amp;ensp;')"/>
         <xsl:variable name="text4">
             <xsl:choose>
-                <xsl:when test="ancestor::tei:quote">
+                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell">
                     <xsl:value-of select="replace($text3, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>

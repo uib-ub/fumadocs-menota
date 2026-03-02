@@ -666,8 +666,7 @@ Having introduced elements for the encoding of individual characters and words, 
 | `<me:facs>` | Contains a reading on a facsimile level. |
 | `<me:dipl>` | Contains a reading on a diplomatic level. |
 | `<me:norm>` | Contains a reading on a normalised level. |
-| `<choice>` | Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and
-              `<me:norm>`. |
+| `<choice>` | Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and `<me:norm>`. |
 
 
 Note the prefix “me:” which indicates that these elements
@@ -1117,49 +1116,27 @@ In the **Menota archive**, hyphens in a manuscript will be displayed with a hyph
 | Facs | Dipl | Norm |
 |-----|-----|-----|
 | 10&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
-
-         11&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
-
-         12&ensp;gum æıgu aꞇ ſuara<br/>
-
-         13&ensp;NU eꝼ hærs er<br/>
-
-         14&ensp;uon ȷlanð varꞇ. þa ſkulu<br/>
-
-         15&ensp;mænn víꞇa voꝛð ræíða. þa<br/>
-
-         16&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
-
-         17&ensp;maðꝛ gs laꞇa ſkera boð. en ſa
-        | 10&ensp;oc æro þæir þa imiskun konongs<br/>
-
-         11&ensp;oc suare þæir firi þat er at lo-<br/>
-
-         12&ensp;gum æigu at suara<br/>
-
-         13&ensp;NU ef hærs er<br/>
-
-         14&ensp;uon jlanð vart. þa skulu<br/>
-
-         15&ensp;mænn vita vorð ræiða. þa<br/>
-
-         16&ensp;skall lænðr maðr. æða vmboðs·<br/>
-
-         17&ensp;maðr konongs lata skera boð. en sa | 10&ensp;oc eru þeir þá í miskunn konungs.<br/>
-
-         11&ensp;Ok svari þeir fyrir þat er at lǫ-<br/>
-
-         12&ensp;gum eigu at svara.<br/>
-
-         13&ensp;Nú ef hers er<br/>
-
-         14&ensp;ván í land várt, þá skulu<br/>
-
-         15&ensp;menn vitavǫrð reiða. Þá<br/>
-
-         16&ensp;skal lendr maðr eða umboðs·<br/>
-
-         17&ensp;maðr konungs láta skera boð. En sá |
+ 11&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
+ 12&ensp;gum æıgu aꞇ ſuara<br/>
+ 13&ensp;NU eꝼ hærs er<br/>
+ 14&ensp;uon ȷlanð varꞇ. þa ſkulu<br/>
+ 15&ensp;mænn víꞇa voꝛð ræíða. þa<br/>
+ 16&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
+ 17&ensp;maðꝛ gs laꞇa ſkera boð. en ſa  | 10&ensp;oc æro þæir þa imiskun konongs<br/>
+ 11&ensp;oc suare þæir firi þat er at lo-<br/>
+ 12&ensp;gum æigu at suara<br/>
+ 13&ensp;NU ef hærs er<br/>
+ 14&ensp;uon jlanð vart. þa skulu<br/>
+ 15&ensp;mænn vita vorð ræiða. þa<br/>
+ 16&ensp;skall lænðr maðr. æða vmboðs·<br/>
+ 17&ensp;maðr konongs lata skera boð. en sa | 10&ensp;oc eru þeir þá í miskunn konungs.<br/>
+ 11&ensp;Ok svari þeir fyrir þat er at lǫ-<br/>
+ 12&ensp;gum eigu at svara.<br/>
+ 13&ensp;Nú ef hers er<br/>
+ 14&ensp;ván í land várt, þá skulu<br/>
+ 15&ensp;menn vitavǫrð reiða. Þá<br/>
+ 16&ensp;skal lendr maðr eða umboðs·<br/>
+ 17&ensp;maðr konungs láta skera boð. En sá |
 
 
 At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>`. However, since “umboðs maðr” has been analysed as one word, a middot is displayed on the `<me:dipl>` and `<me:norm>` levels.
@@ -1169,39 +1146,27 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 | Facs : approximate display using the Menota stylesheet in App. F |
 |-----|
 | 10&ensp;&ensp;oc æro þæír þa ȷmıſkun konongs<br/>
-
-         11&ensp;&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
-
-         12&ensp;&ensp;gum æıgu aꞇ ſuara<br/>
-
-         13&ensp;&ensp;NU eꝼ hærs er<br/>
-
-         14&ensp;&ensp;uon ȷlanð varꞇ. þa ſkulu<br/>
-
-         15&ensp;&ensp;mænn víꞇa voꝛð ræíða. þa<br/>
-
-         16&ensp;&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
-
-         17&ensp;&ensp;maðꝛ gs laꞇa ſkera boð. en ſa
-        |
+ 11&ensp;&ensp;oc ſuare þæír ꝼírí þat er aꞇ lo-<br/>
+ 12&ensp;&ensp;gum æıgu aꞇ ſuara<br/>
+ 13&ensp;&ensp;NU eꝼ hærs er<br/>
+ 14&ensp;&ensp;uon ȷlanð varꞇ. þa ſkulu<br/>
+ 15&ensp;&ensp;mænn víꞇa voꝛð ræíða. þa<br/>
+ 16&ensp;&ensp;ſkall lænðꝛ maðꝛ. æða vmboðs<br/>
+ 17&ensp;&ensp;maðꝛ gs laꞇa ſkera boð. en ſa  |
 
 
 | Dipl : approximate display using the Menota stylesheet in App. F |
 |-----|
 | oc æro þæir þa imiskun konongs oc suare þæir firi þat er at logum aigu at suara<br/>
 NU ef hærs er uon jlanð vart. þa skulu mænn vita vorð ræiða. þa skall lænðr maðr.<br/>
-
-         æða vmboðsmaðr konongs lata skera boð. en sa
-        |
+ æða vmboðsmaðr konongs lata skera boð. en sa  |
 
 
 | Norm : approximate display using the Menota stylesheet in App. F |
 |-----|
 | oc eru þeir þá í miskunn konungs. Ok svari þeir fyrir þat er at lǫgum eigu at svara.<br/>
 Nú ef hers er ván í land várt, þá skulu menn vitavǫrð reiða. Þá skal lendr maðr<br/>
-
-         eða umboðsmaðr konungs láta skera boð. En sá
-        |
+ eða umboðsmaðr konungs láta skera boð. En sá  |
 
 
 When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>` element, it is displayed as a single word on the `<me:dipl>` and `<me:norm>` levels.
@@ -1221,8 +1186,7 @@ Texts may also contain quotations from other sources. These are usually not indi
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<q>` |  | Direct speech. Contains a part of a dialogue. |
-| `@type` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to 
-              characterise it more finely. Sample values: |
+| `@type` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: |
 | `"spoken"` |  | The part of the dialogue is spoken. |
 | `"thought"` |  | The part of the dialogue is thought. |
 | `<quote>` |  | Contains a quotation from another source. |

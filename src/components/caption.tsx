@@ -3,7 +3,7 @@ export default function Caption({ title, children }: {
     children: React.ReactNode 
 }) {
     return (
-        <div className="-mt-5 italic">
+        <div className="-mt-5 -indent-10 pl-10 italic">
             <p className="[&_em]:not-italic">
                 <strong className="not-italic">{title}</strong>
                 {children}

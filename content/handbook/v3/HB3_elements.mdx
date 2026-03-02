@@ -35,352 +35,94 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<abbr>` |  | Abbreviation. Contains an abbreviation of any sort in the manuscript, often 
-					    used in conjunction with the `<am>` element.
-					    In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using only 
-					    the `<am>` element for abbreviations (see `<am>` below). | [ch. 6.1](HB3_ch6.xml#sec6.1). |
-| `<accMat>` |  | Accompanying material. Description and/or transcription of any material not originally part of the 
-						  manuscript but bound with it or otherwise accompanying it. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3),
-							[14.3.4](HB3_ch14.xml#sec14.3.4).
-						 |
+| `<abbr>` |  | Abbreviation. Contains an abbreviation of any sort in the manuscript, often used in conjunction with the `<am>` element. In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using only the `<am>` element for abbreviations (see `<am>` below). | [ch. 6.1](HB3_ch6.xml#sec6.1). |
+| `<accMat>` |  | Accompanying material. Description and/or transcription of any material not originally part of the manuscript but bound with it or otherwise accompanying it. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4).  |
 | `<acquisition>` |  | Describes when and how the manuscript was acquired by its current owner or holding institution. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
-| `<add>` |  | Addition. Contains characters, words or phrases added to the manuscript text or 
-							in the margins of the manuscript by the scribe, an annotator or a corrector. | [ch. 6.5.2](HB3_ch6.xml#sec6.5.2),
-							[9.2.1](HB3_ch9.xml#sec9.2.1),
-							[9.2.2.1](HB3_ch9.xml#sec9.2.2.1),
-					  	[9.2.2.2](HB3_ch9.xml#sec9.2.2.2),
-					  	[9.2.2.3](HB3_ch9.xml#sec9.2.2.3),
-							[9.2.4](HB3_ch9.xml#sec9.2.4),
-							[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-							[16.2](HB3_ch16.xml#sec16.2),
-							[16.5.2](HB3_ch16.xml#sec16.5.2).
-						 |
-| `@type` | Optional | Indicates the type of addition made. If it is a scribal supplying of text, the value would be `"supplement"`, if it is a scribal gloss, the value would be `"gloss"`.
-						 |
-| `@place` | Obligatory | Indicates where the addition is made. Suggested values include: 
-							`"supralinear"`, `"inline"`, `"infralinear"` and `"margin"`.
-						 |  |
-| `@hand` | Optional | Signifies the scribe who made the addition. Sample values: 
-							`"scribe"`, `"mainscribe"`, `"laterscribe"`.
-						 |
-| `@rendition` | Optional | If an addition has a structural overlap with two or more `<w>` elements, we 
-						  suggest using this attribute with the
-						  `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in 
-						  [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).
-						 |  |
-| `<additional>` |  | Groups other information about the manuscript, in particular,
-							administrative information 
-							relating to its availability, custodial history, surrogates and so on. | [ch. 14.3](HB3_ch14.xml#sec14.3),
-							[14.3.2](HB3_ch14.xml#sec14.3.2),
-							[14.3.5](HB3_ch14.xml#sec14.3.5).
-						 |
-| `<additions>` |  | Lists or describes any marginalia or other additions to 
-							the manuscript which may be considered of interest or importance. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3),
-							[14.3.4](HB3_ch14.xml#sec14.3.4).
-						 |
-| `<addName>` |  | An additional name of a person. See `<forename>` and `<surname>` below. | [ch. 12.2](HB3_ch12.xml#sec12.2),
-							[12.2.1](HB3_ch12.xml#sec12.2.1),
-							[12.2.3](HB3_ch12.xml#sec12.2.3),
-							[14.2](HB3_ch14.xml#sec14.2).
-						 |
-| `@type` | Optional | Indicates the type of name. 
-							Sample values: `"epithet"`, `"metronym"`, 
-							`"mythological"`, `"nickname"`, `"patronym"`. |  |
-| `<addSpan/>` |  | Beginning of a span of additional text. This is a counterpart to the `<add>` element. 
-					    It is an empty element and
-					    can be used when the addition crosses structural divisions. The use of `<addSpan/>` is deprecated in this handbook. In [ch. 16.2](HB3_ch16.xml#sec16.2), 
-					    we suggest another way of encoding these cases. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-							[16.2](HB3_ch16.xml#sec16.2).
-						 |
-| `<adminInfo>` |  | Administrative information. Contains information pertaining to the curation and 
-							management of the manuscript. Sub-element of `<additional>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5).
-						 |
-| `<altIdentifier>` |  | Alternative identifier. Contains an alternative, structured identifier of a manuscript, 
-							such as a catalogue number or former shelfmark. Sub-element of
-						`<msIdentifier>`. | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1).
-						 |
-| `<am>` |  | Abbreviation marker. Contains the abbreviation marker used in the manuscript, making 
-					    it clear that this marker is an abbreviation sign, not an ordinary character. See also `<ex>` below. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-							[4.5](HB3_ch4.xml#sec4.5),
-							[5.2.1](HB3_ch5.xml#sec5.2.1),
-							[5.2.2](HB3_ch5.xml#sec5.2.2),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[6.1](HB3_ch6.xml#sec6.1),
-							[6.3.8](HB3_ch6.xml#sec6.3.8),
-							[6.5.2](HB3_ch6.xml#sec6.5.2),
-							[6.5.8](HB3_ch6.xml#sec6.5.8).
-						 |
+| `<add>` |  | Addition. Contains characters, words or phrases added to the manuscript text or in the margins of the manuscript by the scribe, an annotator or a corrector. | [ch. 6.5.2](HB3_ch6.xml#sec6.5.2), [9.2.1](HB3_ch9.xml#sec9.2.1), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.2.2.2](HB3_ch9.xml#sec9.2.2.2), [9.2.2.3](HB3_ch9.xml#sec9.2.2.3), [9.2.4](HB3_ch9.xml#sec9.2.4), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [16.2](HB3_ch16.xml#sec16.2), [16.5.2](HB3_ch16.xml#sec16.5.2).  |
+| `@type` | Optional | Indicates the type of addition made. If it is a scribal supplying of text, the value would be `"supplement"`, if it is a scribal gloss, the value would be `"gloss"`.  |
+| `@place` | Obligatory | Indicates where the addition is made. Suggested values include: `"supralinear"`, `"inline"`, `"infralinear"` and `"margin"`.  |  |
+| `@hand` | Optional | Signifies the scribe who made the addition. Sample values: `"scribe"`, `"mainscribe"`, `"laterscribe"`.  |
+| `@rendition` | Optional | If an addition has a structural overlap with two or more `<w>` elements, we suggest using this attribute with the `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).  |  |
+| `<additional>` |  | Groups other information about the manuscript, in particular, administrative information relating to its availability, custodial history, surrogates and so on. | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5).  |
+| `<additions>` |  | Lists or describes any marginalia or other additions to the manuscript which may be considered of interest or importance. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4).  |
+| `<addName>` |  | An additional name of a person. See `<forename>` and `<surname>` below. | [ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [12.2.3](HB3_ch12.xml#sec12.2.3), [14.2](HB3_ch14.xml#sec14.2).  |
+| `@type` | Optional | Indicates the type of name. Sample values: `"epithet"`, `"metronym"`, `"mythological"`, `"nickname"`, `"patronym"`. |  |
+| `<addSpan/>` |  | Beginning of a span of additional text. This is a counterpart to the `<add>` element. It is an empty element and can be used when the addition crosses structural divisions. The use of `<addSpan/>` is deprecated in this handbook. In [ch. 16.2](HB3_ch16.xml#sec16.2), we suggest another way of encoding these cases. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [16.2](HB3_ch16.xml#sec16.2).  |
+| `<adminInfo>` |  | Administrative information. Contains information pertaining to the curation and management of the manuscript. Sub-element of `<additional>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5).  |
+| `<altIdentifier>` |  | Alternative identifier. Contains an alternative, structured identifier of a manuscript, such as a catalogue number or former shelfmark. Sub-element of `<msIdentifier>`. | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `<am>` |  | Abbreviation marker. Contains the abbreviation marker used in the manuscript, making it clear that this marker is an abbreviation sign, not an ordinary character. See also `<ex>` below. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [5.2.2](HB3_ch5.xml#sec5.2.2), [5.4.2](HB3_ch5.xml#sec5.4.2), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8), [6.5.2](HB3_ch6.xml#sec6.5.2), [6.5.8](HB3_ch6.xml#sec6.5.8).  |
 | `@me:type` | Optional | Specifies the type of abbreviation. |  |
-| `<anchor/>` |  | 
-							An empty element (milestone) which attaches an identifier to a 
-							point within a text. The element is used to specify the end of a span and
-							must be specified with the `@xml:id` attribute. | [ch. 16.2](HB3_ch16.xml#sec16.2),
-							[16.2.2](HB3_ch16.xml#sec16.2.2).
-						 |
-| `@xml:id` | Obligatory | Specifies the identifier corresponding to the one used in the 
-							`@spanTo` attribute of the preceding `<me:textSpan/>` 
-						  element. |  |
-| `<author>` |  | 
-							The TEI p5 Guidelines recommend that this element is included in the 
-							`<titleStmt>`. Since almost all Medieval Nordic texts are anonymous 
-							we believe that the `<author>` element usually is not required. However,
-						  it is relevant for the
-							encoding of names and bibliographical references in the `<teiHeader>`.
-						 | [ch. 2.3](HB3_ch2.xml#sec2.3),
-							[14.2.1](HB3_ch14.xml#sec14.2.1),
-							[14.3.2](HB3_ch14.xml#sec14.3.2).
-						 |
-| `<availability>` |  | A description of the conditions for the distribution and use of 
-							the text. | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4),
-							[14.3.5](HB3_ch14.xml#sec14.3.5).
-						 |
-| `@status` | Obligatory | The type of availability. Sample values: 
-							`"free"`, `"restricted"`, `"unknown"`.
-						 |  |
+| `<anchor/>` |  |  An empty element (milestone) which attaches an identifier to a point within a text. The element is used to specify the end of a span and must be specified with the `@xml:id` attribute. | [ch. 16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2).  |
+| `@xml:id` | Obligatory | Specifies the identifier corresponding to the one used in the `@spanTo` attribute of the preceding `<me:textSpan/>` element. |  |
+| `<author>` |  |  The TEI p5 Guidelines recommend that this element is included in the `<titleStmt>`. Since almost all Medieval Nordic texts are anonymous we believe that the `<author>` element usually is not required. However, it is relevant for the encoding of names and bibliographical references in the `<teiHeader>`.  | [ch. 2.3](HB3_ch2.xml#sec2.3), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.2](HB3_ch14.xml#sec14.3.2).  |
+| `<availability>` |  | A description of the conditions for the distribution and use of the text. | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4), [14.3.5](HB3_ch14.xml#sec14.3.5).  |
+| `@status` | Obligatory | The type of availability. Sample values: `"free"`, `"restricted"`, `"unknown"`.  |  |
 
 
 **B**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<back>` |  | 
-							Back matter. Contains any appendices and the like following the main body of a text.						
-							Within the `<text>` element, the `<back>` element will be placed after the `<body>` element.
-						 | [ch. 3.2](HB3_ch3.xml#sec3.2).
-						 |
-| `<bibl>` |  | Bibliographic citation. Used for each bibliographic reference. 
-					  	It can be specified with an `@xml:id` attribute (exemplified in [ch. 14](HB3_ch14.xml)) 
-					  	or a `@me:ref` attribute (exemplified in [ch. 15](HB3_ch15.xml)).
-						
-						 | [ch. 14.3](HB3_ch14.xml#sec14.3),
-							[14.3.2](HB3_ch14.xml#sec14.3.2),
-							[14.3.5](HB3_ch14.xml#sec14.3.5),
-							[14.3.6](HB3_ch14.xml#sec14.3.6),
-							[15.1](HB3_ch15.xml#sec15.1),
-							[15.4.1](HB3_ch15.xml#sec15.4.1).
-						 |
-| `@me:ref` | Optional | Identifies the work cited (as exemplified in [ch. 15](HB3_ch15.xml)).
-						 |  |
-| `@xml:id` | Optional | Identifies the work cited (as exemplified in [ch. 14](HB3_ch14.xml)).
-						 |  |
-| `<biblStruct>` |  | Structured bibliographic citation. In this element, only bibliographic 
-							sub-elements appear and in a specified order.
-						 | [ch. 14.3](HB3_ch14.xml#sec14.3).
-						 |
-| `<binding>` |  | Contains a description of the state of the present 
-							as well as potential former bindings of a manuscript (given either as a series of paragraphs or as 
-							one or more distinct `<binding>` elements. Sub-element of `<bindingDesc>`.
-						 | [ch. 14.3](HB3_ch14.xml#sec14.3).
-						 |
-| `<bindingDesc>` |  | Binding description. Describes the present and former bindings of a manuscript or other object, 
-							either as a series of paragraphs, `<p>`, or as a series of distinct `<binding>` elements.
-						 | [ch. 14.3](HB3_ch14.xml#sec14.3).
-						 |
-| `<body>` |  | The main body of the text. This element is required
-						in any TEI conformant document. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-							[3.1.1](HB3_ch3.xml#sec3.1.1),
-							[3.2](HB3_ch3.xml#sec3.2),
-							[3.2.1](HB3_ch3.xml#sec3.2.1),
-							[3.3](HB3_ch3.xml#sec3.3),
-							[7.1](HB3_ch7.xml#sec7.1).
-						 |
+| `<back>` |  |  Back matter. Contains any appendices and the like following the main body of a text. Within the `<text>` element, the `<back>` element will be placed after the `<body>` element.  | [ch. 3.2](HB3_ch3.xml#sec3.2).  |
+| `<bibl>` |  | Bibliographic citation. Used for each bibliographic reference. It can be specified with an `@xml:id` attribute (exemplified in [ch. 14](HB3_ch14.xml)) or a `@me:ref` attribute (exemplified in [ch. 15](HB3_ch15.xml)).  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5), [14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1), [15.4.1](HB3_ch15.xml#sec15.4.1).  |
+| `@me:ref` | Optional | Identifies the work cited (as exemplified in [ch. 15](HB3_ch15.xml)).  |  |
+| `@xml:id` | Optional | Identifies the work cited (as exemplified in [ch. 14](HB3_ch14.xml)).  |  |
+| `<biblStruct>` |  | Structured bibliographic citation. In this element, only bibliographic sub-elements appear and in a specified order.  | [ch. 14.3](HB3_ch14.xml#sec14.3).  |
+| `<binding>` |  | Contains a description of the state of the present as well as potential former bindings of a manuscript (given either as a series of paragraphs or as one or more distinct `<binding>` elements. Sub-element of `<bindingDesc>`.  | [ch. 14.3](HB3_ch14.xml#sec14.3).  |
+| `<bindingDesc>` |  | Binding description. Describes the present and former bindings of a manuscript or other object, either as a series of paragraphs, `<p>`, or as a series of distinct `<binding>` elements.  | [ch. 14.3](HB3_ch14.xml#sec14.3).  |
+| `<body>` |  | The main body of the text. This element is required in any TEI conformant document. | [ch. 2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.2](HB3_ch3.xml#sec3.2), [3.2.1](HB3_ch3.xml#sec3.2.1), [3.3](HB3_ch3.xml#sec3.3), [7.1](HB3_ch7.xml#sec7.1).  |
 
 
 **C**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<c>` |  | Any character, typically occupying a separate place on the base line of a manuscript. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-							[3.10](HB3_ch3.xml#sec3.10),
-							[5.1](HB3_ch5.xml#sec5.1),
-							[5.2.3](HB3_ch5.xml#sec5.2.3),
-							[7.3](HB3_ch7.xml#sec7.3),
-							[7.3.1](HB3_ch7.xml#sec7.3.1),
-							[7.3.2](HB3_ch7.xml#sec7.3.2),
-							[7.3.3](HB3_ch7.xml#sec7.3.3),
-							[7.3.4](HB3_ch7.xml#sec7.3.4).
-						 |
-| `@type` | Obligatory | States the type of character. Sample values: `"word"` and 
-							`"initial"`.
-							If an initial is omitted or missing, this can be indicated by the value `"noInitial"`, 
-						  even though this might seem somewhat redundant 
-							if other mark-up such as `<space/>` or `<gap/>` is present. However, it has the 
-							advantage that, for instance, the subtype and the intended size of the missing initial may be 
-							encoded and thus searched for.
-						 |  |
-| `@rend` | Optional | 
-							Describes the form and kind of decoration found in or around the initial, indicating both the way in which 
-							an initial is drawn and the main means of decoration/ornamentation.
-							The attribute can take several values (in no specific order) that are simply seperated by white space.
-							Sample values: `"historiated"`, `"foliate"`,`"penFlourish"`,
-							`"penwork"`, `"interlaced"`, `"puzzle"`, `"zoomorphic"`, `"dragon"`,
-							`"inhabited"`, `"lombard"`, `"versal"`, `"colourStroked"`, `"guideLetter"`,
-							`"other"` (anything else).
-						 |  |
-| `@resp` | Optional | States who is responsible for the hyphenation, when `@type` is `"hyphen"`. Sample values: 
-							`"scribe"`, `"mainscribe"`, `"laterscribe"`, or, if several scribes are identified in
-							the header, `"#h2"`, `"#h3"`, `"#h4"`, and so on. |  |
-| `@style` | Optional | Indicates the size of an initial, using positional values like `"u"`, `"d"`, `"mu"` 
-					    and `"md"`, and the colour of an initial using colour names such as `"cRed"` or hexadecimal 
-					    CSS colour codes, such as `"c#FF0000"`. For details, see [ch. 7.3.3](HB3_ch7.xml#sec7.3.3)
-					    and [7.3.4](HB3_ch7.xml#sec7.3.4).
-						 |  |
-| `@subtype` | Optional | Indicates the type of the initial, e.g. whether it is a text initial or a sentence initial. 
-							Sample values: `"opening"`,
-							`"text"`, `"para"`, `"littNot"` (for <em>littera notabilior</em> 
-							or sentence initial)
-							as well as `"major"` and `"minor"`.
-						 |  |
-| `<cb/>` |  | Column beginning. An empty element which marks the beginning of a new column 
-              of a text on a multi-column page. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-          		[3.8](HB3_ch3.xml#sec3.8),
-          		[3.9](HB3_ch3.xml#sec3.9),
-          		[3.12.1](HB3_ch3.xml#sec3.12.1),
-          		[3.12.2](HB3_ch3.xml#sec3.12.2),
-          		[4.6.3](HB3_ch4.xml#sec4.6.3),
-          		[9.2.1.1](HB3_ch9.xml#sec9.2.1.1),
-          		[16.1](HB3_ch16.xml#sec16.1).
-          	 |
-| `@ed` | Obligatory | Specifies what kind of source the column beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can 
-              also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"`
-              for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_).
-              Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the columns of a manuscript 
-              as well as to the columns of one or more editions. For texts to be displayed in the Menota archive, each `<cb/>` element must 
-              have at least one `@ed` attribute with the `"ms"` value, and a `@n` attribute with the number of the  column. |  |
+| `<c>` |  | Any character, typically occupying a separate place on the base line of a manuscript. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.10](HB3_ch3.xml#sec3.10), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [7.3](HB3_ch7.xml#sec7.3), [7.3.1](HB3_ch7.xml#sec7.3.1), [7.3.2](HB3_ch7.xml#sec7.3.2), [7.3.3](HB3_ch7.xml#sec7.3.3), [7.3.4](HB3_ch7.xml#sec7.3.4).  |
+| `@type` | Obligatory | States the type of character. Sample values: `"word"` and `"initial"`. If an initial is omitted or missing, this can be indicated by the value `"noInitial"`, even though this might seem somewhat redundant if other mark-up such as `<space/>` or `<gap/>` is present. However, it has the advantage that, for instance, the subtype and the intended size of the missing initial may be encoded and thus searched for.  |  |
+| `@rend` | Optional |  Describes the form and kind of decoration found in or around the initial, indicating both the way in which an initial is drawn and the main means of decoration/ornamentation. The attribute can take several values (in no specific order) that are simply seperated by white space. Sample values: `"historiated"`, `"foliate"`,`"penFlourish"`, `"penwork"`, `"interlaced"`, `"puzzle"`, `"zoomorphic"`, `"dragon"`, `"inhabited"`, `"lombard"`, `"versal"`, `"colourStroked"`, `"guideLetter"`, `"other"` (anything else).  |  |
+| `@resp` | Optional | States who is responsible for the hyphenation, when `@type` is `"hyphen"`. Sample values: `"scribe"`, `"mainscribe"`, `"laterscribe"`, or, if several scribes are identified in the header, `"#h2"`, `"#h3"`, `"#h4"`, and so on. |  |
+| `@style` | Optional | Indicates the size of an initial, using positional values like `"u"`, `"d"`, `"mu"` and `"md"`, and the colour of an initial using colour names such as `"cRed"` or hexadecimal CSS colour codes, such as `"c#FF0000"`. For details, see [ch. 7.3.3](HB3_ch7.xml#sec7.3.3) and [7.3.4](HB3_ch7.xml#sec7.3.4).  |  |
+| `@subtype` | Optional | Indicates the type of the initial, e.g. whether it is a text initial or a sentence initial. Sample values: `"opening"`, `"text"`, `"para"`, `"littNot"` (for <em>littera notabilior</em> or sentence initial) as well as `"major"` and `"minor"`.  |  |
+| `<cb/>` |  | Column beginning. An empty element which marks the beginning of a new column of a text on a multi-column page. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [3.12.1](HB3_ch3.xml#sec3.12.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1).  |
+| `@ed` | Obligatory | Specifies what kind of source the column beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the columns of a manuscript as well as to the columns of one or more editions. For texts to be displayed in the Menota archive, each `<cb/>` element must have at least one `@ed` attribute with the `"ms"` value, and a `@n` attribute with the number of the column. |  |
 | `@n` | Obligatory | Specifies the number of the column in manuscripts with two or more columns. Recommended values: `"A"` (first column), `"B"` (second column). We are not familiar with Medieval Nordic manuscripts having three or more columns. |  |
-| `<change>` |  | 
-            	Documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. | [ch. 14.6](HB3_ch14.xml#sec14.6).
-          	 |
-| `<charDecl>` |  | 
-							Character declarations. Provides information about nonstandard characters and glyphs. Sub-element of `<encodingDesc>`.
-						  Briefly discussed in [ch. 2](HB3_ch2.xml), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](HB3_ch5.xml#sec5.2).
-						 | [ch. 2.5](HB3_ch2.xml#sec2.5).
-						 |
-| `<choice>` |  | Groups a number of alternative encodings for the same point in the text, such 
-          		as `<me:facs>`, `<me:dipl>` and `<me:norm>`. | [ch. 4.4](HB3_ch4.xml#sec4.4),
-          		[4.6](HB3_ch4.xml#sec4.6),
-          		[5.4](HB3_ch5.xml#sec5.4),
-          		[9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-          		[9.3.3](HB3_ch9.xml#sec9.3.3).
-          	 |
-| `<collation>` |  | 
-            	Contains a description of how the leaves, bifolia, or similar objects are physically arranged.
-            	 | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).
-          	 |
-| `<collection>` |  | 
-          		Contains the name of a collection of manuscripts or other objects, not necessarily located within a single repository.
-          		 | [ch. 2.3](HB3_ch2.xml#sec2.3),
-          		[14.3.1](HB3_ch14.xml#sec14.3.1).
-          		 |
-| `<colophon>` |  | 
-							Contains the colophon of an item, i.e. a statement providing information 
-							regarding the date, place, agency, or reason for production of the manuscript or other object.
-							 | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2).
-						 |
-| `<condition>` |  | 
-            	Contains a description of the physical condition of the manuscript or object. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<corr>` |  | Contains the correct form of a passage apparently incorrect or inaccurate in the manuscript text. Usually accompanied by the `<sic>` element, in which the manuscript text is rendered as is.    
-             | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-            	[9.3.2](HB3_ch9.xml#sec9.3.2),
-            	[9.3.3](HB3_ch9.xml#sec9.3.3),
-            	[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-            	[9.4.1](HB3_ch9.xml#sec9.4.1).
-            	 |
+| `<change>` |  |  Documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. | [ch. 14.6](HB3_ch14.xml#sec14.6).  |
+| `<charDecl>` |  |  Character declarations. Provides information about nonstandard characters and glyphs. Sub-element of `<encodingDesc>`. Briefly discussed in [ch. 2](HB3_ch2.xml), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](HB3_ch5.xml#sec5.2).  | [ch. 2.5](HB3_ch2.xml#sec2.5).  |
+| `<choice>` |  | Groups a number of alternative encodings for the same point in the text, such as `<me:facs>`, `<me:dipl>` and `<me:norm>`. | [ch. 4.4](HB3_ch4.xml#sec4.4), [4.6](HB3_ch4.xml#sec4.6), [5.4](HB3_ch5.xml#sec5.4), [9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.3](HB3_ch9.xml#sec9.3.3).  |
+| `<collation>` |  |  Contains a description of how the leaves, bifolia, or similar objects are physically arranged.  | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `<collection>` |  |  Contains the name of a collection of manuscripts or other objects, not necessarily located within a single repository.  | [ch. 2.3](HB3_ch2.xml#sec2.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `<colophon>` |  |  Contains the colophon of an item, i.e. a statement providing information regarding the date, place, agency, or reason for production of the manuscript or other object.  | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2).  |
+| `<condition>` |  |  Contains a description of the physical condition of the manuscript or object. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<corr>` |  | Contains the correct form of a passage apparently incorrect or inaccurate in the manuscript text. Usually accompanied by the `<sic>` element, in which the manuscript text is rendered as is.  | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.3](HB3_ch9.xml#sec9.3.3), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [9.4.1](HB3_ch9.xml#sec9.4.1).  |
 | `@resp` | Obligatory | Indicates the individual responsible for the correction of the passage. |  |
 | `<correction>` |  | Specifies the level of quality control. Sub-element of `<editorialDecl>`. | [ch. 14.4](HB3_ch14.xml#sec14.4). |
-| `@status` | Optional | The degree of quality control. Recommended values: `"high"` (the text has been thoroughly checked and proofread),
-          		`"medium"` (the text has been checked at least once), `"low"` (the text has not been checked),
-          		`"unknown"` (the correction status of the text is unknown).
-          		However, if desired, further specification can be given in prose within a `<p>` element.
-          	 |  |
-| `<country>` |  | The contry where the manuscript is located. Sub-element of `<msIdentifier>`. 
-             | [ch. 12.3](HB3_ch12.xml#sec12.3),
-          		[14.3.1](HB3_ch14.xml#sec14.3.1).
-          		 |
-| `@key` | Optional | Provides an externally-defined means of identifying the 
-							entity (or entities) being named, using a coded value of some kind,
-							e.g. `"IS"` for Iceland, `"NO"` for Norway, `"SE"` for Sweden, 
-							`"DK"` for Denmark, and so on according to ISO 3166-1 alpha-2. |  |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or 
-              identity for the entity being named by means of one or more URIs. |  |
-| `<custEvent>` |  | Custodial event. Describes a single event during the custodial history of a manuscript or other object.
-          		 Information can be given on such matters as conservation, loans and exhibitions and so 
-          		on, either as a series of paragraphs or one or more dated `<custEvent>` elements. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5). |
-| `<custodialHist>` |  | Custodial history. This element contains information on such matters as conservation, loans and 
-          	  exhibitions and so on,  either as a series of `<p>` (paragraphs) or one or more dated `<custEvent>` elements. Sub-element of `<adminInfo>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5). |
+| `@status` | Optional | The degree of quality control. Recommended values: `"high"` (the text has been thoroughly checked and proofread), `"medium"` (the text has been checked at least once), `"low"` (the text has not been checked), `"unknown"` (the correction status of the text is unknown). However, if desired, further specification can be given in prose within a `<p>` element.  |  |
+| `<country>` |  | The contry where the manuscript is located. Sub-element of `<msIdentifier>`.  | [ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `@key` | Optional | Provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind, e.g. `"IS"` for Iceland, `"NO"` for Norway, `"SE"` for Sweden, `"DK"` for Denmark, and so on according to ISO 3166-1 alpha-2. |  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
+| `<custEvent>` |  | Custodial event. Describes a single event during the custodial history of a manuscript or other object. Information can be given on such matters as conservation, loans and exhibitions and so on, either as a series of paragraphs or one or more dated `<custEvent>` elements. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5). |
+| `<custodialHist>` |  | Custodial history. This element contains information on such matters as conservation, loans and exhibitions and so on, either as a series of `<p>` (paragraphs) or one or more dated `<custEvent>` elements. Sub-element of `<adminInfo>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5). |
 
 
 **D**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<damage>` |  | Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook.
-              In [ch. 8.2.1](HB3_ch8.xml#sec8.2.1), we recommend encoding damaged text by the `<gap/>` 
-              element, in which the `@reason` attribute can take the value `"damaged"`.
-             | [ch. 16.2](HB3_ch16.xml#sec16.2).
-          		 |
-| `<damageSpan/>` |  | Beginning of a span of damaged text. This is a TEI element which is a counterpart to the element `<damage>`, in the same way as `<addSpan/>` is a counterpart to the `<add>` element. The use of `<damageSpan/>` is deprecated in this handbook. As is the case with other “Span” elements, we recommend in [ch. 16.2](HB3_ch16.xml#sec16.2) another way of encoding these cases. | [ch. 16.2](HB3_ch16.xml#sec16.2).
-        		 |
-| `<date>` |  | The date for the publication of the present work (edition). | [ch. 7.2.5](HB3_ch7.xml#sec7.2.5),
-            	[14.2.4](HB3_ch14.xml#sec14.2.4),
-            	[14.6](HB3_ch14.xml#sec14.6).
-            	 |
+| `<damage>` |  | Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook. In [ch. 8.2.1](HB3_ch8.xml#sec8.2.1), we recommend encoding damaged text by the `<gap/>` element, in which the `@reason` attribute can take the value `"damaged"`.  | [ch. 16.2](HB3_ch16.xml#sec16.2).  |
+| `<damageSpan/>` |  | Beginning of a span of damaged text. This is a TEI element which is a counterpart to the element `<damage>`, in the same way as `<addSpan/>` is a counterpart to the `<add>` element. The use of `<damageSpan/>` is deprecated in this handbook. As is the case with other “Span” elements, we recommend in [ch. 16.2](HB3_ch16.xml#sec16.2) another way of encoding these cases. | [ch. 16.2](HB3_ch16.xml#sec16.2).  |
+| `<date>` |  | The date for the publication of the present work (edition). | [ch. 7.2.5](HB3_ch7.xml#sec7.2.5), [14.2.4](HB3_ch14.xml#sec14.2.4), [14.6](HB3_ch14.xml#sec14.6).  |
 | `@when` | Obligatory | Recommended value is a date in the format year-month-day, e.g. `"2019-10-15"`. |  |
-| `<decoDesc>` |  | 
-            	Decoration description. Contains a description of the decoration of a manuscript or other object, either as in paragraphs, `<p>`, 
-            	or as one or more `<decoNote>` elements. | [ch. 7.2](HB3_ch7.xml#sec7.2),
-            	[7.3.2](HB3_ch7.xml#sec7.3.2),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3).
-            	 |
-| `<decoNote>` |  | Note on decoration. Contains a note describing either a decorative component of a manuscript (e.g. a single illuminated initial) 
-          	  or a homogenous class of such components (e.g. sentence initials in general). | [ch. 7.2](HB3_ch7.xml#sec7.2),
-          		[7.2.1](HB3_ch7.xml#sec7.2.1),
-          		[14.3.3](HB3_ch14.xml#sec14.3.3).
-          	 |
-| `<del>` |  | Deletion. Describes any type of deletion made in the manuscript. | [ch. 8.2.1](HB3_ch8.xml#sec8.2.1),
-            	[9.2.2.1](HB3_ch9.xml#sec9.2.2.1),
-            	[9.2.2.2](HB3_ch9.xml#sec9.2.2.2),
-            	[9.2.4](HB3_ch9.xml#sec9.2.4),
-            	[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-            	[16.2](HB3_ch16.xml#sec16.2)[16.5.2](HB3_ch16.xml#sec16.5.2) |
-| `@hand` | Obligatory | Signifies the agent which made the deletion. Sample values: `"scribe"` (the scribe of the manuscript, indicating that there is a single scribe),
-          		`"mainscribe"` (the main scribe of the manuscript, indicating that there are more than one scribe),
-          		`"laterscribe"` (a later scribe, typically correcting the manuscript). |  |
-| `@rend` | Obligatory | Specifies the deletion, using any convenient typology. Sample values:
-            	`"overstrike"`, `"erasure"`, `"subpunction"`. |  |
-| `@rendition` | Optional | If a deletion has a structural overlap with two or more `<w>` elements, we suggest using this attribute with the
-        	    `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in 
-        	    [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).
-        	   |
-| `<delSpan/>` |  | Beginning of a span of deleted text. This is a counterpart to the `<del>` element. 
-        	    It is an empty element and can be used when the deletion crosses structural divisions. The use of `<delSpan/>` is deprecated in this handbook.
-        	    In [ch. 16.2](HB3_ch16.xml#sec.16.2), we suggest another way of encoding these cases. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-        			[16.2](HB3_ch16.xml#sec16.2).
-        		 |
+| `<decoDesc>` |  |  Decoration description. Contains a description of the decoration of a manuscript or other object, either as in paragraphs, `<p>`, or as one or more `<decoNote>` elements. | [ch. 7.2](HB3_ch7.xml#sec7.2), [7.3.2](HB3_ch7.xml#sec7.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `<decoNote>` |  | Note on decoration. Contains a note describing either a decorative component of a manuscript (e.g. a single illuminated initial) or a homogenous class of such components (e.g. sentence initials in general). | [ch. 7.2](HB3_ch7.xml#sec7.2), [7.2.1](HB3_ch7.xml#sec7.2.1), [14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `<del>` |  | Deletion. Describes any type of deletion made in the manuscript. | [ch. 8.2.1](HB3_ch8.xml#sec8.2.1), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.2.2.2](HB3_ch9.xml#sec9.2.2.2), [9.2.4](HB3_ch9.xml#sec9.2.4), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [16.2](HB3_ch16.xml#sec16.2)[16.5.2](HB3_ch16.xml#sec16.5.2) |
+| `@hand` | Obligatory | Signifies the agent which made the deletion. Sample values: `"scribe"` (the scribe of the manuscript, indicating that there is a single scribe), `"mainscribe"` (the main scribe of the manuscript, indicating that there are more than one scribe), `"laterscribe"` (a later scribe, typically correcting the manuscript). |  |
+| `@rend` | Obligatory | Specifies the deletion, using any convenient typology. Sample values: `"overstrike"`, `"erasure"`, `"subpunction"`. |  |
+| `@rendition` | Optional | If a deletion has a structural overlap with two or more `<w>` elements, we suggest using this attribute with the `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).  |
+| `<delSpan/>` |  | Beginning of a span of deleted text. This is a counterpart to the `<del>` element. It is an empty element and can be used when the deletion crosses structural divisions. The use of `<delSpan/>` is deprecated in this handbook. In [ch. 16.2](HB3_ch16.xml#sec.16.2), we suggest another way of encoding these cases. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [16.2](HB3_ch16.xml#sec16.2).  |
 | `<distributor>` |  | A reference to the distributor, e.g. Medieval Nordic Text Archive. | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4). |
-| `<div>` |  | Text division. Contains a subdivision of the front, body, or back of a text. | [ch. 1.4](HB3_ch1.xml#sec1.4),
-            	[2.3](HB3_ch2.xml#sec2.3),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.3](HB3_ch3.xml#sec3.3),
-            	[3.3.1](HB3_ch3.xml#sec3.3.1),
-            	[3.3.2](HB3_ch3.xml#sec3.3.2),
-            	[3.3.3](HB3_ch3.xml#sec3.3.3),
-            	[3.4](HB3_ch3.xml#sec3.4),
-            	[3.8](HB3_ch3.xml#sec3.8),
-            	[3.9](HB3_ch3.xml#sec3.9),
-            	[3.10](HB3_ch3.xml#sec3.10),
-            	[11.7](HB3_ch11.xml#sec11.7),
-            	[16.1](HB3_ch16.xml#sec16.1),
-            	[16.3](HB3_ch16.xml#sec16.3),
-            	[16.4](HB3_ch16.xml#sec16.4).
-             |
-| `@n` | Optional | Number. Sample values: `"1"`, `"2"`, `"3"`, or 
-							`"I"`, `"II"`, `"III"`, and so on. |  |
-| `@type` | Optional | Specifies the name conventionally given to the type of division. Sample values: `"chapter"`,  `"part"`,
-          		`"canto"`, `"stanza"`, `"couplet"`, `"work"` and`"text"`. If 
-          		attempting to represent the physical structure of the text, `"page"`, `"column"` and `"line"`
-          	may be used, but we recommend the empty elements `<pb/>`, `<cb/>` and `<lb/>` for this type of structure. 
-          	 |  |
+| `<div>` |  | Text division. Contains a subdivision of the front, body, or back of a text. | [ch. 1.4](HB3_ch1.xml#sec1.4), [2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.3](HB3_ch3.xml#sec3.3), [3.3.1](HB3_ch3.xml#sec3.3.1), [3.3.2](HB3_ch3.xml#sec3.3.2), [3.3.3](HB3_ch3.xml#sec3.3.3), [3.4](HB3_ch3.xml#sec3.4), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [3.10](HB3_ch3.xml#sec3.10), [11.7](HB3_ch11.xml#sec11.7), [16.1](HB3_ch16.xml#sec16.1), [16.3](HB3_ch16.xml#sec16.3), [16.4](HB3_ch16.xml#sec16.4).  |
+| `@n` | Optional | Number. Sample values: `"1"`, `"2"`, `"3"`, or `"I"`, `"II"`, `"III"`, and so on. |  |
+| `@type` | Optional | Specifies the name conventionally given to the type of division. Sample values: `"chapter"`, `"part"`, `"canto"`, `"stanza"`, `"couplet"`, `"work"` and`"text"`. If attempting to represent the physical structure of the text, `"page"`, `"column"` and `"line"` may be used, but we recommend the empty elements `<pb/>`, `<cb/>` and `<lb/>` for this type of structure.  |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
 
 
@@ -389,54 +131,20 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
 | `<edition>` |  | A description of the edition (i.e. version), typically by means of a number. | [ch. 14.2.2](HB3_ch14.xml#sec14.2.2). |
-| `@n` | Optional | The number of the edition. Sample values: `"1"`, `"2"`, `"3"` or, 
-              in decimal format, `"1.0"`, `"1.1"`, `"1.2"`, `"2.0"`, `"2.1"`, 
-              `"2.2"`, and so on. |  |
+| `@n` | Optional | The number of the edition. Sample values: `"1"`, `"2"`, `"3"` or, in decimal format, `"1.0"`, `"1.1"`, `"1.2"`, `"2.0"`, `"2.1"`, `"2.2"`, and so on. |  |
 | `@when` | Optional | Recommended value is a date in the format year-month-day, e.g. `"2019-10-15"`. |  |
 | `<editionStmt>` |  | Edition statement. Groups information relating to one edition of a text. | [ch. 14.2.2](HB3_ch14.xml#sec14.2.2). |
 | `<editor>` |  | The name of the (main) editor of the encoded work. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1). |
-| `@role` | Optional | The role of an editor, in particular in case the editor is an institution or project. For an individual editor the `@role` with the value `"person"` is
-            	optional, but may be inserted for clarity. If an institution is regarded as the editor, it should be specified by the attribute `@role` and value `"institution"`.
-            	If an `<editor>` does not have any `@role` attribute, it is assumed to describe a person. |  |
-| `<editorialDecl>` |  | Editorial practice declaration. Sub-element of `<encodingDesc>`. The `<editorialDecl>` element uses the 
-          	  `<correction>` element to specify the level of quality control, the `<normalization>` element to specify
-          		the level on which the text is encoded, and the `<interpretation>` element to 
-          		specify the amount of lexical and grammatical information in the encoded text.
-            	 | [ch. 14.4](HB3_ch14.xml#sec14.4).
-            	 |
-| `<encodingDesc>` |  | Encoding description. Documents the relationship between the electronic edition and the source it is based upon.
-        		 | [ch. 14.1](HB3_ch14.xml#sec14.1),
-            	[14.4](HB3_ch14.xml#sec14.4).
-            	 |
-| `<event>` |  | Contains data relating to any kind of significant event associated with a 
-        		  person, place, or organization.
-        		 | [ch. 15.1](HB3_ch15.xml#sec15.1).
-        		 |
-| `<ex>` |  | Editorial expansion. Contains an expansion made by the editor, corresponding to the abbreviation marker in the manuscript. See also `<am>` above. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-            	[4.3](HB3_ch4.xml#sec4.3),
-            	[4.5](HB3_ch4.xml#sec4.5),
-            	[5.2.1](HB3_ch5.xml#sec5.2.1),
-            	[6.1](HB3_ch6.xml#sec6.1),
-            	[6.3.8](HB3_ch6.xml#sec6.3.8).
-            	 |
-| `@me:type` | Optional | Specifies the type of expansion, using a convenient typology. Sample values: `"suspension"`, 
-              `"contraction"`, `"superscript"`, `"brevigraph"`. |  |
-| `<expan>` |  | 
-        		  Expansion. Contains the expansion of an abbreviation, which at the next level can be specified by
-        		  the `<ex>` element. In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using 
-        		  only the `<ex>` element for expansions.
-        		 | [ch. 6.1](HB3_ch6.xml#sec6.1) |
-| `<explicit>` |  | Contains the explicit of a item, i.e. the closing words of the 
-          		text proper, exclusive of any rubric or colophon which might follow it. 
-          		When dealing with collections of fragments, each fragment may be given as a separate `<msItem>` element
-          		and the first and last words of each transcribed as defective incipits and explicits.
-          	 | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
-| `@defective` | Optional | Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values:
-        			`"true"`, `"false"`, `"unknown"`, `"unspecified"`. |  |
-| `<extent>` |  | Specifies the size of the file. The exact number of words should be given in the attribute `@n` 
-          		as well as in plain text within the element. | [ch. 14.2.3](HB3_ch14.xml#sec14.2.3),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3).
-            	 |
+| `@role` | Optional | The role of an editor, in particular in case the editor is an institution or project. For an individual editor the `@role` with the value `"person"` is optional, but may be inserted for clarity. If an institution is regarded as the editor, it should be specified by the attribute `@role` and value `"institution"`. If an `<editor>` does not have any `@role` attribute, it is assumed to describe a person. |  |
+| `<editorialDecl>` |  | Editorial practice declaration. Sub-element of `<encodingDesc>`. The `<editorialDecl>` element uses the `<correction>` element to specify the level of quality control, the `<normalization>` element to specify the level on which the text is encoded, and the `<interpretation>` element to specify the amount of lexical and grammatical information in the encoded text.  | [ch. 14.4](HB3_ch14.xml#sec14.4).  |
+| `<encodingDesc>` |  | Encoding description. Documents the relationship between the electronic edition and the source it is based upon.  | [ch. 14.1](HB3_ch14.xml#sec14.1), [14.4](HB3_ch14.xml#sec14.4).  |
+| `<event>` |  | Contains data relating to any kind of significant event associated with a person, place, or organization.  | [ch. 15.1](HB3_ch15.xml#sec15.1).  |
+| `<ex>` |  | Editorial expansion. Contains an expansion made by the editor, corresponding to the abbreviation marker in the manuscript. See also `<am>` above. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.3](HB3_ch4.xml#sec4.3), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8).  |
+| `@me:type` | Optional | Specifies the type of expansion, using a convenient typology. Sample values: `"suspension"`, `"contraction"`, `"superscript"`, `"brevigraph"`. |  |
+| `<expan>` |  |  Expansion. Contains the expansion of an abbreviation, which at the next level can be specified by the `<ex>` element. In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using only the `<ex>` element for expansions.  | [ch. 6.1](HB3_ch6.xml#sec6.1) |
+| `<explicit>` |  | Contains the explicit of a item, i.e. the closing words of the text proper, exclusive of any rubric or colophon which might follow it. When dealing with collections of fragments, each fragment may be given as a separate `<msItem>` element and the first and last words of each transcribed as defective incipits and explicits.  | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
+| `@defective` | Optional | Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"`, `"false"`, `"unknown"`, `"unspecified"`. |  |
+| `<extent>` |  | Specifies the size of the file. The exact number of words should be given in the attribute `@n` as well as in plain text within the element. | [ch. 14.2.3](HB3_ch14.xml#sec14.2.3), [14.3.3](HB3_ch14.xml#sec14.3.3).  |
 | `@n` | Obligatory | The number of words (or any other measure), e.g. `"1019"`. |  |
 
 
@@ -444,222 +152,84 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<fileDesc>` |  | File description. Contains information on the title, on the publication and on the source. 
-								This element is a mandatory part of the header and is treated in two separate subsections, one dealing with the meta-level information on 
-            		the file history, `<titleStmt>`, the other concerning the source from which the XML-file is created, i.e. in our case usually the manuscript, 
-            	`<sourceDesc>`.
-             | [ch. 14.1](HB3_ch14.xml#sec14.1),
-            	[14.2](HB3_ch14.xml#sec14.2),
-            	[14.3](HB3_ch14.xml#sec14.3).
-            	 |
-| `<finalRubric>` |  | Final rubric. Contains the string of words that denotes the end of a 
-        			text division, often with an assertion as to its author and title, usually 
-        			set off from the text itself by red ink, by a different size or type of script, 
-        			or by some other such visual device. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
+| `<fileDesc>` |  | File description. Contains information on the title, on the publication and on the source. This element is a mandatory part of the header and is treated in two separate subsections, one dealing with the meta-level information on the file history, `<titleStmt>`, the other concerning the source from which the XML-file is created, i.e. in our case usually the manuscript, `<sourceDesc>`.  | [ch. 14.1](HB3_ch14.xml#sec14.1), [14.2](HB3_ch14.xml#sec14.2), [14.3](HB3_ch14.xml#sec14.3).  |
+| `<finalRubric>` |  | Final rubric. Contains the string of words that denotes the end of a text division, often with an assertion as to its author and title, usually set off from the text itself by red ink, by a different size or type of script, or by some other such visual device. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
 | `<foliation>` |  | Describes how and, if known, when and by whom the manuscript was paginated or foliated. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<forname>` |  | The first name of a person, contained in the `<persName>` element. | [ch. 12.2](HB3_ch12.xml#sec12.2),
-            	[12.2.1](HB3_ch12.xml#sec12.2.1),
-            	[14.2](HB3_ch14.xml#sec14.2).
-            	 |
-| `<front>` |  | 
-              Front matter. Contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, and so on.) 
-              found at the start of a document, before the main body.						
-              Within the `<text>` element, the `<front>` element will be placed before the `<body>` element.
-             | [ch. 3.2](HB3_ch3.xml#sec3.2). |
+| `<forname>` |  | The first name of a person, contained in the `<persName>` element. | [ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [14.2](HB3_ch14.xml#sec14.2).  |
+| `<front>` |  |  Front matter. Contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, and so on.) found at the start of a document, before the main body. Within the `<text>` element, the `<front>` element will be placed before the `<body>` element.  | [ch. 3.2](HB3_ch3.xml#sec3.2). |
 
 
 **G**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<g>` |  | External character (from Japanese “gaiji”). Briefly discussed in
-	  	    [ch. 2.5](HB3_ch2.xml#sec2.5), but not used elsewhere in the handbook.
-	  	    We recommend encoding nonstandard characters by character entities, as explained in
-	  	    [ch. 5.2](HB3_ch5.xml#sec5.2). | [ch. 2.5](HB3_ch2.xml#sec2.5). |
-| `<gap/>` |  | Gap. An element without extention in the encoded manuscript text. 
-						It indicates a point where material has been omitted in a transcription because it is physically 
-						missing in the manuscript. Attributes include: | [ch. 7.3.2](HB3_ch7.xml#sec7.3.2),
-            	[8.2.1](HB3_ch8.xml#sec8.2.1),
-            	[8.2.2](HB3_ch8.xml#sec8.2.2),
-            	[8.5.1](HB3_ch8.xml#sec8.5.1),
-            	[8.5.2](HB3_ch8.xml#sec8.5.2),
-            	[8.5.4](HB3_ch8.xml#sec8.5.4),
-            	[9.2.2.1](HB3_ch9.xml#sec9.2.2.1),
-            	[9.3.1](HB3_ch9.xml#sec9.3.1).
-            	 |
-| `@agent` | Optional | Specifies the cause of the damage, if this can be identified. Sample values:
-			  			`"smoke"`, `"fungus"`, `"rubbing"`. Deliberate removal of text, i.e. by erasure, should be encoded using the
-			  			`<del>` element. |  |
-| `@quantity` | Optional | Indicates approximately the extent of the gap. Values refer to the `@unit` attribute and are thus the number 
-			  			of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"`, `"2"`, `"3"`, and so on.         
-			  		 |  |
+| `<g>` |  | External character (from Japanese “gaiji”). Briefly discussed in [ch. 2.5](HB3_ch2.xml#sec2.5), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](HB3_ch5.xml#sec5.2). | [ch. 2.5](HB3_ch2.xml#sec2.5). |
+| `<gap/>` |  | Gap. An element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: | [ch. 7.3.2](HB3_ch7.xml#sec7.3.2), [8.2.1](HB3_ch8.xml#sec8.2.1), [8.2.2](HB3_ch8.xml#sec8.2.2), [8.5.1](HB3_ch8.xml#sec8.5.1), [8.5.2](HB3_ch8.xml#sec8.5.2), [8.5.4](HB3_ch8.xml#sec8.5.4), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.3.1](HB3_ch9.xml#sec9.3.1).  |
+| `@agent` | Optional | Specifies the cause of the damage, if this can be identified. Sample values: `"smoke"`, `"fungus"`, `"rubbing"`. Deliberate removal of text, i.e. by erasure, should be encoded using the `<del>` element. |  |
+| `@quantity` | Optional | Indicates approximately the extent of the gap. Values refer to the `@unit` attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"`, `"2"`, `"3"`, and so on.  |  |
 | `@reason` | Optional | States the reason for omission. Sample values: `"damaged"`, `"missing"`, `"removed"`, `"cut"`. |  |
-| `@unit` | Optional | 
-			        Names the unit used for describing the extent of the gap.
-			        Sample values: `"char"` (characters), `"word"`,
-			        `"line"`, `"leaf"`, `"quire"`, `"indeterminate"`. |  |
-| `<group>` |  | 
-        			This element can be used to divide a document into more than one text. 
-        		 | [ch. 3.2.1](HB3_ch3.xml#sec3.2.1). |
+| `@unit` | Optional |  Names the unit used for describing the extent of the gap. Sample values: `"char"` (characters), `"word"`, `"line"`, `"leaf"`, `"quire"`, `"indeterminate"`. |  |
+| `<group>` |  |  This element can be used to divide a document into more than one text.  | [ch. 3.2.1](HB3_ch3.xml#sec3.2.1). |
 
 
 **H**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<handDesc>` |  | Description of hands. Contains a description of all the different hands used in a manuscript. The description may be encoded as 
-            	one or more paragraphs, `<p>`, but more commonly, the various paragraphs are structured as a series of 
-            	`<handNote>` elements, each containing a prose description of the hands. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).
-            	 |
-| `@hands` | Optional | Specifies the number of distinct hands identified within the manuscript.
-              Value must be given as a number: `"1"`, `"2"`, `"3"`, and so on. |  |
-| `<handNote>` |  | 
-            	Note on a hand. Contains a prose description of one of the hands, containing one or more paragraphs, `<p>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<handDesc>` |  | Description of hands. Contains a description of all the different hands used in a manuscript. The description may be encoded as one or more paragraphs, `<p>`, but more commonly, the various paragraphs are structured as a series of `<handNote>` elements, each containing a prose description of the hands. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `@hands` | Optional | Specifies the number of distinct hands identified within the manuscript. Value must be given as a number: `"1"`, `"2"`, `"3"`, and so on. |  |
+| `<handNote>` |  |  Note on a hand. Contains a prose description of one of the hands, containing one or more paragraphs, `<p>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
 | `@scope` | Optional | Specifies how widely the hand is used in the manuscript. Sample values: `"major"`, `"minor"`, `"sole"`. |  |
 | `@script` | Optional | Indicates the type of script. Sample values: `"Carolingian"`, `"Insular"`, `"Proto-Gothic"`, `"Hybrida"`, `"Textualis"`, and so on. |  |
-| `<handNotes>` |  | Contains one or more `<handNote>` elements documenting the different hands 
-              identified within the source texts.
-             | [ch. 14.5](HB3_ch14.xml#sec14.5). |
-| `<handShift/>` |  | Change of scribal hand. Since a shift of hands in most cases will conflict 
-          			with other divisions of the text, the recommended element is an empty one.
-          			If there are two hands in a document there will thus be a single `<handShift/>` element,
-          			located at the break between hand 1 and hand 2.
-          		 | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-          			[3.14](HB3_ch3.xml#sec3.14),
-          			[9.2.1.1](HB3_ch9.xml#sec9.2.1.1).
-          		 |
-| `<head>` |  | Heading. Contains headings on all levels of the document. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-							[3.4](HB3_ch3.xml#sec3.4),
-							[3.9](HB3_ch3.xml#sec3.9).
-						 |
+| `<handNotes>` |  | Contains one or more `<handNote>` elements documenting the different hands identified within the source texts.  | [ch. 14.5](HB3_ch14.xml#sec14.5). |
+| `<handShift/>` |  | Change of scribal hand. Since a shift of hands in most cases will conflict with other divisions of the text, the recommended element is an empty one. If there are two hands in a document there will thus be a single `<handShift/>` element, located at the break between hand 1 and hand 2.  | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.14](HB3_ch3.xml#sec3.14), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1).  |
+| `<head>` |  | Heading. Contains headings on all levels of the document. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.4](HB3_ch3.xml#sec3.4), [3.9](HB3_ch3.xml#sec3.9).  |
 | `@type` | Optional | Specifies the type of heading. Sample value: `"rubric"`. |  |
-| `<history>` |  | Provides information on the history of the manuscript or a part of the manuscript, its origin, provenance 
-              and acquisition by its holding institution.
-              It may consist of one or more paragraphs, `<p>`, in which the history of the manuscript is summarised.
-            	Available within it are three sub-elements: `<origin>`, `<provenance>` and `<acquisition>`.
-             | [ch. 14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3),
-            	[14.3.4](HB3_ch14.xml#sec14.3.4).
-            	 |
+| `<history>` |  | Provides information on the history of the manuscript or a part of the manuscript, its origin, provenance and acquisition by its holding institution. It may consist of one or more paragraphs, `<p>`, in which the history of the manuscript is summarised. Available within it are three sub-elements: `<origin>`, `<provenance>` and `<acquisition>`.  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4).  |
 
 
 **I**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<idno>` |  | Identifier. In the case of manuscripts, it may be a number within a collection, e.g. “Ms. 1” or a conventional 
-          	  siglum, e.g. “AM 242 fol”. | [ch. 14.2.3](HB3_ch14.xml#sec14.2.3),
-            	[14.3.1](HB3_ch14.xml#sec14.3.1).
-            	 |
+| `<idno>` |  | Identifier. In the case of manuscripts, it may be a number within a collection, e.g. “Ms. 1” or a conventional siglum, e.g. “AM 242 fol”. | [ch. 14.2.3](HB3_ch14.xml#sec14.2.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
 | `@type` | Optional | The type of reference, e.g: `"Menota"`. |  |
-| `<incipit>` |  |  	
-          		Contains the incipit of a item, that is, the opening words of the text proper, 
-          		exclusive of any rubric which might precede it, of sufficient length to identify the 
-          		work uniquely. Such incipits were in former times frequently used a means of 
-          		reference to a work in place of a title. When dealing with collections of fragments, 
-          		each fragment may be given as a separate `<msItem>`
-          		and the first and last words of each transcribed as defective incipits and explicits.
-            	 | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
-| `@defective` | Optional | Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values:
-        			`"true"`, `"false"`, `"unknown"` and `"unspecified"`. |  |
-| `<institution>` |  |  Contains the name of an organisation such as a university or library, with 
-          		which a manuscript or other object is identified, generally its holding institution.
-          		Sub-element of `<msIdentifier>`.
-          		 | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1). |
-| `<interpretation>` |  | Specifies the amount of lexical and grammatical information in the encoded text. Sub-element of `<editorialDecl>`. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-            	[14.4](HB3_ch14.xml#sec14.4).
-            	 |
+| `<incipit>` |  |  Contains the incipit of a item, that is, the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely. Such incipits were in former times frequently used a means of reference to a work in place of a title. When dealing with collections of fragments, each fragment may be given as a separate `<msItem>` and the first and last words of each transcribed as defective incipits and explicits.  | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
+| `@defective` | Optional | Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"`, `"false"`, `"unknown"` and `"unspecified"`. |  |
+| `<institution>` |  |  Contains the name of an organisation such as a university or library, with which a manuscript or other object is identified, generally its holding institution. Sub-element of `<msIdentifier>`.  | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1). |
+| `<interpretation>` |  | Specifies the amount of lexical and grammatical information in the encoded text. Sub-element of `<editorialDecl>`. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4).  |
 | `@me:lemmatized` | Obligatory | Specifies the degree of lemmatisation: `"completely"`, `"partly"` and `"none"`. |  |
-| `@me:morphAnalyzed` | Optional | Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word):
-              `"completely"`, `"partly"` and `"none"`. |  |
+| `@me:morphAnalyzed` | Optional | Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): `"completely"`, `"partly"` and `"none"`. |  |
 
 
 **L**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<l>` |  | Verse line. Marks the beginning of a line within the stanza. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[2.4](HB3_ch2.xml#sec2.4),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.8](HB3_ch3.xml#sec3.8),
-            	[13.2](HB3_ch13.xml#sec13.2) |
-| `@met` | Optional | Metrical structure. Contains a user-specified encoding for the 
-							conventional metrical structure of the element, e.g. `"D2"` (<em>dróttkvǽtt</em>),
-							`"X"` (uncategorised), and so on. |  |
-| `@n` | Optional | Indicates the line number within the stanza. 
-							Lines are broken according to Norse-Icelandic conventions, that is, 
-							alliterative lines are treated as two lines, with a break at the caesura. 
-							Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
-| `@type` | Optional | Indicates the type of line for display purposes. The implied value, `"normal"`, is not indented. For for the b-line 
-              of eddic metres which should have the caesura represented by a long space, `"b-line"` should be used. For <em>ljóðaháttr</em> long lines, which should have a line break and be indented, `"ljod-long"` should be used. |  |
+| `<l>` |  | Verse line. Marks the beginning of a line within the stanza. | [ch. 2.3](HB3_ch2.xml#sec2.3), [2.4](HB3_ch2.xml#sec2.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [13.2](HB3_ch13.xml#sec13.2) |
+| `@met` | Optional | Metrical structure. Contains a user-specified encoding for the conventional metrical structure of the element, e.g. `"D2"` (<em>dróttkvǽtt</em>), `"X"` (uncategorised), and so on. |  |
+| `@n` | Optional | Indicates the line number within the stanza. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
+| `@type` | Optional | Indicates the type of line for display purposes. The implied value, `"normal"`, is not indented. For for the b-line of eddic metres which should have the caesura represented by a long space, `"b-line"` should be used. For <em>ljóðaháttr</em> long lines, which should have a line break and be indented, `"ljod-long"` should be used. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
 | `<language>` |  | Characterises a single language or sublanguage used within a text. Sub-element of `<langUsage>`. | [ch. 14.5](HB3_ch14.xml#sec14.5). |
-| `@ident` | Optional | Language identification. The values should be given as a three-letter code, wherever possible based on the
-            	international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
+| `@ident` | Optional | Language identification. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
 | `<langUsage>` |  | Languages used in the source are listed in this element. | [ch. 14.5](HB3_ch14.xml#sec14.5). |
-| `<layout>` |  | Describes how a text is organised on the page, 
-          		specifying the number of columns, the dimensions of the written area, 
-          		the number of lines per page/column, and so on.
-          		Sub-element of `<layoutDesc>`. 
-          	 | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `@columns` | Optional | Specifies the number of columns per page. Values must be given as numbers: 
-				      `"1"`, `"2"`. We are not familiar with Medieval Nordic manuscripts having 
-				      three or more columns. |  |
-| `@writtenLines` | Optional | Specifies the number of written lines per column. Values must be given as numbers: 
-				      `"1"`, `"2"`, `"3"`, and so on. |  |
-| `<layoutDesc>` |  | Layout description, contains one or more `<layout>` elements. 
-          	  It details the way(s) in which the text is organised on the page, 
-          		specifying the number of columns, the dimensions of the written area, 
-          		the number of lines per page/column, and so on. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<lb/>` |  | Line beginning. An empty element which marks the beginning of a new line of a page (or a column). | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.12.2](HB3_ch3.xml#sec3.12.2),
-            	[4.6.3](HB3_ch4.xml#sec4.6.3),
-            	[5.5](HB3_ch5.xml#sec5.5),
-            	[5.5.2](HB3_ch5.xml#sec5.5.2),
-            	[9.2.1.1](HB3_ch9.xml#sec9.2.1.1),
-            	[16.1](HB3_ch16.xml#sec16.1),
-            	[16.3](HB3_ch16.xml#sec16.3).
-             |
-| `@ed` | Obligatory | Specifies what kind of source the line beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can 
-				      also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"`
-				      for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_).
-				      Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the lines of a manuscript 
-				      as well as to the lines of one or more editions. For texts to be displayed in the Menota archive, each `<lb/>` element must 
-				      have at least one `@ed` attribute with the `"ms"` value and a `@n` attribute with the number of the line. |  |
+| `<layout>` |  | Describes how a text is organised on the page, specifying the number of columns, the dimensions of the written area, the number of lines per page/column, and so on. Sub-element of `<layoutDesc>`.  | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `@columns` | Optional | Specifies the number of columns per page. Values must be given as numbers: `"1"`, `"2"`. We are not familiar with Medieval Nordic manuscripts having three or more columns. |  |
+| `@writtenLines` | Optional | Specifies the number of written lines per column. Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
+| `<layoutDesc>` |  | Layout description, contains one or more `<layout>` elements. It details the way(s) in which the text is organised on the page, specifying the number of columns, the dimensions of the written area, the number of lines per page/column, and so on. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<lb/>` |  | Line beginning. An empty element which marks the beginning of a new line of a page (or a column). | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [5.5](HB3_ch5.xml#sec5.5), [5.5.2](HB3_ch5.xml#sec5.5.2), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1), [16.3](HB3_ch16.xml#sec16.3).  |
+| `@ed` | Obligatory | Specifies what kind of source the line beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the lines of a manuscript as well as to the lines of one or more editions. For texts to be displayed in the Menota archive, each `<lb/>` element must have at least one `@ed` attribute with the `"ms"` value and a `@n` attribute with the number of the line. |  |
 | `@n` | Obligatory | Specifies the line number with numerical values: `"1"`, `"2"`, `"3"`, and so on. |  |
-| `@rend` | Optional | Specifies the physical position of the following part of a line. This attribute is only to be used in the case of discontinuous headings.
-              Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
-| `<lg>` |  | Line group. Marks the stanza in relation to the surrounding prose text. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[2.4](HB3_ch2.xml#sec2.4),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            [3.8](HB3_ch3.xml#sec3.8),
-            	[3.9](HB3_ch3.xml#sec3.9),
-            	[13.2](HB3_ch13.xml#sec13.2),
-            	[16.3](HB3_ch16.xml#sec16.3).
-            	 |
-| `@n` | Optional | Indicates the identity of the stanza within the manuscript, i.e. its commonly recognised number in the manuscript. 
-              Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
+| `@rend` | Optional | Specifies the physical position of the following part of a line. This attribute is only to be used in the case of discontinuous headings. Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
+| `<lg>` |  | Line group. Marks the stanza in relation to the surrounding prose text. | [ch. 2.3](HB3_ch2.xml#sec2.3), [2.4](HB3_ch2.xml#sec2.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [13.2](HB3_ch13.xml#sec13.2), [16.3](HB3_ch16.xml#sec16.3).  |
+| `@n` | Optional | Indicates the identity of the stanza within the manuscript, i.e. its commonly recognised number in the manuscript. Values must be given as numbers: `"1"`, `"2"`, `"3"`, and so on. |  |
 | `@type` | Optional | Indicates the general metrical form of the stanza. Sample values: `"dróttkvætt"`, `"fornyrðislag"`, `"ljóðaháttr"`. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
 | `<list>` |  | Contains any sequence of items organised as a list. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<listBibl>` |  | Citation list. Contains a list of bibliographic citations of any kind regarding the manuscript as a whole. Sub-element of `<additional>`.
-          		Inside the `<listBibl>` element, one or more `<bibl>` elements are used for each bibliographic reference.
-          	 | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2),
-          		[14.3.5](HB3_ch14.xml#sec14.3.5).
-          	 |
-| `<listPerson>` |  | List of persons. Can contain one or more `<person>`elements within the header’s `<ProfileDesc>`.
-          		The contents of the individual `<person>` elements in `<listPerson>` provide information 
-          		on birth, death, residence, occupation and so on, either as one or more paragraphs of running prose, 
-          		or through the use of specialised sub-elements. 
-          	 | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6),
-          		[14.5](HB3_ch14.xml#sec14.5) |
-| `<locus>` |  | 
-          		Defines a location within a manuscript or a manuscript part. Sub-element of `<msItem>`. 
-          	Used to indicate specifically which parts of a manuscript are written in a given hand. | [ch. 7.2](HB3_ch7.xml#sec7.2),
-            	[14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.2](HB3_ch14.xml#sec14.3.2),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3).
-            	 |
+| `<listBibl>` |  | Citation list. Contains a list of bibliographic citations of any kind regarding the manuscript as a whole. Sub-element of `<additional>`. Inside the `<listBibl>` element, one or more `<bibl>` elements are used for each bibliographic reference.  | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5).  |
+| `<listPerson>` |  | List of persons. Can contain one or more `<person>`elements within the header’s `<ProfileDesc>`. The contents of the individual `<person>` elements in `<listPerson>` provide information on birth, death, residence, occupation and so on, either as one or more paragraphs of running prose, or through the use of specialised sub-elements.  | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5) |
+| `<locus>` |  |  Defines a location within a manuscript or a manuscript part. Sub-element of `<msItem>`. Used to indicate specifically which parts of a manuscript are written in a given hand. | [ch. 7.2](HB3_ch7.xml#sec7.2), [14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3).  |
 | `@from` | Optional | Specifies the starting point of the location in a normalised form, e.g. `"3v"` for folio 3v or `"4v.12"` for line 12 of folio 4v. |  |
 | `@to` | Optional | Specifies the end-point of the location in a normalised form, e.g. `"4v"` for folio 4v or `"5v.12"` for line 12 of folio 5v. |  |
 
@@ -668,213 +238,53 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<m>` |  | Morpheme. Contains a morpheme, i.e. a grammatically defined part of a word.
-        		 | [ch. 5.3.1](HB3_ch5.xml#sec5.3.1),
-        			[5.3.3](HB3_ch5.xml#sec5.3.3).
-        		 |
+| `<m>` |  | Morpheme. Contains a morpheme, i.e. a grammatically defined part of a word.  | [ch. 5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.3](HB3_ch5.xml#sec5.3.3).  |
 | `@baseForm` | Optional | States the base form of a morpheme. |  |
-| `<me:all>` |  | Indicates the alliteration of the line. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-							[13.2](HB3_ch13.xml#sec13.2),
-							[13.3](HB3_ch13.xml#sec13.3).
-						 |
-| `<me:ass>` |  | Indicates the internal rhymes of the line, where relevant. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-							[13.2](HB3_ch13.xml#sec13.2),
-							[13.3](HB3_ch13.xml#sec13.3).
-						 |
-| `<me:facs>` |  | Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic 
-							characteristics and the retention of abbreviations as in the manuscript. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-							[2.8.1](HB3_ch2.xml#sec2.8.1),
-							[3.6](HB3_ch3.xml#sec3.6),
-							[4.1](HB3_ch4.xml#sec4.1),
-							[4.5](HB3_ch4.xml#sec4.5),
-							[4.6.5](HB3_ch4.xml#sec4.6.5),
-							[4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-							[5.3.2](HB3_ch5.xml#sec5.3.2),
-							[5.4](HB3_ch5.xml#sec5.4),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[5.5](HB3_ch5.xml#sec5.5),
-							[5.5.3](HB3_ch5.xml#sec5.5.3),
-							[5.6](HB3_ch5.xml#sec5.6),
-							[6.1](HB3_ch6.xml#sec6.1),
-							[8.4.2](HB3_ch8.xml#sec8.4.2),
-							[9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-							[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-							[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-							[11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-							[13.1](HB3_ch13.xml#sec13.1).
-						 |
-| `<me:dipl>` |  | Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of 
-							palaeographic features and the expansion and identification of abbreviations. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-							[2.8.1](HB3_ch2.xml#sec2.8.1),
-							[3.6](HB3_ch3.xml#sec3.6),
-							[4.1](HB3_ch4.xml#sec4.1),
-							[4.5](HB3_ch4.xml#sec4.5),
-							[4.6.5](HB3_ch4.xml#sec4.6.5),
-							[4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-							[5.3.2](HB3_ch5.xml#sec5.3.2),
-							[5.4](HB3_ch5.xml#sec5.4),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[5.5.3](HB3_ch5.xml#sec5.5.),
-							[5.6](HB3_ch5.xml#sec5.6),
-							[6.1](HB3_ch6.xml#sec6.1),
-							[8.4.2](HB3_ch8.xml#sec8.4.2),
-							[9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-							[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-							[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-							[13.1](HB3_ch13.xml#sec13.1) |
-| `<me:norm>` |  | Contains a reading on the normalised level, a transcription in normalised orthography. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-							[2.8](HB3_ch2.xml#sec2.8),
-							[2.8.1](HB3_ch2.xml#sec2.8.1),
-							[3.6](HB3_ch3.xml#sec3.6),
-							[4.1](HB3_ch4.xml#sec4.1),
-							[4.5](HB3_ch4.xml#sec4.5),
-							[4.6.4](HB3_ch4.xml#sec4.6.4),
-							[4.6.5](HB3_ch4.xml#sec4.6.5),
-							[4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-							[5.3.2](HB3_ch5.xml#sec5.3.2),
-							[5.4](HB3_ch5.xml#sec5.4),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[5.5.3](HB3_ch5.xml#sec5.5.3),
-							[5.6](HB3_ch5.xml#sec5.6),
-							[6.1](HB3_ch6.xml#sec6.1),
-							[8.4.2](HB3_ch8.xml#sec8.4.2),
-							[9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-							[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-							[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-							[10.1](HB3_ch10.xml#sec10.1),
-							[11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-							[13.1](HB3_ch13.xml#sec13.1).
-						 |
-| `<me:pal>` |  | Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>` level. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-							[4.2](HB3_ch4.xml#sec4.2),
-							[4.6.5.2](HB3_ch4.xml#sec4.6.5.2).
-						 |
-| `<me:textSpan/>` |  | A generic element to handle overlapping text structures. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-							[2.8.2](HB3_ch2.xml#sec2.8.2),
-							[16.2](HB3_ch16.xml#sec16.2),
-							[16.2.2](HB3_ch16.xml#sec16.2.2).
-						 |
-| `@me:category` | Optional | Specifies the type of span, restricted to this list of values (which correspond to elements):          
-							`"gap"` for contents that would otherwise be contained by the `<gap/>` element;
-							`"unclear"` for contents that would otherwise be contained by the `<unclear>` element;
-							`"add"` for contents that would otherwise be contained by the `<add>` element;
-							`"del"` for contents that would otherwise be contained by the `<del>` element;
-							`"sic"` for contents that would otherwise be contained by the `<sic>` element;
-							`"corr"` for contents that would otherwise be contained by the `<corr>` element;
-							`"surplus"` for contents that would otherwise be contained by the `<surplus>` element;
-							`"other"` for for contents that would otherwise be contained by other elements.
-						 |  |
-| `@spanTo` | Optional | Specifies the end point of the text span. Recommended values: `"an1"`, `"an2"`, 
-							`"an3"` and so on. |  |
-| `<milestone/>` |  | An empty element which marks any break in the transcription. It can be used when other elements will lead to problems of overlap, e.g. for conflicting sentence divisions, turns in dialogues, and the like.
-             | [ch. 3.5.2](HB3_ch3.xml#sec3.5.2),
-          		[3.11](HB3_ch3.xml#sec3.11),
-          		[3.15](HB3_ch3.xml#sec3.15),
-            [16.4](HB3_ch16.xml#sec16.4).
-          	 |
-| `@unit` | Obligatory | Indicates the type of break, such as `"sentence"` (for sentence divisions), `"turn"` (in dialogues), or more generally,
-        		  `"segment"` or `"section"`. |  |
-| `@n` | Optional | Indicates the identity of the `@unit`.
-							Specifies the break with numerical or alphanumerical values, e.g. `"1"`, `"2"`, `"3"`, or `"m1"`, `"m2"`, `"m3"`, and so on.
-						 |  |
-| `@rendition` | Optional | Indicates how the break should be rendered. In the case of dialogues, `"opening-quote"` and `"closing-quote"` are appropriate.
-        		 |  |
-| `<msContents>` |  | Manuscript contents. Contains an itemised list of the intellectual content of the manuscript or manuscript part, either as a series of 
-            	paragraphs, `<p>`, or as a series of structured manuscript items, possibly including transcriptions of rubrics, incipits, explicits and so on., 
-            	as well as primary bibliographic references.
-          	 | [ch. 14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.2](HB3_ch14.xml#sec14.3.2).
-            	 |
-| `<msDesc>` |  | Manuscript description. Contains a description of a single identifiable manuscript. Within this element
-          		six sub-elements are available: `<msIdentifier>`, `<msContents>`, `<physDesc>`, `<history>`,
-          		`<additional>` and `<msPart>`.
-          	 | [ch. 3.1](HB3_ch3.xml#sec3.1),
-            	[7.3.4](HB3_ch7.xml#sec7.3.4),
-            	[14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.1](HB3_ch14.xml#sec14.3.1),
-            	[14.3.2](HB3_ch14.xml#sec14.3.2),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3),
-            	[15.4.4.1](HB3_ch15.xml#sec15.4.4.1).
-            	 |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or identity 
-				    for the entity being named by means of one or more URIs. |  |
+| `<me:all>` |  | Indicates the alliteration of the line. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3).  |
+| `<me:ass>` |  | Indicates the internal rhymes of the line, where relevant. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3).  |
+| `<me:facs>` |  | Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1).  |
+| `<me:dipl>` |  | Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [13.1](HB3_ch13.xml#sec13.1) |
+| `<me:norm>` |  | Contains a reading on the normalised level, a transcription in normalised orthography. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8](HB3_ch2.xml#sec2.8), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [10.1](HB3_ch10.xml#sec10.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1).  |
+| `<me:pal>` |  | Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>` level. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [4.2](HB3_ch4.xml#sec4.2), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2).  |
+| `<me:textSpan/>` |  | A generic element to handle overlapping text structures. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [2.8.2](HB3_ch2.xml#sec2.8.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2).  |
+| `@me:category` | Optional | Specifies the type of span, restricted to this list of values (which correspond to elements): `"gap"` for contents that would otherwise be contained by the `<gap/>` element; `"unclear"` for contents that would otherwise be contained by the `<unclear>` element; `"add"` for contents that would otherwise be contained by the `<add>` element; `"del"` for contents that would otherwise be contained by the `<del>` element; `"sic"` for contents that would otherwise be contained by the `<sic>` element; `"corr"` for contents that would otherwise be contained by the `<corr>` element; `"surplus"` for contents that would otherwise be contained by the `<surplus>` element; `"other"` for for contents that would otherwise be contained by other elements.  |  |
+| `@spanTo` | Optional | Specifies the end point of the text span. Recommended values: `"an1"`, `"an2"`, `"an3"` and so on. |  |
+| `<milestone/>` |  | An empty element which marks any break in the transcription. It can be used when other elements will lead to problems of overlap, e.g. for conflicting sentence divisions, turns in dialogues, and the like.  | [ch. 3.5.2](HB3_ch3.xml#sec3.5.2), [3.11](HB3_ch3.xml#sec3.11), [3.15](HB3_ch3.xml#sec3.15), [16.4](HB3_ch16.xml#sec16.4).  |
+| `@unit` | Obligatory | Indicates the type of break, such as `"sentence"` (for sentence divisions), `"turn"` (in dialogues), or more generally, `"segment"` or `"section"`. |  |
+| `@n` | Optional | Indicates the identity of the `@unit`. Specifies the break with numerical or alphanumerical values, e.g. `"1"`, `"2"`, `"3"`, or `"m1"`, `"m2"`, `"m3"`, and so on.  |  |
+| `@rendition` | Optional | Indicates how the break should be rendered. In the case of dialogues, `"opening-quote"` and `"closing-quote"` are appropriate.  |  |
+| `<msContents>` |  | Manuscript contents. Contains an itemised list of the intellectual content of the manuscript or manuscript part, either as a series of paragraphs, `<p>`, or as a series of structured manuscript items, possibly including transcriptions of rubrics, incipits, explicits and so on., as well as primary bibliographic references.  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2).  |
+| `<msDesc>` |  | Manuscript description. Contains a description of a single identifiable manuscript. Within this element six sub-elements are available: `<msIdentifier>`, `<msContents>`, `<physDesc>`, `<history>`, `<additional>` and `<msPart>`.  | [ch. 3.1](HB3_ch3.xml#sec3.1), [7.3.4](HB3_ch7.xml#sec7.3.4), [14.3](HB3_ch14.xml#sec14.3), [14.3.1](HB3_ch14.xml#sec14.3.1), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3), [15.4.4.1](HB3_ch15.xml#sec15.4.4.1).  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
-| `<msIdentifier>` |  | Manuscript identifier. Contains the information required to identify the manuscript, 
-        			i.e. its location, holding institution and shelfmark.  | [ch. 14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.1](HB3_ch14.xml#sec14.3.1).
-             |
-| `<msItem>` |  | 
-            	Manuscript item. Contains at least the elements `<locus>` and `<title>` to 
-            	specify the location in the manuscript and the title of the text in question. More detail can be provided by means of further elements, 
-            	such as `<author>`, `<incipit>`, `<explicit>`, `<rubric>`, `<finalRubric>`, `<colophon>`, `<textLang>` and
-            	`<note>`. This element can also “nest”, by which is meant that an `<msItem>` can contain other `<msItem>`
-            	elements. This is useful where separate items (or sub-items) in a manuscript are grouped under a single title or rubric, for example in collections of prayers.
-            	The `<msItem>` element is a sub-element of `<msContents>`. 
-             | [ch. 14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.2](HB3_ch14.xml#sec14.3.2),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3),
-            	[14.3.5](HB3_ch14.xml#sec14.3.5).
-            	 |
-| `@defective` | Optional | Provides the means of distinguishing between texts which are fragmentary and those which are not.
-            	Sample values: `"true"`, `"false"`,`"unknown"`, `"unspecified"`. |  |
+| `<msIdentifier>` |  | Manuscript identifier. Contains the information required to identify the manuscript, i.e. its location, holding institution and shelfmark.  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `<msItem>` |  |  Manuscript item. Contains at least the elements `<locus>` and `<title>` to specify the location in the manuscript and the title of the text in question. More detail can be provided by means of further elements, such as `<author>`, `<incipit>`, `<explicit>`, `<rubric>`, `<finalRubric>`, `<colophon>`, `<textLang>` and `<note>`. This element can also “nest”, by which is meant that an `<msItem>` can contain other `<msItem>` elements. This is useful where separate items (or sub-items) in a manuscript are grouped under a single title or rubric, for example in collections of prayers. The `<msItem>` element is a sub-element of `<msContents>`.  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.5](HB3_ch14.xml#sec14.3.5).  |
+| `@defective` | Optional | Provides the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"`, `"false"`,`"unknown"`, `"unspecified"`. |  |
 | `<msName>` |  | Alternative name of a manuscript. Contains any form of unstructured alternative name used for a manuscript, such as a nickname. Sub-element of `<msIdentifier>`. | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1). |
-| `@type` | Optional | Characterises the element in some sense, using any convenient classification scheme or 
-              typology, e.g. `"nickname"`. |  |
-| `@xml:lang` | Optional | States the language of the element content.
-              The values should be given as a three-letter code, wherever possible based on the
-              international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.
-             |  |
-| `<msPart>` |  | Manuscript part. Contains information about an originally distinct manuscript 
-          	  or part of a manuscript, which is now part of a composite manuscript. 
-          	 | [ch. 14.3](HB3_ch14.xml#sec14.3). |
-| `<musicNotation>` |  | Musical notation. The form, and possibly location, of musical notation is specified 
-						using one or more paragraphs, `<p>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `@type` | Optional | Characterises the element in some sense, using any convenient classification scheme or typology, e.g. `"nickname"`. |  |
+| `@xml:lang` | Optional | States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.  |  |
+| `<msPart>` |  | Manuscript part. Contains information about an originally distinct manuscript or part of a manuscript, which is now part of a composite manuscript.  | [ch. 14.3](HB3_ch14.xml#sec14.3). |
+| `<musicNotation>` |  | Musical notation. The form, and possibly location, of musical notation is specified using one or more paragraphs, `<p>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
 
 
 **N**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<name>` |  | Contains a name, i.e. a proper noun or a noun phrase. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[7.2.5](HB3_ch7.xml#sec7.2.5),
-            	[12.1](HB3_ch12.xml#sec12.1),
-            	[12.3](HB3_ch12.xml#sec12.3),
-            	[12.4.1](HB3_ch12.xml#sec12.4.1),
-            	[14.2](HB3_ch14.xml#sec14.2),
-            	[14.2.1](HB3_ch14.xml#sec14.2.1),
-            	[14.3.6](HB3_ch14.xml#sec14.3.6),
-            	[14.6](HB3_ch14.xml#sec14.6),
-            	[15.1](HB3_ch15.xml#sec15.1),
-            	[15.2.1](HB3_ch15.xml#sec15.2.1),
-            	[15.2.2](HB3_ch15.xml#sec15.2.2).
-            	 |
-| `@key` | Optional | Provides an externally-defined means of identifying the entity 
-							(or entities) being named, using a coded value of some kind. |  |
+| `<name>` |  | Contains a name, i.e. a proper noun or a noun phrase. | [ch. 2.3](HB3_ch2.xml#sec2.3), [7.2.5](HB3_ch7.xml#sec7.2.5), [12.1](HB3_ch12.xml#sec12.1), [12.3](HB3_ch12.xml#sec12.3), [12.4.1](HB3_ch12.xml#sec12.4.1), [14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.6](HB3_ch14.xml#sec14.3.6), [14.6](HB3_ch14.xml#sec14.6), [15.1](HB3_ch15.xml#sec15.1), [15.2.1](HB3_ch15.xml#sec15.2.1), [15.2.2](HB3_ch15.xml#sec15.2.2).  |
+| `@key` | Optional | Provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind. |  |
 | `@notAfter` | Optional | Specifies the latest possible date for the event (i.e. the name) in a standard form. |  |
-| `@notBefore` | Optional | 
-							Specifies the earliest possible date for the event (i.e. the name) in a standard form. |  |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for 
-							the entity being named by means of one or more URIs. |  |
+| `@notBefore` | Optional |  Specifies the earliest possible date for the event (i.e. the name) in a standard form. |  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
 | `@type` | Optional | Indicates what type of name it is. Sample values: `"person"`, `"place"`, `"animal"`, `"artefact"`. |  |
 | `@subtype` | Optional | Indicates a type within a type, e.g. that “horse” is a subtype of “animal”. |  |
 | `@when` | Optional | Supplies the value of the date or time in a standard form. |  |
-| `<normalization>` |  | Used to specify the level on which the text is encoded. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-            	[14.4](HB3_ch14.xml#sec14.4).
-            	 |
-| `@me:level` | Obligatory | Specifies the level on which the text is encoded. The three focal levels are `"facs"` (facsimile),
-            `"dipl"` (diplomatic) and `"norm"` (normalised). In addition, a strictly paleographic level, 
-              `"pal"` is defined. |  |
-| `<note>` |  | Contains comments to the text by the editor. | [ch. 5.6](HB3_ch5.xml#sec5.6),
-        			[8.5.1](HB3_ch8.xml#sec8.5.1),
-        			[9.4](HB3_ch9.xml#sec9.4),
-        			[9.4.2](HB3_ch9.xml#sec9.4.2),
-        			[14.3.2](HB3_ch14.xml#sec14.3.2).
-        		 |
+| `<normalization>` |  | Used to specify the level on which the text is encoded. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4).  |
+| `@me:level` | Obligatory | Specifies the level on which the text is encoded. The three focal levels are `"facs"` (facsimile), `"dipl"` (diplomatic) and `"norm"` (normalised). In addition, a strictly paleographic level, `"pal"` is defined. |  |
+| `<note>` |  | Contains comments to the text by the editor. | [ch. 5.6](HB3_ch5.xml#sec5.6), [8.5.1](HB3_ch8.xml#sec8.5.1), [9.4](HB3_ch9.xml#sec9.4), [9.4.2](HB3_ch9.xml#sec9.4.2), [14.3.2](HB3_ch14.xml#sec14.3.2).  |
 | `@source` | Optional | Stating the source for a passage in the text, particularly relevant for the `@type` attribute with the `"variation"` value. |  |
 | `@type` | Optional | Stating what kind of a note it is, e.g.`"explanation"`, `"variation"``"codicology"`, `"paleography"`. |  |
-| `<num>` |  | Numeral. Contains a numeral, including any delimiters (typically dots, such as “.xij.”. | [ch. 5.7](HB3_ch5.xml#sec5.7),
-            	[11.6.3](HB3_ch11.xml#sec11.6.3).
-            	 |
+| `<num>` |  | Numeral. Contains a numeral, including any delimiters (typically dots, such as “.xij.”. | [ch. 5.7](HB3_ch5.xml#sec5.7), [11.6.3](HB3_ch11.xml#sec11.6.3).  |
 | `@type` | Optional | Specifies the type of numeral. Recommended values: `"cardinal"` (one, two, three) and `"ordinal"` (first, second, third). |  |
 | `@value` | Optional | Specifies the numeral in numbers, i.e. `"1"`, `"2"`, `"3"`, and so on. |  |
 
@@ -883,405 +293,140 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<objectDesc>` |  | Object description. This is the first element within `<physDesc>` and it relates specifically to the 
-          		text-bearing object and contains two further sub-elements, `<supportDesc>` and
-					`<layoutDesc>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).
-             |
-| `@form` | Optional | A short project-specific name identifying the physical form of the carrier, e.g.
-          	  `"codex"`, `"roll"`, `"fragment"`. |  |
-| `<objectName>` |  | Name of an object. Contains a proper noun or noun phrase used to refer to an object.
-        			If a text contains many object names it might be useful to use this element 
-        			for a more clear-cut distinction between names of artefacts and other types of names.
-        		 | [ch. 12.4.2](HB3_ch12.xml#sec12.4.2).
-        		 |
-| `<orig>` |  | Original form. Contains a passage in the manuscript in its original form. 
-        		  Any correction by the scribe is usually encoded in an accompanying `<reg>` element. | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-        			[9.2.3.2](HB3_ch9.xml#sec9.2.3.2).
-        		 |
+| `<objectDesc>` |  | Object description. This is the first element within `<physDesc>` and it relates specifically to the text-bearing object and contains two further sub-elements, `<supportDesc>` and `<layoutDesc>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `@form` | Optional | A short project-specific name identifying the physical form of the carrier, e.g. `"codex"`, `"roll"`, `"fragment"`. |  |
+| `<objectName>` |  | Name of an object. Contains a proper noun or noun phrase used to refer to an object. If a text contains many object names it might be useful to use this element for a more clear-cut distinction between names of artefacts and other types of names.  | [ch. 12.4.2](HB3_ch12.xml#sec12.4.2).  |
+| `<orig>` |  | Original form. Contains a passage in the manuscript in its original form. Any correction by the scribe is usually encoded in an accompanying `<reg>` element. | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2).  |
 | `@rend` | Obligatory | The correction markers in the manuscript. Sample value: `"transposition-signs"`. |  |
 | `<orgName>` |  | Organisation name, usually given in its English form. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1). |
 | `@type` | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, using the the value `"affiliation"`. |  |
-| `<origDate>` |  | Date of origin. Contains any form of date, used to identify the date of origin for a manuscript.
-        			The usage of this element with various suitable attributes is not required, 
-        			but highly recommended as it facilitates searches. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
+| `<origDate>` |  | Date of origin. Contains any form of date, used to identify the date of origin for a manuscript. The usage of this element with various suitable attributes is not required, but highly recommended as it facilitates searches. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
 | `@notAfter` | Optional | Specifies the latest possible date for the event (i.e. the production of the manuscript) in standard form. |  |
-| `@notBefore` | Optional | 
-        		  Specifies the earliest possible date for the event (i.e. the production of the manuscript) in standard form. |  |
+| `@notBefore` | Optional |  Specifies the earliest possible date for the event (i.e. the production of the manuscript) in standard form. |  |
 | `<origin>` |  | Contains information on when, where and potentially for whom the manuscript was written. Sub-element of `<history>`. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
-| `<origPlace>` |  | Place of origin. Contains any form of place name, used to identify the place of origin for a manuscript.
-          		This element is not required, but highly recommended as it facilitates searches. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
+| `<origPlace>` |  | Place of origin. Contains any form of place name, used to identify the place of origin for a manuscript. This element is not required, but highly recommended as it facilitates searches. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
 
 
 **P**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<p>` |  | Paragraph, marks paragraphs in prose. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.3.3](HB3_ch3.xml#sec3.3.3),
-            	[3.4](HB3_ch3.xml#sec3.4),
-            	[3.5](HB3_ch3.xml#sec3.5),
-            	[3.6](HB3_ch3.xml#sec3.6),
-            	[3.8](HB3_ch3.xml#sec3.8),
-            	[3.9](HB3_ch3.xml#sec3.9),
-            	[14.2.4](HB3_ch14.xml#sec14.2.4),
-            	[14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3),
-            	[14.4](HB3_ch14.xml#sec14.4).
-             |
-| `<pc>` |  | Punctuation character. All punctuation characters in general (dot, comma, hyphen and so on) should be encoded by this element. 
-        			This obviously applies to punctuation marks in the manuscript, 
-        			but the element will also be used for punctuation marks that are added on the normalised level.
-        			Note that punctuation characters such as the dot may also be used as abbreviation marks. This is discussed in 
-        			[ch. 6.3.8](HB3_ch6.xml#sec6.3.6) and [ch. 5.4.2](HB3_ch5.xml#sec5.4.2). Furthermore, dots can be used as delimiters for short words, as discussed and exemplified in [ch. 5.4.3](HB3_ch5.xml#sec5.4.3), and they are frequently used for delimiting Roman numerals. We 
-        			recommend that dots used as delimiters are encoded as punctuation marks with the `<pc>` element.
-        		 | [ch. 1.4](HB3_ch1.xml#sec1.4),
-        			[3.1.1](HB3_ch3.xml#sec3.1.1),
-        			[3.7](HB3_ch3.xml#sec3.7),
-        			[3.11](HB3_ch3.xml#sec3.11),
-        			[4.5](HB3_ch4.xml#sec4.5),
-        			[4.6.4](HB3_ch4.xml#sec4.6.4),
-        			[5.4](HB3_ch5.xml#sec5.4),
-        			[5.4.1](HB3_ch5.xml#sec5.4.1),
-        			[5.4.2](HB3_ch5.xml#sec5.4.2),
-        			[5.4.3](HB3_ch5.xml#sec5.4.3),
-        			[5.5](HB3_ch5.xml#sec5.5),
-        			[5.5.2](HB3_ch5.xml#sec5.5.2),
-        			[5.6](HB3_ch5.xml#sec5.6),
-        			[5.7](HB3_ch5.xml#sec5.7),
-        			[5.8](HB3_ch5.xml#sec5.8),
-        			[16.1](HB3_ch16.xml#sec16.1).
-        		 |
+| `<p>` |  | Paragraph, marks paragraphs in prose. | [ch. 2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.3.3](HB3_ch3.xml#sec3.3.3), [3.4](HB3_ch3.xml#sec3.4), [3.5](HB3_ch3.xml#sec3.5), [3.6](HB3_ch3.xml#sec3.6), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [14.2.4](HB3_ch14.xml#sec14.2.4), [14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.4](HB3_ch14.xml#sec14.4).  |
+| `<pc>` |  | Punctuation character. All punctuation characters in general (dot, comma, hyphen and so on) should be encoded by this element. This obviously applies to punctuation marks in the manuscript, but the element will also be used for punctuation marks that are added on the normalised level. Note that punctuation characters such as the dot may also be used as abbreviation marks. This is discussed in [ch. 6.3.8](HB3_ch6.xml#sec6.3.6) and [ch. 5.4.2](HB3_ch5.xml#sec5.4.2). Furthermore, dots can be used as delimiters for short words, as discussed and exemplified in [ch. 5.4.3](HB3_ch5.xml#sec5.4.3), and they are frequently used for delimiting Roman numerals. We recommend that dots used as delimiters are encoded as punctuation marks with the `<pc>` element.  | [ch. 1.4](HB3_ch1.xml#sec1.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.7](HB3_ch3.xml#sec3.7), [3.11](HB3_ch3.xml#sec3.11), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [5.4](HB3_ch5.xml#sec5.4), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.4.3](HB3_ch5.xml#sec5.4.3), [5.5](HB3_ch5.xml#sec5.5), [5.5.2](HB3_ch5.xml#sec5.5.2), [5.6](HB3_ch5.xml#sec5.6), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [16.1](HB3_ch16.xml#sec16.1).  |
 | `@resp` | Optional | States who is responsible for the punctuation mark. Suggested values: `"scribe"`, `"mainscribe"` and `"laterscribe"`. |  |
-| `<pb/>` |  | Page beginning. An empty element which marks the beginning of a new page in a paginated document. 
-          	  It is also used in foliated documents (having numbers like `"1r"`, `"1v"`, `"2r"`, `"2v"`, and so on.) | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.12](HB3_ch3.xml#sec3.12),
-            	[3.12.1](HB3_ch3.xml#sec3.12.1),
-            	[3.12.2](HB3_ch3.xml#sec3.12.2),
-            	[4.6.3](HB3_ch4.xml#sec4.6.3),
-            	[9.2.1.1](HB3_ch9.xml#sec9.2.1.1),
-            	[16.1](HB3_ch16.xml#sec16.1).
-            	 |
-| `@ed` | Obligatory | Specifies what kind of source the page beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can 
-				      also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"`
-				      for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_).
-				      Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the pages of a manuscript 
-				      as well as to the pages of one or more editions. For texts to be displayed in the Menota archive, each `<pb/>` element must 
-				      have at least one `@ed` attribute with the `"ms"` value and a `@n` attribute with the number of the page. |  |
-| `@n` | Obligatory | Number. In a paginated document, the values will be numbers like `"1"`, `"2"`, `"3"`, and so on.
-				      In a foliated document, it should indicate front or back pages (recto, verso), with values like `"1r"`, `"1v"`, `"2r"`, `"2v"`, and so on. |  |
-| `<persName>` |  | Personal name. Contains a proper noun or a proper noun phrase referring to a person, consisting of one or more words. | [ch. 12.1](HB3_ch12.xml#sec12.1),
-            	[12.2](HB3_ch12.xml#sec12.2),
-            	[12.2.1](HB3_ch12.xml#sec12.2.1),
-            	[12.4.1](HB3_ch12.xml#sec12.4.1),
-            	[14.2](HB3_ch14.xml#sec14.2),
-            	[14.2.1](HB3_ch14.xml#sec14.2.1),
-            	[14.3.6](HB3_ch14.xml#sec14.3.6).
-             |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or identity 
-        	    for the entity being named by means of one or more URIs. |  |
-| `@type` | Optional | Indicates the type of name. Sample values: `"historical"`,
-							`"mythological"`. |  |
+| `<pb/>` |  | Page beginning. An empty element which marks the beginning of a new page in a paginated document. It is also used in foliated documents (having numbers like `"1r"`, `"1v"`, `"2r"`, `"2v"`, and so on.) | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.12](HB3_ch3.xml#sec3.12), [3.12.1](HB3_ch3.xml#sec3.12.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1).  |
+| `@ed` | Obligatory | Specifies what kind of source the page beginning refers to, typically a manuscript, expressed by the `"ms"` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the pages of a manuscript as well as to the pages of one or more editions. For texts to be displayed in the Menota archive, each `<pb/>` element must have at least one `@ed` attribute with the `"ms"` value and a `@n` attribute with the number of the page. |  |
+| `@n` | Obligatory | Number. In a paginated document, the values will be numbers like `"1"`, `"2"`, `"3"`, and so on. In a foliated document, it should indicate front or back pages (recto, verso), with values like `"1r"`, `"1v"`, `"2r"`, `"2v"`, and so on. |  |
+| `<persName>` |  | Personal name. Contains a proper noun or a proper noun phrase referring to a person, consisting of one or more words. | [ch. 12.1](HB3_ch12.xml#sec12.1), [12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [12.4.1](HB3_ch12.xml#sec12.4.1), [14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.6](HB3_ch14.xml#sec14.3.6).  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
+| `@type` | Optional | Indicates the type of name. Sample values: `"historical"`, `"mythological"`. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
-| `@xml:lang` | Optional | States the language of the element content. The values should be given as a three-letter code, wherever possible based on the
-							international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
-| `<person>` |  | Provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source. | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6),
-            	[14.5](HB3_ch14.xml#sec14.5).
-            	 |
+| `@xml:lang` | Optional | States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
+| `<person>` |  | Provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source. | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5).  |
 | `@role` | Optional | Specifies a primary role or classification for the person. Sample value: `"owner"`. |  |
 | `@sex` | Optional | Specifies the sex of the person. Sample values: `"M"` for male, `"F"` for female, `"O"` for other, `"N"` for none or not applicable, and`"U"` for unknown. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
-| `<physDesc>` |  | Physical description. Contains a full physical description of a manuscript, e.g. material, size, format, script, decoration, binding, marginalia, and so on.
-            Sub-element of `<msDesc>`. | [ch. 14.3](HB3_ch14.xml#sec14.3),
-            	[14.3.3](HB3_ch14.xml#sec14.3.3).
-            	 |
-| `<placeName>` |  | A name of a specific location. This element can contain different sub-elements such as `<settlement>`,
-          		`<region>` and `<country>`. | [ch. 12.1](HB3_ch12.xml#sec12.1),
-            	[12.3](HB3_ch12.xml#sec12.3),
-            	[12.4.1](HB3_ch12.xml#sec12.4.1).
-            	 |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or 
-				      identity for the entity being named by means of one or more URIs. |  |
-| `<profileDesc>` |  | Profile description. Provides a detailed description of non-bibliographic aspects 
-          		of a text, such as the languages and sublanguages used, the situation in which it was produced, 
-          		the participants and their setting. | [ch. 11.7](HB3_ch11.xml#sec11.7),
-            	[14.1](HB3_ch14.xml#sec14.1),
-            	[14.3.6](HB3_ch14.xml#sec14.3.6),
-            	[14.5](HB3_ch14.xml#sec14.5).
-            	 |
-| `<projectDesc>` |  | 
-          		Project description. Describes in detail the aim or purpose for which an electronic file was encoded, 
-          		together with any other relevant information concerning the process by which it was assembled or collected.
-          		 Sub-element of `<encodingDesc>`. 
-							 | [ch. 14.4](HB3_ch14.xml#sec14.4). |
-| `<provenance>` |  | 
-            	Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript,
-            	e.g. any evidence of ownership and use. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
-| `<publicationStmt>` |  | Publication statement. Groups information concerning the 
-              publication or distribution of an electronic or other text. | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4). |
-| `<publisher>` |  | Provides the name of the organisation 
-        	    responsible for the publication or distribution of a bibliographic item, e.g. 
-        	    the Medieval Nordic Text Archive (Menota). | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4). |
+| `<physDesc>` |  | Physical description. Contains a full physical description of a manuscript, e.g. material, size, format, script, decoration, binding, marginalia, and so on. Sub-element of `<msDesc>`. | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3).  |
+| `<placeName>` |  | A name of a specific location. This element can contain different sub-elements such as `<settlement>`, `<region>` and `<country>`. | [ch. 12.1](HB3_ch12.xml#sec12.1), [12.3](HB3_ch12.xml#sec12.3), [12.4.1](HB3_ch12.xml#sec12.4.1).  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
+| `<profileDesc>` |  | Profile description. Provides a detailed description of non-bibliographic aspects of a text, such as the languages and sublanguages used, the situation in which it was produced, the participants and their setting. | [ch. 11.7](HB3_ch11.xml#sec11.7), [14.1](HB3_ch14.xml#sec14.1), [14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5).  |
+| `<projectDesc>` |  |  Project description. Describes in detail the aim or purpose for which an electronic file was encoded, together with any other relevant information concerning the process by which it was assembled or collected. Sub-element of `<encodingDesc>`.  | [ch. 14.4](HB3_ch14.xml#sec14.4). |
+| `<provenance>` |  |  Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, e.g. any evidence of ownership and use. | [ch. 14.3.4](HB3_ch14.xml#sec14.3.4). |
+| `<publicationStmt>` |  | Publication statement. Groups information concerning the publication or distribution of an electronic or other text. | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4). |
+| `<publisher>` |  | Provides the name of the organisation responsible for the publication or distribution of a bibliographic item, e.g. the Medieval Nordic Text Archive (Menota). | [ch. 14.2.4](HB3_ch14.xml#sec14.2.4). |
 
 
 **Q**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<q>` |  | Direct speech. Contains a part of a dialogue. 
-						  The element is placed outside the word(s) in the dialogue, 
-						  irrespective of whether the encoding is on one or more levels.
-						 | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-							[3.8](HB3_ch3.xml#sec3.8),
-							[3.11](HB3_ch3.xml#sec3.11),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[5.6](HB3_ch5.xml#sec5.6),
-							[7.2.4](HB3_ch7.xml#sec7.2.4),
-							[16.4](HB3_ch16.xml#sec16.4) |
-| `@type` | Optional | May be used to indicate whether the offset passage 
-					    is spoken or thought, or to characterise it more finely. Sample values:
-					    `"spoken"`, `"thought"`, `"foreign"`,
-					    `"term"` (technical term), 
-					    `"emph"` (emphasised).  |  |
-| `@xml:lang` | Optional | States the language of the element content. The values should be given as a three-letter code, wherever possible based on the
-				  		international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
-| `<quote>` |  | Quotation. Contains a quotation from another source. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1),
-							[3.11](HB3_ch3.xml#sec3.11),
-							[5.6](HB3_ch5.xml#sec5.6).
-						 |
+| `<q>` |  | Direct speech. Contains a part of a dialogue. The element is placed outside the word(s) in the dialogue, irrespective of whether the encoding is on one or more levels.  | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.11](HB3_ch3.xml#sec3.11), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.6](HB3_ch5.xml#sec5.6), [7.2.4](HB3_ch7.xml#sec7.2.4), [16.4](HB3_ch16.xml#sec16.4) |
+| `@type` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: `"spoken"`, `"thought"`, `"foreign"`, `"term"` (technical term), `"emph"` (emphasised).  |  |
+| `@xml:lang` | Optional | States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
+| `<quote>` |  | Quotation. Contains a quotation from another source. | [ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.11](HB3_ch3.xml#sec3.11), [5.6](HB3_ch5.xml#sec5.6).  |
 
 
 **R**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<ref>` |  | Reference. Defines a reference to another location, possibly 
-              modified by additional text or comment. | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6),
-          		[15.1](HB3_ch15.xml#sec15.1). |
-| `@target` | Optional | Specifies the destination of the reference by supplying 
-              one or more URI references. |  |
-| `<reg>` |  | Regularised form. Contains a passage in the manuscript corrected by the scribe (or a later scribe).
-        		  It is usually accompanied by an `<orig>` element in which the uncorrected form in the manuscript is rendered.    		
-        		 | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-        			[9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-        			[9.3.4](HB3_ch9.xml#sec9.3.4).
-        		 |
+| `<ref>` |  | Reference. Defines a reference to another location, possibly modified by additional text or comment. | [ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1). |
+| `@target` | Optional | Specifies the destination of the reference by supplying one or more URI references. |  |
+| `<reg>` |  | Regularised form. Contains a passage in the manuscript corrected by the scribe (or a later scribe). It is usually accompanied by an `<orig>` element in which the uncorrected form in the manuscript is rendered.  | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.3.4](HB3_ch9.xml#sec9.3.4).  |
 | `@type` | Obligatory | The type of correction. Sample value: `"transposition"`. |  |
 | `@resp` | Optional | The one who is responsible for the correction. Sample values: `"scribe"`, `"mainscribe"`, `"laterscribe"`. |  |
-| `<region>` |  | 
-            	Contains the name of an administrative unit such as a state, province, 
-            	or county, larger than a settlement, but smaller than a country.
-            | [ch. 12.3](HB3_ch12.xml#sec12.3),
-            	[14.3.1](HB3_ch14.xml#sec14.3.1).
-            	 |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or 
-				      identity for the entity being named by means of one or more URIs. |  |
-| `@type` | Optional | Characterises the element in some sense, using any 
-				      convenient classification scheme or typology. Sample values: `"farm"`,
-				      `"parish"`, `"county"`. |  |
-| `<repository>` |  | 
-          		Contains the name of a repository within which manuscripts are stored, possibly forming part of an institution.
-          		Sub-element of `<msIdentifier>`.
-          		 | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1).
-            	 |
-| `<resp>` |  | Responsibility. Contains a phrase describing the type of responsibility, e.g. transcription, conversion, 
-          	  proof-reading. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1). |
+| `<region>` |  |  Contains the name of an administrative unit such as a state, province, or county, larger than a settlement, but smaller than a country.  | [ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
+| `@type` | Optional | Characterises the element in some sense, using any convenient classification scheme or typology. Sample values: `"farm"`, `"parish"`, `"county"`. |  |
+| `<repository>` |  |  Contains the name of a repository within which manuscripts are stored, possibly forming part of an institution. Sub-element of `<msIdentifier>`.  | [ch. 14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `<resp>` |  | Responsibility. Contains a phrase describing the type of responsibility, e.g. transcription, conversion, proof-reading. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1). |
 | `<respStmt>` |  | Statement of responsibility. Particularly important when listing the contributors to an edition. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1). |
-| `<revisionDesc>` |  | Revision description. Summarises the revision history of the text. | [ch. 14.1](HB3_ch14.xml#sec14.1).
-            	 |
-| `<roleName>` |  | Contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank. | [ch. 12.2](HB3_ch12.xml#sec12.2),
-          		[12.2.3](HB3_ch12.xml#sec12.2.3). |
+| `<revisionDesc>` |  | Revision description. Summarises the revision history of the text. | [ch. 14.1](HB3_ch14.xml#sec14.1).  |
+| `<roleName>` |  | Contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank. | [ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.3](HB3_ch12.xml#sec12.2.3). |
 | `@type` | Optional | Indicates the role of the person, e.g. in the form of a title. Sample value: `"political"`. |  |
-| `<rubric>` |  | Contains the text of any rubric or heading in (or attached to) a particular manuscript item. Sub-element of `<msItem>`. 
-        		 | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
+| `<rubric>` |  | Contains the text of any rubric or heading in (or attached to) a particular manuscript item. Sub-element of `<msItem>`.  | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
 
 
 **S**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<s>` |  | Sentence. Contains a sentence-like division of a text. | [ch. 3.5](HB3_ch3.xml#sec3.5),
-        			[ch. 3.5.2](HB3_ch3.xml#sec3.5.2)[3.11](HB3_ch3.xml#sec3.11),
-        			[16.1](HB3_ch16.xml#sec16.1),
-        			[16.4](HB3_ch16.xml#sec16.4).
-        		 |
+| `<s>` |  | Sentence. Contains a sentence-like division of a text. | [ch. 3.5](HB3_ch3.xml#sec3.5), [ch. 3.5.2](HB3_ch3.xml#sec3.5.2)[3.11](HB3_ch3.xml#sec3.11), [16.1](HB3_ch16.xml#sec16.1), [16.4](HB3_ch16.xml#sec16.4).  |
 | `@xml:id` | Optional | Specifies the sentence with numerical or alphanumerical values, e.g. `"1"`, `"2"`, `"3"`, or `"s1"`, `"s2"`, `"s3"`, and so on. |  |
-| `@n` | Optional | Specifies another sentence division with numerical or alphanumerical values, e.g. `"m1"`, `"m2"`, `"m3"`, and so on, to be used in conjunction with the `<milestone/>` element, as recommended in [ch. 3.5.2](HB3_ch3.xml#sec3.5.2).
-						 |  |
+| `@n` | Optional | Specifies another sentence division with numerical or alphanumerical values, e.g. `"m1"`, `"m2"`, `"m3"`, and so on, to be used in conjunction with the `<milestone/>` element, as recommended in [ch. 3.5.2](HB3_ch3.xml#sec3.5.2).  |  |
 | `<seal>` |  | Contains a description of a seal. Sub-element of `<sealDesc>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<sealDesc>` |  | 
-        			Seal description. Contains information about the seal(s) attached to a document or charter, either as paragraphs, `<p>`,
-        			summarising the overall nature of the seals, or
-        		one or more `<seal>` elements. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<seg>` |  | Segment. Groups one or more strings of text, e.g. words. | [ch. 4.3](HB3_ch4.xml#sec4.3), 
-            	[5.3.1](HB3_ch5.xml#sec5.3.1),
-            	[5.3.2](HB3_ch5.xml#sec5.3.2),
-            	[6.5.6](HB3_ch6.xml#sec6.5.6),
-            	[11.2](HB3_ch11.xml#sec11.2),
-            	[11.3.2.11](HB3_ch11.xml#sec11.3.2.11).
-				 |
+| `<sealDesc>` |  |  Seal description. Contains information about the seal(s) attached to a document or charter, either as paragraphs, `<p>`, summarising the overall nature of the seals, or one or more `<seal>` elements. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<seg>` |  | Segment. Groups one or more strings of text, e.g. words. | [ch. 4.3](HB3_ch4.xml#sec4.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [6.5.6](HB3_ch6.xml#sec6.5.6), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11).  |
 | `@type` | Optional | States the type of segmentation. Recommended values: `"nb"` (no break), `"enc"` (enclitic), `"lig"` (for characters in ligature). |  |
-| `<settlement>` |  | 
-        			Contains the smallest component of a place name expressed as a hierarchy of geo-political or administrative units, e.g.
-        			farms, villages or cities. Sub-element of `<msIdentifier>`. | [ch. 12.3](HB3_ch12.xml#sec12.3),
-            	[14.3.1](HB3_ch14.xml#sec14.3.1).
-            	 |
-| `@ref` | Optional | Provides an explicit means of locating a full definition or 
-        		  identity for the entity being named by means of one or more URIs. |  |
-| `<sic>` |  | Contains a passage in the manuscript reproduced as is although apparently incorrect or inaccurate, latin for “thus” or “so”. Usually accompanied by the `<corr>` element, in which the editor offers a correction of the text. | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-            	[9.3.2](HB3_ch9.xml#sec9.3.2),
-            	[9.3.2.2](HB3_ch9.xml#sec9.3.2.2),
-            	[9.3.3](HB3_ch9.xml#sec9.3.3),
-            	[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-            	[9.4.1](HB3_ch9.xml#sec9.4.1),
-            	[16.2](HB3_ch16.xml#sec16.2).
-				 |
-| `<sourceDesc>` |  | 
-        			Source description. Mandatory part of the header and describes the source material. Sub-element of `<fileDesc>`. | [ch. 14.2](HB3_ch14.xml#sec14.2),
-        			[14.2.1](HB3_ch14.xml#sec14.2.1),
-        			[14.3](HB3_ch14.xml#sec14.3).
-        		 |
-| `<space/>` |  | Space is an empty element which . 
-               indicates a point in a transcription of 
-							a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe.  | [ch. 7.3.1](HB3_ch7.xml#sec7.3.1),
-            	[7.3.2](HB3_ch7.xml#sec7.3.2),
-            	[8.1](HB3_ch8.xml#sec8.1),
-            	[8.3.1](HB3_ch8.xml#sec8.3.1),
-            	[8.3.2](HB3_ch8.xml#sec8.3.2),
-            	[9.3.1.1](HB3_ch9.xml#sec9.3.1.1),
-            	[16.5.1](HB3_ch16.xml#sec16.5.1).
-            	 |
-| `@quantity` | Obligatory | Indicates approximately the extent of the space. Values refer to the `@unit` attribute and are thus the number 
-							of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"`, `"2"`, `"3"`, and so on. |  |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Sample values: `"char"` (characters), `"word"`,
-				      `"line"`, `"leaf"`, `"quire"`, `"indeterminate"`.				    
-				     |  |
-| `@dim` | Optional | 
-            	Dimension. Indicates the dimension of the space, i.e. whether it is `"horizontal"` or `"vertical"`. For irregular 
-            	shapes in two dimensions, the value for this attribute should reflect the more important of 
-            	the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal 
-            	components should be classified as vertical. |  |
-| `<summary>` |  | 
-        			Contains an overview of the available information concerning some aspect of an item or object.
-        			One or more `<msItem>` elements can be prefaced by a `<summary>` element. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2).
-        		 |
-| `<supplied>` |  | Signifies text supplied by the transcriber, encoder or editor either in place of text which is missing or to clarify a reading. | [ch. 6.5.3](HB3_ch6.xml#sec6.5.3),
-        			[8.1](HB3_ch8.xml#sec8.1),
-        			[8.2.1](HB3_ch8.xml#sec8.2.1),
-        			[8.3.1](HB3_ch8.xml#sec8.3.1),
-        			[8.4.1](HB3_ch8.xml#sec8.4.1),
-        			[9.2.3.1](HB3_ch9.xml#sec9.2.3.1),
-        			[9.3.1](HB3_ch9.xml#sec9.3.1),
-        			[9.3.1.2](HB3_ch9.xml#sec9.3.1.2),
-        			[9.3.1.3](HB3_ch9.xml#sec9.3.1.3),
-        			[9.3.2](HB3_ch9.xml#sec9.3.2),
-        			[9.3.4](HB3_ch9.xml#sec9.3.4),
-        			[11.2](HB3_ch11.xml#sec11.2),
-        			[16.2](HB3_ch16.xml#sec16.2),
-        			[16.2.1](HB3_ch16.xml#sec16.2.1),
-        			[16.2.2](HB3_ch16.xml#sec16.2.2),
-        			[16.5.2](HB3_ch16.xml#sec16.5.2).
-        		 |
-| `@reason` | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. 
-        			The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is 
-        			simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |  |
+| `<settlement>` |  |  Contains the smallest component of a place name expressed as a hierarchy of geo-political or administrative units, e.g. farms, villages or cities. Sub-element of `<msIdentifier>`. | [ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1).  |
+| `@ref` | Optional | Provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. |  |
+| `<sic>` |  | Contains a passage in the manuscript reproduced as is although apparently incorrect or inaccurate, latin for “thus” or “so”. Usually accompanied by the `<corr>` element, in which the editor offers a correction of the text. | [ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.2.2](HB3_ch9.xml#sec9.3.2.2), [9.3.3](HB3_ch9.xml#sec9.3.3), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [9.4.1](HB3_ch9.xml#sec9.4.1), [16.2](HB3_ch16.xml#sec16.2).  |
+| `<sourceDesc>` |  |  Source description. Mandatory part of the header and describes the source material. Sub-element of `<fileDesc>`. | [ch. 14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3](HB3_ch14.xml#sec14.3).  |
+| `<space/>` |  | Space is an empty element which . indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe.  | [ch. 7.3.1](HB3_ch7.xml#sec7.3.1), [7.3.2](HB3_ch7.xml#sec7.3.2), [8.1](HB3_ch8.xml#sec8.1), [8.3.1](HB3_ch8.xml#sec8.3.1), [8.3.2](HB3_ch8.xml#sec8.3.2), [9.3.1.1](HB3_ch9.xml#sec9.3.1.1), [16.5.1](HB3_ch16.xml#sec16.5.1).  |
+| `@quantity` | Obligatory | Indicates approximately the extent of the space. Values refer to the `@unit` attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"`, `"2"`, `"3"`, and so on. |  |
+| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Sample values: `"char"` (characters), `"word"`, `"line"`, `"leaf"`, `"quire"`, `"indeterminate"`.  |  |
+| `@dim` | Optional |  Dimension. Indicates the dimension of the space, i.e. whether it is `"horizontal"` or `"vertical"`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |  |
+| `<summary>` |  |  Contains an overview of the available information concerning some aspect of an item or object. One or more `<msItem>` elements can be prefaced by a `<summary>` element. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2).  |
+| `<supplied>` |  | Signifies text supplied by the transcriber, encoder or editor either in place of text which is missing or to clarify a reading. | [ch. 6.5.3](HB3_ch6.xml#sec6.5.3), [8.1](HB3_ch8.xml#sec8.1), [8.2.1](HB3_ch8.xml#sec8.2.1), [8.3.1](HB3_ch8.xml#sec8.3.1), [8.4.1](HB3_ch8.xml#sec8.4.1), [9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.1](HB3_ch9.xml#sec9.3.1), [9.3.1.2](HB3_ch9.xml#sec9.3.1.2), [9.3.1.3](HB3_ch9.xml#sec9.3.1.3), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.4](HB3_ch9.xml#sec9.3.4), [11.2](HB3_ch11.xml#sec11.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.1](HB3_ch16.xml#sec16.2.1), [16.2.2](HB3_ch16.xml#sec16.2.2), [16.5.2](HB3_ch16.xml#sec16.5.2).  |
+| `@reason` | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |  |
 | `@resp` | Obligatory | Indicates the individual responsible for the addition of characters, words or passages. |  |
-| `@rendition` | Optional | If a piece of supplied text has a structural overlap with two or more `<w>` elements, we 
-							suggest using this attribute with the
-							`"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in 
-							[ch. 16.5.2](HB3_ch16.xml#sec16.5.2). |  |
+| `@rendition` | Optional | If a piece of supplied text has a structural overlap with two or more `<w>` elements, we suggest using this attribute with the `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2). |  |
 | `@source` | Optional | States the source of the supplied text if this can be located. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
-| `<support>` |  | 
-            	Contains a description of the materials, whether the text is written on parchment, paper or other materials, and a description thereof. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<supportDesc>` |  | 
-          		Support description. Contains various elements relating to the physical object, or carrier, on which the text is inscribed. Sub-element of `<objectDesc>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<surname>` |  | 
-            	Contains a family (inherited) name of a person, excluding patronyms and metronyms. | [ch. 12.2](HB3_ch12.xml#sec12.2),
-            	[12.2.2](HB3_ch12.xml#sec12.2.2),
-            	[14.2](HB3_ch14.xml#sec14.2).
-            	 |
-| `<surplus>` |  | Contains text which the editor believes should be recognised as superfluous. | [ch. 9.3.2](HB3_ch9.xml#sec9.3.2),
-        			[9.3.2.1](HB3_ch9.xml#sec9.3.2.1),
-        			[9.3.2.2](HB3_ch9.xml#sec9.3.2.2),
-        			[16.2](HB3_ch16.xml#sec16.2),
-        			[16.5.2](HB3_ch16.xml#sec16.5.2).
-        		 |
-| `@reason` | Optional | Indicates the reason for the piece of text being superfluous. Sample values: 
-        			`"dittography"`, `"excess"`, `"incoherence"`. |  |
-| `@rendition` | Optional | If a superfluous passage has a structural overlap with two or more `<w>` elements, 
-        	    we suggest using this attribute with the
-        	    `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in 
-        	    [ch. 16.5.2](HB3_ch16.xml#sec16.5.2). |  |
-| `<surrogates>` |  | 
-        			Contains information about any representations of the manuscript being described which may exist in
-        			the holding institution or elsewhere, e.g.
-        			photographic reproductions. Sub-element of `<additional>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5).
-        		 |
+| `<support>` |  |  Contains a description of the materials, whether the text is written on parchment, paper or other materials, and a description thereof. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<supportDesc>` |  |  Support description. Contains various elements relating to the physical object, or carrier, on which the text is inscribed. Sub-element of `<objectDesc>`. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<surname>` |  |  Contains a family (inherited) name of a person, excluding patronyms and metronyms. | [ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.2](HB3_ch12.xml#sec12.2.2), [14.2](HB3_ch14.xml#sec14.2).  |
+| `<surplus>` |  | Contains text which the editor believes should be recognised as superfluous. | [ch. 9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.2.1](HB3_ch9.xml#sec9.3.2.1), [9.3.2.2](HB3_ch9.xml#sec9.3.2.2), [16.2](HB3_ch16.xml#sec16.2), [16.5.2](HB3_ch16.xml#sec16.5.2).  |
+| `@reason` | Optional | Indicates the reason for the piece of text being superfluous. Sample values: `"dittography"`, `"excess"`, `"incoherence"`. |  |
+| `@rendition` | Optional | If a superfluous passage has a structural overlap with two or more `<w>` elements, we suggest using this attribute with the `"first"`, `"middle"` and `"last"` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2). |  |
+| `<surrogates>` |  |  Contains information about any representations of the manuscript being described which may exist in the holding institution or elsewhere, e.g. photographic reproductions. Sub-element of `<additional>`. | [ch. 14.3.5](HB3_ch14.xml#sec14.3.5).  |
 
 
 **T**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<TEI>` |  | A TEI document is always at its highest level enclosed by this start element.
-        		The `<TEI>` element must contain two sub-elements, `<teiHeader>` and `<text>`. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-          		[3.2](HB3_ch3.xml#sec3.2). |
-| `<teiHeader>` |  | The TEI-based header. Contains structured meta-data, i.e. information about the electronic document provided. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-            	[3.2](HB3_ch3.xml#sec3.2),
-            	[3.4](HB3_ch3.xml#sec3.4),
-            	[7.1](HB3_ch7.xml#sec7.1).
-            	 |
-| `<term>` |  | Contains a single-word, multi-word, or symbolic designation which is regarded as a 
-        		  technical term. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
+| `<TEI>` |  | A TEI document is always at its highest level enclosed by this start element. The `<TEI>` element must contain two sub-elements, `<teiHeader>` and `<text>`. | [ch. 2.7](HB3_ch2.xml#sec2.7), [3.2](HB3_ch3.xml#sec3.2). |
+| `<teiHeader>` |  | The TEI-based header. Contains structured meta-data, i.e. information about the electronic document provided. | [ch. 2.7](HB3_ch2.xml#sec2.7), [3.2](HB3_ch3.xml#sec3.2), [3.4](HB3_ch3.xml#sec3.4), [7.1](HB3_ch7.xml#sec7.1).  |
+| `<term>` |  | Contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
 | `@type` | Optional | Characterises the element in some sense. |  |
-| `<text>` |  | Contains a single text of any kind. | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[2.7](HB3_ch2.xml#sec2.7),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.2](HB3_ch3.xml#sec3.2),
-            	[3.2.1](HB3_ch3.xml#sec3.2.1),
-            	[11.7](HB3_ch11.xml#sec11.7),
-            	[15.1](HB3_ch15.xml#sec15.1).
-            	 |
-| `@xml:id` | Optional | Identifier. Provides a unique identifier for the element bearing the attribute.
-        		 |  |
-| `@xml:lang` | Optional | Lanuage. The dominant language in a transcription should be 
-        			specified in an attribute to the `<text>` element. The values should be given as a three-letter code, wherever possible based on the
-        			international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
-| `<textLang>` |  | 
-        			Text language. Describes the languages and writing systems identified within the bibliographic work being described, rather than its description.
-        			Sub-element of `<msItem>`. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
-| `<title>` |  | Contains a title for any kind of work. Sub-element of `<msItem>`.
-             | [ch. 2.3](HB3_ch2.xml#sec2.3),
-            	[2.9](HB3_ch2.xml#sec2.9),
-            	[14.2.1](HB3_ch14.xml#sec14.2.1),
-            	[14.3.2](HB3_ch14.xml#sec14.3.2) |
-| `@level` | Optional | Indicates the bibliographic level for a title. Sample values:
-				      `"a"` (analytic), `"m"` (monographic), `"j"` (journal),
-				      `"s"` (series), `"u"` (unpublished).
-				     |  |
-| `<titleStmt>` |  | Title statement. Contains information on the title, editor and other people who have been responsible for the edition. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1).
-            	 |
+| `<text>` |  | Contains a single text of any kind. | [ch. 2.3](HB3_ch2.xml#sec2.3), [2.7](HB3_ch2.xml#sec2.7), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.2](HB3_ch3.xml#sec3.2), [3.2.1](HB3_ch3.xml#sec3.2.1), [11.7](HB3_ch11.xml#sec11.7), [15.1](HB3_ch15.xml#sec15.1).  |
+| `@xml:id` | Optional | Identifier. Provides a unique identifier for the element bearing the attribute.  |  |
+| `@xml:lang` | Optional | Lanuage. The dominant language in a transcription should be specified in an attribute to the `<text>` element. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin. |  |
+| `<textLang>` |  |  Text language. Describes the languages and writing systems identified within the bibliographic work being described, rather than its description. Sub-element of `<msItem>`. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
+| `<title>` |  | Contains a title for any kind of work. Sub-element of `<msItem>`.  | [ch. 2.3](HB3_ch2.xml#sec2.3), [2.9](HB3_ch2.xml#sec2.9), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.2](HB3_ch14.xml#sec14.3.2) |
+| `@level` | Optional | Indicates the bibliographic level for a title. Sample values: `"a"` (analytic), `"m"` (monographic), `"j"` (journal), `"s"` (series), `"u"` (unpublished).  |  |
+| `<titleStmt>` |  | Title statement. Contains information on the title, editor and other people who have been responsible for the edition. | [ch. 14.2.1](HB3_ch14.xml#sec14.2.1).  |
 
 
 **U**
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<unclear>` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. | [ch. 8.1](HB3_ch8.xml#sec8.1),
-            	[8.4](HB3_ch8.xml#sec8.4),
-            	[8.4.1](HB3_ch8.xml#sec8.4.1),
-            	[8.4.2](HB3_ch8.xml#sec8.4.2),
-            	[9.2.2.1](HB3_ch9.xml#sec9.2.2.1),
-            	[16.2](HB3_ch16.xml#sec16.2),
-            	[16.2.1](HB3_ch16.xml#sec16.2.1),
-            	[16.5.1](HB3_ch16.xml#sec16.5.1).
-             |
-| `@agent` | Optional | Identifiable cause for the difficulty in transcribing the material. Sample values:
-							`"rubbing"`, `"mildew"`, `"smoke"`. |  |
+| `<unclear>` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. | [ch. 8.1](HB3_ch8.xml#sec8.1), [8.4](HB3_ch8.xml#sec8.4), [8.4.1](HB3_ch8.xml#sec8.4.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [16.2](HB3_ch16.xml#sec16.2), [16.2.1](HB3_ch16.xml#sec16.2.1), [16.5.1](HB3_ch16.xml#sec16.5.1).  |
+| `@agent` | Optional | Identifiable cause for the difficulty in transcribing the material. Sample values: `"rubbing"`, `"mildew"`, `"smoke"`. |  |
 | `@next` | Optional | Points to the element which marks the next tag of the same feature. |  |
-| `@reason` | Optional | Indicates why the material is hard to transcribe. Sample values:
-          		`"faded"`, `"smudged"`, `"erased"`. |  |
+| `@reason` | Optional | Indicates why the material is hard to transcribe. Sample values: `"faded"`, `"smudged"`, `"erased"`. |  |
 | `@xml:id` | Optional | Provides a unique identifier for the element bearing the attribute. |  |
 
 
@@ -1289,48 +434,11 @@ HTML elements such as `<a>`, `<br>` and `<i>` are discussed in a few
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<w>` |  | Word. Contains a lexical word, not necessarily a graphical word. | [ch. 1.4](HB3_ch1.xml#sec1.4),
-            	[2.8.2](HB3_ch2.xml#sec2.8.2),
-            	[3.1.1](HB3_ch3.xml#sec3.1.1),
-            	[3.6](HB3_ch3.xml#sec3.6),
-            	[3.7](HB3_ch3.xml#sec3.7),
-            	[3.12.2](HB3_ch3.xml#sec3.12.2),
-            	[4.5](HB3_ch4.xml#sec4.5),
-            	[4.6.3](HB3_ch4.xml#sec4.6.3),
-            	[4.6.5](HB3_ch4.xml#sec4.6.5),
-            	[5.1](HB3_ch5.xml#sec5.1),
-            	[5.2.3](HB3_ch5.xml#sec5.2.3),
-            	[5.3.1](HB3_ch5.xml#sec5.3.1),
-            	[5.3.2](HB3_ch5.xml#sec5.3.2),
-            	[5.3.3](HB3_ch5.xml#sec5.3.3),
-            	[5.4.1](HB3_ch5.xml#sec5.4.1),
-            	[5.5](HB3_ch5.xml#sec5.5),
-            	[5.5.3](HB3_ch5.xml#sec5.5.3),
-            	[5.7](HB3_ch5.xml#sec5.7),
-            	[5.8](HB3_ch5.xml#sec5.8),
-            	[8.4.1](HB3_ch8.xml#sec8.4.1),
-            	[11.1](HB3_ch11.xml#sec11.1),
-            	[11.2](HB3_ch11.xml#sec11.2),
-            	[11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-            	[12.1](HB3_ch12.xml#sec12.1),
-            	[14.4](HB3_ch14.xml#sec14.4),
-            	[15.1](HB3_ch15.xml#sec15.1),
-            	[15.4.2.1](HB3_ch15.xml#sec15.4.2.1),
-            	[16.1](HB3_ch16.xml#sec16.1),
-            	[16.2](HB3_ch16.xml#sec16.2),
-            	[16.3](HB3_ch16.xml#sec16.3),
-            	[16.5](HB3_ch16.xml#sec16.5),
-            	[16.5.2](HB3_ch16.xml#sec16.5.2).
-            	  |
+| `<w>` |  | Word. Contains a lexical word, not necessarily a graphical word. | [ch. 1.4](HB3_ch1.xml#sec1.4), [2.8.2](HB3_ch2.xml#sec2.8.2), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.6](HB3_ch3.xml#sec3.6), [3.7](HB3_ch3.xml#sec3.7), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.5](HB3_ch4.xml#sec4.5), [4.6.3](HB3_ch4.xml#sec4.6.3), [4.6.5](HB3_ch4.xml#sec4.6.5), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.3.3](HB3_ch5.xml#sec5.3.3), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [8.4.1](HB3_ch8.xml#sec8.4.1), [11.1](HB3_ch11.xml#sec11.1), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [12.1](HB3_ch12.xml#sec12.1), [14.4](HB3_ch14.xml#sec14.4), [15.1](HB3_ch15.xml#sec15.1), [15.4.2.1](HB3_ch15.xml#sec15.4.2.1), [16.1](HB3_ch16.xml#sec16.1), [16.2](HB3_ch16.xml#sec16.2), [16.3](HB3_ch16.xml#sec16.3), [16.5](HB3_ch16.xml#sec16.5), [16.5.2](HB3_ch16.xml#sec16.5.2).  |
 | `@lemma` | Optional | States the lemma (lexical entry) of the word. |  |
 | `@me:msa` | Optional | States the grammatical (morphosyntactial) form of the word. |  |
-| `@me:orig-lemma` | Optional | A lemma according to another source. Some of the Old Norwegian texts in the Menota archive have received
-        		  lemmata in the orthographic norm of Gammelnorsk Ordboksverk, and this information can be kept in a separate lemma.
-        		 |  |
-| `@xml:lang` | Optional | Language. If there are words, phrases or passages in another language than the one stated in the `<text>` element, they should be set out by this attribute,
-        			preferably one for each word. All `@xml:lang` attributes should be defined in the `<profileDesc>` element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the
-        			international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.
-        		 |  |
+| `@me:orig-lemma` | Optional | A lemma according to another source. Some of the Old Norwegian texts in the Menota archive have received lemmata in the orthographic norm of Gammelnorsk Ordboksverk, and this information can be kept in a separate lemma.  |  |
+| `@xml:lang` | Optional | Language. If there are words, phrases or passages in another language than the one stated in the `<text>` element, they should be set out by this attribute, preferably one for each word. All `@xml:lang` attributes should be defined in the `<profileDesc>` element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.  |  |
 
 ## 3. Menota-specific elements and attributes
 
@@ -1340,185 +448,29 @@ All elements in this list have been included in section 2 above, but are here co
 
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<am>` |  | Abbreviation marker. Contains the abbreviation marker used in the manuscript, making 
-				      it clear that the marker is an abbreviation sign, not an ordinary character. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-				    	[4.5](HB3_ch4.xml#sec4.5),
-				    	[5.2.1](HB3_ch5.xml#sec5.2.1),
-				    	[5.2.2](HB3_ch5.xml#sec5.2.2),
-				    	[5.4.2](HB3_ch5.xml#sec5.4.2),
-				    	[6.1](HB3_ch6.xml#sec6.1),
-				    	[6.3.8](HB3_ch6.xml#sec6.3.8),
-				    	[6.5.2](HB3_ch6.xml#sec6.5.2),
-				    	[6.5.8](HB3_ch6.xml#sec6.5.8).
-				     |
+| `<am>` |  | Abbreviation marker. Contains the abbreviation marker used in the manuscript, making it clear that the marker is an abbreviation sign, not an ordinary character. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [5.2.2](HB3_ch5.xml#sec5.2.2), [5.4.2](HB3_ch5.xml#sec5.4.2), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8), [6.5.2](HB3_ch6.xml#sec6.5.2), [6.5.8](HB3_ch6.xml#sec6.5.8).  |
 | `@me:type` | Optional | Specifies the type of abbreviation. |  |
-| `<bibl>` |  | Bibliographic citation. Used for each bibliographic reference. 
-				    	It can be specified with an `@xml:id` attribute (exemplified in [ch. 14](HB3_ch14.xml)) 
-				    	or a `@me:ref` attribute (exemplified in [ch. 15](HB3_ch15.xml)).			      
-				     | [ch. 14.3](HB3_ch14.xml#sec14.3),
-				      [14.3.2](HB3_ch14.xml#sec14.3.2),
-				      [14.3.5](HB3_ch14.xml#sec14.3.5),
-				      [14.3.6](HB3_ch14.xml#sec14.3.6),
-				      [15.1](HB3_ch15.xml#sec15.1),
-				      [15.4.1](HB3_ch15.xml#sec15.4.1).
-				     |
-| `@me:ref` | Optional | Identifies the work cited (as exemplified in ch. 15).
-						 |  |
-| `@xml:id` | Optional | Identifies the work cited (as exemplified in ch. 14).
-				     |  |
-| `<ex>` |  | Editorial expansion. Contains an expansion inserted by the editor, replacing the abbreviation marker. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-				      [4.3](HB3_ch4.xml#sec4.3),
-				      [4.5](HB3_ch4.xml#sec4.5),
-				      [5.2.1](HB3_ch5.xml#sec5.2.1),
-				      [6.1](HB3_ch6.xml#sec6.1),
-				      [6.3.8](HB3_ch6.xml#sec6.3.8).
-				     |
+| `<bibl>` |  | Bibliographic citation. Used for each bibliographic reference. It can be specified with an `@xml:id` attribute (exemplified in [ch. 14](HB3_ch14.xml)) or a `@me:ref` attribute (exemplified in [ch. 15](HB3_ch15.xml)).  | [ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5), [14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1), [15.4.1](HB3_ch15.xml#sec15.4.1).  |
+| `@me:ref` | Optional | Identifies the work cited (as exemplified in ch. 15).  |  |
+| `@xml:id` | Optional | Identifies the work cited (as exemplified in ch. 14).  |  |
+| `<ex>` |  | Editorial expansion. Contains an expansion inserted by the editor, replacing the abbreviation marker. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.3](HB3_ch4.xml#sec4.3), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8).  |
 | `@me:type` | Optional | Specifies the type of expansion. |  |
-| `<interpretation>` |  | Specifies the amount of lexical and grammatical information in the encoded text. 
-				      Sub-element of `<editorialDecl>`. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-				      [14.4](HB3_ch14.xml#sec14.4).
-				     |
+| `<interpretation>` |  | Specifies the amount of lexical and grammatical information in the encoded text. Sub-element of `<editorialDecl>`. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4).  |
 | `@me:lemmatized` | Obligatory | Specifies the degree of lemmatisation: `"completely"`, `"partly"` and `"none"`. |  |
-| `@me:morphAnalyzed` | Optional | Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word):
-				      `"completely"`, `"partly"` and `"none"`. |  |
-| `<me:all>` |  | Indicates the alliteration of the line. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [13.2](HB3_ch13.xml#sec13.2),
-				      [13.3](HB3_ch13.xml#sec13.3).
-				     |
-| `<me:ass>` |  | Indicates the internal rhymes of the line, where relevant. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [13.2](HB3_ch13.xml#sec13.2),
-				      [13.3](HB3_ch13.xml#sec13.3).
-				     |
-| `<me:facs>` |  | Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic 
-							characteristics and the retention of abbreviations as in the manuscript. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-							[2.8.1](HB3_ch2.xml#sec2.8.1),
-							[3.6](HB3_ch3.xml#sec3.6),
-							[4.1](HB3_ch4.xml#sec4.1),
-							[4.5](HB3_ch4.xml#sec4.5),
-							[4.6.5](HB3_ch4.xml#sec4.6.5),
-							[4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-							[5.3.2](HB3_ch5.xml#sec5.3.2),
-							[5.4](HB3_ch5.xml#sec5.4),
-							[5.4.2](HB3_ch5.xml#sec5.4.2),
-							[5.5](HB3_ch5.xml#sec5.5),
-							[5.5.3](HB3_ch5.xml#sec5.5.3),
-							[5.6](HB3_ch5.xml#sec5.6),
-							[6.1](HB3_ch6.xml#sec6.1),
-							[8.4.2](HB3_ch8.xml#sec8.4.2),
-							[9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-							[9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-							[9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-							[11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-							[13.1](HB3_ch13.xml#sec13.1).
-						 |
-| `<me:dipl>` |  | Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of 
-				      palaeographic features and the expansion and identification of abbreviations. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-				      [2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [3.6](HB3_ch3.xml#sec3.6),
-				      [4.1](HB3_ch4.xml#sec4.1),
-				      [4.5](HB3_ch4.xml#sec4.5),
-				      [4.6.5](HB3_ch4.xml#sec4.6.5),
-				      [4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-				      [5.3.2](HB3_ch5.xml#sec5.3.2),
-				      [5.4](HB3_ch5.xml#sec5.4),
-				      [5.4.2](HB3_ch5.xml#sec5.4.2),
-				      [5.5.3](HB3_ch5.xml#sec5.5.),
-				      [5.6](HB3_ch5.xml#sec5.6),
-				      [6.1](HB3_ch6.xml#sec6.1),
-				      [8.4.2](HB3_ch8.xml#sec8.4.2),
-				      [9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-				      [9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-				      [9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-				      [13.1](HB3_ch13.xml#sec13.1) |
-| `<me:norm>` |  | Contains a reading on the normalised level, a transcription in normalised orthography. | [ch. 2.7](HB3_ch2.xml#sec2.7),
-				      [2.8](HB3_ch2.xml#sec2.8),
-				      [2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [3.6](HB3_ch3.xml#sec3.6),
-				      [4.1](HB3_ch4.xml#sec4.1),
-				      [4.5](HB3_ch4.xml#sec4.5),
-				      [4.6.4](HB3_ch4.xml#sec4.6.4),
-				      [4.6.5](HB3_ch4.xml#sec4.6.5),
-				      [4.6.5.2](HB3_ch4.xml#sec4.6.5.2),
-				      [5.3.2](HB3_ch5.xml#sec5.3.2),
-				      [5.4](HB3_ch5.xml#sec5.4),
-				      [5.4.2](HB3_ch5.xml#sec5.4.2),
-				      [5.5.3](HB3_ch5.xml#sec5.5.3),
-				      [5.6](HB3_ch5.xml#sec5.6),
-				      [6.1](HB3_ch6.xml#sec6.1),
-				      [8.4.2](HB3_ch8.xml#sec8.4.2),
-				      [9.2.3.2](HB3_ch9.xml#sec9.2.3.2),
-				      [9.2.4.1](HB3_ch9.xml#sec9.2.4.1),
-				      [9.3.3.1](HB3_ch9.xml#sec9.3.3.1),
-				      [10.1](HB3_ch10.xml#sec10.1),
-				      [11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-				      [13.1](HB3_ch13.xml#sec13.1).
-				     |
-| `<me:pal>` |  | Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>` level. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [4.2](HB3_ch4.xml#sec4.2),
-				      [4.6.5.2](HB3_ch4.xml#sec4.6.5.2).
-				     |
-| `<me:textSpan/>` |  | A generic element to handle overlapping text structures. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1),
-				      [2.8.2](HB3_ch2.xml#sec2.8.2),
-				      [16.2](HB3_ch16.xml#sec16.2),
-				      [16.2.2](HB3_ch16.xml#sec16.2.2).
-				     |
-| `@me:category` | Optional | Specifies the type of span, restricted to this list of values (which correspond to elements):          
-				      `"gap"` for contents that would otherwise be contained by the `<gap/>` element;
-				      `"unclear"` for contents that would otherwise be contained by the `<unclear>` element;
-				      `"add"` for contents that would otherwise be contained by the `<add>` element;
-				      `"del"` for contents that would otherwise be contained by the `<del>` element;
-				      `"sic"` for contents that would otherwise be contained by the `<sic>` element;
-				      `"corr"` for contents that would otherwise be contained by the `<corr>` element;
-				      `"surplus"` for contents that would otherwise be contained by the `<surplus>` element;
-				      `"other"` for for contents that would otherwise be contained by other elements.
-				     |  |
-| `@spanTo` | Optional | Specifies the end point of the text span. Recommended values: `"an1"`, `"an2"`, 
-				      `"an3"` and so on. |  |
-| `<normalization>` |  | Used to specify the level on which the text is encoded. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2),
-				      [14.4](HB3_ch14.xml#sec14.4).
-				     |
-| `@me:level` | Obligatory | Specifies the level on which the text is encoded. The three focal levels are `"facs"` (facsimile),
-				      `"dipl"` (diplomatic) and `"norm"` (normalised). In addition, a strictly paleographic level, 
-				      `"pal"` is defined. |  |
-| `<w>` |  | Word. Contains a lexical word, not necessarily a graphical word. | [ch. 1.4](HB3_ch1.xml#sec1.4),
-				    	[2.8.2](HB3_ch2.xml#sec2.8.2),
-				    	[3.1.1](HB3_ch3.xml#sec3.1.1),
-				    	[3.6](HB3_ch3.xml#sec3.6),
-				    	[3.7](HB3_ch3.xml#sec3.7),
-				    	[3.12.2](HB3_ch3.xml#sec3.12.2),
-				    	[4.5](HB3_ch4.xml#sec4.5),
-				    	[4.6.3](HB3_ch4.xml#sec4.6.3),
-				    	[4.6.5](HB3_ch4.xml#sec4.6.5),
-				    	[5.1](HB3_ch5.xml#sec5.1),
-				    	[5.2.3](HB3_ch5.xml#sec5.2.3),
-				    	[5.3.1](HB3_ch5.xml#sec5.3.1),
-				    	[5.3.2](HB3_ch5.xml#sec5.3.2),
-				    	[5.3.3](HB3_ch5.xml#sec5.3.3),
-				    	[5.4.1](HB3_ch5.xml#sec5.4.1),
-				    	[5.5](HB3_ch5.xml#sec5.5),
-				    	[5.5.3](HB3_ch5.xml#sec5.5.3),
-				    	[5.7](HB3_ch5.xml#sec5.7),
-				    	[5.8](HB3_ch5.xml#sec5.8),
-				    	[8.4.1](HB3_ch8.xml#sec8.4.1),
-				    	[11.1](HB3_ch11.xml#sec11.1),
-				    	[11.2](HB3_ch11.xml#sec11.2),
-				    	[11.3.2.11](HB3_ch11.xml#sec11.3.2.11),
-				    	[12.1](HB3_ch12.xml#sec12.1),
-				    	[14.4](HB3_ch14.xml#sec14.4),
-				    	[15.1](HB3_ch15.xml#sec15.1),
-				    	[15.4.2.1](HB3_ch15.xml#sec15.4.2.1),
-				    	[16.1](HB3_ch16.xml#sec16.1),
-				    	[16.2](HB3_ch16.xml#sec16.2),
-				    	[16.3](HB3_ch16.xml#sec16.3),
-				    	[16.5](HB3_ch16.xml#sec16.5),
-				    	[16.5.2](HB3_ch16.xml#sec16.5.2).
-				     |
+| `@me:morphAnalyzed` | Optional | Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): `"completely"`, `"partly"` and `"none"`. |  |
+| `<me:all>` |  | Indicates the alliteration of the line. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3).  |
+| `<me:ass>` |  | Indicates the internal rhymes of the line, where relevant. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3).  |
+| `<me:facs>` |  | Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1).  |
+| `<me:dipl>` |  | Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [13.1](HB3_ch13.xml#sec13.1) |
+| `<me:norm>` |  | Contains a reading on the normalised level, a transcription in normalised orthography. | [ch. 2.7](HB3_ch2.xml#sec2.7), [2.8](HB3_ch2.xml#sec2.8), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [10.1](HB3_ch10.xml#sec10.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1).  |
+| `<me:pal>` |  | Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>` level. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [4.2](HB3_ch4.xml#sec4.2), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2).  |
+| `<me:textSpan/>` |  | A generic element to handle overlapping text structures. | [ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [2.8.2](HB3_ch2.xml#sec2.8.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2).  |
+| `@me:category` | Optional | Specifies the type of span, restricted to this list of values (which correspond to elements): `"gap"` for contents that would otherwise be contained by the `<gap/>` element; `"unclear"` for contents that would otherwise be contained by the `<unclear>` element; `"add"` for contents that would otherwise be contained by the `<add>` element; `"del"` for contents that would otherwise be contained by the `<del>` element; `"sic"` for contents that would otherwise be contained by the `<sic>` element; `"corr"` for contents that would otherwise be contained by the `<corr>` element; `"surplus"` for contents that would otherwise be contained by the `<surplus>` element; `"other"` for for contents that would otherwise be contained by other elements.  |  |
+| `@spanTo` | Optional | Specifies the end point of the text span. Recommended values: `"an1"`, `"an2"`, `"an3"` and so on. |  |
+| `<normalization>` |  | Used to specify the level on which the text is encoded. | [ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4).  |
+| `@me:level` | Obligatory | Specifies the level on which the text is encoded. The three focal levels are `"facs"` (facsimile), `"dipl"` (diplomatic) and `"norm"` (normalised). In addition, a strictly paleographic level, `"pal"` is defined. |  |
+| `<w>` |  | Word. Contains a lexical word, not necessarily a graphical word. | [ch. 1.4](HB3_ch1.xml#sec1.4), [2.8.2](HB3_ch2.xml#sec2.8.2), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.6](HB3_ch3.xml#sec3.6), [3.7](HB3_ch3.xml#sec3.7), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.5](HB3_ch4.xml#sec4.5), [4.6.3](HB3_ch4.xml#sec4.6.3), [4.6.5](HB3_ch4.xml#sec4.6.5), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.3.3](HB3_ch5.xml#sec5.3.3), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [8.4.1](HB3_ch8.xml#sec8.4.1), [11.1](HB3_ch11.xml#sec11.1), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [12.1](HB3_ch12.xml#sec12.1), [14.4](HB3_ch14.xml#sec14.4), [15.1](HB3_ch15.xml#sec15.1), [15.4.2.1](HB3_ch15.xml#sec15.4.2.1), [16.1](HB3_ch16.xml#sec16.1), [16.2](HB3_ch16.xml#sec16.2), [16.3](HB3_ch16.xml#sec16.3), [16.5](HB3_ch16.xml#sec16.5), [16.5.2](HB3_ch16.xml#sec16.5.2).  |
 | `@lemma` | Optional | States the lemma (lexical entry) of the word. |  |
 | `@me:msa` | Optional | States the grammatical (morphosyntactial) form of the word. |  |
-| `@me:orig-lemma` | Optional | A lemma according to another source. Some of the Old Norwegian texts in the Menota archive have received
-				      lemmata in the orthographic norm of Gammelnorsk Ordboksverk, and this information can be kept in a separate lemma.
-				     |  |
-| `@xml:lang` | Optional | Language. If there are words, phrases or passages in another language than the one stated in the `<text>` element, they should be set out by this attribute,
-				    	preferably one for each word. All `@xml:lang` attributes should be defined in the `<profileDesc>` element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the
-				    	international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.
-				     |  |
+| `@me:orig-lemma` | Optional | A lemma according to another source. Some of the Old Norwegian texts in the Menota archive have received lemmata in the orthographic norm of Gammelnorsk Ordboksverk, and this information can be kept in a separate lemma.  |  |
+| `@xml:lang` | Optional | Language. If there are words, phrases or passages in another language than the one stated in the `<text>` element, they should be set out by this attribute, preferably one for each word. All `@xml:lang` attributes should be defined in the `<profileDesc>` element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"` for Danish, `"isl"` for Icelandic, `"nor"` for Norwegian, `"swe"` for Swedish and `"lat"` for Latin.  |  |

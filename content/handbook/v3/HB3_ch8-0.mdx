@@ -58,18 +58,11 @@ Whenever the manuscript contains a lacuna we suggest using the element
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<gap/>` |  | Is an element without extention in the encoded manuscript text. It indicates
-                        a point where material has been omitted in a transcription because it is
-                        physically missing in the manuscript. Attributes include: |
+| `<gap/>` |  | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: |
 | `@unit` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"` (character), `"word"`, `"line"` or `"leaf"`, or even `"indeterminate"`. |
-| `@quantity` | Optional | Indicates approximately how much text has been omitted from the
-                        transcription. Values can be given as e.g. number of characters, words,
-                        lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. 
-                        Note that only numbers are accepted as values; the category is described in the `@unit` attribute.If the extent of the gap is described as `"indeterminate"` in the `@unit` attribute, it does not make sense to try and specify a quantity. |
-| `@reason` | Optional | Gives the reason for omission. Sample values include: `"damaged"`,
-                        `"cut"`, `"missing"`. |
-| `@agent` | Optional | In the case of text omitted because of damage, categorises the cause of the
-                        damage, if it can be identified. Values can be `"rubbing"`, `"smoke"`, `"fungus"` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+| `@quantity` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.If the extent of the gap is described as `"indeterminate"` in the `@unit` attribute, it does not make sense to try and specify a quantity. |
+| `@reason` | Optional | Gives the reason for omission. Sample values include: `"damaged"`, `"cut"`, `"missing"`. |
+| `@agent` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"`, `"smoke"`, `"fungus"` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
 
 
 In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn <em>maðr</em> er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
@@ -148,7 +141,7 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 
 | Element | Smaller lacunas | Larger lacunas |
 |-----|-----|-----|
-| `<gap/>` | By a number of dotted circles,  ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
+| `<gap/>` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
 
 
 Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD`SMALL BASE LINE ZERO SIGN, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
@@ -162,18 +155,10 @@ The `<space/>` element is used to represent deliberate omissions by the scribe, 
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<space/>` |  | Is an element without extention in the encoded manuscript text. It indicates
-                     a point in a transcription of a manuscript where the manuscript has a
-                     deliberate omission and has left an open space for later usage, either by the scribe 
-                     or another scribe. Attributes include: |
-| `@quantity` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words,
-                  lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. 
-                     Note that only numbers are accepted as values; the category is described in the `@unit` attribute.             
-                   |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"` (characters) and `"word"`.
-                   |
-| `@dim` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"` or
-                     `"vertical"`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+| `<space/>` |  | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. Attributes include: |
+| `@quantity` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.  |
+| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"` (characters) and `"word"`.  |
+| `@dim` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"` or `"vertical"`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
 
 
 In fig. 8.3, the scribe of _Landslǫg Magnúss
@@ -302,9 +287,7 @@ An empty space may be anything from a single character, typically set aside for 
 
 | Element | Smaller areas | Larger areas |
 |-----|-----|-----|
-| `<space/>` | By a number of spaces, `&nbsp;`, corresponding to the estimated number of characters 
-                     in the empty area, or in a number of line beginnings in otherwise empty lines,
-                     `<lb/>`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
+| `<space/>` | By a number of spaces, `&nbsp;`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
 
 
 Other stylesheets may choose to display empty space differently,
@@ -320,11 +303,9 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<unclear>` |  | Contains a character, word, phrase or passage which cannot be transcribed with
-                     certainty. Attributes include: |
+| `<unclear>` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. Attributes include: |
 | `@reason` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"`, `"smudged"`, `"erased"`. |
-| `@agent` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described.
-                     Sample values include: `"rubbing"`, `"mildew"`, `"smoke"`. |
+| `@agent` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"`, `"mildew"`, `"smoke"`. |
 
 
 
@@ -457,8 +438,7 @@ In the stylesheet for the Menota archive, a light grey colour is used for charac
 
 | Element | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
-| `<unclear>` | Characters are rendered in grey. | Characters are rendered in grey on the `<me:facs>` and `<me:dipl>` levels, 
-                        but in ordinary, non-coloured characters on the `<me:norm>` level. |
+| `<unclear>` | Characters are rendered in grey. | Characters are rendered in grey on the `<me:facs>` and `<me:dipl>` levels, but in ordinary, non-coloured characters on the `<me:norm>` level. |
 
 
 Stylesheets differ somewhat with respect to the display of unclear passages. Some stylesheets, for example, would prefer to render unclear characters with subpunction, such as in many printed editions. As for illegible characters, small zeros are mostly used in printed editions.

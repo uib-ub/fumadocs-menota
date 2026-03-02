@@ -39,13 +39,9 @@ The element `<add>` should be used for additions made in the manuscript by the s
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<add>` |  | Contains characters, words or phrases added to the manuscript text or 
-    in the margins of the manuscript by the scribe, an annotator or a
-    corrector. Attributes include: |
-| `@place` | Obligatory | Indicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, 
-      `"infralinear"` and `"margin"`. |
-| `@hand` | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"`,
-      `"mainscribe"` and `"laterscribe"`. |
+| `<add>` |  | Contains characters, words or phrases added to the manuscript text or in the margins of the manuscript by the scribe, an annotator or a corrector. Attributes include: |
+| `@place` | Obligatory | Indicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, `"infralinear"` and `"margin"`. |
+| `@hand` | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"`, `"mainscribe"` and `"laterscribe"`. |
 
 
 
@@ -163,10 +159,8 @@ In the stylesheet for the Menota archive, scribal additions are displayed by ins
 | Element and attributes | Display |
 |-----|-----|
 | &lt;add place="inline"&gt;<br/>
-
-             &lt;add place="supralinear"&gt;<br/>
-
-             &lt;add place="infralinear"&gt;<br/>
+ &lt;add place="supralinear"&gt;<br/>
+ &lt;add place="infralinear"&gt;<br/>
  | Downwards-pointing insertion signs,<br/>
  e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax |
 | &lt;add place="margin"&gt; | Upwards-pointing insertion signs,<br/>
@@ -191,18 +185,9 @@ The element `<del>` should be used for deletions made in the manuscript by the s
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<del>` |  | Contains a character, word or
-    passage deleted or otherwise indicated
-    as superfluous or spurious in the manuscript text by a
-    scribe, annotator or corrector. Attributes
-    include: |
-| `@rend` | Obligatory | This attribute is used to classify the deletion,
-      using any convenient typology. Sample values include `"overstrike"`, `"erasure"`
-      and `"subpunction"`.
-     |
-| `@hand` | Optional | Signifies the scribe who made the deletion. Values include 
-      `"scribe"`, `"mainscribe"` and `"laterscribe"`.
-     |
+| `<del>` |  | Contains a character, word or passage deleted or otherwise indicated as superfluous or spurious in the manuscript text by a scribe, annotator or corrector. Attributes include: |
+| `@rend` | Obligatory | This attribute is used to classify the deletion, using any convenient typology. Sample values include `"overstrike"`, `"erasure"` and `"subpunction"`.  |
+| `@hand` | Optional | Signifies the scribe who made the deletion. Values include `"scribe"`, `"mainscribe"` and `"laterscribe"`.  |
 
 
 
@@ -503,16 +488,10 @@ If text is missing in the manuscript, the editor can supply it using the `<suppl
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<supplied>` |  | Signifies text supplied by
-        the editor in order to restore or emend the manuscript text.
-        Attributes include: |
-| `@reason` | Obligatory | Indicates why the text has
-        been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
-| `@resp` | Obligatory | Indicates the individual
-        responsible for the addition of characters, words or passages
-        contained within the `<supplied>` element. |
-| `@source` | Optional | States the source of the
-        supplied text if this can be located. |
+| `<supplied>` |  | Signifies text supplied by the editor in order to restore or emend the manuscript text. Attributes include: |
+| `@reason` | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
+| `@resp` | Obligatory | Indicates the individual responsible for the addition of characters, words or passages contained within the `<supplied>` element. |
+| `@source` | Optional | States the source of the supplied text if this can be located. |
 9.3.1.1 Encoding of restorations
 
 **Restoration** is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](HB3_ch8.xml#sec8.2)), empty spaces ([ch. 8.3](HB3_ch8.xml#sec8.3)), and unclear passages ([ch. 8.4](HB3_ch8.xml#sec8.4)).
@@ -811,14 +790,9 @@ In the stylesheet for the Menota archive, supplied text as a default is displaye
 
 | Element and attributes  | Display |
 |-----|-----|
-| &lt;supplied 
-        reason="restoration"&gt;<br/>
- | Square brackets, `005B` and `005D` respectively, e.g.
-        [S]á einn maðr |
-| &lt;supplied 
-        reason="emendation"&gt; | Open angle brackets, `27E8` and `27E9`, e.g. 
-        hafi ⟨þik⟩ þangat sent
-       |
+| &lt;supplied reason="restoration"&gt;<br/>
+ | Square brackets, `005B` and `005D` respectively, e.g. [S]á einn maðr |
+| &lt;supplied reason="emendation"&gt; | Open angle brackets, `27E8` and `27E9`, e.g. hafi ⟨þik⟩ þangat sent  |
 
 
 Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.
@@ -949,14 +923,9 @@ elements `<sic>` and
 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<sic>` |  | Contains text reproduced
-    although apparently incorrect or inaccurate. |
-| `<corr>` |  | Contains the correct form
-    of a passage apparently erroneous in the manuscript text.
- |
-| `@resp` | Obligatory | Indicates the individual
-    responsible for the correction of characters, words or passages
-    contained within the `<corr>` element. |
+| `<sic>` |  | Contains text reproduced although apparently incorrect or inaccurate. |
+| `<corr>` |  | Contains the correct form of a passage apparently erroneous in the manuscript text.  |
+| `@resp` | Obligatory | Indicates the individual responsible for the correction of characters, words or passages contained within the `<corr>` element. |
 
 
 
@@ -1099,8 +1068,7 @@ Comments are additional text by the editor and not intended to supply or correct
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<note>` |  | Contains comments to the text by the editor. Main attributes: |
-| `@type` | Optional | Stating what kind of a note it is, e.g. `"explanation"`, `"variation"`, 
-        `"codicology"`, `"paleography"`. |
+| `@type` | Optional | Stating what kind of a note it is, e.g. `"explanation"`, `"variation"`, `"codicology"`, `"paleography"`. |
 | `@source` | Optional | Stating the source for a passage in the text, particularly relevant for the `"variation"` value of the `@type` attribute. |
 
 
