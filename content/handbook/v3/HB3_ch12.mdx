@@ -21,7 +21,13 @@ Medieval manuscripts contain an abundance of names: personal names for historica
 
 The basic element for encoding names of any type is `<name>`, supplied with the
                   `@type` and `@ref` attributes.
-Elements & attributesObl/OptExplanation`<name>`Contains a name, i.e. a proper noun or a noun phrase.`@type`OptionalIndicates what type of name it is.`@ref`OptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<name>` |  | Contains a name, i.e. a proper noun or a noun phrase. |
+| `@type` | Optional | Indicates what type of name it is. |
+| `@ref` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
+
 
 Note that the `<name>` element may contain a `<w>` element, which will be the case in most Menota texts. This `<w>` element will in a number of Menota texts contain a morphological annotation of the word, by way of the `@lemma` and `@me:msa` attributes. See [ch. 11](HB3_ch11.xml) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
 ```xml
@@ -104,10 +110,22 @@ Usually, XML elements for different types of names are used instead of
 
 Personal names may be divided into several categories, depending on the source and
                the naming conventions of the time.
-Elements & attributesObl/OptExplanation`<persName>`The name of a person, consisting of one or more words.`@type`OptionalIndicates the type of name. Suggested values: `"historical"`, `"mythological"`.
-                  `@ref`OptionalIdentifier(s), i.e. xml:id(s) and/or external URI(s).`<forename>`The first name of a person.`<addName>`An additional name of a person.`@type`OptionalIndicates the type of name. Suggested values: `"epithet"`, `"metronym"`,
-                     `"mythological"`, `"nickname"`, `"patronym"`.`<surname>`The family name of a person, excluding patronyms and metronyms.`<roleName>`The name for a role held by a person.`@type`OptionalIndicates the role of the person, e.g. in the form of a title. Suggested
-                     value: `"political"`.
+
+| Elements & attributes | Obl/Opt | Explanation |
+|-----|-----|-----|
+| `<persName>` |  | The name of a person, consisting of one or more words. |
+| `@type` | Optional | Indicates the type of name. Suggested values: `"historical"`, `"mythological"`.
+                   |
+| `@ref` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
+| `<forename>` |  | The first name of a person. |
+| `<addName>` |  | An additional name of a person. |
+| `@type` | Optional | Indicates the type of name. Suggested values: `"epithet"`, `"metronym"`,
+                     `"mythological"`, `"nickname"`, `"patronym"`. |
+| `<surname>` |  | The family name of a person, excluding patronyms and metronyms. |
+| `<roleName>` |  | The name for a role held by a person. |
+| `@type` | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested
+                     value: `"political"`. |
+
 ### 12.2.1 Forenames and patronymica
 
 Forenames are encoded with the element `<forename>` contained in the
@@ -301,9 +319,16 @@ The encoding of place names should be rather straight-forward, but there are a f
 
 A more detailed encoding is achieved by the additional tagset. We recommend that this
                tagset is used in cases when place names are to be more thoroughly encoded:
-ElementsExplanation`<placeName>`A name of a specific location.`<settlement>`The name of the smallest component of a place name expressed as a hierarchy
-                     of geo-political or administrative units.`<region>`Larger or administratively superior to the settlement and smaller or
-                     administratively less important than the country.`<country>`Larger or administratively superior to the region.
+
+| Elements | Explanation |
+|-----|-----|
+| `<placeName>` | A name of a specific location. |
+| `<settlement>` | The name of the smallest component of a place name expressed as a hierarchy
+                     of geo-political or administrative units. |
+| `<region>` | Larger or administratively superior to the settlement and smaller or
+                     administratively less important than the country. |
+| `<country>` | Larger or administratively superior to the region. |
+
 
 All of the above mentioned elements can be linked to the place they denote by means
                of a `@ref`-attribute with identifiers, i.e. xml:ids or external URIs.

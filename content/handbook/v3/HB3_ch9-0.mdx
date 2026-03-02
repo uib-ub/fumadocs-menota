@@ -36,11 +36,17 @@ This section only deals with additions made by a scribal hand.
 
 The element `<add>` should be used for additions made in the manuscript by the scribe himself
   or a later compiler, annotator or corrector. The latter additions are traditionally referred to as being “with younger hand” or the like. It may be desirable to make a distinction between the contemporaneous hand in the manuscript and any later hand, but it is not always a simple task to do so. However, the act of addition is usually easy to spot, as it is typically found above the line or in the margin. For this reason, we recommend that  the place of the addition should always be specified, but not necessarily the hand responsible for the addition.
-Elements & attributesObl/OptContents`<add>`Contains characters, words or phrases added to the manuscript text or 
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<add>` |  | Contains characters, words or phrases added to the manuscript text or 
     in the margins of the manuscript by the scribe, an annotator or a
-    corrector. Attributes include:`@place`ObligatoryIndicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, 
-      `"infralinear"` and `"margin"`.`@hand`OptionalSignifies the scribe who made the addition. Sample values may be `"scribe"`,
-      `"mainscribe"` and `"laterscribe"`.
+    corrector. Attributes include: |
+| `@place` | Obligatory | Indicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, 
+      `"infralinear"` and `"margin"`. |
+| `@hand` | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"`,
+      `"mainscribe"` and `"laterscribe"`. |
+
 
 
 
@@ -153,14 +159,19 @@ Furthermore, changes in scribal hands are not considered additions. For markup o
 
 In the stylesheet for the Menota archive, scribal additions are displayed by insertion signs, either downwards-pointing 
      (for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript).
-Element and attributesDisplay&lt;add place="inline"&gt;<br/>
+
+| Element and attributes | Display |
+|-----|-----|
+| &lt;add place="inline"&gt;<br/>
 
              &lt;add place="supralinear"&gt;<br/>
 
              &lt;add place="infralinear"&gt;<br/>
-Downwards-pointing insertion signs,<br/>
- e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax&lt;add place="margin"&gt;Upwards-pointing insertion signs,<br/>
- e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti
+ | Downwards-pointing insertion signs,<br/>
+ e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax |
+| &lt;add place="margin"&gt; | Upwards-pointing insertion signs,<br/>
+ e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti |
+
 
 In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at `2E0C` and `2E0D`, while the second set, ⸝...⸜, are located at `2E1D` and `2E1C`.
 
@@ -177,16 +188,22 @@ Text suppressed by a modern editor is dealt with in [ch. 9.3.2](#sec9.3.2) below
 
 The element `<del>` should be used for deletions made in the manuscript by the scribe himself
       or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.
-Elements & attributesObl/OptContents`<del>`Contains a character, word or
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<del>` |  | Contains a character, word or
     passage deleted or otherwise indicated
     as superfluous or spurious in the manuscript text by a
     scribe, annotator or corrector. Attributes
-    include:`@rend`ObligatoryThis attribute is used to classify the deletion,
+    include: |
+| `@rend` | Obligatory | This attribute is used to classify the deletion,
       using any convenient typology. Sample values include `"overstrike"`, `"erasure"`
       and `"subpunction"`.
-    `@hand`OptionalSignifies the scribe who made the deletion. Values include 
+     |
+| `@hand` | Optional | Signifies the scribe who made the deletion. Values include 
       `"scribe"`, `"mainscribe"` and `"laterscribe"`.
-    
+     |
+
 
 
 
@@ -248,7 +265,11 @@ Sometimes, a scribe would delete a word and add another above the line.
 
 In the stylesheet for the Menota archive, scribal deletions are displayed by vertical bars with quills. The beginning of the deletion will be indicated 
       by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
-ElementDisplay`<del>`Vertical bars with quills, e.g. þviat ſkilningar ⸠ſk⸡laus ſkepna
+
+| Element | Display |
+|-----|-----|
+| `<del>` | Vertical bars with quills, e.g. þviat ſkilningar ⸠ſk⸡laus ſkepna |
+
 
 In the Unicode Standard, the vertical bar with the quill to the right is located at `2E20`, and the vertical bar with a quill to the left at `2E21`.
 
@@ -271,7 +292,15 @@ The sequence of words in a manuscript was sometimes transposed by the scribe or 
 In fig. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.9.2.3.1 Encoding of scribal transpositions
 
 There are two pairs of elements used in this handbook, `<orig>` + `<reg>` and `<sic>` + `<corr>`. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the `<sic>` + `<corr>` elements, as exemplified in [ch. 9.3.3](#sec9.3.3) below.
-Elements & attributesObl/OptContents`<orig>`Contains the reading in the manuscript. Attributes include:`@rend`ObligatoryThe correction markers in the manuscript. A typical value would be `"transposition-signs"`.`<reg>`Contains the reading corrected in the manuscript. Attributes include:`@type`ObligatoryThe type of correction. We recommend the value `"transposition"`.`@resp`OptionalThe one who is responsible for the regularisation. Sample values include `"scribe"`, `"mainscribe"` and `"laterscribe"`.
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<orig>` |  | Contains the reading in the manuscript. Attributes include: |
+| `@rend` | Obligatory | The correction markers in the manuscript. A typical value would be `"transposition-signs"`. |
+| `<reg>` |  | Contains the reading corrected in the manuscript. Attributes include: |
+| `@type` | Obligatory | The type of correction. We recommend the value `"transposition"`. |
+| `@resp` | Optional | The one who is responsible for the regularisation. Sample values include `"scribe"`, `"mainscribe"` and `"laterscribe"`. |
+
 
 In a single-level encoding, we recommend that the original reading is given within the `<orig>` element with a `@rend` attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing `<reg>` element, and both elements are contained in a `<choice>` element. The `<reg>` element should have a `@type` attribute with the value `"transposition"`, and preferably a `@resp` attribute with a suitable value, e.g. `"mainscribe"` or `"laterscribe"`, or, if a distinction is difficult to draw, just `"scribe"`:
 ```xml
@@ -334,7 +363,12 @@ In a multi-level encoding, one or more words will be added within the `<orig>` a
 If the text is annotated for morphology (or syntax), we recommend that only the words in the `<orig>` element get linguistically annotated, so as to avoid duplication of the annotation. This is a similar case to that of any text being added by the editor in the `<supplied>` element. Supplied text should also be exempted from annotation.9.2.3.2 Display of scribal transpositions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<orig>` reading is displayed on the facsimile level and the `<reg>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<reg>` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<reg>` reading, while the `<orig>` reading is displayed in a note.
-ElementsDisplay in a single-level transcriptionDisplay in a multi-level transcription`<orig>`Displayed in a note to the whole `<orig>` sequence.Displayed in the running text on the `<me:facs>` level with no indication of a transposition.`<reg>`Displayed in the running text.Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green.
+
+| Elements | Display in a single-level transcription | Display in a multi-level transcription |
+|-----|-----|-----|
+| `<orig>` | Displayed in a note to the whole `<orig>` sequence. | Displayed in the running text on the `<me:facs>` level with no indication of a transposition. |
+| `<reg>` | Displayed in the running text. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green. |
+
 
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a transposition.
 
@@ -445,7 +479,12 @@ If a substitution spans a structural
   boundary, we refer to the advice in [ch. 16.2](HB3_ch16.xml#sec16.2) below.9.2.4.1 Display of scribal substitutions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<del>` reading is displayed on the facsimile level and the `<add>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<add>` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<add>` reading, while the `<del>` reading is displayed in a note.
-ElementsDisplay in a single-level transcriptionDisplay in a multi-level transcription`<del>`Displayed with deletion signs, as described in [ch. 9.2.1.2](#sec9.2.1.2) above.Displayed in the running text on the `<me:facs>` level with no indication of a substitution.`<add>`Displayed with addition signs, as described in [ch. 9.2.2.2](#sec9.2.2.2) above.Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green.
+
+| Elements | Display in a single-level transcription | Display in a multi-level transcription |
+|-----|-----|-----|
+| `<del>` | Displayed with deletion signs, as described in [ch. 9.2.1.2](#sec9.2.1.2) above. | Displayed in the running text on the `<me:facs>` level with no indication of a substitution. |
+| `<add>` | Displayed with addition signs, as described in [ch. 9.2.2.2](#sec9.2.2.2) above. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green. |
+
 
 In a multi-level transcription, the stylesheet for the Menota archive uses the green colour on the diplomatic and normalised levels to indicate that a passage is the result of a substitution.
 
@@ -461,13 +500,20 @@ If text is missing in the manuscript, the editor can supply it using the `<suppl
 (1) **Restoration** is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the `@reason` attribute and the value `"restoration"`. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a `@resp` attribute. We regard restoration as the default type of supplied text.
 
 (2) **Emendation** is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the `@reason` attribute and the value `"emendation"`. Also here, the person who is responsible for the emendation should be identified in a `@resp` attribute.
-Elements & attributesObl/OptContents`<supplied>`Signifies text supplied by
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<supplied>` |  | Signifies text supplied by
         the editor in order to restore or emend the manuscript text.
-        Attributes include:`@reason`ObligatoryIndicates why the text has
-        been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.`@resp`ObligatoryIndicates the individual
+        Attributes include: |
+| `@reason` | Obligatory | Indicates why the text has
+        been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
+| `@resp` | Obligatory | Indicates the individual
         responsible for the addition of characters, words or passages
-        contained within the `<supplied>` element.`@source`OptionalStates the source of the
-        supplied text if this can be located.9.3.1.1 Encoding of restorations
+        contained within the `<supplied>` element. |
+| `@source` | Optional | States the source of the
+        supplied text if this can be located. |
+9.3.1.1 Encoding of restorations
 
 **Restoration** is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](HB3_ch8.xml#sec8.2)), empty spaces ([ch. 8.3](HB3_ch8.xml#sec8.3)), and unclear passages ([ch. 8.4](HB3_ch8.xml#sec8.4)).
 
@@ -762,13 +808,18 @@ In a multi-level encoding, the facsimile level will simply be empty for the supp
 In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.9.3.1.3 Display of editorial insertions
 
 In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>` element has the `@reason` attribute and the `"emendation"` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
-Element and attributes Display&lt;supplied 
+
+| Element and attributes  | Display |
+|-----|-----|
+| &lt;supplied 
         reason="restoration"&gt;<br/>
-Square brackets, `005B` and `005D` respectively, e.g.
-        [S]á einn maðr&lt;supplied 
-        reason="emendation"&gt;Open angle brackets, `27E8` and `27E9`, e.g. 
+ | Square brackets, `005B` and `005D` respectively, e.g.
+        [S]á einn maðr |
+| &lt;supplied 
+        reason="emendation"&gt; | Open angle brackets, `27E8` and `27E9`, e.g. 
         hafi ⟨þik⟩ þangat sent
-      
+       |
+
 
 Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.
 ### 9.3.2 Suppression by the editor
@@ -781,7 +832,12 @@ Dittographies are probably the most common cause for suppression. The TEI P5 Gui
 As for other instances of editorial suppression, we recommend using the `<sic>` and `<corr>` elements, so that the `<sic>` element contains the suppressed reading and the `<corr>` element is left empty. This will be dealt with in [ch. 9.3.3](#sec9.3.3) below.
 
 **Note**. Earlier versions of the Menota Handbook introduced the `<me:expunged>` element (later renamed as `<me:suppressed>`) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard `<surplus>` element or the `<sic>` and `<corr>` elements are being used for editorial suppression.9.3.2.1 Encoding of suppressed text
-Elements & attributesObl/OptContents`<surplus>`Contains text which the editor believes should be recognised as superfluous.`@reason`OptionalIndicates the reason for the piece of text being superfluous. It can be given values like `"dittography"`, `"excess"` and `"incoherence"`.
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<surplus>` |  | Contains text which the editor believes should be recognised as superfluous. |
+| `@reason` | Optional | Indicates the reason for the piece of text being superfluous. It can be given values like `"dittography"`, `"excess"` and `"incoherence"`. |
+
 
 In the following, we give examples of `<surplus>` text due to dittography, fig. 9.12, and incoherence, fig. 9.13.
 
@@ -873,7 +929,11 @@ In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really
 In short, the `<surplus>` element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.9.3.2.2 Display of editorial suppression
 
 In the stylesheet for the Menota archive, text suppressed by the editor is displayed in curly brackets. Deletions by the scribe, on the other hand, is displayed in vertical bars with quills, as shown in [ch. 9.2.2.2](#sec9.2.2.2) above.
-ElementDisplay`<surplus>`Curly brackets, `005B` and `005D` respectively, e.g. vaʀ sialfr \{sialfr\}
+
+| Element | Display |
+|-----|-----|
+| `<surplus>` | Curly brackets, `005B` and `005D` respectively, e.g. vaʀ sialfr \{sialfr\} |
+
 
 Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in fig. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr \{\} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.
 
@@ -886,12 +946,18 @@ When transcribing a text, corrections
 of obvious mistakes in the manuscript text can be encoded with the
 elements `<sic>` and 
 `<corr>`, grouped within a `<choice>` element.
-Elements & attributesObl/OptContents`<sic>`Contains text reproduced
-    although apparently incorrect or inaccurate.`<corr>`Contains the correct form
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<sic>` |  | Contains text reproduced
+    although apparently incorrect or inaccurate. |
+| `<corr>` |  | Contains the correct form
     of a passage apparently erroneous in the manuscript text.
-`@resp`ObligatoryIndicates the individual
+ |
+| `@resp` | Obligatory | Indicates the individual
     responsible for the correction of characters, words or passages
-    contained within the `<corr>` element.
+    contained within the `<corr>` element. |
+
 
 
 
@@ -957,7 +1023,12 @@ In a multi-level transcription, we suggest that the `<sic>` element is located a
 Editors will emend the text to varying degrees. In his edition of _The Old Norwegian Homily Book_ in AM 619 4to, Gustav Indrebø (1931) corrected the text in a number of cases. In the Menota archive, his corrections have been given priority, so that the manuscript readings in the `<sic>` element have been moved into notes.9.3.3.1 Display of editorial corrections
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<sic>` reading is displayed on the facsimile level and the `<corr>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<corr>` reading, since this is the one suggested by the editor. The stylesheet therefore displays the `<corr>` reading, while the `<sic>` reading is displayed in a note.
-ElementsDisplay in a single-level transcriptionDisplay in a multi-level transcription`<sic>`Displayed in a note to the whole `<sic>` sequence.Displayed in the running text on the `<me:facs>` level with no indication of a correction.`<corr>`Displayed in the running text.Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels., highlighted in green.
+
+| Elements | Display in a single-level transcription | Display in a multi-level transcription |
+|-----|-----|-----|
+| `<sic>` | Displayed in a note to the whole `<sic>` sequence. | Displayed in the running text on the `<me:facs>` level with no indication of a correction. |
+| `<corr>` | Displayed in the running text. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels., highlighted in green. |
+
 
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a correction.
 
@@ -1024,8 +1095,14 @@ An alternative would be to add the presumed abbreviated reading “.ɟ. ᴍ.” 
 ## 9.4 Editorial comments
 
 Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.
-Elements & attributesObl/OptContents`<note>`Contains comments to the text by the editor. Main attributes:`@type`OptionalStating what kind of a note it is, e.g. `"explanation"`, `"variation"`, 
-        `"codicology"`, `"paleography"`.`@source`OptionalStating the source for a passage in the text, particularly relevant for the `"variation"` value of the `@type` attribute.
+
+| Elements & attributes | Obl/Opt | Contents |
+|-----|-----|-----|
+| `<note>` |  | Contains comments to the text by the editor. Main attributes: |
+| `@type` | Optional | Stating what kind of a note it is, e.g. `"explanation"`, `"variation"`, 
+        `"codicology"`, `"paleography"`. |
+| `@source` | Optional | Stating the source for a passage in the text, particularly relevant for the `"variation"` value of the `@type` attribute. |
+
 
 These attributes are optional, so it is possible to use the `<note>` element without any further specification of its contents.
 ### 9.4.1 Apparatus-style comments

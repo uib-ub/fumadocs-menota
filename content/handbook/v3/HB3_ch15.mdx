@@ -102,7 +102,13 @@ In the URI string certain characters are reserved for identifying parts of the s
        normally only describes variation in the last part of the URI, where there is normally no
        ambiguity with respect to periods and slashes, in most cases the only characters needing
        encoding will be the following:
-CharacterURI encodingspace%20% (percent)%25: (colon)%3A15.2.3.2 URLs 
+
+| Character | URI encoding |
+|-----|-----|
+| space | %20 |
+| % (percent) | %25 |
+| : (colon) | %3A |
+15.2.3.2 URLs 
 
 URLs are normally found in the web browser location bar and can be copied and pasted into
        an XML file for use in relevant attributes. Normally the required characters are
@@ -141,7 +147,13 @@ Instead, an unofficial notation should be used, using menota: as the protocol se
        syntax is as follows:menota:[type of resource]:[authority abbreviation]:[unique name or identifier]
 
 Examples of Menota-defined names:
-URN formatTypeDescriptionmenota:person:sbi:Snorri%20SturlusonpersonName in the form found in the Scandinavian Biographical Index.menota:place:ds:167334placeIdentifier ‘ID’ from Danmarks Stednavne data.menota:lemma:onp:23709wordIdentifier from Ordbog over det norrøne prosasprog.
+
+| URN format | Type | Description |
+|-----|-----|-----|
+| menota:person:sbi:Snorri%20Sturluson | person | Name in the form found in the Scandinavian Biographical Index. |
+| menota:place:ds:167334 | place | Identifier ‘ID’ from Danmarks Stednavne data. |
+| menota:lemma:onp:23709 | word | Identifier from Ordbog over det norrøne prosasprog. |
+
 
 These are discussed in detail below. Where URNs are used, it is recommended that a URL be
        included in addition. This allows the thing to be both named and located.

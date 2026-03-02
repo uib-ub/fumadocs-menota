@@ -63,38 +63,114 @@ In the tables below supported xml markup and its corresponding html output is li
                All values of `@rend` and `@xml:id` will be passed to html
                   `@class` and `@id` respectively, unless otherwise noted.
 ### H.4.1 CSS Block elements
-tei:xmlhtmlfunctionCommentcode`<pre>``<code>`Code example[See H.7 on styling of code](#secH.7)`@rend``"inline"`Inline code example`<eg>``<pre>``<code>`Example of code[See H.7 on styling of code](#secH.7)`@rend``"inline"`Inline code example`<egXML>``<pre>``<code>`Example of xml code[See H.7 on styling of code](#secH.7)`@rend``"inline"`Inline code example`<figure>``<figure>`IllustrationTypically, a `<figure>` element contains a `<graphic>` and a
-                        `<figDesc>` element. [See H.6 on styling of images](#secH.6)`@rend``"leftalign"`The figure is placed to the left, with text floating to the right`"rightalign"`The figure is placed to the right, with text floating to the left`"center"`The figure is placed in the center. No floating occurs.`<figure>`/`<figDesc>`&lt;figcaption span class="imagelabel"&gt;Figure captionShould be used together with a sibling `<graphic>` and a parent
-                           `<figure>``@n``"[number]"`&lt;figcaption&gt;&lt;span
+
+| tei:xml | html | function | Comment |
+|-----|-----|-----|-----|
+| code | `<pre>``<code>` | Code example | [See H.7 on styling of code](#secH.7) |
+| `@rend` |  |  |  |
+| `"inline"` |  | Inline code example |  |
+| `<eg>` | `<pre>``<code>` | Example of code | [See H.7 on styling of code](#secH.7) |
+| `@rend` |  |  |  |
+| `"inline"` |  | Inline code example |  |
+| `<egXML>` | `<pre>``<code>` | Example of xml code | [See H.7 on styling of code](#secH.7) |
+| `@rend` |  |  |  |
+| `"inline"` |  | Inline code example |  |
+| `<figure>` | `<figure>` | Illustration | Typically, a `<figure>` element contains a `<graphic>` and a
+                        `<figDesc>` element. [See H.6 on styling of images](#secH.6) |
+| `@rend` |  |  |  |
+| `"leftalign"` |  |  | The figure is placed to the left, with text floating to the right |
+| `"rightalign"` |  |  | The figure is placed to the right, with text floating to the left |
+| `"center"` |  |  | The figure is placed in the center. No floating occurs. |
+| `<figure>`/`<figDesc>` | &lt;figcaption span class="imagelabel"&gt; | Figure caption | Should be used together with a sibling `<graphic>` and a parent
+                           `<figure>` |
+| `@n` |  |  |  |
+| `"[number]"` | &lt;figcaption&gt;&lt;span
                            class="imagelabel"&gt;Fig. &lt;span
-                           class="imageid"&gt;2.1&lt;&gt;/span&gt;.&lt;/span&gt;Caption&lt;/figcaption&gt;Usage in xml: `&lt;figDesc n="2.1"&gt;Caption&lt;/figDesc&gt;`, i.e. the
+                           class="imageid"&gt;2.1&lt;&gt;/span&gt;.&lt;/span&gt;Caption&lt;/figcaption&gt; |  | Usage in xml: `&lt;figDesc n="2.1"&gt;Caption&lt;/figDesc&gt;`, i.e. the
                         figure’s number should passed through `@n` and not be put between
-                        the `<figDesc>` tags`<graphic>``<img>`ImageIf used together with a parent element `<figure>`, the image element
+                        the `<figDesc>` tags |
+| `<graphic>` | `<img>` | Image | If used together with a parent element `<figure>`, the image element
                         will be wrapped in a `<figure>` element together with its caption. It
-                        may, however, also be used alone.`@rend``<head>``<h1>`, `<h2>`, `<h3>`, `<h4>`, `<head>`Heading`<h1>`–`<h4>` are chosen according to their position in
+                        may, however, also be used alone. |
+| `@rend` |  |  |  |
+| `<head>` | `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<head>` | Heading | `<h1>`–`<h4>` are chosen according to their position in
                         the dom. If the position does not match, a generic div
-                           class="head" is output. `@rend``@xml:id`When no `@xml:id` is passed, the xsl will introduce an
-                           `@id` with a random value`<l>``<li>`List item`<lg>``<ul>`Unordered list`<list>``<ul>`ListUnordered list`@rend``"numbered"``<ol>`Ordered listOrdered (= numbered) list`@type``@type` is converted to a css `@class` for backwards
-                        compatibility with earlier style sheets`@xml:id``<list>`/`<item>``<li>`List item`<p>``<p>`Paragraph`@rend``"sample"``<blockquote>`Blockquote`@xml:id``<quote>``<blockquote>`Blockquote`<table>``<table>`Table[See H.5 on styling of tables](#secH.5)`@rend``"xml-elements"`This value can be used for tables with lists of xml-elements and their
-                        attributes. [See H.5.1 for more information](#secH.5.1)`"abbr"`This value can be used for tables with explanations of abbreviations and
-                        other glyphs. [See H.5.2 for more information](#secH.5.2)`@xml:id``<table>`/`<row>``<tr>`Table row`@rend``@xml:id``@role``"label"``<tr>`/`<th>`Table headeri.e. table header`<table>`/`<cell>``<td>` or `<th>`Table cell`<th>` when the parent `<row>``@role`=`"label"``@rend`
+                           class="head" is output.  |
+| `@rend` |  |  |  |
+| `@xml:id` |  |  | When no `@xml:id` is passed, the xsl will introduce an
+                           `@id` with a random value |
+| `<l>` | `<li>` | List item |  |
+| `<lg>` | `<ul>` | Unordered list |  |
+| `<list>` | `<ul>` | List | Unordered list |
+| `@rend` |  |  |  |
+| `"numbered"` | `<ol>` | Ordered list | Ordered (= numbered) list |
+| `@type` |  |  | `@type` is converted to a css `@class` for backwards
+                        compatibility with earlier style sheets |
+| `@xml:id` |  |  |  |
+| `<list>`/`<item>` | `<li>` | List item |  |
+| `<p>` | `<p>` | Paragraph |  |
+| `@rend` |  |  |  |
+| `"sample"` | `<blockquote>` | Blockquote |  |
+| `@xml:id` |  |  |  |
+| `<quote>` | `<blockquote>` | Blockquote |  |
+| `<table>` | `<table>` | Table | [See H.5 on styling of tables](#secH.5) |
+| `@rend` |  |  |  |
+| `"xml-elements"` |  |  | This value can be used for tables with lists of xml-elements and their
+                        attributes. [See H.5.1 for more information](#secH.5.1) |
+| `"abbr"` |  |  | This value can be used for tables with explanations of abbreviations and
+                        other glyphs. [See H.5.2 for more information](#secH.5.2) |
+| `@xml:id` |  |  |  |
+| `<table>`/`<row>` | `<tr>` | Table row |  |
+| `@rend` |  |  |  |
+| `@xml:id` |  |  |  |
+| `@role` |  |  |  |
+| `"label"` | `<tr>`/`<th>` | Table header | i.e. table header |
+| `<table>`/`<cell>` | `<td>` or `<th>` | Table cell | `<th>` when the parent `<row>``@role`=`"label"` |
+| `@rend` |  |  |  |
+
 ### H.4.2 CSS Inline elements
-tei:xmlhtmlFunctionComment`<att>``&lt;span
-                           class="attribute"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;`xml/html attribute In a table
+
+| tei:xml | html | Function | Comment |
+|-----|-----|-----|-----|
+| `<att>` | `&lt;span
+                           class="attribute"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;` | xml/html attribute |  In a table
                         with `@rend`=`"xml-elements"` attributes in the first columns
-                        are automatically indented 1em. [See H.7 on styling of code](#secH.7). `<emph>``<em>`Emphasis`<gi>``&lt;span
-                           class="tag"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;`xml/html element[See H.7 on styling of code](#secH.7)`<hi>``<span>`Highlighted`@rend``"bold"``<b>`If `@rend` contains multiple values, `"bold"` is passed to
+                        are automatically indented 1em. [See H.7 on styling of code](#secH.7).  |
+| `<emph>` | `<em>` | Emphasis |  |
+| `<gi>` | `&lt;span
+                           class="tag"&gt;&lt;code&gt;@att&lt;/code&gt;&lt;/span&gt;` | xml/html element | [See H.7 on styling of code](#secH.7) |
+| `<hi>` | `<span>` | Highlighted |  |
+| `@rend` |  |  |  |
+| `"bold"` | `<b>` |  | If `@rend` contains multiple values, `"bold"` is passed to
                            `&lt;span class="bold
-                        [othervalue]"&gt;``"code"``<code>`If `@rend` contains multiple values, `"code"` is passed to
-                           `&lt;span class="code [othervalue]"&gt;`[See H.7 on styling of code](#secH.7)`"codepoint"`&lt;span
-                        class="codepoint"&gt;&lt;code&gt;U+01eb&lt;/code&gt;&lt;/span&gt;A Unicode codepoint: `U+01eb`Lowercase letters are transformed to uppercase letters in the css stylesheet.`"descName"`&lt;span
-                        class="descname"&gt;&lt;code&gt;LATIN SMALL LETTER O WITH OGONEK&lt;/code&gt;&lt;/span&gt;A Unicode descriptive name: LATIN SMALL LETTER O WITH OGONEKLowercase letters are transformed to uppercase letters in the css stylesheet.`"entity"`&lt;span
-                        class="entity"&gt;&lt;code&gt;&amp;oogon;&lt;/code&gt;&lt;/span&gt;A Unicode entity: `&oogon;``"glyph"`&lt;span class="glyph"&gt;Characters marked upp with `"glyph"` are displayed in a deviant color. See also the section about [styling tables](#secH.5.2).`"italic"``<i>`If `@rend` contains multiple values, `"italic"` is passed
+                        [othervalue]"&gt;` |
+| `"code"` | `<code>` |  | If `@rend` contains multiple values, `"code"` is passed to
+                           `&lt;span class="code [othervalue]"&gt;`[See H.7 on styling of code](#secH.7) |
+| `"codepoint"` | &lt;span
+                        class="codepoint"&gt;&lt;code&gt;U+01eb&lt;/code&gt;&lt;/span&gt; | A Unicode codepoint: `U+01eb` | Lowercase letters are transformed to uppercase letters in the css stylesheet. |
+| `"descName"` | &lt;span
+                        class="descname"&gt;&lt;code&gt;LATIN SMALL LETTER O WITH OGONEK&lt;/code&gt;&lt;/span&gt; | A Unicode descriptive name: LATIN SMALL LETTER O WITH OGONEK | Lowercase letters are transformed to uppercase letters in the css stylesheet. |
+| `"entity"` | &lt;span
+                        class="entity"&gt;&lt;code&gt;&amp;oogon;&lt;/code&gt;&lt;/span&gt; | A Unicode entity: `&oogon;` |  |
+| `"glyph"` | &lt;span class="glyph"&gt; |  | Characters marked upp with `"glyph"` are displayed in a deviant color. See also the section about [styling tables](#secH.5.2). |
+| `"italic"` | `<i>` |  | If `@rend` contains multiple values, `"italic"` is passed
                         to `&lt;span class="italic
-                        [othervalue]"&gt;``"red"`&lt;span class="red"&gt;`"blue"`&lt;span class="blue"&gt;`"initial"`&lt;span class="initial"&gt;`<lb/>``<br/>`Line break`<q>``<q>`Quoted`<ref>``<a>`Reference`@target``@href``@rend``<tag>``&lt;code&gt;&lt;span
-                           class="tag"&gt;@att&lt;/span&gt;&lt;/code&gt;`Tagged content[See H.7 on styling of code](#secH.7)`<title>``<cite>`Title of a work`<val>``&lt;span class="value"&gt;'value'&lt;/span&gt;`Value of a xml/html element[See H.7 on styling of code](#secH.7). In a table
+                        [othervalue]"&gt;` |
+| `"red"` | &lt;span class="red"&gt; |  |  |
+| `"blue"` | &lt;span class="blue"&gt; |  |  |
+| `"initial"` | &lt;span class="initial"&gt; |  |  |
+| `<lb/>` | `<br/>` | Line break |  |
+| `<q>` | `<q>` | Quoted |  |
+| `<ref>` | `<a>` | Reference |  |
+| `@target` | `@href` |  |  |
+| `@rend` |  |  |  |
+| `<tag>` | `&lt;code&gt;&lt;span
+                           class="tag"&gt;@att&lt;/span&gt;&lt;/code&gt;` | Tagged content | [See H.7 on styling of code](#secH.7) |
+| `<title>` | `<cite>` | Title of a work |  |
+| `<val>` | `&lt;span class="value"&gt;'value'&lt;/span&gt;` | Value of a xml/html element | [See H.7 on styling of code](#secH.7). In a table
                         with `@rend`=`"xml-elements"` values in the first columns are
-                        automatically indented 2em
+                        automatically indented 2em |
+
 ### H.4.3 Generic values for `@rend`
 
 The following `@rend` values can be given to any xml-element with support
@@ -105,8 +181,30 @@ The following `@rend` values can be given to any xml-element that
                   `@rend` attribute. Percentages are always relative to the width of the
                   parent element’s width. The available values for `@rend` behave the
                   following way at different screen resolutions:
-`@rend`=...defaultmedium screenssmall screens`"alignleft"`align:left`"alignright"`align:right`"aligncenter"`centered`"center"`text-align:center`"clearboth"`float:none; clear:both (forces the element to be placed on a new line,
-                        i.e surrounding text will not float around the element)`"width10"`width:10%`<figure>` width:50%`<figure>` width:100%`"width20"`width:20%`<figure>` width:50%`<figure>` width:100%`"width25"`width:25%`<figure>` width:50%`<figure>` width:100%`"width30"`width:30%`<figure>` width:50%`<figure>` width:100%`"width33"`width:33,33%`<figure>` width:50%`<figure>` width:100%`"width40"`width:40%`<figure>` width:50%`<figure>` width:100%`"width50"`width:50%`<figure>` width:100%`"width60"`width:60%`<figure>` width:100%`<figure>` width:100%`"width66"`width:66,66%`<figure>` width:100%`<figure>` width:100%`"width70"`width:70%`<figure>` width:100%`<figure>` width:100%`"width75"`width:75%`<figure>` width:100%`<figure>` width:100%`"width80"`width:80%`<figure>` width:100%`<figure>` width:100%`"width90"`width:90%`<figure>` width:100%`<figure>` width:100%`"width100"`width:100%`<figure>` width:100%`<figure>` width:100%
+
+| `@rend`=... | default | medium screens | small screens |
+|-----|-----|-----|-----|
+| `"alignleft"` | align:left |  |  |
+| `"alignright"` | align:right |  |  |
+| `"aligncenter"` | centered |  |  |
+| `"center"` | text-align:center |  |  |
+| `"clearboth"` | float:none; clear:both (forces the element to be placed on a new line,
+                        i.e surrounding text will not float around the element) |  |  |
+| `"width10"` | width:10% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width20"` | width:20% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width25"` | width:25% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width30"` | width:30% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width33"` | width:33,33% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width40"` | width:40% | `<figure>` width:50% | `<figure>` width:100% |
+| `"width50"` | width:50% |  | `<figure>` width:100% |
+| `"width60"` | width:60% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width66"` | width:66,66% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width70"` | width:70% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width75"` | width:75% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width80"` | width:80% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width90"` | width:90% | `<figure>` width:100% | `<figure>` width:100% |
+| `"width100"` | width:100% | `<figure>` width:100% | `<figure>` width:100% |
+
 ## H.5 Styling tables
 
 Tables are structured according to the following pattern in html:

@@ -160,6 +160,24 @@
                 <xsl:text>&#x0a;&lt;/tbody&gt;</xsl:text>
                 <xsl:text>&#x0a;&lt;/table&gt;&#x0a;</xsl:text>
             </xsl:when>
+            <xsl:when test="tei:row[@role='label']">
+                <xsl:text>&#x0a;</xsl:text>
+                <xsl:for-each select="tei:row">
+                    <xsl:text>&#x0a;|</xsl:text>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:text> </xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text> |</xsl:text>
+                    </xsl:for-each>
+                    <xsl:if test="@role='label'">
+                        <xsl:text>&#x0a;|</xsl:text>
+                        <xsl:for-each select="tei:cell">
+                            <xsl:text>-----|</xsl:text>
+                        </xsl:for-each>
+                    </xsl:if>
+                </xsl:for-each>
+                <xsl:text>&#x0a;</xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:text>&#x0a;</xsl:text>
                 <xsl:apply-templates/>
