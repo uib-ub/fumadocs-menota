@@ -5,6 +5,7 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:include href="elements/spans.xsl"/>
     <xsl:template match="/">
         <xsl:apply-templates/>
     </xsl:template>
@@ -115,36 +116,6 @@
     </xsl:template>
     <xsl:template match="tei:val">
         <xsl:value-of select="concat('`&quot;', ., '&quot;`')"/>
-    </xsl:template>
-    <xsl:template match="tei:hi">
-        <xsl:choose>
-            <xsl:when test="@rend='entity' or @rend='codepoint'">
-                <xsl:value-of select="concat('`', ., '`')"/>
-            </xsl:when>
-            <xsl:when test="@rend='bold'">
-                <xsl:choose>
-                    <xsl:when test="parent::tei:p[@rend='caption'] and position() = 1"/>
-                    <xsl:otherwise>
-                        <xsl:text>**</xsl:text>
-                        <xsl:apply-templates/>
-                        <xsl:text>**</xsl:text>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="@rend='italic'">
-                <xsl:text>&lt;em&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&lt;/em&gt;</xsl:text>
-            </xsl:when>
-            <xsl:when test="@rend='glyph'">
-                <xsl:text>&lt;Glyph&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&lt;/Glyph&gt;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates/>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei_samples:egXML">
         <xsl:choose>

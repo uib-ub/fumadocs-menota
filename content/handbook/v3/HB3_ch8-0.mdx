@@ -137,7 +137,7 @@ In [ch. 8.5](#sec8.5) below, examples of larger lacunas are given.
 
 Stylesheets will vary with respect to the display of the `<gap/>` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
 
-In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC`DOTTED CIRCLE. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
+In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC``DOTTED CIRCLE`. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
 
 A suitable stylesheet will be able to pick values from the attributes of the `<gap/>` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
 <DisplayFrame>
@@ -150,7 +150,7 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 </DisplayFrame>
 
 
-Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD`SMALL BASE LINE ZERO SIGN, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
 ## 8.3 Empty space
 
 Manuscripts often have empty spaces, typically left for initials but also in other contexts, for example for words to be added at a later stage in the writing process.
@@ -365,7 +365,7 @@ Note that the fissure in lines 4–5 must
 
 <Caption title="Ill. 8.6">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.</Caption>
 
-In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC`DOTTED CIRCLE (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
+In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC``DOTTED CIRCLE` (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -425,7 +425,7 @@ Since the transcriber can insert a suitable text in the `<unclear>` element, it 
 ```
 
 
-If the encoder would like to restore illegible characters, this can be done by the `<supplied>` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC`DOTTED CIRCLE on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore illegible characters, this can be done by the `<supplied>` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC``DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
 A single-level transcription on the diplomatic level would look like this if the enocder decided to use the `<supplied>` element:
 ```xml
