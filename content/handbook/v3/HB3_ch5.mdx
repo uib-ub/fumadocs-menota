@@ -137,10 +137,10 @@ If there are marks of any sort placed above, through or below any base-line char
 Diacritical marks are often seen as forming an integral part of a base-line character and
           the whole is being encoded as a single character. This applies to accent marks, such as the one
           above `e` in ill. 5.3. The combination of a base-line character and a combining mark
-          can be encoded as a single character, in Unicode referred to as LATIN SMALL LETTER E WITH
-          ACUTE and the hexidecimal code value `00E9`. Alternatively, this letter can be decomposed and
-          encoded as a combination of LATIN SMALL LETTER E 
-          and COMBINING ACUTE ACCENT. We would like to emphasise that both encodings are strictly
+          can be encoded as a single character, in Unicode referred to as `LATIN SMALL LETTER E WITH
+          ACUTE` and the hexidecimal code value `00E9`. Alternatively, this letter can be decomposed and
+          encoded as a combination of `LATIN SMALL LETTER E` 
+          and `COMBINING ACUTE ACCENT`. We would like to emphasise that both encodings are strictly
           equivalent.
 
 Abbreviation marks, on the other hand, are usually treated as separate characters and
@@ -170,15 +170,15 @@ We recommend the following basic rules for encoding characters, irrespective of 
             which are not part of the Unicode Standard must always be encoded by entities. See [app. A](HB3_A_characters.xml) for more details.
 
 3. Abbreviation marks occupying a separate position on the base line are encoded in the
-            same manner as alphabetical characters. This applies to e.g. LATIN SMALL LETTER P WITH
-            STROKE THROUGH DESCENDER (for “per” or “par”), as explained in [ch. 6](HB3_ch6.xml) below.
+            same manner as alphabetical characters. This applies to e.g. `LATIN SMALL LETTER P WITH
+            STROKE THROUGH DESCENDER` (for “per” or “par”), as explained in [ch. 6](HB3_ch6.xml) below.
 
 4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of
             two equivalent ways:
 
 4.1 As a base-line character + one or more combining marks. Thus the character `é`
             would be encoded as `e` + `&combacute;` (the latter entity meaning
-            COMBINING ACUTE ACCENT).<br/>
+            `COMBINING ACUTE ACCENT)`.<br/>
  4.2 As a composite base-line character and encoded with a
             single Unicode codepoint or an entity. Thus, the character `é` would be encoded as
             either `é` or as `&eacute;`.
@@ -188,7 +188,7 @@ We recommend the following basic rules for encoding characters, irrespective of 
 
 5.1 As a base-line character + one or more combining marks. Thus the first character in
             ill. 5.3 above would be encoded as `h` + `&er;` (the latter entity meaning
-            COMBINING ABBREVIATION MARK “ER”).<br/>
+            `COMBINING ABBREVIATION MARK ER`).<br/>
  5.2 As a composite base-line character and
             encoded with a single entity. Thus the above character might be encoded with a single
             entity, e.g. as `&her;`.
@@ -228,7 +228,7 @@ Note that the type of encoding is specifed at the very begining of an XML file. 
 
 entities must be used for all characters outside Basic Latin and Latin-1 Supplement.
             Thus, “a”, “é” and “þ” can be entered directly, but characters like
-            `&oogon;` (LATIN SMALL LETTER O WITH OGONEK) must be encoded with an entity,
+            `&oogon;` (`LATIN SMALL LETTER O WITH OGONEK`) must be encoded with an entity,
             `&oogon;`.
 
 If, however, the encoding is specified as
@@ -273,7 +273,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  | Encoding  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph>a</Glyph> | `a` | `0061` | LATIN SMALL LETTER A |
+| <Glyph>a</Glyph> | `a` | `0061` | `LATIN SMALL LETTER A` |
 
 
 (b) Composite characters may be described in more than one way. Thus, an “a with acute
@@ -282,8 +282,8 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  | Entity  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph>á</Glyph> | `a + &combacute;` | `0061 + 0301` | LATIN SMALL LETTER A + COMBINING ACUTE ACCENT |
-| <Glyph>á</Glyph> | `&aacute;` | `00E1` | LATIN SMALL LETTER A WITH ACUTE |
+| <Glyph>á</Glyph> | `a + &combacute;` | `0061 + 0301` | `LATIN SMALL LETTER A + COMBINING ACUTE ACCENT` |
+| <Glyph>á</Glyph> | `&aacute;` | `00E1` | `LATIN SMALL LETTER A WITH ACUTE` |
 
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
@@ -297,7 +297,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  |  Entity  | Code point  | Descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph></Glyph> | `&kslonglig;` | `EBAE` | LATIN SMALL LIGATURE K AND LONG S |
+| <Glyph></Glyph> | `&kslonglig;` | `EBAE` | `LATIN SMALL LIGATURE K AND LONG S` |
 
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
@@ -320,7 +320,7 @@ h<am>&er;</am> sér han<am>&bar;</am>
 ```
 
 
-The two abbreviation characters COMBINING ZIGZAG ABOVE and COMBINING OVERLINE are part
+The two abbreviation characters `COMBINING ZIGZAG ABOVE` and `COMBINING OVERLINE` are part
             of the Unicode Standard, at `035B` and `0305` respectively, so entitites are not really
             needed. However, some XML editors may not show combining characters in correct
             positions, and it is thus more legible to use entities, `&er;` for the
@@ -715,15 +715,15 @@ The main reason for doing so follows from the encoding of more than one level of
             marks exactly where they are in the source, but at a normalised level, some punctuation
             marks should be suppressed, some should be retained and some should be added.
 
-In addition to punctuation marks like FULL STOP, COMMA, COLON, SEMICOLON and HYPHEN,
+In addition to punctuation marks like `FULL STOP`, `COMMA`, `COLON`, `SEMICOLON` and `HYPHEN`,
             there are a number of specific medieval punctuation marks, including an early form of
-            the QUESTION MARK and a PUNCTUS ELEVATUS. A full list of additional punctuation marks
+            the `QUESTION MARK` and a `PUNCTUS ELEVATUS`. A full list of additional punctuation marks
             can be found in the [MUFI character recommendation](HB3_literature.xml#MUFIrec)
             with appropriate character entities.
 
 If the encoder wishes to represent specific types of punctuation marks apart from the ordinary ones, this can 
-            be done by using the relevant entities, e.g. `&middot;` for MIDDLE DOT,
-            `&punctelev;` for PUNCTUS ELEVATUS, etc. In all cases, 
+            be done by using the relevant entities, e.g. `&middot;` for `MIDDLE DOT`,
+            `&punctelev;` for `PUNCTUS ELEVATUS`, etc. In all cases, 
             the punctuation mark should be 
             placed within the `<pc>` element.
 ### 5.4.2 Punctuation in a multi-level transcription
