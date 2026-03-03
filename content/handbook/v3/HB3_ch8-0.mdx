@@ -140,10 +140,14 @@ Stylesheets will vary with respect to the display of the `<gap/>` element. They 
 In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC`DOTTED CIRCLE. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
 
 A suitable stylesheet will be able to pick values from the attributes of the `<gap/>` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
+<DisplayFrame>
+
 
 | Element | Smaller lacunas | Larger lacunas |
 |-----|-----|-----|
 | `<gap/>` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
+
+</DisplayFrame>
 
 
 Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD`SMALL BASE LINE ZERO SIGN, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
@@ -288,10 +292,14 @@ For more details on the encoding of initials and other graphical elements, see [
 ### 8.3.2. Display of empty space
 
 An empty space may be anything from a single character, typically set aside for an initial, to larger areas, even whole leaves. The display needs to adapt to the variability in size. In the stylesheet for the Menota archive, smaller areas will be displayed by spaces, while larger areas have to be indicated by a note inserted by the transcriber.
+<DisplayFrame>
+
 
 | Element | Smaller areas | Larger areas |
 |-----|-----|-----|
 | `<space/>` | By a number of spaces, `&nbsp;`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
+
+</DisplayFrame>
 
 
 Other stylesheets may choose to display empty space differently,
@@ -441,10 +449,14 @@ A single-level transcription on the diplomatic level would look like this if the
 ### 8.4.2 Display of unclear text
 
 In the stylesheet for the Menota archive, a light grey colour is used for characters in the `<unclear>` element. This colour is also used for characters that are illegible and encoded by the dotted circle, `25CC`.
+<DisplayFrame>
+
 
 | Element | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
 | `<unclear>` | Characters are rendered in grey. | Characters are rendered in grey on the `<me:facs>` and `<me:dipl>` levels, but in ordinary, non-coloured characters on the `<me:norm>` level. |
+
+</DisplayFrame>
 
 
 Stylesheets differ somewhat with respect to the display of unclear passages. Some stylesheets, for example, would prefer to render unclear characters with subpunction, such as in many printed editions. As for illegible characters, small zeros are mostly used in printed editions.

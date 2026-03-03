@@ -48,7 +48,16 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:div">
-        <xsl:apply-templates/>
+        <xsl:choose>
+            <xsl:when test="@type='display'">
+                <xsl:text>&#x0a;&lt;DisplayFrame&gt;&#x0a;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&#x0a;&lt;/DisplayFrame&gt;&#x0a;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:p">
         <xsl:choose>

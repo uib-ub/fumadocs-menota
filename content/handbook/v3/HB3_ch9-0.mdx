@@ -157,6 +157,8 @@ Furthermore, changes in scribal hands are not considered additions. For markup o
 
 In the stylesheet for the Menota archive, scribal additions are displayed by insertion signs, either downwards-pointing 
      (for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript).
+<DisplayFrame>
+
 
 <table>
 <thead>
@@ -184,6 +186,8 @@ We suggest that it is sufficient to display two main types, so that additions
          within the text column (typically supralinear, but also inline and infralinear) are displayed by the first set and additions in the margin with the second set. It can be left to the photographic facsimile to show exactly how the additions have been placed.
 
 Other stylesheets may display additions with other types of signs, by a note rather than by signs, or not at all.
+</DisplayFrame>
+
 
 The insertion signs shown here are the default display in most printed editions.
 ### 9.2.2 Deletions by the scribe
@@ -262,10 +266,14 @@ Sometimes, a scribe would delete a word and add another above the line.
 
 In the stylesheet for the Menota archive, scribal deletions are displayed by vertical bars with quills. The beginning of the deletion will be indicated 
       by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
+<DisplayFrame>
+
 
 | Element | Display |
 |-----|-----|
 | `<del>` | Vertical bars with quills, e.g. þviat ſkilningar ⸠ſk⸡laus ſkepna |
+
+</DisplayFrame>
 
 
 In the Unicode Standard, the vertical bar with the quill to the right is located at `2E20`, and the vertical bar with a quill to the left at `2E21`.
@@ -361,11 +369,15 @@ In a multi-level encoding, one or more words will be added within the `<orig>` a
 If the text is annotated for morphology (or syntax), we recommend that only the words in the `<orig>` element get linguistically annotated, so as to avoid duplication of the annotation. This is a similar case to that of any text being added by the editor in the `<supplied>` element. Supplied text should also be exempted from annotation.9.2.3.2 Display of scribal transpositions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<orig>` reading is displayed on the facsimile level and the `<reg>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<reg>` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<reg>` reading, while the `<orig>` reading is displayed in a note.
+<DisplayFrame>
+
 
 | Elements | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
 | `<orig>` | Displayed in a note to the whole `<orig>` sequence. | Displayed in the running text on the `<me:facs>` level with no indication of a transposition. |
 | `<reg>` | Displayed in the running text. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green. |
+
+</DisplayFrame>
 
 
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a transposition.
@@ -479,11 +491,15 @@ If a substitution spans a structural
   boundary, we refer to the advice in [ch. 16.2](HB3_ch16.xml#sec16.2) below.9.2.4.1 Display of scribal substitutions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<del>` reading is displayed on the facsimile level and the `<add>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<add>` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<add>` reading, while the `<del>` reading is displayed in a note.
+<DisplayFrame>
+
 
 | Elements | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
 | `<del>` | Displayed with deletion signs, as described in [ch. 9.2.1.2](#sec9.2.1.2) above. | Displayed in the running text on the `<me:facs>` level with no indication of a substitution. |
 | `<add>` | Displayed with addition signs, as described in [ch. 9.2.2.2](#sec9.2.2.2) above. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels, highlighted in green. |
+
+</DisplayFrame>
 
 
 In a multi-level transcription, the stylesheet for the Menota archive uses the green colour on the diplomatic and normalised levels to indicate that a passage is the result of a substitution.
@@ -807,6 +823,8 @@ In a multi-level encoding, the facsimile level will simply be empty for the supp
 In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.9.3.1.3 Display of editorial insertions
 
 In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>` element has the `@reason` attribute and the `"emendation"` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
+<DisplayFrame>
+
 
 <table>
 <thead>
@@ -826,6 +844,8 @@ In the stylesheet for the Menota archive, supplied text as a default is displaye
 </tr>
 </tbody>
 </table>
+
+</DisplayFrame>
 
 
 Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.
@@ -938,10 +958,14 @@ In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really
 In short, the `<surplus>` element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.9.3.2.2 Display of editorial suppression
 
 In the stylesheet for the Menota archive, text suppressed by the editor is displayed in curly brackets. Deletions by the scribe, on the other hand, is displayed in vertical bars with quills, as shown in [ch. 9.2.2.2](#sec9.2.2.2) above.
+<DisplayFrame>
+
 
 | Element | Display |
 |-----|-----|
 | `<surplus>` | Curly brackets, `005B` and `005D` respectively, e.g. vaʀ sialfr \{sialfr\} |
+
+</DisplayFrame>
 
 
 Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in fig. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr \{\} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.
@@ -1028,11 +1052,15 @@ In a multi-level transcription, we suggest that the `<sic>` element is located a
 Editors will emend the text to varying degrees. In his edition of _The Old Norwegian Homily Book_ in AM 619 4to, Gustav Indrebø (1931) corrected the text in a number of cases. In the Menota archive, his corrections have been given priority, so that the manuscript readings in the `<sic>` element have been moved into notes.9.3.3.1 Display of editorial corrections
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<sic>` reading is displayed on the facsimile level and the `<corr>` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<corr>` reading, since this is the one suggested by the editor. The stylesheet therefore displays the `<corr>` reading, while the `<sic>` reading is displayed in a note.
+<DisplayFrame>
+
 
 | Elements | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
 | `<sic>` | Displayed in a note to the whole `<sic>` sequence. | Displayed in the running text on the `<me:facs>` level with no indication of a correction. |
 | `<corr>` | Displayed in the running text. | Displayed in the running text on the `<me:dipl>` and `<me:norm>` levels., highlighted in green. |
+
+</DisplayFrame>
 
 
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a correction.

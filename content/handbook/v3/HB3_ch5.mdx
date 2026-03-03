@@ -1178,6 +1178,8 @@ In some cases, there may be a dash at the end of a line, which is not being used
 ### 5.5.3 Display of hyphenation
 
 The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook.
+<DisplayFrame>
+
 
 In the **Menota archive**, hyphens in a manuscript will be displayed with a hyphen on all levels, while missing hyphens will not be displayed with any character on the `<me:facs>` level, but (as a help for the users) with a middot (`00B7`) on the `<me:dipl>` and `<me:norm>` levels. This is an approximate display:
 
@@ -1246,6 +1248,8 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 
 
 When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>` element, it is displayed as a single word on the `<me:dipl>` and `<me:norm>` levels.
+</DisplayFrame>
+
 ## 5.6 Direct speech and quotations
 
 We recommend that direct speech is encoded
