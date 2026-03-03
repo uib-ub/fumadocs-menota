@@ -7,7 +7,7 @@ export default function AutoImage({ src, alt }: {
     src: string, 
     alt?: string
 }) {
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+    const [dimensions, setDimensions] = useState({ width: 500, height: 500 });
     return (
         <Image
             src={src}

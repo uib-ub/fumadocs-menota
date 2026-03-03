@@ -614,7 +614,7 @@ No words have the complete set of morphological categories listed in [ch. 11.3](
 
 (b) **Not specified**
 
-In other cases, a word is inflected for a certain category, but the encoder is not able to specify a value. This may be the case with some proper nouns, for which no gender can be given, although one must assume that it _has_ a gender. This is a different type of “zero” value, and we therefore suggest to indicate these cases with the character “U”, to be read as “unspecified”. An example:
+In other cases, a word is inflected for a certain category, but the encoder is not able to specify a value. This may be the case with some proper nouns, for which no gender can be given, although one must assume that it <em>has</em> a gender. This is a different type of “zero” value, and we therefore suggest to indicate these cases with the character “U”, to be read as “unspecified”. An example:
 ```xml
 <w lemma="Byblos" me:msa="xNP gU">Byblos</w>  
 
@@ -655,34 +655,26 @@ In line with ONP, the lemma forms (i.e. dictionary entries) of proper names need
 ```
 
 
-| Word class | Case | Number | Gender | Species |
-|-----|-----|-----|-----|-----|
-| xNC<br/>
-
-							xNP<br/>
- | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nP<br/>
-
-					nU | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU | sI<br/>
-
-							sD<br/>
-
-							sU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNC<br/> xNP<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
 
 
 If the case of a noun cannot be decided with certainty, see the categories cAD, cGD, cAG, cAN and cO  in [ch. 11.4.2](#sec11.4.2) above. The same reference applies to nouns of more than one gender, i.e. the categories gMF, gMN, gFN and gMFN.
@@ -699,38 +691,28 @@ Adjectives are encoded for **case**, **number**, **gender**, **grade** and **spe
 
 
 
-| Word class | Case | Number | Gender | Grade | Species |
-|-----|-----|-----|-----|-----|-----|
-| xAJ | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU | rP<br/>
-
-					rC<br/>
-
-					rS<br/>
-
-					rU | sI<br/>
-
-							sD<br/>
-
-							sU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+<th>Grade</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAJ</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>rP<br/> rC<br/> rS<br/> rU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
 
 
 Note that in the comparative form, adjectives only have weak (indefinite) inflection. Nevertheless, we recommend that they are encoded for species, “sI”, throughout. Also note that some adjectives have defect modes of forming the comparative, but we still recommend that they are encoded for grade.
@@ -751,17 +733,20 @@ Personal pronouns in the 1st and 2nd person are encoded only for **case**. This 
 
 
 
-| Word class | Case |
-|-----|-----|
-| xPE | cN<br/>
-
-							cG<br/>
-
-							cD<br/>
-
-							cA<br/>
-
-							cU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPE</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
 11.5.3.2 Reflexive pronouns (PR)
 
 There is a single reflexive pronoun, sik. It is encoded for **case** and due to its meaning, it has no nominative.
@@ -774,16 +759,20 @@ There is a single reflexive pronoun, sik. It is encoded for **case** and due to 
 
 
 
-| Word class | Case |
-|-----|-----|
-| xPR | 
-						cG<br/>
-
-						cD<br/>
-
-						cA<br/>
-
-						cU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPR</td>
+<td> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
 11.5.3.3 Interrogative pronouns (PQ)
 
 Interrogative pronouns are encoded for **case**, **number** and **gender**. Memory hint: in the name token “xPQ” the last character stands for “question”.
@@ -795,31 +784,24 @@ Interrogative pronouns are encoded for **case**, **number** and **gender**. Memo
 ```
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xPQ | cN<br/>
-
-				cG<br/>
-
-				cD<br/>
-
-				cA<br/>
-
-				cU | nS<br/>
-
-					nD<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPQ</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 11.5.3.4 Indefinite pronouns (PI)
 
 Indefinite pronouns are encoded for **case**, **number** and **gender**.
@@ -833,29 +815,24 @@ Indefinite pronouns are encoded for **case**, **number** and **gender**.
 
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xPI | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPI</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.4 Determiners (DD, DQ and DP)
 
@@ -874,31 +851,24 @@ Demonstratives are encoded for **case**, **number** and **gender**.
 
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xDD | cN<br/>
-
-      						cG<br/>
-
-      						cD<br/>
-
-      						cA<br/>
-
-      						cU | nS<br/>
-
-      						nD<br/>
-
-      						nP<br/>
-
-      						nU<br/>
- | gM<br/>
-
-      						gF<br/>
-
-      						gN<br/>
-
-      						gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDD</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 11.5.4.2 Quantifiers (DQ)
 
 Quantifiers are encoded for **case**, **number** and **gender**. This category may overlap with Indefinite pronouns.
@@ -911,31 +881,24 @@ Quantifiers are encoded for **case**, **number** and **gender**. This category m
 
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xDQ | cN<br/>
-
-      						cG<br/>
-
-      						cD<br/>
-
-      						cA<br/>
-
-      						cU | nS<br/>
-
-      						nD<br/>
-
-      						nP<br/>
-
-      						nU<br/>
- | gM<br/>
-
-      						gF<br/>
-
-      						gN<br/>
-
-      						gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDQ</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 11.5.4.3 Possessives (DP)
 
 Possessives are encoded for **case**, **number** and **gender**.
@@ -947,31 +910,24 @@ Possessives are encoded for **case**, **number** and **gender**.
 ```
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xDP | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nD<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDP</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.5 Pronouns/determiners (PD)
 
@@ -986,31 +942,24 @@ Pronouns/determiners are encoded for **case**, **number** and **gender**.
 ```
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xPD | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nD<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPD</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.6 Numerals (NA and NO)
 
@@ -1028,31 +977,24 @@ The numerals hundrað“one hundred (and twenty)” and þúsund“one thousand 
 ```
 
 
-| Word class | Case | Gender | Species |
-|-----|-----|-----|-----|
-| xNA<br/>
-
-							xNO<br/>
-
-							xNU | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU | sI<br/>
-
-					sD<br/>
-
-					sU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Gender</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNA<br/> xNO<br/> xNU</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.7 Articles (AT)
 
@@ -1067,28 +1009,24 @@ Articles are encoded for **case**, **number** and **gender**.
 ```
 
 
-| Word class | Case | Number | Gender |
-|-----|-----|-----|-----|
-| xAT | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nP<br/>
-
-					nU<br/>
- | gM<br/>
-
-							gF<br/>
-
-							gN<br/>
-
-							gU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAT</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.8 Verbs (VB)
 
@@ -1105,33 +1043,30 @@ Finite verbs are annotated as “fF”. They are inflected for **person**, **num
 
 
 
-| Word class | Finiteness | Person | Number | Tense | Mood | Voice |
-|-----|-----|-----|-----|-----|-----|-----|
-| xVB | fF | p1<br/>
-
-					p2<br/>
-
-					p3<br/>
-
-					pU | nS<br/>
-
-					nP<br/>
-
-					nU | tPS<br/>
-
-							tPT<br/>
-
-							tU | mIN<br/>
-
-							mSU<br/>
-
-							mIP<br/>
-
-							mU | vA<br/>
-
-							vR<br/>
-
-							vU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Person</th>
+<th>Number</th>
+<th>Tense</th>
+<th>Mood</th>
+<th>Voice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB</td>
+<td>fF</td>
+<td>p1<br/> p2<br/> p3<br/> pU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>mIN<br/> mSU<br/> mIP<br/> mU</td>
+<td>vA<br/> vR<br/> vU</td>
+</tr>
+</tbody>
+</table>
 11.5.8.2 Infinite forms
 
 Infinite forms are either participles (with supine forms as a sub-category) or infinitives, and may be distinguished by the name tokens “fP” for participles, “fS” for supines and “fI” for infinitives.(a) Participles
@@ -1152,33 +1087,28 @@ Note that present participles only have weak (definite) declension. Preterite (p
 
 
 
-| Word class | Finiteness | Tense | Case | Number | Gender |
-|-----|-----|-----|-----|-----|-----|
-| xVB<br/>
- | fP<br/>
- | tPS<br/>
-
-							tPT<br/>
-
-							tU | cN<br/>
-
-					cG<br/>
-
-					cD<br/>
-
-					cA<br/>
-
-					cU | nS<br/>
-
-					nP<br/>
-
-					nU | gM<br/>
-
-					gF<br/>
-
-					gN<br/>
-
-					gU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Tense</th>
+<th>Case</th>
+<th>Number</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB<br/></td>
+<td>fP<br/></td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+</tr>
+</tbody>
+</table>
 (b) Supine forms
 
 The supine form, “supinum”, is annotated as “fS”. It is governed by the verb “hafa”, e.g. in a sentence like “hann hefir komit” as opposed to the inflected participle in “hann er kominn”. From a purely morphological point of view, a form like “komit” is a past participle in accusative singular neuter. Unlike the inflected past participle, the supine form has no concord with the subject of the sentence. It is basically an infinite form of the verb with no inflection apart from **voice**.
@@ -1193,14 +1123,22 @@ We suggest that the supine is regarded as an infinite form of its own accord and
 
 
 
-| Word class | Finiteness | Voice |
-|-----|-----|-----|
-| xVB<br/>
- | fS | vA<br/>
-
-				vR<br/>
-
-				vU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Voice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB<br/></td>
+<td>fS</td>
+<td>vA<br/> vR<br/> vU</td>
+</tr>
+</tbody>
+</table>
 (c) Infinitives
 
 The infinitive form is annotated as “fI”. Infinitives are inflected only for the verbal categories **tense** and **voice**. Of these, **tense** only applies to three verbs, “munu”, “skulu” and “vilja”. They are unique in having preterite forms, “mundu”, “skyldu” and “vildu”.
@@ -1214,18 +1152,24 @@ The infinitive form is annotated as “fI”. Infinitives are inflected only for
 
 
 
-| Word class | Finiteness | Tense | Voice |
-|-----|-----|-----|-----|
-| xVB<br/>
- | fI | tPS<br/>
-
-							tPT<br/>
-
-							tU | vA<br/>
-
-							vR<br/>
-
-							vU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Tense</th>
+<th>Voice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB<br/></td>
+<td>fI</td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>vA<br/> vR<br/> vU</td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.9 Adverbs (AV)
 
@@ -1243,15 +1187,20 @@ General adverbs are only encoded for **grade**, and this only applies to some of
 
 
 
-| Word class | Grade |
-|-----|-----|
-| xAV | rP<br/>
-
-							rC<br/>
-
-							rS<br/>
-
-							rU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAV</td>
+<td>rP<br/> rC<br/> rS<br/> rU</td>
+</tr>
+</tbody>
+</table>
 
 
 Note that some adverbs have defect modes of forming the comparative, but we still recommend that they are encoded for grade.
@@ -1267,10 +1216,18 @@ The class of interrogative adverbs is rather small, including words like “hvar
 
 
 
-| Word class |
-|-----|
-| xAQ<br/>
- |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAQ<br/></td>
+</tr>
+</tbody>
+</table>
 
 ### 11.5.10 Prepositions and particles (AP and VP)
 
@@ -1301,19 +1258,20 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, prepositions in the Old Norwe
 
 
 
-| Word class | Government |
-|-----|-----|
-| xAP | yG<br/>
-
-					yD<br/>
-
-					yA<br/>
-
-					yAD<br/>
-
-					yO<br/>
-
-					yU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Government</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAP</td>
+<td>yG<br/> yD<br/> yA<br/> yAD<br/> yO<br/> yU</td>
+</tr>
+</tbody>
+</table>
 
 
 No prepositions govern nominative, so the encoding “yN” is not applicable. Many prepositions govern accusative as well as dative, and in cases of doubt, the encoding “yAD” (governing either accusative or dative) may be used. The Old Norse preposition “án” may govern all oblique cases, so in cases of doubt, the encoding “yO” (governing one of the oblique cases) may be used.
@@ -1339,13 +1297,18 @@ In recent grammars, the traditional word class “conjunctions” is usually div
 
 
 
-| Word class |
-|-----|
-| xCC<br/>
-
-							xCS<br/>
-
-							xCU |
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xCC<br/> xCS<br/> xCU</td>
+</tr>
+</tbody>
+</table>
 
 
 The encoding “xCU” would be used if the encoder (in rather unusual cases) cannot decide whether a word is a conjunction or a subjunction. Furthermore, it can be used for texts that have been annotated with the traditional, single word class “conjunctions”, such as in the Old Norwegian lemmatised corpus.
@@ -1354,13 +1317,18 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, conjunctions (i.e. subjunctio
 
 
 
-| Government |
-|-----|
-| yIN<br/>
-
-					ySU<br/>
-
-					yU |
+<table>
+<thead>
+<tr>
+<th>Government</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yIN<br/> ySU<br/> yU</td>
+</tr>
+</tbody>
+</table>
 
 
 The encoding “yU” would be used when the mood of the verb in the clause cannot be specified (in other words that it may be either indicative or subjunctive).
@@ -1456,7 +1424,7 @@ The main points in the ONP orthography are the following:
 
 1. All long vowels have accents, including “ǽ” (not just “æ”) and “ǿ” (not “œ”).
 
-2. The _u_ mutation of the vowel _a_ is spelt “ǫ”, not “ö”.
+2. The <em>u</em> mutation of the vowel <em>a</em> is spelt “ǫ”, not “ö”.
 
 3. The asyllabic semivowel is spelt “j”, not “i”, e.g. “jafn”, “hjarta”.
 
@@ -1566,7 +1534,7 @@ As stated above, we recommend that words are mapped to a single word class, even
 While the inflected forms “þat” and “þeir/þǽr/þau” might be analysed as personal pronouns in the 3rd person, we recommend to regard them as determiners, i.e. as instances of “sá” (xDD).
 ### 11.6.6 Multi-word expressions
 
-There are quite a few prepositions and subjunctions consisting of two or even three words, e.g. _á bak_ ‘behind’ and _þó at_ ‘even though’. In the Menotec guidelines, they have mostly been analysed as single entries, but ONP prefers to treat each word on its own. We recommend following ONP, even if there may be some inconsistency in the assignment of word classes:
+There are quite a few prepositions and subjunctions consisting of two or even three words, e.g. <em>á bak</em> ‘behind’ and <em>þó at</em> ‘even though’. In the Menotec guidelines, they have mostly been analysed as single entries, but ONP prefers to treat each word on its own. We recommend following ONP, even if there may be some inconsistency in the assignment of word classes:
 
 | Complex preposition | 1st word | 2nd word |
 |-----|-----|-----|
@@ -1742,7 +1710,7 @@ The Icelandic Parsed Historical Corpus (IcePaHC) is a treebank for Icelandic con
 
 - [The Icelandic Parsed Historical Corpus (IcePaHC)](https://clarin.is/en/resources/icepahc/)
 
-The PROIEL project was initiated by Dag T.T. Haug in Oslo, and originally covered the five oldest broadly attested Indo-European langauges, using the New Testament as a common source text. PROIEL has been extended over the years to include several other classical or medieval languages, and in conjunction with the Norwegian [Menotec](http://www.menota.org/menotec.xml) project and the Icelandic _Greinir skáldskapar_ project, the PROIEL treebank now offers approx. 250,000 words from Old Norse sources of the 13th and 14th centuries. 
+The PROIEL project was initiated by Dag T.T. Haug in Oslo, and originally covered the five oldest broadly attested Indo-European langauges, using the New Testament as a common source text. PROIEL has been extended over the years to include several other classical or medieval languages, and in conjunction with the Norwegian [Menotec](http://www.menota.org/menotec.xml) project and the Icelandic <em>Greinir skáldskapar</em> project, the PROIEL treebank now offers approx. 250,000 words from Old Norse sources of the 13th and 14th centuries. 
 
 - [The PROIEL treebank](http://proiel.github.io)
 

@@ -48,8 +48,7 @@ The first part of the `<fileDesc>` supplies the necessary bibliographical inform
 | `<editor>` |  | The name of the (main) editor of the encoded work. |
 | `@role` | Optional | The role of an editor, in particular in case the editor is an institution or project. |
 | `<orgName>` |  | The name of an organisation. |
-| `@type` | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, 
-    using the the value `"affiliation"`. |
+| `@type` | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, using the the value `"affiliation"`. |
 | `<respStmt>` |  | A statment of responsibility. |
 | `<resp>` |  | Type of responsibility, e.g. transcription, conversion, proof-reading. |
 
@@ -194,7 +193,7 @@ A complete edition statement may be as simple as this:
 
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<extent>` |  | The size of the file, preferably specified in  words. |
+| `<extent>` |  | The size of the file, preferably specified in words. |
 | `@n` | Obligatory | The number of words (or any other measure). |
 
 
@@ -272,38 +271,12 @@ the following six elements are available, of which only the first is required:
 
 | Elements & attributes | Explanation |
 |-----|-----|
-| `<msIdentifier>` | Groups information that uniquely identifies the manuscript, i.e.
-   its location, holding institution and shelfmark.
-          |
-| `<msContents>` | Contains an itemised list of the intellectual content of the
-   manuscript or manuscript part, either as a series of paragraphs or as 
-   a series of structured manuscript items, possibly including transcriptions of rubrics,
-   incipits, explicits etc., as well as primary bibliographic
-   references.
-          |
-| `<physDesc>` | Groups
-   information concerning all physical aspects of the manuscript or
-   manuscript part, its material, size, format, script, decoration,
-   binding, marginalia etc.
-          |
-| `<history>` | Provides
-   information on the history of the manuscript or manuscript part,
-   its origin, provenance and acquisition by its holding
-   institution.
-          |
-| `<additional>` | Groups other information about the manuscript, in particular,
-   administrative information relating to its availability, custodial
-   history, surrogates etc.
-          |
-| `<msPart>` | Contains
-   in essence a nested `<msDesc>`, in cases of
-   composite manuscripts now regarded as constituting a single unit
-   but made up of two or more parts which were originally physically
-   distinct; since the contents, physical description and history of
-   the individual parts will normally be quite different, a
-   `<msPart>` element can contain all the elements listed
-   here, including additional `<msPart>` elements.
-          |
+| `<msIdentifier>` | Groups information that uniquely identifies the manuscript, i.e. its location, holding institution and shelfmark.  |
+| `<msContents>` | Contains an itemised list of the intellectual content of the manuscript or manuscript part, either as a series of paragraphs or as a series of structured manuscript items, possibly including transcriptions of rubrics, incipits, explicits etc., as well as primary bibliographic references.  |
+| `<physDesc>` | Groups information concerning all physical aspects of the manuscript or manuscript part, its material, size, format, script, decoration, binding, marginalia etc.  |
+| `<history>` | Provides information on the history of the manuscript or manuscript part, its origin, provenance and acquisition by its holding institution.  |
+| `<additional>` | Groups other information about the manuscript, in particular, administrative information relating to its availability, custodial history, surrogates etc.  |
+| `<msPart>` | Contains in essence a nested `<msDesc>`, in cases of composite manuscripts now regarded as constituting a single unit but made up of two or more parts which were originally physically distinct; since the contents, physical description and history of the individual parts will normally be quite different, a `<msPart>` element can contain all the elements listed here, including additional `<msPart>` elements.  |
 
 
 Within each of these elements a

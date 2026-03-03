@@ -48,7 +48,16 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:div">
-        <xsl:apply-templates/>
+        <xsl:choose>
+            <xsl:when test="@type='display'">
+                <xsl:text>&#x0a;&lt;DisplayFrame&gt;&#x0a;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&#x0a;&lt;/DisplayFrame&gt;&#x0a;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:p">
         <xsl:choose>
@@ -70,7 +79,10 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:lb">
-        <xsl:text>&lt;br/&gt;&#x0a;</xsl:text>
+        <xsl:text>&lt;br/&gt;</xsl:text>
+        <xsl:if test="not(ancestor::tei:cell)">
+            <xsl:text>&#x0a;</xsl:text>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="tei:title">
         <xsl:text>_</xsl:text>
@@ -120,9 +132,14 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="@rend='italic'">
-                <xsl:text>_</xsl:text>
+                <xsl:text>&lt;em&gt;</xsl:text>
                 <xsl:apply-templates/>
-                <xsl:text>_</xsl:text>
+                <xsl:text>&lt;/em&gt;</xsl:text>
+            </xsl:when>
+            <xsl:when test="@rend='glyph'">
+                <xsl:text>&lt;Glyph&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&lt;/Glyph&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
@@ -152,15 +169,28 @@
     </xsl:template>
     <xsl:template match="tei:table">
         <xsl:choose>
-            <xsl:when test="@rend='plain'">
+            <xsl:when test="@rend='plain' or descendant::tei:cell//tei:lb">
                 <xsl:text>&#x0a;&#x0a;&lt;table&gt;</xsl:text>
+                <xsl:if test="tei:row[@role='label']">
+                    <xsl:text>&#x0a;&lt;thead&gt;</xsl:text>
+                    <xsl:for-each select="tei:row[@role='label']">
+                        <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
+                        <xsl:for-each select="tei:cell">
+                            <xsl:text>&#x0a;&lt;th&gt;</xsl:text>
+                            <xsl:apply-templates/>
+                            <xsl:text>&lt;/th&gt;</xsl:text>
+                        </xsl:for-each>
+                        <xsl:text>&#x0a;&lt;/tr&gt;</xsl:text>
+                    </xsl:for-each>
+                    <xsl:text>&#x0a;&lt;/thead&gt;</xsl:text>
+                </xsl:if>
                 <xsl:text>&#x0a;&lt;tbody&gt;</xsl:text>
-                <xsl:for-each select="tei:row">
+                <xsl:for-each select="tei:row[not(@role='label')]">
                     <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
                     <xsl:for-each select="tei:cell">
                         <xsl:text>&#x0a;&lt;td&gt;</xsl:text>
                         <xsl:apply-templates/>
-                        <xsl:text>&#x0a;&lt;/td&gt;</xsl:text>
+                        <xsl:text>&lt;/td&gt;</xsl:text>
                     </xsl:for-each>
                     <xsl:text>&#x0a;&lt;/tr&gt;</xsl:text>
                 </xsl:for-each>
@@ -192,24 +222,38 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:figure">
-        <xsl:text>&#x0a;&#x0a;&lt;Figure</xsl:text>
-        <xsl:if test="tei:figDesc">
-            <xsl:text> caption={`</xsl:text>
-            <xsl:value-of select="tei:figDesc"/>
-            <xsl:text>`}</xsl:text>
+        <xsl:choose>
+            <xsl:when test="ancestor::tei:cell">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>&#x0a;&#x0a;&lt;Figure</xsl:text>
+                <xsl:if test="tei:figDesc">
+                    <xsl:text> caption={`</xsl:text>
+                    <xsl:value-of select="tei:figDesc"/>
+                    <xsl:text>`}</xsl:text>
+                </xsl:if>
+                <xsl:text>&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&#x0a;&lt;/Figure&gt;&#x0a;&#x0a;</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:graphic">
+        <xsl:if test="not(ancestor::tei:cell)">
+            <xsl:text>&#x0a;</xsl:text>
         </xsl:if>
-        <xsl:text>&gt;</xsl:text>
-        <xsl:for-each select="tei:graphic">
-            <xsl:text>&#x0a;&lt;AutoImage</xsl:text>
-            <xsl:text> src="</xsl:text>
-            <xsl:value-of select="concat('/images/hb3/', @url)"/>
-            <xsl:text>"</xsl:text>
-            <xsl:text> alt="</xsl:text>
-            <xsl:value-of select="@url"/>
-            <xsl:text>"</xsl:text>
-            <xsl:text>/&gt;</xsl:text>
-        </xsl:for-each>
-        <xsl:text>&#x0a;&lt;/Figure&gt;&#x0a;</xsl:text>
+        <xsl:text>&lt;AutoImage</xsl:text>
+        <xsl:text> src="</xsl:text>
+        <xsl:value-of select="concat('/images/hb3/', @url)"/>
+        <xsl:text>"</xsl:text>
+        <xsl:text> alt="</xsl:text>
+        <xsl:value-of select="(../tei:figDesc, @url)[1]"/>
+        <xsl:text>"</xsl:text>
+        <xsl:text>/&gt;</xsl:text>
+        <xsl:if test="ancestor::tei:cell">
+            <xsl:text> </xsl:text>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="text()">
         <xsl:variable name="text1" select="replace(replace(., '\{', '\\{'), '\}', '\\}')"/>
@@ -220,7 +264,7 @@
         <xsl:variable name="text3" select="replace($text2, '&#x00a0;', '&amp;ensp;')"/>
         <xsl:variable name="text4">
             <xsl:choose>
-                <xsl:when test="ancestor::tei:quote">
+                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell">
                     <xsl:value-of select="replace($text3, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>
