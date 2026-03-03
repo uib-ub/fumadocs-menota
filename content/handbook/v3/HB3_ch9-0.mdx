@@ -50,6 +50,7 @@ The element `<add>` should be used for additions made in the manuscript by the s
 <AutoImage src="/images/hb3/ch9/Holm-B59-6v,8-10.png" alt="ch9/Holm-B59-6v,8-10.png"/>
 </Figure>
 
+
 <Caption title="Fig. 9.1">. Words added above the line. _Äldre Västgötalagen_. Holm B 59, f. 6v, l. 8–11.</Caption>
 
 In the second line of fig. 9.1, there are no less than three supralinear words. The first is <em>var</em> ‘was’, which is inserted between <em>Iak</em>
@@ -72,6 +73,7 @@ In the second line of fig. 9.1, there are no less than three supralinear words. 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-13v,8-10.jpg" alt="ch9/AM-619-4to-13v,8-10.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.2">. A word added in the margin. _The Old Norwegian Homily Book_. AM 619 4to, f. 13v, l. 8–10.</Caption>
 
@@ -156,15 +158,24 @@ Furthermore, changes in scribal hands are not considered additions. For markup o
 In the stylesheet for the Menota archive, scribal additions are displayed by insertion signs, either downwards-pointing 
      (for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript).
 
-| Element and attributes | Display |
-|-----|-----|
-| &lt;add place="inline"&gt;<br/>
- &lt;add place="supralinear"&gt;<br/>
- &lt;add place="infralinear"&gt;<br/>
- | Downwards-pointing insertion signs,<br/>
- e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax |
-| &lt;add place="margin"&gt; | Upwards-pointing insertion signs,<br/>
- e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti |
+<table>
+<thead>
+<tr>
+<th>Element and attributes</th>
+<th>Display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;add place="inline"&gt;<br/> &lt;add place="supralinear"&gt;<br/> &lt;add place="infralinear"&gt;<br/></td>
+<td>Downwards-pointing insertion signs,<br/> e.g. Iak ⸌var⸍ þa a þingi ok ⸌var⸍ mæn siax</td>
+</tr>
+<tr>
+<td>&lt;add place="margin"&gt;</td>
+<td>Upwards-pointing insertion signs,<br/> e.g. hældr rænr hugren tomr ⸝of⸜ um alla luti</td>
+</tr>
+</tbody>
+</table>
 
 
 In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at `2E0C` and `2E0D`, while the second set, ⸝...⸜, are located at `2E1D` and `2E1C`.
@@ -195,6 +206,7 @@ The element `<del>` should be used for deletions made in the manuscript by the s
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-243-ba-fol-5ra,24-26.jpg" alt="ch9/AM-243-ba-fol-5ra,24-26.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.3">. Characters deleted by erasure. _Konungs skuggsjá_. AM 243 bα fol, f. 5ra, l. 24–26.</Caption>
 
@@ -271,6 +283,7 @@ The sequence of words in a manuscript was sometimes transposed by the scribe or 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-47r,8-10.jpg" alt="ch9/AM-619-4to-47r,8-10.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.4">. Transpositions of two words. _The Old Norwegian Homily Book_. AM 619 4to, fol. 47r, l. 8–10.</Caption>
 
@@ -380,6 +393,7 @@ A common type of substitution occurs when a scribe makes changes to one characte
 <AutoImage src="/images/hb3/ch9/AM-619-4to-26v,7-11.jpg" alt="ch9/AM-619-4to-26v,7-11.jpg"/>
 </Figure>
 
+
 <Caption title="Fig. 9.5">. Substitution of one character with another. _The Old Norwegian Homily Book_. AM 619 4to, f. 26v, l. 7–11.</Caption>
 
 In the 4th line of fig. 9.5, the 5th word has been changed from “ſundu<em>m</em>” to “ſẏndu<em>m</em>”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
@@ -419,6 +433,7 @@ In a multi-level encoding, we recommend that the `<del>` and `<add>` elements
 <Figure>
 <AutoImage src="/images/hb3/ch9/HolmPerg-34-4to-8r,17-19.jpg" alt="ch9/HolmPerg-34-4to-8r,17-19.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.6">. Substitution of one character with another written above. _Landslǫg Magnúss
     Hákonarsonar_. Holm perg 34 4to, f. 8r, l. 17–19.</Caption>
@@ -502,6 +517,7 @@ If text is missing in the manuscript, the editor can supply it using the `<suppl
 <AutoImage src="/images/hb3/ch9/AM-677-4to-1v,1-3.jpg" alt="ch9/AM-677-4to-1v,1-3.jpg"/>
 </Figure>
 
+
 <Caption title="Fig. 9.7">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
 
 In fig. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word <em>sá</em> ‘this’. This is a single-level encoding on the diplomatic level:
@@ -552,6 +568,7 @@ A similar example is found in [ch. 8.3](HB3_ch8.xml#sec8.3) above, from the law 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-9v,23-30.jpg" alt="ch8/AM-619-4to-9v,23-30.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.8">. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23–30.</Caption>
 
@@ -620,6 +637,7 @@ In a multi-level encoding, the `<gap/>` element will be used on the facsimile le
 <AutoImage src="/images/hb3/ch9/AM-645-4to-51v,32-35.jpg" alt="ch9/AM-645-4to-51v,32-35.jpg"/>
 </Figure>
 
+
 <Caption title="Fig. 9.9">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.</Caption>
 
 In fig. 9.9, the first character in the second line is so smudged that it has become illegible. As stated in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1) above, we recommended that illegible characters are encoded by a standard sign such as `25CC`DOTTED CIRCLE. A single-level encoding of this passage is given in [ch. 8.4.1](HB3_ch8.xml#sec8.4.1), while we here offer a multi-level encoding with supplied text on the diplomatic as well as the normalised level:
@@ -671,6 +689,7 @@ The first example is of an emendation <em>ope codicum</em>. The bottom line in f
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-14r,26-30.jpg" alt="ch9/AM-619-4to-14r,26-30.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.10">. Supplied text. _The Old Norwegian Homily Book_. AM 619 4to, f. 14r, l. 26–30.</Caption>
 
@@ -734,6 +753,7 @@ The second example is of an emendation <em>ope ingenii</em>. This is offered by 
 <AutoImage src="/images/hb3/ch9/AM-645-4to-55v,5-7.jpg" alt="ch9/AM-645-4to-55v,5-7.jpg"/>
 </Figure>
 
+
 <Caption title="Fig. 9.11">. Supplied text. _Niðrstigningar saga_. AM 645 4to, f. 55v, l. 5–7.</Caption>
 
 As suggested above, the `<supplied>` element should be specified with the 
@@ -788,11 +808,24 @@ In general, emendations belongs on the normalised level and will  not be part of
 
 In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>` element has the `@reason` attribute and the `"emendation"` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
 
-| Element and attributes  | Display |
-|-----|-----|
-| &lt;supplied reason="restoration"&gt;<br/>
- | Square brackets, `005B` and `005D` respectively, e.g. [S]á einn maðr |
-| &lt;supplied reason="emendation"&gt; | Open angle brackets, `27E8` and `27E9`, e.g. hafi ⟨þik⟩ þangat sent  |
+<table>
+<thead>
+<tr>
+<th>Element and attributes </th>
+<th>Display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;supplied reason="restoration"&gt;<br/></td>
+<td>Square brackets, `005B` and `005D` respectively, e.g. [S]á einn maðr</td>
+</tr>
+<tr>
+<td>&lt;supplied reason="emendation"&gt;</td>
+<td>Open angle brackets, `27E8` and `27E9`, e.g. hafi ⟨þik⟩ þangat sent </td>
+</tr>
+</tbody>
+</table>
 
 
 Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.
@@ -820,6 +853,7 @@ In the following, we give examples of `<surplus>` text due to dittography, fig. 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-243-ba-fol-2vB,18-21.png" alt="ch9/AM-243-ba-fol-2vB,18-21.png"/>
 </Figure>
+
 
 <Caption title="Fig. 9.12">. Dittography. _Konungs skuggsjá_. AM 243 ba fol, f. 2v, col. B, l. 18–21.</Caption>
 
@@ -869,6 +903,7 @@ From a pragmatic point of view, the second, not the first, instance of “sialfr
 <AutoImage src="/images/hb3/ch9/NKS-66-8vo-73r,9-13.png" alt="ch9/NKS-66-8vo-73r,9-13.png"/>
 <AutoImage src="/images/hb3/ch9/NKS-66-8vo-73v,1-2.png" alt="ch9/NKS-66-8vo-73v,1-2.png"/>
 </Figure>
+
 
 <Caption title="Fig. 9.13">. Incoherence. _Henrik Harpestreng_. NKS 66 8vo, f. 73r, l. 9–13 and f. 73v, l. 1–2.</Caption>
 
@@ -933,6 +968,7 @@ elements `<sic>` and
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-8v,23-26.jpg" alt="ch9/AM-619-4to-8v,23-26.jpg"/>
 </Figure>
+
 
 <Caption title="Fig. 9.14">. Correction by editor. _The Old Norwegian Homily Book_. AM 619 4to, f. 8v, l. 23–26.</Caption>
 
@@ -1106,6 +1142,7 @@ In the archive, explanatory notes are displayed in the edited text in a light gr
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-242-fol-p1-explanatory-comment.png" alt="ch9/AM-242-fol-p1-explanatory-comment.png"/>
 </Figure>
+
 
 ### 9.4.3 Other types of comments
 
