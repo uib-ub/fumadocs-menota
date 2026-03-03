@@ -17,11 +17,11 @@ The two major types of linguistic annotation are morphological (lemma, word clas
 
 Several texts in the Menota archive have been morphologically annotated, so this type of annotation is part and parcel of a full, Menotic XML file. Some of the texts in the archive have also been syntactically annotated, but this work has been done in projects outside Menota, such as PROIEL (more information in [ch. 11.8](#sec11.8) below). For this reason, the present chapter will deal almost exclusively with morphological annotation.
 
-In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>`, is a basic unit in any transcription. Each `<w>` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma` for the dictionary entry and `@me:msa` for the grammatical form:
+In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma` for the dictionary entry and `@me:msa` for the grammatical form:
 
 | Element & attributes | Contents |
 |-----|-----|
-| `<w>` | Delimits a grammatical word. |
+| `<w>{:xml}` | Delimits a grammatical word. |
 | &ensp;&ensp;&ensp;`@lemma` | States the lemma (lexical entry) of the word. |
 | &ensp;&ensp;&ensp;`@me:msa` | States the grammatical (morphosyntactial) form of the word. |
 
@@ -35,7 +35,7 @@ This chapter is intended as a discussion of the basic principles for lemmatisati
 Medieval Nordic texts sometimes include words, phrases or even whole passages in other languages, particularly in Latin. The encoding of such passages is discussed in [ch. 11.7](#sec11.7) below.
 ## 11.2 The attribute `@lemma`
 
-The element `<w>` can be supplied with several lexicographical attributes for each word in a transcription. The attribute `@lemma` provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission’s [Ordbog over det norrøne prosasprog](https://onp.ku.dk/onp/onp.php) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
+The element `<w>{:xml}` can be supplied with several lexicographical attributes for each word in a transcription. The attribute `@lemma` provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission’s [Ordbog over det norrøne prosasprog](https://onp.ku.dk/onp/onp.php) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
 ```xml
 <w lemma="hafa">hefir</w>
 ```
@@ -54,22 +54,22 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 | Form | Lemma | Grammatical form |
 |-----|-----|-----|
 | hann | hann | Nominative |
-| han`<am>`&bar;`</am>` |
-| h`<am>`&bar;`</am>` |
-| h`<am>`&bar;`</am>`n |
+| han`<am>{:xml}`&bar;`</am>{:xml}` |
+| h`<am>{:xml}`&bar;`</am>{:xml}` |
+| h`<am>{:xml}`&bar;`</am>{:xml}`n |
 | ha&nscap; |
 | hans | hann | Genitive |
 | hanſ |
-| h`<am>`&bar;`</am>`s |
-| h`<am>`&bar;`</am>`ſ |
+| h`<am>{:xml}`&bar;`</am>{:xml}`s |
+| h`<am>{:xml}`&bar;`</am>{:xml}`ſ |
 | honum | hann | Dative |
 | honom |
-| h`<am>`&bar;`</am>`m |
+| h`<am>{:xml}`&bar;`</am>{:xml}`m |
 
 
-In [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above the use of `<w>` for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as ` &fins;` and `&nscap;`, or abbreviations such as `&bar;`. These are described in [ch. 5](HB3_ch5.xml).
+In [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above the use of `<w>{:xml}` for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as ` &fins;` and `&nscap;`, or abbreviations such as `&bar;`. These are described in [ch. 5](HB3_ch5.xml).
 
-As noted in [ch. 4.5](HB3_ch4.xml#sec4.5), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single `<w>` element and the attribute is valid for the whole contents: 
+As noted in [ch. 4.5](HB3_ch4.xml#sec4.5), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single `<w>{:xml}` element and the attribute is valid for the whole contents: 
 ```xml
 <w lemma="hafa">
   <choice>  
@@ -93,7 +93,7 @@ The next example is slightly more complicated since it contains an abbreviation 
 ```
 
 
-In cases where a graphic word is included partially or completely in the element `<unclear>` this can be encoded within the element `<w>` and be related to the attribute `@lemma`.
+In cases where a graphic word is included partially or completely in the element `<unclear>{:xml}` this can be encoded within the element `<w>{:xml}` and be related to the attribute `@lemma`.
 ```xml
 <w lemma="svá">  
   <choice>
@@ -105,7 +105,7 @@ In cases where a graphic word is included partially or completely in the element
 ```
 
 
-Text included within the element `<supplied>` is not lemmatized. The following example shows how a character, word or phrase that has been supplied is encoded with the element `<w>`, but without any `@lemma` attribute as the text (in whole or in part) is not transcribed from the manuscript itself.
+Text included within the element `<supplied>{:xml}` is not lemmatized. The following example shows how a character, word or phrase that has been supplied is encoded with the element `<w>{:xml}`, but without any `@lemma` attribute as the text (in whole or in part) is not transcribed from the manuscript itself.
 ```xml
 <w> 
   <choice>
@@ -134,7 +134,7 @@ Certain words appear as part of multi-word phrases, such as the subjunctions “
 ```
 
 
-In this encoding, we use the `<seg>` element as a container in a similar way to the encoding of words which are written together, cf. [ch. 5.3.2](HB3_ch5.xml#sec5.3.2).
+In this encoding, we use the `<seg>{:xml}` element as a container in a similar way to the encoding of words which are written together, cf. [ch. 5.3.2](HB3_ch5.xml#sec5.3.2).
 
 Sometimes, a word can be associated with more than one lemma. For example, the dative “lífi” can be mapped to the lemma “líf” as well as to “lífi”. This problem is discussed in [ch. 11.4](#sec11.4) below.
 ## 11.3 The attribute `@me:msa`
@@ -372,7 +372,7 @@ This category applies only to verbs. Finiteness is denoted by a name token consi
 | fU | Unspecified |
 11.3.2.11 Enclitics
 
-In some cases, a word may be attached to the previous word resulting in a single, new word. This process of cliticisation occurs after finite verbs with personal pronouns and negative particles. Examples of the first type are “emk” for “em ek” ‘I am’ and “fórtu” for “fórt þú” ‘you went’, of the second type “erat” for “er at” ‘is not’ and “bárut” for “báru t” ‘did not carry’. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s[i]k” = “kallask”. However, it may be argued that the enclitic words retain their characters as words to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s[i]k”. For this reason, we suggest that enclitic forms are encoded with the `<seg>` element, as suggested in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above:
+In some cases, a word may be attached to the previous word resulting in a single, new word. This process of cliticisation occurs after finite verbs with personal pronouns and negative particles. Examples of the first type are “emk” for “em ek” ‘I am’ and “fórtu” for “fórt þú” ‘you went’, of the second type “erat” for “er at” ‘is not’ and “bárut” for “báru t” ‘did not carry’. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s[i]k” = “kallask”. However, it may be argued that the enclitic words retain their characters as words to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s[i]k”. For this reason, we suggest that enclitic forms are encoded with the `<seg>{:xml}` element, as suggested in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above:
 ```xml
 <seg type="enc">
   <w lemma="vera">em</w>
@@ -418,7 +418,7 @@ We suggest the name tokens “eP” and “eN” for enclitic words, to be used 
 | eN | Enclitic negative particle |
 
 
-In marginal cases, there can be two or even three enclitics, such as “vilkat” for “vil [e]k at” ‘I will not’ and “bjargigak” for “bjargi [e]k a[t] [e]k” ‘I do not I save’ (_Hávamál_, st. 149). In the encoding, each word part should be rendered in a separate `<w>` element in the phonetic form it actually has:
+In marginal cases, there can be two or even three enclitics, such as “vilkat” for “vil [e]k at” ‘I will not’ and “bjargigak” for “bjargi [e]k a[t] [e]k” ‘I do not I save’ (_Hávamál_, st. 149). In the encoding, each word part should be rendered in a separate `<w>{:xml}` element in the phonetic form it actually has:
 ```xml
 <seg type="enc">
   <w lemma="vilja" me:msa="xVB fF tPS mIN p1 nS vA">vil</w>
@@ -439,9 +439,9 @@ In marginal cases, there can be two or even three enclitics, such as “vilkat�
 ```
 
 
-With the `<seg>` encoding, the stylesheet would ensure that these words were displayed with no internal spaces as “vilkat” and “bjargigak” respectively, but the individual, partly reduced word forms should be annotated as separate words. Importantly, in a syntactic analysis, in which a distinction between a verb and a pronoun (i.e. a predicate and a subject) is essential, these words would easily be identified.
+With the `<seg>{:xml}` encoding, the stylesheet would ensure that these words were displayed with no internal spaces as “vilkat” and “bjargigak” respectively, but the individual, partly reduced word forms should be annotated as separate words. Importantly, in a syntactic analysis, in which a distinction between a verb and a pronoun (i.e. a predicate and a subject) is essential, these words would easily be identified.
 
-In a multi-level encoding, the stylesheet should not display any space between the main word and the enclitic on the `<me:facs>` and `<me:norm>` levels, but a space should be displayed on the `<me:norm>` level. See the example in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above.11.3.2.12 Government
+In a multi-level encoding, the stylesheet should not display any space between the main word and the enclitic on the `<me:facs>{:xml}` and `<me:norm>{:xml}` levels, but a space should be displayed on the `<me:norm>{:xml}` level. See the example in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above.11.3.2.12 Government
 
 In the Old Norwegian lemmatised corpus, prepositions are encoded for the case which they govern. This is valuable syntactic information, but it is really not a morphological category. We therefore recommend that prepositions, which have no inflection in Old Norse (or possibly not in any other language), are only encoded for word class in the `@me:msa` attribute, “xAP”.
 
@@ -1350,7 +1350,7 @@ The word classes in [ONP](http://www.onp.hum.ku.dk/) should be taken as normativ
 
 **Cardinal numbers**. With the exception of “einn”, which has plural forms, there is no need to encode cardinal numbers (i.e. “tveir”, “þrír”, “fjórir”, “fimm”, etc.) for number, nP. For cardinal numbers above one, plural is inherent.
 
-**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the `<num>` element, e.g. `<num>`.iv.`</num>`. They should not be lemmatised. Cf. the discussion in [ch. 5.7](HB3_ch5.xml#sec5.7) above.
+**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the `<num>{:xml}` element, e.g. `<num>{:xml}`.iv.`</num>{:xml}`. They should not be lemmatised. Cf. the discussion in [ch. 5.7](HB3_ch5.xml#sec5.7) above.
 
 **Participles vs. adjectives**. If a participle can be referred to a verb, the infinitive should be used as the lemma. Thus, “búa” should be the lemma for “búinn”, even if this participle is on the verge of being lexicalised as an adjective in Old Norse. For a participle like “ítrborinn” there is no corresponding verb “ítrbera”, so “ítrborinn” should be chosen as lemma and the word class must be adjective, xAJ xRP gN nS cM sI.
 
@@ -1367,7 +1367,7 @@ As a rule, we recommend encoders to avoid duplication of words. So rather than d
 
 ## 11.7 Lemmatisation of non-Nordic material
 
-The dominant language in a transcription should be specified as an attribute to the `<text>` element. For a Menota transcription, that will typically be one of the Medieval Nordic languages. In this example, the text is specified as Old Swedish (“osw”):
+The dominant language in a transcription should be specified as an attribute to the `<text>{:xml}` element. For a Menota transcription, that will typically be one of the Medieval Nordic languages. In this example, the text is specified as Old Swedish (“osw”):
 ```xml
 <text xml:lang="osw">
   <body>The whole text of the source comes here.</body>
@@ -1388,9 +1388,9 @@ If there is only one language in the text, no further specification is needed. I
 
 See [ch. 11.7.1](#sec11.7.1) below on additional categories needed for a full morphological annotation of Latin.
 
-If there is a lengthy passage in another language, the attribute can also be given at a higher level in the encoding, e.g. to a `<div>` element.
+If there is a lengthy passage in another language, the attribute can also be given at a higher level in the encoding, e.g. to a `<div>{:xml}` element.
 
-All `@xml:lang` attributes should be defined in the header. This is part of the `<profileDesc>` element, which must contain a list of all languages referred to in the encoded text. We recommend this standard set of Nordic languages plus Greek and Latin:
+All `@xml:lang` attributes should be defined in the header. This is part of the `<profileDesc>{:xml}` element, which must contain a list of all languages referred to in the encoded text. We recommend this standard set of Nordic languages plus Greek and Latin:
 ```xml
 <langUsage> 
   <language ident="dan">Danish</language>

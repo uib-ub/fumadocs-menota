@@ -5,6 +5,11 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:template match="tei:gi">
+        <xsl:text>`&lt;</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>&gt;{:xml}`</xsl:text>
+    </xsl:template>
     <xsl:template match="tei:hi">
         <xsl:choose>
             <xsl:when test="@rend='entity' or @rend='codepoint' or @rend='descName'">

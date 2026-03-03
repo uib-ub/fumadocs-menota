@@ -15,18 +15,18 @@ This Chapter defines how to refer to phenomena in texts that have some kind of e
      outside the text —&ensp;both electronically **naming** and **locating** the thing referenced. These include the following phenomena and their
      associated TEI elements: 
 
-- people `<name>``<handDesc>``<person>`;
-- places `<name>``<placeName>``<place>`;
-- events `<name>``<event>`;
-- texts `<text>``<name>``<msItem>`;
-- parts and versions of texts `<div>`, `<lg>`; 
-- words and their corresponding headwords (lemmas) `<w>`; 
-- scholarly books and articles `<bibl>`; 
-- manuscripts `<msDesc>``<msIdentifier>``<name>`
+- people `<name>{:xml}``<handDesc>{:xml}``<person>{:xml}`;
+- places `<name>{:xml}``<placeName>{:xml}``<place>{:xml}`;
+- events `<name>{:xml}``<event>{:xml}`;
+- texts `<text>{:xml}``<name>{:xml}``<msItem>{:xml}`;
+- parts and versions of texts `<div>{:xml}`, `<lg>{:xml}`; 
+- words and their corresponding headwords (lemmas) `<w>{:xml}`; 
+- scholarly books and articles `<bibl>{:xml}`; 
+- manuscripts `<msDesc>{:xml}``<msIdentifier>{:xml}``<name>{:xml}`
 
-(The Names and Dates module gives elements for `<person>`, `<place>` and
-      `<event>`, but these are generally unnecessary for the purposes of projects using this
-     handbook: use `<name>` with the `@type` attribute.)
+(The Names and Dates module gives elements for `<person>{:xml}`, `<place>{:xml}` and
+      `<event>{:xml}`, but these are generally unnecessary for the purposes of projects using this
+     handbook: use `<name>{:xml}` with the `@type` attribute.)
 
 In this chapter an external phenomenon falling under one of these categories (person, word,
      place, etc.) is referred to simply as the **thing** and can be distinguished
@@ -43,7 +43,7 @@ The Semantic Web introduces principles that can greatly enhance resources by pro
      contains information referencing external resources has a meaningful link, implied in the
      naming of the element and/or in the form of the reference, to the relevant authority that
      defines or curates the thing to which it relates. Unlike linking using, for example, the
-      `<ref>` element (or `<a>` element in HTML), these links belong in the attribute
+      `<ref>{:xml}` element (or `<a>{:xml}` element in HTML), these links belong in the attribute
      part of an element, defining an implied equivalence between the thing encoded by the element
      and the external authority referenced.
 
@@ -72,7 +72,7 @@ Note that the methods outlined in this chapter involve a large amount of searchi
 
 The methods defined here utilise the TEI-defined attributes for linking to external
       resources: `@ref`, `@key` for elements for which they are valid (e.g.
-       `<name>`), and the additional Menota-defined equivalents for other elements,
+       `<name>{:xml}`), and the additional Menota-defined equivalents for other elements,
        `@me:ref`, `@me:key`.
 
 The content of the two differs: `@key` contains information defined by the project
@@ -84,7 +84,7 @@ The content of the two differs: `@key` contains information defined by the proje
 
 The TEI `@key` attribute is intended to contain an identifier such as a database key
       which is unique for the particular type of resource represented by the element which contains
-      it. For example, a `<name>` might contain a number that represents the database key for
+      it. For example, a `<name>{:xml}` might contain a number that represents the database key for
       the person or place the element refers to.
 
 The advantage of using a `@key` over a `@ref` is that the notation can be
@@ -238,7 +238,7 @@ You can use [web.archive.org](https://web.archive.org/web/) to archive and
 ## 15.4 Types of reference
 ### 15.4.1 Bibliographic items
 
-Bibliographic items are normally marked up with the `<bibl>` element, which should
+Bibliographic items are normally marked up with the `<bibl>{:xml}` element, which should
       contain a `@me:ref` value to identify the work
 
 Bibliographic items with a DOI, ISBN, or journals with an ISSN, should be referenced using
@@ -311,7 +311,7 @@ Word lemmas should be referenced as dictionary headwords, using additional infor
        language of the text.
 
 The reference should be included in the `@me:ref` attribute as part of the
-        `<w>` element. Note that in this type of resource, the reference is not in fact to
+        `<w>{:xml}` element. Note that in this type of resource, the reference is not in fact to
        the element itself (the word in a particular text), but to the headword to which it belongs.
        There may be instances where the word in question may require a link to an equivalent word
        (e.g. to facilitate collation and automatic textual variants). In such cases, the link to the
@@ -464,7 +464,7 @@ Authoritative online resources are available for naming and referencing manuscri
 [Handrit.is](https://handrit.is) contains records on a large number of
        manuscripts in the field, and is the only online catalogue of a very large number of younger
        Icelandic manuscripts. The manuscripts are catalogued as TEI/XML files, and the
-        `@xml:id` value in the `<msDesc>` element for each of these will contain a
+        `@xml:id` value in the `<msDesc>{:xml}` element for each of these will contain a
        unique identifier, which is also used in the URL on the site, e.g. [https://handrit.is/da/manuscript/view/is/JS04-0041](https://handrit.is/da/manuscript/view/is/JS04-0041). This
        produces the name menota:ms:handrit:JS04-0041.
 

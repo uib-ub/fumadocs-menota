@@ -25,7 +25,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white ${contentType}`}>
+    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white dark:bg-black ${contentType}`}>
       {(() => {switch (contentType) {
         case "hb3":
           return (

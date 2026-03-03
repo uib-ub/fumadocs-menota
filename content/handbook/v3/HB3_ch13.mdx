@@ -40,8 +40,8 @@ of the metrics. It should be pointed out, however, that these codes
 would have to be given a more detailed form if the stanzas should be
 analysed in a more detailed way.
 
-The verse will normally be marked up only at the `<me:dipl>` and `<me:norm>` levels of the transcription. 
-For the `<me:facs>` level, verse will be included as if prose, in accordance with the practice of the 
+The verse will normally be marked up only at the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels of the transcription. 
+For the `<me:facs>{:xml}` level, verse will be included as if prose, in accordance with the practice of the 
 medieval manuscripts.
 ## 13.2 Elements and attributes
 
@@ -51,16 +51,16 @@ attributes:
 
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<lg>` |  | Marks the stanza in relation to the surrounding prose text.  |
+| `<lg>{:xml}` |  | Marks the stanza in relation to the surrounding prose text.  |
 | `@n` | Obl | Indicates the identity of the stanza within the manuscript, i.e. its number in the manuscript, using values such as `"1"`, `"2"`, `"3"`.  |
 | `@xml:id` | Optional | Indicates the identity of the stanza within the medieval poetic corpus. The id should refer to a standard edition of the works. Menota recommends using the sigla for verses used by the Skaldic Poetry project ([https://skaldic.abdn.ac.uk/db.php](https://skaldic.abdn.ac.uk/db.php)) for non-Eddic verse, and the numbering in [Neckel and Kuhn 1983](HB3_literature.xml#Kuhn1983) for Eddic verse. If no standard corpus contains the verse (e.g. rímur), it should be indicated by a separate typology.  |
 | `@type` | Optional | Indicates the general metrical form of the stanza, e.g. `"dróttkvætt"` or `"fornyrðislag."` |
-| `<l>` |  | Marks the line within the stanza. |
+| `<l>{:xml}` |  | Marks the line within the stanza. |
 | `@n` | Obl | Indicates the line number within the stanza, using values such as `"1"`, `"2"`, `"3"`. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. |
 | `@type` | Optional | Indicates the type of line for formatting purposes; the implied value, `"normal"`, is not indented; use `"b-line"` for the b-line of eddic metres which should have the caesura represented by a long space; use `"ljod-long"` for <em>ljóðaháttr</em> long lines, which should have a line break and be indented. |
 | `@met` | Optional | Indicates the metrical form of the line. The form should be according to a standard typology, e.g. types A–E of the common germanic verse form. Sub-types can also be represented, using, e.g. [Gade 1995](HB3_literature.xml#Gade1995). Alternatively, the actual scansion of the line can be represented using a series of symbols (e.g. ‘/’ for a lift, ‘\’ for a secondary stress, ‘x’ for a dip and ‘|’ for a syntactic caesura; or cf. the [MUFI character recommendation](HB3_literature.xml#MUFIrec) for metrical symbols).  |
-| `<me:all>` |  | Indicates the alliteration of the line.  |
-| `<me:ass>` |  | Indicates the internal rhymes of the line, where relevant.  |
+| `<me:all>{:xml}` |  | Indicates the alliteration of the line.  |
+| `<me:ass>{:xml}` |  | Indicates the internal rhymes of the line, where relevant.  |
 
 ## 13.3 Encoding example
 
@@ -187,8 +187,8 @@ The transcription is encoded thus (long “s” is normalised to “s”; encode
 The value of `@n` is 3, as this is the third verse recorded in the manuscript. The verse’s `@xml:id` is the siglum from the  
    [Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is `"dróttkvætt"`, 
 but this categorisation is unnecessary, as the link to the skaldic project also provides information on the metrical category of each verse. 
-Each line is encoded with the `<l>` element, with the line number given and the metrical categorisation (here, from
+Each line is encoded with the `<l>{:xml}` element, with the line number given and the metrical categorisation (here, from
    [Gade 1995](HB3_literature.xml#Gade1995); “X” means 
 uncategorised).
 
-The alliterative staves are indicated using the `<me:all>` element, and the internal rhymes using `<me:ass>`. Both elements are defined by Menota and belong to the Menota namespace (cf. [ch. 2.8](HB3_ch2.xml#sec2.8) above).
+The alliterative staves are indicated using the `<me:all>{:xml}` element, and the internal rhymes using `<me:ass>{:xml}`. Both elements are defined by Menota and belong to the Menota namespace (cf. [ch. 2.8](HB3_ch2.xml#sec2.8) above).
