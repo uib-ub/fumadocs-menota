@@ -20,6 +20,7 @@ export default function AutoImage({ src, alt }: {
                     height: img.currentTarget.naturalHeight * 100
                 })
             }}
+            className="IMAGE shadow"
             style={{width: 'auto', height: 'auto'}}
         />
     );
