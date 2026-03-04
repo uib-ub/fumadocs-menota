@@ -232,10 +232,10 @@ The `<body>{:xml}` follows immediately after the header. This is where the actua
 ```
 
 
-The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang`
+The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
 						specifies the language of the text (cf. `<profileDesc>{:xml}` above). If the text
 						contains sporadic words or sentences in another language, e.g. Latin, the attribute
-						`@xml:lang` can be used to specify these exception from the rule, whether on the level of
+						`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
 						the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
 
 This header is also an example of how change of scribal hands in the source can be recorded. Note
@@ -551,17 +551,17 @@ The body follows immediately after the header. This is where the actual transcri
 ```
 
 
-The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang`
+The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
 							specifies the language of the text (cp. `<msContents>{:xml}` above). If the text
 							contains sporadic words or sentences in another language, e.g. Latin, the attribute
-							`@xml:lang` can be used to specify these exception from the rule, whether on the level of
+							`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
 							the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
 
 The divisions of the text correspond to the list of `<msItem>{:xml}` elements in
 								`<msContents>{:xml}` above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
 
 The `<head>{:xml}` element specifies the title of the work (or a part of it). If the title is given as a 
-					    rubric in the manuscript, a `@type` attribute can be used with the value `"rubric"` (as exemplified 
+					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
 					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
 					    add a title in the `<supplied>{:xml}` element (as has been done above). 
 ## E.4 Detailed header with more codicological information

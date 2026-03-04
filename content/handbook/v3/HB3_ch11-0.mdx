@@ -17,14 +17,14 @@ The two major types of linguistic annotation are morphological (lemma, word clas
 
 Several texts in the Menota archive have been morphologically annotated, so this type of annotation is part and parcel of a full, Menotic XML file. Some of the texts in the archive have also been syntactically annotated, but this work has been done in projects outside Menota, such as PROIEL (more information in [ch. 11.8](#sec11.8) below). For this reason, the present chapter will deal almost exclusively with morphological annotation.
 
-In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma` for the dictionary entry and `@me:msa` for the grammatical form:
+In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Element & attributes | Contents |
 |-----|-----|
 | `<w>{:xml}` | Delimits a grammatical word. |
-| &ensp;&ensp;&ensp;`@lemma` | States the lemma (lexical entry) of the word. |
-| &ensp;&ensp;&ensp;`@me:msa` | States the grammatical (morphosyntactial) form of the word. |
+| &ensp;&ensp;&ensp;`@lemma{:sh}` | States the lemma (lexical entry) of the word. |
+| &ensp;&ensp;&ensp;`@me:msa{:sh}` | States the grammatical (morphosyntactial) form of the word. |
 </div>
 
 
@@ -35,15 +35,15 @@ The model provided here is aimed at Medieval Norwegian and Icelandic texts. For 
 This chapter is intended as a discussion of the basic principles for lemmatisation and grammatical encoding of manuscript text. It should be read as a suggestion rather than as definite guidelines.
 
 Medieval Nordic texts sometimes include words, phrases or even whole passages in other languages, particularly in Latin. The encoding of such passages is discussed in [ch. 11.7](#sec11.7) below.
-## 11.2 The attribute `@lemma`
+## 11.2 The attribute `@lemma{:sh}`
 
-The element `<w>{:xml}` can be supplied with several lexicographical attributes for each word in a transcription. The attribute `@lemma` provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission’s [Ordbog over det norrøne prosasprog](https://onp.ku.dk/onp/onp.php) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
+The element `<w>{:xml}` can be supplied with several lexicographical attributes for each word in a transcription. The attribute `@lemma{:sh}` provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission’s [Ordbog over det norrøne prosasprog](https://onp.ku.dk/onp/onp.php) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
 ```xml
 <w lemma="hafa">hefir</w>
 ```
 
 
-In general, we recommend that the `@lemma` attribute is used for the standard dictionary of the language in question. If a text has been encoded according to another standard, such as texts from Gammelnorsk ordboksverk, we offer the additional `@me:orig-lemma` attribute. According to the orthography of Gammelnorsk Ordboksverk, the lemma of the verb “heyra” should be spelt “høyra”, and the encoding might be as follows:
+In general, we recommend that the `@lemma{:sh}` attribute is used for the standard dictionary of the language in question. If a text has been encoded according to another standard, such as texts from Gammelnorsk ordboksverk, we offer the additional `@me:orig-lemma{:sh}` attribute. According to the orthography of Gammelnorsk Ordboksverk, the lemma of the verb “heyra” should be spelt “høyra”, and the encoding might be as follows:
 ```xml
 <w lemma="heyra" me:orig-lemma="høyra">heyrir</w>
 ```
@@ -83,7 +83,7 @@ As noted in [ch. 4.5](HB3_ch4.xml#sec4.5), a text may be encoded on a single lev
 ```
 
 
-The next example is slightly more complicated since it contains an abbreviation on the facsimile level and a corresponding expansion in the diplomatic level, but the `@lemma` attribute is unchanged:
+The next example is slightly more complicated since it contains an abbreviation on the facsimile level and a corresponding expansion in the diplomatic level, but the `@lemma{:sh}` attribute is unchanged:
 ```xml
 <w lemma="koma">  
   <choice>
@@ -95,7 +95,7 @@ The next example is slightly more complicated since it contains an abbreviation 
 ```
 
 
-In cases where a graphic word is included partially or completely in the element `<unclear>{:xml}` this can be encoded within the element `<w>{:xml}` and be related to the attribute `@lemma`.
+In cases where a graphic word is included partially or completely in the element `<unclear>{:xml}` this can be encoded within the element `<w>{:xml}` and be related to the attribute `@lemma{:sh}`.
 ```xml
 <w lemma="svá">  
   <choice>
@@ -107,7 +107,7 @@ In cases where a graphic word is included partially or completely in the element
 ```
 
 
-Text included within the element `<supplied>{:xml}` is not lemmatized. The following example shows how a character, word or phrase that has been supplied is encoded with the element `<w>{:xml}`, but without any `@lemma` attribute as the text (in whole or in part) is not transcribed from the manuscript itself.
+Text included within the element `<supplied>{:xml}` is not lemmatized. The following example shows how a character, word or phrase that has been supplied is encoded with the element `<w>{:xml}`, but without any `@lemma{:sh}` attribute as the text (in whole or in part) is not transcribed from the manuscript itself.
 ```xml
 <w> 
   <choice>
@@ -122,7 +122,7 @@ Text included within the element `<supplied>{:xml}` is not lemmatized. The follo
 ```
 
 
-This means that the forms that are not marked will not be included in the searchable database under the category `@lemma`. 
+This means that the forms that are not marked will not be included in the searchable database under the category `@lemma{:sh}`. 
 			We hereby avoid the problem of contamination between forms that are from the manuscript text and forms that have been supplied by
 			a transcriber or encoder of the text. A basic principle is that the lemmatized text should be from the manuscript text.
 
@@ -139,15 +139,15 @@ Certain words appear as part of multi-word phrases, such as the subjunctions “
 In this encoding, we use the `<seg>{:xml}` element as a container in a similar way to the encoding of words which are written together, cf. [ch. 5.3.2](HB3_ch5.xml#sec5.3.2).
 
 Sometimes, a word can be associated with more than one lemma. For example, the dative “lífi” can be mapped to the lemma “líf” as well as to “lífi”. This problem is discussed in [ch. 11.4](#sec11.4) below.
-## 11.3 The attribute `@me:msa`
+## 11.3 The attribute `@me:msa{:sh}`
 
-The attribute `@me:msa` (for **morphosyntactical analysis**) adds information about the grammatical form of a word. To be able to make this analysis it is necessary to create a model which includes all possible morphological forms of each lemma. As stated above, the model is based on the morphology of Medieval Norwegian and Icelandic, as expounded in standard grammars of Old Norse or “norrønt”.
+The attribute `@me:msa{:sh}` (for **morphosyntactical analysis**) adds information about the grammatical form of a word. To be able to make this analysis it is necessary to create a model which includes all possible morphological forms of each lemma. As stated above, the model is based on the morphology of Medieval Norwegian and Icelandic, as expounded in standard grammars of Old Norse or “norrønt”.
 
-We recommend a scheme in which the attribute `@me:msa` contains a set of name tokens, one for each morphological category. White space separates each name token. We further recommend that the order of the name tokens should be fixed, and that there should be one specific order for each word class, as specified in [ch. 11.5](#sec11.5) below. For words with inflection, the first token specifies the word class and the following tokens the morphological categories relevant for this specific word class. Words belonging to word classes with no inflection, such as prepositions and subjunctions, will only receive a single name token for the word class itself. In addition to tokens for morphological categories such as gender, number and case, tokens for inflection class may be added.
+We recommend a scheme in which the attribute `@me:msa{:sh}` contains a set of name tokens, one for each morphological category. White space separates each name token. We further recommend that the order of the name tokens should be fixed, and that there should be one specific order for each word class, as specified in [ch. 11.5](#sec11.5) below. For words with inflection, the first token specifies the word class and the following tokens the morphological categories relevant for this specific word class. Words belonging to word classes with no inflection, such as prepositions and subjunctions, will only receive a single name token for the word class itself. In addition to tokens for morphological categories such as gender, number and case, tokens for inflection class may be added.
 
 Each name token consists of two parts. The first part specifies the category itself and is represented by a single lower-case letter. The second part specifies the value of the category and is given in one or more upper-case letters. As far as possible, mnemonic characters are used, e.g. “c” for “case” and “G” for “genitive”. The name token “cG” is thus to be understood as “case: genitive” and is applicable to all words which can be inflected in genitive, such as nouns, adjectives, pronouns/determiners, numerals and verb participles.
 
-In Old Norse, nouns are inflected for gender, number, case and species (definiteness). Below is an example of the mark-up for the word “hestum”, dative plural indefinite of the masculine noun “hestr”. The `@me:msa` attribute opens with a name token for the word class, “xNC” for “noun, common”, moving on to “gM” for “gender: masculine”, “nP” for “number: plural”, “cD” for “case: dative” and finally “sI” for “species: indefinite”. 
+In Old Norse, nouns are inflected for gender, number, case and species (definiteness). Below is an example of the mark-up for the word “hestum”, dative plural indefinite of the masculine noun “hestr”. The `@me:msa{:sh}` attribute opens with a name token for the word class, “xNC” for “noun, common”, moving on to “gM” for “gender: masculine”, “nP” for “number: plural”, “cD” for “case: dative” and finally “sI” for “species: indefinite”. 
 ```xml
 <w lemma="hestr" me:msa="xNC gM nP cD sI">hestum</w>  
 
@@ -166,7 +166,7 @@ Old Norse has the most complex morphology of the Nordic vernaculars and is there
 
 Words in inflectional languages exhibit variable and invariable properties. Word class is the prime example of an invariable property, since a word can belong to one and only one word class – the noun “hestr” can not be inflected in adjectival and verbal forms. For nouns, gender is an invariable property – once again, “hestr” can not be inflected in feminine or neutral forms. Adjectives, on the other hand, are inflected in gender, so for this word class gender is a variable property. Other categories, such as case, number, grade etc., are all variable.
 
-Information on inflectional classes can be added to the `@me:msa` attribute, e.g. strong vs. weak verbs, stem classes of nouns etc. These are also invariable properties.
+Information on inflectional classes can be added to the `@me:msa{:sh}` attribute, e.g. strong vs. weak verbs, stem classes of nouns etc. These are also invariable properties.
 
 The name tokens will, in any case, make it clear which tokens refer to invariable properties and which refer to invariable properties.11.3.1.1 Word class
 
@@ -200,9 +200,9 @@ Word class is denoted by a name token consisting of the character “x” + an u
 
 Inflectional class is another invariable property and can usually be derived from a combination of the lemma and the word class. Thus, the lemma “fara” belonging to the word class “xVB” (verbs) will be classified as being a strong verb of the 6th class, according to most grammars of Old Norse. This is information which might be found in a dictionary or a lexicographical database of Old Norse.
 
-If the encoder wishes to include information on the inflectional class we recommend that this is being done by adding to the `@me:msa` attribute a name token consisting of the lowercase character “i” + an uppercase abbreviation for each class. The table below contains examples for the verb class, but can easily be extended to other classes. Incidentally, the distinction between strong and weak inflection also applies to nouns.
+If the encoder wishes to include information on the inflectional class we recommend that this is being done by adding to the `@me:msa{:sh}` attribute a name token consisting of the lowercase character “i” + an uppercase abbreviation for each class. The table below contains examples for the verb class, but can easily be extended to other classes. Incidentally, the distinction between strong and weak inflection also applies to nouns.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Inflectional class |
 |-----|-----|
 | iST | Strong |
@@ -224,7 +224,7 @@ This category applies to nouns, adjectives, pronouns/determiners, numerals and v
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | gM | Masculine |
@@ -240,7 +240,7 @@ We recommend that gender is ascribed on the basis of standard dictionaries. Even
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | gMF | Masculine or Feminine |
@@ -252,7 +252,7 @@ We recommend that gender is ascribed on the basis of standard dictionaries. Even
 
 This category applies to nouns, adjectives, pronouns/determiners and verbs. Number is denoted by a name token consisting of the lowercase character “n” + an uppercase abbreviation for each number. The dual form occurs only in the inflection of personal pronouns. The character “U” indicates unspecified cases.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | nS | Singular |
@@ -266,7 +266,7 @@ This category applies to nouns, adjectives, pronouns/determiners and numerals. C
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | cN | Nominative |
@@ -279,7 +279,7 @@ This category applies to nouns, adjectives, pronouns/determiners and numerals. C
 
 In some cases, the annotator will not be able to decide the case of a word. When this happens, we recommend using name tokens with more than one value, “cAD”, “cGD”, “cAN”, “cAG” and “cO”:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | cAD | Accusative or Dative |
@@ -296,7 +296,7 @@ In Old Norse, nouns and adjectives can have either indefinite or definite forms,
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | sI | Indefinite |
@@ -311,7 +311,7 @@ Memory hint: since the character “g” has been reserved for “gender”, the
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | rP | Positive |
@@ -325,7 +325,7 @@ This category applies to verbs and some of the pronouns. Person is denoted by a 
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | p1 | 1. person |
@@ -339,7 +339,7 @@ This category applies only to verbs. Tense is denoted by a name token consisting
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | tPS | Present |
@@ -354,7 +354,7 @@ This category applies only to verbs. Mood is denoted by a name token consisting 
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | mIN | Indicative |
@@ -366,7 +366,7 @@ This category applies only to verbs. Mood is denoted by a name token consisting 
 
 In some cases, the annotator will not be able to decide the mood of a verb. When this happens, we recommend using name tokens with more than one value, “mINSU”, “mINIM” and “mSUIM”:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | mINSU | Indicative or Subjunctive |
@@ -379,7 +379,7 @@ This category applies only to verbs. Voice is denoted by a name token consisting
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | vA | Active |
@@ -392,7 +392,7 @@ This category applies only to verbs. Finiteness is denoted by a name token consi
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | fF | Finite |
@@ -440,9 +440,9 @@ In a similar vein, the negative particle in “bárut” may be analysed as “a
 ```
 
 
-We suggest the name tokens “eP” and “eN” for enclitic words, to be used as the final name token in the `@me:msa` attribute of the enclitic word:
+We suggest the name tokens “eP” and “eN” for enclitic words, to be used as the final name token in the `@me:msa{:sh}` attribute of the enclitic word:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | eP | Enclitic pronoun |
@@ -475,13 +475,13 @@ With the `<seg>{:xml}` encoding, the stylesheet would ensure that these words we
 
 In a multi-level encoding, the stylesheet should not display any space between the main word and the enclitic on the `<me:facs>{:xml}` and `<me:norm>{:xml}` levels, but a space should be displayed on the `<me:norm>{:xml}` level. See the example in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above.11.3.2.12 Government
 
-In the Old Norwegian lemmatised corpus, prepositions are encoded for the case which they govern. This is valuable syntactic information, but it is really not a morphological category. We therefore recommend that prepositions, which have no inflection in Old Norse (or possibly not in any other language), are only encoded for word class in the `@me:msa` attribute, “xAP”.
+In the Old Norwegian lemmatised corpus, prepositions are encoded for the case which they govern. This is valuable syntactic information, but it is really not a morphological category. We therefore recommend that prepositions, which have no inflection in Old Norse (or possibly not in any other language), are only encoded for word class in the `@me:msa{:sh}` attribute, “xAP”.
 
 However, to accommodate the information provided in the Old Norwegian lemmatised corpus without introducing attributes for syntactic categories we suggest using a name token for government, consisting of the lowercase character “y” + an uppercase abbreviation for each type of case government. This category would apply to prepositions, verbs and some adjectives.
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | yG | Governing Genitive |
@@ -495,7 +495,7 @@ In the Old Norwegian lemmatised corpus, also conjunctions (i.e. subjunctions) ar
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | yIN | Governing Indicative |
@@ -505,10 +505,10 @@ In the Old Norwegian lemmatised corpus, also conjunctions (i.e. subjunctions) ar
 
 ## 11.4 Homography and zero values
 
-Two or more words sometimes have the same spelling, but different meanings. This is usually referred to as “homography” and it is a basic problem for all morphological analysis. We shall distinguish between two types of homography, external and internal. The first case must be handled by the `@lemma` attribute, the second by the `@me:msa` attribute.
+Two or more words sometimes have the same spelling, but different meanings. This is usually referred to as “homography” and it is a basic problem for all morphological analysis. We shall distinguish between two types of homography, external and internal. The first case must be handled by the `@lemma{:sh}` attribute, the second by the `@me:msa{:sh}` attribute.
 
 For the discussion in this chapter, we shall adopt the distinction between **word
-			form**, **grammatical form** and **lemma** (lexeme). The word form is the word as it is spelt in the text, whether normalised or not. The grammatical form is a specific morphological value of the word, referred to by the attribute `@me:msa`. The lemma is the common denominator for all of these forms, typically given as a dictionary entry and referred to by the attribute `@lemma`.
+			form**, **grammatical form** and **lemma** (lexeme). The word form is the word as it is spelt in the text, whether normalised or not. The grammatical form is a specific morphological value of the word, referred to by the attribute `@me:msa{:sh}`. The lemma is the common denominator for all of these forms, typically given as a dictionary entry and referred to by the attribute `@lemma{:sh}`.
 ### 11.4.1. External homography
 
 External homography means that one grammatical word can be mapped onto two or more lemmata. In
@@ -522,7 +522,7 @@ In some cases, however, it is a questions of related words with variant forms, s
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Lemma | Word form | Grammatical form |
 |-----|-----|-----|
 | líf | lífi | xNC gN nS cD sI |
@@ -580,7 +580,7 @@ In another phrase, e.g. “fyrir konu”, the encoder might not be willing to ma
 
 It turns out that in Old Norse, there is a rather short list of internal homography:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Name token | Value |
 |-----|-----|
 | mINSU | mood: indicative or subjunctive |
@@ -677,7 +677,7 @@ Nouns are divided into two subgroups, **common noun** (xNC) and **proper nouns**
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -716,7 +716,7 @@ Adjectives are encoded for **grade**, **gender**, **number**, **case** and **spe
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -762,7 +762,7 @@ Personal pronouns are encoded for **person**, **gender**, **number** and **case*
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -796,7 +796,7 @@ Interrogative pronouns are encoded for **gender**, **number** and **case**. Memo
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -830,7 +830,7 @@ Indefinite pronouns are encoded for **gender**, **number** and **case**.
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -867,7 +867,7 @@ Possessives are encoded for **gender**, **number** and **case**.
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -901,7 +901,7 @@ Possessives are encoded for **gender**, **number** and **case**.
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -935,7 +935,7 @@ Quantifiers are encoded for **gender**, **number** and **case**. This category m
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -970,7 +970,7 @@ Pronouns/determiners are encoded for **person** (only personal pronouns), **gend
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1009,7 +1009,7 @@ The numerals hundrað“one hundred (and twenty)” and þúsund“one thousand 
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1046,7 +1046,7 @@ Articles are encoded for **gender**, **number**, **case**, and **species**.
 ```
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1085,7 +1085,7 @@ Finite verbs are encoded for **tense**, **mood**, **person**, **number**, and **
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1133,7 +1133,7 @@ Note that present participles only have weak (definite) declension. Preterite (p
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1177,7 +1177,7 @@ Infinitives are inflected only for the verbal categories **tense** and **voice**
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1214,7 +1214,7 @@ Adverbs are only encoded for **grade**.
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1247,7 +1247,7 @@ Note that some adverbs have defect modes of forming the comparative, but we stil
 
 There is seldom any doubt about the word class for prepositions in prepositional phrases like “í hendi”, “á landi”, “til þings”, etc. However, when prepositions appear without complementation (in absolute position) or as verbal particles, it is convenient to have an alternative word class. We suggest xVP for this use of prepositions.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class | Specification |
 |-----|-----|
 | xAP | all prototypical prepositions |
@@ -1266,7 +1266,7 @@ As stated in [11.3.2.12](#sec11.3.2.12) above, prepositions in the Old Norwegian
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1306,7 +1306,7 @@ In recent grammars, the traditional word class “conjunctions” is usually div
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1329,7 +1329,7 @@ As stated in [11.3.2.12](#sec11.3.2.12) above, conjunctions (i.e. subjunctions) 
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -1353,7 +1353,7 @@ The encoding “yU” would be used when the mood of the verb in the clause cann
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class |
 |-----|
 | xIT |
@@ -1365,7 +1365,7 @@ The **infinitive marker** is not inflected and encoded as xIM. In Old Norse it u
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class |
 |-----|
 | xIM |
@@ -1377,7 +1377,7 @@ The relative particle is not inflected and only marked as xRP. In Old Norse it u
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class |
 |-----|
 | xRP |
@@ -1391,7 +1391,7 @@ The expletive particles“of” and “um” are frequently found in Eddic poems
 
 
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class |
 |-----|
 | xEX |
@@ -1401,7 +1401,7 @@ The expletive particles“of” and “um” are frequently found in Eddic poems
 
 Some words are corrupt, difficult to analyse, belong to another language or are for other reason indeterminate. These words are marked as unassigned, xUA. See, however, the discussion of non-Nordic words in [ch. 11.7](#sec11.7) below.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Word class |
 |-----|
 | xUA |
@@ -1482,7 +1482,7 @@ The dominant language in a transcription should be specified as an attribute to 
 ```
 
 
-If there is only one language in the text, no further specification is needed. If there are words, phrases or passages in another language, they should be set out by the `@xml:lang` attribute, preferably one for each word. Since the other language most likely will have a different morphology from Medieval Nordic (in the case of Latin and Greek, a more complex one) we recommend a simplified morphosyntactical analysis, perhaps only identifying the word class. For example, the phrase “per omnia saecula saeculorum” might be encoded in this manner:
+If there is only one language in the text, no further specification is needed. If there are words, phrases or passages in another language, they should be set out by the `@xml:lang{:sh}` attribute, preferably one for each word. Since the other language most likely will have a different morphology from Medieval Nordic (in the case of Latin and Greek, a more complex one) we recommend a simplified morphosyntactical analysis, perhaps only identifying the word class. For example, the phrase “per omnia saecula saeculorum” might be encoded in this manner:
 ```xml
 <w lemma="per" me:msa="xAP" xml:lang="lat">per</w>
 <w lemma="omnis" me:msa="xPD" xml:lang="lat">omnia</w>
@@ -1496,7 +1496,7 @@ See [ch. 11.7.1](#sec11.7.1) below on additional categories needed for a full mo
 
 If there is a lengthy passage in another language, the attribute can also be given at a higher level in the encoding, e.g. to a `<div>{:xml}` element.
 
-All `@xml:lang` attributes should be defined in the header. This is part of the `<profileDesc>{:xml}` element, which must contain a list of all languages referred to in the encoded text. We recommend this standard set of Nordic languages plus Greek and Latin:
+All `@xml:lang{:sh}` attributes should be defined in the header. This is part of the `<profileDesc>{:xml}` element, which must contain a list of all languages referred to in the encoded text. We recommend this standard set of Nordic languages plus Greek and Latin:
 ```xml
 <langUsage> 
   <language ident="dan">Danish</language>
@@ -1545,7 +1545,7 @@ The abbreviation **B** has been chosen for “ablative” since **A** is already
 
 The Medieval Nordic languages have the very simple distinction between **tPS** for “present” and **tPT** for “past”.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Voice | Value |
 |-----|-----|
 | vA | Active |

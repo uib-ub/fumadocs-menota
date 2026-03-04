@@ -55,13 +55,15 @@ The size of a lacuna varies considerably and may be nothing more than a
 Whenever the manuscript contains a lacuna we suggest using the element
                   `<gap/>{:xml}`, whatever the extent of the lacuna. We use the term <em>lacuna</em> in a strict sense, referring to any part of a manuscript which is physically missing. This element has several  attributes, specifying size and reason for the lacuna:
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<gap/>{:xml}` |  | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"` (character), `"word"`, `"line"` or `"leaf"`, or even `"indeterminate"`. |
-| `@quantity` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.If the extent of the gap is described as `"indeterminate"` in the `@unit` attribute, it does not make sense to try and specify a quantity. |
-| `@reason` | Optional | Gives the reason for omission. Sample values include: `"damaged"`, `"cut"`, `"missing"`. |
-| `@agent` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"`, `"smoke"`, `"fungus"` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>{:xml}` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"{:js}` (character), `"word"{:js}`, `"line"{:js}` or `"leaf"{:js}`, or even `"indeterminate"{:js}`. |
+| <span className="p-3"/>`@quantity{:sh}` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.If the extent of the gap is described as `"indeterminate"{:js}` in the `@unit{:sh}` attribute, it does not make sense to try and specify a quantity. |
+| <span className="p-3"/>`@reason{:sh}` | Optional | Gives the reason for omission. Sample values include: `"damaged"{:js}`, `"cut"{:js}`, `"missing"{:js}`. |
+| <span className="p-3"/>`@agent{:sh}` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"{:js}`, `"smoke"{:js}`, `"fungus"{:js}` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>{:xml}` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+</div>
 
 
 In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn <em>maðr</em> er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
@@ -157,12 +159,14 @@ Manuscripts often have empty spaces, typically left for initials but also in oth
 The `<space/>{:xml}` element is used to represent deliberate omissions by the scribe, e.g. spaces left for decorated initials or whole
                words. This element has several attributes, specifying the size and dimension of the space:
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<space/>{:xml}` |  | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. Attributes include: |
-| `@quantity` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.  |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"` (characters) and `"word"`.  |
-| `@dim` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"` or `"vertical"`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+| <span className="p-3"/>`@quantity{:sh}` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.  |
+| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"{:js}` (characters) and `"word"{:js}`.  |
+| <span className="p-3"/>`@dim{:sh}` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"{:js}` or `"vertical"{:js}`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+</div>
 
 
 In fig. 8.3, the scribe of _Landslǫg Magnúss
@@ -253,7 +257,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 <Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
 
 The space has a size of approximately four characters horizontally and two lines vertically. According to the TEI P5 Guidelines, a space with both vertical and horizontal components should be classified as vertical (cf. the [description](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html)
-                  of the `@dim` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
+                  of the `@dim{:sh}` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
 ```xml
 . . .
 <w><me:facs><space quantity="2" unit="line" dim="vertical"/>a</me:facs></w>
@@ -284,7 +288,7 @@ If the transcriber would like to restore the text intended for the space, this c
 ```
 
 
-This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
+This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
 
 For more details on the encoding of initials and other graphical elements, see [ch. 7.3](HB3_ch7.xml#sec7.3) above.
 ### 8.3.2. Display of empty space
@@ -304,18 +308,20 @@ Other stylesheets may choose to display empty space differently,
                   including having no display at all.
 ## 8.4 Unclear text
 
-Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the `<unclear>{:xml}` element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason` and values such as `"faded"`, `"smudged"` and `"erased"`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent` attribute.
+Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the `<unclear>{:xml}` element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason{:sh}` and values such as `"faded"{:js}`, `"smudged"{:js}` and `"erased"{:js}`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent{:sh}` attribute.
 
 When a character can be read with some degree of certainty, we recommend that this character is entered in the `<unclear>{:xml}` element, so that it can be displayed as such. If a character is completley unreadable, it should still be entered in the `<unclear>{:xml}` element, but using a specific character such as a dotted circle or a small zero (explained below).
 
 One might be tempted to try and indicate the degree of unclearness by a suitable attribute, for example by a percentage, but we believe that this is a rather arbitrary measure and difficult to estimate. In other words, characters which cannot be read with full certainty, simply are `<unclear>{:xml}`. A corresponding facsimile of the text should be available and will help the users to estimate the degree of unclearness.
 ### 8.4.1 Encoding of unclear text
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<unclear>{:xml}` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. Attributes include: |
-| `@reason` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"`, `"smudged"`, `"erased"`. |
-| `@agent` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"`, `"mildew"`, `"smoke"`. |
+| <span className="p-3"/>`@reason{:sh}` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"{:js}`, `"smudged"{:js}`, `"erased"{:js}`. |
+| <span className="p-3"/>`@agent{:sh}` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"{:js}`, `"mildew"{:js}`, `"smoke"{:js}`. |
+</div>
 
 
 
@@ -537,7 +543,7 @@ As for the use of the `<note>{:xml}` element here, see [ch. 9.4](HB3_ch9.xml#sec
 
 From this encoding, we understand that the beginning and the end of the once
                   complete manuscript is missing, and that there are gaps in between all leaves apart
-                  from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the `<note>{:xml}` element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
+                  from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity{:sh}` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the `<note>{:xml}` element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
 ### 8.5.2 A pair of leaves
 
 Quires were made up of pairs of leaves, bifolia, and it is not uncommon that one

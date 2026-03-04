@@ -7,8 +7,10 @@
     <xsl:strip-space elements="*"/>
     <xsl:template match="tei:table">
         <xsl:choose>
-            <xsl:when test="@rend='abbr'">
-                <xsl:text>&#x0a;&#x0a;&lt;div className="abbrTable"&gt;</xsl:text>
+            <xsl:when test="@rend='abbr' or @rend='xml-elements'">
+                <xsl:text>&#x0a;&#x0a;&lt;div className="table-</xsl:text>
+                <xsl:value-of select="@rend"/>
+                <xsl:text>"&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>&#x0a;</xsl:text>
@@ -64,7 +66,7 @@
                 <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:if test="@rend='abbr'">
+        <xsl:if test="@rend='abbr' or @rend='xml-elements'">
             <xsl:text>&#x0a;&lt;/div&gt;</xsl:text>
         </xsl:if>
         <xsl:text>&#x0a;</xsl:text>

@@ -114,11 +114,11 @@ strong {
     font-weight: normal;
 }
 
-.abbrTable table {
+.table-abbr table, .table-xml-elements table {
     border-collapse: collapse;
 }
 
-.abbrTable th {
+.table-abbr th, .table-xml-elements th {
     background-color: #ebf3ff;
     border-radius: 5px;
     font-weight: bold;
@@ -126,15 +126,20 @@ strong {
     color: #666;
 }
 
-.abbrTable th:first-child {
-    border-top-left-radius: 10px;
-}
-
-.abbrTable td {
+.table-abbr td, .table-xml-elements td {
+    padding: .5em 1em;
     background-color: white;
 }
 
-.abbrTable th, .abbrTable td {
-    padding: .5em 1em;
+.table-abbr th, 
+.table-abbr td, 
+.table-xml-elements th, 
+.table-xml-elements tbody,
+.table-xml-elements td {
     border: 1px solid #0669ff;
 }
+
+.table-xml-elements td {
+    border-style: dotted;
+}
+

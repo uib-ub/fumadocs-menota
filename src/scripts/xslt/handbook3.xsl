@@ -107,12 +107,6 @@
         <xsl:text>]</xsl:text>
         <xsl:value-of select="concat('(', @target, ')')"/>
     </xsl:template>
-    <xsl:template match="tei:att">
-        <xsl:value-of select="concat('`@', ., '`')"/>
-    </xsl:template>
-    <xsl:template match="tei:val">
-        <xsl:value-of select="concat('`&quot;', ., '&quot;`')"/>
-    </xsl:template>
     <xsl:template match="tei_samples:egXML">
         <xsl:choose>
             <xsl:when test="@rend='inline'">

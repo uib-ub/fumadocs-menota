@@ -271,7 +271,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 (a) Commonly used characters have a single description in Unicode. This applies to all
             base-line characters in the Latin alphabet.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Glyph  | Encoding  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph>a</Glyph> | `a{:xml}` | `0061` | `LATIN SMALL LETTER A` |
@@ -282,7 +282,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
               accent” can be encoded as a combination of an “a” and a combining acute accent or
             as a single character, “a with acute accent”. Both descriptions are equivalent:
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Glyph  | Entity  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph>á</Glyph> | `a + &combacute;{:xml}` | `0061 + 0301` | `LATIN SMALL LETTER A + COMBINING ACUTE ACCENT` |
@@ -299,7 +299,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
             is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
             for the current recommendation.
 
-<div className="abbrTable">
+<div className="table-abbr">
 | Glyph  |  Entity  | Code point  | Descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph></Glyph> | `&kslonglig;{:xml}` | `EBAE` | `LATIN SMALL LIGATURE K AND LONG S` |
@@ -360,14 +360,16 @@ In some cases, a character should be encoded as such. That kind of separate mark
             allows for association with additional meta-data as well as easier processing. 
             The TEI P5 Guidelines recommend the element
             `<c>{:xml}` for this type of encoding, and we recommend using
-            the attribute `@type` (and potential others) for further specification.
+            the attribute `@type{:sh}` (and potential others) for further specification.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<c>{:xml}` |  | Contains an individual character. |
-| `@type` | Obligatory | Type of character. Suggested values: |
-| `"word"` |  | The character is a full word. |
-| `"initial"` |  | The character is an initial. |
+| <span className="p-3"/>`@type{:sh}` | Obligatory | Type of character. Suggested values: |
+| <span className="p-6"/>`"word"{:js}` |  | The character is a full word. |
+| <span className="p-6"/>`"initial"{:js}` |  | The character is an initial. |
+</div>
 
 
 A character should, for instance, be encoded as such when it forms a word in itself
@@ -387,7 +389,7 @@ would thus be encoded as
 ```
 
 
-The usage of the attribute `@type` with the value `"word"` distinguishes 
+The usage of the attribute `@type{:sh}` with the value `"word"{:js}` distinguishes 
             it from other kinds of characters one might want to mark-up.
             Note that the `<c>{:xml}` element is placed within the element `<w>{:xml}`. This might seem somewhat
             redundant in this case, since that information is also provided by the attribute. However, if 
@@ -418,16 +420,18 @@ Individual characters are moreover marked-up as such, when the character in ques
 The fundamental concept of the word is discussed in [ch. 3.6](HB3_ch3.xml#sec3.6) above, and in [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
             of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<w>{:xml}` |  | Contains an individual word. |
-| `@lemma` | Optional | States the lexical citation form of a word. |
+| <span className="p-3"/>`@lemma{:sh}` | Optional | States the lexical citation form of a word. |
 | `<m>{:xml}` |  | Contains a morpheme, i.e. a part of a word. |
-| `@baseForm` | Optional | States the base form of a morpheme. |
+| <span className="p-3"/>`@baseForm{:sh}` | Optional | States the base form of a morpheme. |
 | `<seg>{:xml}` |  | Groups one or more segments of text, e.g. words. |
-| `@type` | Optional | States the type of segmentation. Suggested values: |
-| `"nb"` |  | No break |
-| `"enc"` |  | Enclitic |
+| <span className="p-3"/>`@type{:sh}` | Optional | States the type of segmentation. Suggested values: |
+| <span className="p-6"/>`"nb"{:js}` |  | No break |
+| <span className="p-6"/>`"enc"{:js}` |  | Enclitic |
+</div>
 
 
 As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a clearly
@@ -553,7 +557,7 @@ Each lexical word should be placed within a `<w>{:xml}` element, and information
             lemma, morphological form etc. can be given within each `<w>{:xml}` element. However,
             to generate a correct display of the text, i.e. a display with no space between each
             part, we suggest that the `<seg>{:xml}` element is used with a type attribute. The
-            value `"nb"` would indicate that there is no break between the parts in the
+            value `"nb"{:js}` would indicate that there is no break between the parts in the
               `<w>{:xml}` element. If the lemma is given by way of an attribute, the encoding would
             look like this:
 ```xml
@@ -650,12 +654,12 @@ Now, if the encoder wishes to add lexicographical (or other) information to the 
 
 
 This encoding would make a clear distinction between lemmata on the first level of
-            encoding, in this case “veiðikona”, and the base form, `@baseForm`, of each
+            encoding, in this case “veiðikona”, and the base form, `@baseForm{:sh}`, of each
             constituent part, in this case “veiði” and “kona”.
 
 Lemmatisation is further discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) below and
             is here only given as an example of a word-based type of mark-up. Grammatical
-            information can also be conveniently attached to the word through the `@me:msa`
+            information can also be conveniently attached to the word through the `@me:msa{:sh}`
             (morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](HB3_ch11.xml#sec11.3) below.
 ## 5.4 Punctuation 
 
@@ -666,6 +670,7 @@ Having introduced elements for the encoding of individual characters and words, 
           `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}` introduced in 
           [ch. 4](HB3_ch4.xml) above.
 
+<div className="table-xml-elements">
 | Elements | Explanation |
 |-----|-----|
 | `<pc>{:xml}` | Contains a punctuation mark. |
@@ -673,6 +678,7 @@ Having introduced elements for the encoding of individual characters and words, 
 | `<me:dipl>{:xml}` | Contains a reading on a diplomatic level. |
 | `<me:norm>{:xml}` | Contains a reading on a normalised level. |
 | `<choice>{:xml}` | Groups alternative readings, such as `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}`. |
+</div>
 
 
 Note the prefix “me:” which indicates that these elements
@@ -1049,9 +1055,9 @@ Like modern texts, medieval manuscripts were by and large justified, i.e. each l
           obligatory.
 
 We recommend that hyphens are encoded whenever they occur in the manuscript, using the
-          `<pc>{:xml}` element. When this element encodes hyphenation, it may optionally have a `@resp` 
+          `<pc>{:xml}` element. When this element encodes hyphenation, it may optionally have a `@resp{:sh}` 
           attribute specifying the person responsible for the hyphenation, e.g. a later hand. If the scribe is responsible
-          for the hyphenation, we suggest that the `@resp` attribute be left out.
+          for the hyphenation, we suggest that the `@resp{:sh}` attribute be left out.
 
 When there is no hyphen, we do not think it is necessary to add a hyphen in the encoding, as long as
           the word is placed within the `<w>{:xml}` element, which also contains a `<lb/>{:xml}`
@@ -1059,13 +1065,15 @@ When there is no hyphen, we do not think it is necessary to add a hyphen in the 
           position of the `<lb/>{:xml}` element within a `<w>{:xml}` element. We suggest that a missing hyphen should not be
           displayed on the facsimile level, but on the diplomatic and normalised levels.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<pc>{:xml}` |  | Contains a punctutation character, such as a hyphen. |
-| `@resp` | Optional | States who is responsible for the hyphenation. Suggested values: |
-| `"scribe"` |  | The scribe of the manuscript. |
-| `"mainscribe"` |  | The main scribe of the manuscript (if more than one). |
-| `"laterscribe"` |  | A later scribe. |
+| <span className="p-3"/>`@resp{:sh}` | Optional | States who is responsible for the hyphenation. Suggested values: |
+| <span className="p-6"/>`"scribe"{:js}` |  | The scribe of the manuscript. |
+| <span className="p-6"/>`"mainscribe"{:js}` |  | The main scribe of the manuscript (if more than one). |
+| <span className="p-6"/>`"laterscribe"{:js}` |  | A later scribe. |
+</div>
 
 
 If there is a hyphen in the margin of the line, we suggest this encoding:
@@ -1273,13 +1281,15 @@ Texts may also contain quotations from other sources. These are usually not indi
           quotation marks, but might be displayed by italics or the like, or perhaps by a note. Stylesheets 
           will vary with respect to the display of quotations.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<q>{:xml}` |  | Direct speech. Contains a part of a dialogue. |
-| `@type` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: |
-| `"spoken"` |  | The part of the dialogue is spoken. |
-| `"thought"` |  | The part of the dialogue is thought. |
+| <span className="p-3"/>`@type{:sh}` | Optional | May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: |
+| <span className="p-6"/>`"spoken"{:js}` |  | The part of the dialogue is spoken. |
+| <span className="p-6"/>`"thought"{:js}` |  | The part of the dialogue is thought. |
 | `<quote>{:xml}` |  | Contains a quotation from another source. |
+</div>
 
 
  Since the graphical form of quotation marks varies widely, we recommend encoding dialogue with the `<q>{:xml}` element and leave it to the style sheet to decide which type of quotation mark to be displayed.
@@ -1389,12 +1399,14 @@ The source of the quotation may be given in a `<note>{:xml}` element, as shown a
 
 Numerals are no longer treated as a single word class, in spite of their semantic coherence – they do, after all, convey a number. In line with the word classes proposed in ch. 11.6 below, numerals belong to at least four categories:
 
+<div className="table-xml-elements">
 | Examples | Word class | Comment |
 |-----|-----|-----|
 | einn, tveir, þrír, fjórir, ... | Determiners (xDQ) | The word <em>einn</em> can also be adjective (xAJ) |
 | fyrstr, annarr, þriði, fjórði, ... | Adjectives (xAJ) | In ONP, see <em>fyrr</em> for <em>fyrstr</em> |
 | tigr, hundrað, þúsund | Nouns (xNC) |  |
-| i, ii, iii, iv, ... | No word class | Recommended `@xml:lang="lat"` attribute |
+| i, ii, iii, iv, ... | No word class | Recommended `@xml:lang="lat"{:sh}` attribute |
+</div>
 
 
 Numerals may be encoded by the `<w>{:xml}` element throughout. The only specification is that with respect to Roman numerals, there will be no morphological annotation and the delimiters, typically a dot on either side of the numeral, is contained within the `<w>{:xml}` element. Examples will be given in ch. 5.7.1 below.
@@ -1402,15 +1414,17 @@ Numerals may be encoded by the `<w>{:xml}` element throughout. The only specific
 
 If an encoder wants to single out numerals, this should be done by the `<num>{:xml}` element, irrespective of their form – as Roman numerals, as Hindu-Aarabic numerals (i.e. our “modern” numerals) or spelt out in Latin characters. Note that on the level immediately below, the numeral is encoded within the `<w>{:xml}` element.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | `<num>{:xml}` |  | Contains a numeral, including any delimiters. |
-| `@type` | Optional | States the type of numeral. Recommended values: |
-| `"cardinal"` |  | A cardinal number, like “one”, “two”, “three”. . . |
-| `"ordinal"` |  | An ordinal number, like “first”, “second”, “third”. . . |
-| `@value` | Optional | States the actual number in Hindu-Aarabic numerals. Suggested values: |
-| `"1"` |  | The numeral has the value 1. |
-| `"2"` |  | The numeral has the value 2, etc. |
+| <span className="p-3"/>`@type{:sh}` | Optional | States the type of numeral. Recommended values: |
+| <span className="p-6"/>`"cardinal"{:js}` |  | A cardinal number, like “one”, “two”, “three”. . . |
+| <span className="p-6"/>`"ordinal"{:js}` |  | An ordinal number, like “first”, “second”, “third”. . . |
+| <span className="p-3"/>`@value{:sh}` | Optional | States the actual number in Hindu-Aarabic numerals. Suggested values: |
+| <span className="p-6"/>`"1"{:js}` |  | The numeral has the value 1. |
+| <span className="p-6"/>`"2"{:js}` |  | The numeral has the value 2, etc. |
+</div>
 
 
 Roman numerals are typically delimited by a dot immediately
@@ -1430,7 +1444,7 @@ We recommend that these delimiters are encoded as punctuation marks, using the `
 ```
 
 
-Using the optional attributes introduced above, we can specify the type (cardinal or ordinal) and the value (in this case, 12) of the numeral. Note that in the case of Roman numerals, we recommend that the `<w>{:xml}` element is supplied by the `@xml:lang` attribute with the value `"lat"` (for “Latin”). This makes it abundantly clear whether the single character “i” is a preposition, “in”, or a Roman numeral, “one”.
+Using the optional attributes introduced above, we can specify the type (cardinal or ordinal) and the value (in this case, 12) of the numeral. Note that in the case of Roman numerals, we recommend that the `<w>{:xml}` element is supplied by the `@xml:lang{:sh}` attribute with the value `"lat"{:js}` (for “Latin”). This makes it abundantly clear whether the single character “i” is a preposition, “in”, or a Roman numeral, “one”.
 ```xml
 <w>Hann</w>
 <w>er</w>
@@ -1464,7 +1478,7 @@ When a number is spelt out in the text, it is encoded as such:
 
 ### 5.7.2 Morphological annotation of numerals
 
-In the case of morphological annotation, the `<w>{:xml}` element will receive a `@lemma` attribute. As stated above, the `@type` and `@value` attributes are optional:
+In the case of morphological annotation, the `<w>{:xml}` element will receive a `@lemma{:sh}` attribute. As stated above, the `@type{:sh}` and `@value{:sh}` attributes are optional:
 ```xml
 <w>Hann</w>
 <w>er</w>
@@ -1498,7 +1512,7 @@ The examples above show single-level encoding of numerals. In a multi-level enco
 
 In this example, the Roman numeral “iv” is offered as a normalisation of “iiij”, but it might equally well have been “fjórir” or even “4”.
 
-If the numeral is a lexical word, the encoder may want to annotate it. In such cases, the `<w>{:xml}` element will be supplemented by the attributes `@lemma` and `@me:msa`:
+If the numeral is a lexical word, the encoder may want to annotate it. In such cases, the `<w>{:xml}` element will be supplemented by the attributes `@lemma{:sh}` and `@me:msa{:sh}`:
 ```xml
 <num type="cardinal" value="4">
   <w lemma="fjórir" me:msa="xDQ gM cN">
@@ -1532,7 +1546,7 @@ Some numerals are quite complex, especially in the dating of diplomas and other 
 
 While the noun “vetr” and the conjunction “ok” are part of the whole dating expression, they are not regarded as numerals and not inserted in `<num>{:xml}` elements.
 
-Some dating expressions contain Latin words, which should be singled out by the `@xml:lang` attribute.
+Some dating expressions contain Latin words, which should be singled out by the `@xml:lang{:sh}` attribute.
 ### 5.7.4 Nesting of the `<num>{:xml}` element
 
 The `<num>{:xml}` element may nest, i.e. that it may contain one or more subordinate `<num>{:xml}` elements. A rather simple example would be the one given in ch. 5.7.2 above, in which “.vii. hundruð” amounts to “700”:
@@ -1544,7 +1558,7 @@ The `<num>{:xml}` element may nest, i.e. that it may contain one or more subordi
 ```
 
 
-In the example from DN 1:80 above, the whole sequence can be brought together in an overarching `<num>{:xml}` element, in which the `@value` attribute contains the number of the complete dating expression, in this case “1292”:
+In the example from DN 1:80 above, the whole sequence can be brought together in an overarching `<num>{:xml}` element, in which the `@value{:sh}` attribute contains the number of the complete dating expression, in this case “1292”:
 ```xml
 <num type="ordinal" value="1292">
   <num><w lemma="þúshundrað">þushundrað</w></num>
@@ -1587,8 +1601,8 @@ On 21 June 2020, a new illustration was added in [ch. 5.3.1](#sec5.3.1), showing
 
 On 24 June 2020, the description of stylesheets in [ch. 5.3.2](#sec5.3.2) was slightly modified.
 
-As of 21 December 2020, we no longer suggest that `@hyphen` is a suitable attribute to the `<c>{:xml}` character, as originally specified in [ch. 5.2.3](#sec5.2.3). A hyphen should be regarded as a type of punctuation character and encoded as recommended in [ch. 5.5](#sec5.5). The latter subchapter remains unchanged.
+As of 21 December 2020, we no longer suggest that `@hyphen{:sh}` is a suitable attribute to the `<c>{:xml}` character, as originally specified in [ch. 5.2.3](#sec5.2.3). A hyphen should be regarded as a type of punctuation character and encoded as recommended in [ch. 5.5](#sec5.5). The latter subchapter remains unchanged.
 
 On 10 February 2021, two examples of multi-level encoding of a numeral were added at the end of [ch. 5.7](#sec5.7).
 
-On 4 October 2023, the `<w>{:xml}` element was included in all examples (also with Roman numerals) in [ch. 5.7](#sec5.7), the attribute `@xml:lang` with the value `"lat"` was recommended for Roman numerals, and an example of a very complex dating was added at the end of the chapter.
+On 4 October 2023, the `<w>{:xml}` element was included in all examples (also with Roman numerals) in [ch. 5.7](#sec5.7), the attribute `@xml:lang{:sh}` with the value `"lat"{:js}` was recommended for Roman numerals, and an example of a very complex dating was added at the end of the chapter.

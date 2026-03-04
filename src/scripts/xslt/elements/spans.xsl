@@ -5,6 +5,12 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:template match="tei:att">
+        <xsl:if test="position() = 1 and ancestor::tei:table[@rend='xml-elements']">
+            <xsl:text>&lt;span className="p-3"/&gt;</xsl:text>
+        </xsl:if>
+        <xsl:value-of select="concat('`@', ., '{:sh}`')"/>
+    </xsl:template>
     <xsl:template match="tei:gi">
         <xsl:text>`&lt;</xsl:text>
         <xsl:apply-templates/>
@@ -42,5 +48,11 @@
                 <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:val">
+        <xsl:if test="position() = 1 and ancestor::tei:table[@rend='xml-elements']">
+            <xsl:text>&lt;span className="p-6"/&gt;</xsl:text>
+        </xsl:if>
+        <xsl:value-of select="concat('`&quot;', ., '&quot;{:js}`')"/>
     </xsl:template>
 </xsl:stylesheet>

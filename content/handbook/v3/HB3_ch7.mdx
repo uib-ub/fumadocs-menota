@@ -625,8 +625,8 @@ In case the hand(s) and/or the dating of illuminations differ from the hand(s) o
                given separately in the individual `<decoNote>{:xml}` elements
                in question. As in other places where information about involved people or dates occurs
                in free text, these are marked-up using the elements `<name>{:xml}` and
-                  `<date>{:xml}`, respectively, with the appropriate attributes `@type` and
-                  `@when` or `@notBefore`/`@notAfter `. The encoded
+                  `<date>{:xml}`, respectively, with the appropriate attributes `@type{:sh}` and
+                  `@when{:sh}` or `@notBefore{:sh}`/`@notAfter {:sh}`. The encoded
                information could look like this:
 ```xml
 <decoNote>
@@ -814,8 +814,8 @@ If an initial is missing – because it was never filled in, because it
       The mark-up of the missing or added initial is wrapped in the element `<c>{:xml}`
       as normal.
       The following example shows how a missing initial “N” is encoded using `<space/>{:xml}`. 
-      The attribute `@quantity` is used on `<space/>{:xml}` to indicate the number of characters omitted,
-                  which is specified by the value `"chars"` of the attribute `@unit`. 
+      The attribute `@quantity{:sh}` is used on `<space/>{:xml}` to indicate the number of characters omitted,
+                  which is specified by the value `"chars"{:js}` of the attribute `@unit{:sh}`. 
       
       
 ```xml
@@ -848,32 +848,32 @@ In most manuscripts, structurally different types of initials and highlighted ch
                   between major and minor initials, it is common to distinguish between opening
                   initials, text initials, chapter initials, paragraph initials and sentence initials.
 
-The attribute `@type` (with the value `"initital"`) is used to 
+The attribute `@type{:sh}` (with the value `"initital"{:js}`) is used to 
                   distinguish the character from other characters that are marked-up by means of
                   the `<c>{:xml}`-element, such as hyphens (see [ch.
-                     5.5](HB3_ch5.xml#sec5.5)). The more specific attribute `@subtype` will then
+                     5.5](HB3_ch5.xml#sec5.5)). The more specific attribute `@subtype{:sh}` will then
          indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
          If it is not possible to distinguish between more than major and minor initials, however, 
          these two main subtypes may also be used. 
-         Possible values for `@subtype` when used for initials
-         are thus: `"opening"`, `"text"`, `"para"` and `"littNot"` (for
+         Possible values for `@subtype{:sh}` when used for initials
+         are thus: `"opening"{:js}`, `"text"{:js}`, `"para"{:js}` and `"littNot"{:js}` (for
                      littera notabilior or sentence initial) as well as 
-          `"major"` and `"minor"`.
+          `"major"{:js}` and `"minor"{:js}`.
   Please note that some manuscripts do not display any hierarchy in the way the initials are presented (for instance when all initials 
    are of the same size and have the same (simple) degree of ornamentation). In those cases, as well as in cases when the 
-   initial subtype has not been defined, the attribute `@subtype` is omitted.
+   initial subtype has not been defined, the attribute `@subtype{:sh}` is omitted.
 
 The mark-up of initial subtypes is supposed to represent the hierarchical division                
    indicated in the manuscript by means of the initials’ size and their degree of decoration. This categorization
    is thought to summarize the results of the encoder’s analysis considering the overall distribution 
-   and presentation of initials in a given manuscript that are specified in more detail in the attributes `@style` 
-      and `@rend` (see sections [ch. 7.3.3](#sec7.3.3) to [ch. 7.3.5](#sec7.3.5)) . 
+   and presentation of initials in a given manuscript that are specified in more detail in the attributes `@style{:sh}` 
+      and `@rend{:sh}` (see sections [ch. 7.3.3](#sec7.3.3) to [ch. 7.3.5](#sec7.3.5)) . 
       The hierarchical division indicated by the size and artistic features 
    of initials may therefore divert from the traditionally perceived structure of a text, such as chapter divisions in standard editions.
    
 
-If an initial is omitted or missing, this is indicated by the attribute `@type` 
-         with the value `"noInitial"`. Even though
+If an initial is omitted or missing, this is indicated by the attribute `@type{:sh}` 
+         with the value `"noInitial"{:js}`. Even though
          this might seem somewhat redundant if other mark-up such 
          as `<space/>{:xml}` or `<gap/>{:xml}` is present, it has the advantage that, for instance
          the subtype and the intended size of the missing initial may be encoded 
@@ -881,19 +881,19 @@ If an initial is omitted or missing, this is indicated by the attribute `@type`
 
 | type | subtype | Defines the subtype of **c**, if **type="initial"** |
 |-----|-----|-----|
-| initial | `"opening"` | An opening initial: The first, often largest initial of a manuscript. |
-| initial | `"text"` | A large initial at the beginning of a new text (if applicable). |
-| initial | `"chapt"` | An initial at the beginning of a new chapter or major section or a text. |
-| initial | `"para"` | An initial at the beginning of a paragraph or subunit of a text (if applicable). |
-| initial | `"littNot"` | The character is a sentence initial (littera notabilior): The first letter of a sentence is highlighted within the line by means of colour-stroking (i.e. coloured filling of the counters of the letter or a usually red stroke), has minor decoration or is written in slightly enlarged display script. |
-| initial | `"major"` | A major initial (without any further qualification). |
-| initial | `"minor"` | A minor initial (without any further qualification). |
-| noInitial | `"opening"` | The opening initial is omitted or missing. |
-| noInitial | `"text"` | A text initial is omitted or missing. |
-| noInitial | `"chapt"` | A chapter initial is omitted or missing. |
-| noInitial | `"para"` | A paragraph initial is omitted or missing. |
-| noInitial | `"major"` | A major initial is omitted or missing. |
-| noInitial | `"minor"` | A minor initial is omitted or missing. |
+| initial | `"opening"{:js}` | An opening initial: The first, often largest initial of a manuscript. |
+| initial | `"text"{:js}` | A large initial at the beginning of a new text (if applicable). |
+| initial | `"chapt"{:js}` | An initial at the beginning of a new chapter or major section or a text. |
+| initial | `"para"{:js}` | An initial at the beginning of a paragraph or subunit of a text (if applicable). |
+| initial | `"littNot"{:js}` | The character is a sentence initial (littera notabilior): The first letter of a sentence is highlighted within the line by means of colour-stroking (i.e. coloured filling of the counters of the letter or a usually red stroke), has minor decoration or is written in slightly enlarged display script. |
+| initial | `"major"{:js}` | A major initial (without any further qualification). |
+| initial | `"minor"{:js}` | A minor initial (without any further qualification). |
+| noInitial | `"opening"{:js}` | The opening initial is omitted or missing. |
+| noInitial | `"text"{:js}` | A text initial is omitted or missing. |
+| noInitial | `"chapt"{:js}` | A chapter initial is omitted or missing. |
+| noInitial | `"para"{:js}` | A paragraph initial is omitted or missing. |
+| noInitial | `"major"{:js}` | A major initial is omitted or missing. |
+| noInitial | `"minor"{:js}` | A minor initial is omitted or missing. |
 
 
 Let us have a look at some examples:
@@ -947,7 +947,7 @@ The size of the initial is often connected to its type and function. In the tran
                   Note: The letters “I/J” and “L” present special cases, which are
                   discussed below.
 
-In XML, we recommend to indicate the size of initials as part of the `@style` attribute on the
+In XML, we recommend to indicate the size of initials as part of the `@style{:sh}` attribute on the
                   element `<c>{:xml}`. In order to document both its size and
                   relative position in the written area, the value of the initial height, i.e. the number of indented lines, 
    is marked-up as a combination of two values. These two values denote separately how many
@@ -974,7 +974,7 @@ of these eight lines where it forms part of the word “AT”. In the XML mark-u
 ```
 
 
-The various values of `@style` are separated by white spaces, and the numbers are preceded by 
+The various values of `@style{:sh}` are separated by white spaces, and the numbers are preceded by 
    an identifying letter (or letter combination), in this case “u” for up and “d” 
    for down. In the same 
    way, we can indicate the size of the ascender and descender of the initial in the margin, using the preceding
@@ -997,7 +997,7 @@ If any of the values are omitted they are assumed to be zero.
 ```
 
 
-Note that the value of `@style` is given as “u1 d6 md2”, indicating that the initial height merely
+Note that the value of `@style{:sh}` is given as “u1 d6 md2”, indicating that the initial height merely
                goes up one line (the line of the initial’s logical position) and six lines 
                down from there.  The initial also extends below the indented initial height by two lines, which is denoted with “md2”.
                Since no value is given for “mu”, it is assumed to be “mu0”. This is correct,  
@@ -1060,7 +1060,7 @@ It is relevant to note the colour(s) of initials and other highlighted character
       
 
 We recommend encoding the colour(s) of initials by adding yet another value to the
-                  attribute `@style`. The value shall be preceded by “c” for colour and can be used to describe both monochrome and
+                  attribute `@style{:sh}`. The value shall be preceded by “c” for colour and can be used to describe both monochrome and
                   polychrome initials. In case of a monochrome letter, either the simple name of that
                   colour/hue or the more precise six-digit hexadecimal CSS colour code (preceded by #) is given. 
                   (For standard CSS colours codes and names see e.g. 
@@ -1098,7 +1098,7 @@ If the encoder should be unable to determine the colour(s) employed for executin
                   of color is simply omitted in the transcription.
 ### 7.3.5 Artistic rendition
 
-The attribute `@rend` is used to encode the form and kind of decoration found in or
+The attribute `@rend{:sh}` is used to encode the form and kind of decoration found in or
                   around the initial. This attribute provides a general description of the initial’s
                   artistic rendition without going into too much detail, i.e. by means of keywords only (see the list
                   below). In basic terms the information given here should agree with the description
@@ -1106,32 +1106,32 @@ The attribute `@rend` is used to encode the form and kind of decoration found in
                   its ornamentation can be included (see [ch. 7.2.1.2](#sec7.2.1.2) as 
                   well as [ch. 7.2.7](#sec7.2.7)).
 
-The attribute `@rend` is used for indicating both the way in which an initial is drawn and the main 
+The attribute `@rend{:sh}` is used for indicating both the way in which an initial is drawn and the main 
             means of decoration/ornamentation. Even the presence of guide letters can be indicated here.
          In order to encompass all of that information, the attribute can take several values 
          (in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. 
 
 | Rend | Indicates the rendition and/or composition of the character (usually initial); more than one value may be combined. |
 |-----|-----|
-| `"historiated"` | Historiated initial |
-| `"foliate"` | foliate initial |
-| `"penFlourish"` | Pen-flourished initial |
-| `"penwork"` | Penwork initial |
-| `"interlaced"` | Interlaced initial |
-| `"puzzle"` | Puzzle initial |
-| `"zoomorphic"` | Zoomorphic initial |
-| `"dragon"` | Dragon initial |
-| `"inhabited"` | Inhabited initial |
-| `"lombard"` | Lombard |
-| `"versal"` | Versal |
-| `"colourStroked"` | colour-stroked |
-| `"guideLetter"` | Guide letter |
-| `"other"` | [Anything else] |
+| `"historiated"{:js}` | Historiated initial |
+| `"foliate"{:js}` | foliate initial |
+| `"penFlourish"{:js}` | Pen-flourished initial |
+| `"penwork"{:js}` | Penwork initial |
+| `"interlaced"{:js}` | Interlaced initial |
+| `"puzzle"{:js}` | Puzzle initial |
+| `"zoomorphic"{:js}` | Zoomorphic initial |
+| `"dragon"{:js}` | Dragon initial |
+| `"inhabited"{:js}` | Inhabited initial |
+| `"lombard"{:js}` | Lombard |
+| `"versal"{:js}` | Versal |
+| `"colourStroked"{:js}` | colour-stroked |
+| `"guideLetter"{:js}` | Guide letter |
+| `"other"{:js}` | [Anything else] |
 
 
 The encoding of the puzzle chapter initial “S” from the example above (ill. 7.49 above) may thus be
-                  further expanded with the attribute `@rend`
-            taking the value `"puzzle"`: 
+                  further expanded with the attribute `@rend{:sh}`
+            taking the value `"puzzle"{:js}`: 
 ```xml
 <c type="initial" subtype="chapt" style="d6 md2 cGreen_Red_Blue" 
   rend="puzzle">S</c>
@@ -1150,7 +1150,7 @@ Since multiple different forms and decorations can occur in connection with
 
 In case the encoder wishes to additionally distinguish between different degrees of the same type of ornamentation, a numbering system may
      be used in addition to the proposed values. For example, if one wants to indicate how elaborate the pen flourish is in different initials, these 
-     can be referred to as `"penFlourish-1"` and `"penFlourish-2"`, respectively. Please note, however, that such quantifications 
+     can be referred to as `"penFlourish-1"{:js}` and `"penFlourish-2"{:js}`, respectively. Please note, however, that such quantifications 
      are neither standardized nor transferable and thus 
      only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
      in the `<teiHeader>{:xml}` if they are employed.

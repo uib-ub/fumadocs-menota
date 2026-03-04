@@ -26,7 +26,7 @@ This Chapter defines how to refer to phenomena in texts that have some kind of e
 
 (The Names and Dates module gives elements for `<person>{:xml}`, `<place>{:xml}` and
       `<event>{:xml}`, but these are generally unnecessary for the purposes of projects using this
-     handbook: use `<name>{:xml}` with the `@type` attribute.)
+     handbook: use `<name>{:xml}` with the `@type{:sh}` attribute.)
 
 In this chapter an external phenomenon falling under one of these categories (person, word,
      place, etc.) is referred to simply as the **thing** and can be distinguished
@@ -71,25 +71,25 @@ Note that the methods outlined in this chapter involve a large amount of searchi
 ### 15.2.1 Attributes used for linking
 
 The methods defined here utilise the TEI-defined attributes for linking to external
-      resources: `@ref`, `@key` for elements for which they are valid (e.g.
+      resources: `@ref{:sh}`, `@key{:sh}` for elements for which they are valid (e.g.
        `<name>{:xml}`), and the additional Menota-defined equivalents for other elements,
-       `@me:ref`, `@me:key`.
+       `@me:ref{:sh}`, `@me:key{:sh}`.
 
-The content of the two differs: `@key` contains information defined by the project
-      and can only be resolved (i.e. the referent found) within the project; `@ref` contains
+The content of the two differs: `@key{:sh}` contains information defined by the project
+      and can only be resolved (i.e. the referent found) within the project; `@ref{:sh}` contains
       universal identifiers (URIs) which can be resolved according to the general principles of
       URIs.
-### 15.2.2 Internally defined references: `@key` and
-       `@me:key`
+### 15.2.2 Internally defined references: `@key{:sh}` and
+       `@me:key{:sh}`
 
-The TEI `@key` attribute is intended to contain an identifier such as a database key
+The TEI `@key{:sh}` attribute is intended to contain an identifier such as a database key
       which is unique for the particular type of resource represented by the element which contains
       it. For example, a `<name>{:xml}` might contain a number that represents the database key for
       the person or place the element refers to.
 
-The advantage of using a `@key` over a `@ref` is that the notation can be
+The advantage of using a `@key{:sh}` over a `@ref{:sh}` is that the notation can be
       much simpler and easier to process, with less chance of alternative references to the same
-      thing. But using `@ref` gives universal references without the need for an internal
+      thing. But using `@ref{:sh}` gives universal references without the need for an internal
       authority file (although use of one is nevertheless recommended).
 ### 15.2.3 Universal references: URIs, URLs and URNs 15.2.3.1 URIs 
 
@@ -239,7 +239,7 @@ You can use [web.archive.org](https://web.archive.org/web/) to archive and
 ### 15.4.1 Bibliographic items
 
 Bibliographic items are normally marked up with the `<bibl>{:xml}` element, which should
-      contain a `@me:ref` value to identify the work
+      contain a `@me:ref{:sh}` value to identify the work
 
 Bibliographic items with a DOI, ISBN, or journals with an ISSN, should be referenced using
       the official URN or URI in the first instance:
@@ -310,7 +310,7 @@ Word lemmas should be referenced as dictionary headwords, using additional infor
        unambiguous linking. The referencing system will therefore be dependent on the particular
        language of the text.
 
-The reference should be included in the `@me:ref` attribute as part of the
+The reference should be included in the `@me:ref{:sh}` attribute as part of the
         `<w>{:xml}` element. Note that in this type of resource, the reference is not in fact to
        the element itself (the word in a particular text), but to the headword to which it belongs.
        There may be instances where the word in question may require a link to an equivalent word
@@ -363,7 +363,7 @@ The authoritative source for the Old Swedish lexicon, the Fornsvensk lexikalisk 
        have an interface for finding database keys. Unambiguous headwords should use the Menota URN
        format, e.g. menota:lemma:fsld:forskilia. To distinguish between homographs,
        word class and other morphosyntactic information should be included using the
-        `@me:msa` attribute for the word. 
+        `@me:msa{:sh}` attribute for the word. 
 ### 15.4.3 Literary works and their parts15.4.3.1 Pre-1540 West Norse prose works
 
 ONP’s database ([https://onp.ku.dk/v](https://onp.ku.dk/v) gives a comprehensive and unambiguous overview of
@@ -413,8 +413,8 @@ Different versions and different editions use different numbering for divisions 
         http://heimskringla.no/wiki/Egils_saga_Skalla-Gr%C3%ADmssonar#chapter=60 (Eg
        ch. 60; menota:work:onp:109#chapter=60.
 
-For resources that have named HTML or XML divisions (using `@xml:id` or
-        `@name`), these should be used in the fragment section of the URL and will be
+For resources that have named HTML or XML divisions (using `@xml:id{:sh}` or
+        `@name{:sh}`), these should be used in the fragment section of the URL and will be
        processed when the application accesses the page. Other references will not be processed by
        the referenced resources, but can be used internally by Menota projects to reference parts of
        prose works: ‘chapter’ is used in the example above, and this or other divisions, if found in
@@ -464,7 +464,7 @@ Authoritative online resources are available for naming and referencing manuscri
 [Handrit.is](https://handrit.is) contains records on a large number of
        manuscripts in the field, and is the only online catalogue of a very large number of younger
        Icelandic manuscripts. The manuscripts are catalogued as TEI/XML files, and the
-        `@xml:id` value in the `<msDesc>{:xml}` element for each of these will contain a
+        `@xml:id{:sh}` value in the `<msDesc>{:xml}` element for each of these will contain a
        unique identifier, which is also used in the URL on the site, e.g. [https://handrit.is/da/manuscript/view/is/JS04-0041](https://handrit.is/da/manuscript/view/is/JS04-0041). This
        produces the name menota:ms:handrit:JS04-0041.
 

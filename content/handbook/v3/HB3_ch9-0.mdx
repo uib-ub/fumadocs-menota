@@ -37,11 +37,13 @@ This section only deals with additions made by a scribal hand.
 The element `<add>{:xml}` should be used for additions made in the manuscript by the scribe himself
   or a later compiler, annotator or corrector. The latter additions are traditionally referred to as being “with younger hand” or the like. It may be desirable to make a distinction between the contemporaneous hand in the manuscript and any later hand, but it is not always a simple task to do so. However, the act of addition is usually easy to spot, as it is typically found above the line or in the margin. For this reason, we recommend that  the place of the addition should always be specified, but not necessarily the hand responsible for the addition.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<add>{:xml}` |  | Contains characters, words or phrases added to the manuscript text or in the margins of the manuscript by the scribe, an annotator or a corrector. Attributes include: |
-| `@place` | Obligatory | Indicates where the addition is made. Suggested values include `"inline"`, `"supralinear"`, `"infralinear"` and `"margin"`. |
-| `@hand` | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"`, `"mainscribe"` and `"laterscribe"`. |
+| <span className="p-3"/>`@place{:sh}` | Obligatory | Indicates where the addition is made. Suggested values include `"inline"{:js}`, `"supralinear"{:js}`, `"infralinear"{:js}` and `"margin"{:js}`. |
+| <span className="p-3"/>`@hand{:sh}` | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`. |
+</div>
 
 
 
@@ -142,7 +144,7 @@ In the second line of fig. 9.2, the word “of” is placed in the margin, indic
 
 
 The location of the addition is indicated by the 
-      attribute `@place`. In this example, the addition is made outside the text column and therefore described by the value `"margin"`. Note that we are not encoding the triangular signs as such.
+      attribute `@place{:sh}`. In this example, the addition is made outside the text column and therefore described by the value `"margin"{:js}`. Note that we are not encoding the triangular signs as such.
 
  Scribal additions 
       are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
@@ -199,11 +201,13 @@ Text suppressed by a modern editor is dealt with in [ch. 9.3.2](#sec9.3.2) below
 The element `<del>{:xml}` should be used for deletions made in the manuscript by the scribe himself
       or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<del>{:xml}` |  | Contains a character, word or passage deleted or otherwise indicated as superfluous or spurious in the manuscript text by a scribe, annotator or corrector. Attributes include: |
-| `@rend` | Obligatory | This attribute is used to classify the deletion, using any convenient typology. Sample values include `"overstrike"`, `"erasure"` and `"subpunction"`.  |
-| `@hand` | Optional | Signifies the scribe who made the deletion. Values include `"scribe"`, `"mainscribe"` and `"laterscribe"`.  |
+| <span className="p-3"/>`@rend{:sh}` | Obligatory | This attribute is used to classify the deletion, using any convenient typology. Sample values include `"overstrike"{:js}`, `"erasure"{:js}` and `"subpunction"{:js}`.  |
+| <span className="p-3"/>`@hand{:sh}` | Optional | Signifies the scribe who made the deletion. Values include `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`.  |
+</div>
 
 
 
@@ -280,7 +284,7 @@ In the stylesheet for the Menota archive, scribal deletions are displayed by ver
 In the Unicode Standard, the vertical bar with the quill to the right is located at `2E20`, and the vertical bar with a quill to the left at `2E21`.
 
 
-As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the `@rend` attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.
+As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the `@rend{:sh}` attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.
 
 Other stylesheets may display deletions by other types of signs, by a note rather than by signs, or not at all.
 ### 9.2.3 Transpositions by the scribe
@@ -300,16 +304,18 @@ In fig. 9.4, there are two transposition signs, one above each of the two words 
 
 There are two pairs of elements used in this handbook, `<orig>{:xml}` + `<reg>{:xml}` and `<sic>{:xml}` + `<corr>{:xml}`. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the `<sic>{:xml}` + `<corr>{:xml}` elements, as exemplified in [ch. 9.3.3](#sec9.3.3) below.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<orig>{:xml}` |  | Contains the reading in the manuscript. Attributes include: |
-| `@rend` | Obligatory | The correction markers in the manuscript. A typical value would be `"transposition-signs"`. |
+| <span className="p-3"/>`@rend{:sh}` | Obligatory | The correction markers in the manuscript. A typical value would be `"transposition-signs"{:js}`. |
 | `<reg>{:xml}` |  | Contains the reading corrected in the manuscript. Attributes include: |
-| `@type` | Obligatory | The type of correction. We recommend the value `"transposition"`. |
-| `@resp` | Optional | The one who is responsible for the regularisation. Sample values include `"scribe"`, `"mainscribe"` and `"laterscribe"`. |
+| <span className="p-3"/>`@type{:sh}` | Obligatory | The type of correction. We recommend the value `"transposition"{:js}`. |
+| <span className="p-3"/>`@resp{:sh}` | Optional | The one who is responsible for the regularisation. Sample values include `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`. |
+</div>
 
 
-In a single-level encoding, we recommend that the original reading is given within the `<orig>{:xml}` element with a `@rend` attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing `<reg>{:xml}` element, and both elements are contained in a `<choice>{:xml}` element. The `<reg>{:xml}` element should have a `@type` attribute with the value `"transposition"`, and preferably a `@resp` attribute with a suitable value, e.g. `"mainscribe"` or `"laterscribe"`, or, if a distinction is difficult to draw, just `"scribe"`:
+In a single-level encoding, we recommend that the original reading is given within the `<orig>{:xml}` element with a `@rend{:sh}` attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing `<reg>{:xml}` element, and both elements are contained in a `<choice>{:xml}` element. The `<reg>{:xml}` element should have a `@type{:sh}` attribute with the value `"transposition"{:js}`, and preferably a `@resp{:sh}` attribute with a suitable value, e.g. `"mainscribe"{:js}` or `"laterscribe"{:js}`, or, if a distinction is difficult to draw, just `"scribe"{:js}`:
 ```xml
 . . .
 <choice>
@@ -394,7 +400,7 @@ It is not always possible, however, to ascertain the relation between
 the two. If someone has deleted the originally written text inline
 this does not automatically mean that a corresponding addition above
 the line or in the margin is made by the same scribe. A correspondence 
-can be expressed by the `@resp` attribute, 
+can be expressed by the `@resp{:sh}` attribute, 
 whenever the editor is able make this identification.
  
 
@@ -514,16 +520,18 @@ we sometimes encounter text which for one reason or another should be supplied, 
 
 If text is missing in the manuscript, the editor can supply it using the `<supplied>{:xml}` element. We suggest that there are two major types of supplied text:
 
-(1) **Restoration** is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the `@reason` attribute and the value `"restoration"`. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a `@resp` attribute. We regard restoration as the default type of supplied text.
+(1) **Restoration** is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the `@reason{:sh}` attribute and the value `"restoration"{:js}`. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a `@resp{:sh}` attribute. We regard restoration as the default type of supplied text.
 
-(2) **Emendation** is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the `@reason` attribute and the value `"emendation"`. Also here, the person who is responsible for the emendation should be identified in a `@resp` attribute.
+(2) **Emendation** is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the `@reason{:sh}` attribute and the value `"emendation"{:js}`. Also here, the person who is responsible for the emendation should be identified in a `@resp{:sh}` attribute.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<supplied>{:xml}` |  | Signifies text supplied by the editor in order to restore or emend the manuscript text. Attributes include: |
-| `@reason` | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"` or `"emendation"`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
-| `@resp` | Obligatory | Indicates the individual responsible for the addition of characters, words or passages contained within the `<supplied>{:xml}` element. |
-| `@source` | Optional | States the source of the supplied text if this can be located. |
+| <span className="p-3"/>`@reason{:sh}` | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"{:js}` or `"emendation"{:js}`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
+| <span className="p-3"/>`@resp{:sh}` | Obligatory | Indicates the individual responsible for the addition of characters, words or passages contained within the `<supplied>{:xml}` element. |
+| <span className="p-3"/>`@source{:sh}` | Optional | States the source of the supplied text if this can be located. |
+</div>
 9.3.1.1 Encoding of restorations
 
 **Restoration** is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](HB3_ch8.xml#sec8.2)), empty spaces ([ch. 8.3](HB3_ch8.xml#sec8.3)), and unclear passages ([ch. 8.4](HB3_ch8.xml#sec8.4)).
@@ -774,7 +782,7 @@ The second example is of an emendation <em>ope ingenii</em>. This is offered by 
 <Caption title="Fig. 9.11">. Supplied text. _Niðrstigningar saga_. AM 645 4to, f. 55v, l. 5–7.</Caption>
 
 As suggested above, the `<supplied>{:xml}` element should be specified with the 
-    attribute `@reason` and the value `"emendation"`. This would be a single-level encoding of the last four words:
+    attribute `@reason{:sh}` and the value `"emendation"{:js}`. This would be a single-level encoding of the last four words:
 ```xml
 . . .
 <w><me:dipl>hafe</me:dipl></w>
@@ -823,7 +831,7 @@ In a multi-level encoding, the facsimile level will simply be empty for the supp
 
 In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.9.3.1.3 Display of editorial insertions
 
-In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>{:xml}` element has the `@reason` attribute and the `"emendation"` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
+In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>{:xml}` element has the `@reason{:sh}` attribute and the `"emendation"{:js}` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
 <DisplayFrame>
 
 
@@ -862,10 +870,12 @@ As for other instances of editorial suppression, we recommend using the `<sic>{:
 
 **Note**. Earlier versions of the Menota Handbook introduced the `<me:expunged>{:xml}` element (later renamed as `<me:suppressed>{:xml}`) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard `<surplus>{:xml}` element or the `<sic>{:xml}` and `<corr>{:xml}` elements are being used for editorial suppression.9.3.2.1 Encoding of suppressed text
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<surplus>{:xml}` |  | Contains text which the editor believes should be recognised as superfluous. |
-| `@reason` | Optional | Indicates the reason for the piece of text being superfluous. It can be given values like `"dittography"`, `"excess"` and `"incoherence"`. |
+| <span className="p-3"/>`@reason{:sh}` | Optional | Indicates the reason for the piece of text being superfluous. It can be given values like `"dittography"{:js}`, `"excess"{:js}` and `"incoherence"{:js}`. |
+</div>
 
 
 In the following, we give examples of `<surplus>{:xml}` text due to dittography, fig. 9.12, and incoherence, fig. 9.13.
@@ -929,7 +939,7 @@ From a pragmatic point of view, the second, not the first, instance of “sialfr
 
 <Caption title="Fig. 9.13">. Incoherence. _Henrik Harpestreng_. NKS 66 8vo, f. 73r, l. 9–13 and f. 73v, l. 1–2.</Caption>
 
-In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the `<surplus>{:xml}` element and the `"incoherence"` value of the `@reason` attribute:
+In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the `<surplus>{:xml}` element and the `"incoherence"{:js}` value of the `@reason{:sh}` attribute:
 ```xml
 . . .
 <lb ed="ms" n="11"/>
@@ -982,11 +992,13 @@ of obvious mistakes in the manuscript text can be encoded with the
 elements `<sic>{:xml}` and 
 `<corr>{:xml}`, grouped within a `<choice>{:xml}` element.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<sic>{:xml}` |  | Contains text reproduced although apparently incorrect or inaccurate. |
 | `<corr>{:xml}` |  | Contains the correct form of a passage apparently erroneous in the manuscript text.  |
-| `@resp` | Obligatory | Indicates the individual responsible for the correction of characters, words or passages contained within the `<corr>{:xml}` element. |
+| <span className="p-3"/>`@resp{:sh}` | Obligatory | Indicates the individual responsible for the correction of characters, words or passages contained within the `<corr>{:xml}` element. |
+</div>
 
 
 
@@ -1131,11 +1143,13 @@ An alternative would be to add the presumed abbreviated reading “.ɟ. ᴍ.” 
 
 Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | `<note>{:xml}` |  | Contains comments to the text by the editor. Main attributes: |
-| `@type` | Optional | Stating what kind of a note it is, e.g. `"explanation"`, `"variation"`, `"codicology"`, `"paleography"`. |
-| `@source` | Optional | Stating the source for a passage in the text, particularly relevant for the `"variation"` value of the `@type` attribute. |
+| <span className="p-3"/>`@type{:sh}` | Optional | Stating what kind of a note it is, e.g. `"explanation"{:js}`, `"variation"{:js}`, `"codicology"{:js}`, `"paleography"{:js}`. |
+| <span className="p-3"/>`@source{:sh}` | Optional | Stating the source for a passage in the text, particularly relevant for the `"variation"{:js}` value of the `@type{:sh}` attribute. |
+</div>
 
 
 These attributes are optional, so it is possible to use the `<note>{:xml}` element without any further specification of its contents.

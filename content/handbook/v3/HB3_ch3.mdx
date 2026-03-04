@@ -33,13 +33,13 @@ XML has at its foundation the notion of a text as a single hierarchical structur
                Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this problem, enabling both the structure of the document and the structure of the text to be encoded.
 ### 3.1.1 Hierarchical divisions
 
-The principal means of representing hierarchy is the `<div>{:xml}` (i.e. “division”) element. `<div>{:xml}` elements may freely nest within each other. The `<div>{:xml}` element has, in addition to the universally available `@id` and `@n` attributes, a `@type` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"`, `"stanza"`, `"couplet"`, if attempting to represent the structure of the text, or `"page"`, `"column"`, `"line"` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type` attribute in the `<div>{:xml}` element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
+The principal means of representing hierarchy is the `<div>{:xml}` (i.e. “division”) element. `<div>{:xml}` elements may freely nest within each other. The `<div>{:xml}` element has, in addition to the universally available `@id{:sh}` and `@n{:sh}` attributes, a `@type{:sh}` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"{:js}`, `"stanza"{:js}`, `"couplet"{:js}`, if attempting to represent the structure of the text, or `"page"{:js}`, `"column"{:js}`, `"line"{:js}` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type{:sh}` attribute in the `<div>{:xml}` element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
 
-The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>{:xml}` elements, `<div type="canto">{:xml}` for the cantos or fits, `<div type="part">{:xml}` for the parts (for example the <em>mansöngvar</em>), `<div type="stanza">{:xml}` for the stanzas, and `<div type="line">{:xml}` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">{:xml}` for each set. A simpler form of mark-up is possible, however. Instead of `<div>{:xml}` elements, the `<l>{:xml}` element (for “line”) and the `<lg>{:xml}` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>{:xml}` element for larger structural units. The `@type` attribute is then used to identify the type of unit, e.g. `"stanza"`, `"couplet"`, like in `<lg type="stanza">{:xml}`. Here again the type need
-                  only be defined once. Lines and line-groups can also be numbered and identified using the `@n` and `@id` attributes.
+The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>{:xml}` elements, `<div type="canto">{:xml}` for the cantos or fits, `<div type="part">{:xml}` for the parts (for example the <em>mansöngvar</em>), `<div type="stanza">{:xml}` for the stanzas, and `<div type="line">{:xml}` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">{:xml}` for each set. A simpler form of mark-up is possible, however. Instead of `<div>{:xml}` elements, the `<l>{:xml}` element (for “line”) and the `<lg>{:xml}` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>{:xml}` element for larger structural units. The `@type{:sh}` attribute is then used to identify the type of unit, e.g. `"stanza"{:js}`, `"couplet"{:js}`, like in `<lg type="stanza">{:xml}`. Here again the type need
+                  only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
-                  given the appropriate `@type` attributes, e.g. `"page"`, `"column"` or `"line"`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
+                  given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
 
@@ -113,7 +113,7 @@ Each major section of a text, `<front>{:xml}`, `<body>{:xml}` and `<back>{:xml}`
 Further division of the `<body>{:xml}` block is achieved through `<div>{:xml}` elements, with one level nesting inside the other as the transcriber moves down through the hierarchical structure of the text.
 ### 3.3.1 Type- and level-specified &lt;div&gt; elements
 
-In a complex document, `<div>{:xml}` elements may be specified by `@type` and `@n` attributes. In this example, the three first chapters of a work have been contained in `<div>{:xml}` elements at the same hierarchical level (siblings):
+In a complex document, `<div>{:xml}` elements may be specified by `@type{:sh}` and `@n{:sh}` attributes. In this example, the three first chapters of a work have been contained in `<div>{:xml}` elements at the same hierarchical level (siblings):
 
 | Elements | Contents |
 |-----|-----|
@@ -176,7 +176,7 @@ The text within a paragraph may be divided into sentences, `<s>{:xml}`:
 In TEI XML encoding, paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, if one would like to divide a text into sentences, an operational sentence definition is needed. Since the subject is not an obligatory constituent in Medieval Nordic, a single, finite predicate may be regarded as the basic sentence criterion, e.g. <em>Rignir</em> ‘It rains’. In the case of sentences linked by conjunctions (such as <em>ok</em>, <em>en</em> and <em>eða</em>) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian (and, by extension, in Medieval Swedish and Danish).
 ### 3.5.1 Linking sentences in two files
 
-If a medieval text is going to be linked to a translation, one may divide each file into chapters, using the `<div>{:xml}` element, or into sentences, using the `<s>{:xml}` element. Any smaller units such as words, would not be advisable. When linking sentences in two files, each `<s>{:xml}` element should have an `@xml:id` attribute with corresponding values in each file. The following is a simplified example from a Christmas homily in the Old Norwegian Homily Book:
+If a medieval text is going to be linked to a translation, one may divide each file into chapters, using the `<div>{:xml}` element, or into sentences, using the `<s>{:xml}` element. Any smaller units such as words, would not be advisable. When linking sentences in two files, each `<s>{:xml}` element should have an `@xml:id{:sh}` attribute with corresponding values in each file. The following is a simplified example from a Christmas homily in the Old Norwegian Homily Book:
 ```xml
 Old Norwegian text (AM 619 4to, fol. 16v, l. 9–10):
 <s xml:id="s748">
@@ -195,7 +195,7 @@ Modern Norwegian translation (by Astrid Salvesen, 1971):
 Note that while Medieval Nordic texts in Menota will have each word in a `<w>{:xml}` element, this is not called for in a translation (unless the translated text should be searchable to the same extent as the medieval text).
 ### 3.5.2 Conflicts in the linking of sentences
 
-If more than two files are going to be linked to the original XML file, for example one containing a translation and one containing a syntactic analysis, and if the division of sentences in these files are partly overlapping (which is highly likely), we recommend using the empty `<milestone/>{:xml}` element for sentence divisions that do not correspond. The `<milestone/>{:xml}` element must have a `@unit` attribute and (we suggest) an `@n` attribute with the same function as the `@xml:id` attribute in the `<s>{:xml}` element. This way, conflicting sentence structures can be encoded without problems of overlap:
+If more than two files are going to be linked to the original XML file, for example one containing a translation and one containing a syntactic analysis, and if the division of sentences in these files are partly overlapping (which is highly likely), we recommend using the empty `<milestone/>{:xml}` element for sentence divisions that do not correspond. The `<milestone/>{:xml}` element must have a `@unit{:sh}` attribute and (we suggest) an `@n{:sh}` attribute with the same function as the `@xml:id{:sh}` attribute in the `<s>{:xml}` element. This way, conflicting sentence structures can be encoded without problems of overlap:
 ```xml
 <s xml:id="s1" n="m1">
   this is one way of encoding the text
@@ -215,7 +215,7 @@ If more than two files are going to be linked to the original XML file, for exam
 ```
 
 
-The above example is an encoding of partly conflicting sentence divisions in two files. The primary file uses the `<s>{:xml}` element with the `@xml:id` attribute (capitalisation and punctuation have been added for clarification):
+The above example is an encoding of partly conflicting sentence divisions in two files. The primary file uses the `<s>{:xml}` element with the `@xml:id{:sh}` attribute (capitalisation and punctuation have been added for clarification):
 <Quote>
 [s1] This is one way of encoding the text, even if there are other ways of doing it.<br/>
  [s2] They may be rare, in spite of any efforts to come up with convincing examples.<br/>
@@ -223,7 +223,7 @@ The above example is an encoding of partly conflicting sentence divisions in two
  [s4] Fortunately, sometimes sentence divisions are identical.
 </Quote>
 
-The sentence division in the additional file can be encoded by a `<milestone/>{:xml}` element with the `@n` attribute. Note that this attribute is also used in the `<s>{:xml}` element wherever the sentence divisions are corresponding, such as between the 3rd and 4th sentence:
+The sentence division in the additional file can be encoded by a `<milestone/>{:xml}` element with the `@n{:sh}` attribute. Note that this attribute is also used in the `<s>{:xml}` element wherever the sentence divisions are corresponding, such as between the 3rd and 4th sentence:
 <Quote>
 [m1] This is one way of encoding the text.<br/>
  [m2] Even if there are other ways of doing it, they may be rare.<br/>
@@ -247,7 +247,7 @@ Although words need not be delimited by anything else than white space, we recom
 | `</p>{:xml}` | the paragraph ends here. |
 
 
-If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>{:xml}` element may be given several morphological attributes, in particular `@lemma` for the dictionary entry and `@me:msa` for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
+If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>{:xml}` element may be given several morphological attributes, in particular `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
 
 Another motivation for delimiting words by the `<w>{:xml}` element is the fact that a number of graphical words (i.e. sequences of characters with space on either side) should be split or merged according to standard dictionaries, e.g. “aveiðiskap” for “á veiðiskap” and “veiði kona” for “veiðikona”. Splitting and merging of graphical words will be discussed in [ch. 5.3](HB3_ch5.xml#sec5.3) below. The encoding of word constituents will also be discussed here.
 
@@ -385,7 +385,7 @@ In ill. 3.1, the heading, which is written in red, is located after the end of o
 ```
 
 
-The fact that the heading is a rubric has been encoded by the `@type="rubric"` attribute.
+The fact that the heading is a rubric has been encoded by the `@type="rubric"{:sh}` attribute.
 
 Unfortunately (from the point of view of the encoder) many manuscripts locate headings so that they are in conflict with this simple sequencing, for example by positioning them at the end of more than one line, or even in the middle of a line containing the beginning of one chapter and the end of the previous chapter. Examples of these complications are discussed in some detail in [ch. 16.3](HB3_ch16.xml#sec16.3) below.
 ## 3.10 Initials and highlighted characters: &lt;c&gt;
@@ -424,7 +424,7 @@ In some cases, there may be a structural conflict between the opening and closin
 
 - Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
 
-A possibe work-around is to use the general empty element `<milestone/>{:xml}` with the obligatory `@unit` attribute and a `@rendition` attribute specifying the opening and closing quotation mark:
+A possibe work-around is to use the general empty element `<milestone/>{:xml}` with the obligatory `@unit{:sh}` attribute and a `@rendition{:sh}` attribute specifying the opening and closing quotation mark:
 ```xml
 <s>Eyvindr sagðisk eigi mundu brott undan ríða, 
 <milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
@@ -437,7 +437,7 @@ There are several other ways of solving this type of conflict, as we discuss at 
 ## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;
 ### 3.12.1 Page beginnings and column beginnings
 
-TEI uses the empty element `<pb/>{:xml}` to indicate a page beginning. This element has an attribute `@n` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>{:xml}`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n` attribute of the `<cb/>{:xml}` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
+TEI uses the empty element `<pb/>{:xml}` to indicate a page beginning. This element has an attribute `@n{:sh}` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n{:sh}` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>{:xml}`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n{:sh}` attribute of the `<cb/>{:xml}` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 
 | Elements | Contents |
 |-----|-----|
@@ -450,7 +450,7 @@ TEI uses the empty element `<pb/>{:xml}` to indicate a page beginning. This elem
 | `<cb ed="ms" n="B"/>{:xml}` | and the second column begins here. |
 
 
-Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>{:xml}` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the `@ed` attribute with a suitable value:
+Page beginning information from, for example, a printed standard edition, can be encoded in addition to the `<pb ed="ms"/>{:xml}` elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the `@ed{:sh}` attribute with a suitable value:
 ```xml
 <pb ed="Standard Edition" n="1"/>
 ```
@@ -461,7 +461,7 @@ Some of the texts in the Menota archive have been encoded with more than one doc
 The relevant editions should be declared in the header. As a rule, we suggest that the edition is identified by the initials of the editor + the year of publication, e.g. FJ1920-1921, LHO1945, etc.
 ### 3.12.2 Line beginnings
 
-Line beginnings are also indicated with an empty element, the `<lb/>{:xml}`, which is placed at the beginning of a new line and may be numbered by using the `@n` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
+Line beginnings are also indicated with an empty element, the `<lb/>{:xml}`, which is placed at the beginning of a new line and may be numbered by using the `@n{:sh}` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
 ```xml
 <lb ed="ms" n="1"/>Line number one begins here.
 ```
@@ -480,7 +480,7 @@ etc.
 
 In other words, there should be as many `<pb/>{:xml}` elements as there are pages, as many `<cb/>{:xml}` elements as there are columns, and as many `<lb/>{:xml}` elements as there are lines. We strongly discourage the use of the `<lb/>{:xml}` element in the same way as the `<br>{:xml}` element in HTML, in which there typically is one `<br>{:xml}` element less than the number of lines (as the `<br>{:xml}` element is inserted between the lines).
 
-As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the `@ed` attribute.
+As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the `@ed{:sh}` attribute.
 
 It is not uncommon for a word to be continued on the next line, with or without a hyphenation mark in the margin. In a single-level encoding, the `<lb/>{:xml}` element will be located within the relevant `<w>{:xml}` element, and in a multi-level encoding it will be repeated for each level. See examples of this in [ch. 5.5](HB3_ch5.xml#sec5.5) below.
 ## 3.13 Alternative encoding: &lt;choice&gt;
@@ -497,9 +497,9 @@ Since a shift of hands in most cases will conflict with other divisions of the t
 Information on the hands of a document can be given as part of the header in the `<handDesc>{:xml}` element. See [ch. 14.3.3](HB3_ch14.xml#sec14.3.3) below.
 ## 3.15 Generic empty element: &lt;milestone/&gt;
 
-TEI offers the generic `<milestone/>{:xml}` element for any division of a text outside the specified ones. The type of segment delimited by the `<milestone/>{:xml}` element should be specified by a `@unit` attribute.
+TEI offers the generic `<milestone/>{:xml}` element for any division of a text outside the specified ones. The type of segment delimited by the `<milestone/>{:xml}` element should be specified by a `@unit{:sh}` attribute.
 
-In [ch. 3.5.2](#sec3.5.2) above, we have been using the `<milestone/>{:xml}` element for additional (and partly conflicting) sentence divisions. The value of the `@unit` attribute has in this case been `"sentence"`.
+In [ch. 3.5.2](#sec3.5.2) above, we have been using the `<milestone/>{:xml}` element for additional (and partly conflicting) sentence divisions. The value of the `@unit{:sh}` attribute has in this case been `"sentence"{:js}`.
 ## Updates to ch. 3
 
 On 19 July 2020, two subchapters were added on the linking of sentences 
