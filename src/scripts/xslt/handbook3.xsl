@@ -7,6 +7,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
+    <xsl:include href="elements/text.xsl"/>
     <xsl:template match="/">
         <xsl:apply-templates/>
     </xsl:template>
@@ -161,25 +162,6 @@
         <xsl:if test="ancestor::tei:cell">
             <xsl:text> </xsl:text>
         </xsl:if>
-    </xsl:template>
-    <xsl:template match="text()">
-        <xsl:variable name="text1" select="replace(replace(., '\{', '\\{'), '\}', '\\}')"/>
-        <xsl:variable 
-            name="text2" 
-            select="replace(replace($text1, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"
-        />
-        <xsl:variable name="text3" select="replace($text2, '&#x00a0;', '&amp;ensp;')"/>
-        <xsl:variable name="text4">
-            <xsl:choose>
-                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell">
-                    <xsl:value-of select="replace($text3, '\s+', ' ')"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="$text3"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:value-of select="$text4"/>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>
