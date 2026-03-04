@@ -1,5 +1,6 @@
 export default function DisplayFrame({ children }: { children: React.ReactNode }) {
     return <div className={`
+        display-frame
         border 
         border-solid 
         rounded-lg 
