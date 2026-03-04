@@ -17,11 +17,13 @@ Several texts in the Menota archive have been morphologically annotated, so this
 
 In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma` for the dictionary entry and `@me:msa` for the grammatical form:
 
+<div className="abbrTable">
 | Element & attributes | Contents |
 |-----|-----|
 | `<w>{:xml}` | Delimits a grammatical word. |
 | &ensp;&ensp;&ensp;`@lemma` | States the lemma (lexical entry) of the word. |
 | &ensp;&ensp;&ensp;`@me:msa` | States the grammatical (morphosyntactical) form of the word. |
+</div>
 
 
 It is essential that the lemmatisation of Medieval Nordic manuscript text is done in adherence to the principles developed for handling large corpora in linguistic research. We have found the guidelines provided by [EAGLES 1996](HB3_literature.xml#Eagles) to be particularly useful, but have decided to deviate somewhat from these guidelines in order to produce a more self-explanatory, although slightly more verbose, system. 
@@ -205,6 +207,7 @@ Inflectional class is another invariable property and can usually be derived fro
 
 If the encoder wishes to include information on the inflectional class we recommend that this is being done by adding to the `@me:msa` attribute a name token consisting of the lowercase character “i” + an uppercase abbreviation for each class. The table below contains examples for the verb class, but can easily be extended to other classes. Incidentally, the distinction between strong and weak inflection also applies to nouns.
 
+<div className="abbrTable">
 | Name token | Inflectional class |
 |-----|-----|
 | iST | Strong |
@@ -212,6 +215,7 @@ If the encoder wishes to include information on the inflectional class we recomm
 | iRD | Reduplicating |
 | iPP | Preterite-Present |
 | etc. |  |
+</div>
 
 
 Since inflectional class is an invariable property of the word there is no compelling reason to specify it as part of the morphosyntactical analysis. The major verb classes listed above are a possible exception, since there are some pair verbs which must be disambiguated by way of inflectional class, e.g. the weak (and transitive) verb “brenna” vs. the homonymous strong (and intransitive) verb “brenna”.
@@ -225,24 +229,28 @@ This category applies to nouns, adjectives, pronouns/determiners, numerals and v
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | gM | Masculine |
 | gF | Feminine |
 | gN | Neuter |
 | gU | Unspecified |
+</div>
 
 
 Some nouns may have two genders, e.g. “hungr” ‘hunger’, which is either masculine or neutral. For words of this type we suggest using name tokens with more than one value, “gMF”, “gMN” and “gFN”.
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | gMF | Masculine or Feminine |
 | gMN | Masculine or Neuter |
 | gFN | Feminine or Neuter |
 | gMFN | Masculine, Feminine or Neuter |
+</div>
 
 
 We recommend that gender is ascribed on the basis of standard dictionaries. Even if a text at a certain point may point to a specific gender, e.g. in the collocation “mikill hungr” (meaning that “hungr” is masculine), any disambiguation is of limited value. So rather than trying to distinguish between (a) unequivocal cases of “hungr” being masculine, gM, (b) unequivocal cases of “hungr” being neuter, gN, and (c) ambiguous cases, gMN, we recommend the classification “gMN” in all cases (since this is what the dictionary states).
@@ -250,12 +258,14 @@ We recommend that gender is ascribed on the basis of standard dictionaries. Even
 
 This category applies to nouns, adjectives, pronouns/determiners and verbs. Number is denoted by a name token consisting of the lowercase character “n” + an uppercase abbreviation for each number. The character “U” indicates unspecified cases.
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | nS | Singular |
 | nD | Dual |
 | nP | Plural |
 | nU | Unspecified |
+</div>
 
 
 The dual form occurs only in the inflection of personal pronouns. However, the two dual pronouns, “vit” ‘we two’ and “(þ)it” ‘you two’ are words in their own right; “vit” is not dual of “ek”, nor is “(þ)it” dual of “þú”. It is therefore a moot question whether dual should be regarded as an inflectional category in Old Norse. 
@@ -265,6 +275,7 @@ This category applies to nouns, adjectives, pronouns/determiners and numerals. C
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | cN | Nominative |
@@ -272,10 +283,12 @@ This category applies to nouns, adjectives, pronouns/determiners and numerals. C
 | cD | Dative |
 | cA | Accusative |
 | cU | Unspecified |
+</div>
 
 
 In some cases, the annotator will not be able to decide the case of a word. When this happens, we recommend using name tokens with more than one value, “cAD”, “cGD”, “cAN”, “cAG” and “cO”:
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | cAD | Accusative or Dative |
@@ -283,6 +296,7 @@ In some cases, the annotator will not be able to decide the case of a word. When
 | cAN | Accusative or Nominative |
 | cAG | Accusative or Genitive |
 | cO | Oblique (i.e. Accusative, Dative or Genitive) |
+</div>
 11.3.2.4 Species
 
 This category applies to nouns and adjectives. Species (or definiteness) is denoted by a name token consisting of the lowercase character “s” + an uppercase abbreviation for each type of species. The character “U” indicates unspecified cases.
@@ -291,11 +305,13 @@ In Old Norse, nouns and adjectives can have either indefinite or definite forms,
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | sI | Indefinite |
 | sD | Definite |
 | sU | Unspecified |
+</div>
 11.3.2.5 Grade
 
 This category applies to adjectives and adverbs. Grade is denoted by a name token consisting of the lowercase character “r” + an uppercase abbreviation for each grade. The character “U” indicates unspecified cases.
@@ -304,24 +320,28 @@ Memory hint: since the character “g” has been reserved for “gender”, the
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | rP | Positive |
 | rC | Comparative |
 | rS | Superlative |
 | rU | Unspecified |
+</div>
 11.3.2.6 Person
 
 This category applies only to verbs. Person is denoted by a name token consisting of the lowercase character “p” + an uppercase abbreviation for each person. The character “U” indicates unspecified cases.
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | p1 | 1. person |
 | p2 | 2. person |
 | p3 | 3. person |
 | pU | Unspecified |
+</div>
 
 
 There is no need to annotate personal pronouns for person. The pronoun “ek” is inherently 1. person, “þú” 2. person, etc.11.3.2.7 Tense
@@ -330,11 +350,13 @@ This category applies only to verbs. Tense is denoted by a name token consisting
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | tPS | Present |
 | tPT | Preterite |
 | tU | Unspecified |
+</div>
 
 
 Preterite-present verbs are classified according to their logical tense, not their historical formation. Thus, “veit” has the present tense of “vita” (even if it has a preterite formation) and “vissti” the preterite tense.11.3.2.8 Mood
@@ -343,38 +365,45 @@ This category applies only to verbs. Mood is denoted by a name token consisting 
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | mIN | Indicative |
 | mSU | Subjunctive |
 | mIP | Imperative |
 | mU | Unspecified |
+</div>
 
 
 In some cases, the annotator will not be able to decide the mood of a verb. When this happens, we recommend using name tokens with more than one value, “mINSU”, “mINIM” and “mSUIM”:
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | mINSU | Indicative or Subjunctive |
 | mINIM | Indicative or Imperative |
 | mSUIM | Subjunctive or Imperative |
+</div>
 11.3.2.9 Voice
 
 This category applies only to verbs. Voice (also referred to as diathesis) is denoted by a name token consisting of the lowercase character “v” + an uppercase abbreviation for each type of voice. The character “U” indicates unspecified cases.
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | vA | Active |
 | vR | Reflexive |
 | vU | Unspecified |
+</div>
 11.3.2.10 Finiteness
 
 This category applies only to verbs. Finiteness is denoted by a name token consisting of the lowercase character “f” + an uppercase abbreviation for each type of finiteness. The character “U” indicates unspecified cases.
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | fF | Finite: all types |
@@ -382,6 +411,7 @@ This category applies only to verbs. Finiteness is denoted by a name token consi
 | fS | Infinite: supine forms |
 | fI | Infinite: infinitives |
 | fU | Unspecified |
+</div>
 11.3.2.11 Enclitics
 
 In some cases, a word may be attached to the previous word resulting in a single, new word. This process of cliticisation occurs after finite verbs with personal pronouns and negative particles. Examples of the first type are “emk” for “em ek” ‘I am’ and “fórtu” for “fórt þú” ‘you went’, of the second type “erat” for “er at” ‘is not’ and “bárut” for “báru t” ‘did not carry’. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s[i]k” = “kallask”. However, it may be argued that the enclitic words retain their characters as words to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s[i]k”. For this reason, we suggest that enclitic forms are encoded with the `<seg>{:xml}` element, as described in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above:
@@ -424,10 +454,12 @@ In a similar vein, the negative particle in “bárut” may be analysed as “a
 
 We suggest the name tokens “eP” and “eN” for enclitic words, to be used as the final name token in the `@me:msa` attribute of the enclitic word:
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | eP | Enclitic pronoun |
 | eN | Enclitic negative particle |
+</div>
 
 
 In marginal cases, there can be two or even three enclitics, such as “vilkat” for “vil [e]k at” ‘I will not’ and “bjargigak” for “bjargi [e]k a[t] [e]k” ‘I do not I save’ (_Hávamál_, st. 149). In the encoding, each word part should be rendered in a separate `<w>{:xml}` element in the phonetic form it actually has:
@@ -461,6 +493,7 @@ However, to accommodate the information provided in the Old Norwegian lemmatised
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | yG | Governing Genitive |
@@ -468,18 +501,21 @@ However, to accommodate the information provided in the Old Norwegian lemmatised
 | yA | Governing Accusative |
 | yAD | Governing Accusative or Dative |
 | yU | Unspecified government |
+</div>
 
 
 In the Old Norwegian lemmatised corpus, also conjunctions (i.e. subjunctions) are encoded for the mood which they govern. This is not a morphological category, but the information can be retained by adding a name token for government, consisting of the lowercase character “y” + an uppercase abbreviation for each type of mood government.
 
 
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | yIN | Governing Indicative |
 | ySU | Governing Subjunctive |
 | yINSU | Governing Indicative or Subjunctive |
 | yU | Unspecified government |
+</div>
 
 ## 11.4 Homography and zero values
 
@@ -500,10 +536,12 @@ In some cases, however, it is a questions of related words with variant forms, s
 
 
 
+<div className="abbrTable">
 | Lemma | Word form | Grammatical form |
 |-----|-----|-----|
 | líf | lífi | xNC cD nS gN sI |
 | lífi |
+</div>
 
 
 For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “|”, as delimiter:
@@ -556,6 +594,7 @@ In another phrase, e.g. “fyrir konu”, the encoder might not be willing to ma
 
 It turns out that in Old Norse, there is a rather short list of internal homography:
 
+<div className="abbrTable">
 | Name token | Value |
 |-----|-----|
 | gMF | gender: masculine or feminine |
@@ -570,6 +609,7 @@ It turns out that in Old Norse, there is a rather short list of internal homogra
 | mINSU | mood: indicative or subjunctive |
 | mINIM | mood: indicative or imperative |
 | mSUIM | mood: subjunctive or imperative |
+</div>
 
 
 These values have been included in [ch. 11.3.2.1](#sec11.3.2.1), [ch. 11.3.2.3](#sec11.3.2.3) and [ch. 11.3.2.8](#sec11.3.2.8) above.
@@ -655,6 +695,7 @@ In line with ONP, the lemma forms (i.e. dictionary entries) of proper names need
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -676,6 +717,8 @@ In line with ONP, the lemma forms (i.e. dictionary entries) of proper names need
 </tbody>
 </table>
 
+</div>
+
 
 If the case of a noun cannot be decided with certainty, see the categories cAD, cGD, cAG, cAN and cO  in [ch. 11.4.2](#sec11.4.2) above. The same reference applies to nouns of more than one gender, i.e. the categories gMF, gMN, gFN and gMFN.
 ### 11.5.2 Adjectives (AJ)
@@ -691,6 +734,7 @@ Adjectives are encoded for **case**, **number**, **gender**, **grade** and **spe
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -714,6 +758,8 @@ Adjectives are encoded for **case**, **number**, **gender**, **grade** and **spe
 </tbody>
 </table>
 
+</div>
+
 
 Note that in the comparative form, adjectives only have weak (indefinite) inflection. Nevertheless, we recommend that they are encoded for species, “sI”, throughout. Also note that some adjectives have defect modes of forming the comparative, but we still recommend that they are encoded for grade.
 ### 11.5.3 Pronouns proper (PE, PR, PQ and PI)
@@ -733,6 +779,7 @@ Personal pronouns in the 1st and 2nd person are encoded only for **case**. This 
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -747,6 +794,8 @@ Personal pronouns in the 1st and 2nd person are encoded only for **case**. This 
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.3.2 Reflexive pronouns (PR)
 
 There is a single reflexive pronoun, sik. It is encoded for **case** and due to its meaning, it has no nominative.
@@ -759,6 +808,7 @@ There is a single reflexive pronoun, sik. It is encoded for **case** and due to 
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -773,6 +823,8 @@ There is a single reflexive pronoun, sik. It is encoded for **case** and due to 
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.3.3 Interrogative pronouns (PQ)
 
 Interrogative pronouns are encoded for **case**, **number** and **gender**. Memory hint: in the name token “xPQ” the last character stands for “question”.
@@ -784,6 +836,7 @@ Interrogative pronouns are encoded for **case**, **number** and **gender**. Memo
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -802,6 +855,8 @@ Interrogative pronouns are encoded for **case**, **number** and **gender**. Memo
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.3.4 Indefinite pronouns (PI)
 
 Indefinite pronouns are encoded for **case**, **number** and **gender**.
@@ -815,6 +870,7 @@ Indefinite pronouns are encoded for **case**, **number** and **gender**.
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -834,6 +890,8 @@ Indefinite pronouns are encoded for **case**, **number** and **gender**.
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.4 Determiners (DD, DQ and DP)
 
 The contents of the word class **determiners** vary between languages and grammars. In the present analysis, determiners comprise a large part of the traditional word class pronouns (as defined in many grammars of Old Norse). Determiners have three subcategories: demonstratives, quantifiers and possessives.
@@ -851,6 +909,7 @@ Demonstratives are encoded for **case**, **number** and **gender**.
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -869,6 +928,8 @@ Demonstratives are encoded for **case**, **number** and **gender**.
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.4.2 Quantifiers (DQ)
 
 Quantifiers are encoded for **case**, **number** and **gender**. This category may overlap with Indefinite pronouns.
@@ -881,6 +942,7 @@ Quantifiers are encoded for **case**, **number** and **gender**. This category m
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -899,6 +961,8 @@ Quantifiers are encoded for **case**, **number** and **gender**. This category m
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.4.3 Possessives (DP)
 
 Possessives are encoded for **case**, **number** and **gender**.
@@ -910,6 +974,7 @@ Possessives are encoded for **case**, **number** and **gender**.
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -929,6 +994,8 @@ Possessives are encoded for **case**, **number** and **gender**.
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.5 Pronouns/determiners (PD)
 
 This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](HB3_literature.xml#Noreen1923) and [Iversen 1973](HB3_literature.xml#Iversen1973). From a inflectional point of view this is a heterogeneous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper ([ch. 11.5.3](#sec11.5.3)) and determiners ([ch. 11.5.4](#sec11.5.4)).
@@ -942,6 +1009,7 @@ Pronouns/determiners are encoded for **case**, **number** and **gender**.
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -961,6 +1029,8 @@ Pronouns/determiners are encoded for **case**, **number** and **gender**.
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.6 Numerals (NA and NO)
 
 The numerals are divided into two sub-categories: “cardinals” (NA) and “ordinals” (NO). The character U is used for “unspecified”, so that “xNU” comprises both cardinal and ordinal numerals. This is the case in the Old Norwegian lemmatised corpus. We recommend making a distinction between cardinal and ordinal numerals.
@@ -977,6 +1047,7 @@ The numerals hundrað“one hundred (and twenty)” and þúsund“one thousand 
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -996,6 +1067,8 @@ The numerals hundrað“one hundred (and twenty)” and þúsund“one thousand 
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.7 Articles (AT)
 
 In recent grammars the traditional word class articles is usually classified as part of the word class determiners. However, in some projects (i.e. the Old Norwegian lemmatised corpus) articles are treated as a separate class, and we suggest that as an alternative they may be classified as such.
@@ -1009,6 +1082,7 @@ Articles are encoded for **case**, **number** and **gender**.
 ```
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1028,6 +1102,8 @@ Articles are encoded for **case**, **number** and **gender**.
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.8 Verbs (VB)
 
 Verbs are either **finite** or **infinite**. In the former category, they are inflected for **person**, **number**, **tense**, **mood** and **voice**. In the latter category, participles are basically inflected as adjectives, while supine forms and infinitives have a very restricted inflection. In order to simplify encoding, we recommend that finite and infinite forms are treated separately. 11.5.8.1 Finite forms
@@ -1043,6 +1119,7 @@ Finite verbs are annotated as “fF”. They are inflected for **person**, **num
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1067,6 +1144,8 @@ Finite verbs are annotated as “fF”. They are inflected for **person**, **num
 </tr>
 </tbody>
 </table>
+
+</div>
 11.5.8.2 Infinite forms
 
 Infinite forms are either participles (with supine forms as a sub-category) or infinitives, and may be distinguished by the name tokens “fP” for participles, “fS” for supines and “fI” for infinitives.(a) Participles
@@ -1087,6 +1166,7 @@ Note that present participles only have weak (definite) declension. Preterite (p
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1109,6 +1189,8 @@ Note that present participles only have weak (definite) declension. Preterite (p
 </tr>
 </tbody>
 </table>
+
+</div>
 (b) Supine forms
 
 The supine form, “supinum”, is annotated as “fS”. It is governed by the verb “hafa”, e.g. in a sentence like “hann hefir komit” as opposed to the inflected participle in “hann er kominn”. From a purely morphological point of view, a form like “komit” is a past participle in accusative singular neuter. Unlike the inflected past participle, the supine form has no concord with the subject of the sentence. It is basically an infinite form of the verb with no inflection apart from **voice**.
@@ -1123,6 +1205,7 @@ We suggest that the supine is regarded as an infinite form of its own accord and
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1139,6 +1222,8 @@ We suggest that the supine is regarded as an infinite form of its own accord and
 </tr>
 </tbody>
 </table>
+
+</div>
 (c) Infinitives
 
 The infinitive form is annotated as “fI”. Infinitives are inflected only for the verbal categories **tense** and **voice**. Of these, **tense** only applies to three verbs, “munu”, “skulu” and “vilja”. They are unique in having preterite forms, “mundu”, “skyldu” and “vildu”.
@@ -1152,6 +1237,7 @@ The infinitive form is annotated as “fI”. Infinitives are inflected only for
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1171,6 +1257,8 @@ The infinitive form is annotated as “fI”. Infinitives are inflected only for
 </tbody>
 </table>
 
+</div>
+
 ### 11.5.9 Adverbs (AV)
 
 We recognise two major types of adverbs, general adverbs, such as “oft” and “nú”, and interrogative adverbs, such as “hversu”.11.5.9.1 General adverbs (AV)
@@ -1187,6 +1275,7 @@ General adverbs are only encoded for **grade**, and this only applies to some of
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1202,6 +1291,8 @@ General adverbs are only encoded for **grade**, and this only applies to some of
 </tbody>
 </table>
 
+</div>
+
 
 Note that some adverbs have defect modes of forming the comparative, but we still recommend that they are encoded for grade.
 ### 11.5.9.2 Interrogative adverbs (AQ)&gt;
@@ -1216,6 +1307,7 @@ The class of interrogative adverbs is rather small, including words like “hvar
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1228,6 +1320,8 @@ The class of interrogative adverbs is rather small, including words like “hvar
 </tr>
 </tbody>
 </table>
+
+</div>
 
 ### 11.5.10 Prepositions and particles (AP and VP)
 
@@ -1242,10 +1336,12 @@ Prepositions are not inflected and only encoded for word class, xAP. The latter 
 
 There is seldom any doubt about the word class for prepositions in prepositional phrases like “í hendi”, “á landi”, “til þings”, etc. However, when prepositions appear without complementation (in absolute position) or as verbal particles, one might want an alternative word class. We suggest xVP for this use of prepositions, although our recommendation is to encode all prepositions as “xAP” and leave it at that. The distinction between “xAP” and “xVP” is a syntactic one, and need not be included in a morphological annotation.
 
+<div className="abbrTable">
 | Word class | Specification |
 |-----|-----|
 | xAP | all prototypical prepositions |
 | xVP | in absolute or adverbial use (e.g. as verbal particles) |
+</div>
 
 
 The words “of” and “um” are frequently used as so-called expletive particles in Eddic poems. This usage is so specific that many encoders would like a separate class for this type. See [ch. 11.5.15](#sec11.5.15) below  
@@ -1258,6 +1354,7 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, prepositions in the Old Norwe
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1272,6 +1369,8 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, prepositions in the Old Norwe
 </tr>
 </tbody>
 </table>
+
+</div>
 
 
 No prepositions govern nominative, so the encoding “yN” is not applicable. Many prepositions govern accusative as well as dative, and in cases of doubt, the encoding “yAD” (governing either accusative or dative) may be used. The Old Norse preposition “án” may govern all oblique cases, so in cases of doubt, the encoding “yO” (governing one of the oblique cases) may be used.
@@ -1297,6 +1396,7 @@ In recent grammars, the traditional word class “conjunctions” is usually div
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1310,6 +1410,8 @@ In recent grammars, the traditional word class “conjunctions” is usually div
 </tbody>
 </table>
 
+</div>
+
 
 The encoding “xCU” would be used if the encoder (in rather unusual cases) cannot decide whether a word is a conjunction or a subjunction. Furthermore, it can be used for texts that have been annotated with the traditional, single word class “conjunctions”, such as in the Old Norwegian lemmatised corpus.
 
@@ -1317,6 +1419,7 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, conjunctions (i.e. subjunctio
 
 
 
+<div className="abbrTable">
 <table>
 <thead>
 <tr>
@@ -1330,6 +1433,8 @@ As stated in [ch. 11.3.2.12](#sec11.3.2.12) above, conjunctions (i.e. subjunctio
 </tbody>
 </table>
 
+</div>
+
 
 The encoding “yU” would be used when the mood of the verb in the clause cannot be specified (in other words that it may be either indicative or subjunctive).
 
@@ -1340,9 +1445,11 @@ Interjections are not inflected and only marked for word class, “xIT”.
 
 
 
+<div className="abbrTable">
 | Word class |
 |-----|
 | xIT |
+</div>
 
 ### 11.5.13 Infinitive marker (IM)
 
@@ -1350,9 +1457,11 @@ The **infinitive marker** is not inflected and encoded as “xIM”. In Old Nors
 
 
 
+<div className="abbrTable">
 | Word class |
 |-----|
 | xIM |
+</div>
 
 ### 11.5.14 Relative particle (RP)
 
@@ -1360,9 +1469,11 @@ The **relative particle** is not inflected and only marked as “xRP”. In Old 
 
 
 
+<div className="abbrTable">
 | Word class |
 |-----|
 | xRP |
+</div>
 
 
 On balance, we recommend encoding the relative particle simply as a subjunction, “xCS”. See the discussion in [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), p. 38.
@@ -1372,17 +1483,21 @@ The **expletive particles**“of” and “um” are frequently found in Eddic p
 
 
 
+<div className="abbrTable">
 | Word class |
 |-----|
 | xEX |
+</div>
 
 ### 11.5.16 Unassigned (UA)
 
 Some words are corrupt, difficult to analyse, belong to another language or are for other reason indeterminate. These words are marked as unassigned, “xUA”. See, however, the discussion of non-Nordic words in [ch. 11.7](#sec11.7) below.
 
+<div className="abbrTable">
 | Word class |
 |-----|
 | xUA |
+</div>
 
 ## 11.6 Specifications for Old Norse
 
@@ -1438,12 +1553,14 @@ Even if we recommend ONP’s norm for normalisation of Old Norse texts, there wi
 
 
 
+<div className="abbrTable">
 | ONP lemma | Preferred forms |
 |-----|-----|
 | [glíkr](https://onp.ku.dk/onp/onp.php?o27535) (xAJ) | líkr, lík, líkt, ... |
 | [nøkkurr](https://onp.ku.dk/onp/onp.php?o57831) (xDQ) | nǫkkurr, nǫkkur, nǫkkut, ... |
 | [fǫgnuðr](https://onp.ku.dk/onp/onp.php?o25458) (xNC) | fagnaðr, fagnað, fagnaði, fagnaðar, ... |
 | [skipun](https://onp.ku.dk/onp/onp.php?o70838) (xNC) | skipan, skipan, skipan, skipanar, ... |
+</div>
 
 
 Note that even if the normalised orthography of the text may deviate somewhat from the ONP norm, the orthography of the lemma should adhere strictly to ONP, as shown in the first column of the table.
@@ -1455,6 +1572,7 @@ We recommend that morphological annotation is restricted to the following word c
 
 
 
+<div className="abbrTable">
 | Abbreviation | Word class |
 |-----|-----|
 | xNC | noun, common |
@@ -1477,10 +1595,12 @@ We recommend that morphological annotation is restricted to the following word c
 | xIT | interjection |
 | xUA | unassigned |
 | xFW | foreign word |
+</div>
 
 
 Texts in the Menota archive have been annotated according to earlier schemes, especially that of _Gammelnorsk Ordboksverk_. In the annotation of these texts, a traditional set of word classes has been used. These classes will be kept as alternatives, but our recommendation is that encoders from now on should restrict themselves to the list of word classes above. The following classes should be deprecated:
 
+<div className="abbrTable">
 | Abbreviation | Word Class | Comment |
 |-----|-----|-----|
 | xCU | conjunctions (in general) | should be analysed as either xCC (conjunctions) or xCS (subjunctions) |
@@ -1491,6 +1611,7 @@ Texts in the Menota archive have been annotated according to earlier schemes, es
 | xRP | relative particle | should be analysed as subjunctions (xCS) |
 | xVP | verbal particles | should be analysed as prepositions (xAP) or adverbs (xAV) |
 | xEX | expletive particles | should be analysed as subjunctions (xCS) |
+</div>
 
 
 **Prepositions vs. adverbs**. Prepositions in absolute position (i.e. with no complementation) can be analysed as adverbs or as verbal particles. We recommend that prepositions are analysed as prepositions, xAP, in all cases,  whether they have a complementation, “í hendi”, “til matar”, “undir honum”, or not, “en vǽta var á [the air?] mikil um daginn”. As for “of” and “um” in Eddic poems, we do not think there should  be any distinction between  prepositions and expletive particles. This is a syntactic difference, not a morphological one, so the word class should be xAP in both cases.
@@ -1508,6 +1629,7 @@ As a rule, we recommend encoders to avoid duplication of words. So rather than d
 
 There is a number of categories in each word class, ranging from zero in the non-inflected classes (e.g. prepositions, conjunctions, subjunctions) up to six in the verbs. The contents of these categories have been listed in [ch. 11.5](#sec11.5) above. We recommend following these, but would like to suggest a few specifications:
 
+<div className="abbrTable">
 | Abbreviation | Word Class | Comment |
 |-----|-----|-----|
 | xPE | pronouns, personal | person (p1, p2, p3, pU), gender (gM, gF, gN, gU) and number (ns, nP, nU) are inherent in personal pronouns, so need not be used; only case (cN, cG, cD, cA, cU) is relevant |
@@ -1515,6 +1637,7 @@ There is a number of categories in each word class, ranging from zero in the non
 | xAV | adverbs | only some adverbs are inflected for grade (e.g. “oft”), while others have no comparation (e.g. “hér”); we recommend that the first group is annotated for word class (xAV) and grade (rP, rC, rS), while the second group only is annotated for its word class, xAV |
 | xAP | prepositions | prepositions are not inflected and only encoded for word class; in texts from _Gammelnorsk Ordboksverk_, they have also been encoded for the category of government, yA (governing accusative, yD (governing dative), yG (governing genitive); this encoding should not be used anymore |
 | xCS | subjunctions | subjunctions are not inflected and only encoded for word class; in texts from _Gammelnorsk Ordboksverk_, they have also been encoded for the category of government, yIN (governing indicative, ySU (governing subjunctive); this encoding should not be used anymore |
+</div>
 
 ### 11.6.5 Sample words
 
@@ -1690,12 +1813,14 @@ The abbreviation **B** has been chosen for “ablative” since **A** is already
 
 The Medieval Nordic languages have the very simple distinction between **tPS** for “present” and **tPT** for “past”.
 
+<div className="abbrTable">
 | Voice | Value |
 |-----|-----|
 | vA | Active |
 | vP | Passive |
 | vD | Deponent |
 | vU | Unspecified |
+</div>
 
 
 With respect to the category of Voice, the main distinction in Latin is between “active”, encoded as **vA**, and “passive”, encoded as **vP**. Verbs which have passive inflection but active meaning are referred to as deponent verbs, and might optionally be encoded with **vD**. Deponent verbs do not have active forms, so for these verbs there is just a single value of the voice category.

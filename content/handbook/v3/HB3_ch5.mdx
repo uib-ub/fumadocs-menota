@@ -271,19 +271,23 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 (a) Commonly used characters have a single description in Unicode. This applies to all
             base-line characters in the Latin alphabet.
 
+<div className="abbrTable">
 | Glyph  | Encoding  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph>a</Glyph> | `a{:xml}` | `0061` | `LATIN SMALL LETTER A` |
+</div>
 
 
 (b) Composite characters may be described in more than one way. Thus, an “a with acute
               accent” can be encoded as a combination of an “a” and a combining acute accent or
             as a single character, “a with acute accent”. Both descriptions are equivalent:
 
+<div className="abbrTable">
 | Glyph  | Entity  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph>á</Glyph> | `a + &combacute;{:xml}` | `0061 + 0301` | `LATIN SMALL LETTER A + COMBINING ACUTE ACCENT` |
 | <Glyph>á</Glyph> | `&aacute;{:xml}` | `00E1` | `LATIN SMALL LETTER A WITH ACUTE` |
+</div>
 
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
@@ -295,9 +299,11 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
             is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
             for the current recommendation.
 
+<div className="abbrTable">
 | Glyph  |  Entity  | Code point  | Descriptive name  |
 |-----|-----|-----|-----|
 | <Glyph></Glyph> | `&kslonglig;{:xml}` | `EBAE` | `LATIN SMALL LIGATURE K AND LONG S` |
+</div>
 
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
@@ -1201,6 +1207,7 @@ In the **Menota archive**, hyphens in a manuscript will be displayed with a hyph
 </table>
 
 
+
 At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>{:xml}`. However, since “umboðs maðr” has been analysed as one word, a middot is displayed on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels.
 
 In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook, hyphens in a manuscript are displayed only on the `<me:facs>{:xml}` level, since at this level, line beginnings are displayed according to the manuscript. On the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels, hyphens in the manuscript are not displayed, since the text is rendered in continuous lines on these levels. As for missing hyphenation, no hyphen is displayed on the `<me:facs>{:xml}`, nor is any hyphen displayed on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels. However, since the text is rendered in continuous lines on the latter two levels, words will be displayed without any breaks. See the examples below.
@@ -1219,6 +1226,7 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 </table>
 
 
+
 <table>
 <thead>
 <tr>
@@ -1233,6 +1241,7 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 </table>
 
 
+
 <table>
 <thead>
 <tr>
@@ -1245,6 +1254,7 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 </tr>
 </tbody>
 </table>
+
 
 
 When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>{:xml}` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>{:xml}` element, it is displayed as a single word on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels.
