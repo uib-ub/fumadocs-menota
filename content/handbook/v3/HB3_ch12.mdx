@@ -19,17 +19,19 @@ Medieval manuscripts contain an abundance of names: personal names for historica
                of names is presented according to the recommendations in the TEI P5
                Guidelines, [ch. 13](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html).
 
-The basic element for encoding names of any type is `<name>`, supplied with the
-                  `@type` and `@ref` attributes.
+The basic element for encoding names of any type is `<name>{:xml}`, supplied with the
+                  `@type{:sh}` and `@ref{:sh}` attributes.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<name>` |  | Contains a name, i.e. a proper noun or a noun phrase. |
-| `@type` | Optional | Indicates what type of name it is. |
-| `@ref` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
+| `<name>{:xml}` |  | Contains a name, i.e. a proper noun or a noun phrase. |
+| <span className="p-3"/>`@type{:sh}` | Optional | Indicates what type of name it is. |
+| <span className="p-3"/>`@ref{:sh}` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
+</div>
 
 
-Note that the `<name>` element may contain a `<w>` element, which will be the case in most Menota texts. This `<w>` element will in a number of Menota texts contain a morphological annotation of the word, by way of the `@lemma` and `@me:msa` attributes. See [ch. 11](HB3_ch11.xml) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
+Note that the `<name>{:xml}` element may contain a `<w>{:xml}` element, which will be the case in most Menota texts. This `<w>{:xml}` element will in a number of Menota texts contain a morphological annotation of the word, by way of the `@lemma{:sh}` and `@me:msa{:sh}` attributes. See [ch. 11](HB3_ch11.xml) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
 ```xml
 <name>
   <w lemma="Egill" me:msa="xNP">
@@ -39,9 +41,9 @@ Note that the `<name>` element may contain a `<w>` element, which will be the ca
 ```
 
 
-In this simplified example, the text is rendered on a single, diplomatic level, indicated by the `<me:dipl>` element, and the annotation only states the lemma and the word class.
+In this simplified example, the text is rendered on a single, diplomatic level, indicated by the `<me:dipl>{:xml}` element, and the annotation only states the lemma and the word class.
 
-In the rest of the present chapter, we will only give examples of the encoding of the `<name>` element, disregarding the inclusion of the `<w>` element.
+In the rest of the present chapter, we will only give examples of the encoding of the `<name>{:xml}` element, disregarding the inclusion of the `<w>{:xml}` element.
 ```xml
 <name>Egill Skalla-Grímsson</name>
 <name>Borg</name>
@@ -51,7 +53,7 @@ In the rest of the present chapter, we will only give examples of the encoding o
 
 
 A distinction may be drawn between e.g. personal names, place names, animal names and
-               artefact names by using the `@type` attribute:
+               artefact names by using the `@type{:sh}` attribute:
 ```xml
 <name type="person">Egill Skalla-Grímsson</name>
 <name type="place">Borg</name>
@@ -60,14 +62,14 @@ A distinction may be drawn between e.g. personal names, place names, animal name
 ```
 
 
-For many encoders, the `<name>` element is all that is needed for a simple
-               identification of names in the text. The `@type` attribute may be added
+For many encoders, the `<name>{:xml}` element is all that is needed for a simple
+               identification of names in the text. The `@type{:sh}` attribute may be added
                simultaneously or at a later stage.
 
 For a more detailed encoding of personal names and place names, we recommend using
-               the elements `<persName>` and `<placeName>` respectively. They should be
-               treated as strictly equivalent with the `<name>` element and the `@type`
-               attribute with the values `"person"` and `"place"`. 
+               the elements `<persName>{:xml}` and `<placeName>{:xml}` respectively. They should be
+               treated as strictly equivalent with the `<name>{:xml}` element and the `@type{:sh}`
+               attribute with the values `"person"{:js}` and `"place"{:js}`. 
 
 Thus, ...
 ```xml
@@ -93,16 +95,16 @@ Thus, ...
 ```
 
 
-The element `<persName>` can contain several other elements and can thus be used
+The element `<persName>{:xml}` can contain several other elements and can thus be used
                for a more detailed name analysis, e.g. for making a distinction between forenames,
                patronymica and surnames. This level of detail is recommended in the header (cf. [ch. 14](HB3_ch14.xml)), and will also be necessary for any encoding
                of a text which should make the basis for a name index. In a similar way, the element
-                  `<placeName>` can contain elements for various types of geographical
+                  `<placeName>{:xml}` can contain elements for various types of geographical
                locations. For both elements, TEI P5 Guidelines offers an additional tagset, which will be
                discussed and exemplified below.
 
 Usually, XML elements for different types of names are used instead of
-               `<w>` elements. Under certain circumstances, however, it is convenient to use both
+               `<w>{:xml}` elements. Under certain circumstances, however, it is convenient to use both
                in combination. This is especially the case in linguistically annotated
                transcriptions (cf. [ch. 11](HB3_ch11.xml));  for an example of
                 a transcription of this type, see [ch. 15.4.5](HB3_ch15.xml#sec15.4.5)).
@@ -111,22 +113,24 @@ Usually, XML elements for different types of names are used instead of
 Personal names may be divided into several categories, depending on the source and
                the naming conventions of the time.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<persName>` |  | The name of a person, consisting of one or more words. |
-| `@type` | Optional | Indicates the type of name. Suggested values: `"historical"`, `"mythological"`.  |
-| `@ref` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
-| `<forename>` |  | The first name of a person. |
-| `<addName>` |  | An additional name of a person. |
-| `@type` | Optional | Indicates the type of name. Suggested values: `"epithet"`, `"metronym"`, `"mythological"`, `"nickname"`, `"patronym"`. |
-| `<surname>` |  | The family name of a person, excluding patronyms and metronyms. |
-| `<roleName>` |  | The name for a role held by a person. |
-| `@type` | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested value: `"political"`. |
+| `<persName>{:xml}` |  | The name of a person, consisting of one or more words. |
+| <span className="p-3"/>`@type{:sh}` | Optional | Indicates the type of name. Suggested values: `"historical"{:js}`, `"mythological"{:js}`.  |
+| <span className="p-3"/>`@ref{:sh}` | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
+| `<forename>{:xml}` |  | The first name of a person. |
+| `<addName>{:xml}` |  | An additional name of a person. |
+| <span className="p-3"/>`@type{:sh}` | Optional | Indicates the type of name. Suggested values: `"epithet"{:js}`, `"metronym"{:js}`, `"mythological"{:js}`, `"nickname"{:js}`, `"patronym"{:js}`. |
+| `<surname>{:xml}` |  | The family name of a person, excluding patronyms and metronyms. |
+| `<roleName>{:xml}` |  | The name for a role held by a person. |
+| <span className="p-3"/>`@type{:sh}` | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested value: `"political"{:js}`. |
+</div>
 
 ### 12.2.1 Forenames and patronymica
 
-Forenames are encoded with the element `<forename>` contained in the
-                     `<persName>` element:
+Forenames are encoded with the element `<forename>{:xml}` contained in the
+                     `<persName>{:xml}` element:
 ```xml
 <persName>
   <forename>Egill</forename>
@@ -135,8 +139,8 @@ Forenames are encoded with the element `<forename>` contained in the
 
 
 We recommend that patronymica, i.e. a father’s name such as Haraldsson or
-                  Haraldsdóttir, should be encoded with the element `<addName>` and the
-                     `@type` attribute set to `"patronym"`:
+                  Haraldsdóttir, should be encoded with the element `<addName>{:xml}` and the
+                     `@type{:sh}` attribute set to `"patronym"{:js}`:
 ```xml
 <persName>
   <forename>Egill</forename>
@@ -150,7 +154,7 @@ Note that the patronym Skalla-Grímsson is often spelt without a hyphen,
 
 It could probably be questioned whether Egill Skalla-Grímsson should be considered
                   a historical or a fictional person when he appears in _Egils saga
-                     Skalla-Grímssonar_. The `@type` attribute might be used to
+                     Skalla-Grímssonar_. The `@type{:sh}` attribute might be used to
                   specify this:
 ```xml
 <persName type="historical">
@@ -161,7 +165,7 @@ It could probably be questioned whether Egill Skalla-Grímsson should be conside
 
 
 Mythological and legendary names could be seen as forming a group, once again
-                  using the `@type` attribute to establish the category. This example is
+                  using the `@type{:sh}` attribute to establish the category. This example is
                   found in the _Poetic Edda_:
 ```xml
 <persName type="mythological">
@@ -172,13 +176,13 @@ Mythological and legendary names could be seen as forming a group, once again
 
 
 As Loki has the second name from his mother Laufey, the value of the attribute is
-                     `"metronym"` (meaning that it is derived from the name of the person’s
+                     `"metronym"{:js}` (meaning that it is derived from the name of the person’s
                   mother).
 ### 12.2.2 Surnames
 
 In the Scandinavian and Old Icelandic material, surnames were introduced in the
                   14th and 15th centuries, in most cases for people belonging to the elite. These
-                  names could be encoded with the `<surname>` element:
+                  names could be encoded with the `<surname>{:xml}` element:
 ```xml
 <persName>
   <forename>Bengt</forename>
@@ -191,10 +195,10 @@ In the Scandinavian and Old Icelandic material, surnames were introduced in the
 
 Medieval texts contain an abundancy of nicknames, epithets and titles. With the
                   additional tagset these could be treated in the same manner as forenames and
-                  surnames, with the elements `<addName>` and `<roleName>`. In
+                  surnames, with the elements `<addName>{:xml}` and `<roleName>{:xml}`. In
                      _Egils saga Skalla-Grímssonar_, a man named Þorgils gjallandi ‘the
                   screaming’ appears. His nickname might be encoded as a type of
-                  `<addName>`:
+                  `<addName>{:xml}`:
 ```xml
 <persName>
   <forename>Þorgils</forename>
@@ -204,7 +208,7 @@ Medieval texts contain an abundancy of nicknames, epithets and titles. With the
 
 
 Epithets indicating the providence of a person should also be encoded with the
-                     `<addName>` element, specified by the `@type` attribute. Thus,
+                     `<addName>{:xml}` element, specified by the `@type{:sh}` attribute. Thus,
                   Eyvindr austmaðr Bjarnarson in _Njáls saga_ has “austmaðr” as an
                   epithet and “Bjarnarson” as his patronym:
 ```xml
@@ -217,7 +221,7 @@ Epithets indicating the providence of a person should also be encoded with the
 
 
 Titles such as “konungr”, “jarl” and “hersir” could be encoded by
-                  using the `<roleName>` element in addition to the `<addName>`
+                  using the `<roleName>{:xml}` element in addition to the `<addName>{:xml}`
                   element:
 ```xml
 <persName>
@@ -228,13 +232,13 @@ Titles such as “konungr”, “jarl” and “hersir” could be encoded by
 ```
 
 
-The `@type` attribute indicates that the title is considered to refer to
+The `@type{:sh}` attribute indicates that the title is considered to refer to
                   the political system of the Old Norwegian society.
 ### 12.2.4 Sorting names
 
 If an index is generated from the XML transcription, it might be useful to add
                   information on how to alphabetise names consisting of several elements. This is
-                  achieved with the `@sort`-attribute and numeric values.
+                  achieved with the `@sort{:sh}`-attribute and numeric values.
 ```xml
 <persName>
   <forename sort="2">Bengt</forename>
@@ -245,11 +249,11 @@ If an index is generated from the XML transcription, it might be useful to add
 
 ### 12.2.5 Identifying historical individuals
 
-The `@xml:id` attribute could be used to link the occurrence of a name to the
+The `@xml:id{:sh}` attribute could be used to link the occurrence of a name to the
                   individual it denotes, either internally or externally. 12.2.5.1 Internal referencing
 
 Biographical data can be stored in the header of the XML file. The unique
-                     `@xml:id` defined for each biographical entry could then be used to link
+                     `@xml:id{:sh}` defined for each biographical entry could then be used to link
                      occurrences of a name to it.
 ```xml
 <profileDesc>
@@ -307,8 +311,8 @@ See [ch. 15.4.5](HB3_ch15.xml#sec15.4.5) for suggested external
 
 The encoding of place names should be rather straight-forward, but there are a few
                things that need to be mentioned and exemplified. The starting point is the
-               above-mentioned encoding of all place names with the element `<name>` and an
-               attribute `@type` with the value `"place"`:
+               above-mentioned encoding of all place names with the element `<name>{:xml}` and an
+               attribute `@type{:sh}` with the value `"place"{:js}`:
 ```xml
 <name type="place">Borg</name>
 ```
@@ -317,18 +321,20 @@ The encoding of place names should be rather straight-forward, but there are a f
 A more detailed encoding is achieved by the additional tagset. We recommend that this
                tagset is used in cases when place names are to be more thoroughly encoded:
 
+<div className="table-xml-elements">
 | Elements | Explanation |
 |-----|-----|
-| `<placeName>` | A name of a specific location. |
-| `<settlement>` | The name of the smallest component of a place name expressed as a hierarchy of geo-political or administrative units. |
-| `<region>` | Larger or administratively superior to the settlement and smaller or administratively less important than the country. |
-| `<country>` | Larger or administratively superior to the region. |
+| `<placeName>{:xml}` | A name of a specific location. |
+| `<settlement>{:xml}` | The name of the smallest component of a place name expressed as a hierarchy of geo-political or administrative units. |
+| `<region>{:xml}` | Larger or administratively superior to the settlement and smaller or administratively less important than the country. |
+| `<country>{:xml}` | Larger or administratively superior to the region. |
+</div>
 
 
 All of the above mentioned elements can be linked to the place they denote by means
-               of a `@ref`-attribute with identifiers, i.e. xml:ids or external URIs.
+               of a `@ref{:sh}`-attribute with identifiers, i.e. xml:ids or external URIs.
 
-The additional element `<settlement>` adds information about administrative
+The additional element `<settlement>{:xml}` adds information about administrative
                units, i.e. farms, villages or cities. In this example, we have chosen Skara, one of
                the oldest cities of modern-day Sweden:
 ```xml
@@ -359,27 +365,27 @@ The region of Västergötland forms a part of the country referred to as Svíþj
 ### 12.3.1 Identifying places
 
 Similar to personal names, attestations of place names can be linked to authority
-                  records describing the place itself with a `@ref` attribute. See [ch. 15.4.6](HB3_ch15.xml#sec15.4.6) below and the TEI P5 Guidelines, 
+                  records describing the place itself with a `@ref{:sh}` attribute. See [ch. 15.4.6](HB3_ch15.xml#sec15.4.6) below and the TEI P5 Guidelines, 
                   [ch. 13.3.4](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDGEOG).
 ## 12.4 Other names
 
 There are other groups of names that might be singled out in the encoding. In the
                following, we present suggestions as to how animal names and names of artefacts could
-               be treated. The `@type` attribute is used liberally to enhance
+               be treated. The `@type{:sh}` attribute is used liberally to enhance
                searchability.
 ### 12.4.1 Animal names
 
 Medieval texts contain names for horses, dogs and other domestic animals. These
-                  could be encoded with the `<name>` element and the `@type`
+                  could be encoded with the `<name>{:xml}` element and the `@type{:sh}`
                   attribute. On a basic level we would suggest that all animal names are marked with
-                  the attribute value `"animal"`:
+                  the attribute value `"animal"{:js}`:
 ```xml
 <name type="animal">Freyfaxi</name>
 ```
 
 
 It should also be possible to give more specific information in the
-                     `@type` attribute. The name “Freyfaxi” might be specified as
+                     `@type{:sh}` attribute. The name “Freyfaxi” might be specified as
                   the name of a horse:
 ```xml
 <name type="horse">Freyfaxi</name>
@@ -388,17 +394,17 @@ It should also be possible to give more specific information in the
 
 There are also names of animals in relation to myths and legends. For example,
                   Sigurðr Fáfnisbani had a horse named Grani. If we wish to encode a mythological or
-                  legendary name this could be done by specifying the value `"horse"` of the
-                     `@type` attribute, and `"legendary"` in a `@subtype`
+                  legendary name this could be done by specifying the value `"horse"{:js}` of the
+                     `@type{:sh}` attribute, and `"legendary"{:js}` in a `@subtype{:sh}`
                   attribute:
 ```xml
 <name type="horse" subtype="legendary">Grani</name>
 ```
 
 
-There is no element `<animalName>` on par with `<persName>` and
-                     `<placeName>`. For all but the most detailed encodings, we suggest that
-                  the type value `"animal"` is sufficient.
+There is no element `<animalName>{:xml}` on par with `<persName>{:xml}` and
+                     `<placeName>{:xml}`. For all but the most detailed encodings, we suggest that
+                  the type value `"animal"{:js}` is sufficient.
 ### 12.4.2 Artefact names
 
 There are a number of names for artefacts in the medieval material, e.g. for
@@ -422,15 +428,15 @@ And it could further be encoded as a mythological name:
 ```
 
 
-In most cases, we believe that the attribute value `"artefact"` is
+In most cases, we believe that the attribute value `"artefact"{:js}` is
                   sufficient. However, if a text contains many object names it might be convenient to
-                  use the element `<objectName>` for a more clear-cut distinction between names
+                  use the element `<objectName>{:xml}` for a more clear-cut distinction between names
                   of artefacts and other types of names. 
 
 Similar to personal names and place names, objects’ names can be linked to the objects they denote by means of a
-                     `@ref` attribute with identifiers pointing to an internal registry or
+                     `@ref{:sh}` attribute with identifiers pointing to an internal registry or
                   an external resource, i.e. xml:ids or external URIs.
 ## Updates to ch. 12
 
-On 12 October 2022, an example of the relationship between the `<name>` and `<w>` elements was given in [ch. 12.1](#sec12.1), using the encoding of the name Egils (genitive of  Egill) to illustrate the structure of the encoding.
+On 12 October 2022, an example of the relationship between the `<name>{:xml}` and `<w>{:xml}` elements was given in [ch. 12.1](#sec12.1), using the encoding of the name Egils (genitive of  Egill) to illustrate the structure of the encoding.
             

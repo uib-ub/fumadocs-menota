@@ -27,13 +27,13 @@ The electronic transcription of a manuscript text aims to accurately reproduce t
 For the purposes of transcribing medieval Norse texts, three different levels of
                transcription may be defined:
 
-- **A facsimile level** (`<me:facs>`): A letter-by-letter
+- **A facsimile level** (`<me:facs>{:xml}`): A letter-by-letter
                   transcription with a selection of palaeographic characteristics and the retention
                   of abbreviations as in the manuscript.
-- **A diplomatic level** (`<me:dipl>`): A
+- **A diplomatic level** (`<me:dipl>{:xml}`): A
                   letter-by-letter transcription with a small selection of palaeographic features
                   and the expansion and identification of abbreviations.
-- **A normalised level** (`<me:norm>`): A transcription
+- **A normalised level** (`<me:norm>{:xml}`): A transcription
                   in normalised orthography.
 
 The choice of level of transcription ultimately depends on the aims of the edition
@@ -112,6 +112,7 @@ In most facsimile transcriptions it would seem appropriate to reproduce the
                reproduction of the Insular “ꝼ” and the flat-topped “ꞇ” has practical application
                in the transcription, as they can accommodate a superscript abbreviation symbol.
 
+<div className="table-abbr">
 | Manuscript | Facsimile transcription |
 |-----|-----|
 | <Glyph>d ꝺ ð</Glyph> | <Glyph>d ꝺ ð</Glyph> |
@@ -125,6 +126,7 @@ In most facsimile transcriptions it would seem appropriate to reproduce the
 | <Glyph>⁊ </Glyph> | <Glyph>⁊ </Glyph> |
 | <Glyph>◌͛ &ensp; ◌</Glyph> | <Glyph>◌͛ &ensp; ◌</Glyph> |
 | <Glyph>◌ᷓ &ensp; ◌</Glyph> | <Glyph>◌ᷓ &ensp; ◌</Glyph> |
+</div>
 
 
 Depending on the aims of the transcription, the editor may choose to go a step
@@ -142,6 +144,7 @@ It is, of course, an editorial decision which of these contrasts to include. It
                be carefully weighed against the aims of the project and the practicalities of
                carrying out the transcription.
 
+<div className="table-abbr">
 | Manuscript | Facsimile transcription |
 |-----|-----|
 | <Glyph>  </Glyph> | <Glyph>a</Glyph> |
@@ -153,6 +156,7 @@ It is, of course, an editorial decision which of these contrasts to include. It
 | <Glyph>n </Glyph> | <Glyph>n</Glyph> |
 | <Glyph>r ꞅ</Glyph> | <Glyph>r</Glyph> |
 | <Glyph>z ƶ</Glyph> | <Glyph>z</Glyph> |
+</div>
 
 
 In addition, there is a multitude of finer details that cannot be produced accurately
@@ -160,7 +164,7 @@ In addition, there is a multitude of finer details that cannot be produced accur
                and dating of the script. These include, for instance, curves and loops on ascenders
                and descenders, fusions and bitings. A transcription with particular emphasis on
                palaeographic detail could be encoded separately on a palaeographic level:
-                  `<me:pal>`.
+                  `<me:pal>{:xml}`.
 
 A short extract from an Old Icelandic manuscript, AM 233 a fol (mid 14th century) may
                serve as an example of a facsimile transcription:
@@ -215,7 +219,7 @@ The principal characteristics of a typical diplomatic transcription as compared 
                facsimile transcription are as follows:
 
 - Abbreviations are expanded, and the expansions are identified (within
-                      `<ex>` elements); for example
+                      `<ex>{:xml}` elements); for example
 - ꝼᷓ → f<em>ra</em>
 - v͛a → v<em>er</em>a
 - ħ → h<em>ann</em>
@@ -263,6 +267,7 @@ The distinction between “d”/“ꝺ” and “ð” reflects a phonological d
                between the geminate <em>ss</em> and the short <em>s</em>, respectively. Even if this is not always the case, many editors would retain
                it as a precautionary measure.
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>d ꝺ ð</Glyph> | <Glyph>d ð</Glyph> |
@@ -273,6 +278,7 @@ The distinction between “d”/“ꝺ” and “ð” reflects a phonological d
 | <Glyph>s ſ</Glyph> | <Glyph>s ſ</Glyph> |
 | <Glyph>t ꞇ</Glyph> | <Glyph>t</Glyph> |
 | <Glyph>v ꝩ</Glyph> | <Glyph>v</Glyph> |
+</div>
 
 
 Diacritics – accent marks, dots and hooks – frequently have phonological value, but
@@ -293,6 +299,7 @@ Diacritics – accent marks, dots and hooks – frequently have phonological val
                the dot appears to have been to distinguish “y” from the Insular “ꝩ” (the two are
                otherwise practically identical in many hands).
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>á</Glyph> | <Glyph>á</Glyph> |
@@ -305,6 +312,7 @@ Diacritics – accent marks, dots and hooks – frequently have phonological val
 | <Glyph>ę</Glyph> | <Glyph>ę</Glyph> |
 | <Glyph>ı</Glyph> | <Glyph>i</Glyph> |
 | <Glyph>ẏ</Glyph> | <Glyph>y</Glyph> |
+</div>
 
 
 Note that diacritics – both superscript dots and superscript strokes (bars) – can serve
@@ -315,6 +323,7 @@ Note that diacritics – both superscript dots and superscript strokes (bars) �
                expanded resulting in “g<em>g</em>” and “n<em>n</em>”,
                respectively, as shown in the table below with some more examples.
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>ġ</Glyph> | <Glyph>g<em>g</em></Glyph> |
@@ -322,6 +331,7 @@ Note that diacritics – both superscript dots and superscript strokes (bars) �
 | <Glyph>k̇</Glyph> | <Glyph>k<em>k</em></Glyph> |
 | <Glyph>n̄</Glyph> | <Glyph>n<em>n</em></Glyph> |
 | <Glyph>m̄</Glyph> | <Glyph>m<em>m</em></Glyph> |
+</div>
 
 
 Diacritics are thus treated in two different ways, as illustrated by the contrast
@@ -338,6 +348,7 @@ Ligatures and fusions are also treated differently depending on whether they con
                rather than trying to determine if there actually is a contrast or not, these are
                best retained across the board, as shown with some examples in the table below.
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>ꜳ</Glyph> | <Glyph>ꜳ</Glyph> |
@@ -348,17 +359,19 @@ Ligatures and fusions are also treated differently depending on whether they con
 | <Glyph></Glyph> | <Glyph></Glyph> |
 | <Glyph>ꜹ</Glyph> | <Glyph>ꜹ</Glyph> |
 | <Glyph></Glyph> | <Glyph></Glyph> |
+</div>
 
 
 By contrast, consonant ligatures or fusions, are only optionally reproduced in a
                facsimile transcription and replaced by their individual components in the diplomatic
                transcription, as shown in the table below. In [ch. 6.5.6](HB3_ch6.xml#sec6.5.6),
-               we recommend encoding consonant ligatures by the `<seg>` element with the 
-               `@type="lig"` attribute,
-               e.g. &lt;seg type="lig"&gt;bb&lt;/seg&gt;. The `<seg>` element offers a convenient way of 
+               we recommend encoding consonant ligatures by the `<seg>{:xml}` element with the 
+               `@type="lig"{:sh}` attribute,
+               e.g. &lt;seg type="lig"&gt;bb&lt;/seg&gt;. The `<seg>{:xml}` element offers a convenient way of 
                grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](HB3_ch5.xml#sec5.3.1) and 
                [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) below.
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph></Glyph> | <Glyph>af</Glyph> |
@@ -369,6 +382,7 @@ By contrast, consonant ligatures or fusions, are only optionally reproduced in a
 | <Glyph></Glyph> | <Glyph>gg</Glyph> |
 | <Glyph></Glyph> | <Glyph>oc</Glyph> |
 | <Glyph>ﬅ</Glyph> | <Glyph>ſt</Glyph> |
+</div>
 
 
 Small capitals are frequently used in Icelandic manuscripts to denote geminate
@@ -383,6 +397,7 @@ Small capitals are frequently used in Icelandic manuscripts to denote geminate
                capitals with a superscript dot should be transcribed as such both in a facsimile and
                a diplomatic transcription.
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>ɢ</Glyph> | <Glyph>ɢ</Glyph> |
@@ -390,6 +405,7 @@ Small capitals are frequently used in Icelandic manuscripts to denote geminate
 | <Glyph>ʀ</Glyph> | <Glyph>ʀ</Glyph> |
 | <Glyph>ɢ̇</Glyph> | <Glyph>ɢ̇</Glyph> |
 | <Glyph>ʀ̇</Glyph> | <Glyph>ʀ̇</Glyph> |
+</div>
 
 
 As mentioned above, this is not a fixed standard, but rather guidelines that can be
@@ -399,10 +415,12 @@ As mentioned above, this is not a fixed standard, but rather guidelines that can
 For East Nordic, there is an exception and an addition which should
                   be addressed:
 
+<div className="table-abbr">
 | Facsimile level | Diplomatic level |
 |-----|-----|
 | <Glyph>r ꝛ ʀ</Glyph> | <Glyph>r</Glyph> |
 | <Glyph>ʉ</Glyph> | <Glyph>ʉ</Glyph> |
+</div>
 
 
 To the best of our knowledge, there is no phonological distinction between the three
@@ -420,7 +438,7 @@ To the best of our knowledge, there is no phonological distinction between the t
 As an example of a typical diplomatic transcription, let us return to the short
                passage from the Old Icelandic manuscript, AM 233 a fol (in ill. 4.1 above):
 
-In this transcription, expansions are set out by the element `<ex>` and in the
+In this transcription, expansions are set out by the element `<ex>{:xml}` and in the
                display usually by italics. The text would then be transcribed as
 ```xml
 d<ex>ro</ex>ttin<ex>n</ex> vá&rscapdot; baud michaele hof<ex>ud</ex> engli.
@@ -439,7 +457,7 @@ and displayed as
 In what is often called semi-diplomatic editions, such as the majority in the series
                   _Editiones Arnamagnæanæ_ (København 1958–), abbreviations are
                expanded silently, i.e., without the use of italics. In electronic editions, this decision can be left to the
-               stylesheet. As long as the information is kept in the `<ex>` element a
+               stylesheet. As long as the information is kept in the `<ex>{:xml}` element a
                display with italics can easily be restored.
 ## 4.4 The normalised level
 
@@ -492,14 +510,14 @@ While this handbook contains a number of examples of texts that have been transc
 
 | Elements | Contents |
 |-----|-----|
-| `<w>` | Contains a word. |
-| `<pc>` | Contains a punctuation mark. |
-| `<me:facs>` | Contains a reading on the facsimile level. |
-| `<me:dipl>` | Contains a reading on the diplomatic level. |
-| `<me:norm>` | Contains a reading on the normalised level. |
+| `<w>{:xml}` | Contains a word. |
+| `<pc>{:xml}` | Contains a punctuation mark. |
+| `<me:facs>{:xml}` | Contains a reading on the facsimile level. |
+| `<me:dipl>{:xml}` | Contains a reading on the diplomatic level. |
+| `<me:norm>{:xml}` | Contains a reading on the normalised level. |
 
 
-The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>` element and each punctuation mark in a `<pc>` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>`, `<me:dipl>` or `<me:norm>`.
+The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>{:xml}` element and each punctuation mark in a `<pc>{:xml}` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>{:xml}` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` or `<me:norm>{:xml}`.
 
 **Note**: The “me” prefix can only be used with a RELAX NG
                schema. It must be left out in texts which will be validated against a DTD.
@@ -540,7 +558,7 @@ The following example from the _Old Norwegian Homily Book_ in ill. 4.2 above ren
 ```
 
 
-Single-level transcriptions may also be on the facsimile level, as illustrated in the transcription below. In this case, it is not fundamentally different from the diplomatic level, since many Old Norwegian manuscripts have rather few abbreviations. We note, however, that the round “s” has been rendered with the long “s” of the source, and that the abbreviation marks are rendered in  `<am>` elements, while they were expanded in `<ex>` elements in the diplomatic transcription.
+Single-level transcriptions may also be on the facsimile level, as illustrated in the transcription below. In this case, it is not fundamentally different from the diplomatic level, since many Old Norwegian manuscripts have rather few abbreviations. We note, however, that the round “s” has been rendered with the long “s” of the source, and that the abbreviation marks are rendered in  `<am>{:xml}` elements, while they were expanded in `<ex>{:xml}` elements in the diplomatic transcription.
 ```xml
 <pb ed="ms" n="2v"/>
 . . . 
@@ -603,11 +621,11 @@ As discussed in [ch. 10.3](HB3_ch10.xml#sec10.3) below and exemplified in [ch. 1
 
 Multi-level transcriptions allow the transcriber to render various aspects of the text in one or more specific levels. While the facsimile level can be seen as an “as is” level, rendering the text in the source with as little interpretation as possible, the two next levels, the diplomatic and normalised levels, allow for specifications of the transcriber’s perspective and interpretation of the text.
 
-The levels of a multi-level transcription should be grouped in a `<choice>` element, and this element comes in addition to those discussed above for single-level transcriptions.
+The levels of a multi-level transcription should be grouped in a `<choice>{:xml}` element, and this element comes in addition to those discussed above for single-level transcriptions.
 
 | Element | Contents |
 |-----|-----|
-| `<choice>` | Groups alternative readings, such as `<me:facs>`, `<me:dipl>` and `<me:norm>`. |
+| `<choice>{:xml}` | Groups alternative readings, such as `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}`. |
 
 
 In the following, we shall discuss some of the options for a multi-level transcription. As will be seen, having several levels at disposal allow for a more detailed and distributed encoding, so that some elements may be used on one level and other elements on complimentary levels.
@@ -656,6 +674,7 @@ In the three tables below, transcriptions and renderings are illustrated with
                   images from the Icelandic law manuscript [GKS 3270 4to](https://handrit.is/en/manuscript/view/is/GKS04-3270) (ca. 1340–1360).
                
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -683,6 +702,8 @@ In the three tables below, transcriptions and renderings are illustrated with
 </tbody>
 </table>
 
+</div>
+
 
 The facsimile transcription is the most detailed one and often requires the
                   transcription of palaeographic detail that is not retained at neither the
@@ -697,6 +718,7 @@ The facsimile transcription is the most detailed one and often requires the
                   flat-topped “ꞇ” only belongs to the facsimile transcription, but is replaced by
                   standard “t” at the other levels.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -724,9 +746,12 @@ The facsimile transcription is the most detailed one and often requires the
 </tbody>
 </table>
 
+</div>
+
 
 Occasionally, all three levels are identical:
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -754,15 +779,17 @@ Occasionally, all three levels are identical:
 </tbody>
 </table>
 
+</div>
+
 
 If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
 ### 4.6.3 Structural properties
 
-Page beginnings (`<pb/>`), column beginnings (`<cb/>`), and line beginnings
-                     (`<lb/>`) sometimes occur in the middle of a word. As these structural
+Page beginnings (`<pb/>{:xml}`), column beginnings (`<cb/>{:xml}`), and line beginnings
+                     (`<lb/>{:xml}`) sometimes occur in the middle of a word. As these structural
                   properties can be relevant at all three levels of transcription, it is recommended
                   that they be indicated at all levels (repeated in all three transcriptions of the
-                  word). A break that occurs between words, falls outside the `<w>` element,
+                  word). A break that occurs between words, falls outside the `<w>{:xml}` element,
                   and needs not to be repeated. See [ch. 3](HB3_ch3.xml) for an
                   inventory of structural encoding.
 ### 4.6.4 Punctuation
@@ -771,16 +798,16 @@ In the facsimile transcription, the punctuation of the manuscript is accurately
                   reproduced. The normalised transcription (or the diplomatic transcription, if
                   there is no normalised transcription) may need different punctuation or the
                   insertion of punctuation marks missing at the facsimile level. In such cases, the
-                  punctuation in the `<pc>` element will only be inserted in the
-                     `<me:norm>` level. See [ch. 5.4](HB3_ch5.xml#sec5.4)
+                  punctuation in the `<pc>{:xml}` element will only be inserted in the
+                     `<me:norm>{:xml}` level. See [ch. 5.4](HB3_ch5.xml#sec5.4)
                   for more details on the encoding of punctuation. 
 ### 4.6.5 A sample encoding of a three-level transcription
 
 In a three-level transcription, the elements are the same as in a single-level transcription. 
                   The main difference is that the levels are encoded so that up to three text strings 
-                  co-exist within the boundaries of the `<w>` elements. In order to make this 
-                  sctructure fully transparent, we recommend using the `<choice>` element for the 
-                  grouping of the `<me:facs>`, `<me:dipl>` and `<me:norm>` elements.
+                  co-exist within the boundaries of the `<w>{:xml}` elements. In order to make this 
+                  sctructure fully transparent, we recommend using the `<choice>{:xml}` element for the 
+                  grouping of the `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}` elements.
 
 As an example of the encoding of a three-level transcription, we can once more
                   turn to the passage from AM 233 a fol in ill. 4.1 above. Here, we are using 
@@ -977,6 +1004,7 @@ This is an approximate rendering of the display in the Menota archive of the tex
 </table>
 
 
+
 <table>
 <thead>
 <tr>
@@ -989,6 +1017,7 @@ This is an approximate rendering of the display in the Menota archive of the tex
 </tr>
 </tbody>
 </table>
+
 
 
 <table>
@@ -1004,6 +1033,7 @@ This is an approximate rendering of the display in the Menota archive of the tex
 </tbody>
 </table>
 
+
 </DisplayFrame>
 
 
@@ -1011,14 +1041,14 @@ For reasons of line alignment in the Menota archive, the stylesheet will present
                      the text on all levels with line beginnings and line numbers. In other stylesheets, line beginnings 
                      will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3) below.4.6.5.2 Focal levels
 
-As stated above, the elements `<me:facs>`, `<me:dipl>` and
-                     `<me:norm>` are not defined in TEI, but are part of the namespace we
+As stated above, the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` and
+                     `<me:norm>{:xml}` are not defined in TEI, but are part of the namespace we
                      have defined for Menota texts. Please see the schemas in [app. D](HB3_D_schemas.xml).
 
 The three levels discussed here can be seen as **focal** in the
                      sense that they are typical and frequently used levels of text representations in
                      Medieval Nordic editions (as defined in [Haugen
-                        2004](HB3_literature.xml#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>`
+                        2004](HB3_literature.xml#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>{:xml}`
                      level for an even more detailed palaeographical encoding of the text. This level
                      has been included in the Menota schemas, but is not seen as one of the focal
                      levels.

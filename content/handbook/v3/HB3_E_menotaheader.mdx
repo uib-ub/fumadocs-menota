@@ -14,7 +14,7 @@ by Odd Einar Haugen and Beeke Stegmann
 
 We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount
 					of information about the text, its background and its encoding. This should be entered in
-					the `<teiHeader>`, which is an integral and essential part of any XML/TEI document.
+					the `<teiHeader>{:xml}`, which is an integral and essential part of any XML/TEI document.
 				While not required, a longer header with more detailed information on the manuscript source is highly welcomed.
 
 Below are three examples of headers for Medieval Nordic texts. The first two examples are so-called minimal headers
@@ -213,8 +213,8 @@ We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative pro
 ```
 
 
-The `<body>` follows immediately after the header. This is where the actual transcription
-						is located. Note that the `<div>` element is used to organise the various
+The `<body>{:xml}` follows immediately after the header. This is where the actual transcription
+						is located. Note that the `<div>{:xml}` element is used to organise the various
 						sections of the manuscript, in this case the individual chapters.
 ```xml
 <text xml:lang="onw">
@@ -232,18 +232,18 @@ The `<body>` follows immediately after the header. This is where the actual tran
 ```
 
 
-The source text is placed within the `<text>` element. The attribute `@xml:lang`
-						specifies the language of the text (cf. `<profileDesc>` above). If the text
+The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
+						specifies the language of the text (cf. `<profileDesc>{:xml}` above). If the text
 						contains sporadic words or sentences in another language, e.g. Latin, the attribute
-						`@xml:lang` can be used to specify these exception from the rule, whether on the level of
-						the word, `<w>`, paragraph, `<p>` or chapter, `<div>`.
+						`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
+						the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
 
 This header is also an example of how change of scribal hands in the source can be recorded. Note
 						that rather than putting each hand in an element of its own (which would cause problems
 						of overlapping) the actual change is recorded using a milestone element,
-					  `<handShift/>`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
+					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
 					  Note that the number of hands must be recorded in the
-							`<profileDesc>` element of the header.
+							`<profileDesc>{:xml}` element of the header.
 ## E.3 Minimal header for a source with multiple texts
 
 AM 242 fol – often referred to as _Codex Wormianus_ or
@@ -255,8 +255,8 @@ AM 242 fol – often referred to as _Codex Wormianus_ or
 						_Skaldskaparmál_ and _Háttatal_.
 
 The header of a multi-text source should specify the various parts of the source within
-			    the `<msContents>` element. Here, each part is described as an item,
-			    `<msItem>`, and  in the text, `<div>` elements identify the corresponding parts of the
+			    the `<msContents>{:xml}` element. Here, each part is described as an item,
+			    `<msItem>{:xml}`, and  in the text, `<div>{:xml}` elements identify the corresponding parts of the
 			    source.
 
 Sometimes, there are complications with respect to the sequence of the manuscript items. In the present manuscript, _Háttatal_ is not placed in
@@ -265,8 +265,8 @@ Sometimes, there are complications with respect to the sequence of the manuscrip
 					divided into two parts with a few other texts intervening. 
 
 The body follows immediately after the header. This is where the actual transcription
-						is located. Note that `<div>` elements are used to organise the various parts of
-						the manuscript, referring to the divisons set out in the `<msContents>` element
+						is located. Note that `<div>{:xml}` elements are used to organise the various parts of
+						the manuscript, referring to the divisons set out in the `<msContents>{:xml}` element
 						of the header.
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
@@ -551,19 +551,19 @@ The body follows immediately after the header. This is where the actual transcri
 ```
 
 
-The source text is placed within the `<text>` element. The attribute `@xml:lang`
-							specifies the language of the text (cp. `<msContents>` above). If the text
+The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
+							specifies the language of the text (cp. `<msContents>{:xml}` above). If the text
 							contains sporadic words or sentences in another language, e.g. Latin, the attribute
-							`@xml:lang` can be used to specify these exception from the rule, whether on the level of
-							the word, `<w>`, paragraph, `<p>` or chapter, `<div>`.
+							`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
+							the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
 
-The divisions of the text correspond to the list of `<msItem>` elements in
-								`<msContents>` above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
+The divisions of the text correspond to the list of `<msItem>{:xml}` elements in
+								`<msContents>{:xml}` above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
 
-The `<head>` element specifies the title of the work (or a part of it). If the title is given as a 
-					    rubric in the manuscript, a `@type` attribute can be used with the value `"rubric"` (as exemplified 
+The `<head>{:xml}` element specifies the title of the work (or a part of it). If the title is given as a 
+					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
 					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
-					    add a title in the `<supplied>` element (as has been done above). 
+					    add a title in the `<supplied>{:xml}` element (as has been done above). 
 ## E.4 Detailed header with more codicological information
 
 As the third example we have
@@ -777,8 +777,8 @@ This header demonstrates how to provide more codicological information
 
 
 The body follows immediately after the header. This is where the actual transcription
-		          is located. Note that `<div>` elements are used to organise the various parts of
-		          the manuscript, referring to the divisions set out in the `<msContents>` element
+		          is located. Note that `<div>{:xml}` elements are used to organise the various parts of
+		          the manuscript, referring to the divisions set out in the `<msContents>{:xml}` element
 		          of the header. 
 ```xml
 <text xml:lang="onw">

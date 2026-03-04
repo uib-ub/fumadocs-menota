@@ -23,31 +23,33 @@ Abbreviations are a common feature of medieval orthography. In the medieval Nord
 The encoding of abbreviations is discussed in the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), particularly 
                [ch. 11.3.1.2.](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAB).
                 TEI P5 offers on one level the
-                  `<abbr>` element for the encoding of any abbreviations and the `<expan>` element
-               for the expansion of these abbreviations, and on the next level, the `<am>` element for 
-               the actual abbreviation markers (such as the superscript bar for a nasal) and the `<ex>` element 
+                  `<abbr>{:xml}` element for the encoding of any abbreviations and the `<expan>{:xml}` element
+               for the expansion of these abbreviations, and on the next level, the `<am>{:xml}` element for 
+               the actual abbreviation markers (such as the superscript bar for a nasal) and the `<ex>{:xml}` element 
                for the expansion of these markers (in this case “n” or “m”).
-               While the `<abbr>` and `<expan>` elements are fully compatible with the schemas used
-               in this handbook, we suggest that it is sufficient to only use the elements `<am>` and `<ex>` 
+               While the `<abbr>{:xml}` and `<expan>{:xml}` elements are fully compatible with the schemas used
+               in this handbook, we suggest that it is sufficient to only use the elements `<am>{:xml}` and `<ex>{:xml}` 
                for the encoding and expansion of abbreviations.
 
-The `<am>` element may have a `@me:type` attribute specifying what kind
-               of abbreviation it is. The same applies to the `<ex>` element. We have not given
+The `<am>{:xml}` element may have a `@me:type{:sh}` attribute specifying what kind
+               of abbreviation it is. The same applies to the `<ex>{:xml}` element. We have not given
                examples of these attributes in the present chapter, but users may refer to the
                typology in [ch. 6.2](#sec6.2) below if they would like to make a
                more detailed encoding.
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<am>` |  | Contains the abbreviation sign used in the manuscript. |
-| `@me:type` | Optional | Specifies the type of abbreviation. |
-| `<ex>` |  | Contains the expansion inserted by the editor, replacing the abbreviation marker. |
-| `@me:type` | Optional | Specifies the type of expansion. |
+| `<am>{:xml}` |  | Contains the abbreviation sign used in the manuscript. |
+| <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of abbreviation. |
+| `<ex>{:xml}` |  | Contains the expansion inserted by the editor, replacing the abbreviation marker. |
+| <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of expansion. |
+</div>
 
 
-In a multi-level transcription, the `<am>` element typically belongs to the
-               facsimile level (`<me:facs>`), while the `<ex>` element belongs to the
-               diplomatic level (`<me:dipl>`). The normalised level (`<me:norm>`)
+In a multi-level transcription, the `<am>{:xml}` element typically belongs to the
+               facsimile level (`<me:facs>{:xml}`), while the `<ex>{:xml}` element belongs to the
+               diplomatic level (`<me:dipl>{:xml}`). The normalised level (`<me:norm>{:xml}`)
                usually has none, e.g.
 ```xml
 <w>
@@ -108,7 +110,7 @@ All abbreviations are referred to with entity names, with the exception of full
                      “&” and “;”, and we have tried to give as short and mnemonic
                   names as possible. As a rule, we have based the entity name on the typical
                   expansion of the abbreviation. Thus, the cross mark which is an abbreviation for
-                  <em>kross</em> is given the entity name `&cross;`.
+                  <em>kross</em> is given the entity name `&cross;{:xml}`.
 
 We aim at synchronizing our use of entities with those recommended by ISO, but
                   since there presently are no abbreviation entities in ISO, we are left to our own
@@ -130,12 +132,12 @@ For a complete list of suggested Unicode values, see [app. A](HB3_A_characters.x
 As is the case with ordinary characters (cf. [ch.
                   5](HB3_ch5.xml)) we adhere to the naming scheme in Unicode. Since [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) only defines one abbreviation mark in the Latin
-                  alphabet, the TIRONIAN SIGN ET in the range [General
+                  alphabet, the `TIRONIAN SIGN ET` in the range [General
                      Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf), and only one in each of the Armenian, Syriac, Devanagari,
                   Thai and Khmer alphabets, we do not have completley clear examples of descriptive
-                  names. We suggest ABBREVIATION SIGN [+ APPROPRIATE DESCRIPTION] as a general 
+                  names. We suggest `ABBREVIATION SIGN [+ APPROPRIATE DESCRIPTION]` as a general 
                   name for abbreviations occupying a separate position on the base line, and
-                  COMBINING ABBREVIATION MARK  [+ APPROPRIATE DESCRIPTION] for those 
+                  `COMBINING ABBREVIATION MARK  [+ APPROPRIATE DESCRIPTION]` for those 
                   typically placed above, through or below a base line character.
 ## 6.3 Abbreviation marks on the base line
 
@@ -146,53 +148,59 @@ Abbreviation marks on the base line behave as any other character. The typology 
 The Tironian <em>nota</em> resembling the number “7” (or the
                   character “z” with or without a crossbar) used for the conjunction <em>et</em> ‘and’ in Latin is frequently used to denote the
                   corresponding conjunction <em>ok</em> ‘and’ in Old Norse. We
-                  recommend using the entity name `&et;`, reflecting the Latin origin of
+                  recommend using the entity name `&et;{:xml}`, reflecting the Latin origin of
                   the abbreviation. In [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) this character is located at
                   `204A` in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
 
 There are two major variants of this sign. If the transcriber wishes to make a
-                  distinction between these, we suggest using `&et;` for the sign without a
-                  crossbar and `>&etslash;` for the sign with a crossbar. The code point for
+                  distinction between these, we suggest using `&et;{:xml}` for the sign without a
+                  crossbar and `>&etslash;{:xml}` for the sign with a crossbar. The code point for
                   the latter is `F158`.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>⁊</Glyph> | <em>ok</em> | &lt;am&gt;&et;&lt;/am&gt; | &lt;ex&gt;ok&lt;/ex&gt; | `204A` |
 | <Glyph></Glyph> | <em>ok</em> | &lt;am&gt;&etslash;&lt;/am&gt; | &lt;ex&gt;ok&lt;/ex&gt; | `F158` |
+</div>
 
 ### 6.3.2 The “ed” mark
 
 In Latin, the semicolon was used for <em>e</em> + dental consonant,
                   as in the conjunction <em>sed</em>. In Old Norse, it is very often
                   used in the preposition <em>með</em> ‘with’. We recommend
-                  `&sem;` as entity name.
+                  `&sem;{:xml}` as entity name.
 
 In [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) the semicolon is located at 003B in the range [Basic
                      Latin](http://www.unicode.org/charts/PDF/U0000.pdf). When the semicolon is used as a punctuation mark, it should be
                   transcribed as such, i.e., simply as “;”. When it is used as an abbreviation
-                  mark we recommend that it is transcribed with an entity, `&sem;`. Note
+                  mark we recommend that it is transcribed with an entity, `&sem;{:xml}`. Note
                   that there is another form of this abbreviation mark, looking like the number
                   “3”. This is included in the [MUFI character
                      recommendation](HB3_literature.xml#MUFIrec) v. 4.0 at codepoint `F155` and can be encoded with
-                  the entity `&etfin;`.
+                  the entity `&etfin;{:xml}`.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>m</Glyph> | m<em>eð</em> | m&lt;am&gt;&sem;&lt;/am&gt; | m&lt;ex&gt;eð&lt;/ex&gt; | `F1AC` |
+</div>
 
 ### 6.3.3 The “con” mark
 
 A sign resembling a backwards “c” was often used for <em>con</em> in Latin and <em>kon</em> in Norse words. This
-                  “con” mark is similar to 0254 LATIN SMALL LETTER 
-                     OPEN O in the range [IPA Extensions](https://www.unicode.org/charts/PDF/U0250.pdf) of [The
+                  “con” mark is similar to `0254 LATIN SMALL LETTER 
+                     OPEN O` in the range [IPA Extensions](https://www.unicode.org/charts/PDF/U0250.pdf) of [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) and may be identified with this character. Alternatively,
-                  it may be rendered by `2184`LATIN SMALL LETTER 
-                     REVERSED C in the range [Number Forms](https://www.unicode.org/charts/PDF/U2150.pdf).
+                  it may be rendered by `2184``LATIN SMALL LETTER 
+                     REVERSED C` in the range [Number Forms](https://www.unicode.org/charts/PDF/U2150.pdf).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ɔa</Glyph> | <em>kon</em>a | &lt;am&gt;&oopen;&lt;/am&gt;a | &lt;ex&gt;kon&lt;/ex&gt;a | `0254` |
+</div>
 
 
 See the [MUFI character 
@@ -202,30 +210,35 @@ See the [MUFI character
 
 The sequence “rum” was often abbreviated with a character resembling a small
                   version of the number 4 (in fact, it is the round “r” with a stroke across
-                  its tail). We recommend the entity name `&rum;` and a separate code point
+                  its tail). We recommend the entity name `&rum;{:xml}` and a separate code point
                   in the Private Use Area.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>foꝝ</Glyph> | fo<em>rum</em> | fo&lt;am&gt;&rum;&lt;/am&gt; | fo&lt;ex&gt;rum&lt;/ex&gt; | `F154` |
+</div>
 
 ### 6.3.5 The cross mark
 
 The word <em>kross</em> was sometimes abbreviated with the cross
-                  symbol, which we suggest calling `&cross;`. This <em>kross</em> mark can be identified with `271D`LATIN
-                     CROSS in the range [Dingbats](http://www.unicode.org/charts/PDF/U2700.pdf) of [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/).
+                  symbol, which we suggest calling `&cross;{:xml}`. This <em>kross</em> mark can be identified with `271D``LATIN
+                     CROSS` in the range [Dingbats](http://www.unicode.org/charts/PDF/U2700.pdf) of [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>✝</Glyph> | <em>kross</em> | &lt;am&gt;&cross;&lt;/am&gt; | &lt;ex&gt;kross&lt;/ex&gt; | `271D` |
+</div>
 
 ### 6.3.6 The “m” rune
 
-The runic character for “m” was sometimes used for the word <em>maðr</em> (including case forms with the stem <em>mann-</em>). We recommend the entity name `&mMedrun;`. The 
+The runic character for “m” was sometimes used for the word <em>maðr</em> (including case forms with the stem <em>mann-</em>). We recommend the entity name `&mMedrun;{:xml}`. The 
                   [Unicode 
                      Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) has defined a selection of 89 runes from the Older
                   and Younger Futhark in the [Runic](http://www.unicode.org/charts/PDF/U16A0.pdf) range. This range includes the “m” rune.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -247,6 +260,8 @@ The runic character for “m” was sometimes used for the word <em>maðr</em> (
 </tbody>
 </table>
 
+</div>
+
 
 The runic character may appear with interlinear marks (“a”, “i”,
                      “e”, “n”, “z”) for various inflected forms of the word <em>maðr</em>, e.g., <em>manna</em>, <em>manni</em>/<em>manne</em>, <em>mann</em>, <em>mannz</em>. The encoding of this type is
@@ -254,13 +269,15 @@ The runic character may appear with interlinear marks (“a”, “i”,
 ### 6.3.7 The “f” rune
 
 The runic character for “f” was sometimes used for the word <em>fé</em>. In analogy with the use of the “m” rune, we suggest the
-                  entity name `&fMedrun;`.
+                  entity name `&fMedrun;{:xml}`.
 
 The “f” rune is included in the [Runic](http://www.unicode.org/charts/PDF/U16A0.pdf) range of [The Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ᚠ</Glyph> | <em>fé</em> | &lt;am&gt;&fMedrun;&lt;/am&gt; | &lt;ex&gt;fé&lt;/ex&gt; | `16A0` |
+</div>
 
 ### 6.3.8 Dot (full stop)
 
@@ -270,9 +287,10 @@ Dots were often used as abbreviation marks, typically for suspensions, e.g.
                      Latin](http://www.unicode.org/charts/PDF/U0000.pdf). Thus, no entity name is called for. The dots sometimes appear on
                   both sides of the abbreviated word, as in “.ſ.”. Both dots serve to indiate
                   an abbreviation and consequently both are left out of the transcription when the
-                  abbreviation is expanded. The two `<am>` elements are thus replaced by a single
-                  `<ex>` element, as shown below.
+                  abbreviation is expanded. The two `<am>{:xml}` elements are thus replaced by a single
+                  `<ex>{:xml}` element, as shown below.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -308,10 +326,12 @@ Dots were often used as abbreviation marks, typically for suspensions, e.g.
 </tbody>
 </table>
 
+</div>
+
 
 If the transcriber wishes to distinguish between the dot used as an abbreviation
                   mark and the dot used as a punctuation mark, we suggest that the entity name
-                  `&period;` could be used in the former case and “.” in the
+                  `&period;{:xml}` could be used in the former case and “.” in the
                   latter. However, we believe that there will arise a number of cases where it is
                   difficult to decide whether the dot in the manuscript is a mark of abbreviation,
                   punctuation or both, e.g. when a suspended word is the last word in a sentence. We
@@ -327,9 +347,11 @@ The colon is sometimes, though not often, used as a mark of suspension, in the
                   suggest transcribing the colon simply as a colon, i.e., without using an
                   entity.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>Rognv:</Glyph> | Rognvaldr | Rognv&lt;am&gt;:&lt;/am&gt; | Rognv&lt;ex&gt;aldr&lt;/ex&gt; | `003A` |
+</div>
 
 ### 6.3.10 Small capitals
 
@@ -373,15 +395,16 @@ The horizontal bar is from a historical point of view the earliest form of an
                      “m” or “n” and is often referred to as a “nasal stroke”, but it
                   is also used in a number of other contexts, as a mark of suspension or
                   contraction. We recommend using the same entity name in all instances,
-                  `&bar;`. The unmarked position of the bar is above the immediately
+                  `&bar;{:xml}`. The unmarked position of the bar is above the immediately
                   preceding character.
 
-This horizontal bar is partially similar to `0304`COMBINING
-                  MACRON and `0305`COMBINING OVERLINE in the range [Combining
+This horizontal bar is partially similar to `0304``COMBINING
+                  MACRON` and `0305``COMBINING OVERLINE` in the range [Combining
                      Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf)of
                      [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/), and may be identified with the latter.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ū</Glyph> | u<em>m</em> | u&lt;am&gt;&bar;&lt;/am&gt; | u&lt;ex&gt;m&lt;/ex&gt; | `0305` |
@@ -390,6 +413,7 @@ This horizontal bar is partially similar to `0304`COMBINING
 | <Glyph>p̅</Glyph> | p<em>reſtr</em> | p&lt;am&gt;&bar;&lt;/am&gt; | p&lt;ex&gt;reſtr&lt;/ex&gt; | `0305` |
 | <Glyph>ꝥ</Glyph> | þ<em>at</em> | þ&lt;am&gt;&bar;&lt;/am&gt; | þ&lt;ex&gt;at&lt;/ex&gt; | `0305` |
 | <Glyph>ħ</Glyph> | h<em>ann</em> | h&lt;am&gt;&bar;&lt;/am&gt; | h&lt;ex&gt;ann&lt;/ex&gt; | `0305` |
+</div>
 
 
 In the last two examples, the bar crosses the ascender of the characters
@@ -398,27 +422,29 @@ In the last two examples, the bar crosses the ascender of the characters
                   is a character with an ascender, the bar will simply cross this stroke.
 
 The unmarked position of the bar is above the base line character, and this is
-                  therefore part of the definition of the entity `&bar;`. In some cases the
+                  therefore part of the definition of the entity `&bar;{:xml}`. In some cases the
                   bar may be placed below the base line character. Here, we suggest the entity name
-                  `&barbl;` (for “bar below”).
+                  `&barbl;{:xml}` (for “bar below”).
 
-The horizontal bar below is partially similar to `0331`COMBINING MACRON BELOW or `0332`COMBINING LOW
-                     LINE in the range [Combining
+The horizontal bar below is partially similar to `0331``COMBINING MACRON BELOW` or `0332``COMBINING LOW
+                     LINE` in the range [Combining
                      Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf) of
                      [The
                      Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/), and may be identified with the latter.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ꝧ</Glyph> | þ<em>eir</em> | þ&lt;am&gt;&barbl;&lt;/am&gt; | þ&lt;ex&gt;eir&lt;/ex&gt; | `0305` |
 | <Glyph>ꝑ</Glyph> | p<em>er</em> | p&lt;am&gt;&barbl;&lt;/am&gt; | p&lt;ex&gt;er&lt;/ex&gt; | `0305` |
+</div>
 
 
 It is possible to identify various shapes of the horizontal bar. In general we
                   recommend that the transcriber should not make more distinctions than strictly
                   necessary. If the transcriber for some reason would like to create a typology of
-                  bar forms, we suggest that this is done by numbering, `&bar-1;`,
-                  `&bar-2;`, `&bar-3;`, etc. 
+                  bar forms, we suggest that this is done by numbering, `&bar-1;{:xml}`,
+                  `&bar-2;{:xml}`, `&bar-3;{:xml}`, etc. 
                   The meaning of each entity must be
                   explained in the header of the transcription and specified in the entity list (cf.
                      [app. D](HB3_D_schemas.xml) below)
@@ -427,12 +453,14 @@ It is possible to identify various shapes of the horizontal bar. In general we
 The flourish may be described as a horizontal bar with a return. It appears in the
                   abbreviation of the Latin word <em>pro</em> in contradistinction to
                      “per”, which typically is abbreviated with a simple horizontal bar. We
-                  suggest using the entity name `&combflour;` and recommend that it is
+                  suggest using the entity name `&combflour;{:xml}` and recommend that it is
                   given a separate code point in the Private Use Area.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ꝓꝼaꞇ</Glyph> | p<em>ro</em>fat | p&lt;am&gt;&combflour;&lt;/am&gt;&fins;a&trot; | p&lt;ex&gt;ro&lt;/ex&gt;fat | `F1C6` |
+</div>
 
 ### 6.4.3 The <em>us</em> mark
 
@@ -440,13 +468,15 @@ Originally a Tironian <em>nota</em>, a mark resembling a small
                   version of the number “9” is often used for <em>us</em>. It is
                   usually placed in a raised position, though not always clearly above the preceding
                   character. Since the typical position of this mark is above the base line, we
-                  regard it as a combining mark and suggest the entity name `&us;` and
+                  regard it as a combining mark and suggest the entity name `&us;{:xml}` and
                   recommend that it is given a separate code point in the Private Use Area.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>h᷒</Glyph> | h<em>us</em> | h&lt;am&gt;&us;&lt;/am&gt; | h&lt;ex&gt;us&lt;/ex&gt; | `F15B` |
 | <Glyph>la᷒</Glyph> | la<em>us</em> | la&lt;am&gt;&us;&lt;/am&gt; | la&lt;ex&gt;us&lt;/ex&gt; | `F15B` |
+</div>
 
 ### 6.4.4 The <em>er</em> mark
 
@@ -459,24 +489,28 @@ A mark resembling a zigzag was frequently used as abbreviation of a front vowel
                   usage in Lithuanian) in the range [Combining
                      diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>v͛a</Glyph> | v<em>er</em>a | v&lt;am&gt;&er;&lt;/am&gt;a | v&lt;ex&gt;er&lt;/ex&gt;a | `035B` |
 | <Glyph>va</Glyph> | v<em>er</em>a | v&lt;am&gt;&ercurl;&lt;/am&gt;a | v&lt;ex&gt;er&lt;/ex&gt;a | `F1C8` |
 | <Glyph>heꝼ</Glyph> | hef<em>ir</em> | he&fins;&lt;am&gt;&ercurl;&lt;/am&gt; | hef&lt;ex&gt;ir&lt;/ex&gt; | `F1C8` |
+</div>
 
 ### 6.4.5 The <em>ra</em> mark
 
 Originally an open form of the character “a”, this mark was used as an
       abbreviation for <em>ra</em> or <em>va</em>. One variant resembles
       the Greek letter Omega and another variant an Omega with a horizontal bar above. We suggest
-      using the entity name `&ra;` for the first type and `&rabar;` for the second. We recommend that the latter is given a separate code
+      using the entity name `&ra;{:xml}` for the first type and `&rabar;{:xml}` for the second. We recommend that the latter is given a separate code
       point in the Private Use Area.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>sᷓ</Glyph> | s<em>va</em> | s&lt;am&gt;&ra;&lt;/am&gt; | s&lt;ex&gt;va&lt;/ex&gt; | `1DD3` |
 | <Glyph>ꝼ</Glyph> | f<em>ra</em> | &fins;&lt;am&gt;&rabar;&lt;/am&gt; | f&lt;ex&gt;ra&lt;/ex&gt; | `F1C1` |
+</div>
 
 ### 6.4.6 The <em>ur</em> mark
 
@@ -485,13 +519,15 @@ The syllable <em>ur</em> (sometimes <em>yr</em>) can
       this mark resemble a tilde, and a third form a horizontal version of the number “8”
       (equal to the lemniskate symbol), cf. [Hreinn Benediktsson
        1965](HB3_literature.xml#Benediktsson1965), p. 91. Due to the considerable variation in form we suggest that it might be
-      useful to distinguish between three main forms, using the entity `&urrot;` for the first type, `&ur;` for the second and `&urlemn;` for the third. The code points are respectively `F153`, `1DD1` and `F1C2` (the first and the third of these in the Private Use Area).
+      useful to distinguish between three main forms, using the entity `&urrot;{:xml}` for the first type, `&ur;{:xml}` for the second and `&urlemn;{:xml}` for the third. The code points are respectively `F153`, `1DD1` and `F1C2` (the first and the third of these in the Private Use Area).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ock</Glyph> | ock<em>ur</em> | ock&lt;am&gt;&urrot;&lt;/am&gt; | ock&lt;ex&gt;ur&lt;/ex&gt; | `F153` |
 | <Glyph>b᷑þ</Glyph> | b<em>ur</em>þ | b&lt;am&gt;&ur;&lt;/am&gt;þ | b&lt;ex&gt;ur&lt;/ex&gt;þ | `1DD1` |
 | <Glyph>ſpþe</Glyph> | ſp<em>ur</em>þe | ſp&lt;am&gt;&urlemn;&lt;/am&gt;þe | ſp&lt;ex&gt;ur&lt;/ex&gt;þe | `F1C2` |
+</div>
 
 ### 6.4.7 Interlinear characters
 
@@ -499,8 +535,8 @@ Interlinear characters are a common type of abbreviation. An interlinear vowel
                   typically represents a consonant (often <em>r</em>) + the vowel
                   itself, while an interlinear consonant typically represents a vowel (often <em>a</em>) + the consonant itself. We suggest that interlinear
                   abbreviation marks are named by the character itself + “sup” (for
-                  “superscript”), e.g. `&asup;` (interlinear “a”),
-                  `&osup;` (interlinear “o”), `&rscapsup;` (interlinear
+                  “superscript”), e.g. `&asup;{:xml}` (interlinear “a”),
+                  `&osup;{:xml}` (interlinear “o”), `&rscapsup;{:xml}` (interlinear
                   small capital “r”), etc.
 
 [The
@@ -512,18 +548,21 @@ Interlinear characters are a common type of abbreviation. An interlinear vowel
                   Private Use Area. See the [MUFI 
                      character recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for further specifications.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>bͦg</Glyph> | b<em>or</em>g | b&lt;am&gt;&osup;&lt;/am&gt;g | b&lt;ex&gt;or&lt;/ex&gt;g | `0366` |
 | <Glyph>mͣ</Glyph> | m<em>anna</em> | m&lt;am&gt;&asup;&lt;/am&gt; | m&lt;ex&gt;anna&lt;/ex&gt; | `0363` |
 | <Glyph>vþa</Glyph> | v<em>ir</em>þa | v&lt;am&gt;&inodotsup;&lt;/am&gt;þa | v&lt;ex&gt;ir&lt;/ex&gt;þa | `0365` |
 | <Glyph>þegͬ</Glyph> | þeg<em>ar</em> | þeg&lt;am&gt;&rsup;&lt;/am&gt; | þeg&lt;ex&gt;ar&lt;/ex&gt; | `036C` |
+</div>
 
 
 The runic character “m”, which itself can be used as an abbreviation (cf.
                      [ch. 6.3.6](#sec6.3.6) above), can appear with an interlinear
                   abbreviation mark. The encoding follows the pattern above.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -545,9 +584,11 @@ The runic character “m”, which itself can be used as an abbreviation (cf.
 </tbody>
 </table>
 
+</div>
 
-Since the first entity, `&mMedrun;`, is defined as a base line character
-                  and the second, `&asup;`, as an interlinear mark placed above the
+
+Since the first entity, `&mMedrun;{:xml}`, is defined as a base line character
+                  and the second, `&asup;{:xml}`, as an interlinear mark placed above the
                   immediately preceding base line character, there will be no doubt as to the
                   positioning. 
 ### 6.4.8 Superscript dots
@@ -556,15 +597,17 @@ Superscript dots are sometimes used to denote length. It is a moot question
                   whether this is a type of abbreviation, but in any case the transcriber should use
                   an entity for the encoding. We recommend that superscript dots are transcribed in
                   analogy with other combining abbreviation marks and suggest using the entity name
-                  `&combdot;` (for `combining dot above`).
+                  `&combdot;{:xml}` (for `combining dot above{:xml}`).
 
 [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) has a combining dot above in the range [Combining
                      diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>leġıa</Glyph> | leg<em>g</em>ia | leg&lt;am&gt;&combdot;&lt;/am&gt;&inodot;a | leg&lt;ex&gt;g&lt;/ex&gt;ia | `0307` |
+</div>
 
 ## 6.5 Special cases
 ### 6.5.1 Nomina sacra
@@ -580,13 +623,15 @@ We believe these abbreviations should be encoded as a sequence of the individual
                   base line characters and one or more combining bars above. In the examples below,
                   the originally Greek base line characters have been identified with the
                   similar-looking Latin characters. Greek characters might also have been used in
-                  the encoding (such as `&igr;` for GREEK SMALL LETTER
-                     IOTA, etc.).
+                  the encoding (such as `&igr;{:xml}` for `GREEK SMALL LETTER
+                     IOTA`, etc.).
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>ıc</Glyph> | <em>iesus</em> | &lt;am&gt;ıh&bar;c;&lt;/am&gt; | &lt;ex&gt;iesus&lt;/ex&gt; | `0305` |
 | <Glyph>xp̅m</Glyph> | <em>christum</em> | &lt;am&gt;xp&bar;m&lt;/am&gt; | &lt;ex&gt;christum&lt;/ex&gt; | `0305` |
+</div>
 
 
 Typically in abbreviations of this sort, the bar extends over neighbouring
@@ -603,28 +648,30 @@ Interlinear (superscript) characters are used in various ways, not always as
 **(a) as abbreviation**
 
 This type is discussed in [ch. 6.4.7](#sec6.4.7) above. Here, we
-                  recommend the usage of the `<am>` element and entities such as
-                  `&asup;` and the like.
+                  recommend the usage of the `<am>{:xml}` element and entities such as
+                  `&asup;{:xml}` and the like.
 
 **(b) as addition**
 
 When superscript characters are used for adding characters which are missing on
                   the base line we recommend that they are encoded by use of the element
-                     `<add>` and the attribute `@place="supralinear"` (cf. [ch. 9.2.1.1](HB3_ch9.xml#sec9.2.1.1)). One might argue that if the
+                     `<add>{:xml}` and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](HB3_ch9.xml#sec9.2.1.1)). One might argue that if the
                   scribe has added the superscript character as part of the writing process, it
                   should not be regarded as an addition, but rather as an ordinary character which
                   just happened to be placed over the line. However, it is difficult to make a
                   distinction between characters written above the line as part of the writing
                   process and characters that were added later, maybe shortly afterwards, whether by
                   the same scribe or by another scribe. As a general rule we therefore recommend
-                  encoding supralinear characters by the `<add>` element and the attribute
-                     `@place="supralinear"`. There is no need for an entity of the type
-                  `&asup;` since the location of the character is indicated by the
+                  encoding supralinear characters by the `<add>{:xml}` element and the attribute
+                     `@place="supralinear"{:sh}`. There is no need for an entity of the type
+                  `&asup;{:xml}` since the location of the character is indicated by the
                   element.
 
+<div className="table-abbr">
 | Manuscript form | Display in an edition | Encoding |
 |-----|-----|-----|
 | <Glyph>hanͣ</Glyph> | han⸌a⸍ | han&lt;add place="supralinear"&gt;a&lt;/add&gt; |
+</div>
 
 
 **(c) as complementation of Roman numbers**
@@ -632,14 +679,16 @@ When superscript characters are used for adding characters which are missing on
 Inflected forms of Roman numbers are sometimes specified by interlinear
                   characters. In these cases, the interlinear characters are not placed above any
                   base line character but merely raised above the base line. We suggest encoding
-                  them by appropriate entities, such as `&trotsup;` and `&inodotsup;`. Note that
+                  them by appropriate entities, such as `&trotsup;{:xml}` and `&inodotsup;{:xml}`. Note that
                   these interlinear characters are combining, so in order to avoid a position above
-                  the last base line character, an empty space entity, `&nbsp;`, has been added
+                  the last base line character, an empty space entity, `&nbsp;{:xml}`, has been added
                   before each raised character:
 
+<div className="table-abbr">
 | Manuscript form | Display in an edition | Encoding |
 |-----|-----|-----|
 | <Glyph>v.&ensp;&ensp;</Glyph> | v.&ensp;&ensp; | v.&nbsp;&trotsup;&nbsp;&inodotsup; |
+</div>
 
 
 **(d) as space savers**
@@ -647,12 +696,14 @@ Inflected forms of Roman numbers are sometimes specified by interlinear
 Especially at the end of a line one or more characters may be placed above the
                   last word to save place and complete the line. In these cases, we suggest that
                   they are interpreted and encoded as part of the writing process, thus not using
-                  the `<add>` element, but by superscript entities, such as `&ssup;` for a
+                  the `<add>{:xml}` element, but by superscript entities, such as `&ssup;{:xml}` for a
                   superscript “s”. 
 
+<div className="table-abbr">
 | Manuscript form | Display in an edition | Encoding |
 |-----|-----|-----|
 | <Glyph>eᷤ</Glyph> | eᷤ | e&ssup; |
+</div>
 
 ### 6.5.3 Missing abbreviation mark
 
@@ -663,7 +714,7 @@ From time to time one can find examples of a word that obviously is abbreviated
                   manuscript.
 
 This is what we would recommend on the facsimile level of transcription. On the
-                  diplomatic and normalised levels, we recommend using the `<supplied>`
+                  diplomatic and normalised levels, we recommend using the `<supplied>{:xml}`
                   element, i.e. “d&lt;supplied&gt;rottning&lt;/supplied&gt;”.
 ### 6.5.4 Nesting (stacking) of abbreviation marks
 
@@ -671,23 +722,25 @@ There are a few examples of base line characters which are abbreviated with an
                   abbreviation mark which is itself abbreviated. An example is the base line
                   character “m” with an interlinear “o” which in turn has a horizontal
                   bar. According to rule 6 in [ch. 5.2.1](HB3_ch5.xml#sec5.2.1)
-                  above this abbreviation should be encoded as the sequence `m` +
-                  `&osup;` + `&bar;`.
+                  above this abbreviation should be encoded as the sequence `m{:xml}` +
+                  `&osup;{:xml}` + `&bar;{:xml}`.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion |
 |-----|-----|-----|-----|
 | <Glyph>mͦ̅</Glyph> | m<em>onnom</em> | m&lt;am&gt;&osup;&bar;&lt;/am&gt; | m&lt;ex&gt;onnom&lt;/ex&gt; |
+</div>
 
 
-Since `&osup;` is defined as a combining character, it follows that it is
+Since `&osup;{:xml}` is defined as a combining character, it follows that it is
                   placed above the immediately preceding character, in this case “m”, and since
-                  `&bar;` is also defined as a combining character, it follows that it
-                  is placed above `&osup;`. There is therefore no doubt as to the
+                  `&bar;{:xml}` is also defined as a combining character, it follows that it
+                  is placed above `&osup;{:xml}`. There is therefore no doubt as to the
                   positioning of each part. 
 ### 6.5.5 Extension of abbreviation marks
 
 As a rule, combining abbreviation marks are associated with a single base line
-                  character. Thus, the sequence `m&osup;` means that the interlinear
+                  character. Thus, the sequence `m&osup;{:xml}` means that the interlinear
                   character “o” is seen as being placed above “m” and not above any other
                   character. However, some abbreviation marks extend over more than one character.
                   For example, the word “k<em>ir</em>kia” may be abbreviated with
@@ -695,6 +748,7 @@ As a rule, combining abbreviation marks are associated with a single base line
                   sufficient to associate the abbreviation mark with only one of these characters,
                   preferably the first.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -714,6 +768,8 @@ As a rule, combining abbreviation marks are associated with a single base line
 </tbody>
 </table>
 
+</div>
+
 
 It is possible to encode this word in such a way that the bar is associated with
                   both characters. This is in a sense closer to the manuscript form, but it means
@@ -721,18 +777,20 @@ It is possible to encode this word in such a way that the bar is associated with
                   somehow stated that the two marks belong together). Thus, this is a more complex
                   and possibly misleading solution.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion |
 |-----|-----|-----|-----|
 | <Glyph>k̅k̅ıa</Glyph> | k<em>ir</em>kia | k&lt;am&gt;&bar;&lt;/am&gt;k&lt;am&gt;&bar;&lt;/am&gt;&inodot;a | k&lt;ex&gt;ir&lt;/ex&gt;kia |
+</div>
 
 
-On the other hand, it should be noted that this a case where `0305`COMBINING OVERLINE is appropriate, since it connects to left and
+On the other hand, it should be noted that this a case where `0305``COMBINING OVERLINE` is appropriate, since it connects to left and
                   right. Cf. the reference in [ch. 6.4.1](#sec6.4.1) above.
 ### 6.5.6 Sporadic ligatures with abbreviation marks
 
 We recommended that sporadic ligatures should not be encoded by use of separate
-                  entities but by the element `<seg>` with the attribute
-                     `@type="lig"`. A sporadic ligature is basically a joining of two
+                  entities but by the element `<seg>{:xml}` with the attribute
+                     `@type="lig"{:sh}`. A sporadic ligature is basically a joining of two
                   base line characters which together do not reflect a separate phonological value.
                   This is the case with ligatures such as “s+k” and “p+p” which in this
                   respect are identical to “s”&ensp;+&ensp;“k” and
@@ -740,9 +798,11 @@ We recommended that sporadic ligatures should not be encoded by use of separate
 
 See [ch. 4.3](HB3_ch4.xml#sec4.3) above for further examples.
 
+<div className="table-abbr">
 | Manuscript form | Expanded form | Encoding |
 |-----|-----|-----|
-| <Glyph></Glyph> | pp | `<seg type="lig">`pp`</seg>` |
+| <Glyph></Glyph> | pp | `<seg type="lig">{:xml}`pp`</seg>{:xml}` |
+</div>
 
 
 However, some ligatures are formed in such a manner that it is difficult to
@@ -751,6 +811,7 @@ However, some ligatures are formed in such a manner that it is difficult to
                   advisable to use individual entities. These characters must be referred to the
                   Private Use Area.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -786,11 +847,14 @@ However, some ligatures are formed in such a manner that it is difficult to
 </tbody>
 </table>
 
+</div>
+
 
 Often, a horizontal bar is used across these ligatures. The bar may be encoded
-                  separately with its usual entity, `&bar;` (cf. [ch.
+                  separately with its usual entity, `&bar;{:xml}` (cf. [ch.
                      6.4.1](#sec6.4.1) above) or with a character located in the Private Use Area.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -819,14 +883,18 @@ Often, a horizontal bar is used across these ligatures. The bar may be encoded
 </tbody>
 </table>
 
+</div>
+
 ### 6.5.7 The character “r” as interlinear ligature
 
 A quite special type of abbreviation is interlinear “r” in ligature with e.g.
                      “þ”. The encoding is similar to the examples in [ch. 6.5.6](#sec6.5.6) above.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph></Glyph> | þ<em>a</em>r | &lt;am&gt;þ&rsup;&lt;/am&gt; | þ&lt;ex&gt;a&lt;/ex&gt;r | `E8C1` |
+</div>
 
 ### 6.5.8 Sharp “s”
 
@@ -834,13 +902,14 @@ In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
                   e.g. for <em>skilling</em>, <em>smør</em> and
                      <em>son</em>. The German character “sharp s” is defined in
                      [The
-                        Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) as `00DF`LATIN SMALL LETTER SHARP S in the range [Latin-1
-                     Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend using the ISO entity `&szlig;` also
-                  when this character is used as an abbreviation mark. The element`<am>` will
+                        Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) as `00DF``LATIN SMALL LETTER SHARP S` in the range [Latin-1
+                     Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend using the ISO entity `&szlig;{:xml}` also
+                  when this character is used as an abbreviation mark. The element`<am>{:xml}` will
                   indicate clearly that it is an abbreviation mark, not an ordinary character. See
                   the discussion on the full stop in [ch. 6.3.8](#sec6.3.8)
                   above.
 
+<div className="table-abbr">
 <table>
 <thead>
 <tr>
@@ -862,6 +931,8 @@ In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
 </tbody>
 </table>
 
+</div>
+
 ### 6.5.9 The semicolon abbreviation
 
 In Old Swedish, the semicolon character is often used as an abbreviation for the
@@ -870,10 +941,12 @@ In Old Swedish, the semicolon character is often used as an abbreviation for the
                   The expansion of the abbreviated syllable varies, and will in many cases be based
                   on the usage in the individual manuscripts.
 
+<div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
 |-----|-----|-----|-----|-----|
 | <Glyph>mꝫ</Glyph> | m<em>edh</em> | m&lt;am&gt;&etfin;&lt;/am&gt; | m&lt;ex&gt;edh&lt;/ex&gt; | `A76B` |
 | <Glyph>thꝫ</Glyph> | th<em>et</em> | th&lt;am&gt;&etfin;&lt;/am&gt; | th&lt;ex&gt;et&lt;/ex&gt; | `A76B` |
+</div>
 
 
 There is a long-standing tradition for rendering this abbreviation character as

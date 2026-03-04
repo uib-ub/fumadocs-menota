@@ -21,11 +21,11 @@ Some Medieval Nordic manuscripts have been preserved in their entirety and they
                manuscripts. However, surprisingly many manuscripts and the majority of the earliest
                manuscripts have been preserved in a less than complete state. This chapter will
                discuss how to deal with various degrees of fragmentation, ranging from minor holes
-               in a leaf to once large codices now preserved only in tiny fragments. It also deals with uncertainty, whether it is a passage of one or more characters that can not be read with full certainty or a passage which is downright illegible. For this reason the elements `<gap/>`, `<space/>` and `<unclear>` will be essential to the chapter. They can be used on all three levels of encoding, i.e. the facsimile, diplomatic and normalised levels (cf. [ch. 4](HB3_ch4.xml) above). 
+               in a leaf to once large codices now preserved only in tiny fragments. It also deals with uncertainty, whether it is a passage of one or more characters that can not be read with full certainty or a passage which is downright illegible. For this reason the elements `<gap/>{:xml}`, `<space/>{:xml}` and `<unclear>{:xml}` will be essential to the chapter. They can be used on all three levels of encoding, i.e. the facsimile, diplomatic and normalised levels (cf. [ch. 4](HB3_ch4.xml) above). 
 
 In some of these cases, the encoder might want to supply the missing or unclear
                text, either from other manuscripts or by conjecture, using the
-                  `<supplied>` element. This type of editorial intervention will be discussed
+                  `<supplied>{:xml}` element. This type of editorial intervention will be discussed
                in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below.
 
 In some
@@ -55,15 +55,17 @@ The size of a lacuna varies considerably and may be nothing more than a
 ### 8.2.1. Encoding of lacunas
 
 Whenever the manuscript contains a lacuna we suggest using the element
-                  `<gap/>`, whatever the extent of the lacuna. We use the term <em>lacuna</em> in a strict sense, referring to any part of a manuscript which is physically missing. This element has several  attributes, specifying size and reason for the lacuna:
+                  `<gap/>{:xml}`, whatever the extent of the lacuna. We use the term <em>lacuna</em> in a strict sense, referring to any part of a manuscript which is physically missing. This element has several  attributes, specifying size and reason for the lacuna:
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<gap/>` |  | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"` (character), `"word"`, `"line"` or `"leaf"`, or even `"indeterminate"`. |
-| `@quantity` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.If the extent of the gap is described as `"indeterminate"` in the `@unit` attribute, it does not make sense to try and specify a quantity. |
-| `@reason` | Optional | Gives the reason for omission. Sample values include: `"damaged"`, `"cut"`, `"missing"`. |
-| `@agent` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"`, `"smoke"`, `"fungus"` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+| `<gap/>{:xml}` |  | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: |
+| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"{:js}` (character), `"word"{:js}`, `"line"{:js}` or `"leaf"{:js}`, or even `"indeterminate"{:js}`. |
+| <span className="p-3"/>`@quantity{:sh}` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.If the extent of the gap is described as `"indeterminate"{:js}` in the `@unit{:sh}` attribute, it does not make sense to try and specify a quantity. |
+| <span className="p-3"/>`@reason{:sh}` | Optional | Gives the reason for omission. Sample values include: `"damaged"{:js}`, `"cut"{:js}`, `"missing"{:js}`. |
+| <span className="p-3"/>`@agent{:sh}` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"{:js}`, `"smoke"{:js}`, `"fungus"{:js}` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>{:xml}` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+</div>
 
 
 In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn <em>maðr</em> er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
@@ -94,11 +96,11 @@ On the facsimile level, we encode the gaps as such and do not offer any hypothes
 ```
 
 
-If the encoder would like to restore the lost text, this can be done by the `<supplied>` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below.
+If the encoder would like to restore the lost text, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below.
 
 On the normalised level, the text should be supplied, if possible, while it is a matter of editorial policy whether it should be supplied or not on the diplomatic level. If there are rather few examples of damaged text, such as in the _Old Norwegian Homily Book_ most encoders would supply damaged text on the diplomatic level, especially if it is a single-level edition. This has been done in the edition of the text in the Menota archive. If the source text is an extensively damaged fragment, on the other hand, the encoder may choose to retain the encoding with its uncertainties on the diplomatic level, and leave any restoration to the normalised level. Some of the damaged fragments of _Konungs skuggsjá_ has been encoded in this way in the Menota archive, e.g. NRA 58C.
 
-This is what a single-level encoding on the diplomatic level would look like if the encoder wanted to use the `<supplied>` element. Here, Gustav Indrebø in his [1931 edition](HB3_literature.xml#Indrebo1931) of the text is credited with the restoration:
+This is what a single-level encoding on the diplomatic level would look like if the encoder wanted to use the `<supplied>{:xml}` element. Here, Gustav Indrebø in his [1931 edition](HB3_literature.xml#Indrebo1931) of the text is credited with the restoration:
 ```xml
 . . .
 <w><me:dipl>Fegiarn</me:dipl></w>
@@ -115,7 +117,7 @@ This is what a single-level encoding on the diplomatic level would look like if 
 ```
 
 
-As stated above, however, one may also keep the `<gap/>` encoding on the diplomatic level. The encoding would then be like this:
+As stated above, however, one may also keep the `<gap/>{:xml}` encoding on the diplomatic level. The encoding would then be like this:
 ```xml
 . . .
 <w><me:dipl>Fegiarn</me:dipl></w>
@@ -135,36 +137,38 @@ As stated above, however, one may also keep the `<gap/>` encoding on the diploma
 In [ch. 8.5](#sec8.5) below, examples of larger lacunas are given.
 ### 8.2.2. Display of lacunas
 
-Stylesheets will vary with respect to the display of the `<gap/>` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
+Stylesheets will vary with respect to the display of the `<gap/>{:xml}` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
 
-In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC`DOTTED CIRCLE. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
+In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC``DOTTED CIRCLE`. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
 
-A suitable stylesheet will be able to pick values from the attributes of the `<gap/>` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
+A suitable stylesheet will be able to pick values from the attributes of the `<gap/>{:xml}` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
 <DisplayFrame>
 
 
 | Element | Smaller lacunas | Larger lacunas |
 |-----|-----|-----|
-| `<gap/>` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
+| `<gap/>{:xml}` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;{:xml}`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
 
 </DisplayFrame>
 
 
-Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD`SMALL BASE LINE ZERO SIGN, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
 ## 8.3 Empty space
 
 Manuscripts often have empty spaces, typically left for initials but also in other contexts, for example for words to be added at a later stage in the writing process.
 ### 8.3.1. Encoding of empty space
 
-The `<space/>` element is used to represent deliberate omissions by the scribe, e.g. spaces left for decorated initials or whole
+The `<space/>{:xml}` element is used to represent deliberate omissions by the scribe, e.g. spaces left for decorated initials or whole
                words. This element has several attributes, specifying the size and dimension of the space:
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<space/>` |  | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. Attributes include: |
-| `@quantity` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"`, `"2"`, `"3"`, etc. Note that only numbers are accepted as values; the category is described in the `@unit` attribute.  |
-| `@unit` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"` (characters) and `"word"`.  |
-| `@dim` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"` or `"vertical"`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+| `<space/>{:xml}` |  | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. Attributes include: |
+| <span className="p-3"/>`@quantity{:sh}` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.  |
+| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"{:js}` (characters) and `"word"{:js}`.  |
+| <span className="p-3"/>`@dim{:sh}` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"{:js}` or `"vertical"{:js}`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+</div>
 
 
 In fig. 8.3, the scribe of _Landslǫg Magnúss
@@ -210,9 +214,9 @@ On the facsimile level, the space left for the amount of silver in fig. 8.3 can 
 ```
 
 
-If the encoder would like to restore the text intended for the space, this can be done by the `<supplied>` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations in a multi-level transcription are the same as for the treatment of lacunas above, i.e. that a space should be encoded as a space and nothing more on the facsimile level, the intended text should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore the text intended for the space, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations in a multi-level transcription are the same as for the treatment of lacunas above, i.e. that a space should be encoded as a space and nothing more on the facsimile level, the intended text should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
-A single-level transcription on the diplomatic level would look like this if the encoder decided to use the `<supplied>` element:
+A single-level transcription on the diplomatic level would look like this if the encoder decided to use the `<supplied>{:xml}` element:
 ```xml
 <pb ed="ms" n="42v"/>
 . . .
@@ -255,7 +259,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 <Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
 
 The space has a size of approximately four characters horizontally and two lines vertically. According to the TEI P5 Guidelines, a space with both vertical and horizontal components should be classified as vertical (cf. the [description](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html)
-                  of the `@dim` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
+                  of the `@dim{:sh}` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
 ```xml
 . . .
 <w><me:facs><space quantity="2" unit="line" dim="vertical"/>a</me:facs></w>
@@ -275,7 +279,7 @@ However, since we recommend to focus on the text rather than on the page and col
 ```
 
 
-If the transcriber would like to restore the text intended for the space, this can be done by the `<supplied>` element as stated above. A single-level transcription on the diplomatic level would look like this:
+If the transcriber would like to restore the text intended for the space, this can be done by the `<supplied>{:xml}` element as stated above. A single-level transcription on the diplomatic level would look like this:
 ```xml
 . . .
 <w><me:dipl><supplied reason="restoration" resp="encoder">S</supplied>a</me:dipl></w>
@@ -286,7 +290,7 @@ If the transcriber would like to restore the text intended for the space, this c
 ```
 
 
-This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
+This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
 
 For more details on the encoding of initials and other graphical elements, see [ch. 7.3](HB3_ch7.xml#sec7.3) above.
 ### 8.3.2. Display of empty space
@@ -297,7 +301,7 @@ An empty space may be anything from a single character, typically set aside for 
 
 | Element | Smaller areas | Larger areas |
 |-----|-----|-----|
-| `<space/>` | By a number of spaces, `&nbsp;`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
+| `<space/>{:xml}` | By a number of spaces, `&nbsp;{:xml}`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>{:xml}`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
 
 </DisplayFrame>
 
@@ -306,18 +310,20 @@ Other stylesheets may choose to display empty space differently,
                   including having no display at all.
 ## 8.4 Unclear text
 
-Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the `<unclear>` element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason` and values such as `"faded"`, `"smudged"` and `"erased"`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent` attribute.
+Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the `<unclear>{:xml}` element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason{:sh}` and values such as `"faded"{:js}`, `"smudged"{:js}` and `"erased"{:js}`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent{:sh}` attribute.
 
-When a character can be read with some degree of certainty, we recommend that this character is entered in the `<unclear>` element, so that it can be displayed as such. If a character is completley unreadable, it should still be entered in the `<unclear>` element, but using a specific character such as a dotted circle or a small zero (explained below).
+When a character can be read with some degree of certainty, we recommend that this character is entered in the `<unclear>{:xml}` element, so that it can be displayed as such. If a character is completley unreadable, it should still be entered in the `<unclear>{:xml}` element, but using a specific character such as a dotted circle or a small zero (explained below).
 
-One might be tempted to try and indicate the degree of unclearness by a suitable attribute, for example by a percentage, but we believe that this is a rather arbitrary measure and difficult to estimate. In other words, characters which cannot be read with full certainty, simply are `<unclear>`. A corresponding facsimile of the text should be available and will help the users to estimate the degree of unclearness.
+One might be tempted to try and indicate the degree of unclearness by a suitable attribute, for example by a percentage, but we believe that this is a rather arbitrary measure and difficult to estimate. In other words, characters which cannot be read with full certainty, simply are `<unclear>{:xml}`. A corresponding facsimile of the text should be available and will help the users to estimate the degree of unclearness.
 ### 8.4.1 Encoding of unclear text
 
+<div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
-| `<unclear>` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. Attributes include: |
-| `@reason` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"`, `"smudged"`, `"erased"`. |
-| `@agent` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"`, `"mildew"`, `"smoke"`. |
+| `<unclear>{:xml}` |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. Attributes include: |
+| <span className="p-3"/>`@reason{:sh}` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"{:js}`, `"smudged"{:js}`, `"erased"{:js}`. |
+| <span className="p-3"/>`@agent{:sh}` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"{:js}`, `"mildew"{:js}`, `"smoke"{:js}`. |
+</div>
 
 
 
@@ -329,9 +335,9 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 <Caption title="Ill. 8.5">. A word which is difficult to read. _Blasíuss saga_. AM 655 IX 4to, f. 2r, l. 1–5.</Caption>
 
-In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb <em>veita</em> ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>` element will be placed within the `<w>` element, but when the uncertain passage contains one or more words, the `<unclear>` element will be located outside.
+In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb <em>veita</em> ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>{:xml}` element will be placed within the `<w>{:xml}` element, but when the uncertain passage contains one or more words, the `<unclear>{:xml}` element will be located outside.
 
-A single-level transcription on the diplomatic level of this line is shown below. Note that we here,  the `<unclear>` element is placed outside the `<w>` element:
+A single-level transcription on the diplomatic level of this line is shown below. Note that we here,  the `<unclear>{:xml}` element is placed outside the `<w>{:xml}` element:
 ```xml
 <pb ed="ms" n="2r"/>
 . . .
@@ -349,7 +355,7 @@ A single-level transcription on the diplomatic level of this line is shown below
 ```
 
 
-The encoding above is on the diplomatic level. We recommend that the `<unclear>` element should be used in the same way also in single-level encodings on the facsimile and normalised levels.
+The encoding above is on the diplomatic level. We recommend that the `<unclear>{:xml}` element should be used in the same way also in single-level encodings on the facsimile and normalised levels.
 
 Note that the fissure in lines 4–5 must
                be original, so that e.g. the word “fiolda” in line 5 is written with “fiol” on the
@@ -365,7 +371,7 @@ Note that the fissure in lines 4–5 must
 
 <Caption title="Ill. 8.6">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.</Caption>
 
-In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC`DOTTED CIRCLE (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
+In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC``DOTTED CIRCLE` (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -386,9 +392,9 @@ In fig. 8.6, the first character in the second line is so smudged that it has be
 ```
 
 
-From the context, one can assume that the illegible character is the Tironean <em>nota</em> for “ok”, and that it thus is a whole word which is illegible. For this reason, the dotted circle has been placed inside a `<w>` element.
+From the context, one can assume that the illegible character is the Tironean <em>nota</em> for “ok”, and that it thus is a whole word which is illegible. For this reason, the dotted circle has been placed inside a `<w>{:xml}` element.
 
-In this example, we can be fairly certain that the unclear passage is a single word, so the `<unclear>` element is located within a single `<w>` element. In other cases, we can see that many words are missing but we may not have access to other manuscripts of the text. If it thus is impossible to estimate the number of words, we suggest leaving out the `<w>` element within the `<unclear>` element, only specifying by the number of dotted circles how many characters seem to be missing. Assuming that all the words in the first line of fig. 8.6 were illegible apart from “at fagna miog” and that the number of missing characters was estimated to be 28, the encoding would be as follows:
+In this example, we can be fairly certain that the unclear passage is a single word, so the `<unclear>{:xml}` element is located within a single `<w>{:xml}` element. In other cases, we can see that many words are missing but we may not have access to other manuscripts of the text. If it thus is impossible to estimate the number of words, we suggest leaving out the `<w>{:xml}` element within the `<unclear>{:xml}` element, only specifying by the number of dotted circles how many characters seem to be missing. Assuming that all the words in the first line of fig. 8.6 were illegible apart from “at fagna miog” and that the number of missing characters was estimated to be 28, the encoding would be as follows:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -411,7 +417,7 @@ In this example, we can be fairly certain that the unclear passage is a single w
 ```
 
 
-Since the transcriber can insert a suitable text in the `<unclear>` element, it is possible to do so in a more concise and rather self-explanatory manner, e.g.
+Since the transcriber can insert a suitable text in the `<unclear>{:xml}` element, it is possible to do so in a more concise and rather self-explanatory manner, e.g.
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -425,9 +431,9 @@ Since the transcriber can insert a suitable text in the `<unclear>` element, it 
 ```
 
 
-If the encoder would like to restore illegible characters, this can be done by the `<supplied>` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC`DOTTED CIRCLE on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore illegible characters, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC``DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
-A single-level transcription on the diplomatic level would look like this if the enocder decided to use the `<supplied>` element:
+A single-level transcription on the diplomatic level would look like this if the enocder decided to use the `<supplied>{:xml}` element:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -448,13 +454,13 @@ A single-level transcription on the diplomatic level would look like this if the
 
 ### 8.4.2 Display of unclear text
 
-In the stylesheet for the Menota archive, a light grey colour is used for characters in the `<unclear>` element. This colour is also used for characters that are illegible and encoded by the dotted circle, `25CC`.
+In the stylesheet for the Menota archive, a light grey colour is used for characters in the `<unclear>{:xml}` element. This colour is also used for characters that are illegible and encoded by the dotted circle, `25CC`.
 <DisplayFrame>
 
 
 | Element | Display in a single-level transcription | Display in a multi-level transcription |
 |-----|-----|-----|
-| `<unclear>` | Characters are rendered in grey. | Characters are rendered in grey on the `<me:facs>` and `<me:dipl>` levels, but in ordinary, non-coloured characters on the `<me:norm>` level. |
+| `<unclear>{:xml}` | Characters are rendered in grey. | Characters are rendered in grey on the `<me:facs>{:xml}` and `<me:dipl>{:xml}` levels, but in ordinary, non-coloured characters on the `<me:norm>{:xml}` level. |
 
 </DisplayFrame>
 
@@ -485,7 +491,7 @@ The sequence of the leaves making up NRA 7 can be established by full
 
 When the loss of leaves is so high as in this case, it may be difficult to
                   specify the amount of missing leaves between each preserved one. It might,
-                  however, be possible to establish the sequence using a series of `<gap/>`
+                  however, be possible to establish the sequence using a series of `<gap/>{:xml}`
                   elements, showing where there is continuity and where there is not:
 ```xml
 <gap unit="leaf"/>
@@ -532,11 +538,11 @@ When the loss of leaves is so high as in this case, it may be difficult to
 ```
 
 
-As for the use of the `<note>` element here, see [ch. 9.4](HB3_ch9.xml#sec9.4) below.
+As for the use of the `<note>{:xml}` element here, see [ch. 9.4](HB3_ch9.xml#sec9.4) below.
 
 From this encoding, we understand that the beginning and the end of the once
                   complete manuscript is missing, and that there are gaps in between all leaves apart
-                  from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the `<note>` element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
+                  from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity{:sh}` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the `<note>{:xml}` element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
 ### 8.5.2 A pair of leaves
 
 Quires were made up of pairs of leaves, bifolia, and it is not uncommon that one
@@ -586,7 +592,7 @@ The missing leaves are not immediately visible in the codex, which has been boun
                   (one leaf is missing). This is actually the hand of Árni Magnússon
                      (identified by Beeke Stegmann).</Caption>
 
-As recommended above, the missing text should be indicated by the `<gap/>`
+As recommended above, the missing text should be indicated by the `<gap/>{:xml}`
                   element, so that the first lacuna, between folios 62 and 63, will be encoded like
                   this in a singe-level transcription on the diplomatic level:
 ```xml
@@ -605,7 +611,7 @@ As recommended above, the missing text should be indicated by the `<gap/>`
 ```
 
 
-Since the extent of the gap is specified by the attributes to the `<gap/>` 
+Since the extent of the gap is specified by the attributes to the `<gap/>{:xml}` 
                   element, no codicological note is called for. However, we recommend that the transcriber adds
                   an explanatory note, so that users will have some guidance as to what is missing
                   and to what extent it can be supplied from e.g. other manuscripts. This note
@@ -717,7 +723,7 @@ Taking the single piece from column A on folio 2v as an example, the document
 ```
 
 
-The whole leaf 2v would then be encoded with the `<gap/>` element like
+The whole leaf 2v would then be encoded with the `<gap/>{:xml}` element like
                   this:
 ```xml
 <pb ed="ms" n="2v"/>

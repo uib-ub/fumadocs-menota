@@ -14,12 +14,13 @@ export default function AutoImage({ src, alt }: {
             alt={alt || ''}
             width={dimensions.width}
             height={dimensions.height}
-            onLoadingComplete={img => {
+            onLoad={img => {
                 setDimensions({
-                    width: img.naturalWidth * 100,
-                    height: img.naturalHeight * 100
+                    width: img.currentTarget.naturalWidth * 100,
+                    height: img.currentTarget.naturalHeight * 100
                 })
             }}
+            className="IMAGE shadow"
             style={{width: 'auto', height: 'auto'}}
         />
     );

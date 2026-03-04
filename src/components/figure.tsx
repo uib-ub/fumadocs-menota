@@ -4,9 +4,13 @@ export default function Figure({ caption, children }: {
     caption?: string,
     children: React.ReactNode 
 }) {
+
     return (
-        <div className="mb-10">
-            <div className="flex">
+        <div className="mx-5 mb-10">
+            <div className="flex [&>.CAPTION]:hidden">
+                {children}
+            </div>
+            <div className="[&>.CAPTION]:-mt-10 [&>.CAPTION]:mx-0 [&>.IMAGE]:hidden">
                 {children}
             </div>
             {caption ? <Caption>{caption}</Caption> : null}

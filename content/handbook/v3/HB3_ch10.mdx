@@ -16,13 +16,13 @@ by Haraldur Bernharðsson, Odd Einar Haugen and Ivar Berg
 This chapter discusses the normalisation of the orthography of (1) lemmata and
                     (2) texts in Menota. A strict normalisation of the former is important for the
                     consistency and searchability of the annotated texts in the corpus. This
-                    normalisation refers to the contents of the `@lemma` attribute described
+                    normalisation refers to the contents of the `@lemma{:sh}` attribute described
                     in [ch. 11.2](HB3_ch11.xml#sec11.2). The normalisation of texts
                     can not be specified as strictly, partly because there are no commonly accepted
                     normalisation rules for Old Danish and Old Swedish and partly because there are
                     some variation also within the rules for Old Icelandic and Old Norwegian (Old
                     Norse). This type of normalisation refers to the regularisation of texts within
-                    the `<me:norm>` element discussed in [ch.
+                    the `<me:norm>{:xml}` element discussed in [ch.
                         4.4](HB3_ch4.xml#sec4.4) above.
 ## 10.2 Normalisation of lemmata
 
@@ -34,8 +34,8 @@ The orthography of lemmata should adhere strictly to established dictionaries in
 
 Some of the Old Norwegian texts in the archive have received lemmata in the
                     orthographic norm of Gammelnorsk Ordboksverk described in [ch. 10.3.1.3](#sec10.3.1.3) below. This information should be
-                    kept, but preferably in a separate `@me:orig-lemma` attribute, which comes in 
-                    addition to the ordinary `@lemma` attribute.
+                    kept, but preferably in a separate `@me:orig-lemma{:sh}` attribute, which comes in 
+                    addition to the ordinary `@lemma{:sh}` attribute.
 
 For Old Swedish and Old Danish, we have at the moment no strong recommendations,
                     but refer to the standard dictionaries in the field. See also the links for these languages in 
@@ -433,9 +433,9 @@ The sample below is from AM 133 fol., Kálfalækjarbók, dated to around 1350,
 The rubric at the end of the three first lines is displayed in red colour.
 
  
-                        . . . fra brvð<br/>
- havſkvlldr ſagði hallg<em>erði</em> kꜹpít. hn m<em>ǽ</em>l<em>t</em>i. Nv em ek at rn lꜹpi<br/>
- ko<em>m</em>ín v<em>m</em>þat er mík hef<em>ir</em> le<em>n</em>gi grvnat. át tv mvnd<em>ir</em> e<em>i</em>g<em>i</em> vn<em>n</em>a m<em>er</em>hallg<em>erðar</em><br/>
+                        . . . <span className="text-red-500">fra brvð</span><br/>
+ havſkvlldr ſagði hallg<em>erði</em> kꜹpít. hn m<em>ǽ</em>l<em>t</em>i. Nv em ek at rn <span className="text-red-500">lꜹpi</span><br/>
+ ko<em>m</em>ín v<em>m</em>þat er mík hef<em>ir</em> le<em>n</em>gi grvnat. át tv mvnd<em>ir</em> e<em>i</em>g<em>i</em> vn<em>n</em>a m<em>er</em><span className="text-red-500">hallg<em>erðar</em></span><br/>
  iánmíkít ſém þ ſagðír íafnan. En<em>n</em> þ<em>er</em> þ<em>o</em>ttí e<em>i</em>g<em>i</em> þ<em>e</em>s v<em>er</em>t at v<em>ið</em>mík<br/>
  væri talat v<em>m</em> þ<em>et</em>ta mál. Endaþikí mér þ<em>et</em>ta ekki
                         ſa mik<em>il</em>s hatt<em>ar</em>.

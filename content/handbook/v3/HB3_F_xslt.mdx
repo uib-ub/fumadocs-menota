@@ -33,7 +33,7 @@ All stylesheets published in this appendix are available under a [CC BY 4.0](htt
 ## F.2 XSLT for Menotic texts
 
 The Menota stylesheet converts a text encoded with 
-               `<me:facs>`, `<me:dipl>` and/or `<me:norm>` elements into easily 
+               `<me:facs>{:xml}`, `<me:dipl>{:xml}` and/or `<me:norm>{:xml}` elements into easily 
                readable HTML display. 
                Over the years, the Menota stylesheet has been adjusted and expanded resulting in multiple versions of “the stylesheet”. 
                The link below is to the latest version, which is compatible with version 3.0 of the Menota handbook. 
@@ -42,7 +42,7 @@ The Menota stylesheet converts a text encoded with
 - [menota_xslt_3.xsl](menota_xslt_3.xsl) (date: 22 January 2021): Download link for XSLT stylesheet suited for texts encoded according to Menota 3.0 (TEI P5 conformant).
                
 
-Note: Your browser may attempt to open this stylesheet if you just click on the link. In order to download it to your computer, try to right-click (on Windows) or ctrl-click (on Mac) the link instead.
+<span className="text-red-500">Note</span>: Your browser may attempt to open this stylesheet if you just click on the link. In order to download it to your computer, try to right-click (on Windows) or ctrl-click (on Mac) the link instead.
 
 [App. F.3.2](#secF.3.2) below gives instructions for the usage of the stylesheet.
 ## F.3 Applying a stylesheet to your XML file
@@ -50,7 +50,7 @@ Note: Your browser may attempt to open this stylesheet if you just click on the 
 There are different ways to apply an XSLT stylesheet to an XML document. This section explains the two methods we believe most people might use. 
                The first option is to link to an XSLT stylesheet available online, while the second is to run the conversion locally with an XSL file that must be saved on your machine.
                   Please be aware that in both cases your computer must have a [MUFI compliant font](http://www.mufi.info) installed
-                     in order to display all characters correctly, especially on the `<me:facs>` level.
+                     in order to display all characters correctly, especially on the `<me:facs>{:xml}` level.
 ### F.3.1 Online usage of stylesheet by means of link
 
 In order to link to one of the online stylesheets, one simply inserts a stylesheet processing instruction (“stylesheet link”)
@@ -60,10 +60,10 @@ In order to link to one of the online stylesheets, one simply inserts a styleshe
 ```
 
 
-In the above shown code line (“stylesheet link”), the `@href` attribute takes the URL of the stylesheet in question as its value. The stylesheet link in the
+In the above shown code line (“stylesheet link”), the `@href{:sh}` attribute takes the URL of the stylesheet in question as its value. The stylesheet link in the
                   example links to the XSLT that will display the facsimile level of a Menotic transcription. In order to display the diplomatic or normalised 
                   level of the XML transcription, one needs to use the respective URL ending in "dipl" or "norm" instead.
-                  Since the stylesheet is an XSL file, the `@type` attribute of the processing instruction must be 
+                  Since the stylesheet is an XSL file, the `@type{:sh}` attribute of the processing instruction must be 
                   set to “text/xsl”.
 
 There are three options for URLs to be used, depending on the level of transcription one
@@ -96,7 +96,7 @@ As the stylesheet is located online, one needs to have internet access for the t
                   Also, the transformation might not work, if your document is invalid (most likely,
                   because you forgot to close an element somewhere). 
 
-Note: We have tested this method in different – but not all – XML editors. We have encountered issues with 
+<span className="text-red-500">Note</span>: We have tested this method in different – but not all – XML editors. We have encountered issues with 
                      some older versions of &lt;oXygen/&gt;, whereas the latest versions of that application seems to work fine.
 ### F.3.2 Download and local usage of stylesheet
 

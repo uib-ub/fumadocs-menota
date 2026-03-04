@@ -29,10 +29,10 @@ In version 2 of the Menota handbook, a number of additions and changes were made
 
 In version 3 of the Menota handbook, a few changes have been made to the RELAX NG schema of the previous version, 
                using the procedures explained above. These changes are the following: (1) replacing the 
-               `<me:punct>` element with the standard TEI `<pc>` element (allowing it to
-               contain the `<choice>` element, as well as the `<me:facs>`, `<me:dipl>` 
-               and `<me:norm>` elements; (2) replacing the `<me:expunged>` element with the 
-               `<me:suppressed>` element; (3) adding the `@me:key` and `@me:ref` 
+               `<me:punct>{:xml}` element with the standard TEI `<pc>{:xml}` element (allowing it to
+               contain the `<choice>{:xml}` element, as well as the `<me:facs>{:xml}`, `<me:dipl>{:xml}` 
+               and `<me:norm>{:xml}` elements; (2) replacing the `<me:expunged>{:xml}` element with the 
+               `<me:suppressed>{:xml}` element; (3) adding the `@me:key{:sh}` and `@me:ref{:sh}` 
                attributes to a number of elements, as introduced in the new [ch. 16](HB3_ch16.xml).
 ### D.1.1 Current versions of Menota schemas
 
@@ -62,8 +62,8 @@ The entity list can be updated independently of the schemas.(3) Document Type De
 The DTD is one of several schemas that are allowed in TEI P5. It is used for
                      this handbook, for example, while the texts in the archive refer to a RELAX NG schema.
                      Note that the DTD does not allow the specific Menota elements such as
-                        `<me:facs>`, `<me:dipl>`, `<me:norm>` or the specific 
-                     Menota attributes such as `@me:msa`, etc. These are only allowed in the RELAX NG 
+                        `<me:facs>{:xml}`, `<me:dipl>{:xml}`, `<me:norm>{:xml}` or the specific 
+                     Menota attributes such as `@me:msa{:sh}`, etc. These are only allowed in the RELAX NG 
                      schema offered below. While the RELAX NG schema has been updated for v. 3.0 of the handbook, 
                      no update was necessary for the DTD. This is the same as for v. 2.0 of the handbook. 
                      
@@ -78,12 +78,12 @@ The version given here has been generated on the basis of the ODD file and
                      entity file listed above. When using a RELAX NG schema, data values can be
                      validated to a higher extent than what is possible with a DTD. This applies
                      both to attribute and content values. For example, the attributes
-                        `@notBefore` and `@notAfter` in the element `<origDate>` have
+                        `@notBefore{:sh}` and `@notAfter{:sh}` in the element `<origDate>{:xml}` have
                      to contain a valid date value if the RELAX NG schema is used. The RELAX NG
                      schema also supports name spaces, which is useful if one wants to mix schemas
-                     as we do in Menota. Among additional Menota elements are `<me:facs>`, 
-                     `<me:dipl>`, `<me:norm>` and `<me:suppressed>`, and among
-                      additional attributes `@me:msa`.
+                     as we do in Menota. Among additional Menota elements are `<me:facs>{:xml}`, 
+                     `<me:dipl>{:xml}`, `<me:norm>{:xml}` and `<me:suppressed>{:xml}`, and among
+                      additional attributes `@me:msa{:sh}`.
                      
 
 - [Menota RELAX NG](menotaP5.rng) (10 December 2019) –
