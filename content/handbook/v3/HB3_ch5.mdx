@@ -101,11 +101,11 @@ Medieval Nordic manuscripts and charters were written in the Latin alphabet from
 
 We believe that it is possible to identify a base line in all texts, as shown in ill.
           5.2. These characters
-          would be transcribed as `abpþ` or `abp&thorn;`, 
+          would be transcribed as `abpþ{:xml}` or `abp&thorn;{:xml}`, 
           i.e. in the order of appearance on the base line. The last
-          character may be encoded with its Unicode codepoint, `þ` at 
+          character may be encoded with its Unicode codepoint, `þ{:xml}` at 
           `00FE`, or with an entity,
-          `&thorn;`. Both encodings are strictly equivalent. 
+          `&thorn;{:xml}`. Both encodings are strictly equivalent. 
 
 
 
@@ -121,9 +121,9 @@ If there are marks of any sort placed above, through or below any base-line char
           immediately <em>after</em> the base-line character. In general, we refer to
           these marks as diacritics. As mentioned above, abbreviation marks are also frequently
           placed in diacritical positions. Assuming that
-          the sign above `h` should be referred to with the entity
-          `&er;`, the
-          transcription of the very first word in ill. 5.3 would be `h&er;`.
+          the sign above `h{:xml}` should be referred to with the entity
+          `&er;{:xml}`, the
+          transcription of the very first word in ill. 5.3 would be `h&er;{:xml}`.
 
 
 
@@ -136,7 +136,7 @@ If there are marks of any sort placed above, through or below any base-line char
 
 Diacritical marks are often seen as forming an integral part of a base-line character and
           the whole is being encoded as a single character. This applies to accent marks, such as the one
-          above `e` in ill. 5.3. The combination of a base-line character and a combining mark
+          above `e{:xml}` in ill. 5.3. The combination of a base-line character and a combining mark
           can be encoded as a single character, in Unicode referred to as `LATIN SMALL LETTER E WITH
           ACUTE` and the hexidecimal code value `00E9`. Alternatively, this letter can be decomposed and
           encoded as a combination of `LATIN SMALL LETTER E` 
@@ -165,7 +165,7 @@ We recommend the following basic rules for encoding characters, irrespective of 
             known as `ISO 646` or Basic Latin) it is always encoded as such.<br/>
  2.2 Characters
             outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g.
-            either as `abpþ` (recommended) or as `abp&thorn;`.<br/>
+            either as `abpþ{:xml}` (recommended) or as `abp&thorn;{:xml}`.<br/>
  2.3 Characters
             which are not part of the Unicode Standard must always be encoded by entities. See [app. A](HB3_A_characters.xml) for more details.
 
@@ -176,22 +176,22 @@ We recommend the following basic rules for encoding characters, irrespective of 
 4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of
             two equivalent ways:
 
-4.1 As a base-line character + one or more combining marks. Thus the character `é`
-            would be encoded as `e` + `&combacute;` (the latter entity meaning
+4.1 As a base-line character + one or more combining marks. Thus the character `é{:xml}`
+            would be encoded as `e{:xml}` + `&combacute;{:xml}` (the latter entity meaning
             `COMBINING ACUTE ACCENT)`.<br/>
  4.2 As a composite base-line character and encoded with a
-            single Unicode codepoint or an entity. Thus, the character `é` would be encoded as
-            either `é` or as `&eacute;`.
+            single Unicode codepoint or an entity. Thus, the character `é{:xml}` would be encoded as
+            either `é{:xml}` or as `&eacute;{:xml}`.
 
 5. Characters with abbreviation marks are encoded in the same manner as alphabetical
             characters, i.e. in one of two equivalent ways:
 
 5.1 As a base-line character + one or more combining marks. Thus the first character in
-            ill. 5.3 above would be encoded as `h` + `&er;` (the latter entity meaning
+            ill. 5.3 above would be encoded as `h{:xml}` + `&er;{:xml}` (the latter entity meaning
             `COMBINING ABBREVIATION MARK ER`).<br/>
  5.2 As a composite base-line character and
             encoded with a single entity. Thus the above character might be encoded with a single
-            entity, e.g. as `&her;`.
+            entity, e.g. as `&her;{:xml}`.
 
 As a rule, we would recommend the first solution, since the number of combinations of
             base-line characters and combining abbreviation marks is very high. Furthermore, we
@@ -204,10 +204,10 @@ As a rule, we would recommend the first solution, since the number of combinatio
 
 (a) Combinations with the base-line character within the x height of the base-line
             character.<br/>
- (b) Combinations with the base-line character outside its `x` height, but
+ (b) Combinations with the base-line character outside its `x{:xml}` height, but
             still in contact with it.<br/>
  (c) Combinations with the base-line character outside its
-            `x` height height and without any contact with it.
+            `x{:xml}` height height and without any contact with it.
 
 7. If there is more than one combining character in any of the three positions defined
             in (6) above, we refer to the rules in the Unicode Standard v. 12, [ch. 2.11 Combining Characters](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf).
@@ -228,8 +228,8 @@ Note that the type of encoding is specifed at the very begining of an XML file. 
 
 entities must be used for all characters outside Basic Latin and Latin-1 Supplement.
             Thus, “a”, “é” and “þ” can be entered directly, but characters like
-            `&oogon;` (`LATIN SMALL LETTER O WITH OGONEK`) must be encoded with an entity,
-            `&oogon;`.
+            `&oogon;{:xml}` (`LATIN SMALL LETTER O WITH OGONEK`) must be encoded with an entity,
+            `&oogon;{:xml}`.
 
 If, however, the encoding is specified as
 ```xml
@@ -273,7 +273,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  | Encoding  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph>a</Glyph> | `a` | `0061` | `LATIN SMALL LETTER A` |
+| <Glyph>a</Glyph> | `a{:xml}` | `0061` | `LATIN SMALL LETTER A` |
 
 
 (b) Composite characters may be described in more than one way. Thus, an “a with acute
@@ -282,8 +282,8 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  | Entity  | Code point  | Unicode descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph>á</Glyph> | `a + &combacute;` | `0061 + 0301` | `LATIN SMALL LETTER A + COMBINING ACUTE ACCENT` |
-| <Glyph>á</Glyph> | `&aacute;` | `00E1` | `LATIN SMALL LETTER A WITH ACUTE` |
+| <Glyph>á</Glyph> | `a + &combacute;{:xml}` | `0061 + 0301` | `LATIN SMALL LETTER A + COMBINING ACUTE ACCENT` |
+| <Glyph>á</Glyph> | `&aacute;{:xml}` | `00E1` | `LATIN SMALL LETTER A WITH ACUTE` |
 
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
@@ -297,7 +297,7 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 | Glyph  |  Entity  | Code point  | Descriptive name  |
 |-----|-----|-----|-----|
-| <Glyph></Glyph> | `&kslonglig;` | `EBAE` | `LATIN SMALL LIGATURE K AND LONG S` |
+| <Glyph></Glyph> | `&kslonglig;{:xml}` | `EBAE` | `LATIN SMALL LIGATURE K AND LONG S` |
 
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
@@ -323,8 +323,8 @@ h<am>&er;</am> sér han<am>&bar;</am>
 The two abbreviation characters `COMBINING ZIGZAG ABOVE` and `COMBINING OVERLINE` are part
             of the Unicode Standard, at `035B` and `0305` respectively, so entitites are not really
             needed. However, some XML editors may not show combining characters in correct
-            positions, and it is thus more legible to use entities, `&er;` for the
-            combining zigzag above, and `&bar;` for the combining bar above.
+            positions, and it is thus more legible to use entities, `&er;{:xml}` for the
+            combining zigzag above, and `&bar;{:xml}` for the combining bar above.
 
 If an encoder, for some reason, would like to encode a character which is not in the
             Menota list of entities, this character has to be declared in the header of the file.
@@ -347,7 +347,7 @@ If, however, the transcriber would like to add a couple of entities not included
 ```
 
 
-In this example, it is specified that the first entity, `&trotdot;`, is going to be displayed as the hexadecimal character `0024`, the dollar sign, and the second, `&eacutesup;`, as `00A3`, the pound sign. These are oviously stop-gap measures, and the transcriber decides whatever rendering he or she thinks is appropriate. A long-term solution would be to work with Menota in order to add these entities to the Menota entity list.
+In this example, it is specified that the first entity, `&trotdot;{:xml}`, is going to be displayed as the hexadecimal character `0024`, the dollar sign, and the second, `&eacutesup;{:xml}`, as `00A3`, the pound sign. These are oviously stop-gap measures, and the transcriber decides whatever rendering he or she thinks is appropriate. A long-term solution would be to work with Menota in order to add these entities to the Menota entity list.
 ### 5.2.3 Encoding characters as such
 
 In some cases, a character should be encoded as such. That kind of separate mark-up
@@ -722,8 +722,8 @@ In addition to punctuation marks like `FULL STOP`, `COMMA`, `COLON`, `SEMICOLON`
             with appropriate character entities.
 
 If the encoder wishes to represent specific types of punctuation marks apart from the ordinary ones, this can 
-            be done by using the relevant entities, e.g. `&middot;` for `MIDDLE DOT`,
-            `&punctelev;` for `PUNCTUS ELEVATUS`, etc. In all cases, 
+            be done by using the relevant entities, e.g. `&middot;{:xml}` for `MIDDLE DOT`,
+            `&punctelev;{:xml}` for `PUNCTUS ELEVATUS`, etc. In all cases, 
             the punctuation mark should be 
             placed within the `<pc>{:xml}` element.
 ### 5.4.2 Punctuation in a multi-level transcription
@@ -1173,8 +1173,8 @@ Note that a line beginning will appear several times in a multi-level transcript
 
 In some cases, there may be a dash at the end of a line, which is not being used for hyphenation purposes. This dash can 
             be placed in an ordinary `<pc>{:xml}` element, and the encoder may decide whether it should be represented by e.g. an 
-            ordinary hyphen or, perhaps, as a dash, `&ndash;` for a somewhat longer dash than the hyphen,
-            or `&mdash;` for an even longer dash.
+            ordinary hyphen or, perhaps, as a dash, `&ndash;{:xml}` for a somewhat longer dash than the hyphen,
+            or `&mdash;{:xml}` for an even longer dash.
 ### 5.5.3 Display of hyphenation
 
 The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook.

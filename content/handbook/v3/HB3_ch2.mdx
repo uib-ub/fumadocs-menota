@@ -299,7 +299,7 @@ The aspects of XML discussed so far are all concerned with the markup of element
      some other string. This other string can be of any length, from a single character to a
      separate file containing millions of bytes, such as a text file or digital image. When using an
      entity, the name of that entity (entity reference) is placed between an ampersand and a
-     semicolon: `&entityname;`. Only entities that have been declared can
+     semicolon: `&entityname;{:xml}`. Only entities that have been declared can
      be processed by the application.
 
 A single
@@ -311,7 +311,7 @@ declaration for a general entity looks like this:
 
 This entity declaration instructs the processing
       software (a parser or browser) to 
-      replace any entity reference `&vth;` it encounters in the XML file 
+      replace any entity reference `&vth;{:xml}` it encounters in the XML file 
       with the text “Vingþórr”. 
       In the case of our single
       poem, there is obviously no real advantage to treating the name of
@@ -402,10 +402,10 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
      This requires an extensive `<charDecl>{:xml}` section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;` entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](HB3_ch5.xml), and an abundance of them will be found in e.g. [ch. 6](HB3_ch6.xml). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```

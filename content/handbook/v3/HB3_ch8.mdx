@@ -143,12 +143,12 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 
 | Element | Smaller lacunas | Larger lacunas |
 |-----|-----|-----|
-| `<gap/>{:xml}` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
+| `<gap/>{:xml}` | By a number of dotted circles, ◌◌◌ (`25CC`, entity `&circledot;{:xml}`), corresponding to the estimated number of characters in the lacuna. If the lacuna is longer than a line, each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles | By a note stating the approximate length of the lacuna and possibly some comment on its contents |
 
 </DisplayFrame>
 
 
-Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
 ## 8.3 Empty space
 
 Manuscripts often have empty spaces, typically left for initials but also in other contexts, for example for words to be added at a later stage in the writing process.
@@ -295,7 +295,7 @@ An empty space may be anything from a single character, typically set aside for 
 
 | Element | Smaller areas | Larger areas |
 |-----|-----|-----|
-| `<space/>{:xml}` | By a number of spaces, `&nbsp;`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>{:xml}`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
+| `<space/>{:xml}` | By a number of spaces, `&nbsp;{:xml}`, corresponding to the estimated number of characters in the empty area, or in a number of line beginnings in otherwise empty lines, `<lb/>{:xml}`, corresponding to the estimated number of lines in the empty area | By a note inserted by the transcriber stating the approximate length of the empty area |
 
 </DisplayFrame>
 

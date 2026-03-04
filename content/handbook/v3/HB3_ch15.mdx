@@ -125,12 +125,12 @@ URLs are normally found in the web browser location bar and can be copied and pa
        notation above when the copy and paste is performed, and no further intervention is therefore
        needed from the encoder. There are some exceptions, however.
 
-The standard delimiter of key/value pairs in the query string section of URLs is `&`
+The standard delimiter of key/value pairs in the query string section of URLs is `&{:xml}`
        (ampersand), which is normally shown in its unencoded form in a web browser location bar, and
        therefore where most users are likely to find the URLs documented in this section. However,
        using ampersand on its own is not valid XML (&amp; should be used) but many
        interface languages such as PHP do not recognise this notation if it is passed unparsed to a
-       web application. You will need to convert `&` in URIs to &amp; but also
+       web application. You will need to convert `&{:xml}` in URIs to &amp; but also
        ensure that the application converts them back for linking for end-users (web browsers
        normally do this automatically).
 

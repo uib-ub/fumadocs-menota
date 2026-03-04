@@ -12,7 +12,10 @@
     </xsl:template>
     <xsl:template match="tei:hi">
         <xsl:choose>
-            <xsl:when test="@rend='entity' or @rend='codepoint' or @rend='descName'">
+            <xsl:when test="@rend='entity'">
+                <xsl:value-of select="concat('`', ., '{:xml}`')"/>
+            </xsl:when>
+            <xsl:when test="@rend='codepoint' or @rend='descName'">
                 <xsl:value-of select="concat('`', ., '`')"/>
             </xsl:when>
             <xsl:when test="@rend='bold'">
