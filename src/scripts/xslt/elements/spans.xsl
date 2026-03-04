@@ -44,6 +44,13 @@
                 <xsl:apply-templates/>
                 <xsl:text>&lt;/Glyph&gt;</xsl:text>
             </xsl:when>
+            <xsl:when test="@rend='red'">
+                <xsl:text>&lt;span className="</xsl:text>
+                <xsl:value-of select="concat('text-', @rend, '-500')"/>
+                <xsl:text>"&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&lt;/span&gt;</xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
             </xsl:otherwise>
