@@ -17,7 +17,10 @@
             </xsl:otherwise>
         </xsl:choose>
         <xsl:choose>
-            <xsl:when test="@rend='plain' or descendant::tei:cell//tei:lb">
+            <xsl:when test="
+                @rend='plain' or 
+                descendant::tei:cell//tei:lb or 
+                descendant::tei:cell//tei:figure">
                 <xsl:text>&#x0a;&lt;table&gt;</xsl:text>
                 <xsl:if test="tei:row[@role='label']">
                     <xsl:text>&#x0a;&lt;thead&gt;</xsl:text>
@@ -37,7 +40,16 @@
                     <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
                     <xsl:for-each select="tei:cell">
                         <xsl:text>&#x0a;&lt;td&gt;</xsl:text>
-                        <xsl:apply-templates/>
+                        <xsl:choose>
+                            <xsl:when test="descendant::tei:figure">
+                                <xsl:text>&#x0a;</xsl:text>
+                                <xsl:apply-templates/>
+                                <xsl:text>&#x0a;</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:text>&lt;/td&gt;</xsl:text>
                     </xsl:for-each>
                     <xsl:text>&#x0a;&lt;/tr&gt;</xsl:text>
