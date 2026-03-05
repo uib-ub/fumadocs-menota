@@ -5,11 +5,13 @@ author:
  - Marco Bianchi
 ---
 
+
 # Ch. 12. Names
 
 Version 3.1 (12 October 2022) – cf. [version 3.0](HB3_ch12-0.xml) (12 December 2019)
 
 by Karl G. Johansson and Marco Bianchi
+
 ## 12.1 Introduction
 
 Medieval manuscripts contain an abundance of names: personal names for historical,
@@ -108,6 +110,7 @@ Usually, XML elements for different types of names are used instead of
                in combination. This is especially the case in linguistically annotated
                transcriptions (cf. [ch. 11](HB3_ch11.xml));  for an example of
                 a transcription of this type, see [ch. 15.4.5](HB3_ch15.xml#sec15.4.5)).
+
 ## 12.2 Personal names
 
 Personal names may be divided into several categories, depending on the source and
@@ -126,6 +129,7 @@ Personal names may be divided into several categories, depending on the source a
 | `<roleName>{:xml}` |  | The name for a role held by a person. |
 | <span className="p-3"/>`@type{:sh}` | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested value: `"political"{:js}`. |
 </div>
+
 
 ### 12.2.1 Forenames and patronymica
 
@@ -178,6 +182,7 @@ Mythological and legendary names could be seen as forming a group, once again
 As Loki has the second name from his mother Laufey, the value of the attribute is
                      `"metronym"{:js}` (meaning that it is derived from the name of the person’s
                   mother).
+
 ### 12.2.2 Surnames
 
 In the Scandinavian and Old Icelandic material, surnames were introduced in the
@@ -190,6 +195,7 @@ In the Scandinavian and Old Icelandic material, surnames were introduced in the
   <surname>Oxenstierna</surname>
 </persName>
 ```
+
 
 ### 12.2.3 Nicknames, Epithets and Titles
 
@@ -234,6 +240,7 @@ Titles such as “konungr”, “jarl” and “hersir” could be encoded by
 
 The `@type{:sh}` attribute indicates that the title is considered to refer to
                   the political system of the Old Norwegian society.
+
 ### 12.2.4 Sorting names
 
 If an index is generated from the XML transcription, it might be useful to add
@@ -247,10 +254,13 @@ If an index is generated from the XML transcription, it might be useful to add
 </persName>
 ```
 
+
 ### 12.2.5 Identifying historical individuals
 
 The `@xml:id{:sh}` attribute could be used to link the occurrence of a name to the
-                  individual it denotes, either internally or externally. 12.2.5.1 Internal referencing
+                  individual it denotes, either internally or externally. 
+
+#### 12.2.5.1 Internal referencing
 
 Biographical data can be stored in the header of the XML file. The unique
                      `@xml:id{:sh}` defined for each biographical entry could then be used to link
@@ -282,7 +292,9 @@ The corresponding markup in the body of the XML file would then be:
 ```
 
 
-See the TEI P5 Guidelines, [ch. 13.3](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERS), for an extensive description of biographical data.12.2.5.2 External referencing
+See the TEI P5 Guidelines, [ch. 13.3](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERS), for an extensive description of biographical data.
+
+#### 12.2.5.2 External referencing
 
 References to external biographical resources can be put either into the header
                      or directly into the transcription. The following two solutions both link the
@@ -307,6 +319,7 @@ Or, without internal reference to the header:
 
 See [ch. 15.4.5](HB3_ch15.xml#sec15.4.5) for suggested external
                      resources and more examples, and also [ch. 14.3.6](HB3_ch14.xml#sec14.3.6).
+
 ## 12.3 Place names
 
 The encoding of place names should be rather straight-forward, but there are a few
@@ -362,17 +375,20 @@ The region of Västergötland forms a part of the country referred to as Svíþj
 </placeName>
 ```
 
+
 ### 12.3.1 Identifying places
 
 Similar to personal names, attestations of place names can be linked to authority
                   records describing the place itself with a `@ref{:sh}` attribute. See [ch. 15.4.6](HB3_ch15.xml#sec15.4.6) below and the TEI P5 Guidelines, 
                   [ch. 13.3.4](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDGEOG).
+
 ## 12.4 Other names
 
 There are other groups of names that might be singled out in the encoding. In the
                following, we present suggestions as to how animal names and names of artefacts could
                be treated. The `@type{:sh}` attribute is used liberally to enhance
                searchability.
+
 ### 12.4.1 Animal names
 
 Medieval texts contain names for horses, dogs and other domestic animals. These
@@ -405,6 +421,7 @@ There are also names of animals in relation to myths and legends. For example,
 There is no element `<animalName>{:xml}` on par with `<persName>{:xml}` and
                      `<placeName>{:xml}`. For all but the most detailed encodings, we suggest that
                   the type value `"animal"{:js}` is sufficient.
+
 ### 12.4.2 Artefact names
 
 There are a number of names for artefacts in the medieval material, e.g. for
@@ -436,6 +453,7 @@ In most cases, we believe that the attribute value `"artefact"{:js}` is
 Similar to personal names and place names, objects’ names can be linked to the objects they denote by means of a
                      `@ref{:sh}` attribute with identifiers pointing to an internal registry or
                   an external resource, i.e. xml:ids or external URIs.
+
 ## Updates to ch. 12
 
 On 12 October 2022, an example of the relationship between the `<name>{:xml}` and `<w>{:xml}` elements was given in [ch. 12.1](#sec12.1), using the encoding of the name Egils (genitive of  Egill) to illustrate the structure of the encoding.

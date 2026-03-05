@@ -5,11 +5,13 @@ author:
  - Nina Stensaker
 ---
 
+
 # Appendix I: Menota Light
 
 Version 3.0 (12 December 2019)
 
 by Odd Einar Haugen and Nina Stensaker
+
 ## I.1 Introduction
 
 This handbook is complex and  deals with a number of questions that may 
@@ -24,6 +26,7 @@ In this appendix, we are offering an example of a single-level transcription of 
          In the present example, the transcription is on a single, diplomatic level, and there is no
         morphological annotation. However, the way Menota organises its files, further levels 
         can easily be added later on, and the same goes for the morphological annotation.
+
 ## I.2 The source
 
 NRA 58 C is a fragment of four folios written in two columns, having a total of 2,981 words. 
@@ -39,6 +42,7 @@ NRA 58 C is a fragment of four folios written in two columns, having a total of 
 
 
 <Caption title="Ill. I.1">. A fragment of _Konungs skuggsjá_. NRA 58 C, fol. 3r, col. B, l. 1–18.</Caption>
+
 ## I.3 The encoding
 
 Below is the encoding of the text. In order to make the file easier to read, each word is set on a line of its own. 
@@ -239,6 +243,7 @@ Below is the encoding of the text. In order to make the file easier to read, eac
 </text>
 ```
 
+
 ## I.4 Comments
 
 As can be seen in the example, the whole text is embedded in the `<text>{:xml}` element. The `@xml:lang{:sh}` attribute which has the `"onw"{:js}` value states that the language is Old Norwegian. Next, the text is embedded in the `<body>{:xml}` element, which allows the encoder to add a `<front>{:xml}` and `<back>{:xml}` section to the transcription. Next, a single `<div>{:xml}` element embeds the example – usually, a `<div>{:xml}` will contain longer passages than this, such as chapters. Finally, there is a `<p>{:xml}` element, stating that the text is in prose, as opposed to e.g. `<lg>{:xml}` for metrical text. These elements were introduced and explained in [ch. 3](HB3_ch3.xml) above.
@@ -248,6 +253,7 @@ Note that the `<pb/>{:xml}` and `<cb/>{:xml}` elements precede the text. They ha
 The final two elements are the domineering ones: `<w>{:xml}` for each word and `<pc>{:xml}` for each punctuation character. As explained in [ch. 3.6](HB3_ch3.xml#sec3.6) above, the reason for embedding words in the `<w>{:xml}` element is primarily to make it ready for morphological annotation. It is also a convenient way of dealing with the distinction between graphical and lexical words, as shown in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above.
 
 Then, there is only one element left, the `<ex>{:xml}` element for the expansion of abbreviations. There are not many examples here, but one is found in line 2, where “þat” has been abbreviated with a bar across the ascender of the “þ”. If the transcription had been on the facsimile level, this abbreviation mark would have been encoded with the `<am>{:xml}` element, leaving it to the diplomatic level to expand the mark. You may download the multi-level transcription of NRA 58 C from the Menota archive to see how this works.
+
 ## I.5 File for downloading
 
 We offer the XML file used in this appendix for downloading. This is the complete file, including the header:

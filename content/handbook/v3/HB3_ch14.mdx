@@ -6,11 +6,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Ch. 14. The header
 
 Version 3.1 (7 January 2021) – cf. [version 3.0](HB3_ch14-0.xml) (12 December 2019)
 
 by Matthew Driscoll, Beeke Stegmann and Odd Einar Haugen
+
 ## 14.1 Introduction
 
 This chapter deals with the first major part of any Menota XML file, the header. 
@@ -31,6 +33,7 @@ This chapter deals with the first major part of any Menota XML file, the header.
 This chapter will discuss the recommended (minimal) amount of information for each of the four parts. Due to practical considerations, 
   the `<fileDesc>{:xml}` is treated in two separate subsections, one dealing with the meta-level information on the file history, the other
 concerning the source from which the XML file is created, i.e. in our case usually the manuscript.
+
 ## 14.2 The file description: Title, edition, extent and publication
 
 The file description is a mandatory part of the header and must include information on the title, on the publication and on the source, cf. the File Description of the TEI P5 Guidelines, 
@@ -41,6 +44,7 @@ The first part of the `<fileDesc>{:xml}` supplies the necessary bibliographical 
   The main editor(s) should always be identified, but since many digital editions are the result of a teamwork (or of an accumulative work) all major contributors should be listed.
   Please note: The description of the source for transcription (done in the element `<sourceDesc>{:xml}`) is also part of the `<fileDesc>{:xml}`. 
     However, in order to improve legibility, that part is treated in a separate subchapter (see [ch. 14.3](#sec14.3) below).
+
 ### 14.2.1 Title statement
 
 <div className="table-xml-elements">
@@ -167,6 +171,7 @@ If other people than the main editor(s) contributed to the work, this is specifi
 The TEI P5 Guidelines, [ch. 2.2.1](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21), recommend that the element `<author>{:xml}` is included in the 
     `<titleStmt>{:xml}`. 
     Since almost all Medieval Nordic texts are anonymous we suggest that this element is optional.
+
 ### 14.2.2 Edition statement
 
 <div className="table-xml-elements">
@@ -195,6 +200,7 @@ A complete edition statement may be as simple as this:
 
 ```
 
+
 ### 14.2.3 Extent
 
 <div className="table-xml-elements">
@@ -210,6 +216,7 @@ The `<extent>{:xml}` element specifies the size of the file. The exact number of
 <extent n="76411">76411 words</extent>
 
 ```
+
 
 ### 14.2.4 Publication statement
 
@@ -249,6 +256,7 @@ Further specifications can be added in a `<p>{:xml}` element. Almost all texts i
 </publicationStmt>
 
 ```
+
 
 ## 14.3 The file description: Identifying and describing the source
 
@@ -303,6 +311,7 @@ data. On the other hand, it could be preferable when dealing with pre-existing
 descriptions (so-called “legacy data”), the exact form of
 which one may wish, or be required, to maintain. 
 If at all possible, we recommend to use the available specific elements to structure and mark-up the manuscript description.
+
 ### 14.3.1 Manuscript identifier
 
 The only mandatory element within `<msDesc>{:xml}` is `<msIdentifier>{:xml}`. For `<msIdentifier>{:xml}`, a number of
@@ -360,6 +369,7 @@ The `@key{:sh}` attribute to the `<country>{:xml}` element can take values such 
 In addition to the commonly used shelfmark, this example also has an `<altIdentifier>{:xml}`, giving the running number from Kålund’s printed catalogue. 
  That this reference is to Kålund’s catalogue can be seen from the `@type{:sh}` attribute with the abbreviation “KKKat” as its value. The `<msName>{:xml}`
 elements additionally give two forms of the manuscript’s nickname, one in Latin, one in Icelandic.
+
 ### 14.3.2 Intellectual content 
 
 A detailed description of a manuscript’s intellectual contents is put in the
@@ -417,6 +427,7 @@ information on the `<msItem>{:xml}` level, i.e. concerning
 editions of the item in question. Bibliographical information
 pertaining to the manuscript as a whole should be placed in the
 `<additional>{:xml}` element, described below (see [ch. 14.3.5](#sec14.3.5)).
+
 ### 14.3.3 Codicological features
 
 The next major element in
@@ -618,6 +629,7 @@ The third group of elements in `<physDesc>{:xml}` pertains to things such as the
   transcribing any material not originally part of the manuscript but bound with it or otherwise accompanying it. For example, the small paper slips 
   on which Árni Magnússon frequently noted details about a manuscript or its provenance, which are frequently kept with the manuscript in question,
   can be described here using one or more paragraphs. 
+
 ### 14.3.4 The history of the manuscript
 
 The `<history>{:xml}` element
@@ -658,6 +670,7 @@ Information regarding the provenance and acquisition of a manuscript are frequen
  `<accMat>{:xml}` described above, the contents can be discussed and interpreted in the elements `<provenance>{:xml}` and/or `<acquisition>{:xml}`.
  The same applies for other additions and marginalia (noted and potentially transcribed in `<additions>{:xml}`) that may contain hints at
    the provenance or general history of a manuscript.
+
 ### 14.3.5 Other information
 
 The final large grouping element in
@@ -688,6 +701,7 @@ whole. Inside `<listBibl>{:xml}`, one ore more `<bibl>{:xml}` elements are used 
  References to editions or other bibliographical information relevant to individual text-items, on the other hand,
  should rather be given under the appropriate
 `<msItem>{:xml}` (see [ch. 14.3.2](#sec14.3.2) above).
+
 ### 14.3.6 Mark-up for names and bibliographical references using authority records
 
 Most of the elements that have been
@@ -842,6 +856,7 @@ Again, using the unique value of `@xml:id{:sh}`, a `<bibl>{:xml}` element anywhe
 </bibl>
 ```
 
+
 ## 14.4 The encoding description
 
 The `<encodingDesc>{:xml}` should document the relationship between the electronic edition and the source it is based upon. 
@@ -921,6 +936,7 @@ A complete `<encodingDesc>{:xml}` may look like this:
 
 ```
 
+
 ## 14.5 The profile description
 
 The `<profileDesc>{:xml}` is an optional part of the header. We recommend that
@@ -968,6 +984,7 @@ A `<profileDesc>{:xml}`may look like this:
 
 Note that the Profile Description may list more languages than actually 
     referred to in the text. (See also [ch. 11.7](HB3_ch11.xml#sec11.7).) 
+
 ## 14.6 The revision description
 
 Even if this is an optional part of the header, it is essential that all changes to the file are recorded. 
@@ -996,6 +1013,7 @@ A short series of `<change>{:xml}` elements may look like this:
 
 ```
 
+
 ## 14.7 Example headers
 
 Three examples of Menota headers can be accessed in [app. E](HB3_E_menotaheader.xml). 
@@ -1005,6 +1023,7 @@ The first two examples are for full manuscripts: One header is for a single-text
     The third example is for a manuscript fragment, NKS 235 g 4to (_Konungs skuggsjá_). This is more detailed and includes information on material features of the manuscripts and its provenance.
 
 Note that almost all texts in the Menota archive can be downloaded as XML files. This means that almost any header in the archive can be inspected, and, if convenient, used as an example.
+
 ## Updates to ch. 14
 
 On 7 January 2021,  two sentences were added in [ch. 14.3.4](#sec14.3.4) on the usefulness and practice of dating in conjunction with language encoding, and the latter practice was discussed in a revised [ch. 14.5](#sec14.5). Rather than using the non-ISO codes “oic” (Old Icelandic), “onw” (Old Norwegian), “osw” (Old Swedish) and “oda” (Old Danish), we now recommend using the standard ISO codes “isl” (Icelandic), “nor” (Norwegian), “swe” (Swedish) and “dan” (Danish) combined with dating of the manuscript in question.

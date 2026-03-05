@@ -5,11 +5,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Chapter 6. Abbreviations
 
 Version 3.0 (12 December 2019)
 
 by Haraldur Bernharðsson and Odd Einar Haugen
+
 ## 6.1 Introduction
 
 Abbreviations are a common feature of medieval orthography. In the medieval Nordic
@@ -64,7 +66,9 @@ In a multi-level transcription, the `<am>{:xml}` element typically belongs to th
 
 In this chapter, we shall give a typology of abbreviations and then exemplify a number
                of cases.
+
 ## 6.2 Typology
+
 ### 6.2.1 Overview
 
 Abbreviations are usually divided into four categories (see, e.g., [Hreinn Benediktsson 1965](HB3_literature.xml#Benediktsson1965), p. 85 and, for a
@@ -94,6 +98,7 @@ The typology in [ch. 6.3](#sec6.3) below takes as its point of
                   below) a base line character. From the point of view of character encoding, the former
                   signs can be defined and treated like any other characters, while sthe latter signs must 
                   be defined as combining characters, like other diacritical marks.
+
 ### 6.2.2 Glyphs
 
 Glyphs are displayed in the Andron font by Andreas Stötzner. The regular
@@ -102,6 +107,7 @@ Glyphs are displayed in the Andron font by Andreas Stötzner. The regular
 Since abbreviation marks typically appear as parts of words and are frequently
                   associated with a base line character we have chosen to illustrate each mark
                   within the context of a whole word.
+
 ### 6.2.3 Entity names
 
 All abbreviations are referred to with entity names, with the exception of full
@@ -114,6 +120,7 @@ All abbreviations are referred to with entity names, with the exception of full
 We aim at synchronizing our use of entities with those recommended by ISO, but
                   since there presently are no abbreviation entities in ISO, we are left to our own
                   devices in this chapter.
+
 ### 6.2.4 Unicode values
 
 [The
@@ -126,6 +133,7 @@ We aim at synchronizing our use of entities with those recommended by ISO, but
                      Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
 
 For a complete list of suggested Unicode values, see [app. A](HB3_A_characters.xml) below.
+
 ### 6.2.5 Descriptive names
 
 As is the case with ordinary characters (cf. [ch.
@@ -138,10 +146,12 @@ As is the case with ordinary characters (cf. [ch.
                   name for abbreviations occupying a separate position on the base line, and
                   `COMBINING ABBREVIATION MARK  [+ APPROPRIATE DESCRIPTION]` for those 
                   typically placed above, through or below a base line character.
+
 ## 6.3 Abbreviation marks on the base line
 
 Abbreviation marks on the base line behave as any other character. The typology of
                these abbreviation marks is discussed and exemplified below.
+
 ### 6.3.1 The “et” mark
 
 The Tironian <em>nota</em> resembling the number “7” (or the
@@ -162,6 +172,7 @@ There are two major variants of this sign. If the transcriber wishes to make a
 | <Glyph>⁊</Glyph> | <em>ok</em> | &lt;am&gt;&et;&lt;/am&gt; | &lt;ex&gt;ok&lt;/ex&gt; | `204A` |
 | <Glyph></Glyph> | <em>ok</em> | &lt;am&gt;&etslash;&lt;/am&gt; | &lt;ex&gt;ok&lt;/ex&gt; | `F158` |
 </div>
+
 
 ### 6.3.2 The “ed” mark
 
@@ -186,6 +197,7 @@ In [The
 | <Glyph>m</Glyph> | m<em>eð</em> | m&lt;am&gt;&sem;&lt;/am&gt; | m&lt;ex&gt;eð&lt;/ex&gt; | `F1AC` |
 </div>
 
+
 ### 6.3.3 The “con” mark
 
 A sign resembling a backwards “c” was often used for <em>con</em> in Latin and <em>kon</em> in Norse words. This
@@ -205,6 +217,7 @@ A sign resembling a backwards “c” was often used for <em>con</em> in Latin a
 See the [MUFI character 
                   recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for other variants of the “con” mark (descending
                   and with a dot).
+
 ### 6.3.4 The “rum” mark
 
 The sequence “rum” was often abbreviated with a character resembling a small
@@ -218,6 +231,7 @@ The sequence “rum” was often abbreviated with a character resembling a small
 | <Glyph>foꝝ</Glyph> | fo<em>rum</em> | fo&lt;am&gt;&rum;&lt;/am&gt; | fo&lt;ex&gt;rum&lt;/ex&gt; | `F154` |
 </div>
 
+
 ### 6.3.5 The cross mark
 
 The word <em>kross</em> was sometimes abbreviated with the cross
@@ -229,6 +243,7 @@ The word <em>kross</em> was sometimes abbreviated with the cross
 |-----|-----|-----|-----|-----|
 | <Glyph>✝</Glyph> | <em>kross</em> | &lt;am&gt;&cross;&lt;/am&gt; | &lt;ex&gt;kross&lt;/ex&gt; | `271D` |
 </div>
+
 
 ### 6.3.6 The “m” rune
 
@@ -265,6 +280,7 @@ The runic character for “m” was sometimes used for the word <em>maðr</em> (
 The runic character may appear with interlinear marks (“a”, “i”,
                      “e”, “n”, “z”) for various inflected forms of the word <em>maðr</em>, e.g., <em>manna</em>, <em>manni</em>/<em>manne</em>, <em>mann</em>, <em>mannz</em>. The encoding of this type is
                   discussed in [ch. 6.4.7](#sec6.4.7) below. 
+
 ### 6.3.7 The “f” rune
 
 The runic character for “f” was sometimes used for the word <em>fé</em>. In analogy with the use of the “m” rune, we suggest the
@@ -277,6 +293,7 @@ The “f” rune is included in the [Runic](http://www.unicode.org/charts/PDF/U1
 |-----|-----|-----|-----|-----|
 | <Glyph>ᚠ</Glyph> | <em>fé</em> | &lt;am&gt;&fMedrun;&lt;/am&gt; | &lt;ex&gt;fé&lt;/ex&gt; | `16A0` |
 </div>
+
 
 ### 6.3.8 Dot (full stop)
 
@@ -339,6 +356,7 @@ If the transcriber wishes to distinguish between the dot used as an abbreviation
                   runic characters “f” and “m”. When the encoder believes that the full
                   stop is an abbreviation mark that should be indicated simply by using the
                   &lt;am&gt; element, as shown here.
+
 ### 6.3.9 Colon
 
 The colon is sometimes, though not often, used as a mark of suspension, in the
@@ -351,6 +369,7 @@ The colon is sometimes, though not often, used as a mark of suspension, in the
 |-----|-----|-----|-----|-----|
 | <Glyph>Rognv:</Glyph> | Rognvaldr | Rognv&lt;am&gt;:&lt;/am&gt; | Rognv&lt;ex&gt;aldr&lt;/ex&gt; | `003A` |
 </div>
+
 
 ### 6.3.10 Small capitals
 
@@ -376,6 +395,7 @@ Small capitals may also appear with a superscript dot; for example, “ʀ̇”. 
                   length, as that is almost certainly not what the scribe had in mind. Instead,
                   small capitals with a superscript dot should be transcribed as such both in a
                   facsimile and a diplomatic transcription.
+
 ## 6.4 Combining abbreviation marks
 
 The majority of abbreviation marks are placed above, through or below a base line
@@ -387,6 +407,7 @@ It is sometimes difficult to decide whether a sign is placed on the base line or
                above another base line character. For example, the “us” mark (cf. [ch. 6.4.3](#sec6.4.3) below) may sometimes occupy a position of its
                own, although slightly raised above the base line. The classification in this chapter
                is based on what we believe are the prototypical positions of the abbreviation marks. 
+
 ### 6.4.1 Horizontal bar
 
 The horizontal bar is from a historical point of view the earliest form of an
@@ -447,6 +468,7 @@ It is possible to identify various shapes of the horizontal bar. In general we
                   The meaning of each entity must be
                   explained in the header of the transcription and specified in the entity list (cf.
                      [app. D](HB3_D_schemas.xml) below)
+
 ### 6.4.2 Flourish
 
 The flourish may be described as a horizontal bar with a return. It appears in the
@@ -460,6 +482,7 @@ The flourish may be described as a horizontal bar with a return. It appears in t
 |-----|-----|-----|-----|-----|
 | <Glyph>ꝓꝼaꞇ</Glyph> | p<em>ro</em>fat | p&lt;am&gt;&combflour;&lt;/am&gt;&fins;a&trot; | p&lt;ex&gt;ro&lt;/ex&gt;fat | `F1C6` |
 </div>
+
 
 ### 6.4.3 The <em>us</em> mark
 
@@ -476,6 +499,7 @@ Originally a Tironian <em>nota</em>, a mark resembling a small
 | <Glyph>h᷒</Glyph> | h<em>us</em> | h&lt;am&gt;&us;&lt;/am&gt; | h&lt;ex&gt;us&lt;/ex&gt; | `F15B` |
 | <Glyph>la᷒</Glyph> | la<em>us</em> | la&lt;am&gt;&us;&lt;/am&gt; | la&lt;ex&gt;us&lt;/ex&gt; | `F15B` |
 </div>
+
 
 ### 6.4.4 The <em>er</em> mark
 
@@ -496,6 +520,7 @@ A mark resembling a zigzag was frequently used as abbreviation of a front vowel
 | <Glyph>heꝼ</Glyph> | hef<em>ir</em> | he&fins;&lt;am&gt;&ercurl;&lt;/am&gt; | hef&lt;ex&gt;ir&lt;/ex&gt; | `F1C8` |
 </div>
 
+
 ### 6.4.5 The <em>ra</em> mark
 
 Originally an open form of the character “a”, this mark was used as an
@@ -510,6 +535,7 @@ Originally an open form of the character “a”, this mark was used as an
 | <Glyph>sᷓ</Glyph> | s<em>va</em> | s&lt;am&gt;&ra;&lt;/am&gt; | s&lt;ex&gt;va&lt;/ex&gt; | `1DD3` |
 | <Glyph>ꝼ</Glyph> | f<em>ra</em> | &fins;&lt;am&gt;&rabar;&lt;/am&gt; | f&lt;ex&gt;ra&lt;/ex&gt; | `F1C1` |
 </div>
+
 
 ### 6.4.6 The <em>ur</em> mark
 
@@ -527,6 +553,7 @@ The syllable <em>ur</em> (sometimes <em>yr</em>) can
 | <Glyph>b᷑þ</Glyph> | b<em>ur</em>þ | b&lt;am&gt;&ur;&lt;/am&gt;þ | b&lt;ex&gt;ur&lt;/ex&gt;þ | `1DD1` |
 | <Glyph>ſpþe</Glyph> | ſp<em>ur</em>þe | ſp&lt;am&gt;&urlemn;&lt;/am&gt;þe | ſp&lt;ex&gt;ur&lt;/ex&gt;þe | `F1C2` |
 </div>
+
 
 ### 6.4.7 Interlinear characters
 
@@ -590,6 +617,7 @@ Since the first entity, `&mMedrun;{:xml}`, is defined as a base line character
                   and the second, `&asup;{:xml}`, as an interlinear mark placed above the
                   immediately preceding base line character, there will be no doubt as to the
                   positioning. 
+
 ### 6.4.8 Superscript dots
 
 Superscript dots are sometimes used to denote length. It is a moot question
@@ -608,7 +636,9 @@ Superscript dots are sometimes used to denote length. It is a moot question
 | <Glyph>leġıa</Glyph> | leg<em>g</em>ia | leg&lt;am&gt;&combdot;&lt;/am&gt;&inodot;a | leg&lt;ex&gt;g&lt;/ex&gt;ia | `0307` |
 </div>
 
+
 ## 6.5 Special cases
+
 ### 6.5.1 Nomina sacra
 
 In some cases, the whole word must be analysed as an abbreviation. This applies to
@@ -638,6 +668,7 @@ Typically in abbreviations of this sort, the bar extends over neighbouring
       neighbouring letters as well, even if it may be argued that there is only a single bar in
       each example, and that this bar simply happens to extend over more than one character. This
       problem is discussed more fully in [ch. 6.5.5](#sec6.5.5) below.
+
 ### 6.5.2 Interlinear characters in other contexts
 
 Interlinear (superscript) characters are used in various ways, not always as
@@ -704,6 +735,7 @@ Especially at the end of a line one or more characters may be placed above the
 | <Glyph>eᷤ</Glyph> | eᷤ | e&ssup; |
 </div>
 
+
 ### 6.5.3 Missing abbreviation mark
 
 From time to time one can find examples of a word that obviously is abbreviated
@@ -715,6 +747,7 @@ From time to time one can find examples of a word that obviously is abbreviated
 This is what we would recommend on the facsimile level of transcription. On the
                   diplomatic and normalised levels, we recommend using the `<supplied>{:xml}`
                   element, i.e. “d&lt;supplied&gt;rottning&lt;/supplied&gt;”.
+
 ### 6.5.4 Nesting (stacking) of abbreviation marks
 
 There are a few examples of base line characters which are abbreviated with an
@@ -736,6 +769,7 @@ Since `&osup;{:xml}` is defined as a combining character, it follows that it is
                   `&bar;{:xml}` is also defined as a combining character, it follows that it
                   is placed above `&osup;{:xml}`. There is therefore no doubt as to the
                   positioning of each part. 
+
 ### 6.5.5 Extension of abbreviation marks
 
 As a rule, combining abbreviation marks are associated with a single base line
@@ -785,6 +819,7 @@ It is possible to encode this word in such a way that the bar is associated with
 
 On the other hand, it should be noted that this a case where `0305``COMBINING OVERLINE` is appropriate, since it connects to left and
                   right. Cf. the reference in [ch. 6.4.1](#sec6.4.1) above.
+
 ### 6.5.6 Sporadic ligatures with abbreviation marks
 
 We recommended that sporadic ligatures should not be encoded by use of separate
@@ -884,6 +919,7 @@ Often, a horizontal bar is used across these ligatures. The bar may be encoded
 
 </div>
 
+
 ### 6.5.7 The character “r” as interlinear ligature
 
 A quite special type of abbreviation is interlinear “r” in ligature with e.g.
@@ -894,6 +930,7 @@ A quite special type of abbreviation is interlinear “r” in ligature with e.g
 |-----|-----|-----|-----|-----|
 | <Glyph></Glyph> | þ<em>a</em>r | &lt;am&gt;þ&rsup;&lt;/am&gt; | þ&lt;ex&gt;a&lt;/ex&gt;r | `E8C1` |
 </div>
+
 
 ### 6.5.8 Sharp “s”
 
@@ -932,6 +969,7 @@ In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
 
 </div>
 
+
 ### 6.5.9 The semicolon abbreviation
 
 In Old Swedish, the semicolon character is often used as an abbreviation for the
@@ -955,6 +993,7 @@ There is a long-standing tradition for rendering this abbreviation character as
                   full, as suggested in the table above. It cannot be denied, however, that this
                   rule requires some investigation into the manuscript orthography when deciding the
                   exact expansion.
+
 ## 6.6 List of abbreviation marks
 
 An extensive list of abbreviation characters is found in the [MUFI 

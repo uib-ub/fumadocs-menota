@@ -5,6 +5,7 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Appendix D: Schemas
 
 Version 3.0 (12 December 2019)<br/>
@@ -12,6 +13,7 @@ Version 3.0 (12 December 2019)<br/>
          Entity list in D.1.1 last updated 9 August 2024
 
 by Tone Merete Bruvik, Odd Einar Haugen and Øyvind Liland Gjesdal
+
 ## D.1 Menota schemas
 
 In version 1 of the Menota handbook, a number of changes were made to the TEI
@@ -34,19 +36,24 @@ In version 3 of the Menota handbook, a few changes have been made to the RELAX N
                and `<me:norm>{:xml}` elements; (2) replacing the `<me:expunged>{:xml}` element with the 
                `<me:suppressed>{:xml}` element; (3) adding the `@me:key{:sh}` and `@me:ref{:sh}` 
                attributes to a number of elements, as introduced in the new [ch. 16](HB3_ch16.xml).
+
 ### D.1.1 Current versions of Menota schemas
 
 This is a list of the current Menota schemas. Earlier versions of these files can
                   be accessed in [app. D](HB2_D_schemas.xml) of v. 2 of the handbook.
 
 Remember that many browsers will try to open XML files in a new window; in order
-                  to download these files, try using right-click (Windows) or alt-click (Mac).(1) One Document Does it all (ODD)
+                  to download these files, try using right-click (Windows) or alt-click (Mac).
+
+#### (1) One Document Does it all (ODD)
 
 The ODD file is an XML file which specifies all changes to the TEI Guidelines
                      P5. 
 
 - [Menota 3.0 ODD file](menotaP5.xml) for TEI P5 (10 December
-                           2019) – XML file(2) Entity list
+                           2019) – XML file
+
+#### (2) Entity list
 
 The entity list specifies recommended entities. This is not an obligatory part
                      of a schema, but it is an important part of Menota encoding since a large
@@ -57,7 +64,9 @@ The entity list specifies recommended entities. This is not an obligatory part
 - [Menota Entities](menota-entities.txt) (9 August 2024)
                            – text file
 
-The entity list can be updated independently of the schemas.(3) Document Type Definition (DTD)
+The entity list can be updated independently of the schemas.
+
+#### (3) Document Type Definition (DTD)
 
 The DTD is one of several schemas that are allowed in TEI P5. It is used for
                      this handbook, for example, while the texts in the archive refer to a RELAX NG schema.
@@ -72,7 +81,9 @@ The DTD is one of several schemas that are allowed in TEI P5. It is used for
                            file
 
 Some browsers will attach the extension .xml to this file when downloaded. Just
-                     change the extension back to .dtd(4) RELAX NG schema
+                     change the extension back to .dtd
+
+#### (4) RELAX NG schema
 
 The version given here has been generated on the basis of the ODD file and
                      entity file listed above. When using a RELAX NG schema, data values can be
@@ -88,6 +99,7 @@ The version given here has been generated on the basis of the ODD file and
 
 - [Menota RELAX NG](menotaP5.rng) (10 December 2019) –
                            XML file
+
 ## D.2 Referring to the Menota schema
 
 Please note that the links below have been updated after Menota was moved from Oslo

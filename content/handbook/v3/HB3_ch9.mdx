@@ -4,11 +4,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Chapter 9. Scribal and editorial intervention
 
 Version 3.1 (30 December 2025) – cf. [version 3.0](HB3_ch9-0.xml) (12 December 2019)
 
 by Odd Einar Haugen
+
 ## 9.1 Introduction
 
 This chapter covers  the encoding of changes to the manuscript text made by the scribe and
@@ -19,6 +21,7 @@ treats insertions, suppressions and corrections made by the transcriber, annotat
 of transcriber, annotator and editor, we will refer to these roles as that of the editor. 
 Finally, [ch. 9.4](#sec9.4) deals with comments of any kind, i.e. 
 text that comes in addition to the manuscript text.
+
 ## 9.2 Scribal intervention
 
 In the manuscript text and in the margins of the manuscript, we often
@@ -27,6 +30,7 @@ would like to encode. These changes can be divided into four different groups
 depending on the nature of the change and its relevance for the reading
 of the manuscript text or our knowledge about the manuscript: (1) additions, 
 (2) deletions, (3) transpositions and (4) corrections.
+
 ### 9.2.1 Additions by the scribe
 
 This section only deals with additions made by a scribal hand. Text inserted by a modern editor is dealt with in [ch. 9.3.1](#sec9.3.1) below.
@@ -52,6 +56,7 @@ We suggest that there are two different types of scribal additions, and that the
 Changes in scribal hands are not considered additions. For markup of 
     such phenomena, the `<handShift/>{:xml}` element should be used (cf. [ch. 3.14](HB3_ch3.xml#sec3.14) above). Note that this element is parallel to empty elements
     like `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}` in that it only points to a break in the text.
+
 ### 9.2.1.1 Encoding of text supplied by the scribe
 
 
@@ -162,6 +167,7 @@ The location of the addition is indicated by the
       should as far as possible be located within the main text.
 
 As discussed in [ch. 6.5.2](HB3_ch6.xml#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for <em>fimti</em> (type c) or for reasons of space, e.g. “eᷤ” for <em>es</em> (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as `&ssup;{:xml}` for the supralinear “s” in `eᷤ{:xml}` for <em>es</em>. The element `<add>{:xml}` is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
+
 ### 9.2.1.2 Encoding of glosses by the scribe
 
 A special kind of scribal intervention is the addition of glosses, typically above the line. In Old Norse manuscripts, Latin words or phrases in the text may be translated into Old Norse and placed as glosses above the line. Sometimes, it is the other way: an Old Norse word on the line is glossed, i.e. explained, by a Latin word above the line. We suggest that the gloss is encoded by the `<add>{:xml}` element with the `@type{:sh}` attribute having the value `"gloss"{:js}`.
@@ -179,6 +185,7 @@ In the Icelandic homily book, Holm perg 15 4to, fol. 1r.9, the word “stirðlei
   <me:norm><add type="gloss">immitis</add></me:norm>
 </w>
 ```
+
 
 ### 9.2.1.3 Display of scribal additions
 
@@ -222,10 +229,13 @@ The third set of insertion signs, ⸢...⸣, are located at `2E22` and `2E23` in
 Other stylesheets may display additions with other types of signs, by a note rather than by signs, or not at all.
 </DisplayFrame>
 
+
 ### 9.2.2 Deletions by the scribe
 
 This section only deals with deletions made by a scribal hand. 
-Text suppressed by a modern editor is dealt with in [ch. 9.3.2](#sec9.3.2) below.9.2.2.1 Encoding of scribal deletions
+Text suppressed by a modern editor is dealt with in [ch. 9.3.2](#sec9.3.2) below.
+
+#### 9.2.2.1 Encoding of scribal deletions
 
 The element `<del>{:xml}` should be used for deletions made in the manuscript by the scribe himself
       or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.
@@ -297,7 +307,9 @@ deleted passage should be encoded with the `<gap/>{:xml}` element,
 
 Sometimes, a scribe would delete a word and add another above the line. 
       We regard this as a substitution which should be encoded with a combination of a
-      `<del>{:xml}` and an `<add>{:xml}` element. See [ch. 9.2.4](#sec9.2.4) below.9.2.2.2 Display of deletions by the scribe
+      `<del>{:xml}` and an `<add>{:xml}` element. See [ch. 9.2.4](#sec9.2.4) below.
+
+#### 9.2.2.2 Display of deletions by the scribe
 
 In the stylesheet for the Menota archive, scribal deletions are displayed by vertical bars with quills. The beginning of the deletion will be indicated 
       by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
@@ -317,6 +329,7 @@ In the Unicode Standard, the vertical bar with the quill to the right is located
 As mentioned above, scribes had various ways of making deletions, such as overstrike, erasure and subpunction. If these have been encoded by the `@rend{:sh}` attribute it is tempting (and not particularly difficult) to render them in a similar way in the display. However, we recommend using a single pair of signs for deletions, and leave it to the photographic facsimile to show exactly how the deletion has been done.
 
 Other stylesheets may display deletions by other types of signs, by a note rather than by signs, or not at all.
+
 ### 9.2.3 Transpositions by the scribe
 
 The sequence of words in a manuscript was sometimes transposed by the scribe or by a later hand, using various types of transposition signs. In the encoding, we would like to be able to include both the original order and the transposed order.
@@ -331,7 +344,9 @@ The sequence of words in a manuscript was sometimes transposed by the scribe or 
 
 <Caption title="Ill. 9.4">. Transpositions of two words. _The Old Norwegian Homily Book_. AM 619 4to, fol. 47r, l. 8–10.</Caption>
 
-In ill. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.9.2.3.1 Encoding of scribal transpositions
+In ill. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.
+
+#### 9.2.3.1 Encoding of scribal transpositions
 
 There are two pairs of elements used in this handbook, `<orig>{:xml}` + `<reg>{:xml}` and `<sic>{:xml}` + `<corr>{:xml}`. The first pair should be used for correction made by the scribe such as transpositions. Corrections by the editor should be enocded by the `<sic>{:xml}` + `<corr>{:xml}` elements, as exemplified in [ch. 9.3.3](#sec9.3.3) below.
 
@@ -404,7 +419,9 @@ In a multi-level encoding, one or more words will be added within the `<orig>{:x
 ```
 
 
-If the text is annotated for morphology (or syntax), we recommend that only the words in the `<orig>{:xml}` element get linguistically annotated, so as to avoid duplication of the annotation. This is a similar case to that of any text being added by the editor in the `<supplied>{:xml}` element. Supplied text should also be exempted from annotation.9.2.3.2 Display of scribal transpositions
+If the text is annotated for morphology (or syntax), we recommend that only the words in the `<orig>{:xml}` element get linguistically annotated, so as to avoid duplication of the annotation. This is a similar case to that of any text being added by the editor in the `<supplied>{:xml}` element. Supplied text should also be exempted from annotation.
+
+#### 9.2.3.2 Display of scribal transpositions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<orig>{:xml}` reading is displayed on the facsimile level and the `<reg>{:xml}` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<reg>{:xml}` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<reg>{:xml}` reading, while the `<orig>{:xml}` reading is displayed in a note.
 <DisplayFrame>
@@ -421,6 +438,7 @@ In the stylesheet for the Menota archive, the display is different in single-lev
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a transposition.
 
 Other stylesheets may display transpositions differently. It is, for example, not obvious that the reading of the `<reg>{:xml}` element should be given priority over the `<orig>{:xml}` element, since the transposition at least in some cases may be made by a later scribe and thus not compliant with the scribe’s intentions.
+
 ### 9.2.4 Substitutions by the scribe
 
 This section describes the markup of text substituted by a scribe, 
@@ -528,7 +546,9 @@ In this example, the corrected form “yðer” is rendered as “yðr” in nor
     See the discussion on orthography in [ch. 9.3.4](#sec9.3.4) below.
 
 If a substitution spans a structural
-  boundary, we refer to the advice in [ch. 16.2](HB3_ch16.xml#sec16.2) below.9.2.4.1 Display of scribal substitutions
+  boundary, we refer to the advice in [ch. 16.2](HB3_ch16.xml#sec16.2) below.
+
+#### 9.2.4.1 Display of scribal substitutions
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<del>{:xml}` reading is displayed on the facsimile level and the `<add>{:xml}` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<add>{:xml}` reading, since this is the one presumably intended by the scribe. The stylesheet therefore displays the `<add>{:xml}` reading, while the `<del>{:xml}` reading is displayed in a note.
 <DisplayFrame>
@@ -545,10 +565,12 @@ In the stylesheet for the Menota archive, the display is different in single-lev
 In a multi-level transcription, the stylesheet for the Menota archive uses the green colour on the diplomatic and normalised levels to indicate that a passage is the result of a substitution.
 
 Other stylesheets may display substitutions differently. It is, for example, not obvious that no indication should be given on the facsimile level, especially if the substitution is thought to be part of the immediate writing process by the scribe.
+
 ## 9.3 Editorial intervention
 
 When transcribing medieval material
 we sometimes encounter text which for one reason or another should be supplied, suppressed or corrected. It may be obvious cases, such as physical damage to the manuscript which calls for restoration, but it may also be passages which look fine in the manuscript but come across as erroneous. In the following, we shall discuss three types of editorial intervention: (1) insertions, (2) suppressions and (3) corrections.
+
 ### 9.3.1 Insertions by the editor
 
 If text seems to be missing in the manuscript, the editor can supply it using the `<supplied>{:xml}` element. We suggest that there are two major types of supplied text:
@@ -565,7 +587,9 @@ If text seems to be missing in the manuscript, the editor can supply it using th
 | <span className="p-3"/>`@resp{:sh}` | Obligatory | Indicates the individual responsible for the addition of characters, words or passages contained within the `<supplied>{:xml}` element. |
 | <span className="p-3"/>`@source{:sh}` | Optional | States the source of the supplied text if this can be located. |
 </div>
-9.3.1.1 Encoding of restorations
+
+
+#### 9.3.1.1 Encoding of restorations
 
 **Restoration** is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](HB3_ch8.xml#sec8.2)), empty spaces ([ch. 8.3](HB3_ch8.xml#sec8.3)), and unclear passages ([ch. 8.4](HB3_ch8.xml#sec8.4)).
 
@@ -738,7 +762,9 @@ In ill. 9.9, the first character in the second line is so smudged that it has be
 ```
 
 
-Note that the reading on the facsimile level uses the dotted circle for the illegible character, while the diplomatic and normalised levels offer a restoration in the `<supplied>{:xml}` element.9.3.1.2 Encoding of emendations
+Note that the reading on the facsimile level uses the dotted circle for the illegible character, while the diplomatic and normalised levels offer a restoration in the `<supplied>{:xml}` element.
+
+#### 9.3.1.2 Encoding of emendations
 
 **Emendation** is here used to describe the addition of one or more characters or 
       words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, <em>ope codicum</em>, and emendations based on the subjective judgment of the editor, <em>ope ingenii</em>. In the following, we shall give examples of both.
@@ -867,7 +893,9 @@ In a multi-level encoding, the facsimile level will simply be empty for the supp
 ```
 
 
-In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.9.3.1.3 Display of editorial insertions
+In general, emendations belongs on the normalised level and will  not be part of the encoding on the facsimile level. The diplomatic level is a border case, but also at this level, emendations are offered in the case of obvious errors on part of the scribe. Many of the Menota texts are only encoded on the diplomatic level, and in order for them to be ready for syntactic annotation, it is advisable to emend the texts also on this level.
+
+#### 9.3.1.3 Display of editorial insertions
 
 In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](HB3_literature.xml#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the `<supplied>{:xml}` element has the `@reason{:sh}` attribute and the `"emendation"{:js}` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](HB3_literature.xml#Dow1969), p. 11).
 <DisplayFrame>
@@ -897,6 +925,7 @@ In the stylesheet for the Menota archive, supplied text as a default is displaye
 
 
 Other stylesheets will display supplied text differently. In particular, they may display supplied text with the same signs whatever the reason for supplying the text, not making any distinction between what has been termed restoration and emendation here.
+
 ### 9.3.2 Suppression by the editor
 
 If a piece of text is thought to be superfluous, the editor might want to indicate the superfluous passage and in effect suppress it. This is common editorial practice, although it should always be done in a way that records the suppressed passage (whether by suppression signs or by a note stating the manuscript reading).
@@ -906,7 +935,9 @@ Dittographies are probably the most common cause for suppression. The TEI P5 Gui
 
 As for other instances of editorial suppression, we recommend using the `<sic>{:xml}` and `<corr>{:xml}` elements, so that the `<sic>{:xml}` element contains the suppressed reading and the `<corr>{:xml}` element is left empty. This will be dealt with in [ch. 9.3.3](#sec9.3.3) below.
 
-**Note**. Earlier versions of the Menota Handbook introduced the `<me:expunged>{:xml}` element (later renamed as `<me:suppressed>{:xml}`) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard `<surplus>{:xml}` element or the `<sic>{:xml}` and `<corr>{:xml}` elements are being used for editorial suppression.9.3.2.1 Encoding of suppressed text
+**Note**. Earlier versions of the Menota Handbook introduced the `<me:expunged>{:xml}` element (later renamed as `<me:suppressed>{:xml}`) for editorial suppression. For backwards compatibility, these elements are still part of the Menota schemas. We recommend, however, that the standard `<surplus>{:xml}` element or the `<sic>{:xml}` and `<corr>{:xml}` elements are being used for editorial suppression.
+
+#### 9.3.2.1 Encoding of suppressed text
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
@@ -1008,7 +1039,9 @@ In ill. 9.13, the conjunction “oc” (the last word on f. 73r) does not really
 ```
 
 
-In short, the `<surplus>{:xml}` element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.9.3.2.2 Display of editorial suppression
+In short, the `<surplus>{:xml}` element will be used whenever there is a piece of text that in its entirety can be regarded as superfluous, and thus should be suppressed. Other cases of suppression will be dealt with below.
+
+#### 9.3.2.2 Display of editorial suppression
 
 In the stylesheet for the Menota archive, text suppressed by the editor is displayed in curly brackets. Deletions by the scribe, on the other hand, is displayed in vertical bars with quills, as shown in [ch. 9.2.2.2](#sec9.2.2.2) above.
 <DisplayFrame>
@@ -1026,6 +1059,7 @@ Note that if a word has been deleted on a specific level in a multi-level encodi
 If the reason for the suppression is a dittography, as exemplified here, some printed editions will use the signs `2E21` and `2E20`. Since these are identical to the signs recommended for deletions by the scribe, only in the reverse order, we do not recommend this usage.
 
 Other stylesheets will display suppressed text differently, for example by overstrike.
+
 ### 9.3.3 Corrections by the editor
 
 When transcribing a text, corrections
@@ -1105,7 +1139,9 @@ In a multi-level transcription, we suggest that the `<sic>{:xml}` element is loc
 ```
 
 
-Editors will emend the text to varying degrees. In his edition of _The Old Norwegian Homily Book_ in AM 619 4to, Gustav Indrebø (1931) corrected the text in a number of cases. In the Menota archive, his corrections have been given priority, so that the manuscript readings in the `<sic>{:xml}` element have been moved into notes.9.3.3.1 Display of editorial corrections
+Editors will emend the text to varying degrees. In his edition of _The Old Norwegian Homily Book_ in AM 619 4to, Gustav Indrebø (1931) corrected the text in a number of cases. In the Menota archive, his corrections have been given priority, so that the manuscript readings in the `<sic>{:xml}` element have been moved into notes.
+
+#### 9.3.3.1 Display of editorial corrections
 
 In the stylesheet for the Menota archive, the display is different in single-level and multi-level transcriptions. In a multi-level transcription, the `<sic>{:xml}` reading is displayed on the facsimile level and the `<corr>{:xml}` reading on the diplomatic and normalised levels. In a single-level transcription, priority is given to the `<corr>{:xml}` reading, since this is the one suggested by the editor. The stylesheet therefore displays the `<corr>{:xml}` reading, while the `<sic>{:xml}` reading is displayed in a note.
 <DisplayFrame>
@@ -1122,6 +1158,7 @@ In the stylesheet for the Menota archive, the display is different in single-lev
 In a multi-level transcription, the stylesheet for the Menota archive uses green colour on the diplomatic and normalised levels to indicate that a passage is the result of a correction.
 
 Other stylesheets may display corrections differently. It is, for example, not obvious that no indication should be given on the facsimile level, especially if the correction is thought to be helpful for the readers of the text.
+
 ### 9.3.4 Orthography of supplied and corrected text
 
 When the encoder would like to supply or correct text using the `<supplied>{:xml}` or `<reg>{:xml}` elements, the orthography will depend on the level of transcription.
@@ -1181,6 +1218,7 @@ With respect to the orthography of the diplomatic level, it would be reasonable 
 
 
 An alternative would be to add the presumed abbreviated reading “.ɟ. ᴍ.” in a note, so as to explain why two words of alltogether nine characters have been supplied for this rather small space.
+
 ## 9.4 Editorial comments
 
 Comments are additional text by the editor and not intended to supply or correct the main text. It offers a parallel text stream, linked to the main text when deemed necessary. In print, notes are typically displayed as footnotes or endnotes and thus typographically distinct from the main text. In online texts, notes are often highlighted by colouring or by symbols (such as an asterisk) linked to the relevant reading.
@@ -1195,11 +1233,13 @@ Comments are additional text by the editor and not intended to supply or correct
 
 
 These attributes are optional, so it is possible to use the `<note>{:xml}` element without any further specification of its contents.
+
 ### 9.4.1 Apparatus-style comments
 
 The apparatus to many printed editions may contain different types of comments, be they of codicological, paleographical or textual nature. If a printed edition is encoded in XML according to the guidelines in this book, some of these notes can be interpreted and rendered by existing elements, such as `<sic>{:xml}` + `<corr>{:xml}` for any corrections by the editor. Others may be given in the form of notes, which offer a less rigid way of entering the text.
 
 Sometimes an editor may add a “[sic!]” in the apparatus to draw attention to a specific and often unusual form. In these cases, we recommend interpreting this usage by the combination of the `<sic>{:xml}` and `<corr>{:xml}` elements. If there is no obvious correction, one may add a note stating “highlighted by the editor” or the like.
+
 ### 9.4.2 Explanatory comments
 
 Since so many of the texts in the Menota archive are incomplete, it can be bewildering for users to begin reading a text <em>in medias res</em>, such as _Barlaams saga ok Jósafats_ where the opening is missing in Holm perg 6 fol. In other cases, there will be a break in the text flow, such as that caused by a missing quire in _Konungs skuggsjá_ in AM 243 ba fol. It may also be confusing to see that the numbering of the leaves are in conflict with the text flow, which is the case in _Strengleikar_ in Upps DG 4–7. In these cases, we recommend adding a brief explanatory note. See also the examples of notes in [ch. 8.5.2](HB3_ch8.xml#sec8.5.2) above.
@@ -1231,9 +1271,11 @@ In the archive, explanatory notes are displayed in the edited text in a light gr
 </Figure>
 
 
+
 ### 9.4.3 Other types of comments
 
 There are many other types of comments that the transcriber might want to make, such as unusual paleographical traits, variant readings, linguistic peculiarities, etc. See also the [EpiDoc Guidelines]( http://www.stoa.org/epidoc/gl/latest/trans-editorsnote.html) on “Editor’s Note”.
+
 ## Updates to ch. 9
 
 On 30 December 2025, [ch. 9.2.1](#sec9.2.1) was reorganised so that it was divided into two types of additions, described in [ch. 9.2.1.1](#sec9.2.1.1) and [ch. 9.2.1.2](#sec9.2.1.2) (in the latter, glosses were introduced as another type of scribal addition), and a display of glosses by top left and top right half brackets was proposed in [ch. 9.2.1.3](#sec9.2.1.3).

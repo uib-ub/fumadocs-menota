@@ -6,11 +6,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Chapter 4. Levels of text representation
 
 Version 3.0 (12 December 2019)
 
 by Haraldur Bernharðsson and Odd Einar Haugen
+
 ## 4.1 Introduction
 
 The electronic transcription of a manuscript text aims to accurately reproduce the
@@ -59,6 +61,7 @@ Finally, it should be pointed out that while a rendering of a text on the facsim
                of interpretation on all three levels, only more so on the diplomatic and especially on the 
                normalised level. For the sake of terminological consistency, in this chapter we will refer 
                to renderings on all three levels as transcriptions.
+
 ## 4.2 The facsimile level
 
 The principal aim of an electronic facsimile transcription is to encode as much
@@ -203,6 +206,7 @@ and displayed (subject to an appropriate font) as
 At the facsimile level, the transcriber ought to encode the manuscript exactly as it
                reads, even if it contains obvious mistakes. Corrections can be made by inserting a
                note, or it can be left to the diplomatic or normalised level.
+
 ## 4.3 The diplomatic level
 
 The principal aim of a diplomatic transcription is to produce a readable while
@@ -460,6 +464,7 @@ In what is often called semi-diplomatic editions, such as the majority in the se
                expanded silently, i.e., without the use of italics. In electronic editions, this decision can be left to the
                stylesheet. As long as the information is kept in the `<ex>{:xml}` element a
                display with italics can easily be restored.
+
 ## 4.4 The normalised level
 
 The normalisation of the orthography is intended to further enhance the readability
@@ -505,6 +510,7 @@ Note that at this level all characters have been encoded using official Unicode 
                general, all Medieval Nordic texts can be encoded without resorting to entities as
                long as the text is rendered on a normalised level. Many Old Swedish and Old Danish
                texts can also be encoded with a minimal amount of character entities.
+
 ## 4.5 Single-level transcriptions
 
 While this handbook contains a number of examples of texts that have been transcribed on two or three levels, i.e. what we refer to as multi-level transcriptions, it should be emphasised that a text may be transcribed on a single level and be fully Menota compatible. This is indeed the default case for printed editions. For an archive such as Menota, the most frequent level is the diplomatic one, as described in [ch. 4.3](#sec4.3) above. For example, all texts stemming from Gammelnorsk Ordboksverk are single-level transcriptions on the diplomatic level.
@@ -619,6 +625,7 @@ A single-level transcription may contain the normalised level only, but this is 
 
 
 As discussed in [ch. 10.3](HB3_ch10.xml#sec10.3) below and exemplified in [ch. 10.4.2](HB3_ch10.xml#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
+
 ## 4.6 Multi-level transcriptions
 
 Multi-level transcriptions allow the transcriber to render various aspects of the text in one or more specific levels. While the facsimile level can be seen as an “as is” level, rendering the text in the source with as little interpretation as possible, the two next levels, the diplomatic and normalised levels, allow for specifications of the transcriber’s perspective and interpretation of the text.
@@ -631,6 +638,7 @@ The levels of a multi-level transcription should be grouped in a `<choice>{:xml}
 
 
 In the following, we shall discuss some of the options for a multi-level transcription. As will be seen, having several levels at disposal allow for a more detailed and distributed encoding, so that some elements may be used on one level and other elements on complimentary levels.
+
 ### 4.6.1 Editorial intervention
 
 Editorial intervention is sometimes required to produce a readable text – or, in
@@ -657,6 +665,7 @@ The question of editorial intervention will be discussed in more detail in [ch. 
                   single-level and multi-level transcriptions. Although a single-level transcription
                   can be made on either of the three levels discussed here, it is as a rule done on
                   the diplomatic level.
+
 ### 4.6.2 Special characters
 
 In a transcription on all three levels – facsimile, diplomatic, and normalised –
@@ -785,6 +794,7 @@ Occasionally, all three levels are identical:
 
 
 If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
+
 ### 4.6.3 Structural properties
 
 Page beginnings (`<pb/>{:xml}`), column beginnings (`<cb/>{:xml}`), and line beginnings
@@ -794,6 +804,7 @@ Page beginnings (`<pb/>{:xml}`), column beginnings (`<cb/>{:xml}`), and line beg
                   word). A break that occurs between words, falls outside the `<w>{:xml}` element,
                   and needs not to be repeated. See [ch. 3](HB3_ch3.xml) for an
                   inventory of structural encoding.
+
 ### 4.6.4 Punctuation
 
 In the facsimile transcription, the punctuation of the manuscript is accurately
@@ -803,6 +814,7 @@ In the facsimile transcription, the punctuation of the manuscript is accurately
                   punctuation in the `<pc>{:xml}` element will only be inserted in the
                      `<me:norm>{:xml}` level. See [ch. 5.4](HB3_ch5.xml#sec5.4)
                   for more details on the encoding of punctuation. 
+
 ### 4.6.5 A sample encoding of a three-level transcription
 
 In a three-level transcription, the elements are the same as in a single-level transcription. 
@@ -973,7 +985,9 @@ As an example of the encoding of a three-level transcription, we can once more
 ```
 
 
-The rather verbose encoding illustrated above becomes much more concise when displayed by a suitable stylesheet. Typically, the stylesheet will pick one of the levels for the display so that the text string becomes linear, as it is in the source.4.6.5.1 Display of levels
+The rather verbose encoding illustrated above becomes much more concise when displayed by a suitable stylesheet. Typically, the stylesheet will pick one of the levels for the display so that the text string becomes linear, as it is in the source.
+
+#### 4.6.5.1 Display of levels
 
 The display of levels varies with the stylesheets being used, but probably all stylesheets will agree on the display of the characters as such.
 
@@ -1042,7 +1056,9 @@ This is an approximate rendering of the display in the Menota archive of the tex
 
 For reasons of line alignment in the Menota archive, the stylesheet will present 
                      the text on all levels with line beginnings and line numbers. In other stylesheets, line beginnings 
-                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3) below.4.6.5.2 Focal levels
+                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3) below.
+
+#### 4.6.5.2 Focal levels
 
 As stated above, the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` and
                      `<me:norm>{:xml}` are not defined in TEI, but are part of the namespace we

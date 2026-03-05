@@ -38,17 +38,11 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:head">
-        <xsl:choose>
-            <xsl:when test="count(ancestor::tei:div) = 0">
-                <xsl:text>&#x0a;# </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 1">
-                <xsl:text>&#x0a;## </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 2">
-                <xsl:text>&#x0a;### </xsl:text>
-            </xsl:when>
-        </xsl:choose>
+        <xsl:text>&#x0a;&#x0a;#</xsl:text>
+        <xsl:for-each select="ancestor::tei:div">
+            <xsl:text>#</xsl:text>
+        </xsl:for-each>
+        <xsl:text> </xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:div">

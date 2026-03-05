@@ -7,11 +7,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Ch. 16. Dealing with overlapping structures
 
 Version 3.0 (12 December 2019)
 
 by Andreas Witt, Beeke Stegmann, Robert Paulsen and Odd Einar Haugen
+
 ## 16.1 Introduction
 
 There are no simple ways of encoding overlapping structures in XML, since XML is a strict tree structure in which every element must be part of a single “parent” element. For example, a word or sentence may be written over two manuscript pages. If we represent the manuscript page as an element, the words will not belong to a single page and a parser error will occur.
@@ -23,6 +25,7 @@ In many cases, the combination of ordinary, hierarchical elements such as `<div>
 There are, however, cases where this solution does not work. This is a recognised problem in XML encoding, and it is dealt with at some length in the TEI P5 Guidelines, [ch. 20](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html).
 
 In this chapter, we offer a similar overview and discussion in [ch. 16.2](#sec16.2) below (by Andreas Witt). In the following subchapters, we discuss two particular cases, discontinuous headings in [ch. 16.3](#sec16.3) (by Beeke Stegmann and Robert Paulsen) and dialogue across hierarchical borders in [ch. 16.4](#sec16.4). Finally, in [ch. 16.5](#sec16.5) we broach the question of how to render certain text critical signs (the two latter subchapters by Odd Einar Haugen).
+
 ## 16.2 Spanning and linking encoding
 
 In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), the elements `<addSpan/>{:xml}`, `<delSpan/>{:xml}` and `<damageSpan/>{:xml}` are defined. These elements are counterparts to the elements `<add>{:xml}`, `<del>{:xml}` and `<damage>{:xml}`, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. `<sic>{:xml}`, `<corr>{:xml}`, `<unclear>{:xml}` and `<supplied>{:xml}`, but there are no corresponding `<sicSpan>{:xml}`, `<corrSpan>{:xml}`, `<unclearSpan>{:xml}` and `<suppliedSpan>{:xml}`. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element `<me:textSpan/>{:xml}` and given it attributes from the classes
@@ -88,6 +91,7 @@ If the supplied text were encoded in the conventional way, the following would p
 The `<supplied>{:xml}` element, if used in its conventional way, would overlap with the `<w>{:xml}` elements, meaning that the `<w>{:xml}` element would close before an element inside it had closed. That would stop an XML processor from proceeding any further with the document.
 
 In these guidelines, we offer two solutions to the problem of overlapping structures. The first is more complex, but more robust. The second is simpler, but is less machine-readable and may affect the validation of the document structure in other respects. Even so, we recommend the latter solution.
+
 ### 16.2.1 Linked segments
 
 The following approach is more sound from the point of view of an XML document, but creates extra tagging. The feature is encoded in a series of separate elements, linked together.
@@ -141,6 +145,7 @@ For the combination of the `<unclear>{:xml}` element on the facs level and the `
 It is recommended that the additional information for the feature (such as the editor responsible, type, etc.) be only included in the first element, but editors may wish to include the attributes in all elements.
 
 Note that the start of a feature is always marked by the element with the `@next{:sh}` attribute set, but not the `@prev{:sh}` attribute; and the end by the element of the same name with the `@prev{:sh}` attribute set but not the `@next{:sh}`.
+
 ### 16.2.2 Boundary marking with empty elements
 
 Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in the TEI P5 Guidelines, [ch. 20](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html), and will be applied here in a slightly modified version. As outlined above, we have introduced a generic element `<me:textSpan/>{:xml}` which is specified by way of a `@me:category{:sh}` attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the `@me:category{:sh}` attribute:
@@ -173,6 +178,7 @@ The full encoding will be like this:
 Note that the value of `@xml:id{:sh}` attribute must be unique within the whole document.
 
 There is no simple answer to the problem of non-hierarchical structures in XML encoding. However, we believe that using empty elements as boundary markers may prove to be the simplest and most general encoding, and it is therefore the solution we recommend. With either technique, only one method should be used in each document.
+
 ## 16.3 Discontinuous headings
 
 The element `<head>{:xml}` is used for containing headings on all levels of the document. If the `<head>{:xml}` element is used, it should be the first within its `<div>{:xml}` element, preceding any `<p>{:xml}` or `<lg>{:xml}` elements. As stated in [ch. 3.9](HB3_ch3.xml#sec3.9) above, there can only be one `<head>{:xml}` element within a `<div>{:xml}`.
@@ -351,6 +357,7 @@ as well as according to its logical order:
 
 
 When double (or even triple) numbering of line beginnings is used in a transcription, one should make sure that any automatic numbering program that is run on the `<lb/>{:xml}` elements is set up not to override manually given numbers.
+
 ## 16.4 Dialogue across hierarchical boundaries
 
 In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the `<s>{:xml}` element (dividing the text into sentences) or even one or more `<div>{:xml}` elements (dividing the text into chapters). An extreme example is _Gylfaginning_, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like _Konungs skuggsjá_ and _Barlaams saga ok Jósafats_. In these and many other works, the standard `<q>{:xml}` element will create conflicts with other and probably more important hierarchical divisions of the text.
@@ -376,6 +383,7 @@ unit="turn" rendition="closing-quote"/>
 
 
 In this example, it is the division of the text in the `<s>{:xml}` elements that would create a conflict with a `<q>{:xml}` element. The former element has been given priority, and the `<milestone/>{:xml}` element has been used as a work-around.
+
 ## 16.5 Rendition encoding
 
 When a text has been encoded with the `<w>{:xml}` element for every word, conflicts sometimes arise between the division into words and several of the elements used to describe fragmentation, uncertainty, scribal intervention and the like (discussed in [ch. 8](HB3_ch8.xml) and [ch. 9](HB3_ch9.xml) above).
@@ -398,6 +406,7 @@ This is an exa[mple] [of a] [miss]ing passage
 The encoding suggested in this subchapter is a simplified version of 16.2.1 above, in the sense that the linking is not expressed by way of IDREF pointing but by way of the `@rendition{:sh}` attribute. It is a robust solution and it has been successfully implemented in the display of the Menota archive. More advanced stylesheets may be developed that can replace this solution, but for now this is our offer for any texts that should be displayed in the Menota archive, using the Corpuscle application.
 
 The solution is dependent on the intended display of the text, of which there are two types, rendering by single-characters and rendering by opening & closing signs.
+
 ### 16.5.1 Display by rendering of single characters
 
 This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of `<unclear>{:xml}` text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See [ch. 8.4.2](HB3_ch8.xml#sec8.4.2) above. If this kind of display is chosen, no additional encoding is needed.
@@ -474,6 +483,7 @@ The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated 
 
 
 See the Menota archive, NRA 58C, f. 1r, col. A, l. 27, for a display of this encoding.
+
 ### 16.5.2 Display by opening and closing signs
 
 This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the `@rendition{:sh}` attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values.

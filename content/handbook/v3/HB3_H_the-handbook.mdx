@@ -5,17 +5,20 @@ author:
  - 
 ---
 
+
 # Appendix H: Stylesheets (XSL and CSS) for the handbook
 
 Version 3.0 (12 December 2019)
 
 by Marco Bianchi
+
 ## H.1 Introduction
 
 Version 3 of the Menota handbook is transformed to html with the stylesheet
                handbook_v3.xsl. The stylesheet outputs clean box-based html5. Generally, all
                   `@rend{:sh}` are converted to html classes. All styling is taken care of by
                menota_handbook_3.css.
+
 ## H.2 The HTML
 
 handbook_v3.xls produces clean html5 without any form styling in html code. The
@@ -45,6 +48,7 @@ handbook_v3.xls produces clean html5 without any form styling in html code. The
 </html>
 ```
 
+
 ## H.3 The CSS
 
 The css sheets use css3 but should degrade gracefully in non-compliant browsers. The
@@ -57,11 +61,13 @@ Handbook v3 uses one css sheet: menota_handbook_3.css
 
 Breaking points for small screens are set at 960px (width of header items and main
                content 100%) and 450px in portrait mode (larger main font-size).
+
 ## H.4 XML markup
 
 In the tables below supported xml markup and its corresponding html output is listed.
                All values of `@rend{:sh}` and `@xml:id{:sh}` will be passed to html
                   `@class{:sh}` and `@id{:sh}` respectively, unless otherwise noted.
+
 ### H.4.1 CSS Block elements
 
 <div className="table-xml-elements">
@@ -116,6 +122,7 @@ In the tables below supported xml markup and its corresponding html output is li
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
 </div>
 
+
 ### H.4.2 CSS Inline elements
 
 <div className="table-xml-elements">
@@ -145,6 +152,7 @@ In the tables below supported xml markup and its corresponding html output is li
 | `<title>{:xml}` | `<cite>{:xml}` | Title of a work |  |
 | `<val>{:xml}` | `&lt;span class="value"&gt;'value'&lt;/span&gt;` | Value of a xml/html element | [See H.7 on styling of code](#secH.7). In a table with `@rend{:sh}`=`"xml-elements"{:js}` values in the first columns are automatically indented 2em |
 </div>
+
 
 ### H.4.3 Generic values for `@rend{:sh}`
 
@@ -184,6 +192,7 @@ The following `@rend{:sh}` values can be given to any xml-element that
 | `"width80"{:js}` | width:80% | `<figure>{:xml}` width:100% | `<figure>{:xml}` width:100% |
 | `"width90"{:js}` | width:90% | `<figure>{:xml}` width:100% | `<figure>{:xml}` width:100% |
 | `"width100"{:js}` | width:100% | `<figure>{:xml}` width:100% | `<figure>{:xml}` width:100% |
+
 
 ## H.5 Styling tables
 
@@ -227,6 +236,7 @@ The `<colgroup>{:xml}` element is created dynamically if the first row contains 
 </table>
 ```
 
+
 ### H.5.1 Styling tables with explanations of xml-elements
 
 A table with explanations of xml-elements and their attributes ([such as H.4.1 above](#tab.1)) can be given
@@ -245,11 +255,13 @@ A table with explanations of xml-elements and their attributes ([such as H.4.1 a
 
 Strings marked with `<att>{:xml}` and `<val>{:xml}` in the first cell of each row
                   are indented automatically.
+
 ### H.5.2 Styling glyph tables
 
 Tables with explanations of abbreviations and other glyphs can be marked upp with
                      table rend="abbr". In such tables, cells containing a tag hi
                      rend="glyph" (and nothing else) are rendered differently.
+
 ## H.6 Styling images
 
 An image and its caption should be structured as follows:
@@ -271,6 +283,7 @@ The position and width of the image can be controlled with `<rend>{:xml}` in the
 If used without a wrapping `<figure>{:xml}` element, images placed in a
                   `<graphic>{:xml}` element are displayed at their original size without any
                border
+
 ## H.7 Styling code
 
 Block level code elements are wrapped into a html `<pre>{:xml}` tag that preserves
@@ -304,6 +317,7 @@ By default, code within `<eg>{:xml}`, `<egXML>{:xml}` and `<code>{:xml}` is disp
 
 Xml elements, attributes and values should be tagged with their respective semantic
                markup: `<gi>{:xml}`, `<att>{:xml}` and `<val>{:xml}`.
+
 ## H.8 Table of Contents
 
 A table of contents is added automatically in the beginning of each page. The table

@@ -6,11 +6,13 @@ author:
  - Odd Einar Haugen
 ---
 
+
 # Chapter 7. Initials and other illuminations
 
 Version 3.0 (12 December 2019)
 
 by Friederike Richter and Beeke Stegmann
+
 ## 7.1 How and where to encode illuminations
 
 Medieval manuscripts often contain some degree of illumination as e.g. marginal
@@ -73,6 +75,7 @@ Note also the glossary in the end of the chapter that helps, among others, to
                      of the British Library](https://www.bl.uk/catalogues/illuminatedmanuscripts/glossary.asp), as well as to [Christine 
                         Jakobi-Mirwald (2008)](HB3_literature.xml#Jakobi-Mirwald2008). Both works were used to prepare this chapter, while some definitions were
                   adapted for the corpus of Scandinavian manuscripts.
+
 ## 7.2 Listing all illuminations in the header
 
 As a minimum standard, we recommend to register all instances of illumination, including initials, 
@@ -135,6 +138,7 @@ In the specifications below, initials will be discussed separately from other
                   of minor initials, on the other hand, can be summarized at the end (as in the example above). Common
                   categories, that apply to both various initials and other illuminations may be
                   treated subsequently (i.a. colours, captions, hands and dating). 
+
 ### 7.2.1 Initials
 
 Initials are according to their hierarchy distinguished into two categories in the
@@ -146,6 +150,7 @@ Initials are according to their hierarchy distinguished into two categories in t
                   entry for an intial should, as a minimum, comprise information on the following: 
                   a) Folio/column, b) Decoration and hierarchy, c) Letter, size
                   and colour(s).
+
 ### 7.2.1.1 Major and minor initials
 
 The occurrence of the different subtypes of the initials has to be assessed for
@@ -226,6 +231,7 @@ Please note that it is also of interest to register missing initials, i.e. those
   </decoNote>
 </decoDesc>
 ```
+
 
 ### 7.2.1.2 Initial forms and decoration
 
@@ -438,6 +444,7 @@ The initial form and/or decoration are incorporated into the
 A longer and somewhat more detailed description that would obscure the readability
                   if provided in the beginning may be given later in the `<decoNote>{:xml}`
                   (see [ch. 7.2.7](#sec7.2.7)).
+
 ### 7.2.2 Other illuminations
 
 In the same way as for the major initials, each occurence of the other
@@ -445,6 +452,7 @@ In the same way as for the major initials, each occurence of the other
                      `<decoNote>{:xml}` element in the header. A register entry of illuminations
                   other than initials comprises as a minimum of the following: a) Folio/column, b) Type
                   and motif/ornament, c) Caption (if applicable), d) Colours. 
+
 ### 7.2.2.1 Illumination types 
 
 When registering illuminations in `<decoNote>{:xml}`, the place where it occurs is given, followed by the
@@ -619,6 +627,7 @@ Examples applying these terms are given in the following section dealing
                   of the list, similar to minor initials (see [ch. 7.2.1.1](#sec7.2.1.1)). Furthermore, it is of interest to register missing
                   illuminations as they document conditions of manuscript production (e.g. planned, but
                   not executed elements), intended text structure or re-use (e.g. removed at a later point in time). 
+
 ### 7.2.2.2 Motifs
 
 The motifs and composition of the various illuminations is normally listed using
@@ -756,6 +765,7 @@ The very first XML example given in ch. 7.2 above already includes a brief descr
 
 In case of abstract motifs such as ornaments, the form and type(s) as well as potentially involved 
                   motifs are described as best as possible. 
+
 ### 7.2.3 Use of colours
 
 It is relevant to note the usage of different shades of ink and colours and (their
@@ -804,6 +814,7 @@ Note: The colours of initials are also described as part of the encoding in the
                found in individual initials are only encoded in a simple manner. Consequently, we
                recommend to include the detailed – and potentially more specialized –
                description in the manuscript description, i.e. as part of the header, instead. 
+
 ### 7.2.4 Captions
 
 Illuminations, including initials, can contain captions. If present, the text of
@@ -836,6 +847,7 @@ Illuminations, including initials, can contain captions. If present, the text of
  </decoDesc>
 ```
 
+
 ### 7.2.5 Hands and dating (if known)
 
 In case the hand(s) and/or the dating of illuminations differ from the hand(s) or dating of the
@@ -855,6 +867,7 @@ In case the hand(s) and/or the dating of illuminations differ from the hand(s) o
     Colour: black.</p>
 </decoNote>
 ```
+
 
 ### 7.2.6 Illumination techniques (optional)
 
@@ -972,6 +985,7 @@ Some more common illumination techniques include:
 
 
 Table [4](#tab4). Ill. 7.40–7.47 showing common illumination techniques. 
+
 ### 7.2.7 Advanced description of motifs and composition
                (optional)
 
@@ -1019,6 +1033,7 @@ For an exemplary and very detailed manuscript description with regards to the ic
 Finally, in the advanced description part of illuminations it is possible to
                include more specific art-historical aspects, such as the classification of the
                illumination style, e.g. Gothic, Insular, Romanesque or Renaissance.
+
 ## 7.3 Encoding initials in the transcription
 
 This section describes how to encode initials, including sentence initials (also
@@ -1062,6 +1077,7 @@ Please note: Besides defining some
                   of XSLT stylesheets may differ, and at the current point of the technical development
                   (that is easily accessible), the display of initials in the Menota-stylesheet
                   is confined to a rather basic approximation.
+
 ### 7.3.1 The letter and its form
 
 An initial (as any other character) is part of the transcribed text. Therefore, 
@@ -1095,6 +1111,7 @@ If an initial is missing – because it was never filled in, because it
  </choice>
 </w>
 ```
+
 
 ### 7.3.2 Hierarchy of initials
 
@@ -1201,6 +1218,7 @@ While a rather plain mark-up as shown in the two examples above would be perfect
       We consider it good practice to indicate at least the size (see [ch. 7.3.3](#sec7.3.3)) and 
          colour(s) (see [ch. 7.3.4](#sec7.3.4)) in addition to the type and subtype. 
       
+
 ### 7.3.3 Size of initial
 
 The size of the initial is often connected to its type and function. In the transcription we
@@ -1319,6 +1337,7 @@ In case of a missing initial, the number of indented lines, i.e. the initial hei
    <space quantity="1" unit="chars"/></c>
 ```
 
+
 ### 7.3.4 Colour(s)
 
 It is relevant to note the colour(s) of initials and other highlighted characters. 
@@ -1366,6 +1385,7 @@ If a clear hierarchy of colours is impossible to establish, for instance if a bi
 If the encoder should be unable to determine the colour(s) employed for executing initials,
                   for instance because they are working from black-and-white images, the indication
                   of color is simply omitted in the transcription.
+
 ### 7.3.5 Artistic rendition
 
 The attribute `@rend{:sh}` is used to encode the form and kind of decoration found in or
@@ -1424,6 +1444,7 @@ In case the encoder wishes to additionally distinguish between different degrees
      are neither standardized nor transferable and thus 
      only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
      in the `<teiHeader>{:xml}` if they are employed.
+
 ## 7.4 Glossary
 
 The following is an alphabetically organized glossary covering the most common terms used
@@ -1469,6 +1490,7 @@ The following is an alphabetically organized glossary covering the most common t
 | Termination | Terminal part of an initial that is decorated with vines, spirals or the like (usually shafts, attached bars or extenders). |
 | Text initial | A large initial at the beginning of a new text (if there are several texts in a manuscript). |
 | x-height | The height of a letter or a part of a letter in between the base line and the mean line, cf. the size of the letter “x”. |
+
 
 ## 7.5 Image credits
 
