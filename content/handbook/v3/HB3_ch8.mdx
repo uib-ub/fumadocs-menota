@@ -6,11 +6,13 @@ author:
  - Nina Stensaker
 ---
 
+
 # Ch. 8. Fragmentation and uncertainty
 
 Version 3.1 (5 July 2024) – cf. [version 3.0](HB3_ch8-0.xml) (12 December 2019)
 
 by Odd Einar Haugen and Nina Stensaker
+
 ## 8.1 Introduction
 
 Some Medieval Nordic manuscripts have been preserved in their entirety and they 
@@ -37,6 +39,7 @@ In some
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to,35v,15-22.jpg" alt="ch8/AM-619-4to,35v,15-22.jpg"/>
+
 </Figure>
 
 
@@ -44,12 +47,14 @@ In some
                15–22.</Caption>
 
 In the present ch. 8 and the ensuing [ch. 9](HB3_ch9.xml) we will frequently refer to and give examples of single-level and multi-level transcriptions. Please refer to [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) for these important concepts.
+
 ## 8.2 Lacunas
 
 The size of a lacuna varies considerably and may be nothing more than a
                small hole in a leaf of the manuscript, while in other cases,
                the lacuna may consist of a whole leaf, a whole quire or even several quires of the 
                once complete manuscript.
+
 ### 8.2.1. Encoding of lacunas
 
 Whenever the manuscript contains a lacuna we suggest using the element
@@ -72,6 +77,7 @@ In fig. 8.2 there are several examples of damaged text. Some characters have evi
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-9v,23-30.jpg" alt="ch8/AM-619-4to-9v,23-30.jpg"/>
+
 </Figure>
 
 
@@ -133,6 +139,7 @@ As stated above, however, one may also keep the `<gap/>{:xml}` encoding on the d
 
 
 In [ch. 8.5](#sec8.5) below, examples of larger lacunas are given.
+
 ### 8.2.2. Display of lacunas
 
 Stylesheets will vary with respect to the display of the `<gap/>{:xml}` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
@@ -151,9 +158,11 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 
 
 Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+
 ## 8.3 Empty space
 
 Manuscripts often have empty spaces, typically left for initials but also in other contexts, for example for words to be added at a later stage in the writing process.
+
 ### 8.3.1. Encoding of empty space
 
 The `<space/>{:xml}` element is used to represent deliberate omissions by the scribe, e.g. spaces left for decorated initials or whole
@@ -180,6 +189,7 @@ In fig. 8.3, the scribe of _Landslǫg Magnúss
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-309-fol,42v,10-19.jpg" alt="ch8/AM-309-fol,42v,10-19.jpg"/>
+
 </Figure>
 
 
@@ -251,6 +261,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-677-4to-1v,1-3.jpg" alt="ch9/AM-677-4to-1v,1-3.jpg"/>
+
 </Figure>
 
 
@@ -291,6 +302,7 @@ If the transcriber would like to restore the text intended for the space, this c
 This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
 
 For more details on the encoding of initials and other graphical elements, see [ch. 7.3](HB3_ch7.xml#sec7.3) above.
+
 ### 8.3.2. Display of empty space
 
 An empty space may be anything from a single character, typically set aside for an initial, to larger areas, even whole leaves. The display needs to adapt to the variability in size. In the stylesheet for the Menota archive, smaller areas will be displayed by spaces, while larger areas have to be indicated by a note inserted by the transcriber.
@@ -306,6 +318,7 @@ An empty space may be anything from a single character, typically set aside for 
 
 Other stylesheets may choose to display empty space differently,
                   including having no display at all.
+
 ## 8.4 Unclear text
 
 Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the `<unclear>{:xml}` element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason{:sh}` and values such as `"faded"{:js}`, `"smudged"{:js}` and `"erased"{:js}`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent{:sh}` attribute.
@@ -313,6 +326,7 @@ Many manuscripts contain text that is difficult or even impossible to read. It c
 When a character can be read with some degree of certainty, we recommend that this character is entered in the `<unclear>{:xml}` element, so that it can be displayed as such. If a character is completley unreadable, it should still be entered in the `<unclear>{:xml}` element, but using a specific character such as a dotted circle or a small zero (explained below).
 
 One might be tempted to try and indicate the degree of unclearness by a suitable attribute, for example by a percentage, but we believe that this is a rather arbitrary measure and difficult to estimate. In other words, characters which cannot be read with full certainty, simply are `<unclear>{:xml}`. A corresponding facsimile of the text should be available and will help the users to estimate the degree of unclearness.
+
 ### 8.4.1 Encoding of unclear text
 
 <div className="table-xml-elements">
@@ -328,6 +342,7 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-655-IX-4to,2r,1-5.jpg" alt="ch8/AM-655-IX-4to,2r,1-5.jpg"/>
+
 </Figure>
 
 
@@ -364,6 +379,7 @@ Note that the fissure in lines 4–5 must
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-645-4to-51v,32-35.jpg" alt="ch8/AM-645-4to-51v,32-35.jpg"/>
+
 </Figure>
 
 
@@ -450,6 +466,7 @@ A single-level transcription on the diplomatic level would look like this if the
 
 ```
 
+
 ### 8.4.2 Display of unclear text
 
 Previously, Menota displayed characters in the `<unclear>{:xml}` element using a light grey colour. Since the contrast between black and light grey is rather small and easily overlooked, the display has been changed to subpunction. This is the default display in most printed editions.
@@ -467,6 +484,7 @@ Previously, Menota displayed characters in the `<unclear>{:xml}` element using a
 We are aware of the fact that in medieval manuscripts, scribes often used subpunction in order to delete a part of the text. As stated in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) and specifically in [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2), deletions should be encoded with the `<del>{:xml}` element and displayed within vertical bars with quills, ⸠ and ⸡, on all levels.
 
 Illegible characters are commonly rendered by small zeros in printed editions. In some fonts, small zeros look very much like small ‘o’ characters, so we recommend using the dotted circle at `25CC`. This recommendation does not exclude small zeros, since they are well established in editions.
+
 ## 8.5 Fragments
 
 A fragment can be defined as anything less than 50 % of a once complete manuscript,
@@ -476,6 +494,7 @@ A fragment can be defined as anything less than 50 % of a once complete manuscri
                text itself is perfectly readable. Below, we will be looking at four examples,
                focusing on how to deal with their document structure and how to refer to the missing
                text which surrounds them.
+
 ### 8.5.1 Several leaves
 
 NRA 7 is the largest fragment of _Landslǫg Magnúss Hákonarsonar_
@@ -544,6 +563,7 @@ As for the use of the `<note>{:xml}` element here, see [ch. 9.4](HB3_ch9.xml#sec
 From this encoding, we understand that the beginning and the end of the once
                   complete manuscript is missing, and that there are gaps in between all leaves apart
                   from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity{:sh}` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the `<note>{:xml}` element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
+
 ### 8.5.2 A pair of leaves
 
 Quires were made up of pairs of leaves, bifolia, and it is not uncommon that one
@@ -570,6 +590,7 @@ Note that the
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-quires-8-10.png" alt="ch8/AM-619-4to-quires-8-10.png"/>
+
 </Figure>
 
 
@@ -585,6 +606,7 @@ The missing leaves are not immediately visible in the codex, which has been boun
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to,62v-63r.png" alt="ch8/AM-619-4to,62v-63r.png"/>
+
 </Figure>
 
 
@@ -638,6 +660,7 @@ Since the extent of the gap is specified by the attributes to the `<gap/>{:xml}`
 
 In the Menota archive, explanatory notes will be displayed at relevant places in the edited text. 
                   The use of these notes is discussed in [ch. 9.4](HB3_ch9.xml#sec9.4) below.
+
 ### 8.5.3 A single leaf
 
 There are several early Norwegian fragments of _Konungs skuggsjá_
@@ -648,6 +671,7 @@ There are several early Norwegian fragments of _Konungs skuggsjá_
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/NKS-235-g-4to,1r.jpg" alt="ch8/NKS-235-g-4to,1r.jpg"/>
+
 </Figure>
 
 
@@ -686,6 +710,7 @@ The document structure of NKS 235 g 4to is simple. Since it is the only leaf
 
 Also in this case, the encoder may consider an explanatory note, 
                   e.g. stating where in the text of _Konungs skuggsjá_ the fragment is located.
+
 ### 8.5.4 One or more pieces of a leaf
 
 The tiniest fragments are small strips or cuttings of leaves. In archives and libraries, each individual 
@@ -697,6 +722,7 @@ The tiniest fragments are small strips or cuttings of leaves. In archives and li
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/XNRA-7-2v-mounted.jpg" alt="ch8/XNRA-7-2v-mounted.jpg"/>
+
 </Figure>
 
 
@@ -748,6 +774,7 @@ The whole leaf 2v would then be encoded with the `<gap/>{:xml}` element like
 
 
 As suggested in [ch. 8.5.2](#sec8.5.2) and [ch. 8.5.3](#sec8.5.3) above, explanatory notes might be added about the missing text on this leaf.
+
 ## Updates to ch. 8
 
 On 5 July 2024, the recommended display of unclear characters in [ch. 8.4.2](#sec8.4.2) was changed from a light grey colour to subpunction, one dot for each characters. The reason for the change was to increase the general contrast of the text in line with requirements for Web Content Accessibility.

@@ -5,11 +5,13 @@ author:
  - Beeke Stegmann
 ---
 
+
 # Appendix E: Menota header
 
 Version 3.0 (12 December 2019)
 
 by Odd Einar Haugen and Beeke Stegmann
+
 ## E.1 Introduction
 
 We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount
@@ -33,6 +35,7 @@ a RELAX NG schema when encoding a text rather than a DTD (Document Type Declarat
 
 The schema being used in a file is declared at the very beginning of the file. The headers that can be 
                             downloaded in [app. E.5](#secE.5) below are all using the RELAX NG schema, and can thus be used as models.
+
 ## E.2 Minimal header for a source with a single text
 
 Although many medieval manuscripts contain more than one text, there are some manuscripts which only
@@ -244,6 +247,7 @@ This header is also an example of how change of scribal hands in the source can 
 					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
 					  Note that the number of hands must be recorded in the
 							`<profileDesc>{:xml}` element of the header.
+
 ## E.3 Minimal header for a source with multiple texts
 
 AM 242 fol – often referred to as _Codex Wormianus_ or
@@ -564,6 +568,7 @@ The `<head>{:xml}` element specifies the title of the work (or a part of it). If
 					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
 					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
 					    add a title in the `<supplied>{:xml}` element (as has been done above). 
+
 ## E.4 Detailed header with more codicological information
 
 As the third example we have
@@ -789,6 +794,7 @@ The body follows immediately after the header. This is where the actual transcri
   </body>
 </text>
 ```
+
 
 ## E.5  Sample XML headers for download
 

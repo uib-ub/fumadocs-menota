@@ -5,6 +5,7 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
     <xsl:include href="elements/text.xsl"/>
@@ -37,17 +38,11 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:head">
-        <xsl:choose>
-            <xsl:when test="count(ancestor::tei:div) = 0">
-                <xsl:text>&#x0a;# </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 1">
-                <xsl:text>&#x0a;## </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 2">
-                <xsl:text>&#x0a;### </xsl:text>
-            </xsl:when>
-        </xsl:choose>
+        <xsl:text>&#x0a;&#x0a;#</xsl:text>
+        <xsl:for-each select="ancestor::tei:div">
+            <xsl:text>#</xsl:text>
+        </xsl:for-each>
+        <xsl:text> </xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:div">
@@ -128,40 +123,6 @@
             <xsl:text>&#x0a;- </xsl:text>
             <xsl:apply-templates/>
         </xsl:for-each>
-    </xsl:template>
-    <xsl:template match="tei:figure">
-        <xsl:choose>
-            <xsl:when test="ancestor::tei:cell">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#x0a;&#x0a;&lt;Figure</xsl:text>
-                <xsl:if test="tei:figDesc">
-                    <xsl:text> caption={`</xsl:text>
-                    <xsl:value-of select="tei:figDesc"/>
-                    <xsl:text>`}</xsl:text>
-                </xsl:if>
-                <xsl:text>&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&#x0a;&lt;/Figure&gt;&#x0a;&#x0a;</xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    <xsl:template match="tei:graphic">
-        <xsl:if test="not(ancestor::tei:cell)">
-            <xsl:text>&#x0a;</xsl:text>
-        </xsl:if>
-        <xsl:text>&lt;AutoImage</xsl:text>
-        <xsl:text> src="</xsl:text>
-        <xsl:value-of select="concat('/images/hb3/', @url)"/>
-        <xsl:text>"</xsl:text>
-        <xsl:text> alt="</xsl:text>
-        <xsl:value-of select="(../tei:figDesc, @url)[1]"/>
-        <xsl:text>"</xsl:text>
-        <xsl:text>/&gt;</xsl:text>
-        <xsl:if test="ancestor::tei:cell">
-            <xsl:text> </xsl:text>
-        </xsl:if>
     </xsl:template>
     <xsl:template match="tei:profileDesc"/>
     <xsl:template match="tei:revisionDesc"/>
