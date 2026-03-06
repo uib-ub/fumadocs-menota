@@ -14,8 +14,6 @@
     </xsl:template>
     <xsl:template match="tei:titleStmt">
         <xsl:text>title: "</xsl:text>
-        <!--xsl:value-of select="replace(string(tei:title), 
-            '^Menota handbook preface .*$', 'Preface')"/-->
         <xsl:value-of select="replace(replace(replace(tei:title, 
             '\s+', ' '),
             '^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2'), 
