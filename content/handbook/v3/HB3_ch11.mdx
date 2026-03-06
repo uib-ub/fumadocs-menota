@@ -720,7 +720,7 @@ In some cases, however, it is a questions of related words with variant forms, s
 </div>
 
 
-For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “|”, as delimiter:
+For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter:
 ```xml
 ... <w lemma="líf | lífi" me:msa="xNC cD nS gN sI | 
   xNC cD nS gN sI">lifi</w> ...
@@ -1868,7 +1868,7 @@ Texts in the Menota archive have been annotated according to earlier schemes, es
 
 **Prepositions vs. adverbs**. Prepositions in absolute position (i.e. with no complementation) can be analysed as adverbs or as verbal particles. We recommend that prepositions are analysed as prepositions, xAP, in all cases,  whether they have a complementation, “í hendi”, “til matar”, “undir honum”, or not, “en vǽta var á [the air?] mikil um daginn”. As for “of” and “um” in Eddic poems, we do not think there should  be any distinction between  prepositions and expletive particles. This is a syntactic difference, not a morphological one, so the word class should be xAP in both cases.
 
-**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ cA nS gN rP. Some encoders would like to indicate the adverbial usage by using an alternative annotation, xAJ cA nS gN rP | xAV. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, xAJ cA nS gN rP should suffice.
+**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ cA nS gN rP. Some encoders would like to indicate the adverbial usage by using an alternative annotation, xAJ cA nS gN rP \| xAV. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, xAJ cA nS gN rP should suffice.
 
 **Supinum**. In periphrastic constructions, the verb “hafa” is typically followed by supinum, e.g. “hann hefir keypt hús” (he has bought a house). From a morphological point of view, this form is identical with the perfect participle in neuter singular accusative, i.e. xVB fP tPT cA nS gN vA. However, since the supinum basically is a form without inflection (there is no concord with the subject of the sentence) we recommend a rather simple annotation, in this example xVB fS vA rather than xVB fP tPT cA nS gN vA. See the discussion in [ch. 11.5.8.2 (b)](#sec11.5.8.2) above. Note that this annotation also applies to the older construction of verb + object + object predicative, e.g. “hann hefir hús keypt ” (literally, he has a house in bought condition).
 
@@ -1899,13 +1899,13 @@ As stated above, we recommend that words are mapped to a single word class, even
 
 | Abbreviation | Word class | Participants |
 |-----|-----|-----|
-| xPE | pronouns, personal | ek | vit | vér | þú | þit (it) | þér (ér) | hann | hon |
+| xPE | pronouns, personal | ek \| vit \| vér \| þú \| þit (it) \| þér (ér) \| hann \| hon |
 | xPR | pronouns, reflexive | sik |
-| xPQ | pronouns, interrogative | hver (hvat, hví, hveim) | hvílíkr |
-| xPI | pronouns, indefinite | báðir | hvatki | hvatvetna | manngi |
-| xDD | determiners, demonstrative | hinn | inn (enn) | sá | sjá (þessi) |
-| xDQ | determiners, quantifiers | allr | annarr | annartveggi | annarrtveggja | báðir | einn | einnhverr | engi | fyrstr (fyrsti) | hvárgi | hvárr | hvárrtveggi | hvárrtveggja | hvergi | hverr | nøkkurr (nǫkkurr) | samr | sumr |
-| xAQ | adverbs, interrogative | hvar | hvárt | hvert | hvaðan | hversu | hvé (hve) | hví | hvernig |
+| xPQ | pronouns, interrogative | hver (hvat, hví, hveim) \| hvílíkr |
+| xPI | pronouns, indefinite | báðir \| hvatki \| hvatvetna \| manngi |
+| xDD | determiners, demonstrative | hinn \| inn (enn) \| sá \| sjá (þessi) |
+| xDQ | determiners, quantifiers | allr \| annarr \| annartveggi \| annarrtveggja \| báðir \| einn \| einnhverr \| engi \| fyrstr (fyrsti) \| hvárgi \| hvárr \| hvárrtveggi \| hvárrtveggja \| hvergi \| hverr \| nøkkurr (nǫkkurr) \| samr \| sumr |
+| xAQ | adverbs, interrogative | hvar \| hvárt \| hvert \| hvaðan \| hversu \| hvé (hve) \| hví \| hvernig |
 
 
 While the inflected forms “þat” and “þeir/þǽr/þau” might be analysed as personal pronouns in the 3rd person, we recommend to regard them as determiners, i.e. as instances of “sá” (xDD).

@@ -14,7 +14,8 @@
             select="replace(replace($curlies, '&lt;', '&amp;lt;'), '&gt;', '&amp;gt;')"
         />
         <xsl:variable name="plus" select="replace($anglies, '\s+\+', ' +')"/>
-        <xsl:variable name="ensp" select="replace($plus, '&#x00a0;', '&amp;ensp;')"/>
+        <xsl:variable name="pipe" select="replace($plus, '\|', '\\|')"/>
+        <xsl:variable name="ensp" select="replace($pipe, '&#x00a0;', '&amp;ensp;')"/>
         <xsl:variable name="simple-spaces">
             <xsl:choose>
                 <xsl:when test="ancestor::tei:quote|ancestor::tei:cell|ancestor::tei:head">

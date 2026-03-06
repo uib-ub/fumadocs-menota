@@ -701,7 +701,7 @@ In some cases, however, it is a questions of related words with variant forms, s
 </div>
 
 
-For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “|”, as delimiter:
+For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter:
 ```xml
 ... <w lemma="líf | lífi" me:msa="xNC gN nS cD sI | 
   xNC gN nS cD sI">lifi</w> ...
@@ -1705,7 +1705,7 @@ The word classes in [ONP](http://www.onp.hum.ku.dk/) should be taken as normativ
 
 **Prepositions vs. adverbs**. Prepositions in absolute position (i.e. with no complementation) can be analysed as adverbs or verbal particles. We recommend that prepositions with complementation, e.g. “í hendi”, “til matar”, “undir honum”, are classified as xAP, while prepositions without any complementation are classified as xVP. This is a simple rule, and there should be no need for the encoder to distinguish in the latter case between cases where a complementation can be recovered from the context (i.e. prepositions in absolute positions) and cases where there is no obvious complementation (i.e. prepositions as verbal particles). Finally, the expletive particles “of” and “um” in Eddic poems should be recognised as a class of its own, xEX.
 
-**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ xRP gN nS cA. Some encoders would like to indicate the adverbial usage by encoding xAJ rP gN nS cA | xAV rP. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, only xAJ rP gN nS cA.
+**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ xRP gN nS cA. Some encoders would like to indicate the adverbial usage by encoding xAJ rP gN nS cA \| xAV rP. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, only xAJ rP gN nS cA.
 
 **Supinum**. In periphrastic constructions, the verb “hafa” is typically followed by supinum, e.g. “hann hefir keypt hús” (he has bought a house). From a morphological point of view, this form is identical with the perfect participle in neuter singular accusative, i.e. xVB fP tPT gN nS cA, and we would recommend to analyse supinum this way. Note that this analysis also applies to the older construction of verb + object + object predicative, e.g. “hann hefir hús keypt ” (literally, he has a house in bought condition).
 
