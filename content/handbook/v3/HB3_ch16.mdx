@@ -70,7 +70,7 @@ We will discuss an example of an overlapping structure in AM 673 b 4to (<em>Plá
 
 The first three lines read approximately:
 <Quote>
-genget fiornes ualdr [quaþ........fr]egr nu | mun er lægiasc miuks scalldu manra[un sli] | ca morlin<em>s</em> boþe fi<em>n</em>na uestu i frægre f[rest] 
+genget fiornes ualdr [quaþ........fr]egr nu \| mun er lægiasc miuks scalldu manra[un sli] \| ca morlin<em>s</em> boþe fi<em>n</em>na uestu i frægre f[rest] 
 </Quote>
 
 The letters in brackets were read by earlier editors, especially Finnur Jónsson in 1889. For this section, we will discuss the text at the end of the second line and at the start of the third. It is clear that part of each word is missing, but the damaged manuscript forms a single feature. Text can be supplied from Finnur Jónsson’s transcription, but we want to represent the illegible text as a single feature, even if it overlaps with the middle of the two words. Note that in accordance with [ch. 8.4](HB3_ch8.xml#sec8.4) above, we do not encode the illegible characters with the `<gap/>{:xml}` element, since there is no physical hole or the like in the parchment, but rather with the `<unclear>{:xml}` element. Since the characters are illegible, they are rendered by the dotted circle. The simple encoding would be:
@@ -252,7 +252,7 @@ Note that in the latter display, the line number 5 appears twice, since the last
 
 <Caption title="Ill. 16.3">. Dislocated heading. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 14–17.</Caption>
 
-The chapter division between lines 15 and 16 in ill. 16.3 is not completely straightforward. The rubric in the second half of line 16 should be encoded as a `<head>{:xml}` in the second `<div>{:xml}` of the example. The complicating factor here is that we would like to encode (and be able to display) the fact that this rubric is located on the same line as the opening of the `<div>{:xml}` which it is heading. In other words, if the manuscript is read line by line, the `<head>{:xml}` is intercalated in the first sentence, “Salomon konungr gerðe fyrst || Rubric || mysteri guði...”. Our recommended encoding would be the following:
+The chapter division between lines 15 and 16 in ill. 16.3 is not completely straightforward. The rubric in the second half of line 16 should be encoded as a `<head>{:xml}` in the second `<div>{:xml}` of the example. The complicating factor here is that we would like to encode (and be able to display) the fact that this rubric is located on the same line as the opening of the `<div>{:xml}` which it is heading. In other words, if the manuscript is read line by line, the `<head>{:xml}` is intercalated in the first sentence, “Salomon konungr gerðe fyrst \|\| Rubric \|\| mysteri guði...”. Our recommended encoding would be the following:
 ```xml
 <div>
    . . .
@@ -309,7 +309,7 @@ Alternatively, a suitable stylesheet will be able to display this piece of text 
 
 <Caption title="Ill. 16.4">. Discontinuous and dislocated heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, fol. 52r, lines 2–5.</Caption>
 
-The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the `@rend{:sh}` attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
+The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips\|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the `@rend{:sh}` attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
 ```xml
 <div>
     . . .
@@ -331,7 +331,7 @@ The next example, ill. 16.4, is somewhat more complicated. Here, the rubric exte
 ```
 
 
-In this simplified example, the element `<w>{:xml}` has only been used in the `<head>{:xml}`, so as to illustrate the fact that the word “skips|brotzmanna” is divided over two lines. Since there is no hyphen in the manuscript, our recommended encoding of this particular word would be: 
+In this simplified example, the element `<w>{:xml}` has only been used in the `<head>{:xml}`, so as to illustrate the fact that the word “skips\|brotzmanna” is divided over two lines. Since there is no hyphen in the manuscript, our recommended encoding of this particular word would be: 
 ```xml
 <w>skips<lb ed="ms" n="4" rend="2"/>brotz manna</w>
 ```
@@ -510,7 +510,7 @@ According to the display recommended in this handbook, this solution is appropri
 
 In the next passage in fig 16.5, we can hardly read all the words. Beginning at the end of the next but last line, we can read
 <Quote>
-um þes|se lond .................. þau þo
+um þes\|se lond .................. þau þo
 </Quote>
 
 In the following encoding, the three words “rǿða þá eru” have been supplied on the normalised level, but this sequence is left out on the facsimile and diplomatic level. However, based on the supplied text on the normalised level, the encoder has inserted them as three words in `<w>{:xml}` elements. These words have been given the `@rendition{:sh}` attribute.

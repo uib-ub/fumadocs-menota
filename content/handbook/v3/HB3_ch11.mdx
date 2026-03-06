@@ -54,20 +54,60 @@ Note that [ch. 15.4.2](HB3_ch15.xml#sec15.4.2) offers another way of linking ann
 
 Lemmatised texts are useful for any language, and in particular for languages with a complex morphology or a variable orthography. The morphology of Old Norse is more complex than that of the modern Nordic languages, but not particularly difficult – it is rather like the morphology of Modern German. The orthography, however, was far from fixed, and since many transcriptions are likely to be fairly diplomatic, any lemma may be expressed by a large number of orthographic forms. For example, the pronoun “hann” has only three forms in the normalised orthography of Old Norse: “hann” (nominative and accusative), “hans” (genitive), and “honum” (dative). In an actual transcription, however, a dozen or more forms may occur, as shown in the table below. 
 
-| Form | Lemma | Grammatical form |
-|-----|-----|-----|
-| hann | hann | Nominative |
-| han`<am>{:xml}`&bar;`</am>{:xml}` |
-| h`<am>{:xml}`&bar;`</am>{:xml}` |
-| h`<am>{:xml}`&bar;`</am>{:xml}`n |
-| ha&nscap; |
-| hans | hann | Genitive |
-| hanſ |
-| h`<am>{:xml}`&bar;`</am>{:xml}`s |
-| h`<am>{:xml}`&bar;`</am>{:xml}`ſ |
-| honum | hann | Dative |
-| honom |
-| h`<am>{:xml}`&bar;`</am>{:xml}`m |
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Lemma</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hann</td>
+<td rowSpan="5">hann</td>
+<td rowSpan="5">Nominative</td>
+</tr>
+<tr>
+<td>han`<am>{:xml}`&bar;`</am>{:xml}`</td>
+</tr>
+<tr>
+<td>h`<am>{:xml}`&bar;`</am>{:xml}`</td>
+</tr>
+<tr>
+<td>h`<am>{:xml}`&bar;`</am>{:xml}`n</td>
+</tr>
+<tr>
+<td>ha&nscap;</td>
+</tr>
+<tr>
+<td>hans</td>
+<td rowSpan="4">hann</td>
+<td rowSpan="4">Genitive</td>
+</tr>
+<tr>
+<td>hanſ</td>
+</tr>
+<tr>
+<td>h`<am>{:xml}`&bar;`</am>{:xml}`s</td>
+</tr>
+<tr>
+<td>h`<am>{:xml}`&bar;`</am>{:xml}`ſ</td>
+</tr>
+<tr>
+<td>honum</td>
+<td rowSpan="3">hann</td>
+<td rowSpan="3">Dative</td>
+</tr>
+<tr>
+<td>honom</td>
+</tr>
+<tr>
+<td>h`<am>{:xml}`&bar;`</am>{:xml}`m</td>
+</tr>
+</tbody>
+</table>
+
 
 
 In [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above the use of `<w>{:xml}` for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as ` &fins;{:xml}` and `&nscap;{:xml}`, or abbreviations such as `&bar;{:xml}`. These are described in [ch. 5](HB3_ch5.xml).
@@ -182,32 +222,117 @@ The name tokens will, in any case, make it clear which tokens refer to invariabl
 
 Word class is denoted by a name token consisting of the character “x” + an uppercase, two-letter abbreviation for each class, including commonly recognised subclasses (such as the division between common and proper nouns). Inevitably, there will be some conflict of categorisation, especially among the pronouns and determiners. They will be discussed in [ch. 11.5](#sec11.5) below.
 
-| Name token | Word class | Inflection |
-|-----|-----|-----|
-| xNC | Noun, common | Yes |
-| xNP | Noun, proper |
-| xAJ | Adjective |
-| xPE | Pronoun, personal |
-| xPR | Pronoun, reflexive |
-| xPQ | Pronoun, interrogative |
-| xPI | Pronoun, indefinite |
-| xDD | Determiner, demonstrative |
-| xDQ | Determiner, quantifier |
-| xDP | Determiner, possessive |
-| xPD | Pronoun/Determiner |
-| xNA | Numeral, cardinal |
-| xNO | Numeral, ordinal |
-| xVB | Verb |
-| xAV | Adverb, general |
-| xAT | Article |
-| xAP | Preposition (apposition) | No |
-| xAQ | Adverb, interrogative |
-| xRP | Relative particle |
-| xCC | Conjunction, coordinating |
-| xCS | Conjunction, subordinating |
-| xIT | Interjection |
-| xIM | Infinitive marker |
-| xUA | Unassigned | – |
+<table>
+<thead>
+<tr>
+<th>Name token</th>
+<th>Word class</th>
+<th>Inflection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNC</td>
+<td>Noun, common</td>
+<td rowSpan="16">Yes</td>
+</tr>
+<tr>
+<td>xNP</td>
+<td>Noun, proper</td>
+</tr>
+<tr>
+<td>xAJ</td>
+<td>Adjective</td>
+</tr>
+<tr>
+<td>xPE</td>
+<td>Pronoun, personal</td>
+</tr>
+<tr>
+<td>xPR</td>
+<td>Pronoun, reflexive</td>
+</tr>
+<tr>
+<td>xPQ</td>
+<td>Pronoun, interrogative</td>
+</tr>
+<tr>
+<td>xPI</td>
+<td>Pronoun, indefinite</td>
+</tr>
+<tr>
+<td>xDD</td>
+<td>Determiner, demonstrative</td>
+</tr>
+<tr>
+<td>xDQ</td>
+<td>Determiner, quantifier</td>
+</tr>
+<tr>
+<td>xDP</td>
+<td>Determiner, possessive</td>
+</tr>
+<tr>
+<td>xPD</td>
+<td>Pronoun/Determiner</td>
+</tr>
+<tr>
+<td>xNA</td>
+<td>Numeral, cardinal</td>
+</tr>
+<tr>
+<td>xNO</td>
+<td>Numeral, ordinal</td>
+</tr>
+<tr>
+<td>xVB</td>
+<td>Verb</td>
+</tr>
+<tr>
+<td>xAV</td>
+<td>Adverb, general</td>
+</tr>
+<tr>
+<td>xAT</td>
+<td>Article</td>
+</tr>
+<tr>
+<td>xAP</td>
+<td>Preposition (apposition)</td>
+<td rowSpan="7">No</td>
+</tr>
+<tr>
+<td>xAQ</td>
+<td>Adverb, interrogative</td>
+</tr>
+<tr>
+<td>xRP</td>
+<td>Relative particle</td>
+</tr>
+<tr>
+<td>xCC</td>
+<td>Conjunction, coordinating</td>
+</tr>
+<tr>
+<td>xCS</td>
+<td>Conjunction, subordinating</td>
+</tr>
+<tr>
+<td>xIT</td>
+<td>Interjection</td>
+</tr>
+<tr>
+<td>xIM</td>
+<td>Infinitive marker</td>
+</tr>
+<tr>
+<td>xUA</td>
+<td>Unassigned</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+
 
 
 #### 11.3.1.2 Inflectional class
@@ -572,14 +697,30 @@ In some cases, however, it is a questions of related words with variant forms, s
 
 
 <div className="table-abbr">
-| Lemma | Word form | Grammatical form |
-|-----|-----|-----|
-| líf | lífi | xNC cD nS gN sI |
-| lífi |
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Word form</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>líf</td>
+<td rowSpan="2">lífi</td>
+<td rowSpan="2">xNC cD nS gN sI</td>
+</tr>
+<tr>
+<td>lífi</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 
 
-For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “|”, as delimiter:
+For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter:
 ```xml
 ... <w lemma="líf | lífi" me:msa="xNC cD nS gN sI | 
   xNC cD nS gN sI">lifi</w> ...
@@ -604,12 +745,33 @@ The feminine noun “kona” is a case in point. It has the same form, “konu�
 
 
 
-| Lemma | Word form | Grammatical form |
-|-----|-----|-----|
-| kona | kona | xNC **cN** nS gF sI |
-| konu | xNC **cG** nS gF sI |
-| xNC **cD** nS gF sI |
-| xNC **cA** nS gF sI |
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Word form</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowSpan="4">kona</td>
+<td>kona</td>
+<td>xNC **cN** nS gF sI</td>
+</tr>
+<tr>
+<td rowSpan="3">konu</td>
+<td>xNC **cG** nS gF sI</td>
+</tr>
+<tr>
+<td>xNC **cD** nS gF sI</td>
+</tr>
+<tr>
+<td>xNC **cA** nS gF sI</td>
+</tr>
+</tbody>
+</table>
+
 
 
 In most cases, a syntactic or semantic analysis will yield a unique result. For example, in the phrase “til konu” the word form “konu” would be analysed as genitive since the preposition “til” only governs this particular case:
@@ -1706,7 +1868,7 @@ Texts in the Menota archive have been annotated according to earlier schemes, es
 
 **Prepositions vs. adverbs**. Prepositions in absolute position (i.e. with no complementation) can be analysed as adverbs or as verbal particles. We recommend that prepositions are analysed as prepositions, xAP, in all cases,  whether they have a complementation, “í hendi”, “til matar”, “undir honum”, or not, “en vǽta var á [the air?] mikil um daginn”. As for “of” and “um” in Eddic poems, we do not think there should  be any distinction between  prepositions and expletive particles. This is a syntactic difference, not a morphological one, so the word class should be xAP in both cases.
 
-**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ cA nS gN rP. Some encoders would like to indicate the adverbial usage by using an alternative annotation, xAJ cA nS gN rP | xAV. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, xAJ cA nS gN rP should suffice.
+**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ cA nS gN rP. Some encoders would like to indicate the adverbial usage by using an alternative annotation, xAJ cA nS gN rP \| xAV. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, xAJ cA nS gN rP should suffice.
 
 **Supinum**. In periphrastic constructions, the verb “hafa” is typically followed by supinum, e.g. “hann hefir keypt hús” (he has bought a house). From a morphological point of view, this form is identical with the perfect participle in neuter singular accusative, i.e. xVB fP tPT cA nS gN vA. However, since the supinum basically is a form without inflection (there is no concord with the subject of the sentence) we recommend a rather simple annotation, in this example xVB fS vA rather than xVB fP tPT cA nS gN vA. See the discussion in [ch. 11.5.8.2 (b)](#sec11.5.8.2) above. Note that this annotation also applies to the older construction of verb + object + object predicative, e.g. “hann hefir hús keypt ” (literally, he has a house in bought condition).
 
@@ -1737,13 +1899,13 @@ As stated above, we recommend that words are mapped to a single word class, even
 
 | Abbreviation | Word class | Participants |
 |-----|-----|-----|
-| xPE | pronouns, personal | ek | vit | vér | þú | þit (it) | þér (ér) | hann | hon |
+| xPE | pronouns, personal | ek \| vit \| vér \| þú \| þit (it) \| þér (ér) \| hann \| hon |
 | xPR | pronouns, reflexive | sik |
-| xPQ | pronouns, interrogative | hver (hvat, hví, hveim) | hvílíkr |
-| xPI | pronouns, indefinite | báðir | hvatki | hvatvetna | manngi |
-| xDD | determiners, demonstrative | hinn | inn (enn) | sá | sjá (þessi) |
-| xDQ | determiners, quantifiers | allr | annarr | annartveggi | annarrtveggja | báðir | einn | einnhverr | engi | fyrstr (fyrsti) | hvárgi | hvárr | hvárrtveggi | hvárrtveggja | hvergi | hverr | nøkkurr (nǫkkurr) | samr | sumr |
-| xAQ | adverbs, interrogative | hvar | hvárt | hvert | hvaðan | hversu | hvé (hve) | hví | hvernig |
+| xPQ | pronouns, interrogative | hver (hvat, hví, hveim) \| hvílíkr |
+| xPI | pronouns, indefinite | báðir \| hvatki \| hvatvetna \| manngi |
+| xDD | determiners, demonstrative | hinn \| inn (enn) \| sá \| sjá (þessi) |
+| xDQ | determiners, quantifiers | allr \| annarr \| annartveggi \| annarrtveggja \| báðir \| einn \| einnhverr \| engi \| fyrstr (fyrsti) \| hvárgi \| hvárr \| hvárrtveggi \| hvárrtveggja \| hvergi \| hverr \| nøkkurr (nǫkkurr) \| samr \| sumr |
+| xAQ | adverbs, interrogative | hvar \| hvárt \| hvert \| hvaðan \| hversu \| hvé (hve) \| hví \| hvernig |
 
 
 While the inflected forms “þat” and “þeir/þǽr/þau” might be analysed as personal pronouns in the 3rd person, we recommend to regard them as determiners, i.e. as instances of “sá” (xDD).
