@@ -4,7 +4,6 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
-    <xsl:strip-space elements="*"/>
     <xsl:template match="text()">
         <xsl:variable 
             name="curlies" 
@@ -18,7 +17,7 @@
         <xsl:variable name="ensp" select="replace($plus, '&#x00a0;', '&amp;ensp;')"/>
         <xsl:variable name="simple-spaces">
             <xsl:choose>
-                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell">
+                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell|ancestor::tei:head">
                     <xsl:value-of select="replace($ensp, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>
