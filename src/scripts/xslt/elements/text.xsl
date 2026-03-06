@@ -4,7 +4,6 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
-    <xsl:strip-space elements="*"/>
     <xsl:template match="text()">
         <xsl:variable 
             name="curlies" 

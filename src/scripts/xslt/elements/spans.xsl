@@ -4,7 +4,6 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
-    <xsl:strip-space elements="*"/>
     <xsl:template match="tei:att">
         <xsl:if test="position() = 1 and ancestor::tei:table[@rend='xml-elements']">
             <xsl:text>&lt;span className="p-3"/&gt;</xsl:text>
@@ -44,7 +43,7 @@
                 <xsl:apply-templates/>
                 <xsl:text>&lt;/Glyph&gt;</xsl:text>
             </xsl:when>
-            <xsl:when test="@rend='red'">
+            <xsl:when test="@rend='red' or @rend='blue'">
                 <xsl:text>&lt;span className="</xsl:text>
                 <xsl:value-of select="concat('text-', @rend, '-500')"/>
                 <xsl:text>"&gt;</xsl:text>

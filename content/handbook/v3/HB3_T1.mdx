@@ -23,7 +23,7 @@ This is a tutorial for the transcription of a text from a facsimile of the prima
 The tutorial outlines two ways of performing the transcription – either [T.2 Directly in an XML editor](#secT.2) or by
                way of a [T.3 Simplified interface & conversion to XML](#secT.3). Whichever way should lead to a valid XML file. The
                next step, which is common to both approaches, is making the XML file readable, i.e.
-                  [T.4 Displaying the text with the help of an XSLT
+                  [<span className="text-blue-500">T.4</span> Displaying the text with the help of an XSLT
                   stylesheet](#secT.4).
 
 In either case, an XML editor needs to be installed. We recommend using Oxygen, which
@@ -75,7 +75,7 @@ When transcribing on the diplomatic level, follow these simple rules:
 
 <span className="text-red-500">1</span>. Whether you are using the skeleton XML file or not,
                   remember to have your whole transcription within this structure:
-                  `<div>{:xml}``<p>{:xml}`...`</p>{:xml}``</div>{:xml}`. There may be more than one `<div>{:xml}`
+                  `<div>{:xml}` `<p>{:xml}`...`</p>{:xml}` `</div>{:xml}`. There may be more than one `<div>{:xml}`
                   within the overarching `<div>{:xml}`, and of course more than one `<p>{:xml}` within
                   each `<div>{:xml}`. There may also be a `<head>{:xml}` in each `<div>{:xml}`, preceding
                   all `<p>{:xml}` elements. 

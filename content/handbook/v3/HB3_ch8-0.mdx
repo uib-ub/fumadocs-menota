@@ -38,6 +38,7 @@ In some
                leaves in the manuscript.
 
 
+               
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to,35v,15-22.jpg" alt="ch8/AM-619-4to,35v,15-22.jpg"/>
@@ -76,6 +77,7 @@ Whenever the manuscript contains a lacuna we suggest using the element
 In fig. 8.2 there are several examples of damaged text. Some characters have evidently been lost due to damage from the “S” initial on the other side of the leaf. In the fourth line from the bottom, we can read “Fegiarn <em>maðr</em> er lícr hælviti þvi er aldrigin ...lisc”. Probably three characters are now lost in the last word. With some knowledge of Old Norse, it is reasonable to suggest that they are “fyl”, so that the whole word would be “fyllisc”.
 
 
+               
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-9v,23-30.jpg" alt="ch8/AM-619-4to-9v,23-30.jpg"/>
@@ -83,6 +85,7 @@ In fig. 8.2 there are several examples of damaged text. Some characters have evi
 </Figure>
 
 
+            
 <Caption title="Ill. 8.2">. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23–30.</Caption>
 
 On the facsimile level, we encode the gaps as such and do not offer any hypothesis on the contents of the lost text, as shown in this single-level transcription:
@@ -146,7 +149,7 @@ In [ch. 8.5](#sec8.5) below, examples of larger lacunas are given.
 
 Stylesheets will vary with respect to the display of the `<gap/>{:xml}` element. They are also likely to take into consideration the length of the presumed lost text. This can be anything from a single character to several leaves of a once complete codex.
 
-In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC``DOTTED CIRCLE`. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
+In the stylesheet for the Menota archive, each presumed lost character is displayed by a dotted circle, in Unicode known as `25CC` `DOTTED CIRCLE`. If the lacuna has a length of more than one line (as specified in the attribute), each line will be displayed with a series of three dotted circles + <em>one line missing</em> + three dotted circles. Longer lacunas (more than one leaf) will be explained in a note, and the same applies to lacunas of indeterminate length.
 
 A suitable stylesheet will be able to pick values from the attributes of the `<gap/>{:xml}` element and display them accordingly. Note that in XML encoding, it is no use hitting the space bar more than once in order to produce a larger space than the ordinary one, so the extent of the lacuna must be specified by the attributes if it is going to be displayed at all.
 <DisplayFrame>
@@ -159,7 +162,7 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 </DisplayFrame>
 
 
-Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD``SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD` `SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
 
 ## 8.3 Empty space
 
@@ -188,6 +191,7 @@ In fig. 8.3, the scribe of _Landslǫg Magnúss
                amount was half a mark (<em>mǫrk</em> f.).
 
 
+               
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-309-fol,42v,10-19.jpg" alt="ch8/AM-309-fol,42v,10-19.jpg"/>
@@ -195,6 +199,7 @@ In fig. 8.3, the scribe of _Landslǫg Magnúss
 </Figure>
 
 
+            
 <Caption title="Ill. 8.3">. Place left open towards the end of the last but one line in the image. _Landslǫg Magnúss
                Hákonarsonar_. AM 309 fol, f. 42v, l. 10–19.</Caption>
 
@@ -260,6 +265,7 @@ Since the scribe left room for approximately three characters, he would obviousl
 In another example, fig. 8.4, there is an empty space for an initial. This is often seen in manuscripts, since initials typically were drawn after the main text was written. Here, the space is evidently intended for the single character “S” in the word <em>sá</em> ‘this’.
 
 
+                  
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-677-4to-1v,1-3.jpg" alt="ch9/AM-677-4to-1v,1-3.jpg"/>
@@ -267,6 +273,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 </Figure>
 
 
+               
 <Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
 
 The space has a size of approximately four characters horizontally and two lines vertically. According to the TEI P5 Guidelines, a space with both vertical and horizontal components should be classified as vertical (cf. the [description](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html)
@@ -341,6 +348,7 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 
 
+               
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-655-IX-4to,2r,1-5.jpg" alt="ch8/AM-655-IX-4to,2r,1-5.jpg"/>
@@ -348,6 +356,7 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 </Figure>
 
 
+            
 <Caption title="Ill. 8.5">. A word which is difficult to read. _Blasíuss saga_. AM 655 IX 4to, f. 2r, l. 1–5.</Caption>
 
 In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb <em>veita</em> ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>{:xml}` element will be placed within the `<w>{:xml}` element, but when the uncertain passage contains one or more words, the `<unclear>{:xml}` element will be located outside.
@@ -378,6 +387,7 @@ Note that the fissure in lines 4–5 must
                of original damage to the parchment discussed in [ch. 8.1](#sec8.1) above.
 
 
+               
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-645-4to-51v,32-35.jpg" alt="ch8/AM-645-4to-51v,32-35.jpg"/>
@@ -385,9 +395,10 @@ Note that the fissure in lines 4–5 must
 </Figure>
 
 
+            
 <Caption title="Ill. 8.6">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.</Caption>
 
-In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC``DOTTED CIRCLE` (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
+In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC` `DOTTED CIRCLE` (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
 ```xml
 <pb ed="ms" n="51v"/>
 . . .
@@ -447,7 +458,7 @@ Since the transcriber can insert a suitable text in the `<unclear>{:xml}` elemen
 ```
 
 
-If the encoder would like to restore illegible characters, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC``DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore illegible characters, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC` `DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
 A single-level transcription on the diplomatic level would look like this if the enocder decided to use the `<supplied>{:xml}` element:
 ```xml
@@ -586,6 +597,7 @@ Note that the
                   69, and between 70 and 71.
 
 
+                  
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-quires-8-10.png" alt="ch8/AM-619-4to-quires-8-10.png"/>
@@ -593,6 +605,7 @@ Note that the
 </Figure>
 
 
+               
 <Caption title="Ill. 8.7">. Quires VIII, IX and X of _The Old Norwegian Homily Book_, AM 619
                   4to. Missing leaves are indicated by dotted lines.</Caption>
 
@@ -602,6 +615,7 @@ The missing leaves are not immediately visible in the codex, which has been boun
                   that a piece of text is missing, but not immediately how much.
 
 
+                  
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to,62v-63r.png" alt="ch8/AM-619-4to,62v-63r.png"/>
@@ -609,6 +623,7 @@ The missing leaves are not immediately visible in the codex, which has been boun
 </Figure>
 
 
+               
 <Caption title="Ill. 8.8">. A missing leaf (part of a bifolium). AM 619 4to, f. 62–63.
                   Note the addition in a younger hand at the bottom of f. 62v, stating “deest .i. folium” 
                   (one leaf is missing). This is actually the hand of Árni Magnússon
@@ -667,6 +682,7 @@ There are several early Norwegian fragments of _Konungs skuggsjá_
                   fragment in two columns, each of 27 lines, as illustrated in fig. 8.9.
 
 
+                  
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/NKS-235-g-4to,1r.jpg" alt="ch8/NKS-235-g-4to,1r.jpg"/>
@@ -674,6 +690,7 @@ There are several early Norwegian fragments of _Konungs skuggsjá_
 </Figure>
 
 
+               
 <Caption title="Ill. 8.9">. A fragment consisting of a single leaf. _Konungs
                   skuggsjá_. NKS 235 g 4to, f. 1.</Caption>
 
@@ -718,6 +735,7 @@ The tiniest fragments are small strips or cuttings of leaves. In archives and li
                   not as individual fragments. Ill. 8.10 shows three pieces brought together as parts of a single leaf.
 
 
+                  
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/XNRA-7-2v-mounted.jpg" alt="ch8/XNRA-7-2v-mounted.jpg"/>
@@ -725,6 +743,7 @@ The tiniest fragments are small strips or cuttings of leaves. In archives and li
 </Figure>
 
 
+               
 <Caption title="Ill. 8.10">. Three pieces belonging to a single leaf. _Landslǫg
                   Magnúss Hákonarsonar_. NRA 7, f. 2v.</Caption>
 

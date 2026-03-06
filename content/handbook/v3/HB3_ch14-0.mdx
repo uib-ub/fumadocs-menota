@@ -766,7 +766,7 @@ could for example look like this:
 
 Please note that the value of the attribute `@sex{:sh}` has in the Old Norse scholarly world traditionally been encoded based on the ISO standard 
     [Representation of Human Sexes](http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip),
-    in which `"0"{:js}` indicates “unknown”; `"1"{:js}`“male”; `"2"{:js}`“female”; and `"9"{:js}`“not applicable”
+    in which `"0"{:js}` indicates “unknown”; `"1"{:js}` “male”; `"2"{:js}` “female”; and `"9"{:js}` “not applicable”
     even though the this standard is now widely considered inadequate. Alternative values are `"M"{:js}` for male, `"F"{:js}` for female, 
     `"O"{:js}` for other, `"N"{:js}` for none or not applicable, and `"U"{:js}` for unknown.
 
@@ -876,6 +876,7 @@ The `<editorialDecl>{:xml}` uses the `<correction>{:xml}` element with the `@sta
 - medium: the text has been checked at least once
 - low: the text has not been checked
 - unknown: the correction status of the text is unknown
+
 
 Once the `@status{:sh}` attribute is given a value, the `<correction>{:xml}` element may be empty.  
     However, if desired, further specification can be given in prose within a `<p>{:xml}` element.
