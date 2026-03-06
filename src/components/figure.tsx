@@ -7,7 +7,7 @@ export default function Figure({ desc, caption, children }: {
 }) {
     return (
         <div className="FIGURE mx-5 mb-15">
-            <div className="flex [&_.CAPTION]:hidden">
+            <div className="flex flex-wrap [&_.CAPTION]:hidden">
                 {children}
             </div>
             <div className={`-mt-8 [&_.CAPTION]:mx-0 [&_.CAPTION]:-mt-4 [&_.IMAGE]:hidden`}>
