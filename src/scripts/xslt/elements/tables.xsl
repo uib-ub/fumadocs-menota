@@ -19,7 +19,8 @@
             <xsl:when test="
                 @rend='plain' or 
                 descendant::tei:cell//tei:lb or 
-                descendant::tei:cell//tei:figure">
+                descendant::tei:cell//tei:figure or
+                descendant::tei:cell[number(@rows) > 1]">
                 <xsl:text>&#x0a;&lt;table&gt;</xsl:text>
                 <xsl:if test="tei:row[@role='label']">
                     <xsl:text>&#x0a;&lt;thead&gt;</xsl:text>
@@ -38,7 +39,11 @@
                 <xsl:for-each select="tei:row[not(@role='label')]">
                     <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
                     <xsl:for-each select="tei:cell">
-                        <xsl:text>&#x0a;&lt;td&gt;</xsl:text>
+                        <xsl:text>&#x0a;&lt;td</xsl:text>
+                        <xsl:if test="number(@rows) > 1">
+                            <xsl:value-of select="concat(' rowSpan=&quot;', @rows, '&quot;')"/>
+                        </xsl:if>
+                        <xsl:text>&gt;</xsl:text>
                         <xsl:choose>
                             <xsl:when test="descendant::tei:figure">
                                 <xsl:text>&#x0a;</xsl:text>
