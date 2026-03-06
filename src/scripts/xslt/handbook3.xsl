@@ -7,30 +7,12 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p tei:hi"/>
     <xsl:include href="elements/graphics.xsl"/>
+    <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
     <xsl:include href="elements/text.xsl"/>
     <xsl:template match="/">
         <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="tei:teiHeader">
-        <xsl:text>---&#x0a;</xsl:text>
-        <xsl:apply-templates/>
-        <xsl:text>---&#x0a;</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei:fileDesc">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="tei:titleStmt">
-        <xsl:text>title: "</xsl:text>
-        <xsl:value-of select="tei:title"/>
-        <xsl:text>"&#x0a;</xsl:text>
-        <xsl:if test="tei:author|tei:respStmt/tei:name">
-            <xsl:text>author:&#x0a;</xsl:text>
-            <xsl:for-each select="tei:author|tei:respStmt/tei:name">
-                <xsl:value-of select="concat(' - ', ., '&#x0a;')"/>
-            </xsl:for-each>
-        </xsl:if>
     </xsl:template>
     <xsl:template match="tei:text">
         <xsl:apply-templates/>
@@ -125,9 +107,4 @@
             <xsl:apply-templates/>
         </xsl:for-each>
     </xsl:template>
-    <xsl:template match="tei:profileDesc"/>
-    <xsl:template match="tei:revisionDesc"/>
-    <xsl:template match="tei:publicationStmt"/>
-    <xsl:template match="tei:sourceDesc"/>
-    <xsl:template match="tei:encodingDesc"/>
 </xsl:stylesheet>
