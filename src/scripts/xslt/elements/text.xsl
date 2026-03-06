@@ -18,7 +18,7 @@
         <xsl:variable name="ensp" select="replace($plus, '&#x00a0;', '&amp;ensp;')"/>
         <xsl:variable name="simple-spaces">
             <xsl:choose>
-                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell">
+                <xsl:when test="ancestor::tei:quote|ancestor::tei:cell|ancestor::tei:head">
                     <xsl:value-of select="replace($ensp, '\s+', ' ')"/>
                 </xsl:when>
                 <xsl:otherwise>
