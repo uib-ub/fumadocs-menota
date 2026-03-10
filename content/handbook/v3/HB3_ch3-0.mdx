@@ -6,8 +6,9 @@ author:
  - Odd Einar Haugen
 changeLog:
  - date: 2026-03-10
-   change: "Converted from XML to MDX."
-   author: "Robert K. Paulsen"
+   author: Robert K. Paulsen
+   changes:
+    - Converted from XML to MDX.
 ---
 
 
@@ -15,7 +16,7 @@ changeLog:
 
 Version 3.0 (12 December 2019)
 
-This version has been superseded by [version 3.1](HB3_ch3.xml#) (19 July 2020)
+This version has been superseded by [version 3.1](/handbook/v3/HB3_ch3) (19 July 2020)
 
 by Matthew Driscoll, Rune Kyrkjebø and Odd Einar Haugen
 
@@ -48,7 +49,7 @@ The complex structure of a work such as a set of rímur could be represented by 
                   only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
-                  given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](HB3_ch16.xml) below.
+                  given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
 
@@ -263,7 +264,7 @@ Nesting of `<lg>{:xml}` elements is useful for marking up longer poems. When a p
 | `</lg>{:xml}` | and here the level one line group ends. |
 
 
-The `<lg>{:xml}` and `<l>{:xml}` elements may have several attributes, among other things for encoding information about rhyme or other metrical phenomena. See [ch. 13](HB3_ch13.xml) of this handbook for a more detailed presentation of metrical encoding.
+The `<lg>{:xml}` and `<l>{:xml}` elements may have several attributes, among other things for encoding information about rhyme or other metrical phenomena. See [ch. 13](/handbook/v3/HB3_ch13) of this handbook for a more detailed presentation of metrical encoding.
 
 Having `<p>{:xml}` and `<lg>{:xml}` as siblings can create problems for the encoding of
      prosimetrum texts, where lines or verse or even whole poems can appear within prose text, often
@@ -373,7 +374,7 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 
 The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (<em>littera notabilior</em>) should be encoded with the `<c>{:xml}` element.
 
-The `<c>{:xml}` element is discussed in [ch. 5.2.3](HB3_ch5.xml#sec5.2.3) below, while [ch. 7](HB3_ch7.xml) explains the encoding of graphical elements of initials.
+The `<c>{:xml}` element is discussed in [ch. 5.2.3](HB3_ch5.xml#sec5.2.3) below, while [ch. 7](/handbook/v3/HB3_ch7) explains the encoding of graphical elements of initials.
 
 See also [Kirsten Berg 2010](HB3_literature.xml#Berg2010), pp. 60–66, for a discussion of initials and highlighted characters in the structuring of a manuscript text like the _Old Norwegian Homily Book_.
 

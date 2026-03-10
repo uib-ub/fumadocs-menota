@@ -8,6 +8,7 @@
     <xsl:preserve-space elements="tei:p tei:hi"/>
     <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/header.xsl"/>
+    <xsl:include href="elements/links.xsl"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
     <xsl:include href="elements/text.xsl"/>
@@ -79,12 +80,6 @@
         <xsl:text>&#x0a;&lt;Quote&gt;&#x0a;</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>&#x0a;&lt;/Quote&gt;</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei:ref">
-        <xsl:text>[</xsl:text>
-        <xsl:apply-templates/>
-        <xsl:text>]</xsl:text>
-        <xsl:value-of select="concat('(', @target, ')')"/>
     </xsl:template>
     <xsl:template match="tei_samples:egXML">
         <xsl:choose>

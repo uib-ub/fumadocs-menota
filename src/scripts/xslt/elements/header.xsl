@@ -30,8 +30,9 @@
         <xsl:text expand-text="true"> - date: {
                 current-date() => format-date('[Y]-[M01]-[D01]')
             }&#x0a;</xsl:text>
-        <xsl:text>   change: "Converted from XML to MDX."&#x0a;</xsl:text>
-        <xsl:text>   author: "Robert K. Paulsen"&#x0a;</xsl:text>
+        <xsl:text>   author: Robert K. Paulsen&#x0a;</xsl:text>
+        <xsl:text>   changes:&#x0a;</xsl:text>
+        <xsl:text>    - Converted from XML to MDX.&#x0a;</xsl:text>
     </xsl:template>
     <xsl:template match="
         tei:profileDesc|

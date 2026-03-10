@@ -7,8 +7,9 @@ author:
  - Odd Einar Haugen
 changeLog:
  - date: 2026-03-10
-   change: "Converted from XML to MDX."
-   author: "Robert K. Paulsen"
+   author: Robert K. Paulsen
+   changes:
+    - Converted from XML to MDX.
 ---
 
 
@@ -40,14 +41,14 @@ In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/e
 |-----|-----|
 | `<me:textSpan/>{:xml}` | A generic element to handle overlapping text structures. |
 | <span className="p-3"/>`@me:category{:sh}` | Specifies the type of span, restricted to this list of values: |
-| <span className="p-6"/>`"gap"{:js}` | For contents that would otherwise be contained by the `<gap/>{:xml}` element, cf. [ch. 8](HB3_ch8.xml). |
-| <span className="p-6"/>`"unclear"{:js}` | For contents that would otherwise be contained by the `<unclear>{:xml}` element, cf. [ch. 8](HB3_ch8.xml). |
-| <span className="p-6"/>`"add"{:js}` | For contents that would otherwise be contained by the `<add>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
-| <span className="p-6"/>`"del"{:js}` | For contents that would otherwise be contained by the `<del>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
-| <span className="p-6"/>`"sic"{:js}` | For contents that would otherwise be contained by the `<sic>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
-| <span className="p-6"/>`"corr"{:js}` | For contents that would otherwise be contained by the `<corr>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
-| <span className="p-6"/>`"surplus"{:js}` | For contents that would otherwise be contained by the `<surplus>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
-| <span className="p-6"/>`"supplied"{:js}` | For contents that would otherwise be contained by the `<supplied>{:xml}` element, cf. [ch. 9](HB3_ch9.xml). |
+| <span className="p-6"/>`"gap"{:js}` | For contents that would otherwise be contained by the `<gap/>{:xml}` element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
+| <span className="p-6"/>`"unclear"{:js}` | For contents that would otherwise be contained by the `<unclear>{:xml}` element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
+| <span className="p-6"/>`"add"{:js}` | For contents that would otherwise be contained by the `<add>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <span className="p-6"/>`"del"{:js}` | For contents that would otherwise be contained by the `<del>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <span className="p-6"/>`"sic"{:js}` | For contents that would otherwise be contained by the `<sic>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <span className="p-6"/>`"corr"{:js}` | For contents that would otherwise be contained by the `<corr>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <span className="p-6"/>`"surplus"{:js}` | For contents that would otherwise be contained by the `<surplus>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <span className="p-6"/>`"supplied"{:js}` | For contents that would otherwise be contained by the `<supplied>{:xml}` element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
 | <span className="p-6"/>`"other"{:js}` | For any other contents. |
 | <span className="p-3"/>`@spanTo{:sh}` | Specifies the end point of the text span, using values like: |
 | <span className="p-6"/>`"an1"{:js}` | anchor 1 |
@@ -397,7 +398,7 @@ In this example, it is the division of the text in the `<s>{:xml}` elements that
 
 ## 16.5 Rendition encoding
 
-When a text has been encoded with the `<w>{:xml}` element for every word, conflicts sometimes arise between the division into words and several of the elements used to describe fragmentation, uncertainty, scribal intervention and the like (discussed in [ch. 8](HB3_ch8.xml) and [ch. 9](HB3_ch9.xml) above).
+When a text has been encoded with the `<w>{:xml}` element for every word, conflicts sometimes arise between the division into words and several of the elements used to describe fragmentation, uncertainty, scribal intervention and the like (discussed in [ch. 8](/handbook/v3/HB3_ch8) and [ch. 9](/handbook/v3/HB3_ch9) above).
 
 As an example, we shall use a missing passage of text which begins in one word and ends in another. The brackets mark the beginning and end of the passage:
 <Quote>

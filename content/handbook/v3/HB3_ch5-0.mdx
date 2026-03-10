@@ -6,8 +6,9 @@ author:
  - Odd Einar Haugen
 changeLog:
  - date: 2026-03-10
-   change: "Converted from XML to MDX."
-   author: "Robert K. Paulsen"
+   author: Robert K. Paulsen
+   changes:
+    - Converted from XML to MDX.
 ---
 
 
@@ -15,7 +16,7 @@ changeLog:
 
 Version 3.0 (12 December 2019)
 
-This version has been superseded by [version 3.1](HB3_ch5.xml#) (6 October 2023)
+This version has been superseded by [version 3.1](/handbook/v3/HB3_ch5) (6 October 2023)
 
 by Odd Einar Haugen and Beeke Stegmann
 
@@ -182,11 +183,11 @@ We recommend the following basic rules for encoding characters, irrespective of 
             outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g.
             either as `abpþ{:xml}` (recommended) or as `abp&thorn;{:xml}`.<br/>
  2.3 Characters
-            which are not part of the Unicode Standard must always be encoded by entities. See [app. A](HB3_A_characters.xml) for more details.
+            which are not part of the Unicode Standard must always be encoded by entities. See [app. A](/handbook/v3/HB3_A_characters) for more details.
 
 3. Abbreviation marks occupying a separate position on the base line are encoded in the
             same manner as alphabetical characters. This applies to e.g. `LATIN SMALL LETTER P WITH
-            STROKE THROUGH DESCENDER` (for “per” or “par”), as explained in [ch. 6](HB3_ch6.xml) below.
+            STROKE THROUGH DESCENDER` (for “per” or “par”), as explained in [ch. 6](/handbook/v3/HB3_ch6) below.
 
 4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of
             two equivalent ways:
@@ -213,7 +214,7 @@ As a rule, we would recommend the first solution, since the number of combinatio
             recommend that the abbreviation mark is identified by the `<am>{:xml}` element (if it
             is encoded as such, typically on the facsimile level) or by the `<ex>{:xml}` element
             (if it has been expanded, in this case as “er”, typically on the diplomatic level).
-            See [ch. 4](HB3_ch4.xml) above for an explanation of levels.
+            See [ch. 4](/handbook/v3/HB3_ch4) above for an explanation of levels.
 
 6. If there is more than one combining character, they are encoded in this order:
 
@@ -485,8 +486,8 @@ Here, each word is delimited by a space (although, as discussed in [ch. 5.5](#se
             a word sometimes extends over a linebreak). While the space bar in many cases would be a sufficient way of delimiting words,
            for several reasons we recommend that each word is identified with a separate
               `<w>{:xml}` element (for “word”). The `<w>{:xml}` element functions as a
-            container for information on levels of text representation ([ch. 4](HB3_ch4.xml) above) and morphological analysis ([ch.
-            11](HB3_ch11.xml) below). In this example, each word has been identified by the `<w>{:xml}` element,
+            container for information on levels of text representation ([ch. 4](/handbook/v3/HB3_ch4) above) and morphological analysis ([ch.
+            11](/handbook/v3/HB3_ch11) below). In this example, each word has been identified by the `<w>{:xml}` element,
             and the lemma (dictionary entry) specified as an attribute to the `<w>{:xml}`
             element:
 ```xml
@@ -697,7 +698,7 @@ Having introduced elements for the encoding of individual characters and words, 
           general, we recommend using the `<pc>{:xml}` element. In some cases, it can be convenient to
           encode punctuation marks on more than one level of representation, such as the three levels 
           `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}` introduced in 
-          [ch. 4](HB3_ch4.xml) above.
+          [ch. 4](/handbook/v3/HB3_ch4) above.
 
 <div className="table-xml-elements">
 | Elements | Explanation |
