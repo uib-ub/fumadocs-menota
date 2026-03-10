@@ -14,10 +14,11 @@
     </xsl:template>
     <xsl:template match="tei:titleStmt">
         <xsl:text>title: "</xsl:text>
-        <xsl:value-of select="replace(replace(replace(tei:title, 
-            '\s+', ' '),
-            '^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2'), 
-            '^Menota handbook preface .*$', 'Preface')"/>
+        <xsl:value-of select="tei:title 
+                => replace('\s+', ' ')
+                => replace('^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2')
+                => replace('^Menota handbook preface .*$', 'Preface')
+            "/>
         <xsl:text>"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
