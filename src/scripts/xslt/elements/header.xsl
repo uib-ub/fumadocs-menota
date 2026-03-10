@@ -13,27 +13,23 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:titleStmt">
-        <xsl:text>title: "</xsl:text>
-        <xsl:value-of select="tei:title 
+        <xsl:text expand-text="true">title: "{tei:title 
                 => replace('\s+', ' ')
                 => replace('^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2')
                 => replace('^Menota handbook preface .*$', 'Preface')
-            "/>
-        <xsl:text>"&#x0a;</xsl:text>
+            }"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
             <xsl:for-each select="tei:author|tei:respStmt/tei:name">
-                <xsl:value-of select="concat(' - ', ., '&#x0a;')"/>
+                <xsl:text expand-text="true"> - {.}&#x0a;</xsl:text>
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
     <xsl:template match="tei:revisionDesc">
         <xsl:text>changeLog:&#x0a;</xsl:text>
-        <xsl:value-of select="concat(
-                ' - date: ', 
-                current-date() => format-date('[Y]-[M01]-[D01]'), 
-                '&#x0a;'
-            )"/>
+        <xsl:text expand-text="true"> - date: {
+                current-date() => format-date('[Y]-[M01]-[D01]')
+            }&#x0a;</xsl:text>
         <xsl:text>   change: "Converted from XML to MDX."&#x0a;</xsl:text>
         <xsl:text>   author: "Robert K. Paulsen"&#x0a;</xsl:text>
     </xsl:template>
