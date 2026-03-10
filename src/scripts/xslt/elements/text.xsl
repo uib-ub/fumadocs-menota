@@ -10,7 +10,12 @@
         <xsl:param name="s" as="xs:string"/>
         <xsl:param name="node" as="text()"/>
         <xsl:choose>
-            <xsl:when test="$node[ancestor::tei:quote|ancestor::tei:cell|ancestor::tei:head]">
+            <xsl:when test="$node[
+                    ancestor::tei:quote|
+                    ancestor::tei:cell|
+                    ancestor::tei:head|
+                    ancestor::tei:item
+                ]">
                 <xsl:value-of select="replace($s, '\s+', ' ')"/>
             </xsl:when>
             <xsl:otherwise>

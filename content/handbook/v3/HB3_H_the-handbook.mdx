@@ -250,13 +250,9 @@ A table with explanations of xml-elements and their attributes ([such as H.4.1 a
                   the first cell into a `<tbody>{:xml}` element together with the following rows.
                   Such tables must adhere to the following principles: 
 
-- The `<table>{:xml}` tag must have a `@rend{:sh}` with the value
-                        `"xml-elements"{:js}`
-- The first cell of the first row in each block must contain a `<gi>{:xml}`  or
-                     a `<tag>{:xml}` element
-- The first cells of all other rows in a block must not contain any
-                        `<gi>{:xml}` element (otherwise, the respective row will be treated as the
-                     first row in a block)
+- The `<table>{:xml}` tag must have a `@rend{:sh}` with the value `"xml-elements"{:js}`
+- The first cell of the first row in each block must contain a `<gi>{:xml}` or a `<tag>{:xml}` element
+- The first cells of all other rows in a block must not contain any `<gi>{:xml}` element (otherwise, the respective row will be treated as the first row in a block)
 
 Strings marked with `<att>{:xml}` and `<val>{:xml}` in the first cell of each row
                   are indented automatically.

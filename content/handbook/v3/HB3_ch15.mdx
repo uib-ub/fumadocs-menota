@@ -22,14 +22,14 @@ This Chapter defines how to refer to phenomena in texts that have some kind of e
      outside the text —&ensp;both electronically **naming** and **locating** the thing referenced. These include the following phenomena and their
      associated TEI elements: 
 
-- people `<name>{:xml}``<handDesc>{:xml}``<person>{:xml}`;
-- places `<name>{:xml}``<placeName>{:xml}``<place>{:xml}`;
-- events `<name>{:xml}``<event>{:xml}`;
-- texts `<text>{:xml}``<name>{:xml}``<msItem>{:xml}`;
+- people `<name>{:xml}` `<handDesc>{:xml}` `<person>{:xml}`;
+- places `<name>{:xml}` `<placeName>{:xml}` `<place>{:xml}`;
+- events `<name>{:xml}` `<event>{:xml}`;
+- texts `<text>{:xml}` `<name>{:xml}` `<msItem>{:xml}`;
 - parts and versions of texts `<div>{:xml}`, `<lg>{:xml}`; 
 - words and their corresponding headwords (lemmas) `<w>{:xml}`; 
 - scholarly books and articles `<bibl>{:xml}`; 
-- manuscripts `<msDesc>{:xml}``<msIdentifier>{:xml}``<name>{:xml}`
+- manuscripts `<msDesc>{:xml}` `<msIdentifier>{:xml}` `<name>{:xml}`
 
 (The Names and Dates module gives elements for `<person>{:xml}`, `<place>{:xml}` and
       `<event>{:xml}`, but these are generally unnecessary for the purposes of projects using this
@@ -187,57 +187,21 @@ These are discussed in detail below. Where URNs are used, it is recommended that
 
 The resources linked by these methods should:
 
-- Give a stable URL or URN which is unambiguous (i.e. one URI/key per unique thing, without
-      duplicates) and unlikely to change in a way that cannot be converted later (i.e. base host
-      name may change but could be converted to a new domain);
-- Contain sufficient information to identify and verify the thing referenced (i.e.
-      following the link or looking up the resource will give a resource that names and describes
-      the thing so that the reference can be understood);
-- Contain additional information (metadata) in the linked resource to determine the date,
-      location and relationships of the thing referenced, depending on the type of thing;
-- Ideally, it should be curated by a professional body that has sole or primary
-      responsibility for the thing in question (e.g. dictionaries, archives, repositories,
-      gazetteers), but otherwise it should be a well-established resource which satisfies the other
-      requirements.
+- Give a stable URL or URN which is unambiguous (i.e. one URI/key per unique thing, without duplicates) and unlikely to change in a way that cannot be converted later (i.e. base host name may change but could be converted to a new domain);
+- Contain sufficient information to identify and verify the thing referenced (i.e. following the link or looking up the resource will give a resource that names and describes the thing so that the reference can be understood);
+- Contain additional information (metadata) in the linked resource to determine the date, location and relationships of the thing referenced, depending on the type of thing;
+- Ideally, it should be curated by a professional body that has sole or primary responsibility for the thing in question (e.g. dictionaries, archives, repositories, gazetteers), but otherwise it should be a well-established resource which satisfies the other requirements.
 
 Open resources (e.g. Wikipedia, Open Street Map) allow users to enter and edit information,
      meaning that a gazetteer, for example, can be built alongside the the encoded text if no other
      authority is available. But there are a few things to note if you are to link to open
      resources, and especially if you are contributing data yourself:
 
-- URLs for open resources are generally quite stable for longer, older, more detailed
-      entries, but newer and shorter contributions may undergo subsequent editing in a way that
-      affects the reference, for example, because the article is split into different articles, or
-      the title changes.
-- Some resources, notably Wikipedia, contain often differing information and detail for the
-      same item, depending on the language of the entry. This means that there may be more than one
-      entry for the same thing. Wikipedia and related resources normally automatically use the
-      Wikidata service to provide a way of referencing the thing itself rather than the various
-      pages which document it. If you find a relevant page on, e.g. Helgafell, you should look up
-      Wikidata (wikidata.org) and use the URI given there ([https://www.wikidata.org/wiki/Q972971](http://www.wikidata.org/wiki/Q972971)
-      —&ensp;which also gives a geolocation, for example).
-- Sometimes it can be difficult to find the desired reference in Wikidata, even in cases
-      where a Wikipedia page has been identified. In such cases the API can help, e.g. [https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&
-       titles=Battle_of_Stiklestad&normalize=1](https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Battle_of_Stiklestad&normalize=1) (JSON output). Here
-       sites=enwiki identifies that this corresponds to a page in the English language
-      version of Wikipedia (the first part of the Wikipedia hostname in the URL (**en**.wikipedia.org) and titles=Battle_of_Stiklestad uses the exact format of
-      the page in the Wikipedia URL (https://**en**.wikipedia.org/wiki/**Battle_of_Stiklestad**). The resulting identifier (Q83078) can be used to
-      construct the Wikidata URI: [https://www.wikidata.org/wiki/Q83078](http://www.wikidata.org/wiki/Q83078), and should be the same regardless of the
-      language of the entry.
-- Where Wikidata is not available, or in other resources (such as Handrit.is) which contain
-      different language versions of the same item, you should link to the article according to the
-      following language priority: **English**, **Swedish**, **Danish**, **Norwegian (bokmål)**, **Norwegian
-       (nynorsk)**, **Icelandic** — that is, according to the size of the
-      language community represented by each language, restricted to the languages of the Menota
-      project. In other words, if there is an article on the thing in English, that should be used,
-      regardless of whether the English article is longer or more accurate than the others.
-      (Different language versions for the entry are linked by Wikipedia and can be found in the
-      left-hand side on the desktop version of Wikipedia.)
-- In some interfaces, other uses may delete contributions easily and altogether (e.g.
-      Geonames.org). If you use such resources, you should save the metadata separately from the
-      resource in case this happens (e.g. dates, coordinates, discursive text). This applies
-      particularly if you contribute data yourself — you should save all your data separately in
-      case someone else deletes it.
+- URLs for open resources are generally quite stable for longer, older, more detailed entries, but newer and shorter contributions may undergo subsequent editing in a way that affects the reference, for example, because the article is split into different articles, or the title changes.
+- Some resources, notably Wikipedia, contain often differing information and detail for the same item, depending on the language of the entry. This means that there may be more than one entry for the same thing. Wikipedia and related resources normally automatically use the Wikidata service to provide a way of referencing the thing itself rather than the various pages which document it. If you find a relevant page on, e.g. Helgafell, you should look up Wikidata (wikidata.org) and use the URI given there ([https://www.wikidata.org/wiki/Q972971](http://www.wikidata.org/wiki/Q972971) —&ensp;which also gives a geolocation, for example).
+- Sometimes it can be difficult to find the desired reference in Wikidata, even in cases where a Wikipedia page has been identified. In such cases the API can help, e.g. [https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki& titles=Battle_of_Stiklestad&normalize=1](https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=Battle_of_Stiklestad&normalize=1) (JSON output). Here sites=enwiki identifies that this corresponds to a page in the English language version of Wikipedia (the first part of the Wikipedia hostname in the URL (**en**.wikipedia.org) and titles=Battle_of_Stiklestad uses the exact format of the page in the Wikipedia URL (https://**en**.wikipedia.org/wiki/**Battle_of_Stiklestad**). The resulting identifier (Q83078) can be used to construct the Wikidata URI: [https://www.wikidata.org/wiki/Q83078](http://www.wikidata.org/wiki/Q83078), and should be the same regardless of the language of the entry.
+- Where Wikidata is not available, or in other resources (such as Handrit.is) which contain different language versions of the same item, you should link to the article according to the following language priority: **English**, **Swedish**, **Danish**, **Norwegian (bokmål)**, **Norwegian (nynorsk)**, **Icelandic** — that is, according to the size of the language community represented by each language, restricted to the languages of the Menota project. In other words, if there is an article on the thing in English, that should be used, regardless of whether the English article is longer or more accurate than the others. (Different language versions for the entry are linked by Wikipedia and can be found in the left-hand side on the desktop version of Wikipedia.)
+- In some interfaces, other uses may delete contributions easily and altogether (e.g. Geonames.org). If you use such resources, you should save the metadata separately from the resource in case this happens (e.g. dates, coordinates, discursive text). This applies particularly if you contribute data yourself — you should save all your data separately in case someone else deletes it.
 
 You can use [web.archive.org](https://web.archive.org/web/) to archive and
      reference a particular version of an open website such as Wikipedia (either use the link at the
@@ -263,10 +227,8 @@ Bibliographic items are normally marked up with the `<bibl>{:xml}` element, whic
 Bibliographic items with a DOI, ISBN, or journals with an ISSN, should be referenced using
       the official URN or URI in the first instance:
 
-- doi:10.1093/llc/fqt045 (Wills, ‘Relational Data Modelling of Textual
-        Corpora’ 2013)
-- urn:isbn:8270992615 (Krömmelbein, T. Dritte grammatische Abhandlung
-        1998)
+- doi:10.1093/llc/fqt045 (Wills, ‘Relational Data Modelling of Textual Corpora’ 2013)
+- urn:isbn:8270992615 (Krömmelbein, T. Dritte grammatische Abhandlung 1998)
 - urn:issn:03059219 (Saga-Book of the Viking Society)
 
 But you should also include the URL to locate the item, e.g.
@@ -289,18 +251,9 @@ Items without these official URNs (e.g. because they predate the ISBN system) sh
       found on stable bibliographic resources, in the following order of priority:
 
 - ONP ([https://onp.ku.dk/b](https://onp.ku.dk/b), about 4500 items) select the item and use the permalink (e.g. [https://onp.ku.dk/b1608](https://onp.ku.dk/b1608)).
-- Skaldic Project ([https://skaldic.abdn.ac.uk/m.php?p=skpbibliography](https://skaldic.abdn.ac.uk/m.php?p=skpbibliography), about 3700 items) — find the
-       individual item and use the URL (e.g. [http://skaldic.abdn.ac.uk/m.php?p=bibl&amp;i=1157](http://skaldic.abdn.ac.uk/m.php?p=bibl&i=1157)). You should also use the
-       Menota-defined URN based on this identifier: menota:bibl:skp:1157).
-- Handrit.is ([https://handrit.is/en/manuscript/browse/bibliography](https://handrit.is/en/manuscript/browse/bibliography)) — browse and use the URL (e.g.
-        [https://handrit.is/en/bibliography/view/Smastykker11](https://handrit.is/en/bibliography/view/Smastykker11)). You should also use the
-       Menota-defined URN based on this identifier:
-       menota:bibl:handrit:Smastykker11).
-- Worldcat (e.g. [http://www.worldcat.org/oclc/925766862](http://www.worldcat.org/oclc/925766862), [http://www.worldcat.org/oclc/13481601](http://www.worldcat.org/oclc/13481601)
-       —&ensp;remove all parts of the path part of the URL except 'oclc/[number]'). Worldcat may include
-       multiple entries for the same work. To prioritise, follow the link ‘view all
-       editions/formats’ and choose the first item in the list that is in fact the same item. Then
-       select the ‘permalink’ button to copy the URL.
+- Skaldic Project ([https://skaldic.abdn.ac.uk/m.php?p=skpbibliography](https://skaldic.abdn.ac.uk/m.php?p=skpbibliography), about 3700 items) — find the individual item and use the URL (e.g. [http://skaldic.abdn.ac.uk/m.php?p=bibl&amp;i=1157](http://skaldic.abdn.ac.uk/m.php?p=bibl&i=1157)). You should also use the Menota-defined URN based on this identifier: menota:bibl:skp:1157).
+- Handrit.is ([https://handrit.is/en/manuscript/browse/bibliography](https://handrit.is/en/manuscript/browse/bibliography)) — browse and use the URL (e.g. [https://handrit.is/en/bibliography/view/Smastykker11](https://handrit.is/en/bibliography/view/Smastykker11)). You should also use the Menota-defined URN based on this identifier: menota:bibl:handrit:Smastykker11).
+- Worldcat (e.g. [http://www.worldcat.org/oclc/925766862](http://www.worldcat.org/oclc/925766862), [http://www.worldcat.org/oclc/13481601](http://www.worldcat.org/oclc/13481601) —&ensp;remove all parts of the path part of the URL except 'oclc/[number]'). Worldcat may include multiple entries for the same work. To prioritise, follow the link ‘view all editions/formats’ and choose the first item in the list that is in fact the same item. Then select the ‘permalink’ button to copy the URL.
 - Haithi Trust ([https://catalog.hathitrust.org/Record/008550198](https://catalog.hathitrust.org/Record/008550198))
 
 More than one URL can be included, but include in order of priority, e.g.:
