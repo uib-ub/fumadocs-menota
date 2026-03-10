@@ -54,7 +54,7 @@ NRA 58 C is a fragment of four folios written in two columns, having a total of 
 
 Below is the encoding of the text. In order to make the file easier to read, each word is set on a line of its own. 
             The header is not included, but you may refer
-            to [ch. 14](HB3_ch14.xml) for examples of minimal as well as more extensive ones.
+            to [ch. 14](/handbook/v3/HB3_ch14) for examples of minimal as well as more extensive ones.
 ```xml
 <text xml:lang="onw">
   <body>
@@ -253,7 +253,7 @@ Below is the encoding of the text. In order to make the file easier to read, eac
 
 ## I.4 Comments
 
-As can be seen in the example, the whole text is embedded in the `<text>{:xml}` element. The `@xml:lang{:sh}` attribute which has the `"onw"{:js}` value states that the language is Old Norwegian. Next, the text is embedded in the `<body>{:xml}` element, which allows the encoder to add a `<front>{:xml}` and `<back>{:xml}` section to the transcription. Next, a single `<div>{:xml}` element embeds the example – usually, a `<div>{:xml}` will contain longer passages than this, such as chapters. Finally, there is a `<p>{:xml}` element, stating that the text is in prose, as opposed to e.g. `<lg>{:xml}` for metrical text. These elements were introduced and explained in [ch. 3](HB3_ch3.xml) above.
+As can be seen in the example, the whole text is embedded in the `<text>{:xml}` element. The `@xml:lang{:sh}` attribute which has the `"onw"{:js}` value states that the language is Old Norwegian. Next, the text is embedded in the `<body>{:xml}` element, which allows the encoder to add a `<front>{:xml}` and `<back>{:xml}` section to the transcription. Next, a single `<div>{:xml}` element embeds the example – usually, a `<div>{:xml}` will contain longer passages than this, such as chapters. Finally, there is a `<p>{:xml}` element, stating that the text is in prose, as opposed to e.g. `<lg>{:xml}` for metrical text. These elements were introduced and explained in [ch. 3](/handbook/v3/HB3_ch3) above.
 
 Note that the `<pb/>{:xml}` and `<cb/>{:xml}` elements precede the text. They have the `@ed{:sh}` attribute with the `"ms"{:js}` value, stating that the page and column beginnings refer to the source itself, and not, for example, an edition. It also has the `@n{:sh}` attribute specifying the line number. Note that each `<lb/>{:xml}` element precedes the line to which it refers. When a word is written over two lines, such as in lines 10–11, the `<lb/>{:xml}` element will be placed at the break within the word itself. See [ch. 3.12](HB3_ch3.xml#sec3.12) and [ch. 5.5](HB3_ch5.xml#sec5.5) above for details.
 

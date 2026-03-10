@@ -13,7 +13,7 @@ changeLog:
 
 # Ch. 12. Names
 
-Version 3.1 (12 October 2022) – cf. [version 3.0](HB3_ch12-0.xml) (12 December 2019)
+Version 3.1 (12 October 2022) – cf. [version 3.0](/handbook/v3/HB3_ch12-0) (12 December 2019)
 
 by Karl G. Johansson and Marco Bianchi
 
@@ -38,7 +38,7 @@ The basic element for encoding names of any type is `<name>{:xml}`, supplied wit
 </div>
 
 
-Note that the `<name>{:xml}` element may contain a `<w>{:xml}` element, which will be the case in most Menota texts. This `<w>{:xml}` element will in a number of Menota texts contain a morphological annotation of the word, by way of the `@lemma{:sh}` and `@me:msa{:sh}` attributes. See [ch. 11](HB3_ch11.xml) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
+Note that the `<name>{:xml}` element may contain a `<w>{:xml}` element, which will be the case in most Menota texts. This `<w>{:xml}` element will in a number of Menota texts contain a morphological annotation of the word, by way of the `@lemma{:sh}` and `@me:msa{:sh}` attributes. See [ch. 11](/handbook/v3/HB3_ch11) above for details. For example, the name Egils (genitive of Egill) might be encoded like this:
 ```xml
 <name>
   <w lemma="Egill" me:msa="xNP">
@@ -104,7 +104,7 @@ Thus, ...
 
 The element `<persName>{:xml}` can contain several other elements and can thus be used
                for a more detailed name analysis, e.g. for making a distinction between forenames,
-               patronymica and surnames. This level of detail is recommended in the header (cf. [ch. 14](HB3_ch14.xml)), and will also be necessary for any encoding
+               patronymica and surnames. This level of detail is recommended in the header (cf. [ch. 14](/handbook/v3/HB3_ch14)), and will also be necessary for any encoding
                of a text which should make the basis for a name index. In a similar way, the element
                   `<placeName>{:xml}` can contain elements for various types of geographical
                locations. For both elements, TEI P5 Guidelines offers an additional tagset, which will be
@@ -113,7 +113,7 @@ The element `<persName>{:xml}` can contain several other elements and can thus b
 Usually, XML elements for different types of names are used instead of
                `<w>{:xml}` elements. Under certain circumstances, however, it is convenient to use both
                in combination. This is especially the case in linguistically annotated
-               transcriptions (cf. [ch. 11](HB3_ch11.xml));  for an example of
+               transcriptions (cf. [ch. 11](/handbook/v3/HB3_ch11));  for an example of
                 a transcription of this type, see [ch. 15.4.5](HB3_ch15.xml#sec15.4.5)).
 
 ## 12.2 Personal names
