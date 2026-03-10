@@ -26,9 +26,18 @@
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
+    <xsl:template match="tei:revisionDesc">
+        <xsl:text>changeLog:&#x0a;</xsl:text>
+        <xsl:value-of select="concat(
+                ' - date: ', 
+                current-date() => format-date('[Y]-[M01]-[D01]'), 
+                '&#x0a;'
+            )"/>
+        <xsl:text>   change: "Converted from XML to MDX."&#x0a;</xsl:text>
+        <xsl:text>   author: "Robert K. Paulsen"&#x0a;</xsl:text>
+    </xsl:template>
     <xsl:template match="
         tei:profileDesc|
-        tei:revisionDesc|
         tei:publicationStmt|
         tei:sourceDesc|
         tei:encodingDesc"/>
