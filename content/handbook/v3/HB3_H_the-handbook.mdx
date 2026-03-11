@@ -4,10 +4,48 @@ author:
  - Marco Bianchi
  - 
 changeLog:
- - date: 2026-03-10
+ - date: 2026-03-11
    author: Robert K. Paulsen
    changes:
-    - Converted from XML to MDX.
+    - "Converted file from XML to MDX."
+ - date: 2019-12-12
+   author: Odd Einar Haugen
+   changes:
+    - "Defined this appendix as belonging to v. 3.0 of the handbook (12 December 2019)"
+ - date: 2019-12-08
+   author: Odd Einar Haugen
+   changes:
+    - "Removed a number of superfluous hyphens (but not in values and the like); reorganised the indents in the egXML examples; made the single cetered table left adjusted (like all other tables in the book); added the appendix number (H.7 etc.) in the links in the comment column"
+ - date: 2019-10-13
+   author:
+    - Odd Einar Haugen
+    - Patrick Farrugia
+   changes:
+    - "Made a couple of corrections suggested by Patrick Farrugia"
+ - date: 2018-08-22
+   author: Marco Bianchi
+   changes:
+    - "Made some minor additions and changes."
+ - date: 2018-01-29
+   author: Marco Bianchi
+   changes:
+    - "Changed the title of the document and made some minor changes."
+ - date: 2018-01-26
+   author: Marco Bianchi
+   changes:
+    - "Various minor changes."
+ - date: 2018-01-23
+   author: Marco Bianchi
+   changes:
+    - "Various updates."
+ - date: 2017-12-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added the name of the author and renumbered the appendix as H. Otherwise, no changes."
+ - date: 2017-12-01
+   author: Marco Bianchi
+   changes:
+    - "First complete version"
 ---
 
 
@@ -250,13 +288,9 @@ A table with explanations of xml-elements and their attributes ([such as H.4.1 a
                   the first cell into a `<tbody>{:xml}` element together with the following rows.
                   Such tables must adhere to the following principles: 
 
-- The `<table>{:xml}` tag must have a `@rend{:sh}` with the value
-                        `"xml-elements"{:js}`
-- The first cell of the first row in each block must contain a `<gi>{:xml}`  or
-                     a `<tag>{:xml}` element
-- The first cells of all other rows in a block must not contain any
-                        `<gi>{:xml}` element (otherwise, the respective row will be treated as the
-                     first row in a block)
+- The `<table>{:xml}` tag must have a `@rend{:sh}` with the value `"xml-elements"{:js}`
+- The first cell of the first row in each block must contain a `<gi>{:xml}` or a `<tag>{:xml}` element
+- The first cells of all other rows in a block must not contain any `<gi>{:xml}` element (otherwise, the respective row will be treated as the first row in a block)
 
 Strings marked with `<att>{:xml}` and `<val>{:xml}` in the first cell of each row
                   are indented automatically.

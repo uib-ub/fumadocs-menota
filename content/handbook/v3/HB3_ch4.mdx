@@ -4,10 +4,104 @@ author:
  - Haraldur Bernharðsson
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-10
+ - date: 2026-03-11
    author: Robert K. Paulsen
    changes:
-    - Converted from XML to MDX.
+    - "Converted file from XML to MDX."
+ - date: 2019-12-18
+   author: Odd Einar Haugen
+   changes:
+    - "Added a comment on the use of the \"seg\" element for ligatures in ch. 4.3; did not change the version number of the chapter since this is such a small change"
+ - date: 2019-12-12
+   author: Odd Einar Haugen
+   changes:
+    - "Defined this chapter as belonging to v. 3.0 of the handbook (12 December 2019)"
+ - date: 2019-12-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added a new paragraph at the end of 4.1, and on the manuscript used in 4.6.2 right before the first table"
+ - date: 2019-12-07
+   author: Odd Einar Haugen
+   changes:
+    - "Various consistency changes, corrected a link, removed U+ in Unicode codepoints"
+ - date: 2019-12-05
+   author: Odd Einar Haugen
+   changes:
+    - "Revised the indent structure of the egXML sections, made some minor changes to the tables; added a final paragraph with a link to Guðvarður Már Gunnlaugsson 2003, corrected a couple of illegal encodings in egXML"
+ - date: 2019-11-22
+   author: Odd Einar Haugen
+   changes:
+    - "Changed the definition of the choice element in accordance with ch. 5.4"
+ - date: 2019-09-26
+   author:
+    - Odd Einar Haugen
+    - Marco Bianchi
+   changes:
+    - "Changed the “tag” elements to “gi” elements, as recommended by Marco Bianchi; removed remaining blue colour to text added by Odd Einar Haugen; removed old comments in"
+ - date: 2019-09-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added a new chapter 4.5 Single-level transcriptions, and renamed the next chapter (originally entitled “a three-level transcription”) 4.6 Multi-level transcriptions, so as to make this distinction defined for the rest of the handbook, especially ch. 8 and 9. Subchapter 4.6 was consequently revised in several respects."
+ - date: 2019-09-05
+   author: Haraldur Bernharðsson
+   changes:
+    - "Corrected tables and removed blue colour in added text by Odd Einar Haugen (meaning that it was accepted)"
+ - date: 2019-07-03
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few editorial changes"
+ - date: 2019-06-28
+   author: Haraldur Bernharðsson
+   changes:
+    - "Made various changes"
+ - date: 2019-06-10
+   author: Haraldur Bernharðsson
+   changes:
+    - "Made various changes"
+ - date: 2019-02-03
+   author: Odd Einar Haugen
+   changes:
+    - "Revised the table encoding and display towards the end of ch. 4.3"
+ - date: 2018-01-29
+   author: Odd Einar Haugen
+   changes:
+    - "Minor changes to the \"figure\" and \"table\" encoding for better display"
+ - date: 2017-08-27
+   author: Haraldur Bernharðsson
+   changes:
+    - "Revised the chapter to include a more detailed discussion of the facsimile and diplomatic levels"
+ - date: 2017-06-27
+   author: Odd Einar Haugen
+   changes:
+    - "Linked all figures to the new \"ch4\" folder in the \"graphics\" folder."
+ - date: 2017-05-25
+   author: Odd Einar Haugen
+   changes:
+    - "(1) Changed the chapter number from 3 to 4, and updated subchapters and figures accordingly; (2) changed the \"me:punct\" element to \"pc\""
+ - date: 2017-02-08
+   author: Odd Einar Haugen
+   changes:
+    - "A minor correction with respect to the \"aolig\" entity"
+ - date: 2017-01-02
+   author: Odd Einar Haugen
+   changes:
+    - "Changed the chapter number from 4 to 3, since levels of transcription shoud be introduced before the discussion of words, hyphenation and white space; the latter har now been renumbered as ch. 4"
+ - date: 2016-10-27
+   author: Odd Einar Haugen
+   changes:
+    - "Updated links to other parts of the handbook, and also links to images (now located in the same folder as the handbook files)"
+ - date: 2016-10-19
+   author: Odd Einar Haugen
+   changes:
+    - "Replaced character entities (like &eth;) with Unicode characters (like ð) wherever applicable"
+ - date: 2016-08-28
+   author: Odd Einar Haugen
+   changes:
+    - "Renumbered the chapter, from ch. 3 to ch. 4"
+ - date: 2016-06-09
+   author: Odd Einar Haugen
+   changes:
+    - "Made the first draft by copying the text of ch. 3 in v. 2.0 of the handbook, renumbering it as ch. 4"
 ---
 
 
@@ -33,14 +127,9 @@ The electronic transcription of a manuscript text aims to accurately reproduce t
 For the purposes of transcribing medieval Norse texts, three different levels of
                transcription may be defined:
 
-- **A facsimile level** (`<me:facs>{:xml}`): A letter-by-letter
-                  transcription with a selection of palaeographic characteristics and the retention
-                  of abbreviations as in the manuscript.
-- **A diplomatic level** (`<me:dipl>{:xml}`): A
-                  letter-by-letter transcription with a small selection of palaeographic features
-                  and the expansion and identification of abbreviations.
-- **A normalised level** (`<me:norm>{:xml}`): A transcription
-                  in normalised orthography.
+- **A facsimile level** (`<me:facs>{:xml}`): A letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript.
+- **A diplomatic level** (`<me:dipl>{:xml}`): A letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations.
+- **A normalised level** (`<me:norm>{:xml}`): A transcription in normalised orthography.
 
 The choice of level of transcription ultimately depends on the aims of the edition
                and the needs of the intended readership. For some, a single-level transcription will
@@ -95,10 +184,8 @@ There are, of course, limits to how accurately the script can be reproduced in a
 In a typical facsimile transcription, the text would be accurately transcribed letter
                by letter, encoding the following properties:
 
-- Selected palaeographical characteristics; for instance: “ı”, “ẏ”, “ꝼ”,
-                  “ꝛ”, “ꝺ”, “ꞇ”, and “ƶ” (on which see more below)
-- Abbreviations; for instance: “ꝼᷓ”, “v͛a”, “ħ”, “” (on which see
-                  more below)
+- Selected palaeographical characteristics; for instance: “ı”, “ẏ”, “ꝼ”, “ꝛ”, “ꝺ”, “ꞇ”, and “ƶ” (on which see more below)
+- Abbreviations; for instance: “ꝼᷓ”, “v͛a”, “ħ”, “” (on which see more below)
 - Different forms of punctuation
 - Unclear readings
 - Erased and/or corrected text
@@ -227,8 +314,7 @@ The principal aim of a diplomatic transcription is to produce a readable while
 The principal characteristics of a typical diplomatic transcription as compared to a
                facsimile transcription are as follows:
 
-- Abbreviations are expanded, and the expansions are identified (within
-                      `<ex>{:xml}` elements); for example
+- Abbreviations are expanded, and the expansions are identified (within `<ex>{:xml}` elements); for example
 - ꝼᷓ → f<em>ra</em>
 - v͛a → v<em>er</em>a
 - ħ → h<em>ann</em>
