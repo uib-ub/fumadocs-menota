@@ -285,7 +285,7 @@ Unicode draws a distinction between small (minuscule) characters such as “a”
           illustrate the fact that the definition of a character is not always clear-cut.
 
 Medieval Nordic manuscripts and charters were written in the Latin alphabet from the very beginning.
-          The basic inventory is thus the characters a–z / A–Z. They were supplemented by a number
+          The basic inventory is thus the characters a&ndash;z / A&ndash;Z. They were supplemented by a number
           of new (or borrowed) characters, several ligatures and a variety of diacritical marks.
           There was also a large number of abbreviation marks in use, especially in Old Icelandic
           and Old Norwegian manuscripts. Some abbreviation marks behave as ordinary characters in the
@@ -361,7 +361,7 @@ We recommend the following basic rules for encoding characters, irrespective of 
 
 2. Alphabetical characters on the base line are encoded first:
 
-2.1 If the character belongs to the ordinary Latin character set a–z / A–Z (commonly
+2.1 If the character belongs to the ordinary Latin character set a&ndash;z / A&ndash;Z (commonly
             known as `ISO 646` or Basic Latin) it is always encoded as such.<br/>
  2.2 Characters
             outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g.
@@ -618,7 +618,7 @@ Individual characters are moreover marked-up as such, when the character in ques
             the visual rendering of initials in a manuscript usually is only encoded on the facsimile level, not on the
             diplomatic or normalised levels.
 
-Finally, hypens – where they occur in manuscripts – are encoded with 
+Finally, hypens &ndash; where they occur in manuscripts &ndash; are encoded with 
             the element `<c>{:xml}`. For the mark-up of hyphens see [ch. 5.5](#sec5.5) below.
 
 ## 5.3 Words
@@ -659,7 +659,7 @@ As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a
 <Caption title="Fig. 5.4">. According to 
               _Barlaams saga ok Jósafats_, falling into old sins is to behave like a dog 
               returning to its own vomit. Note that the word “ſundr” in the 4th line of the illustration has been corrected to 
-              “hundr” by a younger hand. Holm perg 6 fol, f. 18vb, l. 18–24.</Caption>
+              “hundr” by a younger hand. Holm perg 6 fol, f. 18vb, l. 18&ndash;24.</Caption>
 
 Thus, with a somewhat simplified character inventory the text in fig. 5.4 can be rendered as
 <Quote>
@@ -712,7 +712,7 @@ Although words as a rule are separated by spaces in medieval Nordic manuscripts,
 
 
 <Caption title="Fig. 5.5">. The ancient goddess Diana is introduced as a huntress, “veiði kona”, in 
-            _Barlaams saga ok Jósafats_. Holm perg 6 fol, f. 69va, l. 15–19. The word is located in the 3rd line of the illustration.</Caption>
+            _Barlaams saga ok Jósafats_. Holm perg 6 fol, f. 69va, l. 15&ndash;19. The word is located in the 3rd line of the illustration.</Caption>
 
 If the transcriber wishes to analyse two (or more) graphical words as a single lexical
             word, we suggest that this is done by putting the whole sequence within the `<w>{:xml}`
@@ -763,7 +763,7 @@ The converse case is a single graphical word which the transcriber would like to
 
 
 <Caption title="Fig. 5.6">. In _Barlaams saga ok Jósafats_, the Greek god Adonis (in the text in accusative, 
-            <em>Adonidem</em>) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12–14.</Caption>
+            <em>Adonidem</em>) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12&ndash;14.</Caption>
 
 Each lexical word should be placed within a `<w>{:xml}` element, and information on
             lemma, morphological form etc. can be given within each `<w>{:xml}` element. However,
@@ -1278,9 +1278,9 @@ The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](HB3_ch4
 </Figure>
 
 
-<Caption title="Fig. 5.7">. Hyphenation in a manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 1–4.</Caption>
+<Caption title="Fig. 5.7">. Hyphenation in a manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 1&ndash;4.</Caption>
 
-This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in lines 3–4
+This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in lines 3&ndash;4
             in fig. 5.7 should be encoded on the diplomatic level:
 ```xml
 <w>
@@ -1298,9 +1298,9 @@ This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in l
 
 
 <Caption title="Fig. 5.8">. Missing hyphenation in a manuscript. _Henrik
-            Harpestreng_. NKS 66 8vo, f. 116r, l. 1–3.</Caption>
+            Harpestreng_. NKS 66 8vo, f. 116r, l. 1&ndash;3.</Caption>
 
-The non-hyphenated word “hwilk-kæ” in fig. 5.8, lines 2–3 should receive this
+The non-hyphenated word “hwilk-kæ” in fig. 5.8, lines 2&ndash;3 should receive this
             encoding, not recording any hyphenation:
 ```xml
 <w>
@@ -1555,7 +1555,7 @@ The source of the quotation may be given in a `<note>{:xml}` element, as shown a
 
 ## 5.7 Numerals
 
-We recommend that numerals are encoded using the `<num>{:xml}` element, irrespective of their form – as Roman numerals, as Hindu-Aarabic numerals (i.e. our “modern” numerals) or spelt out in Latin characters:
+We recommend that numerals are encoded using the `<num>{:xml}` element, irrespective of their form &ndash; as Roman numerals, as Hindu-Aarabic numerals (i.e. our “modern” numerals) or spelt out in Latin characters:
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |

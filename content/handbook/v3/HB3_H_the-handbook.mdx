@@ -135,7 +135,7 @@ In the tables below supported xml markup and its corresponding html output is li
 | <span className="p-6"/>`"[number]"{:js}` | &lt;figcaption&gt;&lt;span class="imagelabel"&gt;Fig. &lt;span class="imageid"&gt;2.1&lt;&gt;/span&gt;.&lt;/span&gt;Caption&lt;/figcaption&gt; |  | Usage in xml: `&lt;figDesc n="2.1"&gt;Caption&lt;/figDesc&gt;`, i.e. the figure’s number should passed through `@n{:sh}` and not be put between the `<figDesc>{:xml}` tags |
 | `<graphic>{:xml}` | `<img>{:xml}` | Image | If used together with a parent element `<figure>{:xml}`, the image element will be wrapped in a `<figure>{:xml}` element together with its caption. It may, however, also be used alone. |
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
-| `<head>{:xml}` | `<h1>{:xml}`, `<h2>{:xml}`, `<h3>{:xml}`, `<h4>{:xml}`, `<head>{:xml}` | Heading | `<h1>{:xml}`–`<h4>{:xml}` are chosen according to their position in the dom. If the position does not match, a generic div class="head" is output.  |
+| `<head>{:xml}` | `<h1>{:xml}`, `<h2>{:xml}`, `<h3>{:xml}`, `<h4>{:xml}`, `<head>{:xml}` | Heading | `<h1>{:xml}`&ndash;`<h4>{:xml}` are chosen according to their position in the dom. If the position does not match, a generic div class="head" is output.  |
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
 | <span className="p-3"/>`@xml:id{:sh}` |  |  | When no `@xml:id{:sh}` is passed, the xsl will introduce an `@id{:sh}` with a random value |
 | `<l>{:xml}` | `<li>{:xml}` | List item |  |

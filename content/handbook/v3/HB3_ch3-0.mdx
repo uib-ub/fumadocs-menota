@@ -150,7 +150,7 @@ The principal means of representing hierarchy is the `<div>{:xml}` (i.e. “divi
 The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>{:xml}` elements, `<div type="canto">{:xml}` for the cantos or fits, `<div type="part">{:xml}` for the parts (for example the <em>mansöngvar</em>), `<div type="stanza">{:xml}` for the stanzas, and `<div type="line">{:xml}` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">{:xml}` for each set. A simpler form of mark-up is possible, however. Instead of `<div>{:xml}` elements, the `<l>{:xml}` element (for “line”) and the `<lg>{:xml}` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>{:xml}` element for larger structural units. The `@type{:sh}` attribute is then used to identify the type of unit, e.g. `"stanza"{:js}`, `"couplet"{:js}`, like in `<lg type="stanza">{:xml}`. Here again the type need
                   only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
 
-This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
+This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance &ndash; if of importance at all &ndash; when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
                   given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
@@ -278,7 +278,7 @@ The basic-level element for prose text is the paragraph, `<p>{:xml}`. Typically,
 | `</div>{:xml}` | the chapter ends here. |
 
 
-The `<p>{:xml}` element may appear in other contexts, such as in the `<teiHeader>{:xml}` element. It may also contain a number of other elements, but – as underlined above – it may not contain other `<p>{:xml}` elements, i.e. it is not allowed to nest.
+The `<p>{:xml}` element may appear in other contexts, such as in the `<teiHeader>{:xml}` element. It may also contain a number of other elements, but &ndash; as underlined above &ndash; it may not contain other `<p>{:xml}` elements, i.e. it is not allowed to nest.
 
 ## 3.5 Sentences: &lt;s&gt;
 
@@ -293,7 +293,7 @@ The text within a paragraph may be divided into sentences, `<s>{:xml}`:
 | `</p>{:xml}` | the paragraph ends here. |
 
 
-Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. <em>Rignir</em> ‘It rains’. In the case of sentences linked by conjunctions (such as <em>ok</em>, <em>en</em> and <em>eða</em>) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian.
+Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. <em>Rignir</em> ‘It rains’. In the case of sentences linked by conjunctions (such as <em>ok</em>, <em>en</em> and <em>eða</em>) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65&ndash;67, for a discussion of sentence boundaries in Old Norwegian.
 
 ## 3.6 Words: &lt;w&gt;
 
@@ -433,7 +433,7 @@ From a logical point of view, a heading is located at the beginning of a new cha
 
             
 <Caption title="Fig. 3.1">. A chapter heading. _Landslǫg Magnúss
-               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1–10.</Caption>
+               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1&ndash;10.</Caption>
 
 In fig. 3.1, the heading, which is written in red, is located after the end of one chapter and at the beginning of a new chapter.
                The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
@@ -472,13 +472,13 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 
 
             
-<Caption title="Fig. 3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15–24.</Caption>
+<Caption title="Fig. 3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15&ndash;24.</Caption>
 
 The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (<em>littera notabilior</em>) should be encoded with the `<c>{:xml}` element.
 
 The `<c>{:xml}` element is discussed in [ch. 5.2.3](HB3_ch5.xml#sec5.2.3) below, while [ch. 7](/handbook/v3/HB3_ch7) explains the encoding of graphical elements of initials.
 
-See also [Kirsten Berg 2010](HB3_literature.xml#Berg2010), pp. 60–66, for a discussion of initials and highlighted characters in the structuring of a manuscript text like the _Old Norwegian Homily Book_.
+See also [Kirsten Berg 2010](HB3_literature.xml#Berg2010), pp. 60&ndash;66, for a discussion of initials and highlighted characters in the structuring of a manuscript text like the _Old Norwegian Homily Book_.
 
 ## 3.11 Direct speech and quotations: &lt;q&gt; and &lt;quote&gt;
 
@@ -532,7 +532,7 @@ Page beginning information from, for example, a printed standard edition, can be
 ```
 
 
-Some of the texts in the Menota archive have been encoded with more than one document structure, such as <em>Konungs skuggsjá</em> in AM 243 bα fol. In addition to the document structure of the manuscript, **ed="ms"**, it has the Arnamagnæan pagination, **ed="AM"**, the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), **ed="FJ_utg"**, and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), **ed="H-O"**.
+Some of the texts in the Menota archive have been encoded with more than one document structure, such as <em>Konungs skuggsjá</em> in AM 243 bα fol. In addition to the document structure of the manuscript, **ed="ms"**, it has the Arnamagnæan pagination, **ed="AM"**, the one from [Finnur Jónsson’s 1920&ndash;1921 edition](HB3_literature.xml#Jónsson1920-1921), **ed="FJ_utg"**, and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), **ed="H-O"**.
 
 The relevant editions should be declared in the header. As a rule, we suggest that the edition is identified by the initials of the editor + the year of publication, e.g. FJ1920-1921, LHO1945, etc.
 

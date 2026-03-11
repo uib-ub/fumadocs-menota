@@ -123,7 +123,7 @@ We will discuss an example of an overlapping structure in AM 673 b 4to (<em>Plá
 </Figure>
 
 
-<Caption title="Ill. 16.1">. Overlapping in supplied text. _Plácitusdrápa_. AM 673 b 4to, f. 1r, l. 1–4.</Caption>
+<Caption title="Ill. 16.1">. Overlapping in supplied text. _Plácitusdrápa_. AM 673 b 4to, f. 1r, l. 1&ndash;4.</Caption>
 
 The first three lines read approximately:
 <Quote>
@@ -251,7 +251,7 @@ Unfortunately (at least from the point of view of the encoder), headings in many
 </Figure>
 
 
-<Caption title="Ill. 16.2">. Continuous heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, f. 10v, l. 4–7.</Caption>
+<Caption title="Ill. 16.2">. Continuous heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, f. 10v, l. 4&ndash;7.</Caption>
 
 Ill. 16.2 is a straightforward example (which was introduced in [ch. 3.9](HB3_ch3.xml#sec3.9) above). The only thing to note is that the first chapter ends in the middle of line 5 and the next chapter begins immediately afterwards. Encoding this, there would be two `<div>{:xml}` elements, the first closing after the word “loglegare”, and the second opening right afterwards, starting with a `<head>{:xml}` element, which encloses the red rubric. Note that the `<lb/>{:xml}`element is only used once here, and that is to mark the beginning of the line, i.e. inside the first `<div>{:xml}` element.
 ```xml
@@ -307,7 +307,7 @@ Note that in the latter display, the line number 5 appears twice, since the last
 </Figure>
 
 
-<Caption title="Ill. 16.3">. Dislocated heading. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 14–17.</Caption>
+<Caption title="Ill. 16.3">. Dislocated heading. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 14&ndash;17.</Caption>
 
 The chapter division between lines 15 and 16 in ill. 16.3 is not completely straightforward. The rubric in the second half of line 16 should be encoded as a `<head>{:xml}` in the second `<div>{:xml}` of the example. The complicating factor here is that we would like to encode (and be able to display) the fact that this rubric is located on the same line as the opening of the `<div>{:xml}` which it is heading. In other words, if the manuscript is read line by line, the `<head>{:xml}` is intercalated in the first sentence, “Salomon konungr gerðe fyrst \|\| Rubric \|\| mysteri guði...”. Our recommended encoding would be the following:
 ```xml
@@ -331,7 +331,7 @@ The chapter division between lines 15 and 16 in ill. 16.3 is not completely stra
 
 In this encoding, the rubric is located correctly within the second `<div>{:xml}` of the example, and the fact that it is physically located to the left of the beginning of the chapter text is indicated by the `@rend{:sh}` attribute to the `<lb/>{:xml}` element. Since the first part of line 16 contains the beginning of the text in the second `<div>{:xml}` and the second part of the line contains the rubric which logically precedes the text, both parts should be specified with a `<lb/>{:xml}` element with attributes for line number, `"n="16""{:js}`, and for their physical order, `"rend="1""{:js}` and `"rend="2""{:js}`. The `@rend{:sh}` attributes are needed to indicate that in spite of both parts being located on the same line, “Salomon konungr gerðe fyrst”, is rendered first and “In dedicatione templi. sermo.” is rendered second. These `@rend{:sh}` attributes were not needed in the previous example, since there was no conflict between the logical and physical order.
 
-Note that the values for the `@rend{:sh}` attribute always begin with 1 and continue upwards, but usually not to a higher number than 3. Since our recommended encoding gives priority to the logical order of the text, the numbering of the `@rend{:sh}` attribute is needed to specify the physical order of the parts when there is a conflict between the logical and physical order – in this case that the `<head>{:xml}` is located in the second part of line 16, not in the first part of the line, which one might expect from a logical point of view.
+Note that the values for the `@rend{:sh}` attribute always begin with 1 and continue upwards, but usually not to a higher number than 3. Since our recommended encoding gives priority to the logical order of the text, the numbering of the `@rend{:sh}` attribute is needed to specify the physical order of the parts when there is a conflict between the logical and physical order &ndash; in this case that the `<head>{:xml}` is located in the second part of line 16, not in the first part of the line, which one might expect from a logical point of view.
 
 A suitable XSLT stylesheet will be able to display this piece of text according to its physical order:
 
@@ -364,7 +364,7 @@ Alternatively, a suitable stylesheet will be able to display this piece of text 
 </Figure>
 
 
-<Caption title="Ill. 16.4">. Discontinuous and dislocated heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, fol. 52r, lines 2–5.</Caption>
+<Caption title="Ill. 16.4">. Discontinuous and dislocated heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, fol. 52r, lines 2&ndash;5.</Caption>
 
 The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips\|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the `@rend{:sh}` attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
 ```xml
@@ -495,7 +495,7 @@ According to the display recommended in this handbook, this solution is appropri
 </Figure>
 
 
-<Caption title="Ill. 16.5">. Unclear text. _Konungs skuggsjá_. NRA 58C, f. 1rA, 24–27.</Caption>
+<Caption title="Ill. 16.5">. Unclear text. _Konungs skuggsjá_. NRA 58C, f. 1rA, 24&ndash;27.</Caption>
 
 The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) above, while the facsimile level should record the text “as is” and the normalised level should offer a restored text, if possible, the diplomatic level may follow either of these two models. In this example, it follows the facsimile encoding in not making any restoration of the text, leaving the `<supplied>{:xml}` element to the normalised level.
 ```xml

@@ -170,7 +170,7 @@ In some
 
 
 <Caption title="Ill. 8.1">. An original hole in the manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 35v, l.
-               15–22.</Caption>
+               15&ndash;22.</Caption>
 
 In the present ch. 8 and the ensuing [ch. 9](/handbook/v3/HB3_ch9) we will frequently refer to and give examples of single-level and multi-level transcriptions. Please refer to [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) for these important concepts.
 
@@ -209,7 +209,7 @@ In fig. 8.2 there are several examples of damaged text. Some characters have evi
 
 
             
-<Caption title="Ill. 8.2">. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23–30.</Caption>
+<Caption title="Ill. 8.2">. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23&ndash;30.</Caption>
 
 On the facsimile level, we encode the gaps as such and do not offer any hypothesis on the contents of the lost text, as shown in this single-level transcription:
 ```xml
@@ -324,7 +324,7 @@ In fig. 8.3, the scribe of _Landslǫg Magnúss
 
             
 <Caption title="Ill. 8.3">. Place left open towards the end of the last but one line in the image. _Landslǫg Magnúss
-               Hákonarsonar_. AM 309 fol, f. 42v, l. 10–19.</Caption>
+               Hákonarsonar_. AM 309 fol, f. 42v, l. 10&ndash;19.</Caption>
 
 On the facsimile level, the space left for the amount of silver in fig. 8.3 can be encoded as follows in a single-level transcription:
 ```xml
@@ -397,7 +397,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 
 
                
-<Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1–3.</Caption>
+<Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1&ndash;3.</Caption>
 
 The space has a size of approximately four characters horizontally and two lines vertically. According to the TEI P5 Guidelines, a space with both vertical and horizontal components should be classified as vertical (cf. the [description](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html)
                   of the `@dim{:sh}` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
@@ -480,7 +480,7 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 
 
             
-<Caption title="Ill. 8.5">. A word which is difficult to read. _Blasíuss saga_. AM 655 IX 4to, f. 2r, l. 1–5.</Caption>
+<Caption title="Ill. 8.5">. A word which is difficult to read. _Blasíuss saga_. AM 655 IX 4to, f. 2r, l. 1&ndash;5.</Caption>
 
 In fig. 8.5, the 6th word in the 3rd line is difficult to read. It may be the verb <em>veita</em> ‘give’, but this reading is far from certain, so the transcriber should state that this is in fact an unclear passage. Whenever the uncertain passage is part of a word, the `<unclear>{:xml}` element will be placed within the `<w>{:xml}` element, but when the uncertain passage contains one or more words, the `<unclear>{:xml}` element will be located outside.
 
@@ -504,7 +504,7 @@ A single-level transcription on the diplomatic level of this line is shown below
 
 The encoding above is on the diplomatic level. We recommend that the `<unclear>{:xml}` element should be used in the same way also in single-level encodings on the facsimile and normalised levels.
 
-Note that the fissure in lines 4–5 must
+Note that the fissure in lines 4&ndash;5 must
                be original, so that e.g. the word “fiolda” in line 5 is written with “fiol” on the
                left-hand side and “da” on the right-hand side of the fissure. This is another example 
                of original damage to the parchment discussed in [ch. 8.1](#sec8.1) above.
@@ -519,7 +519,7 @@ Note that the fissure in lines 4–5 must
 
 
             
-<Caption title="Ill. 8.6">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32–35.</Caption>
+<Caption title="Ill. 8.6">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32&ndash;35.</Caption>
 
 In fig. 8.6, the first character in the second line is so smudged that it has become illegible. We recommend that illegible characters are encoded by a standard sign such as `25CC` `DOTTED CIRCLE` (cf. [ch. 8.2.2](#sec8.2.2) above). This would be a single-level transcription on the diplomatic level:
 ```xml
@@ -639,7 +639,7 @@ NRA 7 is the largest fragment of _Landslǫg Magnúss Hákonarsonar_
 The sequence of the leaves making up NRA 7 can be established by full 
                   certainty, since this text is preserved in around 40 well-preserved manuscripts. We recommend that the leaves
                   should be foliated in the sequence they have in the otherwise established text, from folio 1 to
-                  folio 7. Of these leaves, folios 3–4 and 6–7 are consecutive, but between the remaining leaves,
+                  folio 7. Of these leaves, folios 3&ndash;4 and 6&ndash;7 are consecutive, but between the remaining leaves,
                   there are a number of lost leaves.
 
 When the loss of leaves is so high as in this case, it may be difficult to
@@ -704,7 +704,7 @@ Quires were made up of pairs of leaves, bifolia, and it is not uncommon that one
                   Unless the bifolium belongs to the inner part of a quire, the text will not be
                   consecutive.
 
-The type of fragmentation can be illustrated with quires number IX–X of AM 619 4to.
+The type of fragmentation can be illustrated with quires number IX&ndash;X of AM 619 4to.
                   According to the standard foliation of the manuscript, there is an outer bifolium
                   missing between the present folios 62 and 63, and between folios 68 and 69, and an inner bifolium 
                   missing between folios 70 and 71, as shown in ill. 8.7.
@@ -747,7 +747,7 @@ The missing leaves are not immediately visible in the codex, which has been boun
 
 
                
-<Caption title="Ill. 8.8">. A missing leaf (part of a bifolium). AM 619 4to, f. 62–63.
+<Caption title="Ill. 8.8">. A missing leaf (part of a bifolium). AM 619 4to, f. 62&ndash;63.
                   Note the addition in a younger hand at the bottom of f. 62v, stating “deest .i. folium” 
                   (one leaf is missing). This is actually the hand of Árni Magnússon
                      (identified by Beeke Stegmann).</Caption>

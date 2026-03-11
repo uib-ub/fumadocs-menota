@@ -135,7 +135,7 @@ In general, we recommend that the `@lemma{:sh}` attribute is used for the standa
 
 Note that [ch. 15.4.2](HB3_ch15.xml#sec15.4.2) offers another way of linking annotated words to lexicographical resources. This subchapter also discusses Old Swedish and Old Danish dictionaries.
 
-Lemmatised texts are useful for any language, and in particular for languages with complex morphology or variable orthography. The morphology of Old Norse is more complex than that of the modern Nordic languages, but not particularly difficult – it is rather like the morphology of Modern German. The orthography, however, was far from fixed, and since many transcriptions are likely to be fairly diplomatic, any lemma may be expressed by a large number of orthographic forms. For example, the pronoun “hann” has only three forms in the normalised orthography of Old Norse: “hann” (nominative and accusative), “hans” (genitive), and “honum” (dative). In an actual transcription, however, a dozen or more forms may occur, as shown in the table below. 
+Lemmatised texts are useful for any language, and in particular for languages with complex morphology or variable orthography. The morphology of Old Norse is more complex than that of the modern Nordic languages, but not particularly difficult &ndash; it is rather like the morphology of Modern German. The orthography, however, was far from fixed, and since many transcriptions are likely to be fairly diplomatic, any lemma may be expressed by a large number of orthographic forms. For example, the pronoun “hann” has only three forms in the normalised orthography of Old Norse: “hann” (nominative and accusative), “hans” (genitive), and “honum” (dative). In an actual transcription, however, a dozen or more forms may occur, as shown in the table below. 
 
 <table>
 <thead>
@@ -290,7 +290,7 @@ Old Norse has the most complex morphology of the Nordic vernaculars and is there
 
 ### 11.3.1 Invariable properties
 
-Words in inflectional languages exhibit variable and invariable properties. Word class is the prime example of an invariable property, since a word can belong to one and only one word class – the noun “hestr” can not be inflected in adjectival and verbal forms. For nouns, gender is an invariable property – once again, “hestr” can not be inflected in feminine or neutral forms. Adjectives, on the other hand, are inflected in gender, so for this word class gender is a variable property. Other categories, such as case, number, grade etc., are all variable.
+Words in inflectional languages exhibit variable and invariable properties. Word class is the prime example of an invariable property, since a word can belong to one and only one word class &ndash; the noun “hestr” can not be inflected in adjectival and verbal forms. For nouns, gender is an invariable property &ndash; once again, “hestr” can not be inflected in feminine or neutral forms. Adjectives, on the other hand, are inflected in gender, so for this word class gender is a variable property. Other categories, such as case, number, grade etc., are all variable.
 
 Information on inflectional classes can be added to the `@me:msa{:sh}` attribute, e.g. strong vs. weak verbs, stem classes of nouns etc. These are also invariable properties.
 
@@ -398,7 +398,7 @@ Word class is denoted by a name token consisting of the character “x” + an u
 <tr>
 <td>xUA</td>
 <td>Unassigned</td>
-<td>–</td>
+<td>&ndash;</td>
 </tr>
 </tbody>
 </table>
@@ -931,7 +931,7 @@ We believe it is convenient to distinguish between two types of zero values in m
 
 (a) **Not applicable**
 
-No words have the complete set of morphological categories listed in [ch. 11.3](#sec11.3) above. For example, although verb participles belong to the verb class, they are not inflected for mood. There is no need to encode participles for “mood:zero” – it is sufficient to leave out the name token for mood. In other words, the absence of the name token implies that mood is not a relevant category for the word in question.
+No words have the complete set of morphological categories listed in [ch. 11.3](#sec11.3) above. For example, although verb participles belong to the verb class, they are not inflected for mood. There is no need to encode participles for “mood:zero” &ndash; it is sufficient to leave out the name token for mood. In other words, the absence of the name token implies that mood is not a relevant category for the word in question.
 
 (b) **Not specified**
 
@@ -1310,7 +1310,7 @@ Pronouns/determiners are encoded for **person** (only personal pronouns), **gend
 
 ### 11.5.6 Numerals (NA and NO)
 
-The numerals are divided into two sub-categories: “cardinals” (NA) and “ordinals” (NO). The character U is used for “unspecified”, so that “xNU” comprises both cardinal and ordinal numerals – the case for the Old Norwegian lemmatised corpus.
+The numerals are divided into two sub-categories: “cardinals” (NA) and “ordinals” (NO). The character U is used for “unspecified”, so that “xNU” comprises both cardinal and ordinal numerals &ndash; the case for the Old Norwegian lemmatised corpus.
 
 Numerals are encoded for **gender** (only the cardinals 1-4), **number** (only ordinals), **case**, and **species** (only relevant for the numerals “einn”, “fyrstr”, and “annarr”). Memory hint: since the obvious candidate “NC” for “numeral, cardinal” has been reserved for “nouns, common”, the character “A” in “NA” can be seen as referring to the vowel “a” which occurs two times in the word “cardinal”.
 

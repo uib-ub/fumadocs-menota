@@ -131,17 +131,17 @@ processing. A “markup language” is therefore at its most simple a set
 of codes which are used to indicate or “tag” certain features in the
 text, normally for formatting purposes. In most modern software
 packages the markup is generated with little or no conscious effort
-on the part of the user – in many modern word processing programs,
+on the part of the user &ndash; in many modern word processing programs,
 such as the ubiquitous Microsoft Word, the user is not even given the
 option of viewing the codes. But they are there: and to see just how
 many one need only open a document produced in, say, Word in a 
 plain text editor such as Notepad. A text of even a few short lines will be 
-prefaced by several dozen lines – possibly even pages – of code.
+prefaced by several dozen lines &ndash; possibly even pages &ndash; of code.
 
 The problem is that basically every program
 has its own set of codes, and it is only rarely possible to convert
 files from one to another without at least some loss of formatting.
-And it is not just the formatting that goes haywire – many exotic (read
+And it is not just the formatting that goes haywire &ndash; many exotic (read
 non-standard) characters are also likely to mutate or not be displayed at all. SGML was
 originally developed in order to avoid these problems by being
 entirely platform independent, hence G for generalised. SGML as well as XML achieve
@@ -324,8 +324,8 @@ If we abstract from this and attempt to describe the structure of
    poems in general we could say that a poem consists of 
    one or more stanzas (`<lg>{:xml}`) each of which is made up of one or more lines (`<l>{:xml}`). 
    A poem will also normally have a
-title and be attributable to an author (even if that author – as in 
-the case of _Þrymskviða_ – is the 
+title and be attributable to an author (even if that author &ndash; as in 
+the case of _Þrymskviða_ &ndash; is the 
    highly prolific “Anon.”). The name of the author will obviously not
    always appear with the text of the poem, however, for example in a series or
    collection, where there are several poems by the same author. 
@@ -482,7 +482,7 @@ For our purposes entities are particularly useful for providing descriptive mapp
 In fact, all characters in the official part of the Unicode Standard can now be entered directly from the keyboard. See
    [ch. 5.2.2](HB3_ch5.xml#sec5.2.2) for more details on this.
 
-Even more specialized characters might not be defined as part of the Unicode Standard  – yet – 
+Even more specialized characters might not be defined as part of the Unicode Standard  &ndash; yet &ndash; 
    and thus have to be defined as entities.
   For instance, the producer of
 a diplomatic text edition might want to distinguish between single
@@ -511,7 +511,7 @@ document using a system entity:
 In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
      This requires an extensive `<charDecl>{:xml}` section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;{:xml}` entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
@@ -598,9 +598,9 @@ A schema, as was said, defines the
                specification of the schema, then the document is not only well-formed,
                but also **valid**.
 
-Validation only checks the markup –
-               not the content – of the document. A document can consist entirely of
-               gibberish and still be valid – as, indeed, can a document with no
+Validation only checks the markup &ndash;
+               not the content &ndash; of the document. A document can consist entirely of
+               gibberish and still be valid &ndash; as, indeed, can a document with no
                content at all. The correctness of the contents remains
                the responsibility of the transcriber.
 
@@ -656,7 +656,7 @@ Some XML editors additionally have their own way of referencing external schemas
 
 Following the schema, the entities used in the document are referenced.
     Entities can either be defined manually or provided by means of external entity lists, for instance as a system entity (see [ch. 2.5](#sec2.5).)
-    After that – finally – the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
+    After that &ndash; finally &ndash; the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
             
 
 A structured XML document contains different kinds of components. We have already
@@ -665,7 +665,7 @@ A structured XML document contains different kinds of components. We have alread
      also contain <em>comments</em>. Comments begin with “&lt;!--” and end with
       “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
      as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
-     a comment is considered as not actually part of the document – it is “commented out”
+     a comment is considered as not actually part of the document &ndash; it is “commented out”
      and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
      to make a note to him or herself or others without it being processed.
 
@@ -956,5 +956,5 @@ Menota makes available XSLT stylesheets that have been optimised for displaying 
    The stylesheets as well as an introduction to how to apply them are found in [app. F](/handbook/v3/HB3_F_xslt). 
    The latest version of the XSLT (for the present version of the handbook) now allows for sophisticated display of many manuscript-specific features on the facsimile level, 
    such as multi-part rubrics and scaled initials. Please bear in mind, however, that preference was given to incorporate features that were deemed essential and 
-   less common features or special cases might not be rendered correctly – yet – even though they are encoded in
+   less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
    accordance with the handbook’s recommendations.
