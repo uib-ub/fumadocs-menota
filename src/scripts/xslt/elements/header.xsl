@@ -32,7 +32,57 @@
             }&#x0a;</xsl:text>
         <xsl:text>   author: Robert K. Paulsen&#x0a;</xsl:text>
         <xsl:text>   changes:&#x0a;</xsl:text>
-        <xsl:text>    - Converted from XML to MDX.&#x0a;</xsl:text>
+        <xsl:text>    - "Converted file from XML to MDX."&#x0a;</xsl:text>
+        <xsl:for-each select="tei:change">
+            <xsl:text expand-text="true"> - date: {tei:date
+                    => replace('^12 April 2016 and ', '')
+                    => replace('^[0-3]?[0-9][-/]([0-3]?[0-9])', '$1')
+                    => replace('(^[1-9]) ', '0$1 ')
+                    => replace('^([0-9]+) (\w+) ([0-9]+)$', '$3-$2-$1')
+                    => replace('January', '01')
+                    => replace('February', '02')
+                    => replace('March', '03')
+                    => replace('April', '04')
+                    => replace('May', '05')
+                    => replace('June', '06')
+                    => replace('July', '07')
+                    => replace('August', '08')
+                    => replace('September', '09')
+                    => replace('October', '10')
+                    => replace('November', '11')
+                    => replace('December', '12')
+                }&#x0a;</xsl:text>
+            <xsl:choose>
+                <xsl:when test="count(tei:persName) > 1">
+                    <xsl:text>   author:&#x0a;</xsl:text>
+                    <xsl:for-each select="tei:persName">
+                        <xsl:text expand-text="true">    - {.}&#x0a;</xsl:text>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text expand-text="true">   author: {tei:persName}&#x0a;</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>   changes:&#x0a;</xsl:text>
+            <xsl:text expand-text="true">    - "{.
+                    => string()
+                    => normalize-space()
+                    => replace('^[0-3]?[0-9]([-/][0-3]?[0-9])? ', '')
+                    => replace('^(January|February|March|April|May|June|July|August|September|October|November|December) ', '')
+                    => replace('^20[0-2][0-9] ', '')
+                    => replace('and 15 May 2017 ', '')
+                    => replace('^Beeke Stegmann(:| and)? ', '')
+                    => replace('^Odd Einar Haugen(:| and) ', '')
+                    => replace('^Tarrin Wills: ', '')
+                    => replace('^Haraldur Bernharðsson: ', '')
+                    => replace('^Nina Stensaker: ', '')
+                    => replace('^Friederike Richter(( ?:)? )?', '')
+                    => replace('^Marco Bianchi: ', '')
+                    => replace('\\', '\\\\')
+                    => replace('&quot;', '\\&quot;')
+                }"</xsl:text>
+            <xsl:text>&#x0a;</xsl:text>
+        </xsl:for-each>
     </xsl:template>
     <xsl:template match="
         tei:profileDesc|

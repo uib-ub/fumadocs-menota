@@ -5,7 +5,7 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
-    <xsl:preserve-space elements="tei:p tei:hi tei:item"/>
+    <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change"/>
     <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/links.xsl"/>
