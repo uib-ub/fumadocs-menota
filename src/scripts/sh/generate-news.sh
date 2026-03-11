@@ -14,7 +14,7 @@ compile () {
     java -jar $saxon -t -s:$xml -xsl:$xsl -o:$out
 }
 
-if [[ $segment == "all" or $segment == "ml" ]]; then
+if [[ $segment == "all" || $segment == "ml" ]]; then
     echo "Compiling news items:"
     for file in $sourcedir/meldinger/*; do
         if [ -f "$file" ]; then
@@ -26,7 +26,7 @@ if [[ $segment == "all" or $segment == "ml" ]]; then
     done
 fi
 
-if [[ $segment == "all" or $segment == "hb3" ]]; then
+if [[ $segment == "all" || $segment == "hb3" ]]; then
     echo "Compiling handbook v3:"
     for file in $sourcedir/handbok/v3/*; do
         if [ -f "$file" ]; then
