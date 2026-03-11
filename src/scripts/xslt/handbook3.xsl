@@ -9,6 +9,7 @@
     <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/links.xsl"/>
+    <xsl:include href="elements/paragraph.xsl"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
     <xsl:include href="elements/text.xsl"/>
@@ -37,25 +38,6 @@
                 <xsl:text>&#x0a;&lt;/DisplayFrame&gt;&#x0a;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    <xsl:template match="tei:p">
-        <xsl:choose>
-            <xsl:when test="@rend='caption'">
-                <xsl:text>&#x0a;&lt;Caption</xsl:text>
-                <xsl:if test="tei:hi[@rend='bold'][position() = 1]">
-                    <xsl:text> title="</xsl:text>
-                    <xsl:value-of select="tei:hi[@rend='bold'][position() = 1]"/>
-                    <xsl:text>"</xsl:text>
-                </xsl:if>
-                <xsl:text>&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&lt;/Caption&gt;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#x0a;&#x0a;</xsl:text>
                 <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
