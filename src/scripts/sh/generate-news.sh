@@ -5,6 +5,8 @@ sourcedir=./legacy
 codedir=./src
 contentdir=./content
 
+segment="${1:-all}"
+
 compile () {
     xml=$sourcedir/$1
     xsl=$codedir/$2
@@ -12,22 +14,26 @@ compile () {
     java -jar $saxon -t -s:$xml -xsl:$xsl -o:$out
 }
 
-echo "Compiling news items:"
-for file in $sourcedir/meldinger/*; do
-    if [ -f "$file" ]; then
-        sourceID=$(basename "$file" .xml)
-        if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-            compile meldinger/${sourceID}.xml scripts/xslt/news.xsl news/${sourceID}.mdx
+if [[ $segment == "all" or $segment == "ml" ]]; then
+    echo "Compiling news items:"
+    for file in $sourcedir/meldinger/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+                compile meldinger/${sourceID}.xml scripts/xslt/news.xsl news/${sourceID}.mdx
+            fi
         fi
-    fi
-done
+    done
+fi
 
-echo "Compiling handbook v3:"
-for file in $sourcedir/handbok/v3/*; do
-    if [ -f "$file" ]; then
-        sourceID=$(basename "$file" .xml)
-        if [[ "$sourceID" =~ ^HB3_ ]]; then
-            compile handbok/v3/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v3/${sourceID}.mdx
+if [[ $segment == "all" or $segment == "hb3" ]]; then
+    echo "Compiling handbook v3:"
+    for file in $sourcedir/handbok/v3/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            if [[ "$sourceID" =~ ^HB3_ ]]; then
+                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v3/${sourceID}.mdx
+            fi
         fi
-    fi
-done
+    done
+fi
