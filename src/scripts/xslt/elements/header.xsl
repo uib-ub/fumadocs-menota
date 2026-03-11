@@ -17,6 +17,7 @@
                 => replace('\s+', ' ')
                 => replace('^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2')
                 => replace('^Menota handbook preface .*$', 'Preface')
+                => replace('^Menota handbook \(v\. 3\.0\): ', '')
             }"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
