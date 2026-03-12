@@ -71,14 +71,14 @@ by Odd Einar Haugen and Beeke Stegmann
 
 We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount
 					of information about the text, its background and its encoding. This should be entered in
-					the `<teiHeader>{:xml}`, which is an integral and essential part of any XML/TEI document.
+					the <E>teiHeader</E>, which is an integral and essential part of any XML/TEI document.
 				While not required, a longer header with more detailed information on the manuscript source is highly welcomed.
 
 Below are three examples of headers for Medieval Nordic texts. The first two examples are so-called minimal headers
 				   with basic recommended information, the first being a
 					header for a primary source with only a single text; the other for a source with more than
 					one text. The third example is a longer header with more codicological detail. 
-                                                        It should be noted, however, that a minimal header of a multi-text file can also become rather long when specifying the individual texts that are contained in the manuscript.
+It should be noted, however, that a minimal header of a multi-text file can also become rather long when specifying the individual texts that are contained in the manuscript.
 
 Cf. the TEI P5 Guidelines,
 				  [ch. 2](http://tei.oucs.ox.ac.uk/release/doc/tei-p5-doc/en/html/HD.html) for 
@@ -89,7 +89,7 @@ a RELAX NG schema when encoding a text rather than a DTD (Document Type Declarat
 			   [app. D](/handbook/v3/HB3_D_schemas).
 
 The schema being used in a file is declared at the very beginning of the file. The headers that can be 
-                            downloaded in [app. E.5](#secE.5) below are all using the RELAX NG schema, and can thus be used as models.
+downloaded in [app. E.5](#secE.5) below are all using the RELAX NG schema, and can thus be used as models.
 
 ## E.2 Minimal header for a source with a single text [#secE.2]
 
@@ -271,8 +271,8 @@ We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative pro
 ```
 
 
-The `<body>{:xml}` follows immediately after the header. This is where the actual transcription
-						is located. Note that the `<div>{:xml}` element is used to organise the various
+The <E>body</E> follows immediately after the header. This is where the actual transcription
+						is located. Note that the <E>div</E> element is used to organise the various
 						sections of the manuscript, in this case the individual chapters.
 ```xml
 <text xml:lang="onw">
@@ -290,18 +290,18 @@ The `<body>{:xml}` follows immediately after the header. This is where the actua
 ```
 
 
-The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
-						specifies the language of the text (cf. `<profileDesc>{:xml}` above). If the text
+The source text is placed within the <E>text</E> element. The attribute `@xml:lang{:sh}`
+						specifies the language of the text (cf. <E>profileDesc</E> above). If the text
 						contains sporadic words or sentences in another language, e.g. Latin, the attribute
 						`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
-						the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
+						the word, <E>w</E>, paragraph, <E>p</E> or chapter, <E>div</E>.
 
 This header is also an example of how change of scribal hands in the source can be recorded. Note
 						that rather than putting each hand in an element of its own (which would cause problems
 						of overlapping) the actual change is recorded using a milestone element,
-					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above. 
+					  <E>handShift/</E>, as discussed in [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above. 
 					  Note that the number of hands must be recorded in the
-							`<profileDesc>{:xml}` element of the header.
+							<E>profileDesc</E> element of the header.
 
 ## E.3 Minimal header for a source with multiple texts [#secE.3]
 
@@ -314,8 +314,8 @@ AM 242 fol &ndash; often referred to as _Codex Wormianus_ or
 						_Skaldskaparmál_ and _Háttatal_.
 
 The header of a multi-text source should specify the various parts of the source within
-			    the `<msContents>{:xml}` element. Here, each part is described as an item,
-			    `<msItem>{:xml}`, and  in the text, `<div>{:xml}` elements identify the corresponding parts of the
+			    the <E>msContents</E> element. Here, each part is described as an item,
+			    <E>msItem</E>, and  in the text, <E>div</E> elements identify the corresponding parts of the
 			    source.
 
 Sometimes, there are complications with respect to the sequence of the manuscript items. In the present manuscript, _Háttatal_ is not placed in
@@ -324,8 +324,8 @@ Sometimes, there are complications with respect to the sequence of the manuscrip
 					divided into two parts with a few other texts intervening. 
 
 The body follows immediately after the header. This is where the actual transcription
-						is located. Note that `<div>{:xml}` elements are used to organise the various parts of
-						the manuscript, referring to the divisons set out in the `<msContents>{:xml}` element
+						is located. Note that <E>div</E> elements are used to organise the various parts of
+						the manuscript, referring to the divisons set out in the <E>msContents</E> element
 						of the header.
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
@@ -610,19 +610,19 @@ The body follows immediately after the header. This is where the actual transcri
 ```
 
 
-The source text is placed within the `<text>{:xml}` element. The attribute `@xml:lang{:sh}`
-							specifies the language of the text (cp. `<msContents>{:xml}` above). If the text
+The source text is placed within the <E>text</E> element. The attribute `@xml:lang{:sh}`
+							specifies the language of the text (cp. <E>msContents</E> above). If the text
 							contains sporadic words or sentences in another language, e.g. Latin, the attribute
 							`@xml:lang{:sh}` can be used to specify these exception from the rule, whether on the level of
-							the word, `<w>{:xml}`, paragraph, `<p>{:xml}` or chapter, `<div>{:xml}`.
+							the word, <E>w</E>, paragraph, <E>p</E> or chapter, <E>div</E>.
 
-The divisions of the text correspond to the list of `<msItem>{:xml}` elements in
-								`<msContents>{:xml}` above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
+The divisions of the text correspond to the list of <E>msItem</E> elements in
+								<E>msContents</E> above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)
 
-The `<head>{:xml}` element specifies the title of the work (or a part of it). If the title is given as a 
+The <E>head</E> element specifies the title of the work (or a part of it). If the title is given as a 
 					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
 					    in [ch. 3.9](/handbook/v3/HB3_ch3#sec3.9) above). If the title is not stated in the source, the editor may
-					    add a title in the `<supplied>{:xml}` element (as has been done above). 
+					    add a title in the <E>supplied</E> element (as has been done above). 
 
 ## E.4 Detailed header with more codicological information [#secE.4]
 
@@ -837,8 +837,8 @@ This header demonstrates how to provide more codicological information
 
 
 The body follows immediately after the header. This is where the actual transcription
-		          is located. Note that `<div>{:xml}` elements are used to organise the various parts of
-		          the manuscript, referring to the divisions set out in the `<msContents>{:xml}` element
+		          is located. Note that <E>div</E> elements are used to organise the various parts of
+		          the manuscript, referring to the divisions set out in the <E>msContents</E> element
 		          of the header. 
 ```xml
 <text xml:lang="onw">
@@ -860,5 +860,5 @@ We offer the three headers in this chapter for download:
 - [The header of NKS 235 g 4to as a sample XML file](samplefiles/NKS_235_g_4to.xml)
 
 Please note that some browsers may try and interpret and open these sample files. 
-          In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
-          on your browser, unless your browser has other preferences.
+In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
+on your browser, unless your browser has other preferences.

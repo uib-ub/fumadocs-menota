@@ -36,26 +36,26 @@ by Odd Einar Haugen and Nina Stensaker
 ## I.1 Introduction [#secI.1]
 
 This handbook is complex and  deals with a number of questions that may 
-          not arise in the practical work for many transcribers. So, as stated in the very first chapter 
-          of the handbook, a text encoded according to the Menota Guidelines need not be complicated at all. 
-          It may do with just a handful of elements and attributes.
+not arise in the practical work for many transcribers. So, as stated in the very first chapter 
+of the handbook, a text encoded according to the Menota Guidelines need not be complicated at all. 
+It may do with just a handful of elements and attributes.
 
 In this appendix, we are offering an example of a single-level transcription of a small extract from
-       NRA 58 C, an early Norwegian fragment of _Konungs skuggsjá_. The full encoding, using all 
-          three levels of representation can be found in
-         the text archive under NRA 58 C, and the underlying XML file can be downloaded there.
-         In the present example, the transcription is on a single, diplomatic level, and there is no
-        morphological annotation. However, the way Menota organises its files, further levels 
-        can easily be added later on, and the same goes for the morphological annotation.
+NRA 58 C, an early Norwegian fragment of _Konungs skuggsjá_. The full encoding, using all 
+three levels of representation can be found in
+the text archive under NRA 58 C, and the underlying XML file can be downloaded there.
+In the present example, the transcription is on a single, diplomatic level, and there is no
+morphological annotation. However, the way Menota organises its files, further levels 
+can easily be added later on, and the same goes for the morphological annotation.
 
 ## I.2 The source [#secI.2]
 
 NRA 58 C is a fragment of four folios written in two columns, having a total of 2,981 words. 
-          We have selected the first 18 lines of folio 3r, column B, as our example. This extract contains 151 words, so 
-          it is in a sense a fragment of a fragment.
+We have selected the first 18 lines of folio 3r, column B, as our example. This extract contains 151 words, so 
+it is in a sense a fragment of a fragment.
 
 
-          
+
 
 <Figure>
 <AutoImage src="/images/hb3/samples/NRA-58-C-3r,B,1-18.jpg" alt="samples/NRA-58-C-3r,B,1-18.jpg"/>
@@ -63,14 +63,14 @@ NRA 58 C is a fragment of four folios written in two columns, having a total of 
 </Figure>
 
 
-        
+
 <Caption title="Ill. I.1">. A fragment of _Konungs skuggsjá_. NRA 58 C, fol. 3r, col. B, l. 1&ndash;18.</Caption>
 
 ## I.3 The encoding [#secI.3]
 
 Below is the encoding of the text. In order to make the file easier to read, each word is set on a line of its own. 
-            The header is not included, but you may refer
-            to [ch. 14](/handbook/v3/HB3_ch14) for examples of minimal as well as more extensive ones.
+The header is not included, but you may refer
+to [ch. 14](/handbook/v3/HB3_ch14) for examples of minimal as well as more extensive ones.
 ```xml
 <text xml:lang="onw">
   <body>
@@ -269,13 +269,13 @@ Below is the encoding of the text. In order to make the file easier to read, eac
 
 ## I.4 Comments [#secI.4]
 
-As can be seen in the example, the whole text is embedded in the `<text>{:xml}` element. The `@xml:lang{:sh}` attribute which has the `"onw"{:js}` value states that the language is Old Norwegian. Next, the text is embedded in the `<body>{:xml}` element, which allows the encoder to add a `<front>{:xml}` and `<back>{:xml}` section to the transcription. Next, a single `<div>{:xml}` element embeds the example &ndash; usually, a `<div>{:xml}` will contain longer passages than this, such as chapters. Finally, there is a `<p>{:xml}` element, stating that the text is in prose, as opposed to e.g. `<lg>{:xml}` for metrical text. These elements were introduced and explained in [ch. 3](/handbook/v3/HB3_ch3) above.
+As can be seen in the example, the whole text is embedded in the <E>text</E> element. The `@xml:lang{:sh}` attribute which has the `"onw"{:js}` value states that the language is Old Norwegian. Next, the text is embedded in the <E>body</E> element, which allows the encoder to add a <E>front</E> and <E>back</E> section to the transcription. Next, a single <E>div</E> element embeds the example &ndash; usually, a <E>div</E> will contain longer passages than this, such as chapters. Finally, there is a <E>p</E> element, stating that the text is in prose, as opposed to e.g. <E>lg</E> for metrical text. These elements were introduced and explained in [ch. 3](/handbook/v3/HB3_ch3) above.
 
-Note that the `<pb/>{:xml}` and `<cb/>{:xml}` elements precede the text. They have the `@ed{:sh}` attribute with the `"ms"{:js}` value, stating that the page and column beginnings refer to the source itself, and not, for example, an edition. It also has the `@n{:sh}` attribute specifying the line number. Note that each `<lb/>{:xml}` element precedes the line to which it refers. When a word is written over two lines, such as in lines 10&ndash;11, the `<lb/>{:xml}` element will be placed at the break within the word itself. See [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) and [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) above for details.
+Note that the <E>pb/</E> and <E>cb/</E> elements precede the text. They have the `@ed{:sh}` attribute with the `"ms"{:js}` value, stating that the page and column beginnings refer to the source itself, and not, for example, an edition. It also has the `@n{:sh}` attribute specifying the line number. Note that each <E>lb/</E> element precedes the line to which it refers. When a word is written over two lines, such as in lines 10&ndash;11, the <E>lb/</E> element will be placed at the break within the word itself. See [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) and [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) above for details.
 
-The final two elements are the domineering ones: `<w>{:xml}` for each word and `<pc>{:xml}` for each punctuation character. As explained in [ch. 3.6](/handbook/v3/HB3_ch3#sec3.6) above, the reason for embedding words in the `<w>{:xml}` element is primarily to make it ready for morphological annotation. It is also a convenient way of dealing with the distinction between graphical and lexical words, as shown in [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above.
+The final two elements are the domineering ones: <E>w</E> for each word and <E>pc</E> for each punctuation character. As explained in [ch. 3.6](/handbook/v3/HB3_ch3#sec3.6) above, the reason for embedding words in the <E>w</E> element is primarily to make it ready for morphological annotation. It is also a convenient way of dealing with the distinction between graphical and lexical words, as shown in [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above.
 
-Then, there is only one element left, the `<ex>{:xml}` element for the expansion of abbreviations. There are not many examples here, but one is found in line 2, where “þat” has been abbreviated with a bar across the ascender of the “þ”. If the transcription had been on the facsimile level, this abbreviation mark would have been encoded with the `<am>{:xml}` element, leaving it to the diplomatic level to expand the mark. You may download the multi-level transcription of NRA 58 C from the Menota archive to see how this works.
+Then, there is only one element left, the <E>ex</E> element for the expansion of abbreviations. There are not many examples here, but one is found in line 2, where “þat” has been abbreviated with a bar across the ascender of the “þ”. If the transcription had been on the facsimile level, this abbreviation mark would have been encoded with the <E>am</E> element, leaving it to the diplomatic level to expand the mark. You may download the multi-level transcription of NRA 58 C from the Menota archive to see how this works.
 
 ## I.5 File for downloading [#secI.5]
 
@@ -284,5 +284,5 @@ We offer the XML file used in this appendix for downloading. This is the complet
 - [NRA 58 C: a fragment of a fragment](samplefiles/NRA_58_C_3rB_1-18.xml)
 
 Please note that some browsers may try and interpret and open this sample file. 
-          In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
-          on your browser, unless your browser has other preferences.
+In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) 
+on your browser, unless your browser has other preferences.

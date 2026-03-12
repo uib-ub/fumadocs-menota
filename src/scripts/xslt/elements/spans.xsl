@@ -11,9 +11,14 @@
         <xsl:value-of select="concat('`@', ., '{:sh}`')"/>
     </xsl:template>
     <xsl:template match="tei:gi">
-        <xsl:text>`&lt;</xsl:text>
-        <xsl:apply-templates/>
-        <xsl:text>&gt;{:xml}`</xsl:text>
+        <xsl:choose>
+            <xsl:when test="ancestor::tei:head">
+                <xsl:value-of select="concat('`&lt;', string(.), '&gt;`')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text expand-text="true">&lt;E&gt;{string(.)}&lt;/E&gt;</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:hi">
         <xsl:choose>

@@ -113,7 +113,7 @@ by Beeke Stegmann, Matthew Driscoll and Tone Merete Bruvik
 ## 2.1 What is XML? [#sec2.1]
 
 XML, Extensible Markup Language, is
-   a recommendation, endorsed by the [World
+a recommendation, endorsed by the [World
 Wide Web Consortium](http://www.w3.org/XML/), which
 defines a simple yet flexible generic syntax for document markup.
 XML, like its predecessor SGML, Standard Generalised Markup Language,
@@ -154,25 +154,25 @@ instructions to those parts of it that are considered
 relevant.
 
 SGML’s greatest success has been HTML, Hyper-Text Markup Language, the language of the World Wide
-     Web. HTML restricts document authors to a finite set of tags, however, most of which were
-     originally presentationally oriented, and is thus inappropriate for most things other than web
-     design. XML is essentially “trimmed down” SGML. It is not a single, predefined markup
-     language like HTML, but rather a metalanguage desgined for describing other languages. The
-     syntax is essentially still the same as in SGML, but some of the more complex and lesser used
-     options have been removed.
+Web. HTML restricts document authors to a finite set of tags, however, most of which were
+originally presentationally oriented, and is thus inappropriate for most things other than web
+design. XML is essentially “trimmed down” SGML. It is not a single, predefined markup
+language like HTML, but rather a metalanguage desgined for describing other languages. The
+syntax is essentially still the same as in SGML, but some of the more complex and lesser used
+options have been removed.
 
 The great advantage of XML is that
 it brings the power and flexibility of SGML to the Web; an XML
 document can be marked up entirely in accordance with the needs of
 the user and the result displayed in a standard web browser (see [ch. 2.9](#sec2.9) below). 
-   The implications for philologists are
+The implications for philologists are
 staggering.
 
 In what follows, most of the more
 relevant areas of XML markup are touched upon. For a more thorough
 grounding, one of the many printed handbooks or websites devoted to
 XML should be consulted. A good place to start would be the World
-   Wide Web Consortium’s own XML pages: [http://www.w3c.org/XML/](http://www.w3c.org/XML/).
+Wide Web Consortium’s own XML pages: [http://www.w3c.org/XML/](http://www.w3c.org/XML/).
 
 
 ## 2.2 Appearance vs. structure [#sec2.2]
@@ -231,31 +231,31 @@ will not begin in the middle of a paragraph, for example, or in a
 footnote.
 
 In XML pairs of tags are used to mark off such units, a start tag and an end tag, with the text
-     in between being referred to as the element’s content. Corresponding start and end tags have
-     the same “name” that ist placed within angle brackets, with a solidus to indicate an end
-     tag. Chapters in a book, for example, could be understood as separate divisions and accordingly
-     demarcated by placing a `<div>{:xml}` tag (short for division) at the beginning of each one and
-     a corresponding `</div>{:xml}` tag at the end. Within each division there would be any number of
-     paragraphs, usually tagged with `<p>{:xml}`. Since XML is structured hierarchically, elements
-     can contain each other, but only in their intirety. Overlapping structures of elements are not
-     allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
-      [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
+in between being referred to as the element’s content. Corresponding start and end tags have
+the same “name” that ist placed within angle brackets, with a solidus to indicate an end
+tag. Chapters in a book, for example, could be understood as separate divisions and accordingly
+demarcated by placing a <E>div</E> tag (short for division) at the beginning of each one and
+a corresponding <E>/div</E> tag at the end. Within each division there would be any number of
+paragraphs, usually tagged with <E>p</E>. Since XML is structured hierarchically, elements
+can contain each other, but only in their intirety. Overlapping structures of elements are not
+allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
+[ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
 
 The way two elements relate to each other hierarchically is determined by the
 <em>schema</em> used, which in our case would stipulate
-that a `<chapter>{:xml}` must contain one or more `<p>{:xml}`
+that a <E>chapter</E> must contain one or more <E>p</E>
 elements.  
 In any given schema, 
 there is a declaration for each element enumerating what other elements it may or must
 contain, how many of each, and if there are any constraints on the
 order. The more elements one has in one’s system the more
 complicated, and subtle, that system becomes. (For more details on the schema see 
-   [ch. 2.6](#sec2.6) below.)
+[ch. 2.6](#sec2.6) below.)
 
 To examplify the use of elements, let us have a look at how to markup the structure of the two
-   first stanzas of the Eddic poem _Þrymskviða_, rendered in normalised orthography. 
-   The text is based on the edition by Jón Helgason (1955) and the translation is the one by Carolyne
-   Larrington (1996):
+first stanzas of the Eddic poem _Þrymskviða_, rendered in normalised orthography. 
+The text is based on the edition by Jón Helgason (1955) and the translation is the one by Carolyne
+Larrington (1996):
 
 <div className="table-plain">
 <table>
@@ -315,24 +315,24 @@ way:
 ```
 
 
-Note that in this example, standard TEI elements are used: `<text>{:xml}`, `<body>{:xml}`, 
-      `<lg>{:xml}` (short for “line group”, marks a stanza), 
-      and `<l>{:xml}` (the element that marks an individual line). For more details on encoding standards and 
-      TEI see [ch. 2.8](#sec2.8) below.)
+Note that in this example, standard TEI elements are used: <E>text</E>, <E>body</E>, 
+<E>lg</E> (short for “line group”, marks a stanza), 
+and <E>l</E> (the element that marks an individual line). For more details on encoding standards and 
+TEI see [ch. 2.8](#sec2.8) below.)
 
 If we abstract from this and attempt to describe the structure of 
-   poems in general we could say that a poem consists of 
-   one or more stanzas (`<lg>{:xml}`) each of which is made up of one or more lines (`<l>{:xml}`). 
-   A poem will also normally have a
+poems in general we could say that a poem consists of 
+one or more stanzas (<E>lg</E>) each of which is made up of one or more lines (<E>l</E>). 
+A poem will also normally have a
 title and be attributable to an author (even if that author &ndash; as in 
 the case of _Þrymskviða_ &ndash; is the 
-   highly prolific “Anon.”). The name of the author will obviously not
-   always appear with the text of the poem, however, for example in a series or
-   collection, where there are several poems by the same author. 
-Therefore, we might want to allow our `<body>{:xml}` element also to contain,
-   let us say, `<title>{:xml}` and `<author>{:xml}`.  Additional 
+highly prolific “Anon.”). The name of the author will obviously not
+always appear with the text of the poem, however, for example in a series or
+collection, where there are several poems by the same author. 
+Therefore, we might want to allow our <E>body</E> element also to contain,
+let us say, <E>title</E> and <E>author</E>.  Additional 
 elements would further be required if more than one poem were to be transcribed but still marked as separate works, for example
-  in a `<collection>{:xml}` of poems. If one envisaged this collection as an anthology,
+in a <E>collection</E> of poems. If one envisaged this collection as an anthology,
 one would probably wish to divide it into sections, in which poems by
 a particular poet were grouped together; in the case of Eddic poems, one might make a 
 division between mythological poems and heroic lays. Each of these 
@@ -346,7 +346,7 @@ by a variety of elements. Such elements, often referred to as phrase-level eleme
 Besides being able to render tagged contents in any given way, the principal use of elements and markup is to enable searches: Anything that is marked-up
 can be searched for later. One might, for
 example, wish to markup all names in the poem above. The personal name “Vingþórr” in line one of our poem could then
-   be tagged with an element we call `<name>{:xml}`:
+be tagged with an element we call <E>name</E>:
 ```xml
 <l>Reiðr var þá <name>Vingþórr</name></l>
 ```
@@ -359,16 +359,16 @@ example, wish to markup all names in the poem above. The personal name “Vingþ
 Without further information, the
 usefulness of such tagging is sometimes limited. More specific
 information about a particular element instance can be given as a so-called
- attribute. Looking at the stanzas just cited, one might, for example,
+attribute. Looking at the stanzas just cited, one might, for example,
 want to add attributes to individual elements, using convenient typologies to indicate number, genre, form,
 metre or rhyme-scheme.
-The elements `<lg>{:xml}` and `<l>{:xml}`, denoting stanzas and lines, could for instance be described in more detail by
-   adding an attribute for the number: `@n{:sh}`. 
-   One ore more attributes are added to the opening tag of elements in such a way that they follow
-   the element name, separated by a white space. The value of an attribute
-   is given in double quotations to the right of an equals sign.
-   Adding a `@n{:sh}` attribute (with the value `"1"{:js}`) to the `<l>{:xml}` element of the first line would  
-      be encoded like this:
+The elements <E>lg</E> and <E>l</E>, denoting stanzas and lines, could for instance be described in more detail by
+adding an attribute for the number: `@n{:sh}`. 
+One ore more attributes are added to the opening tag of elements in such a way that they follow
+the element name, separated by a white space. The value of an attribute
+is given in double quotations to the right of an equals sign.
+Adding a `@n{:sh}` attribute (with the value `"1"{:js}`) to the <E>l</E> element of the first line would  
+be encoded like this:
 ```xml
 <l n="1">
   Reiðr var þá <name>Vingþórr</name>
@@ -389,7 +389,7 @@ places, ships, swords etc.:
 
 
 Attributes are very useful for search and processing purposes, because they allow 
-      additional degrees of abstraction. Like elements, they are
+additional degrees of abstraction. Like elements, they are
 declared in the schema, where a list of possible attributes or kinds of attributes is
 given for each element. It is also possible to specify what type of
 value is acceptable for each attribute, as well as a default
@@ -399,14 +399,14 @@ value if that is desired.
 ## 2.5 Entities [#sec2.5]
 
 The aspects of XML discussed so far are all concerned with the markup of elements within the
-     document. XML also provides a mechanism for encoding and naming parts of the document’s
-     content: through entities. An entity is a kind of shorthand, a way of stating that when the
-     document is processed, a particular string of characters in the document should be replaced by
-     some other string. This other string can be of any length, from a single character to a
-     separate file containing millions of bytes, such as a text file or digital image. When using an
-     entity, the name of that entity (entity reference) is placed between an ampersand and a
-     semicolon: `&entityname;{:xml}`. Only entities that have been declared can
-     be processed by the application.
+document. XML also provides a mechanism for encoding and naming parts of the document’s
+content: through entities. An entity is a kind of shorthand, a way of stating that when the
+document is processed, a particular string of characters in the document should be replaced by
+some other string. This other string can be of any length, from a single character to a
+separate file containing millions of bytes, such as a text file or digital image. When using an
+entity, the name of that entity (entity reference) is placed between an ampersand and a
+semicolon: `&entityname;{:xml}`. Only entities that have been declared can
+be processed by the application.
 
 A single
 declaration for a general entity looks like this:
@@ -416,17 +416,17 @@ declaration for a general entity looks like this:
 
 
 This entity declaration instructs the processing
-      software (a parser or browser) to 
-      replace any entity reference `&vth;{:xml}` it encounters in the XML file 
-      with the text “Vingþórr”. 
-      In the case of our single
-      poem, there is obviously no real advantage to treating the name of
-      the protagonist in this way, but in longer documents or collections of
-      documents it can be an extremely efficient way of dealing with
-      repeated content.
+software (a parser or browser) to 
+replace any entity reference `&vth;{:xml}` it encounters in the XML file 
+with the text “Vingþórr”. 
+In the case of our single
+poem, there is obviously no real advantage to treating the name of
+the protagonist in this way, but in longer documents or collections of
+documents it can be an extremely efficient way of dealing with
+repeated content.
 
 Entities may also contain XML markup (provided it
-      is well-formed) as well as text:
+is well-formed) as well as text:
 ```xml
 <!ENTITY vth "<name type='god' subtype='áss'>Vingþórr</god>">
 ```
@@ -454,37 +454,37 @@ parameter entities; these are used inside markup declarations and
 need not concern us here. 
 
 For our purposes entities are particularly useful for providing descriptive mappings for
-     non-standard characters, such as characters used in medieval manuscripts. There are standard
-     mappings for commonly used characters, such as from the western-European languages (e.g.
-     ISOlat1 and ISOlat2), as well as character sets for Greek (ISOgrk1), Cyrillic (ISOcyrl1) and
-     other alphabets. The Unicode Standard, a character coding system desigend to support worldwide
-     interchange, processing and display of written text, covers most of the world’s languages,
-     living and dead, and also allows for user-defined characters. The current version 12.0 contains
-     a total of 137,928 characters (released March 5 2019). Each of these characters is
-     assigned a unique code point, which can be encoded in a variety of ways. The most common format
-     is UTF-8, but the numeric value of the code points can be used to encode characters as
-     entities. Such numerical character references can be either decimal or hexidecimal; decimal
-     references begin with an ampersand and the number sign, also called hash mark (#), to which
-     hexidecimal references add an x. For example, the Unicode hexidecimal character reference for
-     the letter “ę” is `&#x0119;`, while the decimal
-     reference is `&#281;`. These standardised numerical character
-     references are supported by standard browsers and do not need to be defined as additional
-     entities. However, one may prefer to use human readable entities for such characters which are
-     not available on the keyboard used, or for reasons such as proof-reading. Instead of the code
-     point, one can, for example, use the entity `&eogon;` for
-      “ę”. It is a simple matter to define characters as general entities, giving the
-     numerical character reference as the replacement text:
+non-standard characters, such as characters used in medieval manuscripts. There are standard
+mappings for commonly used characters, such as from the western-European languages (e.g.
+ISOlat1 and ISOlat2), as well as character sets for Greek (ISOgrk1), Cyrillic (ISOcyrl1) and
+other alphabets. The Unicode Standard, a character coding system desigend to support worldwide
+interchange, processing and display of written text, covers most of the world’s languages,
+living and dead, and also allows for user-defined characters. The current version 12.0 contains
+a total of 137,928 characters (released March 5 2019). Each of these characters is
+assigned a unique code point, which can be encoded in a variety of ways. The most common format
+is UTF-8, but the numeric value of the code points can be used to encode characters as
+entities. Such numerical character references can be either decimal or hexidecimal; decimal
+references begin with an ampersand and the number sign, also called hash mark (#), to which
+hexidecimal references add an x. For example, the Unicode hexidecimal character reference for
+the letter “ę” is `&#x0119;`, while the decimal
+reference is `&#281;`. These standardised numerical character
+references are supported by standard browsers and do not need to be defined as additional
+entities. However, one may prefer to use human readable entities for such characters which are
+not available on the keyboard used, or for reasons such as proof-reading. Instead of the code
+point, one can, for example, use the entity `&eogon;` for
+“ę”. It is a simple matter to define characters as general entities, giving the
+numerical character reference as the replacement text:
 ```xml
 <!ENTITY eogon "&#x0119;">
 ```
 
 
 In fact, all characters in the official part of the Unicode Standard can now be entered directly from the keyboard. See
-   [ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2) for more details on this.
+[ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2) for more details on this.
 
 Even more specialized characters might not be defined as part of the Unicode Standard  &ndash; yet &ndash; 
-   and thus have to be defined as entities.
-  For instance, the producer of
+and thus have to be defined as entities.
+For instance, the producer of
 a diplomatic text edition might want to distinguish between single
 and two-storey a.  The encoder could achieve this by using two different
 entities, but with the same replacement text. That would make both variants appear
@@ -508,10 +508,10 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
-     This requires an extensive `<charDecl>{:xml}` section in the header of the document defining each “gaiji” character.
+In recent years, the TEI community has moved towards the use of the <E>g</E> element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+This requires an extensive <E>charDecl</E> section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](/menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
@@ -519,184 +519,184 @@ As can be seen throughout the chapters in this handbook, we use the tested and t
 
 In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, `E7D3`. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
 
-The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1) below. 
+The [menota-entities.txt](/menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1) below. 
 
 ## 2.6 The Text Encoding Initiative and TEI conformant schemas [#sec2.6]
 
 The most widely used XML
-                  implementation for more sophisticated text encoding is that devised
-                  by the Text Encoding Initiative (TEI), an international and
-                  interdisciplinary standard for the preparation and interchange of
-                  electronic texts. The TEI began with a planning conference which took
-                  place at Vassar College in New York on 12-13 November 1987. The
-                  participants agreed on both the desirability and feasibility of
-                  creating a common encoding scheme for use in creating new
-                  documents as well as in exchanging existing documents among text and data
-                  archives. The TEI thus began the task of developing a draft set of
-                  Guidelines for Electronic Text Encoding and Interchange, with working
-                  committees comprising scholars from all over North America and Europe
-                  drafting recommendations on various aspects of the problem. These
-                  were integrated into a first public draft, TEI P1 (P for “Proposal”),
-                  published in June 1990. A second draft (TEI P2) followed in 1992 and
-                  1993, and the first official version of the guidelines (TEI P3) was
-                  published in May 1994. The next version, TEI P4, was released in June 2002. On 1 November 2007, 
-                  TEI P5 was released in electronic form only at [TEI
-                     Guidelines](http://www.tei-c.org/Guidelines/P5/). The present version of the Menota handbook is conformant with TEI P5.
+implementation for more sophisticated text encoding is that devised
+by the Text Encoding Initiative (TEI), an international and
+interdisciplinary standard for the preparation and interchange of
+electronic texts. The TEI began with a planning conference which took
+place at Vassar College in New York on 12-13 November 1987. The
+participants agreed on both the desirability and feasibility of
+creating a common encoding scheme for use in creating new
+documents as well as in exchanging existing documents among text and data
+archives. The TEI thus began the task of developing a draft set of
+Guidelines for Electronic Text Encoding and Interchange, with working
+committees comprising scholars from all over North America and Europe
+drafting recommendations on various aspects of the problem. These
+were integrated into a first public draft, TEI P1 (P for “Proposal”),
+published in June 1990. A second draft (TEI P2) followed in 1992 and
+1993, and the first official version of the guidelines (TEI P3) was
+published in May 1994. The next version, TEI P4, was released in June 2002. On 1 November 2007, 
+TEI P5 was released in electronic form only at [TEI
+Guidelines](http://www.tei-c.org/Guidelines/P5/). The present version of the Menota handbook is conformant with TEI P5.
 
 The TEI began as a research effort
-                  cooperatively organised by three scholarly societies (the Association
-                  for Computers and the Humanities, the Association for Computational
-                  Linguistics, and the Association for Literary and Linguistic
-                  Computing), and funded by research grants from the US National
-                  Endowment for the Humanities, the European Union, the Canadian Social
-                  Science Research Council, the Mellon Foundation and others. In
-                  December 2000, after a year’s negotiation, a new non-profit
-                  corporation called the TEI Consortium was set up to maintain and
-                  develop the TEI standard. Four universities serve as hosts for this
-                  consortium, presently two in the United States and two in Europe. The Consortium is
-                  managed by a Board of Directors, and its technical work is overseen
-                  by an elected Council. There are numerous
-                  projects currently using the TEI encoding scheme, Menota being one of
-                  them.
+cooperatively organised by three scholarly societies (the Association
+for Computers and the Humanities, the Association for Computational
+Linguistics, and the Association for Literary and Linguistic
+Computing), and funded by research grants from the US National
+Endowment for the Humanities, the European Union, the Canadian Social
+Science Research Council, the Mellon Foundation and others. In
+December 2000, after a year’s negotiation, a new non-profit
+corporation called the TEI Consortium was set up to maintain and
+develop the TEI standard. Four universities serve as hosts for this
+consortium, presently two in the United States and two in Europe. The Consortium is
+managed by a Board of Directors, and its technical work is overseen
+by an elected Council. There are numerous
+projects currently using the TEI encoding scheme, Menota being one of
+them.
 
 TEI offers several schemas for defining the structure of an XML file. The schema restricts the elements allowed both in terms of their content, 
-               their attributes and relationship to each other. 
-             One of the great strengths of using TEI conformant schemas is that they provide of a number of different tag
-                  sets which can be used in a variety of combinations, according to the
-                  needs of the encoder and nature of the material being encoded. 
-                  The encoder can either use the very general TEI schema with a large number of elements and attributes,
-                  or pick and choose from it by selecting only the
-                  ones relevant to the material to
-                  be encoded, thus tailoring the schema to
-                  his or her individual needs. The Menota schema is an example of the latter, 
-                  containing a specialized subset of the elements defined in the
-                  general schema (with the addition of some local elements and attributes). 
+their attributes and relationship to each other. 
+One of the great strengths of using TEI conformant schemas is that they provide of a number of different tag
+sets which can be used in a variety of combinations, according to the
+needs of the encoder and nature of the material being encoded. 
+The encoder can either use the very general TEI schema with a large number of elements and attributes,
+or pick and choose from it by selecting only the
+ones relevant to the material to
+be encoded, thus tailoring the schema to
+his or her individual needs. The Menota schema is an example of the latter, 
+containing a specialized subset of the elements defined in the
+general schema (with the addition of some local elements and attributes). 
 
 In TEI P4 and earlier releases, the only schema was the Document Type Definition (DTD) mentioned above. 
-               As of TEI P5, a RELAX NG (RNG) schema has been added.
-               We offer schemas of both types in [app. D.1.1 (3) and (4)](/handbook/v3/HB3_D_schemas)
-               to this handbook, but recommend to use the RNG schema. The function of a RNG schema is the same as that of a DTD,
-               but it allows users to make a clear distinction between TEI elements and attributes on the one hand and local elements and attributes on the other hand 
-               by way of establishing a namespace. Consequently, the encoding becomes more transparent. 
-               (The concept and possibilities of a namespace is explained in [ch. 2.8](#sec2.8) below.)
+As of TEI P5, a RELAX NG (RNG) schema has been added.
+We offer schemas of both types in [app. D.1.1 (3) and (4)](/handbook/v3/HB3_D_schemas)
+to this handbook, but recommend to use the RNG schema. The function of a RNG schema is the same as that of a DTD,
+but it allows users to make a clear distinction between TEI elements and attributes on the one hand and local elements and attributes on the other hand 
+by way of establishing a namespace. Consequently, the encoding becomes more transparent. 
+(The concept and possibilities of a namespace is explained in [ch. 2.8](#sec2.8) below.)
 
 A schema, as was said, defines the
-               structure of the document, and is thus like a grammar, detailing the
-               elements which can appear in the text and their hierarchical
-               relationship to each other. In order to ensure that this is done
-               correctly, every encoded text needs to be checked against the schema, if
-               there is one, or checked for “well-formedness” if there is not. A
-               computer program called a parser runs through the encoding and gives
-               an error message if there are errors or inconsistencies in the
-               markup, e.g. if elements are not opened and closed correctly, or used
-               in the wrong place, or if elements overlap. If the elements in a
-               document are correctly opened and closed, and non-overlapping, the
-               document is called **well-formed**. A parser can determine
-               “well-formedness” without recoursing to a schema.
-               If, in addition, the content types of elements, the nesting of
-               elements and the use of attributes are all done according to the
-               specification of the schema, then the document is not only well-formed,
-               but also **valid**.
+structure of the document, and is thus like a grammar, detailing the
+elements which can appear in the text and their hierarchical
+relationship to each other. In order to ensure that this is done
+correctly, every encoded text needs to be checked against the schema, if
+there is one, or checked for “well-formedness” if there is not. A
+computer program called a parser runs through the encoding and gives
+an error message if there are errors or inconsistencies in the
+markup, e.g. if elements are not opened and closed correctly, or used
+in the wrong place, or if elements overlap. If the elements in a
+document are correctly opened and closed, and non-overlapping, the
+document is called **well-formed**. A parser can determine
+“well-formedness” without recoursing to a schema.
+If, in addition, the content types of elements, the nesting of
+elements and the use of attributes are all done according to the
+specification of the schema, then the document is not only well-formed,
+but also **valid**.
 
 Validation only checks the markup &ndash;
-               not the content &ndash; of the document. A document can consist entirely of
-               gibberish and still be valid &ndash; as, indeed, can a document with no
-               content at all. The correctness of the contents remains
-               the responsibility of the transcriber.
+not the content &ndash; of the document. A document can consist entirely of
+gibberish and still be valid &ndash; as, indeed, can a document with no
+content at all. The correctness of the contents remains
+the responsibility of the transcriber.
 
 XML-aware software, such as
-               &lt;oXygen/&gt;, SoftQuad’s XMetaL or XMLSpy, generally comes with a built-in
-               validator (see [app. C](/handbook/v3/HB3_C_editors) for different XML editors). 
-               Separate validator programs are also available.
+&lt;oXygen/&gt;, SoftQuad’s XMetaL or XMLSpy, generally comes with a built-in
+validator (see [app. C](/handbook/v3/HB3_C_editors) for different XML editors). 
+Separate validator programs are also available.
 
 ## 2.7 Putting the pieces together [#sec2.7]
 
 The first line of our XML document
-               is the XML declaration, which tells any processing software that the
-               document is in XML:
+is the XML declaration, which tells any processing software that the
+document is in XML:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 ```
 
 
 The `@version{:sh}` attribute is required and the
-     standard version is currently `"1.0"{:js}`, but it is possible that there will be further
-     versions in the future. Two more attributes are optional: `@encoding{:sh}`, which specifies
-     which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
-     is assumed by all the standard browsers), and `@standalone{:sh}`, the possible values for
-     which are `"yes"{:js}` and `"no"{:js}` to specify if the document makes use of an external
-     schema. XML documents do not in fact require a schema, provided they are “well-formed”
-     (see below), but in most cases it is adventageous to employ a schema. In cases where there is
-     no schema the value of the `@standalone{:sh}` attribute should be `"yes"{:js}`. If the
-     attribute is omitted, on the other hand, the default value `"no"{:js}` is assumed.
+standard version is currently `"1.0"{:js}`, but it is possible that there will be further
+versions in the future. Two more attributes are optional: `@encoding{:sh}`, which specifies
+which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
+is assumed by all the standard browsers), and `@standalone{:sh}`, the possible values for
+which are `"yes"{:js}` and `"no"{:js}` to specify if the document makes use of an external
+schema. XML documents do not in fact require a schema, provided they are “well-formed”
+(see below), but in most cases it is adventageous to employ a schema. In cases where there is
+no schema the value of the `@standalone{:sh}` attribute should be `"yes"{:js}`. If the
+attribute is omitted, on the other hand, the default value `"no"{:js}` is assumed.
 
 The document’s second line, following the XML declaration, is the reference to the schema used.
-               In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 
+In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 
 As of v. 3.0 of the handbook we recommend to use the RELAX NG schema, which is more flexible, yet at the same time somewhat stricter than a DTD. 
 The main difference, however, is that the (older) DTD schema cannot handle multi-level transcriptions using the Menotic elements
-               `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}` (see also [app. D](/handbook/v3/HB3_D_schemas)).
+<E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> (see also [app. D](/handbook/v3/HB3_D_schemas)).
 
 The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
-      Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
-      The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
-      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](/handbook/v3/HB3_D_schemas#D.1.1).
-      An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
+Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
+The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
+“http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](/handbook/v3/HB3_D_schemas#D.1.1).
+An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
 ```xml
 <?xml-model href="http://www.menota.org/menotaP5.rng"?>
 ```
 
 
 Some XML editors additionally have their own way of referencing external schemas, but the
-      neutral code given above should work in any event. Here is an example of a editor specific 
-      reference to the same schema (in this case &lt;oXygen/&gt;):
+neutral code given above should work in any event. Here is an example of a editor specific 
+reference to the same schema (in this case &lt;oXygen/&gt;):
 ```xml
 <?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?>
 ```
 
 
 Following the schema, the entities used in the document are referenced.
-    Entities can either be defined manually or provided by means of external entity lists, for instance as a system entity (see [ch. 2.5](#sec2.5).)
-    After that &ndash; finally &ndash; the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
-            
+Entities can either be defined manually or provided by means of external entity lists, for instance as a system entity (see [ch. 2.5](#sec2.5).)
+After that &ndash; finally &ndash; the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
+
 
 A structured XML document contains different kinds of components. We have already
-     learned about <em>elements</em>, containing <em>text</em>, and thus
-     the actual contents. We have also seen that elements can have one or more <em>attributes</em> with their various <em>values</em>. Finally, XML documents may
-     also contain <em>comments</em>. Comments begin with “&lt;!--” and end with
-      “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
-     as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
-     a comment is considered as not actually part of the document &ndash; it is “commented out”
-     and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
-     to make a note to him or herself or others without it being processed.
+learned about <em>elements</em>, containing <em>text</em>, and thus
+the actual contents. We have also seen that elements can have one or more <em>attributes</em> with their various <em>values</em>. Finally, XML documents may
+also contain <em>comments</em>. Comments begin with “&lt;!--” and end with
+“--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
+as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
+a comment is considered as not actually part of the document &ndash; it is “commented out”
+and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
+to make a note to him or herself or others without it being processed.
 
-All TEI conformant documents have as their outermost element (the so-called root element) the `<TEI>{:xml}` element. 
-      Inside of the `<TEI>{:xml}` element there must be
-      two elements, a header, tagged `<teiHeader>{:xml}` (see [ch. 14](/handbook/v3/HB3_ch14)), and the text itself, tagged `<text>{:xml}`.
-      The `<teiHeader>{:xml}` contains
-      meta-data, i.e. information about the electronic
-      document provided, and the `<text>{:xml}` contains the actual contents of the document. What
-      elements go into the `<text>{:xml}` is to a great extent determined by
-      which base and additional tag sets have been chosen in the schema.
+All TEI conformant documents have as their outermost element (the so-called root element) the <E>TEI</E> element. 
+Inside of the <E>TEI</E> element there must be
+two elements, a header, tagged <E>teiHeader</E> (see [ch. 14](/handbook/v3/HB3_ch14)), and the text itself, tagged <E>text</E>.
+The <E>teiHeader</E> contains
+meta-data, i.e. information about the electronic
+document provided, and the <E>text</E> contains the actual contents of the document. What
+elements go into the <E>text</E> is to a great extent determined by
+which base and additional tag sets have been chosen in the schema.
 
 In addition to purely structural
-      elements such as the ones used in the markup of our stanza above, 
-      the TEI also makes available a host of elements for
-      indicating features of typography and layout. Although these were
-      originally intended for use in the description of printed materials,
-      most if not all are equally applicable to manuscripts. There are also
-      tags which can be used for normalisation, grammatical information
-      etc. The other chapters in this handbook explain in detail how they
-      can be used. 
+elements such as the ones used in the markup of our stanza above, 
+the TEI also makes available a host of elements for
+indicating features of typography and layout. Although these were
+originally intended for use in the description of printed materials,
+most if not all are equally applicable to manuscripts. There are also
+tags which can be used for normalisation, grammatical information
+etc. The other chapters in this handbook explain in detail how they
+can be used. 
 
 ## 2.8 The namespace: Adding elements and attributes [#sec2.8]
 
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
-               We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
-               (and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
-               as a <em>namespace</em>, and we have consequently set up a namespace “me” for our usage 
-               (“me” being short for “Menota”).
+We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
+(and, we believe, other medieval manuscripts). According to TEI P5, any additions of this type should be defined 
+as a <em>namespace</em>, and we have consequently set up a namespace “me” for our usage 
+(“me” being short for “Menota”).
 
-Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>{:xml}` element:
+Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the <E>TEI</E> element:
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
 ...
@@ -705,103 +705,103 @@ Namespaces are specified at the very beginning of the XML code, in the case of T
 
 
 In the Menota XML files, all additional elements and attributes will be preceded by “me:”. 
-               For example, we recommend that a normalised transcription is contained in such an additional element, which we call <em>norm</em>. 
-               It appears as `<me:norm>{:xml}`, where the prefix identifies it as an element belonging to the Menota namespace. 
-               The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
-               anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
-               which are the additions by Menota.
+For example, we recommend that a normalised transcription is contained in such an additional element, which we call <em>norm</em>. 
+It appears as <E>me:norm</E>, where the prefix identifies it as an element belonging to the Menota namespace. 
+The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
+anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
+which are the additions by Menota.
 
 The following is a complete list of additional elements and attributes in _The Menota handbook_:
 
 ### 2.8.1 Elements [#sec2.8.1]
 
-`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
+<E>me:facs</E> for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
 
-`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
+<E>me:dipl</E> for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
 
-`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
+<E>me:norm</E> for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
 
-`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
+<E>me:pal</E> for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
 
-`<me:suppressed>{:xml}` for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
-                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
+<E>me:suppressed</E> for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
+encoded by the <E>del</E> element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
 
-`<me:textSpan/>{:xml}` for encoding any discontinous structures, thus avoiding a full set of elements 
-                  like `<addSpan/>{:xml}`, `<delSpan/>{:xml}`, `<suppliedSpan/>{:xml}`, `<suppressedSpan/>{:xml}`, etc. 
-                  Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
-                  cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
+<E>me:textSpan/</E> for encoding any discontinous structures, thus avoiding a full set of elements 
+like <E>addSpan/</E>, <E>delSpan/</E>, <E>suppliedSpan/</E>, <E>suppressedSpan/</E>, etc. 
+Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
+cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
-`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
+<E>me:all</E> for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
-`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
+<E>me:ass</E> for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
 ### 2.8.2 Attributes [#sec2.8.2]
 
 `@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
-                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
+This is an attribute to the <E>w</E> element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
 
-`@me:type{:sh}` for classification purposes. This is an attribute to the `<ex>{:xml}` and `<am>{:xml}` elements, 
-                  cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
+`@me:type{:sh}` for classification purposes. This is an attribute to the <E>ex</E> and <E>am</E> elements, 
+cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
 
 `@me:key{:sh}` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](/handbook/v3/HB3_ch15#sec15.2.2).
+in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](/handbook/v3/HB3_ch15#sec15.2.2).
 
 `@me:ref{:sh}` for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
+in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
 
 `@me:level{:sh}` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
-                  This is an attribute to the `<normalization>{:xml}` element used in the header, 
-                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
+This is an attribute to the <E>normalization</E> element used in the header, 
+cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:lemmatized{:sh}` for identifying those texts which have been lemmatised. This is an attribute to the 
-                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
+<E>interpretation</E> element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:morphAnalyzed{:sh}` for identifying those texts which have been morphologically analysed, 
-                  i.e. given grammatical form. This is another attribute to the `<interpretation>{:xml}` element used in the header,  
-                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
+i.e. given grammatical form. This is another attribute to the <E>interpretation</E> element used in the header,  
+cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
-`@me:category{:sh}` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>{:xml}` element 
-                  used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
+`@me:category{:sh}` for identifying the type of a text span. This is an attribute to the <E>me:textSpan/</E> element 
+used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 ## 2.9 Displaying the text [#sec2.9]
 
 We have mentioned several times the possibility of displaying XML documents in standard web
-     browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
-     elements describe, ideally at least, the semantic structure of the text, rather than its
-     appearance (although there is obviously a degree of overlap). Web browsers have built-in
-     stylesheets for displaying HTML and know that in an HTML document anything tagged `<i>{:xml}` is
-     to be displayed in italic. XML
-     markup is semantic (and the elements in principle user-defined), and in order for a browser to
-     display an XML document, it needs to know what formatting to apply to what elements. It needs
-     to be told, for example, that things within `<title>{:xml}` tags should be displayed in italic.
-     A stylesheet does precisely that.
+browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
+elements describe, ideally at least, the semantic structure of the text, rather than its
+appearance (although there is obviously a degree of overlap). Web browsers have built-in
+stylesheets for displaying HTML and know that in an HTML document anything tagged <E>i</E> is
+to be displayed in italic. XML
+markup is semantic (and the elements in principle user-defined), and in order for a browser to
+display an XML document, it needs to know what formatting to apply to what elements. It needs
+to be told, for example, that things within <E>title</E> tags should be displayed in italic.
+A stylesheet does precisely that.
 
 There are essentially two options, Cascading Stylesheets (CSS) and Extensible Stylesheet Language
-     Transformations (XSLT). CSS is a simple, non-XML syntax used to describe the appearance of any
-     element in a document and widely in combination with HTML. XSLT, on the other hand, is itself
-     an XML application which specifies rules by which the XML document is transformed into another
-     document. The output can be in different formats, among others another XML document, but for
-     displaying purposes its most obvious use is to tranform the existing XML document into
-     something more browser-friendly such as HTML (or XHTML). Doing that, the original document
-     retains its complexity, while for viewing purposes it is changed into something browsers can
-     deal with. This transformation can be done by the browser when the XML document is called up
-     by the user; by a web server applying the transformations before serving the document; or by
-     the creator of the document, who may not wish to make it available in its orginal state.
+Transformations (XSLT). CSS is a simple, non-XML syntax used to describe the appearance of any
+element in a document and widely in combination with HTML. XSLT, on the other hand, is itself
+an XML application which specifies rules by which the XML document is transformed into another
+document. The output can be in different formats, among others another XML document, but for
+displaying purposes its most obvious use is to tranform the existing XML document into
+something more browser-friendly such as HTML (or XHTML). Doing that, the original document
+retains its complexity, while for viewing purposes it is changed into something browsers can
+deal with. This transformation can be done by the browser when the XML document is called up
+by the user; by a web server applying the transformations before serving the document; or by
+the creator of the document, who may not wish to make it available in its orginal state.
 
 A stylesheet can be associated to an XML document in several ways. 
-   Most standard XML editors offer for example functions to set up personalised transformation scenarios, which 
-   apply a selected stylesheet to any given XML input and open the results in a Web browser.
-   Easier to use might be an XSLT stylesheet processing instruction (also called “stylesheet link”), 
-   which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
-   The `@href{:sh}` attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
-   is supposed to be associated, and 
-   depending on the stylesheet format used, the `@type{:sh}` attribute must be 
-   set to "text/css" or "text/xsl". There are other
-   (pseudo-) attributes, such as `@media{:sh}`, but they need not concern
-   us here (For instructions on how to apply an XSLT stylesheet see also [app. F](/handbook/v3/HB3_F_xslt)).
-   The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
-   from the web with the XML file in question:
-   
+Most standard XML editors offer for example functions to set up personalised transformation scenarios, which 
+apply a selected stylesheet to any given XML input and open the results in a Web browser.
+Easier to use might be an XSLT stylesheet processing instruction (also called “stylesheet link”), 
+which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
+The `@href{:sh}` attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
+is supposed to be associated, and 
+depending on the stylesheet format used, the `@type{:sh}` attribute must be 
+set to "text/css" or "text/xsl". There are other
+(pseudo-) attributes, such as `@media{:sh}`, but they need not concern
+us here (For instructions on how to apply an XSLT stylesheet see also [app. F](/handbook/v3/HB3_F_xslt)).
+The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
+from the web with the XML file in question:
+
 ```xml
 <?xml-stylesheet href="poem.css" type="text/css"?>
 ```
@@ -844,10 +844,10 @@ name {font-style: italic}
 
 
 Displayed by an XML-aware browser,
-   such as [Firefox](https://www.mozilla.org/en-US/firefox/) (Windows, Mac, Linux), 
-   [Google Chrome](https://www.google.com/chrome/) (Windows, Mac, Linux), 
-   [Safari](https://www.apple.com/safari/) (Mac), 
-   the two first stanzas of _Þrymskviða_ will be displayed as in Fig. 2.1.
+such as [Firefox](https://www.mozilla.org/en-US/firefox/) (Windows, Mac, Linux), 
+[Google Chrome](https://www.google.com/chrome/) (Windows, Mac, Linux), 
+[Safari](https://www.apple.com/safari/) (Mac), 
+the two first stanzas of _Þrymskviða_ will be displayed as in Fig. 2.1.
 
 
 
@@ -867,7 +867,7 @@ to be displayed, in terms of font, colour etc., or whether it is to
 be displayed at all (one might not, for example, wish to display some
 of the administrative information contained in the TEI header). CSS will also allow
 you to insert text before and/or after an element (using the
-   **before** and **after** pseudo-element selectors). But that is
+**before** and **after** pseudo-element selectors). But that is
 about it. With XSLT, on the other hand, one can, for example,
 re-arrange the order of the elements or display the value of an
 element’s attribute instead of its actual content. 
@@ -876,10 +876,10 @@ For the actual styling of the (re-arranged) content, XSLT ultimately uses the CS
 with XSLT one has all the options of plain CSS in addition to powerful transformations.
 
 The above display of an Eddic stanza is the preferred one in many Nordic editions; each line
-     occupies a line in the edition, whether it is a short line (as in <em>fornyrðislag</em>) or a full line (as in <em>ljóðaháttr</em>). In Continental
-     and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
-     short lines making up a long line is printed as a single line in the edition, though with a
-     sizeable space between the two lines, thus:
+occupies a line in the edition, whether it is a short line (as in <em>fornyrðislag</em>) or a full line (as in <em>ljóðaháttr</em>). In Continental
+and British/American editions such as the classic edition by Neckel/Kuhn (1983), a pair of
+short lines making up a long line is printed as a single line in the edition, though with a
+sizeable space between the two lines, thus:
 <Quote>
  Reiðr var þá Vingþórr&ensp;&ensp;&ensp;er hann vaknaði<br/>
  ok síns hamars&ensp;&ensp;&ensp;um saknaði<br/>
@@ -889,17 +889,17 @@ The above display of an Eddic stanza is the preferred one in many Nordic edition
 </Quote>
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth
-     line (in <em>ljóðaháttr</em>) or each fifth line (in <em>fornyrðislag</em>) are numbered. In an eight-line display such as the one in the screenshot
-     above, the fitfth line of the first stanza is the one beginning with “skegg”. The same
-     applies to the four-line display above, since each short line is counted, irrespective of
-     whether it is displayed in conjunction with another short line or not. To achieve a
-      “Neckel/Kuhn display” two operations are necessary, (a) every second short line in the
-     encoded text is displayed on the same line as the previous short line, and with white space in
-     between, and (b) lines are counted and a small number is positioned in the margin in front of
-     every fifth line. This adds an element of transformation to the styling that can be performed
-     in CSS using the :nth-child() selector. In XSLT this is quite simple, even if the instructions
-     may look difficult. An XSLT stylehseet transforming the text as specified in (a) and (b) would
-     look like this:
+line (in <em>ljóðaháttr</em>) or each fifth line (in <em>fornyrðislag</em>) are numbered. In an eight-line display such as the one in the screenshot
+above, the fitfth line of the first stanza is the one beginning with “skegg”. The same
+applies to the four-line display above, since each short line is counted, irrespective of
+whether it is displayed in conjunction with another short line or not. To achieve a
+“Neckel/Kuhn display” two operations are necessary, (a) every second short line in the
+encoded text is displayed on the same line as the previous short line, and with white space in
+between, and (b) lines are counted and a small number is positioned in the margin in front of
+every fifth line. This adds an element of transformation to the styling that can be performed
+in CSS using the :nth-child() selector. In XSLT this is quite simple, even if the instructions
+may look difficult. An XSLT stylehseet transforming the text as specified in (a) and (b) would
+look like this:
 ```xml
 <xsl:template match="lg">
 <table class="stanza">
@@ -947,14 +947,14 @@ Displayed in an XML-aware browser, the stanzas now look like Fig. 2.2 (still als
 <Caption title="Ill. 2.2">. Alternative screen display of the first two stanzas of _Þrymskviða_.</Caption>
 
 The display is different, but the XML encoding is not changed at all. It is only a matter of transforming the encoded text using XSLT 
-   and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.
-   And the same XML file can be transformed again and again into dozens of different formats.
+and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.
+And the same XML file can be transformed again and again into dozens of different formats.
 
 ## 2.10 Menotic stylesheets [#sec2.10]
 
 Menota makes available XSLT stylesheets that have been optimised for displaying digital transcriptions that were produced according to the guidelines of this handbook. 
-   The stylesheets as well as an introduction to how to apply them are found in [app. F](/handbook/v3/HB3_F_xslt). 
-   The latest version of the XSLT (for the present version of the handbook) now allows for sophisticated display of many manuscript-specific features on the facsimile level, 
-   such as multi-part rubrics and scaled initials. Please bear in mind, however, that preference was given to incorporate features that were deemed essential and 
-   less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
-   accordance with the handbook’s recommendations.
+The stylesheets as well as an introduction to how to apply them are found in [app. F](/handbook/v3/HB3_F_xslt). 
+The latest version of the XSLT (for the present version of the handbook) now allows for sophisticated display of many manuscript-specific features on the facsimile level, 
+such as multi-part rubrics and scaled initials. Please bear in mind, however, that preference was given to incorporate features that were deemed essential and 
+less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
+accordance with the handbook’s recommendations.

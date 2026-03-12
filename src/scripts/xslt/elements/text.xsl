@@ -25,6 +25,7 @@
     </xsl:function>
     <xsl:template match="text()">
         <xsl:value-of select=". 
+                => replace('\n +', '&#x0a;')
                 => replace('([\{\|\}])', '\\$1')
                 => replace('&lt;', '&amp;lt;')
                 => replace('&gt;', '&amp;gt;')
