@@ -13,7 +13,6 @@ export async function E({ children }: { children: string }) {
             transformerRemoveLineBreak()
         ]
     })).replace(/<span class="line">/, '<span>'); // Yikes, dirty hack!
-    console.log(html);
     return <span 
         suppressHydrationWarning 
         className="xml-tag inline-flex" 
