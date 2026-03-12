@@ -9,6 +9,7 @@
         <xsl:apply-templates/>
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
+                => replace('^(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
                 => replace('^(menotaP5\.xml$)', '/$1') 
