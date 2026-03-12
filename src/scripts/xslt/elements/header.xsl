@@ -16,6 +16,7 @@
         <xsl:text expand-text="true">title: "{tei:title 
                 => replace('\s+', ' ')
                 => replace('^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2')
+                => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook preface .*$', 'Preface')
                 => replace('^Menota handbook (&#x2013; )?\(v\. 3\.0\): ', '')
             }"&#x0a;</xsl:text>
@@ -80,6 +81,7 @@
                     => replace('^Friederike Richter(( ?:)? )?', '')
                     => replace('^Marco Bianchi: ', '')
                     => replace('\\', '\\\\')
+                    => replace('&#x2013;', '\\u2013')
                     => replace('&quot;', '\\&quot;')
                 }"</xsl:text>
             <xsl:text>&#x0a;</xsl:text>
