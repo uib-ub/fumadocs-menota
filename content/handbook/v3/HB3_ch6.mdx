@@ -106,16 +106,16 @@ Abbreviations are a common feature of medieval orthography. In the medieval Nord
 The encoding of abbreviations is discussed in the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), particularly 
                [ch. 11.3.1.2.](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAB).
                 TEI P5 offers on one level the
-                  `<abbr>{:xml}` element for the encoding of any abbreviations and the `<expan>{:xml}` element
-               for the expansion of these abbreviations, and on the next level, the `<am>{:xml}` element for 
-               the actual abbreviation markers (such as the superscript bar for a nasal) and the `<ex>{:xml}` element 
+                  <E>abbr</E> element for the encoding of any abbreviations and the <E>expan</E> element
+               for the expansion of these abbreviations, and on the next level, the <E>am</E> element for 
+               the actual abbreviation markers (such as the superscript bar for a nasal) and the <E>ex</E> element 
                for the expansion of these markers (in this case “n” or “m”).
-               While the `<abbr>{:xml}` and `<expan>{:xml}` elements are fully compatible with the schemas used
-               in this handbook, we suggest that it is sufficient to only use the elements `<am>{:xml}` and `<ex>{:xml}` 
+               While the <E>abbr</E> and <E>expan</E> elements are fully compatible with the schemas used
+               in this handbook, we suggest that it is sufficient to only use the elements <E>am</E> and <E>ex</E> 
                for the encoding and expansion of abbreviations.
 
-The `<am>{:xml}` element may have a `@me:type{:sh}` attribute specifying what kind
-               of abbreviation it is. The same applies to the `<ex>{:xml}` element. We have not given
+The <E>am</E> element may have a `@me:type{:sh}` attribute specifying what kind
+               of abbreviation it is. The same applies to the <E>ex</E> element. We have not given
                examples of these attributes in the present chapter, but users may refer to the
                typology in [ch. 6.2](#sec6.2) below if they would like to make a
                more detailed encoding.
@@ -123,16 +123,16 @@ The `<am>{:xml}` element may have a `@me:type{:sh}` attribute specifying what ki
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
-| `<am>{:xml}` |  | Contains the abbreviation sign used in the manuscript. |
+| <E>am</E> |  | Contains the abbreviation sign used in the manuscript. |
 | <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of abbreviation. |
-| `<ex>{:xml}` |  | Contains the expansion inserted by the editor, replacing the abbreviation marker. |
+| <E>ex</E> |  | Contains the expansion inserted by the editor, replacing the abbreviation marker. |
 | <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of expansion. |
 </div>
 
 
-In a multi-level transcription, the `<am>{:xml}` element typically belongs to the
-               facsimile level (`<me:facs>{:xml}`), while the `<ex>{:xml}` element belongs to the
-               diplomatic level (`<me:dipl>{:xml}`). The normalised level (`<me:norm>{:xml}`)
+In a multi-level transcription, the <E>am</E> element typically belongs to the
+               facsimile level (<E>me:facs</E>), while the <E>ex</E> element belongs to the
+               diplomatic level (<E>me:dipl</E>). The normalised level (<E>me:norm</E>)
                usually has none, e.g.
 ```xml
 <w>
@@ -384,8 +384,8 @@ Dots were often used as abbreviation marks, typically for suspensions, e.g.
                      Latin](http://www.unicode.org/charts/PDF/U0000.pdf). Thus, no entity name is called for. The dots sometimes appear on
                   both sides of the abbreviated word, as in “.ſ.”. Both dots serve to indiate
                   an abbreviation and consequently both are left out of the transcription when the
-                  abbreviation is expanded. The two `<am>{:xml}` elements are thus replaced by a single
-                  `<ex>{:xml}` element, as shown below.
+                  abbreviation is expanded. The two <E>am</E> elements are thus replaced by a single
+                  <E>ex</E> element, as shown below.
 
 <div className="table-abbr">
 <table>
@@ -760,21 +760,21 @@ Interlinear (superscript) characters are used in various ways, not always as
 **(a) as abbreviation**
 
 This type is discussed in [ch. 6.4.7](#sec6.4.7) above. Here, we
-                  recommend the usage of the `<am>{:xml}` element and entities such as
+                  recommend the usage of the <E>am</E> element and entities such as
                   `&asup;{:xml}` and the like.
 
 **(b) as addition**
 
 When superscript characters are used for adding characters which are missing on
                   the base line we recommend that they are encoded by use of the element
-                     `<add>{:xml}` and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1)). One might argue that if the
+                     <E>add</E> and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1)). One might argue that if the
                   scribe has added the superscript character as part of the writing process, it
                   should not be regarded as an addition, but rather as an ordinary character which
                   just happened to be placed over the line. However, it is difficult to make a
                   distinction between characters written above the line as part of the writing
                   process and characters that were added later, maybe shortly afterwards, whether by
                   the same scribe or by another scribe. As a general rule we therefore recommend
-                  encoding supralinear characters by the `<add>{:xml}` element and the attribute
+                  encoding supralinear characters by the <E>add</E> element and the attribute
                      `@place="supralinear"{:sh}`. There is no need for an entity of the type
                   `&asup;{:xml}` since the location of the character is indicated by the
                   element.
@@ -808,7 +808,7 @@ Inflected forms of Roman numbers are sometimes specified by interlinear
 Especially at the end of a line one or more characters may be placed above the
                   last word to save place and complete the line. In these cases, we suggest that
                   they are interpreted and encoded as part of the writing process, thus not using
-                  the `<add>{:xml}` element, but by superscript entities, such as `&ssup;{:xml}` for a
+                  the <E>add</E> element, but by superscript entities, such as `&ssup;{:xml}` for a
                   superscript “s”. 
 
 <div className="table-abbr">
@@ -827,7 +827,7 @@ From time to time one can find examples of a word that obviously is abbreviated
                   manuscript.
 
 This is what we would recommend on the facsimile level of transcription. On the
-                  diplomatic and normalised levels, we recommend using the `<supplied>{:xml}`
+                  diplomatic and normalised levels, we recommend using the <E>supplied</E>
                   element, i.e. “d&lt;supplied&gt;rottning&lt;/supplied&gt;”.
 
 ### 6.5.4 Nesting (stacking) of abbreviation marks [#sec6.5.4]
@@ -905,7 +905,7 @@ On the other hand, it should be noted that this a case where `0305` `COMBINING O
 ### 6.5.6 Sporadic ligatures with abbreviation marks [#sec6.5.6]
 
 We recommended that sporadic ligatures should not be encoded by use of separate
-                  entities but by the element `<seg>{:xml}` with the attribute
+                  entities but by the element <E>seg</E> with the attribute
                      `@type="lig"{:sh}`. A sporadic ligature is basically a joining of two
                   base line characters which together do not reflect a separate phonological value.
                   This is the case with ligatures such as “s+k” and “p+p” which in this
@@ -917,7 +917,7 @@ See [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3) above for further examples.
 <div className="table-abbr">
 | Manuscript form | Expanded form | Encoding |
 |-----|-----|-----|
-| <Glyph></Glyph> | pp | `<seg type="lig">{:xml}`pp`</seg>{:xml}` |
+| <Glyph></Glyph> | pp | <E>seg type="lig"</E>pp<E>/seg</E> |
 </div>
 
 
@@ -1023,7 +1023,7 @@ In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
                         Unicode Standard 12.0](https://unicode.org/versions/Unicode12.0.0/) as `00DF` 
                   `LATIN SMALL LETTER SHARP S` in the range [Latin-1
                      Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend using the ISO entity `&szlig;{:xml}` also
-                  when this character is used as an abbreviation mark. The element`<am>{:xml}` will
+                  when this character is used as an abbreviation mark. The element<E>am</E> will
                   indicate clearly that it is an abbreviation mark, not an ordinary character. See
                   the discussion on the full stop in [ch. 6.3.8](#sec6.3.8)
                   above.

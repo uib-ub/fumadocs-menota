@@ -234,16 +234,16 @@ In XML pairs of tags are used to mark off such units, a start tag and an end tag
      in between being referred to as the element’s content. Corresponding start and end tags have
      the same “name” that ist placed within angle brackets, with a solidus to indicate an end
      tag. Chapters in a book, for example, could be understood as separate divisions and accordingly
-     demarcated by placing a `<div>{:xml}` tag (short for division) at the beginning of each one and
-     a corresponding `</div>{:xml}` tag at the end. Within each division there would be any number of
-     paragraphs, usually tagged with `<p>{:xml}`. Since XML is structured hierarchically, elements
+     demarcated by placing a <E>div</E> tag (short for division) at the beginning of each one and
+     a corresponding <E>/div</E> tag at the end. Within each division there would be any number of
+     paragraphs, usually tagged with <E>p</E>. Since XML is structured hierarchically, elements
      can contain each other, but only in their intirety. Overlapping structures of elements are not
      allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
       [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
 
 The way two elements relate to each other hierarchically is determined by the
 <em>schema</em> used, which in our case would stipulate
-that a `<chapter>{:xml}` must contain one or more `<p>{:xml}`
+that a <E>chapter</E> must contain one or more <E>p</E>
 elements.  
 In any given schema, 
 there is a declaration for each element enumerating what other elements it may or must
@@ -315,24 +315,24 @@ way:
 ```
 
 
-Note that in this example, standard TEI elements are used: `<text>{:xml}`, `<body>{:xml}`, 
-      `<lg>{:xml}` (short for “line group”, marks a stanza), 
-      and `<l>{:xml}` (the element that marks an individual line). For more details on encoding standards and 
+Note that in this example, standard TEI elements are used: <E>text</E>, <E>body</E>, 
+      <E>lg</E> (short for “line group”, marks a stanza), 
+      and <E>l</E> (the element that marks an individual line). For more details on encoding standards and 
       TEI see [ch. 2.8](#sec2.8) below.)
 
 If we abstract from this and attempt to describe the structure of 
    poems in general we could say that a poem consists of 
-   one or more stanzas (`<lg>{:xml}`) each of which is made up of one or more lines (`<l>{:xml}`). 
+   one or more stanzas (<E>lg</E>) each of which is made up of one or more lines (<E>l</E>). 
    A poem will also normally have a
 title and be attributable to an author (even if that author &ndash; as in 
 the case of _Þrymskviða_ &ndash; is the 
    highly prolific “Anon.”). The name of the author will obviously not
    always appear with the text of the poem, however, for example in a series or
    collection, where there are several poems by the same author. 
-Therefore, we might want to allow our `<body>{:xml}` element also to contain,
-   let us say, `<title>{:xml}` and `<author>{:xml}`.  Additional 
+Therefore, we might want to allow our <E>body</E> element also to contain,
+   let us say, <E>title</E> and <E>author</E>.  Additional 
 elements would further be required if more than one poem were to be transcribed but still marked as separate works, for example
-  in a `<collection>{:xml}` of poems. If one envisaged this collection as an anthology,
+  in a <E>collection</E> of poems. If one envisaged this collection as an anthology,
 one would probably wish to divide it into sections, in which poems by
 a particular poet were grouped together; in the case of Eddic poems, one might make a 
 division between mythological poems and heroic lays. Each of these 
@@ -346,7 +346,7 @@ by a variety of elements. Such elements, often referred to as phrase-level eleme
 Besides being able to render tagged contents in any given way, the principal use of elements and markup is to enable searches: Anything that is marked-up
 can be searched for later. One might, for
 example, wish to markup all names in the poem above. The personal name “Vingþórr” in line one of our poem could then
-   be tagged with an element we call `<name>{:xml}`:
+   be tagged with an element we call <E>name</E>:
 ```xml
 <l>Reiðr var þá <name>Vingþórr</name></l>
 ```
@@ -362,12 +362,12 @@ information about a particular element instance can be given as a so-called
  attribute. Looking at the stanzas just cited, one might, for example,
 want to add attributes to individual elements, using convenient typologies to indicate number, genre, form,
 metre or rhyme-scheme.
-The elements `<lg>{:xml}` and `<l>{:xml}`, denoting stanzas and lines, could for instance be described in more detail by
+The elements <E>lg</E> and <E>l</E>, denoting stanzas and lines, could for instance be described in more detail by
    adding an attribute for the number: `@n{:sh}`. 
    One ore more attributes are added to the opening tag of elements in such a way that they follow
    the element name, separated by a white space. The value of an attribute
    is given in double quotations to the right of an equals sign.
-   Adding a `@n{:sh}` attribute (with the value `"1"{:js}`) to the `<l>{:xml}` element of the first line would  
+   Adding a `@n{:sh}` attribute (with the value `"1"{:js}`) to the <E>l</E> element of the first line would  
       be encoded like this:
 ```xml
 <l n="1">
@@ -508,8 +508,8 @@ document using a system entity:
 ```
 
 
-In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
-     This requires an extensive `<charDecl>{:xml}` section in the header of the document defining each “gaiji” character.
+In recent years, the TEI community has moved towards the use of the <E>g</E> element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
+     This requires an extensive <E>charDecl</E> section in the header of the document defining each “gaiji” character.
 
 As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
@@ -634,7 +634,7 @@ The document’s second line, following the XML declaration, is the reference to
                In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 
 As of v. 3.0 of the handbook we recommend to use the RELAX NG schema, which is more flexible, yet at the same time somewhat stricter than a DTD. 
 The main difference, however, is that the (older) DTD schema cannot handle multi-level transcriptions using the Menotic elements
-               `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}` (see also [app. D](/handbook/v3/HB3_D_schemas)).
+               <E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> (see also [app. D](/handbook/v3/HB3_D_schemas)).
 
 The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
       Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
@@ -669,13 +669,13 @@ A structured XML document contains different kinds of components. We have alread
      and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
      to make a note to him or herself or others without it being processed.
 
-All TEI conformant documents have as their outermost element (the so-called root element) the `<TEI>{:xml}` element. 
-      Inside of the `<TEI>{:xml}` element there must be
-      two elements, a header, tagged `<teiHeader>{:xml}` (see [ch. 14](/handbook/v3/HB3_ch14)), and the text itself, tagged `<text>{:xml}`.
-      The `<teiHeader>{:xml}` contains
+All TEI conformant documents have as their outermost element (the so-called root element) the <E>TEI</E> element. 
+      Inside of the <E>TEI</E> element there must be
+      two elements, a header, tagged <E>teiHeader</E> (see [ch. 14](/handbook/v3/HB3_ch14)), and the text itself, tagged <E>text</E>.
+      The <E>teiHeader</E> contains
       meta-data, i.e. information about the electronic
-      document provided, and the `<text>{:xml}` contains the actual contents of the document. What
-      elements go into the `<text>{:xml}` is to a great extent determined by
+      document provided, and the <E>text</E> contains the actual contents of the document. What
+      elements go into the <E>text</E> is to a great extent determined by
       which base and additional tag sets have been chosen in the schema.
 
 In addition to purely structural
@@ -696,7 +696,7 @@ In this handbook, we are following the recommendations in the TEI Guidelines P5 
                as a <em>namespace</em>, and we have consequently set up a namespace “me” for our usage 
                (“me” being short for “Menota”).
 
-Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the `<TEI>{:xml}` element:
+Namespaces are specified at the very beginning of the XML code, in the case of TEI-conformat XML as an attribute to the <E>TEI</E> element:
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
 ...
@@ -706,7 +706,7 @@ Namespaces are specified at the very beginning of the XML code, in the case of T
 
 In the Menota XML files, all additional elements and attributes will be preceded by “me:”. 
                For example, we recommend that a normalised transcription is contained in such an additional element, which we call <em>norm</em>. 
-               It appears as `<me:norm>{:xml}`, where the prefix identifies it as an element belonging to the Menota namespace. 
+               It appears as <E>me:norm</E>, where the prefix identifies it as an element belonging to the Menota namespace. 
                The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; 
                anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and 
                which are the additions by Menota.
@@ -715,32 +715,32 @@ The following is a complete list of additional elements and attributes in _The M
 
 ### 2.8.1 Elements [#sec2.8.1]
 
-`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
+<E>me:facs</E> for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
 
-`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
+<E>me:dipl</E> for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
 
-`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
+<E>me:norm</E> for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
 
-`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
+<E>me:pal</E> for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
 
-`<me:suppressed>{:xml}` for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
-                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
+<E>me:suppressed</E> for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
+                  encoded by the <E>del</E> element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
 
-`<me:textSpan/>{:xml}` for encoding any discontinous structures, thus avoiding a full set of elements 
-                  like `<addSpan/>{:xml}`, `<delSpan/>{:xml}`, `<suppliedSpan/>{:xml}`, `<suppressedSpan/>{:xml}`, etc. 
+<E>me:textSpan/</E> for encoding any discontinous structures, thus avoiding a full set of elements 
+                  like <E>addSpan/</E>, <E>delSpan/</E>, <E>suppliedSpan/</E>, <E>suppressedSpan/</E>, etc. 
                   Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
                   cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
-`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
+<E>me:all</E> for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
-`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
+<E>me:ass</E> for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
 ### 2.8.2 Attributes [#sec2.8.2]
 
 `@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
-                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
+                  This is an attribute to the <E>w</E> element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
 
-`@me:type{:sh}` for classification purposes. This is an attribute to the `<ex>{:xml}` and `<am>{:xml}` elements, 
+`@me:type{:sh}` for classification purposes. This is an attribute to the <E>ex</E> and <E>am</E> elements, 
                   cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
 
 `@me:key{:sh}` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
@@ -750,17 +750,17 @@ The following is a complete list of additional elements and attributes in _The M
                   in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
 
 `@me:level{:sh}` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
-                  This is an attribute to the `<normalization>{:xml}` element used in the header, 
+                  This is an attribute to the <E>normalization</E> element used in the header, 
                   cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:lemmatized{:sh}` for identifying those texts which have been lemmatised. This is an attribute to the 
-                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
+                  <E>interpretation</E> element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:morphAnalyzed{:sh}` for identifying those texts which have been morphologically analysed, 
-                  i.e. given grammatical form. This is another attribute to the `<interpretation>{:xml}` element used in the header,  
+                  i.e. given grammatical form. This is another attribute to the <E>interpretation</E> element used in the header,  
                   cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
-`@me:category{:sh}` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>{:xml}` element 
+`@me:category{:sh}` for identifying the type of a text span. This is an attribute to the <E>me:textSpan/</E> element 
                   used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 ## 2.9 Displaying the text [#sec2.9]
@@ -769,11 +769,11 @@ We have mentioned several times the possibility of displaying XML documents in s
      browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
      elements describe, ideally at least, the semantic structure of the text, rather than its
      appearance (although there is obviously a degree of overlap). Web browsers have built-in
-     stylesheets for displaying HTML and know that in an HTML document anything tagged `<i>{:xml}` is
+     stylesheets for displaying HTML and know that in an HTML document anything tagged <E>i</E> is
      to be displayed in italic. XML
      markup is semantic (and the elements in principle user-defined), and in order for a browser to
      display an XML document, it needs to know what formatting to apply to what elements. It needs
-     to be told, for example, that things within `<title>{:xml}` tags should be displayed in italic.
+     to be told, for example, that things within <E>title</E> tags should be displayed in italic.
      A stylesheet does precisely that.
 
 There are essentially two options, Cascading Stylesheets (CSS) and Extensible Stylesheet Language

@@ -330,8 +330,8 @@ As a minimum standard, we recommend to register all instances of illumination, i
                   This section describes how to register illuminations
                   in a consecutive list covering the main informations 
 
-All illuminations should be listed within the element `<decoDesc>{:xml}` in the
-                  manuscript description section of the header (see also [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). A separate `<decoNote>{:xml}` is used for each
+All illuminations should be listed within the element <E>decoDesc</E> in the
+                  manuscript description section of the header (see also [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). A separate <E>decoNote</E> is used for each
                   illumination &ndash; including the major initials. The register should be
                   chronological, i.e. following the order of occurrence in the manuscript. 
 
@@ -367,9 +367,9 @@ A basic list registering the illuminations within the header could look like
                   
                
 
-Each `<decoNote>{:xml}`-entry starts with the indication of the folio (and if
+Each <E>decoNote</E>-entry starts with the indication of the folio (and if
                   applicable the column) of the respective illumination, which is encoded in a
-                     `<locus>{:xml}` element. Second, each `<decoNote>{:xml}` should indicate the
+                     <E>locus</E> element. Second, each <E>decoNote</E> should indicate the
                   illumination type in question, e.g. full-page illumination or opening initial.
                   These would then be supplemented with brief information on motif/ornament and
                   colours. However, the degree of detail that can be given in the description of
@@ -395,8 +395,8 @@ Initials are according to their hierarchy distinguished into two categories in t
                   manuscript which are treated differently: major and minor intials (see below). It
                   is good practice to register all major initials in the same way as other
                   illuminations in the chronological order as they appear in the manuscript (i.e. in
-                  a separate `<decoNote>{:xml}` element). Minor initials may be summarized at the
-                  end of the list in a common `<decoNote>{:xml}` element for each subtype. Each
+                  a separate <E>decoNote</E> element). Minor initials may be summarized at the
+                  end of the list in a common <E>decoNote</E> element for each subtype. Each
                   entry for an intial should, as a minimum, comprise information on the following: 
                   a) Folio/column, b) Decoration and hierarchy, c) Letter, size
                   and colour(s).
@@ -450,7 +450,7 @@ As minor initials we consider less elaborate, but highly frequent initials, that
                   will typically appear more than once on a single page. Depending on the
                   manuscript’s structure these can be paragraph and sentence initials (i.e. littera notabilior), but in some cases also chapter
                   intials. All occurrences of minor initials may be treated in groups, using 
-                  one `<decoNote>{:xml}` element for each subtype. Such summary entries are
+                  one <E>decoNote</E> element for each subtype. Such summary entries are
                   usually placed at the end of the list of initials, simply indicating the first and
                   the last folio of their respective occurrence and summarizing the average height
                   (i.e. number of indented or covered lines), skipping the indication of the
@@ -692,20 +692,20 @@ The initial form and/or decoration are incorporated into the
 
 
 A longer and somewhat more detailed description that would obscure the readability
-                  if provided in the beginning may be given later in the `<decoNote>{:xml}`
+                  if provided in the beginning may be given later in the <E>decoNote</E>
                   (see [ch. 7.2.7](#sec7.2.7)).
 
 ### 7.2.2 Other illuminations [#sec7.2.2]
 
 In the same way as for the major initials, each occurence of the other
                   illumination types, for instance a miniature, is registered in a separate
-                     `<decoNote>{:xml}` element in the header. A register entry of illuminations
+                     <E>decoNote</E> element in the header. A register entry of illuminations
                   other than initials comprises as a minimum of the following: a) Folio/column, b) Type
                   and motif/ornament, c) Caption (if applicable), d) Colours. 
 
 ### 7.2.2.1 Illumination types  [#sec7.2.2.1]
 
-When registering illuminations in `<decoNote>{:xml}`, the place where it occurs is given, followed by the
+When registering illuminations in <E>decoNote</E>, the place where it occurs is given, followed by the
                   identification of the illumination type. The different types are characterized by
                   their position and size in relation to the written text. The following table gives
                   an overview over the most frequent types of illuminations (other than initials) that we consider desirable to be
@@ -883,7 +883,7 @@ Examples applying these terms are given in the following section dealing
 The motifs and composition of the various illuminations is normally listed using
                   basic key words. As for the decoration of initials, a longer and more detailed description that would
                   obscure the readability if provided in the beginning, may be given later in
-                  the same `<decoNote>{:xml}` (see [ch. 7.2.7](#sec7.2.7)).
+                  the same <E>decoNote</E> (see [ch. 7.2.7](#sec7.2.7)).
 
 Representational motifs include both objects as well as animate beings, such as
                   humans, animals or hybrid creatures. To register these, one simply identifies what
@@ -1002,7 +1002,7 @@ Table [3](#tab3). Ill. 7.30&ndash;7.37 showing common motifs found in illuminati
 
 The very first XML example given in ch. 7.2 above already includes a brief description of the
                   motif(s). Such descriptions should be included in the prose description 
-                  of a `<decoNote>{:xml}` when applicable, and they have their natural place right after the location and
+                  of a <E>decoNote</E> when applicable, and they have their natural place right after the location and
                    illumination type: 
 ```xml
 <decoNote>
@@ -1023,7 +1023,7 @@ It is relevant to note the usage of different shades of ink and colours and (the
                structure of a text from the hierarchy of the initials and other illuminations. This is
                particularly relevant for readers who do not have access to either the manuscript or colour
                photographs thereof. In the optimal case the colours and their hues are listed
-               separately for each `<decoNote>{:xml}`. However, the colours may also be usefully be given 
+               separately for each <E>decoNote</E>. However, the colours may also be usefully be given 
                in a summary, e.g. in the case of alternating use of colours as occurs frequently
                with initials. It would be desirable to be as accurate as possible with regards to
                naming the colours with reference to the pigments and inks used (e.g. white lead,
@@ -1070,7 +1070,7 @@ Note: The colours of initials are also described as part of the encoding in the
 Illuminations, including initials, can contain captions. If present, the text of
                captions should be transcribed separately. Like other transcriptions from the
                manuscript, transcriptions of caption are treated as quotes
-               in the header and, thus, they are wrapped in `<q>{:xml}`-elements. The example
+               in the header and, thus, they are wrapped in <E>q</E>-elements. The example
                below shows how the caption found in the illumination on f. 1r of AM 345
                fol. may be transcribed.
 
@@ -1103,10 +1103,10 @@ Illuminations, including initials, can contain captions. If present, the text of
 In case the hand(s) and/or the dating of illuminations differ from the hand(s) or dating of the
                adjacent main text, this information should be included if available. A mention can
                either be made in a general statement for all illuminations or
-               given separately in the individual `<decoNote>{:xml}` elements
+               given separately in the individual <E>decoNote</E> elements
                in question. As in other places where information about involved people or dates occurs
-               in free text, these are marked-up using the elements `<name>{:xml}` and
-                  `<date>{:xml}`, respectively, with the appropriate attributes `@type{:sh}` and
+               in free text, these are marked-up using the elements <E>name</E> and
+                  <E>date</E>, respectively, with the appropriate attributes `@type{:sh}` and
                   `@when{:sh}` or `@notBefore{:sh}`/`@notAfter {:sh}`. The encoded
                information could look like this:
 ```xml
@@ -1128,7 +1128,7 @@ We consider the description of illumination techniques optional, but encourage t
 	               It will give &ndash; similar to the mention of the used 
 	               colour hues &ndash; a much better impression of the decoration to a reader without 
 	               access to the manuscript or images thereof. If the techniques vary from illumination to illumination 
-	               this fact should be indicated and described in the prose of the separate `<decoNote>{:xml}` elements.
+	               this fact should be indicated and described in the prose of the separate <E>decoNote</E> elements.
 
 Some more common illumination techniques include:
 
@@ -1244,7 +1244,7 @@ When describing motifs one may want to provide more detail than one-word
                different parts of the initial, such as the counter or the termination (see also the
                glossary provided at the end of this chapter, [ch. 7.4](#sec7.4)).
                We recommend to always provide basic information at the beginning of each
-                  `<decoNote>{:xml}`, potentially followed by more specialized details at the end
+                  <E>decoNote</E>, potentially followed by more specialized details at the end
                as shown in the following example:
 ```xml
 <decoNote>
@@ -1296,7 +1296,7 @@ This section describes how to encode initials, including sentence initials (also
 
 In the transcription, the mark-up of initials 
                   and other emphasized letters is rather standardized and confined to a couple of basic categories. 
-                  We recommend to use the element `<c>{:xml}`, which can take several attributes (see further below).
+                  We recommend to use the element <E>c</E>, which can take several attributes (see further below).
                   The more detailed description of initials (usually in prose) should be given in the document header as described above
                   (see [ ch. 7.2](#sec7.2)). 
 
@@ -1341,12 +1341,12 @@ If an initial is missing &ndash; because it was never filled in, because it
       has been erased from the manuscript or because it was cut out &ndash; the missing letter is
                   encoded in accordance with the general rules for transcription. The same 
                   applies to initials that were added later
-                  (see [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) for the encoding of the `<space/>{:xml}` element, and
+                  (see [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) for the encoding of the <E>space/</E> element, and
       [ch. 9](/handbook/v3/HB3_ch9#sec9) for the encoding of scribal or editorial intervention). 
-      The mark-up of the missing or added initial is wrapped in the element `<c>{:xml}`
+      The mark-up of the missing or added initial is wrapped in the element <E>c</E>
       as normal.
-      The following example shows how a missing initial “N” is encoded using `<space/>{:xml}`. 
-      The attribute `@quantity{:sh}` is used on `<space/>{:xml}` to indicate the number of characters omitted,
+      The following example shows how a missing initial “N” is encoded using <E>space/</E>. 
+      The attribute `@quantity{:sh}` is used on <E>space/</E> to indicate the number of characters omitted,
                   which is specified by the value `"chars"{:js}` of the attribute `@unit{:sh}`. 
       
       
@@ -1385,7 +1385,7 @@ In most manuscripts, structurally different types of initials and highlighted ch
 
 The attribute `@type{:sh}` (with the value `"initital"{:js}`) is used to 
                   distinguish the character from other characters that are marked-up by means of
-                  the `<c>{:xml}`-element, such as hyphens (see [ch.
+                  the <E>c</E>-element, such as hyphens (see [ch.
                      5.5](/handbook/v3/HB3_ch5#sec5.5)). The more specific attribute `@subtype{:sh}` will then
          indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
          If it is not possible to distinguish between more than major and minor initials, however, 
@@ -1410,7 +1410,7 @@ The mark-up of initial subtypes is supposed to represent the hierarchical divisi
 If an initial is omitted or missing, this is indicated by the attribute `@type{:sh}` 
          with the value `"noInitial"{:js}`. Even though
          this might seem somewhat redundant if other mark-up such 
-         as `<space/>{:xml}` or `<gap/>{:xml}` is present, it has the advantage that, for instance
+         as <E>space/</E> or <E>gap/</E> is present, it has the advantage that, for instance
          the subtype and the intended size of the missing initial may be encoded 
          and thus searched for.
 
@@ -1485,7 +1485,7 @@ The size of the initial is often connected to its type and function. In the tran
                   discussed below.
 
 In XML, we recommend to indicate the size of initials as part of the `@style{:sh}` attribute on the
-                  element `<c>{:xml}`. In order to document both its size and
+                  element <E>c</E>. In order to document both its size and
                   relative position in the written area, the value of the initial height, i.e. the number of indented lines, 
    is marked-up as a combination of two values. These two values denote separately how many
                   lines the initial height extends upwards including the line on which the character has its
@@ -1626,10 +1626,10 @@ If a clear hierarchy of colours is impossible to establish, for instance if a bi
                   initial is drawn with two colours that are used on equal terms, that relationship
                   can be encoded by means of using an equals sign instead of an underscore in
                   between the two colours. However,
-                  we recommend limiting the analysis of colours in the context of `<c>{:xml}` to a
+                  we recommend limiting the analysis of colours in the context of <E>c</E> to a
                   general level. More specific and sophisticated descriptions of initials
                   and the colours used should instead be placed in the manuscript description part of the
-                  header (i.e. `<decoDesc>{:xml}` inside `<msDesc>{:xml}`, see [ch. 7.2.1](#sec7.2.1)
+                  header (i.e. <E>decoDesc</E> inside <E>msDesc</E>, see [ch. 7.2.1](#sec7.2.1)
             above and further [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). 
 
 If the encoder should be unable to determine the colour(s) employed for executing initials,
@@ -1693,7 +1693,7 @@ In case the encoder wishes to additionally distinguish between different degrees
      can be referred to as `"penFlourish-1"{:js}` and `"penFlourish-2"{:js}`, respectively. Please note, however, that such quantifications 
      are neither standardized nor transferable and thus 
      only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
-     in the `<teiHeader>{:xml}` if they are employed.
+     in the <E>teiHeader</E> if they are employed.
 
 ## 7.4 Glossary [#sec7.4]
 
