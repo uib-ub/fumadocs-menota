@@ -111,13 +111,13 @@ changeLog:
 ---
 
 
-# Appendix F: XSLT stylesheets
+# Appendix F: XSLT stylesheets [#secF]
 
 Version 3.0 (12 December 2019)
 
 by Beeke Stegmann and Tone Merete Bruvik
 
-## F.1 Introduction
+## F.1 Introduction [#secF.1]
 
 XSL (Extensible Markup Language) is a language for transforming XML documents into other XML documents or other formats such as HTML.
 
@@ -138,7 +138,7 @@ Please note that the current version of the stylesheet is still a work in progre
 
 All stylesheets published in this appendix are available under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) license.
 
-## F.2 XSLT for Menotic texts
+## F.2 XSLT for Menotic texts [#secF.2]
 
 The Menota stylesheet converts a text encoded with 
                `<me:facs>{:xml}`, `<me:dipl>{:xml}` and/or `<me:norm>{:xml}` elements into easily 
@@ -153,14 +153,14 @@ The Menota stylesheet converts a text encoded with
 
 [App. F.3.2](#secF.3.2) below gives instructions for the usage of the stylesheet.
 
-## F.3 Applying a stylesheet to your XML file
+## F.3 Applying a stylesheet to your XML file [#secF.3]
 
 There are different ways to apply an XSLT stylesheet to an XML document. This section explains the two methods we believe most people might use. 
                The first option is to link to an XSLT stylesheet available online, while the second is to run the conversion locally with an XSL file that must be saved on your machine.
                   Please be aware that in both cases your computer must have a [MUFI compliant font](http://www.mufi.info) installed
                      in order to display all characters correctly, especially on the `<me:facs>{:xml}` level.
 
-### F.3.1 Online usage of stylesheet by means of link
+### F.3.1 Online usage of stylesheet by means of link [#secF.3.1]
 
 In order to link to one of the online stylesheets, one simply inserts a stylesheet processing instruction (“stylesheet link”)
                    at the top of the XML document, i.e. in front of the root element. Such a stylesheet link looks like this: 
@@ -211,7 +211,7 @@ As the stylesheet is located online, one needs to have internet access for the t
 <span className="text-red-500">Note</span>: We have tested this method in different &ndash; but not all &ndash; XML editors. We have encountered issues with 
                      some older versions of &lt;oXygen/&gt;, whereas the latest versions of that application seems to work fine.
 
-### F.3.2 Download and local usage of stylesheet
+### F.3.2 Download and local usage of stylesheet [#secF.3.2]
 
 To employ the second transformation method, a local transformation, one needs to download the desired XSL file (see [app. F.2](#secF.2) above.)
                While the online method uses three different links &ndash; or rather different URLs in the same link &ndash;

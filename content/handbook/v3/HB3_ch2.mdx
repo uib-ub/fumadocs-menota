@@ -110,7 +110,7 @@ Version 3.0
 
 by Beeke Stegmann, Matthew Driscoll and Tone Merete Bruvik
 
-## 2.1 What is XML?
+## 2.1 What is XML? [#sec2.1]
 
 XML, Extensible Markup Language, is
    a recommendation, endorsed by the [World
@@ -175,7 +175,7 @@ XML should be consulted. A good place to start would be the World
    Wide Web Consortium’s own XML pages: [http://www.w3c.org/XML/](http://www.w3c.org/XML/).
 
 
-## 2.2 Appearance vs. structure
+## 2.2 Appearance vs. structure [#sec2.2]
 
 It is customary, in English and
 most other Western European languages, to use italic type in texts
@@ -213,7 +213,7 @@ example, to tag the names of persons, so that a search for “King George”,
 for example, would turn up only persons of that name rather
 than vessels or public houses.
 
-## 2.3 Elements
+## 2.3 Elements [#sec2.3]
 
 The key concept in XML markup
 is the element. An element is essentially a textual unit, the idea
@@ -354,7 +354,7 @@ example, wish to markup all names in the poem above. The personal name “Vingþ
 
 
 
-## 2.4 Attributes
+## 2.4 Attributes [#sec2.4]
 
 Without further information, the
 usefulness of such tagging is sometimes limited. More specific
@@ -396,7 +396,7 @@ value is acceptable for each attribute, as well as a default
 value if that is desired.
 
 
-## 2.5 Entities
+## 2.5 Entities [#sec2.5]
 
 The aspects of XML discussed so far are all concerned with the markup of elements within the
      document. XML also provides a mechanism for encoding and naming parts of the document’s
@@ -521,7 +521,7 @@ In this example, the entity is referring to a codepoint in the Private Use Area,
 
 The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1) below. 
 
-## 2.6 The Text Encoding Initiative and TEI conformant schemas
+## 2.6 The Text Encoding Initiative and TEI conformant schemas [#sec2.6]
 
 The most widely used XML
                   implementation for more sophisticated text encoding is that devised
@@ -609,7 +609,7 @@ XML-aware software, such as
                validator (see [app. C](/handbook/v3/HB3_C_editors) for different XML editors). 
                Separate validator programs are also available.
 
-## 2.7 Putting the pieces together
+## 2.7 Putting the pieces together [#sec2.7]
 
 The first line of our XML document
                is the XML declaration, which tells any processing software that the
@@ -688,7 +688,7 @@ In addition to purely structural
       etc. The other chapters in this handbook explain in detail how they
       can be used. 
 
-## 2.8 The namespace: Adding elements and attributes
+## 2.8 The namespace: Adding elements and attributes [#sec2.8]
 
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
                We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
@@ -713,7 +713,7 @@ In the Menota XML files, all additional elements and attributes will be preceded
 
 The following is a complete list of additional elements and attributes in _The Menota handbook_:
 
-### 2.8.1 Elements
+### 2.8.1 Elements [#sec2.8.1]
 
 `<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](HB3_ch4.xml#sec4.2).
 
@@ -735,7 +735,7 @@ The following is a complete list of additional elements and attributes in _The M
 
 `<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
 
-### 2.8.2 Attributes
+### 2.8.2 Attributes [#sec2.8.2]
 
 `@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
                   This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](HB3_ch11.xml#sec11.3).
@@ -763,7 +763,7 @@ The following is a complete list of additional elements and attributes in _The M
 `@me:category{:sh}` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>{:xml}` element 
                   used to encode overlapping structures, cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
 
-## 2.9 Displaying the text
+## 2.9 Displaying the text [#sec2.9]
 
 We have mentioned several times the possibility of displaying XML documents in standard web
      browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
@@ -950,7 +950,7 @@ The display is different, but the XML encoding is not changed at all. It is only
    and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.
    And the same XML file can be transformed again and again into dozens of different formats.
 
-## 2.10 Menotic stylesheets
+## 2.10 Menotic stylesheets [#sec2.10]
 
 Menota makes available XSLT stylesheets that have been optimised for displaying digital transcriptions that were produced according to the guidelines of this handbook. 
    The stylesheets as well as an introduction to how to apply them are found in [app. F](/handbook/v3/HB3_F_xslt). 

@@ -7,6 +7,7 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change"/>
     <xsl:include href="elements/graphics.xsl"/>
+    <xsl:include href="elements/head.xsl"/>
     <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/links.xsl"/>
     <xsl:include href="elements/paragraph.xsl"/>
@@ -20,14 +21,6 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:body">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="tei:head">
-        <xsl:text>&#x0a;&#x0a;#</xsl:text>
-        <xsl:for-each select="ancestor::tei:div">
-            <xsl:text>#</xsl:text>
-        </xsl:for-each>
-        <xsl:text> </xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:div">

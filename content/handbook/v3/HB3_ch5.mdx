@@ -222,7 +222,7 @@ Version 3.1 (6 October 2023) &ndash; cf. [version 3.0](/handbook/v3/HB3_ch5-0) (
 
 by Odd Einar Haugen and Beeke Stegmann
 
-## 5.1 Introduction
+## 5.1 Introduction [#sec5.1]
 
 When transcribing a text, the transcriber will usually make a distinction between the
           individual characters, the white space between some of the characters, the words made up
@@ -247,7 +247,7 @@ In a more complex encoding, the transcriber might like to identify the basic uni
           basic units and how they can be encoded specifically, if needed, using elements like
             `<c>{:xml}` for individual characters and `<w>{:xml}` for individual words.
 
-## 5.2 Characters
+## 5.2 Characters [#sec5.2]
 
 The basic unit in any transcription of an alphabetic script is the individual letters. In
           a linguistic context a distinction is often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a
@@ -370,7 +370,7 @@ Abbreviation marks, on the other hand, are usually treated as separate character
           meaning and can be expanded into one or more characters; the zigzag mark above “h” in
           ill. 5.3 signifies “er”, and the bar above “n” signifies another “n”.
 
-### 5.2.1 Rules for encoding characters
+### 5.2.1 Rules for encoding characters [#sec5.2.1]
 
 We recommend the following basic rules for encoding characters, irrespective of whether
             they are ordinary (alphabetic) characters or abbreviation marks.
@@ -431,7 +431,7 @@ As a rule, we would recommend the first solution, since the number of combinatio
             in (6) above, we refer to the rules in the Unicode Standard v. 12, [ch. 2.11 Combining Characters](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf).
           
 
-### 5.2.2 Entities and Unicode values
+### 5.2.2 Entities and Unicode values [#sec5.2.2]
 
 By using entities it is possible to define as many characters as one believes are
             necessary for the transcription of a certain corpus of texts. However, since most
@@ -574,7 +574,7 @@ If, however, the transcriber would like to add a couple of entities not included
 
 In this example, it is specified that the first entity, `&trotdot;{:xml}`, is going to be displayed as the hexadecimal character `0024`, the dollar sign, and the second, `&eacutesup;{:xml}`, as `00A3`, the pound sign. These are oviously stop-gap measures, and the transcriber decides whatever rendering he or she thinks is appropriate. A long-term solution would be to work with Menota in order to add these entities to the Menota entity list.
 
-### 5.2.3 Encoding characters as such
+### 5.2.3 Encoding characters as such [#sec5.2.3]
 
 In some cases, a character should be encoded as such. That kind of separate mark-up
             allows for association with additional meta-data as well as easier processing. 
@@ -635,9 +635,9 @@ Individual characters are moreover marked-up as such, when the character in ques
             the visual rendering of initials in a manuscript usually is only encoded on the facsimile level, not on the
             diplomatic or normalised levels.
 
-## 5.3 Words
+## 5.3 Words [#sec5.3]
 
-### 5.3.1 Basic mark-up
+### 5.3.1 Basic mark-up [#sec5.3.1]
 
 The fundamental concept of the word is discussed in [ch. 3.6](HB3_ch3.xml#sec3.6) above, and in [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
             of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
@@ -705,7 +705,7 @@ For practical reasons, each word has a separate line in this encoding. Unless ot
             specified, it is assumed that there is white space between each `<w>{:xml}`
             element.
 
-### 5.3.2 One word or two? Graphical and lexical words
+### 5.3.2 One word or two? Graphical and lexical words [#sec5.3.2]
 
 Although words as a rule are separated by spaces in medieval Nordic manuscripts, there
             are many exceptions to this rule. For this reason, a distinction should be drawn between
@@ -856,7 +856,7 @@ Stylesheets will display the reading with no space on the `<me:facs>{:xml}` and 
 
 The morphological encoding of enclitic words is further discussed in [ch. 11.3.2.11](HB3_ch11.xml#sec11.3.2.11) below.
 
-### 5.3.3 Encoding of word constituents
+### 5.3.3 Encoding of word constituents [#sec5.3.3]
 
 The encoder might want to encode constituent parts of a word, e.g. prefixes, roots,
             derivational forms, etc. We recommend using the `<m>{:xml}` element (for
@@ -889,7 +889,7 @@ Lemmatisation is further discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) below and
             information can also be conveniently attached to the word through the `@me:msa{:sh}`
             (morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](HB3_ch11.xml#sec11.3) below.
 
-## 5.4 Punctuation 
+## 5.4 Punctuation  [#sec5.4]
 
 Having introduced elements for the encoding of individual characters and words, it can
           also be useful to tag punctuation marks specifically. For punctuation characters in
@@ -919,7 +919,7 @@ Note that punctuation characters such as the full stop may also be used as abbre
           [ch. 6.3.8](HB3_ch6.xml#sec6.3.8), while a border case (between abbreviation and punctuation) 
           is discussed towards the end of [ch. 5.4.2](#sec5.4.2) below.
 
-### 5.4.1 Punctuation in a single-level transcription
+### 5.4.1 Punctuation in a single-level transcription [#sec5.4.1]
 
 In [ch. 5.3.1](#sec5.3.1) above, we said that a text can be encoded
             character by character. Punctuation marks are simply inserted where they occur in the
@@ -968,7 +968,7 @@ If the encoder wishes to represent specific types of punctuation marks apart fro
             the punctuation mark should be 
             placed within the `<pc>{:xml}` element.
 
-### 5.4.2 Punctuation in a multi-level transcription
+### 5.4.2 Punctuation in a multi-level transcription [#sec5.4.2]
 
 While punctuation on the `<me:facs>{:xml}` and `<me:dipl>{:xml}` levels in most cases
             will be identical, it is often radically different on the `<me:norm>{:xml}` level.
@@ -1220,7 +1220,7 @@ With this markup, a dot will be displayed after the word “konungr” on all th
             `<me:norm>{:xml}` levels is classified as a punctuation mark (since it occurs within
             the `<pc>{:xml}` element).
 
-### 5.4.3 Punctuation marks as delimiters
+### 5.4.3 Punctuation marks as delimiters [#sec5.4.3]
 
 In some manuscripts, certain words &ndash; typically short ones &ndash; are delimited by dots, often on both sides, sometimes only on a single side. One example can be found in Holm perg 34 4to, cf. ill. 5.7. Towards the end of the middle line in this illustration, the word “v<em>ar</em>” (written “ꝩͬ”) has been delimited by dots on either side.
 
@@ -1279,7 +1279,7 @@ We recommend that these dots are encoded as punctuation marks within the `<w>{:x
 Punctuation marks are also used as delimiters for numerals, especially Roman numerals. As stated in [ch. 5.7](#sec5.7) below, we 
             recommend the same type of encoding.
 
-## 5.5 Hyphenation
+## 5.5 Hyphenation [#sec5.5]
 
 Like modern texts, medieval manuscripts were by and large justified, i.e. each line had
           approximatley equal length. As a consequence, words often were split with one part 
@@ -1342,7 +1342,7 @@ This is how the name <w>Egill</w>
 The ordinary hyphen will be displayed in any position of the word, whether in the line or
           at the end of a line.
 
-### 5.5.1 Hyphenation in a single-level transcription
+### 5.5.1 Hyphenation in a single-level transcription [#sec5.5.1]
 
 The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](HB3_ch4.xml#sec4.5)) is essentially the same as in a multi-level
             transcription (cf. [ch. 4.6](HB3_ch4.xml#sec4.6)). We give examples of both.
@@ -1386,7 +1386,7 @@ The non-hyphenated word “hwilk-kæ” in ill. 5.9, lines 2&ndash;3 should rece
 ```
 
 
-### 5.5.2 Hyphenation in a multi-level transcription
+### 5.5.2 Hyphenation in a multi-level transcription [#sec5.5.2]
 
 In a multi-level transcription, the rules for hyphenation will be identical to the ones
             above. This would be the encoding of the hyphen in ill. 5.7 above:
@@ -1427,7 +1427,7 @@ In some cases, there may be a dash at the end of a line, which is not being used
             ordinary hyphen or, perhaps, as a dash, `&ndash;{:xml}` for a somewhat longer dash than the hyphen,
             or `&mdash;{:xml}` for an even longer dash.
 
-### 5.5.3 Display of hyphenation
+### 5.5.3 Display of hyphenation [#sec5.5.3]
 
 The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook.
 <DisplayFrame>
@@ -1507,7 +1507,7 @@ When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyph
 </DisplayFrame>
 
 
-## 5.6 Direct speech and quotations
+## 5.6 Direct speech and quotations [#sec5.6]
 
 We recommend that direct speech is encoded
      with the `<q>{:xml}` element for each turn in the dialogue (e.g. for each question and answer).
@@ -1635,7 +1635,7 @@ As stated above, some texts contain quotations. If the encoder wants to identify
 
 The source of the quotation may be given in a `<note>{:xml}` element, as shown above.
 
-## 5.7 Numerals
+## 5.7 Numerals [#sec5.7]
 
 Numerals are no longer treated as a single word class, in spite of their semantic coherence &ndash; they do, after all, convey a number. In line with the word classes proposed in ch. 11.6 below, numerals belong to at least four categories:
 
@@ -1651,7 +1651,7 @@ Numerals are no longer treated as a single word class, in spite of their semanti
 
 Numerals may be encoded by the `<w>{:xml}` element throughout. The only specification is that with respect to Roman numerals, there will be no morphological annotation and the delimiters, typically a dot on either side of the numeral, is contained within the `<w>{:xml}` element. Examples will be given in ch. 5.7.1 below.
 
-### 5.7.1 Introducing the `<num>{:xml}` element
+### 5.7.1 Introducing the `<num>{:xml}` element [#sec5.7.1]
 
 If an encoder wants to single out numerals, this should be done by the `<num>{:xml}` element, irrespective of their form &ndash; as Roman numerals, as Hindu-Aarabic numerals (i.e. our “modern” numerals) or spelt out in Latin characters. Note that on the level immediately below, the numeral is encoded within the `<w>{:xml}` element.
 
@@ -1718,7 +1718,7 @@ When a number is spelt out in the text, it is encoded as such:
 ```
 
 
-### 5.7.2 Morphological annotation of numerals
+### 5.7.2 Morphological annotation of numerals [#sec5.7.2]
 
 In the case of morphological annotation, the `<w>{:xml}` element will receive a `@lemma{:sh}` attribute. As stated above, the `@type{:sh}` and `@value{:sh}` attributes are optional:
 ```xml
@@ -1770,7 +1770,7 @@ If the numeral is a lexical word, the encoder may want to annotate it. In such c
 
 See [ch. 11](/handbook/v3/HB3_ch11) for more details on morphological annotation.
 
-### 5.7.3 Complex numerals
+### 5.7.3 Complex numerals [#sec5.7.3]
 
 Some numerals are quite complex, especially in the dating of diplomas and other historical documents. We recommend that each constituent is encoded in a `<num>{:xml}` element of its own, unless they are non-numerical words. _Diplomatarium Norvegicum_ dates the diploma in vol. 1, no. 80, to “thousand winters and two hundred winters [and] .ix. tens of winters and .ii.”, or, more concisely put, to the year 1292 (DN 1:80):
 ```xml
@@ -1791,7 +1791,7 @@ While the noun “vetr” and the conjunction “ok” are part of the whole dat
 
 Some dating expressions contain Latin words, which should be singled out by the `@xml:lang{:sh}` attribute.
 
-### 5.7.4 Nesting of the `<num>{:xml}` element
+### 5.7.4 Nesting of the `<num>{:xml}` element [#sec5.7.4]
 
 The `<num>{:xml}` element may nest, i.e. that it may contain one or more subordinate `<num>{:xml}` elements. A rather simple example would be the one given in ch. 5.7.2 above, in which “.vii. hundruð” amounts to “700”:
 ```xml
@@ -1823,7 +1823,7 @@ Datings in diplomas will most likely be given elsewhere in the file.
 
 Many texts contain a large number of words that can be singled out by the `<num>{:xml}` element. _Þiðriks saga af Bern_ in Holm perg 4 fol, for example, has a total of almost one thousand `<num>{:xml}` elements. Many of these can be nested, but it is an open question whether this additional encoding is worthwhile.
 
-## 5.8 White space
+## 5.8 White space [#sec5.8]
 
 Note that
           in XML as well as in HTML encoding, any amount of white space following each other (spaces, tabs and line breaks) are
@@ -1839,7 +1839,7 @@ It is not possible to encode a long space in the manuscript
 
 
 
-## Updates to ch. 5
+## Updates to ch. 5 [#sec5.9]
 
 On 21 April 2020, an example was added to [ch. 5.3.2](#sec5.3.2) on the multi-level encoding of graphic words such as “veiði kona” for “veiðikona”. The addition extends from “In a multi-level encoding, the word will be transcribed ...” to “... on the `<me:norm>{:xml}` level, “veiðikona””.
 
