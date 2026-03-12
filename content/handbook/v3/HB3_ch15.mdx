@@ -3,7 +3,7 @@ title: "15: Linking to external resources"
 author:
  - Tarrin Wills
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -62,7 +62,7 @@ Version 3.0 (12 December 2019)
 
 by Tarrin Wills
 
-## 15.1 Introduction
+## 15.1 Introduction [#sec15.1]
 
 This Chapter defines how to refer to phenomena in texts that have some kind of existence
      outside the text —&ensp;both electronically **naming** and **locating** the thing referenced. These include the following phenomena and their
@@ -121,9 +121,9 @@ Note that the methods outlined in this chapter involve a large amount of searchi
      API to assist in some of these searches and in inserting the generated links into the XML file.
      The location of these tools will be published on the main Menota site.
 
-## 15.2 Linking methods
+## 15.2 Linking methods [#sec15.2]
 
-### 15.2.1 Attributes used for linking
+### 15.2.1 Attributes used for linking [#sec15.2.1]
 
 The methods defined here utilise the TEI-defined attributes for linking to external
       resources: `@ref{:sh}`, `@key{:sh}` for elements for which they are valid (e.g.
@@ -135,7 +135,7 @@ The content of the two differs: `@key{:sh}` contains information defined by the 
       universal identifiers (URIs) which can be resolved according to the general principles of
       URIs.
 
-### 15.2.2 Internally defined references: `@key{:sh}` and `@me:key{:sh}`
+### 15.2.2 Internally defined references: `@key{:sh}` and `@me:key{:sh}` [#sec15.2.2]
 
 The TEI `@key{:sh}` attribute is intended to contain an identifier such as a database key
       which is unique for the particular type of resource represented by the element which contains
@@ -147,9 +147,9 @@ The advantage of using a `@key{:sh}` over a `@ref{:sh}` is that the notation can
       thing. But using `@ref{:sh}` gives universal references without the need for an internal
       authority file (although use of one is nevertheless recommended).
 
-### 15.2.3 Universal references: URIs, URLs and URNs 
+### 15.2.3 Universal references: URIs, URLs and URNs  [#sec15.2.3]
 
-#### 15.2.3.1 URIs 
+#### 15.2.3.1 URIs  [#sec15.2.3.1]
 
 Uniform Resource Identifier (URI) is a standard for identifying things or resources
        universally. There are two main subsets: URLs (Uniform Resource Locators), for locating
@@ -177,7 +177,7 @@ In the URI string certain characters are reserved for identifying parts of the s
 | : (colon) | %3A |
 
 
-#### 15.2.3.2 URLs 
+#### 15.2.3.2 URLs  [#sec15.2.3.2]
 
 URLs are normally found in the web browser location bar and can be copied and pasted into
        an XML file for use in relevant attributes. Normally the required characters are
@@ -200,7 +200,7 @@ Some of the URLs for external resources are longer in the browser than what is n
        on how to modify URLs in order to reduce ambiguity and simplify the attribute value, without
        affecting the ability to link to the resource.
 
-#### 15.2.3.3 URNs: official URNs and Menota names
+#### 15.2.3.3 URNs: official URNs and Menota names [#sec15.2.3.3]
 
 The URN standard is a less-used notation that forms part of the URI standard. It does not
        provide a way of locating resources but rather provides a means of identifying them
@@ -229,7 +229,7 @@ Examples of Menota-defined names:
 These are discussed in detail below. Where URNs are used, it is recommended that a URL be
        included in addition. This allows the thing to be both named and located.
 
-## 15.3 Principles of naming
+## 15.3 Principles of naming [#sec15.3]
 
 The resources linked by these methods should:
 
@@ -263,9 +263,9 @@ You can use [web.archive.org](https://web.archive.org/web/) to archive and
      the formats supplied below: they have little use as a naming scheme, only as a locating
      scheme.
 
-## 15.4 Types of reference
+## 15.4 Types of reference [#sec15.4]
 
-### 15.4.1 Bibliographic items
+### 15.4.1 Bibliographic items [#sec15.4.1]
 
 Bibliographic items are normally marked up with the `<bibl>{:xml}` element, which should
       contain a `@me:ref{:sh}` value to identify the work
@@ -320,9 +320,9 @@ In this instance, the name (ISBN URN) is given first, followed by the first reso
 Avoid Google Books, as there are often multiple records for the same item and no easy way to
       distinguish or link between them.
 
-### 15.4.2 Word lemmas
+### 15.4.2 Word lemmas [#sec15.4.2]
 
-#### 15.4.2.1 Linking of lemmas
+#### 15.4.2.1 Linking of lemmas [#sec15.4.2.1]
 
 Word lemmas should be referenced as dictionary headwords, using additional information to
        distinguish between homographs (e.g. database keys or numbering of homographs, depending on
@@ -340,7 +340,7 @@ The reference should be included in the `@me:ref{:sh}` attribute as part of the
 
 See also [ch. 10](/handbook/v3/HB3_ch10) above.
 
-#### 15.4.2.2 West Norse
+#### 15.4.2.2 West Norse [#sec15.4.2.2]
 
 West Norse words should be referenced using the Ordbog over det norrøne
         prosasprog (ONP) at [onp.ku.dk](http://onp.ku.dk). To find the URL
@@ -350,7 +350,7 @@ West Norse words should be referenced using the Ordbog over det norrøne
 e.g. **forskáli**
        [https://onp.ku.dk/onp/onp.php?o22938](https://onp.ku.dk/onp/onp.php?o22938) — in this item the identifier
        (database key) is the integer at the end, namely ‘22938’. The permalink (click on the link icon
-       – it is simply the URL with ‘onp/onp.php?’ part removed)
+       &ndash; it is simply the URL with ‘onp/onp.php?’ part removed)
        can be used to reference
        the lemma.
 ```xml
@@ -363,7 +363,7 @@ ONP’s wordlist includes a large number of words not covered by its corpus, inc
        and younger words. These may be useful and can be found and linked using the unofficial
        interface: [skaldic.abdn.ac.uk/m.php?p=onpadv](http://skaldic.abdn.ac.uk/m.php?p=onpadv) (search for ‘all words’).
 
-#### 15.4.2.3 Old Danish
+#### 15.4.2.3 Old Danish [#sec15.4.2.3]
 
 The primary lexicographic resource for Old Danish is the Gammeldansk Ordbog ([gammeldanskordbog.dk](http://gammeldanskordbog.dk/)), which should be used to
        find headwords. The interface uses a search mechanism that will give the resulting word if
@@ -384,7 +384,7 @@ Words with homographs in GDO are distinguished by a number, which should be incl
 An internal URN should look like: menota:lemma:gdo:forskatte,
         menota:lemma:gdo:skin,2.
 
-#### 15.4.2.4 Old Swedish
+#### 15.4.2.4 Old Swedish [#sec15.4.2.4]
 
 The authoritative source for the Old Swedish lexicon, the Fornsvensk lexikalisk databas
         ([spraakbanken.gu.se/fsvldb](https://spraakbanken.gu.se/fsvldb/)), does not
@@ -393,9 +393,9 @@ The authoritative source for the Old Swedish lexicon, the Fornsvensk lexikalisk 
        word class and other morphosyntactic information should be included using the
         `@me:msa{:sh}` attribute for the word. 
 
-### 15.4.3 Literary works and their parts
+### 15.4.3 Literary works and their parts [#sec15.4.3]
 
-#### 15.4.3.1 Pre-1540 West Norse prose works
+#### 15.4.3.1 Pre-1540 West Norse prose works [#sec15.4.3.1]
 
 ONP’s database ([https://onp.ku.dk/v](https://onp.ku.dk/v) gives a comprehensive and unambiguous overview of
        this group of prose works. E.g. _Egils saga Skallagrímssonar_: use ONP’s permalink URL
@@ -411,7 +411,7 @@ Sometimes it will be more useful to use a particular version of the text listed 
        https://onp.ku.dk/r11195 or the name:
         menota:workversion:onp:11195.
 
-#### 15.4.3.2 Post-1540 West Norse prose works
+#### 15.4.3.2 Post-1540 West Norse prose works [#sec15.4.3.2]
 
 (E.g. Hrómundar saga): use the ‘uniform’ titles from [handrit.is](https://handrit.is), but note that the Handrit titles are not standardised. You should choose
        the most commonly used form, e.g.
@@ -422,7 +422,7 @@ Sometimes it will be more useful to use a particular version of the text listed 
 
 See also [ch. 15.4.3.7](#sec15.4.3.7) below.
 
-#### 15.4.3.3 Old Danish texts
+#### 15.4.3.3 Old Danish texts [#sec15.4.3.3]
 
 GDO has a comprehensive collection of references to the Old Danish corpus, but it is quite
        difficult to find the database keys. You need to find a word from the text you need to
@@ -435,7 +435,7 @@ GDO has a comprehensive collection of references to the Old Danish corpus, but i
        (http://gammeldanskseddelsamling.dk/forside/kilde?id=251 —&ensp;DiplDan). The integer following
        id= is the database code which can be used in the name: menota:work:gdo:251.
 
-#### 15.4.3.4 Chapters and sections of prose works
+#### 15.4.3.4 Chapters and sections of prose works [#sec15.4.3.4]
 
 Different versions and different editions use different numbering for divisions within a
        text and the primary numbering (as indicated in the @n attribute) for the encoded edition
@@ -459,7 +459,7 @@ For resources that have named HTML or XML divisions (using `@xml:id{:sh}` or
        be used in the same format in the fragment section of the URI (e.g. section, stanza, volume,
        page).
 
-#### 15.4.3.5 Poems belonging to the Poetic Edda
+#### 15.4.3.5 Poems belonging to the Poetic Edda [#sec15.4.3.5]
 
 At the time of writing, no authoritative digital edition of the eddic corpus is available,
        but there will likely be one soon, which may supercede the following.
@@ -471,7 +471,7 @@ A list of Eddic poems is available here: [skaldic.abdn.ac.uk/db.php?id=425&if=de
         http://skaldic.abdn.ac.uk/db.php?id=12722&if=default&table=verses
        and/or menota:stanza:skp:12722 (Hym 4) 
 
-#### 15.4.3.6 Poems belonging to the skaldic corpus
+#### 15.4.3.6 Poems belonging to the skaldic corpus [#sec15.4.3.6]
 
 All non-eddic, non-rímur poetry up to c. 1400 can be found on the Skaldic Project database
        at [skaldic.abdn.ac.uk](http://skaldic.abdn.ac.uk). These are organised by
@@ -482,7 +482,7 @@ The interface at [skaldic.abdn.ac.uk/m.php?p=skaldic](http://skaldic.abdn.ac.uk/
        URLs for references (e.g. http://skaldic.abdn.ac.uk/m.php?p=verse&i=2036 for
        Einarr Skúlason, Eysteinsdrápa 1)
 
-#### 15.4.3.7 Other works which are ambiguous or unavailable in the above
+#### 15.4.3.7 Other works which are ambiguous or unavailable in the above [#sec15.4.3.7]
 
 Some works, particularly postmedieval ones, may be found in Simek and Pálsson’s Lexicon der
        altnordisches Literatur (2007). In cases where there is ambiguity in the names above (such as
@@ -497,14 +497,14 @@ menota:work:lanl:Hrómundar%20saga%20Gripssonar for Hrómundar saga
 This particular work includes almost all West Norse prose works, Eddic poems and major
        skaldic poems.
 
-### 15.4.4 Manuscripts
+### 15.4.4 Manuscripts [#sec15.4.4]
 
 Authoritative online resources are available for naming and referencing manuscripts relevant
       to the Old West Norse textual corpus. They should be used in the following way, and in the
       following order of priority —&ensp;that is, only use lower priority sources where you are unable to
       find the manuscript in a higher priority source.
 
-#### 15.4.4.1 Handrit.is
+#### 15.4.4.1 Handrit.is [#sec15.4.4.1]
 
 [Handrit.is](https://handrit.is) contains records on a large number of
        manuscripts in the field, and is the only online catalogue of a very large number of younger
@@ -537,7 +537,7 @@ This identifies the particular Menota edition as belonging to the manuscript ref
 Do not use the mirror site at [Handrit.org](http://handrit.org), as this
        does not produce URLs that link to individual manuscripts.
 
-#### 15.4.4.2 ONP
+#### 15.4.4.2 ONP [#sec15.4.4.2]
 
 ONP’s Registre contains information on almost 5000 manuscripts, fragments and charters.
        This information is based on the published editions of the corpus used by the dictionary and
@@ -547,7 +547,7 @@ The website now includes all these ([https://onp.ku.dk/m](https://onp.ku.dk/m)).
        Use the permalink there to reference the ms. e.g.
        me:ref="https://onp.ku.dk/m8330"
 
-#### 15.4.4.3 FASNL
+#### 15.4.4.3 FASNL [#sec15.4.4.3]
 
 FASNL ([fasnl.ku.dk](http://fasnl.ku.dk)) is a fork of the Handrit.is
        catalogue relating to the fornaldarsaga corpus, with manuscripts
@@ -561,7 +561,7 @@ FASNL ([fasnl.ku.dk](http://fasnl.ku.dk)) is a fork of the Handrit.is
        as secure as for Handrit.is, so it should be used only if the other resources here do not
        contain the manuscript.
 
-#### 15.4.4.4 Swedish manuscripts
+#### 15.4.4.4 Swedish manuscripts [#sec15.4.4.4]
 
 The Manuscripta project ([manuscripta.se](https://www.manuscripta.se)) is
        an ongoing project to catalogue manuscripts in Swedish libraries. It has a simple interface
@@ -573,7 +573,7 @@ This resource should be used for manuscripts in Swedish libraries if they are do
        the resource. As it is currently in progress, you should check periodically for updates
        relevant to your project.
 
-#### 15.4.4.5 Manuscript pages
+#### 15.4.4.5 Manuscript pages [#sec15.4.4.5]
 
 A consistent naming system for divisions of manuscripts allows for two-way semantic linking
        of pages across different documents, corpora and image repositories, for example, to link a
@@ -586,7 +586,7 @@ A consistent naming system for divisions of manuscripts allows for two-way seman
        different numbering systems for a particular manuscript.
 
 We recommend using the pagination/foliation of the manuscript according to the priority in
-       [ch. 15.4.4.1–4](HB3_ch15.xml#sec15.4.4.1),        
+       [ch. 15.4.4.1&ndash;4](/handbook/v3/HB3_ch15#sec15.4.4.1),        
        namely the pagination found in the chosen catalogue. For the naming system, the
        fragment part of the URI should be used to specify the page with the page= format (regardless
        of whether the numbering uses folio or page numbers) also used above for bibliographic
@@ -603,7 +603,7 @@ https://image.landsbokasafn.is/source/JS_41_4to/JS_41_4to,_0021v_-_41.jpg
 In this case, the image URL is extracted from the Handrit.is link by right-clicking on the
        relevant page and opening the image in a new tab/window.
 
-### 15.4.5 People
+### 15.4.5 People [#sec15.4.5]
 
 The main reference point should be the Scandinavian Biographical Index [https://www.degruyter.com/viewbooktoc/product/31428](https://www.degruyter.com/viewbooktoc/product/31428) (ISBN 978-3-11-091414-6) Use the
       full name there, with additional dates or information if necessary for disambiguation:
@@ -654,7 +654,7 @@ In this case, the Wikidata reference includes all relevant information about the
       information into an application. Wikidata references can therefore be used to supplement the
       above references.
 
-### 15.4.6 Places
+### 15.4.6 Places [#sec15.4.6]
 
 The reference here is to places rather than place-names, but the tagging will generally be
       done when a place-name is encountered. Ideally the place reference will be to a digital
@@ -663,7 +663,7 @@ The reference here is to places rather than place-names, but the tagging will ge
       relationships with other places. Unfortunately there are very few resources that provide this
       function, apart from less authoritative open resources.
 
-#### 15.4.6.1 Denmark
+#### 15.4.6.1 Denmark [#sec15.4.6.1]
 
 The primary point of reference for current places should be [download.kortforsyningen.dk/content/stednavne](https://download.kortforsyningen.dk/content/stednavne). Unfortunately there is no web
        interface to this resource where keys / URIs can be extracted but by searching the dataset
@@ -685,7 +685,7 @@ menota:place:dsn:167334 (Gammel Lejre / Hleiðagarðr)
 You may wish to save the other data, including coordinates, in an authority file or
        database table for use by the project or repository. 
 
-#### 15.4.6.2 Iceland
+#### 15.4.6.2 Iceland [#sec15.4.6.2]
 
 Landmælingar Íslands ([lmi.is](http://lmi.is)) is the central 
        mapping and place-names authority in Iceland.
@@ -705,7 +705,7 @@ Search for the place name (NAFNFITJU column) in the tables associated with the s
 
 menota:place:lmi:18513 (Helgafell (Fjall), Helgafellssveit)
 
-#### 15.4.6.3 Norway
+#### 15.4.6.3 Norway [#sec15.4.6.3]
 
 Kartverket is the central Norwegian mapping authority and its interactive web map
        (www.norgeskart.no) can be used to identify current places which correspond to historical
@@ -726,7 +726,7 @@ Additional historical names can be found online in O. Rygh’s Norske Gaardnavne
 menota:place:ngn:70,Røken,Røken,Buskeruds%20amt (Auvi søndre, Røken sn.,
        Buskerud) 
 
-#### 15.4.6.4 Sweden
+#### 15.4.6.4 Sweden [#sec15.4.6.4]
 
 TORA - Topografiskt register på Riksarkivet ([riksarkivet.se/tora](https://riksarkivet.se/tora)) should eventually be able to provide the necessary services for
        linking Swedish historical places, but at this stage it does not offer public resources for
@@ -747,9 +747,9 @@ But other names may be ambiguous by this method, e.g. Nöbbele, Växjö, Kronobo
        (Bebyggelse) matches six distinct places, in which case you should use the resources
        documented in the next section to identify the actual place.
 
-#### 15.4.6.5 Unofficial and historical places: sources
+#### 15.4.6.5 Unofficial and historical places: sources [#sec15.4.6.5]
 
-##### **15.4.6.5.1 Open Street Map**
+##### **15.4.6.5.1 Open Street Map** [#sec15.4.6.5.1]
 
 OSM is the main open geographical resource in use today. It allows places to be indicated
         by points, lines, areas (polygons) or groups of areas, and referenced with a numerical key.
@@ -762,7 +762,7 @@ OSM is the main open geographical resource in use today. It allows places to be 
         with a historical focus that is deliberately excluded from OSM. There appears to be very
         limited data for the Nordic countries at this stage. 
 
-##### **15.4.6.5.2 Geonames.org**
+##### **15.4.6.5.2 Geonames.org** [#sec15.4.6.5.2]
 
 This site predates Open Street Map and has a similar user-contributed data set. It is easy
         to edit and has a simple API, but only allows places to be indicated by points or squares on
@@ -776,7 +776,7 @@ This site predates Open Street Map and has a similar user-contributed data set. 
 NB save separately any entered information including coordinates as other users can easily
         delete your contributions to this service.
 
-##### **15.4.6.5.3 Wikipedia / Wikidata**
+##### **15.4.6.5.3 Wikipedia / Wikidata** [#sec15.4.6.5.3]
 
 Wikidata (check Wikipedia first) can be used as a last resort as many places, including
         historical and legendary places are often documented there. Wikidata also has a consistent
@@ -794,7 +794,7 @@ Wikidata (check Wikipedia first) can be used as a last resort as many places, in
         under the Wikidata entry, together with geolocation, at
         https://www.wikidata.org/wiki/Q25804.)
 
-### 15.4.7 Events
+### 15.4.7 Events [#sec15.4.7]
 
 Events such as battles and journeys may be documented in various encyclopediae, but are
       highly dependent on the context of the event to find a reliable source. We therefore recommend
@@ -807,7 +807,7 @@ E.g. https://www.wikidata.org/wiki/Q83078 (cf.
        https://en.wikipedia.org/wiki/Battle_of_Stiklestad —&ensp;Battle of Stiklarstaðir) —
       see also [ch. 15.3](#sec15.3) above.
 
-### 15.4.8 Mythological and legendary figures, or anything else
+### 15.4.8 Mythological and legendary figures, or anything else [#sec15.4.8]
 
 As with [ch. 15.4.7](#sec15.4.7) above, this category (of named or sometimes 
       even unnamed beings, places or

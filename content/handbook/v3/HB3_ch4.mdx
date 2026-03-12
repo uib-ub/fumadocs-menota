@@ -4,7 +4,7 @@ author:
  - Haraldur Bernharðsson
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -111,7 +111,7 @@ Version 3.0 (12 December 2019)
 
 by Haraldur Bernharðsson and Odd Einar Haugen
 
-## 4.1 Introduction
+## 4.1 Introduction [#sec4.1]
 
 The electronic transcription of a manuscript text aims to accurately reproduce the
                text with a standardised set of characters. Such transcriptions can obviously never
@@ -155,14 +155,14 @@ Finally, it should be pointed out that while a rendering of a text on the facsim
                normalised level. For the sake of terminological consistency, in this chapter we will refer 
                to renderings on all three levels as transcriptions.
 
-## 4.2 The facsimile level
+## 4.2 The facsimile level [#sec4.2]
 
 The principal aim of an electronic facsimile transcription is to encode as much
                information about the manuscript text as possible. This includes the encoding of a
                wide variety of palaeographic characteristics (allographic variation), different
                types of abbreviation and punctuation, as well as information about the page layout
                (the <em>mis-en-page</em>). It should be stated emphatically that an
-               electronic facsimile transcription is not intended to be – and can never be – a
+               electronic facsimile transcription is not intended to be &ndash; and can never be &ndash; a
                substitute for an image of the manuscript. The main value of an electronic facsimile
                transcription is the searchability afforded by the electronic encoding. An electronic
                facsimile transcription is thus not mainly intended to produce an accurate edition of
@@ -273,7 +273,7 @@ A short extract from an Old Icelandic manuscript, AM 233 a fol (mid 14th century
 
 <Caption title="Ill. 4.1">. _Niðrstigningar saga_, an Old Norse
                translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
-               l. 1–2.</Caption>
+               l. 1&ndash;2.</Caption>
 
 On the facsimile level, the text is transcribed character by character, line by line.
                Allographic variation is to a great extent reflected in the transcription, and
@@ -298,7 +298,7 @@ At the facsimile level, the transcriber ought to encode the manuscript exactly a
                reads, even if it contains obvious mistakes. Corrections can be made by inserting a
                note, or it can be left to the diplomatic or normalised level.
 
-## 4.3 The diplomatic level
+## 4.3 The diplomatic level [#sec4.3]
 
 The principal aim of a diplomatic transcription is to produce a readable while
                accurate edition of the manuscript text. In a diplomatic transcription, the text is
@@ -322,7 +322,7 @@ The principal characteristics of a typical diplomatic transcription as compared 
 - Fewer palaeographic contrasts than in the facsimile transcription.
 
 In deciding which palaeographic contrasts to retain, priority is typically granted to
-               contrasts that have – or may potentially have – phonological value (represent
+               contrasts that have &ndash; or may potentially have &ndash; phonological value (represent
                phonological contrast in the language), although this varies considerably from one
                edition to the next. In earlier print editions, the availability of non-standard
                characters in the type set also often played a significant role.
@@ -376,7 +376,7 @@ The distinction between “d”/“ꝺ” and “ð” reflects a phonological d
 </div>
 
 
-Diacritics – accent marks, dots and hooks – frequently have phonological value, but
+Diacritics &ndash; accent marks, dots and hooks &ndash; frequently have phonological value, but
                not always. They are often used to denote quantity (marking long vowels or
                consonants) or quality (different vowel qualities, such as <em>ǫ</em>
                vs. <em>o</em>). Sometimes they are, however, without phonological
@@ -410,7 +410,7 @@ Diacritics – accent marks, dots and hooks – frequently have phonological val
 </div>
 
 
-Note that diacritics – both superscript dots and superscript strokes (bars) – can serve
+Note that diacritics &ndash; both superscript dots and superscript strokes (bars) &ndash; can serve
                as abbreviation symbols. A consonant symbol with a superscript dot or a superscript
                bar would typically denote a geminate (long) consonant. A “g” with a superscript dot
                or “n” with a superscript bar would thus be rendered as such in a facsimile
@@ -459,12 +459,12 @@ Ligatures and fusions are also treated differently depending on whether they con
 
 By contrast, consonant ligatures or fusions, are only optionally reproduced in a
                facsimile transcription and replaced by their individual components in the diplomatic
-               transcription, as shown in the table below. In [ch. 6.5.6](HB3_ch6.xml#sec6.5.6),
+               transcription, as shown in the table below. In [ch. 6.5.6](/handbook/v3/HB3_ch6#sec6.5.6),
                we recommend encoding consonant ligatures by the `<seg>{:xml}` element with the 
                `@type="lig"{:sh}` attribute,
                e.g. &lt;seg type="lig"&gt;bb&lt;/seg&gt;. The `<seg>{:xml}` element offers a convenient way of 
-               grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](HB3_ch5.xml#sec5.3.1) and 
-               [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) below.
+               grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](/handbook/v3/HB3_ch5#sec5.3.1) and 
+               [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) below.
 
 <div className="table-abbr">
 | Facsimile level | Diplomatic level |
@@ -550,12 +550,12 @@ and displayed as
                fornu.
 
 In what is often called semi-diplomatic editions, such as the majority in the series
-                  _Editiones Arnamagnæanæ_ (København 1958–), abbreviations are
+                  _Editiones Arnamagnæanæ_ (København 1958&ndash;), abbreviations are
                expanded silently, i.e., without the use of italics. In electronic editions, this decision can be left to the
                stylesheet. As long as the information is kept in the `<ex>{:xml}` element a
                display with italics can easily be restored.
 
-## 4.4 The normalised level
+## 4.4 The normalised level [#sec4.4]
 
 The normalisation of the orthography is intended to further enhance the readability
                of the text. Medieval orthography is not as consistent as modern orthography and
@@ -601,7 +601,7 @@ Note that at this level all characters have been encoded using official Unicode 
                long as the text is rendered on a normalised level. Many Old Swedish and Old Danish
                texts can also be encoded with a minimal amount of character entities.
 
-## 4.5 Single-level transcriptions
+## 4.5 Single-level transcriptions [#sec4.5]
 
 While this handbook contains a number of examples of texts that have been transcribed on two or three levels, i.e. what we refer to as multi-level transcriptions, it should be emphasised that a text may be transcribed on a single level and be fully Menota compatible. This is indeed the default case for printed editions. For an archive such as Menota, the most frequent level is the diplomatic one, as described in [ch. 4.3](#sec4.3) above. For example, all texts stemming from Gammelnorsk Ordboksverk are single-level transcriptions on the diplomatic level.
 
@@ -614,7 +614,7 @@ While this handbook contains a number of examples of texts that have been transc
 | `<me:norm>{:xml}` | Contains a reading on the normalised level. |
 
 
-The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>{:xml}` element and each punctuation mark in a `<pc>{:xml}` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>{:xml}` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` or `<me:norm>{:xml}`.
+The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>{:xml}` element and each punctuation mark in a `<pc>{:xml}` element. As explained in [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) below, the `<w>{:xml}` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` or `<me:norm>{:xml}`.
 
 **Note**: The “me” prefix can only be used with a RELAX NG
                schema. It must be left out in texts which will be validated against a DTD.
@@ -625,7 +625,7 @@ The table above list the most important elements in a single-level transcription
 </Figure>
 
 
-<Caption title="Ill. 4.2">. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on <em>grið</em>, ‘peace’. AM 619 4to, f. 2v, l. 15–21.</Caption>
+<Caption title="Ill. 4.2">. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on <em>grið</em>, ‘peace’. AM 619 4to, f. 2v, l. 15&ndash;21.</Caption>
 
 The following example from the _Old Norwegian Homily Book_ in ill. 4.2 above renders the text on a diplomatic level. It is a single-level encoding, and since it is on the diplomatic level, we would refer to it as a <em>single-level encoding on the diplomatic level.</em>
 ```xml
@@ -714,9 +714,9 @@ A single-level transcription may contain the normalised level only, but this is 
 ```
 
 
-As discussed in [ch. 10.3](HB3_ch10.xml#sec10.3) below and exemplified in [ch. 10.4.2](HB3_ch10.xml#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
+As discussed in [ch. 10.3](/handbook/v3/HB3_ch10#sec10.3) below and exemplified in [ch. 10.4.2](/handbook/v3/HB3_ch10#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
 
-## 4.6 Multi-level transcriptions
+## 4.6 Multi-level transcriptions [#sec4.6]
 
 Multi-level transcriptions allow the transcriber to render various aspects of the text in one or more specific levels. While the facsimile level can be seen as an “as is” level, rendering the text in the source with as little interpretation as possible, the two next levels, the diplomatic and normalised levels, allow for specifications of the transcriber’s perspective and interpretation of the text.
 
@@ -729,9 +729,9 @@ The levels of a multi-level transcription should be grouped in a `<choice>{:xml}
 
 In the following, we shall discuss some of the options for a multi-level transcription. As will be seen, having several levels at disposal allow for a more detailed and distributed encoding, so that some elements may be used on one level and other elements on complimentary levels.
 
-### 4.6.1 Editorial intervention
+### 4.6.1 Editorial intervention [#sec4.5.1]
 
-Editorial intervention is sometimes required to produce a readable text – or, in
+Editorial intervention is sometimes required to produce a readable text &ndash; or, in
                   some cases, a text which can be annotated for syntax or information structure.
                   Corrections of scribal errors, the insertion of individual letters, words or even
                   phrases (accidentally) omitted by the scribe, conjectures about illegible words,
@@ -751,14 +751,14 @@ Editorial intervention is sometimes required to produce a readable text – or, 
                   facsimile transcription allows only minimal intervention while the normalised
                   level is produced by maximising the role of the editor.
 
-The question of editorial intervention will be discussed in more detail in [ch. 9.3](HB3_ch9.xml#sec9.3) below, giving a number of examples of
+The question of editorial intervention will be discussed in more detail in [ch. 9.3](/handbook/v3/HB3_ch9#sec9.3) below, giving a number of examples of
                   single-level and multi-level transcriptions. Although a single-level transcription
                   can be made on either of the three levels discussed here, it is as a rule done on
                   the diplomatic level.
 
-### 4.6.2 Special characters
+### 4.6.2 Special characters [#sec4.6.2]
 
-In a transcription on all three levels – facsimile, diplomatic, and normalised –
+In a transcription on all three levels &ndash; facsimile, diplomatic, and normalised &ndash;
                   the transcription of any given word can be different at the three levels, as shown
                   with some examples below. In “leɢıa”, the undotted “ı” is replaced by dotted “i”
                   at the diplomatic level, but the small capital “ɢ” is retained as it has
@@ -772,7 +772,7 @@ In a transcription on all three levels – facsimile, diplomatic, and normalised
                   and “ỏ” are replaced by “j” and “ǫ”, respectively.
 
 In the three tables below, transcriptions and renderings are illustrated with 
-                  images from the Icelandic law manuscript [GKS 3270 4to](https://handrit.is/en/manuscript/view/is/GKS04-3270) (ca. 1340–1360).
+                  images from the Icelandic law manuscript [GKS 3270 4to](https://handrit.is/en/manuscript/view/is/GKS04-3270) (ca. 1340&ndash;1360).
                
 
 <div className="table-abbr">
@@ -883,9 +883,9 @@ Occasionally, all three levels are identical:
 </div>
 
 
-If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
+If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](/handbook/v3/HB3_ch10#sec10.3.1.4) below).
 
-### 4.6.3 Structural properties
+### 4.6.3 Structural properties [#sec4.6.3]
 
 Page beginnings (`<pb/>{:xml}`), column beginnings (`<cb/>{:xml}`), and line beginnings
                      (`<lb/>{:xml}`) sometimes occur in the middle of a word. As these structural
@@ -895,17 +895,17 @@ Page beginnings (`<pb/>{:xml}`), column beginnings (`<cb/>{:xml}`), and line beg
                   and needs not to be repeated. See [ch. 3](/handbook/v3/HB3_ch3) for an
                   inventory of structural encoding.
 
-### 4.6.4 Punctuation
+### 4.6.4 Punctuation [#sec4.6.4]
 
 In the facsimile transcription, the punctuation of the manuscript is accurately
                   reproduced. The normalised transcription (or the diplomatic transcription, if
                   there is no normalised transcription) may need different punctuation or the
                   insertion of punctuation marks missing at the facsimile level. In such cases, the
                   punctuation in the `<pc>{:xml}` element will only be inserted in the
-                     `<me:norm>{:xml}` level. See [ch. 5.4](HB3_ch5.xml#sec5.4)
+                     `<me:norm>{:xml}` level. See [ch. 5.4](/handbook/v3/HB3_ch5#sec5.4)
                   for more details on the encoding of punctuation. 
 
-### 4.6.5 A sample encoding of a three-level transcription
+### 4.6.5 A sample encoding of a three-level transcription [#sec4.6.5]
 
 In a three-level transcription, the elements are the same as in a single-level transcription. 
                   The main difference is that the levels are encoded so that up to three text strings 
@@ -1077,7 +1077,7 @@ As an example of the encoding of a three-level transcription, we can once more
 
 The rather verbose encoding illustrated above becomes much more concise when displayed by a suitable stylesheet. Typically, the stylesheet will pick one of the levels for the display so that the text string becomes linear, as it is in the source.
 
-#### 4.6.5.1 Display of levels
+#### 4.6.5.1 Display of levels [#sec4.6.5.1]
 
 The display of levels varies with the stylesheets being used, but probably all stylesheets will agree on the display of the characters as such.
 
@@ -1091,7 +1091,7 @@ The display of levels varies with the stylesheets being used, but probably all s
 
 <Caption title="Ill. 4.3">. _Niðrstigningar saga_, an Old Norse
                      translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
-                     l. 1–2. This is identical to ill. 4.1 above, repeated here for the sake of convenience.</Caption>
+                     l. 1&ndash;2. This is identical to ill. 4.1 above, repeated here for the sake of convenience.</Caption>
 
 This is an approximate rendering of the display in the Menota archive of the text in ill. 4.3:
 <DisplayFrame>
@@ -1146,9 +1146,9 @@ This is an approximate rendering of the display in the Menota archive of the tex
 
 For reasons of line alignment in the Menota archive, the stylesheet will present 
                      the text on all levels with line beginnings and line numbers. In other stylesheets, line beginnings 
-                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3) below.
+                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3) below.
 
-#### 4.6.5.2 Focal levels
+#### 4.6.5.2 Focal levels [#sec4.6.5.2]
 
 As stated above, the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` and
                      `<me:norm>{:xml}` are not defined in TEI, but are part of the namespace we
@@ -1157,12 +1157,12 @@ As stated above, the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` and
 The three levels discussed here can be seen as **focal** in the
                      sense that they are typical and frequently used levels of text representations in
                      Medieval Nordic editions (as defined in [Haugen
-                        2004](HB3_literature.xml#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>{:xml}`
+                        2004](/handbook/v3/HB3_literature#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>{:xml}`
                      level for an even more detailed palaeographical encoding of the text. This level
                      has been included in the Menota schemas, but is not seen as one of the focal
                      levels.
 
 [Guðvarður Már Gunnlaugsson
-                     2003](HB3_literature.xml#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
+                     2003](/handbook/v3/HB3_literature#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
                      For example, a level between the diplomatic and normalised, usually called “halvdiplomatrisk”
                      (semi-diplomatic), is the standard level in many of the Arnmagnæan editions.

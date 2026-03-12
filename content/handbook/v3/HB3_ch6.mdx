@@ -4,7 +4,7 @@ author:
  - Haraldur Bernharðsson
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -93,7 +93,7 @@ Version 3.0 (12 December 2019)
 
 by Haraldur Bernharðsson and Odd Einar Haugen
 
-## 6.1 Introduction
+## 6.1 Introduction [#sec6.1]
 
 Abbreviations are a common feature of medieval orthography. In the medieval Nordic
                tradition, abbreviations were used most frequently in Norwegian and Icelandic
@@ -148,13 +148,13 @@ In a multi-level transcription, the `<am>{:xml}` element typically belongs to th
 In this chapter, we shall give a typology of abbreviations and then exemplify a number
                of cases.
 
-## 6.2 Typology
+## 6.2 Typology [#sec6.2]
 
-### 6.2.1 Overview
+### 6.2.1 Overview [#sec6.2.1]
 
-Abbreviations are usually divided into four categories (see, e.g., [Hreinn Benediktsson 1965](HB3_literature.xml#Benediktsson1965), p. 85 and, for a
+Abbreviations are usually divided into four categories (see, e.g., [Hreinn Benediktsson 1965](/handbook/v3/HB3_literature#Benediktsson1965), p. 85 and, for a
                   more detailed classification, [Kristian
-                     Kålund 1907](HB3_literature.xml#Kalund1907), pp. viii–x):
+                     Kålund 1907](/handbook/v3/HB3_literature#Kalund1907), pp. viii&ndash;x):
 
 (1) **Suspensions**. The first part of the word, often the
                   initial letter only, is written out, followed by a dot or similar mark, e.g.,
@@ -180,7 +180,7 @@ The typology in [ch. 6.3](#sec6.3) below takes as its point of
                   signs can be defined and treated like any other characters, while sthe latter signs must 
                   be defined as combining characters, like other diacritical marks.
 
-### 6.2.2 Glyphs
+### 6.2.2 Glyphs [#sec6.2.2]
 
 Glyphs are displayed in the Andron font by Andreas Stötzner. The regular
                   version of this font can be downloaded from the [MUFI font page](http://www.mufi.info).
@@ -189,7 +189,7 @@ Since abbreviation marks typically appear as parts of words and are frequently
                   associated with a base line character we have chosen to illustrate each mark
                   within the context of a whole word.
 
-### 6.2.3 Entity names
+### 6.2.3 Entity names [#sec6.2.3]
 
 All abbreviations are referred to with entity names, with the exception of full
                   stop, “.”, and colon, “:”. Entity names are placed within the delimiters
@@ -202,7 +202,7 @@ We aim at synchronizing our use of entities with those recommended by ISO, but
                   since there presently are no abbreviation entities in ISO, we are left to our own
                   devices in this chapter.
 
-### 6.2.4 Unicode values
+### 6.2.4 Unicode values [#sec6.2.4]
 
 [The
                      Unicode Standard 12.0 ](https://unicode.org/versions/Unicode12.0.0/) has only defined a handful of abbreviation
@@ -215,7 +215,7 @@ We aim at synchronizing our use of entities with those recommended by ISO, but
 
 For a complete list of suggested Unicode values, see [app. A](/handbook/v3/HB3_A_characters) below.
 
-### 6.2.5 Descriptive names
+### 6.2.5 Descriptive names [#sec6.2.5]
 
 As is the case with ordinary characters (cf. [ch.
                   5](/handbook/v3/HB3_ch5)) we adhere to the naming scheme in Unicode. Since [The
@@ -228,12 +228,12 @@ As is the case with ordinary characters (cf. [ch.
                   `COMBINING ABBREVIATION MARK  [+ APPROPRIATE DESCRIPTION]` for those 
                   typically placed above, through or below a base line character.
 
-## 6.3 Abbreviation marks on the base line
+## 6.3 Abbreviation marks on the base line [#sec6.3]
 
 Abbreviation marks on the base line behave as any other character. The typology of
                these abbreviation marks is discussed and exemplified below.
 
-### 6.3.1 The “et” mark
+### 6.3.1 The “et” mark [#sec6.3.1]
 
 The Tironian <em>nota</em> resembling the number “7” (or the
                   character “z” with or without a crossbar) used for the conjunction <em>et</em> ‘and’ in Latin is frequently used to denote the
@@ -255,7 +255,7 @@ There are two major variants of this sign. If the transcriber wishes to make a
 </div>
 
 
-### 6.3.2 The “ed” mark
+### 6.3.2 The “ed” mark [#sec6.3.2]
 
 In Latin, the semicolon was used for <em>e</em> + dental consonant,
                   as in the conjunction <em>sed</em>. In Old Norse, it is very often
@@ -269,7 +269,7 @@ In [The
                   mark we recommend that it is transcribed with an entity, `&sem;{:xml}`. Note
                   that there is another form of this abbreviation mark, looking like the number
                   “3”. This is included in the [MUFI character
-                     recommendation](HB3_literature.xml#MUFIrec) v. 4.0 at codepoint `F155` and can be encoded with
+                     recommendation](/handbook/v3/HB3_literature#MUFIrec) v. 4.0 at codepoint `F155` and can be encoded with
                   the entity `&etfin;{:xml}`.
 
 <div className="table-abbr">
@@ -279,7 +279,7 @@ In [The
 </div>
 
 
-### 6.3.3 The “con” mark
+### 6.3.3 The “con” mark [#sec6.3.3]
 
 A sign resembling a backwards “c” was often used for <em>con</em> in Latin and <em>kon</em> in Norse words. This
                   “con” mark is similar to `0254 LATIN SMALL LETTER 
@@ -296,10 +296,10 @@ A sign resembling a backwards “c” was often used for <em>con</em> in Latin a
 
 
 See the [MUFI character 
-                  recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for other variants of the “con” mark (descending
+                  recommendation](/handbook/v3/HB3_literature#MUFIrec) v. 4.0 for other variants of the “con” mark (descending
                   and with a dot).
 
-### 6.3.4 The “rum” mark
+### 6.3.4 The “rum” mark [#sec6.3.4]
 
 The sequence “rum” was often abbreviated with a character resembling a small
                   version of the number 4 (in fact, it is the round “r” with a stroke across
@@ -313,7 +313,7 @@ The sequence “rum” was often abbreviated with a character resembling a small
 </div>
 
 
-### 6.3.5 The cross mark
+### 6.3.5 The cross mark [#sec6.3.5]
 
 The word <em>kross</em> was sometimes abbreviated with the cross
                   symbol, which we suggest calling `&cross;{:xml}`. This <em>kross</em> mark can be identified with `271D` `LATIN
@@ -326,7 +326,7 @@ The word <em>kross</em> was sometimes abbreviated with the cross
 </div>
 
 
-### 6.3.6 The “m” rune
+### 6.3.6 The “m” rune [#sec6.3.6]
 
 The runic character for “m” was sometimes used for the word <em>maðr</em> (including case forms with the stem <em>mann-</em>). We recommend the entity name `&mMedrun;{:xml}`. The 
                   [Unicode 
@@ -362,7 +362,7 @@ The runic character may appear with interlinear marks (“a”, “i”,
                      “e”, “n”, “z”) for various inflected forms of the word <em>maðr</em>, e.g., <em>manna</em>, <em>manni</em>/<em>manne</em>, <em>mann</em>, <em>mannz</em>. The encoding of this type is
                   discussed in [ch. 6.4.7](#sec6.4.7) below. 
 
-### 6.3.7 The “f” rune
+### 6.3.7 The “f” rune [#sec6.3.7]
 
 The runic character for “f” was sometimes used for the word <em>fé</em>. In analogy with the use of the “m” rune, we suggest the
                   entity name `&fMedrun;{:xml}`.
@@ -376,7 +376,7 @@ The “f” rune is included in the [Runic](http://www.unicode.org/charts/PDF/U1
 </div>
 
 
-### 6.3.8 Dot (full stop)
+### 6.3.8 Dot (full stop) [#sec6.3.8]
 
 Dots were often used as abbreviation marks, typically for suspensions, e.g.
                      “ſ.” for <em>sonr</em> (or <em>segja</em>, <em>svara</em>). We recommend that the dot is transcribed in the same
@@ -438,7 +438,7 @@ If the transcriber wishes to distinguish between the dot used as an abbreviation
                   stop is an abbreviation mark that should be indicated simply by using the
                   &lt;am&gt; element, as shown here.
 
-### 6.3.9 Colon
+### 6.3.9 Colon [#sec6.3.9]
 
 The colon is sometimes, though not often, used as a mark of suspension, in the
                   same manner as the dot (full stop). In analogy with the encoding of dots we
@@ -452,7 +452,7 @@ The colon is sometimes, though not often, used as a mark of suspension, in the
 </div>
 
 
-### 6.3.10 Small capitals
+### 6.3.10 Small capitals [#sec6.3.10]
 
 In Old Icelandic, small capitals were used to denote geminated (long) consonants
                   or they were simply used ornamentally (especially in Old Norwegian).
@@ -477,19 +477,19 @@ Small capitals may also appear with a superscript dot; for example, “ʀ̇”. 
                   small capitals with a superscript dot should be transcribed as such both in a
                   facsimile and a diplomatic transcription.
 
-## 6.4 Combining abbreviation marks
+## 6.4 Combining abbreviation marks [#sec6.4]
 
 The majority of abbreviation marks are placed above, through or below a base line
                character. It could be argued that they really refer to the whole word, but from an
                analytical point of view we recommend that they are encoded immediately after the
-               base line character to which they seem most closely associated. Cf. the rules in [ch. 5.2.1](HB3_ch5.xml#sec5.2.1).
+               base line character to which they seem most closely associated. Cf. the rules in [ch. 5.2.1](/handbook/v3/HB3_ch5#sec5.2.1).
 
 It is sometimes difficult to decide whether a sign is placed on the base line or
                above another base line character. For example, the “us” mark (cf. [ch. 6.4.3](#sec6.4.3) below) may sometimes occupy a position of its
                own, although slightly raised above the base line. The classification in this chapter
                is based on what we believe are the prototypical positions of the abbreviation marks. 
 
-### 6.4.1 Horizontal bar
+### 6.4.1 Horizontal bar [#sec6.4.1]
 
 The horizontal bar is from a historical point of view the earliest form of an
                   abbreviation mark and it is also the most ambiguous type. It is commonly used for
@@ -551,7 +551,7 @@ It is possible to identify various shapes of the horizontal bar. In general we
                   explained in the header of the transcription and specified in the entity list (cf.
                      [app. D](/handbook/v3/HB3_D_schemas) below)
 
-### 6.4.2 Flourish
+### 6.4.2 Flourish [#sec6.4.2]
 
 The flourish may be described as a horizontal bar with a return. It appears in the
                   abbreviation of the Latin word <em>pro</em> in contradistinction to
@@ -566,7 +566,7 @@ The flourish may be described as a horizontal bar with a return. It appears in t
 </div>
 
 
-### 6.4.3 The <em>us</em> mark
+### 6.4.3 The <em>us</em> mark [#sec6.4.3]
 
 Originally a Tironian <em>nota</em>, a mark resembling a small
                   version of the number “9” is often used for <em>us</em>. It is
@@ -583,7 +583,7 @@ Originally a Tironian <em>nota</em>, a mark resembling a small
 </div>
 
 
-### 6.4.4 The <em>er</em> mark
+### 6.4.4 The <em>er</em> mark [#sec6.4.4]
 
 A mark resembling a zigzag was frequently used as abbreviation of a front vowel
                   (including diphtongs) + “r”, e.g. “ir”, “er”, “eir”,
@@ -603,7 +603,7 @@ A mark resembling a zigzag was frequently used as abbreviation of a front vowel
 </div>
 
 
-### 6.4.5 The <em>ra</em> mark
+### 6.4.5 The <em>ra</em> mark [#sec6.4.5]
 
 Originally an open form of the character “a”, this mark was used as an
       abbreviation for <em>ra</em> or <em>va</em>. One variant resembles
@@ -619,13 +619,13 @@ Originally an open form of the character “a”, this mark was used as an
 </div>
 
 
-### 6.4.6 The <em>ur</em> mark
+### 6.4.6 The <em>ur</em> mark [#sec6.4.6]
 
 The syllable <em>ur</em> (sometimes <em>yr</em>) can
       be abbreviated by a mark resembling a small version of the numeral “2”. A second form of
       this mark resemble a tilde, and a third form a horizontal version of the number “8”
       (equal to the lemniskate symbol), cf. [Hreinn Benediktsson
-       1965](HB3_literature.xml#Benediktsson1965), p. 91. Due to the considerable variation in form we suggest that it might be
+       1965](/handbook/v3/HB3_literature#Benediktsson1965), p. 91. Due to the considerable variation in form we suggest that it might be
       useful to distinguish between three main forms, using the entity `&urrot;{:xml}` for the first type, `&ur;{:xml}` for the second and `&urlemn;{:xml}` for the third. The code points are respectively `F153`, `1DD1` and `F1C2` (the first and the third of these in the Private Use Area).
 
 <div className="table-abbr">
@@ -637,7 +637,7 @@ The syllable <em>ur</em> (sometimes <em>yr</em>) can
 </div>
 
 
-### 6.4.7 Interlinear characters
+### 6.4.7 Interlinear characters [#sec6.4.7]
 
 Interlinear characters are a common type of abbreviation. An interlinear vowel
                   typically represents a consonant (often <em>r</em>) + the vowel
@@ -654,7 +654,7 @@ Interlinear characters are a common type of abbreviation. An interlinear vowel
                   We suggest that these characters are used to display interlinear characters and
                   that characters outside this selection are given separate code points in the
                   Private Use Area. See the [MUFI 
-                     character recommendation](HB3_literature.xml#MUFIrec) v. 4.0 for further specifications.
+                     character recommendation](/handbook/v3/HB3_literature#MUFIrec) v. 4.0 for further specifications.
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding of abbreviation | Encoding of expansion | Code point |
@@ -700,7 +700,7 @@ Since the first entity, `&mMedrun;{:xml}`, is defined as a base line character
                   immediately preceding base line character, there will be no doubt as to the
                   positioning. 
 
-### 6.4.8 Superscript dots
+### 6.4.8 Superscript dots [#sec6.4.8]
 
 Superscript dots are sometimes used to denote length. It is a moot question
                   whether this is a type of abbreviation, but in any case the transcriber should use
@@ -719,9 +719,9 @@ Superscript dots are sometimes used to denote length. It is a moot question
 </div>
 
 
-## 6.5 Special cases
+## 6.5 Special cases [#sec6.5]
 
-### 6.5.1 Nomina sacra
+### 6.5.1 Nomina sacra [#sec6.5.1]
 
 In some cases, the whole word must be analysed as an abbreviation. This applies to
                   the traditional <em>nomina sacra</em>, i.e. abbreviations for sacred
@@ -751,11 +751,11 @@ Typically in abbreviations of this sort, the bar extends over neighbouring
       each example, and that this bar simply happens to extend over more than one character. This
       problem is discussed more fully in [ch. 6.5.5](#sec6.5.5) below.
 
-### 6.5.2 Interlinear characters in other contexts
+### 6.5.2 Interlinear characters in other contexts [#sec6.5.2]
 
 Interlinear (superscript) characters are used in various ways, not always as
                   abbreviations. According to [Andrea de Leeuw van
-                     Weenen 2000](HB3_literature.xml#Weenen2000), pp. 36–43 there are four types:
+                     Weenen 2000](/handbook/v3/HB3_literature#Weenen2000), pp. 36&ndash;43 there are four types:
 
 **(a) as abbreviation**
 
@@ -767,7 +767,7 @@ This type is discussed in [ch. 6.4.7](#sec6.4.7) above. Here, we
 
 When superscript characters are used for adding characters which are missing on
                   the base line we recommend that they are encoded by use of the element
-                     `<add>{:xml}` and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](HB3_ch9.xml#sec9.2.1.1)). One might argue that if the
+                     `<add>{:xml}` and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1)). One might argue that if the
                   scribe has added the superscript character as part of the writing process, it
                   should not be regarded as an addition, but rather as an ordinary character which
                   just happened to be placed over the line. However, it is difficult to make a
@@ -818,7 +818,7 @@ Especially at the end of a line one or more characters may be placed above the
 </div>
 
 
-### 6.5.3 Missing abbreviation mark
+### 6.5.3 Missing abbreviation mark [#sec6.5.3]
 
 From time to time one can find examples of a word that obviously is abbreviated
                   but where there is no trace of the abbreviation mark. For example, a single
@@ -830,12 +830,12 @@ This is what we would recommend on the facsimile level of transcription. On the
                   diplomatic and normalised levels, we recommend using the `<supplied>{:xml}`
                   element, i.e. “d&lt;supplied&gt;rottning&lt;/supplied&gt;”.
 
-### 6.5.4 Nesting (stacking) of abbreviation marks
+### 6.5.4 Nesting (stacking) of abbreviation marks [#sec6.5.4]
 
 There are a few examples of base line characters which are abbreviated with an
                   abbreviation mark which is itself abbreviated. An example is the base line
                   character “m” with an interlinear “o” which in turn has a horizontal
-                  bar. According to rule 6 in [ch. 5.2.1](HB3_ch5.xml#sec5.2.1)
+                  bar. According to rule 6 in [ch. 5.2.1](/handbook/v3/HB3_ch5#sec5.2.1)
                   above this abbreviation should be encoded as the sequence `m{:xml}` +
                   `&osup;{:xml}` + `&bar;{:xml}`.
 
@@ -852,7 +852,7 @@ Since `&osup;{:xml}` is defined as a combining character, it follows that it is
                   is placed above `&osup;{:xml}`. There is therefore no doubt as to the
                   positioning of each part. 
 
-### 6.5.5 Extension of abbreviation marks
+### 6.5.5 Extension of abbreviation marks [#sec6.5.5]
 
 As a rule, combining abbreviation marks are associated with a single base line
                   character. Thus, the sequence `m&osup;{:xml}` means that the interlinear
@@ -902,7 +902,7 @@ It is possible to encode this word in such a way that the bar is associated with
 On the other hand, it should be noted that this a case where `0305` `COMBINING OVERLINE` is appropriate, since it connects to left and
                   right. Cf. the reference in [ch. 6.4.1](#sec6.4.1) above.
 
-### 6.5.6 Sporadic ligatures with abbreviation marks
+### 6.5.6 Sporadic ligatures with abbreviation marks [#sec6.5.6]
 
 We recommended that sporadic ligatures should not be encoded by use of separate
                   entities but by the element `<seg>{:xml}` with the attribute
@@ -912,7 +912,7 @@ We recommended that sporadic ligatures should not be encoded by use of separate
                   respect are identical to “s”&ensp;+&ensp;“k” and
                      “p”&ensp;+&ensp;“p”.
 
-See [ch. 4.3](HB3_ch4.xml#sec4.3) above for further examples.
+See [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3) above for further examples.
 
 <div className="table-abbr">
 | Manuscript form | Expanded form | Encoding |
@@ -1002,7 +1002,7 @@ Often, a horizontal bar is used across these ligatures. The bar may be encoded
 </div>
 
 
-### 6.5.7 The character “r” as interlinear ligature
+### 6.5.7 The character “r” as interlinear ligature [#sec6.5.7]
 
 A quite special type of abbreviation is interlinear “r” in ligature with e.g.
                      “þ”. The encoding is similar to the examples in [ch. 6.5.6](#sec6.5.6) above.
@@ -1014,7 +1014,7 @@ A quite special type of abbreviation is interlinear “r” in ligature with e.g
 </div>
 
 
-### 6.5.8 Sharp “s”
+### 6.5.8 Sharp “s” [#sec6.5.8]
 
 In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
                   e.g. for <em>skilling</em>, <em>smør</em> and
@@ -1053,7 +1053,7 @@ In late Old Norwegian, the “sharp s” appears in a number of abbreviations,
 </div>
 
 
-### 6.5.9 The semicolon abbreviation
+### 6.5.9 The semicolon abbreviation [#sec6.5.9]
 
 In Old Swedish, the semicolon character is often used as an abbreviation for the
                   front vowel “e” or “æ” + the dental “t” or “dh”, typically in words like “medh”
@@ -1077,7 +1077,7 @@ There is a long-standing tradition for rendering this abbreviation character as
                   rule requires some investigation into the manuscript orthography when deciding the
                   exact expansion.
 
-## 6.6 List of abbreviation marks
+## 6.6 List of abbreviation marks [#sec6.6]
 
 An extensive list of abbreviation characters is found in the [MUFI 
-               character recommendation](HB3_literature.xml#MUFIrec), cf. [app. A](/handbook/v3/HB3_A_characters) below.
+               character recommendation](/handbook/v3/HB3_literature#MUFIrec), cf. [app. A](/handbook/v3/HB3_A_characters) below.

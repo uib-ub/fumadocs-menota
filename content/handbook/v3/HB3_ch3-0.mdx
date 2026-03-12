@@ -5,7 +5,7 @@ author:
  - Rune Kyrkjebø
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -122,7 +122,7 @@ This version has been superseded by [version 3.1](/handbook/v3/HB3_ch3) (19 July
 
 by Matthew Driscoll, Rune Kyrkjebø and Odd Einar Haugen
 
-## 3.1 The structure of the manuscript vs. the structure of the work
+## 3.1 The structure of the manuscript vs. the structure of the work [#sec3.1]
 
 Viewed as physical objects, rather than as vehicles for texts, manuscripts have a
      certain structural hierarchy. What is regarded as a single manuscript may in fact comprise more
@@ -143,14 +143,14 @@ At the same time, of course, manuscripts obviously do contain texts, which is th
 XML has at its foundation the notion of a text as a single hierarchical structure, which means that it does not work well where there are several concurrent hierarchies, as is obviously the case when one wishes for example to indicate the line divisions both in a poem and in the manuscript in which the poem is contained. The [TEI
                Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this problem, enabling both the structure of the document and the structure of the text to be encoded.
 
-### 3.1.1 Hierarchical divisions
+### 3.1.1 Hierarchical divisions [#sec3.1.1]
 
 The principal means of representing hierarchy is the `<div>{:xml}` (i.e. “division”) element. `<div>{:xml}` elements may freely nest within each other. The `<div>{:xml}` element has, in addition to the universally available `@id{:sh}` and `@n{:sh}` attributes, a `@type{:sh}` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"{:js}`, `"stanza"{:js}`, `"couplet"{:js}`, if attempting to represent the structure of the text, or `"page"{:js}`, `"column"{:js}`, `"line"{:js}` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type{:sh}` attribute in the `<div>{:xml}` element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
 
 The complex structure of a work such as a set of rímur could be represented by using four levels of `<div>{:xml}` elements, `<div type="canto">{:xml}` for the cantos or fits, `<div type="part">{:xml}` for the parts (for example the <em>mansöngvar</em>), `<div type="stanza">{:xml}` for the stanzas, and `<div type="line">{:xml}` for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use `<div type="canto">{:xml}` for each set. A simpler form of mark-up is possible, however. Instead of `<div>{:xml}` elements, the `<l>{:xml}` element (for “line”) and the `<lg>{:xml}` element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the `<div>{:xml}` element for larger structural units. The `@type{:sh}` attribute is then used to identify the type of unit, e.g. `"stanza"{:js}`, `"couplet"{:js}`, like in `<lg type="stanza">{:xml}`. Here again the type need
                   only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
 
-This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance – if of importance at all – when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
+This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance &ndash; if of importance at all &ndash; when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using `<div>{:xml}` elements, which are then
                   given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
@@ -178,7 +178,7 @@ We will also discuss a few other elements which are relevant for the document st
 | `<handShift/>{:xml}` | change of scribal hand. |
 
 
-## 3.2 Main divisions of a TEI document
+## 3.2 Main divisions of a TEI document [#sec3.2]
 
 The following presentation is based on the TEI P5 Guidelines, [ch. 4](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html).
 
@@ -196,7 +196,7 @@ A TEI document is always at its highest level enclosed by the start tag `<TEI>{:
 | `</TEI>{:xml}` | the TEI document ends here. |
 
 
-### 3.2.1 Another possible first division of the text: More than one &lt;text&gt; element
+### 3.2.1 Another possible first division of the text: More than one &lt;text&gt; element [#sec3.2.1]
 
 The transcriber may want to divide a document into more than one text. This can be done with the `<group>{:xml}` element, which should be contained in the top level `<text>{:xml}` element taking the place of `<body>{:xml}` in the simpler scheme illustrated above. The following structure appears:
 ```xml
@@ -223,11 +223,11 @@ The main structure of the text, at the levels of work, first main division, seco
 
 Each major section of a text, `<front>{:xml}`, `<body>{:xml}` and `<back>{:xml}`, must have a minimum of contents, such as one or more `<div>{:xml}` elements for chapters, and within each `<div>{:xml}` element, one or more `<p>{:xml}` elements containing paragraph text.
 
-## 3.3 Chapters: &lt;div&gt;
+## 3.3 Chapters: &lt;div&gt; [#sec3.3]
 
 Further division of the `<body>{:xml}` block is achieved through `<div>{:xml}` elements, with one level nesting inside the other as the transcriber moves down through the hierarchical structure of the text.
 
-### 3.3.1 Type- and level-specified &lt;div&gt; elements
+### 3.3.1 Type- and level-specified &lt;div&gt; elements [#sec3.3.1]
 
 In a complex document, `<div>{:xml}` elements may be specified by `@type{:sh}` and `@n{:sh}` attributes. In this example, the three first chapters of a work have been contained in `<div>{:xml}` elements at the same hierarchical level (siblings):
 
@@ -238,7 +238,7 @@ In a complex document, `<div>{:xml}` elements may be specified by `@type{:sh}` a
 | `<div type="chapter" n="3">{:xml}` . . . `</div>{:xml}` | chapter three goes here (and so on). |
 
 
-### 3.3.2 Unspecified &lt;div&gt; elements
+### 3.3.2 Unspecified &lt;div&gt; elements [#sec3.3.2]
 
 It is also possible to use `<div>{:xml}` elements without specifying their type:
 
@@ -249,7 +249,7 @@ It is also possible to use `<div>{:xml}` elements without specifying their type:
 | `<div>{:xml}` . . . `</div>{:xml}` | chapter three goes here (and so on). |
 
 
-### 3.3.3 Nesting &lt;div&gt; elements
+### 3.3.3 Nesting &lt;div&gt; elements [#sec3.3.3]
 
 Note that `<div>{:xml}` elements may nest inside each other. For example, the levels of work, chapter and then paragraph can be encoded in the following manner:
 
@@ -264,7 +264,7 @@ Note that `<div>{:xml}` elements may nest inside each other. For example, the le
 
 While `<div>{:xml}` elements may nest as shown here, `<p>{:xml}` elements may not. They must be encoded sequentially, i.e. as siblings.
 
-## 3.4 Paragraph text: &lt;p&gt;
+## 3.4 Paragraph text: &lt;p&gt; [#sec3.4]
 
 The basic-level element for prose text is the paragraph, `<p>{:xml}`. Typically, the deepest level `<div>{:xml}` element will contain one or more `<p>{:xml}` elements:
 
@@ -278,9 +278,9 @@ The basic-level element for prose text is the paragraph, `<p>{:xml}`. Typically,
 | `</div>{:xml}` | the chapter ends here. |
 
 
-The `<p>{:xml}` element may appear in other contexts, such as in the `<teiHeader>{:xml}` element. It may also contain a number of other elements, but – as underlined above – it may not contain other `<p>{:xml}` elements, i.e. it is not allowed to nest.
+The `<p>{:xml}` element may appear in other contexts, such as in the `<teiHeader>{:xml}` element. It may also contain a number of other elements, but &ndash; as underlined above &ndash; it may not contain other `<p>{:xml}` elements, i.e. it is not allowed to nest.
 
-## 3.5 Sentences: &lt;s&gt;
+## 3.5 Sentences: &lt;s&gt; [#sec3.5]
 
 The text within a paragraph may be divided into sentences, `<s>{:xml}`:
 
@@ -293,9 +293,9 @@ The text within a paragraph may be divided into sentences, `<s>{:xml}`:
 | `</p>{:xml}` | the paragraph ends here. |
 
 
-Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. <em>Rignir</em> ‘It rains’. In the case of sentences linked by conjunctions (such as <em>ok</em>, <em>en</em> and <em>eða</em>) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), pp. 65–67, for a discussion of sentence boundaries in Old Norwegian.
+Paragraphs are usually not divided into sentences, but will simply list the words in sequential order. However, texts that are going to be annotated for syntax should preferably be divided into sentences according to a suitable definition of what constitutes a sentence. Since the subject is not an obligatory constituent in Old Norse, a single, finite predicate may be regarded as the basic sentence criterion, e.g. <em>Rignir</em> ‘It rains’. In the case of sentences linked by conjunctions (such as <em>ok</em>, <em>en</em> and <em>eða</em>) one might decide to declare a new sentence whenever there is a subject as well as a predicate following the conjunction. See [Haugen and Øverland 2014](/handbook/v3/HB3_literature#Guidelines2014), pp. 65&ndash;67, for a discussion of sentence boundaries in Old Norwegian.
 
-## 3.6 Words: &lt;w&gt;
+## 3.6 Words: &lt;w&gt; [#sec3.6]
 
 Although words need not be delimited by anything else than white space, we recommend
      placing each word in a `<w>{:xml}` element. This will be helpful for word constituent analysis
@@ -310,15 +310,15 @@ Although words need not be delimited by anything else than white space, we recom
 | `</p>{:xml}` | the paragraph ends here. |
 
 
-If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>{:xml}` element may be given several morphological attributes, in particular `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form. These attributes are discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) and [ch. 11.3](HB3_ch11.xml#sec11.3) below.
+If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The `<w>{:xml}` element may be given several morphological attributes, in particular `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form. These attributes are discussed in [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) and [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
 
-Another motivation for delimiting words by the `<w>{:xml}` element is the fact that a number of graphical words (i.e. sequences of characters with space on either side) should be split or merged according to standard dictionaries, e.g. “aveiðiskap” for “á veiðiskap” and “veiði kona” for “veiðikona”. Splitting and merging of graphical words will be discussed in [ch. 5.3](HB3_ch5.xml#sec5.3) below. The encoding of word constituents will also be discussed here.
+Another motivation for delimiting words by the `<w>{:xml}` element is the fact that a number of graphical words (i.e. sequences of characters with space on either side) should be split or merged according to standard dictionaries, e.g. “aveiðiskap” for “á veiðiskap” and “veiði kona” for “veiðikona”. Splitting and merging of graphical words will be discussed in [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) below. The encoding of word constituents will also be discussed here.
 
-If the text is transcribed on a single level, typically the diplomatic level, no specification within the `<w>{:xml}` element needs to be made. If, however, the transcription comprises more than one level of transcription, each level should be clearly marked. It is recommended, but not strictly necessary, to place these levels within a `<choice>{:xml}` element (cf. [ch. 3.13](#sec3.13) below). In a multi-level encoding, each `<w>{:xml}` element thus includes several other elements, `<choice>{:xml}` for stating the fact that the contents of this element are alternatives, `<me:facs>{:xml}` for rendering on a facsimile level, `<me:dipl>{:xml}` for rendering on a diplomatic level, and `<me:norm>{:xml}` for rendering on a normalised level. See [ch. 4.6](HB3_ch4.xml#sec4.6) for examples of multi-level encoding. (The “me:” part of the latter element name means that they are part of the name space established for Menota, as explained in [ch. 2.8](HB3_ch2.xml#sec2.8) above.)
+If the text is transcribed on a single level, typically the diplomatic level, no specification within the `<w>{:xml}` element needs to be made. If, however, the transcription comprises more than one level of transcription, each level should be clearly marked. It is recommended, but not strictly necessary, to place these levels within a `<choice>{:xml}` element (cf. [ch. 3.13](#sec3.13) below). In a multi-level encoding, each `<w>{:xml}` element thus includes several other elements, `<choice>{:xml}` for stating the fact that the contents of this element are alternatives, `<me:facs>{:xml}` for rendering on a facsimile level, `<me:dipl>{:xml}` for rendering on a diplomatic level, and `<me:norm>{:xml}` for rendering on a normalised level. See [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) for examples of multi-level encoding. (The “me:” part of the latter element name means that they are part of the name space established for Menota, as explained in [ch. 2.8](/handbook/v3/HB3_ch2#sec2.8) above.)
 
-Hyphenation of words is discussed in [ch. 5.5](HB3_ch5.xml#sec5.5) below.
+Hyphenation of words is discussed in [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) below.
 
-## 3.7 Punctuation: &lt;pc&gt;
+## 3.7 Punctuation: &lt;pc&gt; [#sec3.7]
 
 We recommend that punctuation characters are encoded in the same manner as words.
 
@@ -331,9 +331,9 @@ We recommend that punctuation characters are encoded in the same manner as words
 | `<w>{:xml}` . . . `</w>{:xml}` | and one more. |
 
 
-If the text is transcribed on a single level, typically the diplomatic level, no specification within the `<pc>{:xml}` element needs to be made. However, if the transcription comprises more than one level of transcription, each level should be clearly marked. The procedure is identical to the one specified for words above. See [ch. 5.4](HB3_ch5.xml#sec5.4) below for more details.
+If the text is transcribed on a single level, typically the diplomatic level, no specification within the `<pc>{:xml}` element needs to be made. However, if the transcription comprises more than one level of transcription, each level should be clearly marked. The procedure is identical to the one specified for words above. See [ch. 5.4](/handbook/v3/HB3_ch5#sec5.4) below for more details.
 
-## 3.8 Metrical text: &lt;lg&gt; and &lt;l&gt;
+## 3.8 Metrical text: &lt;lg&gt; and &lt;l&gt; [#sec3.8]
 
 The elements discussed here are defined and explained in the TEI P5 Guidelines, [ch. 6](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html).
 
@@ -392,7 +392,7 @@ Having `<p>{:xml}` and `<lg>{:xml}` as siblings can create problems for the enco
 | `</div>{:xml}` | The chapter ends here. |
 
 
-## 3.9 Headings: &lt;head&gt;
+## 3.9 Headings: &lt;head&gt; [#sec3.9]
 
 The element `<head>{:xml}` is used for containing headings on all levels of the document.
 
@@ -433,7 +433,7 @@ From a logical point of view, a heading is located at the beginning of a new cha
 
             
 <Caption title="Fig. 3.1">. A chapter heading. _Landslǫg Magnúss
-               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1–10.</Caption>
+               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1&ndash;10.</Caption>
 
 In fig. 3.1, the heading, which is written in red, is located after the end of one chapter and at the beginning of a new chapter.
                The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
@@ -456,9 +456,9 @@ In fig. 3.1, the heading, which is written in red, is located after the end of o
 
 The fact that the heading is a rubric has been encoded by the `@type="rubric"{:sh}` attribute.
 
-Unfortunately (from the point of view of the encoder) many manuscripts locate headings so that they are in conflict with this simple sequencing, for example by positioning them at the end of more than one line, or even in the middle of a line containing the beginning of one chapter and the end of the previous chapter. Examples of these complications are discussed in some detail in [ch. 16.3](HB3_ch16.xml#sec16.3) below.
+Unfortunately (from the point of view of the encoder) many manuscripts locate headings so that they are in conflict with this simple sequencing, for example by positioning them at the end of more than one line, or even in the middle of a line containing the beginning of one chapter and the end of the previous chapter. Examples of these complications are discussed in some detail in [ch. 16.3](/handbook/v3/HB3_ch16#sec16.3) below.
 
-## 3.10 Initials and highlighted characters: &lt;c&gt;
+## 3.10 Initials and highlighted characters: &lt;c&gt; [#sec3.10]
 
 As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript into chapters is marked up by  `<div>{:xml}` elements. Each chapter is usually indicated by an initial, often decorated and in colour, and a heading, a rubric, typically in red ink, as illustrated in fig. 3.2.
 
@@ -472,15 +472,15 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 
 
             
-<Caption title="Fig. 3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15–24.</Caption>
+<Caption title="Fig. 3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15&ndash;24.</Caption>
 
 The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (<em>littera notabilior</em>) should be encoded with the `<c>{:xml}` element.
 
-The `<c>{:xml}` element is discussed in [ch. 5.2.3](HB3_ch5.xml#sec5.2.3) below, while [ch. 7](/handbook/v3/HB3_ch7) explains the encoding of graphical elements of initials.
+The `<c>{:xml}` element is discussed in [ch. 5.2.3](/handbook/v3/HB3_ch5#sec5.2.3) below, while [ch. 7](/handbook/v3/HB3_ch7) explains the encoding of graphical elements of initials.
 
-See also [Kirsten Berg 2010](HB3_literature.xml#Berg2010), pp. 60–66, for a discussion of initials and highlighted characters in the structuring of a manuscript text like the _Old Norwegian Homily Book_.
+See also [Kirsten Berg 2010](/handbook/v3/HB3_literature#Berg2010), pp. 60&ndash;66, for a discussion of initials and highlighted characters in the structuring of a manuscript text like the _Old Norwegian Homily Book_.
 
-## 3.11 Direct speech and quotations: &lt;q&gt; and &lt;quote&gt;
+## 3.11 Direct speech and quotations: &lt;q&gt; and &lt;quote&gt; [#sec3.11]
 
 Dialogue are usually set out by quotation marks in edited copy, and in the encoding of a text, we recommend that the `<q>{:xml}` element should be used for identifying dialogue. Medieval manuscripts did not use quotation marks, so adding quotation marks is an editorial intervention which basically belongs to the normalised level of text encoding.
 
@@ -492,7 +492,7 @@ Quotation from other sources should be tagged with the `<quote>{:xml}` element. 
 | `<quote>{:xml}` | Contains a quotation from another source. |
 
 
-A quotation mark can be regarded as a type of punctuation character, `<pc>{:xml}`, but since quotation marks are displayed in so many different ways, we suggest that it is convenient to use an element of its own for quotation marks. See the discussion and examples in [ch. 5.6](HB3_ch5.xml#sec5.6) below.
+A quotation mark can be regarded as a type of punctuation character, `<pc>{:xml}`, but since quotation marks are displayed in so many different ways, we suggest that it is convenient to use an element of its own for quotation marks. See the discussion and examples in [ch. 5.6](/handbook/v3/HB3_ch5#sec5.6) below.
 
 In some cases, there may be a structural conflict between the opening and closing of a `<q>{:xml}` element, such as in this example, if it were to be encoded for `<s>{:xml}` as well as for `<q>{:xml}`:
 
@@ -507,11 +507,11 @@ unit="turn" rendition="closing-quote"/>
 ```
 
 
-There are several other ways of solving this type of conflict, as we discuss at some length in [ch. 16](HB3_ch16.xml#sec5.6) below. See also the TEI P5 Guidelines, [ch. 20](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html).
+There are several other ways of solving this type of conflict, as we discuss at some length in [ch. 16](/handbook/v3/HB3_ch16#sec5.6) below. See also the TEI P5 Guidelines, [ch. 20](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html).
 
-## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;
+## 3.12 Page, column and line beginnings: &lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt; [#sec3.12]
 
-### 3.12.1 Page beginnings and column beginnings
+### 3.12.1 Page beginnings and column beginnings [#sec3.12.1]
 
 TEI uses the empty element `<pb/>{:xml}` to indicate a page beginning. This element has an attribute `@n{:sh}` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n{:sh}` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, `<cb/>{:xml}`, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n{:sh}` attribute of the `<cb/>{:xml}` element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 
@@ -532,11 +532,11 @@ Page beginning information from, for example, a printed standard edition, can be
 ```
 
 
-Some of the texts in the Menota archive have been encoded with more than one document structure, such as <em>Konungs skuggsjá</em> in AM 243 bα fol. In addition to the document structure of the manuscript, **ed="ms"**, it has the Arnamagnæan pagination, **ed="AM"**, the one from [Finnur Jónsson’s 1920–1921 edition](HB3_literature.xml#Jónsson1920-1921), **ed="FJ_utg"**, and the one from [Holm-Olsen’s 1945 edition](HB3_literature.xml#Holm-Olsen1983), **ed="H-O"**.
+Some of the texts in the Menota archive have been encoded with more than one document structure, such as <em>Konungs skuggsjá</em> in AM 243 bα fol. In addition to the document structure of the manuscript, **ed="ms"**, it has the Arnamagnæan pagination, **ed="AM"**, the one from [Finnur Jónsson’s 1920&ndash;1921 edition](/handbook/v3/HB3_literature#Jónsson1920-1921), **ed="FJ_utg"**, and the one from [Holm-Olsen’s 1945 edition](/handbook/v3/HB3_literature#Holm-Olsen1983), **ed="H-O"**.
 
 The relevant editions should be declared in the header. As a rule, we suggest that the edition is identified by the initials of the editor + the year of publication, e.g. FJ1920-1921, LHO1945, etc.
 
-### 3.12.2 Line beginnings
+### 3.12.2 Line beginnings [#sec3.12.2]
 
 Line beginnings are also indicated with an empty element, the `<lb/>{:xml}`, which is placed at the beginning of a new line and may be numbered by using the `@n{:sh}` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
 ```xml
@@ -559,18 +559,18 @@ In other words, there should be as many `<pb/>{:xml}` elements as there are page
 
 As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the `@ed{:sh}` attribute.
 
-It is not uncommon for a word to be continued on the next line, with or without a hyphenation mark in the margin. In a single-level encoding, the `<lb/>{:xml}` element will be located within the relevant `<w>{:xml}` element, and in a multi-level encoding it will be repeated for each level. See examples of this in [ch. 5.5](HB3_ch5.xml#sec5.5) below.
+It is not uncommon for a word to be continued on the next line, with or without a hyphenation mark in the margin. In a single-level encoding, the `<lb/>{:xml}` element will be located within the relevant `<w>{:xml}` element, and in a multi-level encoding it will be repeated for each level. See examples of this in [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) below.
 
-## 3.13 Alternative encoding: &lt;choice&gt;
+## 3.13 Alternative encoding: &lt;choice&gt; [#sec3.13]
 
 The `<choice>{:xml}` element should be used whenever the encoded text string offers parallel readings. In the context of Menota encoding, there are three major instances of this, (1) words transcribed on more than one level,  (2) the combination of an `<orig>{:xml}` and a `<reg>{:xml}` element, and (3) the combination of a `<sic>{:xml}` and a `<corr>{:xml}` element.
 
-The first type is what we refer to as multi-level transcription, and it is discussed in a number of chapters, in particular [ch. 4.6](HB3_ch4.xml#sec4.6) below. The second type is discussed and exemplified in [ch. 9.2.3](HB3_ch9.xml#sec9.2.3) below, while the third type is treated in [ch. 9.3.3](HB3_ch9.xml#sec9.3.3).
+The first type is what we refer to as multi-level transcription, and it is discussed in a number of chapters, in particular [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) below. The second type is discussed and exemplified in [ch. 9.2.3](/handbook/v3/HB3_ch9#sec9.2.3) below, while the third type is treated in [ch. 9.3.3](/handbook/v3/HB3_ch9#sec9.3.3).
 
-## 3.14 Scribal hands: &lt;handShift/&gt;
+## 3.14 Scribal hands: &lt;handShift/&gt; [#sec3.14]
 
 While some manuscripts are written in a single hand throughout, other manuscripts are the product of two or more scribes. It is not a requirement that the transcriber identifies changes of hands, since it can be demanding to decide the number of hands and the location of the breaks between them. However, a transcriber may want to add information on hands in the document, either based on existing research or the transcriber’s own observations.
 
 Since a shift of hands in most cases will conflict with other divisions of the text, the recommended element is an empty one, `<handShift/>{:xml}`. This is an element of the same type as the ones discussed in [ch. 3.12](#sec3.12) above. If there are two hands in a document there will thus be a single `<handShift/>{:xml}` element, located at the break between hand 1 and hand 2.
 
-Information on the hands of a document can be given as part of the header in the `<handDesc>{:xml}` element. See [ch. 14.3.3](HB3_ch14.xml#sec14.3.3) below.
+Information on the hands of a document can be given as part of the header in the `<handDesc>{:xml}` element. See [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3) below.

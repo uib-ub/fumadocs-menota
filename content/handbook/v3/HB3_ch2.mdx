@@ -5,7 +5,7 @@ author:
  - Tone Merete Bruvik
  - Beeke Stegmann
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -110,7 +110,7 @@ Version 3.0
 
 by Beeke Stegmann, Matthew Driscoll and Tone Merete Bruvik
 
-## 2.1 What is XML?
+## 2.1 What is XML? [#sec2.1]
 
 XML, Extensible Markup Language, is
    a recommendation, endorsed by the [World
@@ -131,17 +131,17 @@ processing. A “markup language” is therefore at its most simple a set
 of codes which are used to indicate or “tag” certain features in the
 text, normally for formatting purposes. In most modern software
 packages the markup is generated with little or no conscious effort
-on the part of the user – in many modern word processing programs,
+on the part of the user &ndash; in many modern word processing programs,
 such as the ubiquitous Microsoft Word, the user is not even given the
 option of viewing the codes. But they are there: and to see just how
 many one need only open a document produced in, say, Word in a 
 plain text editor such as Notepad. A text of even a few short lines will be 
-prefaced by several dozen lines – possibly even pages – of code.
+prefaced by several dozen lines &ndash; possibly even pages &ndash; of code.
 
 The problem is that basically every program
 has its own set of codes, and it is only rarely possible to convert
 files from one to another without at least some loss of formatting.
-And it is not just the formatting that goes haywire – many exotic (read
+And it is not just the formatting that goes haywire &ndash; many exotic (read
 non-standard) characters are also likely to mutate or not be displayed at all. SGML was
 originally developed in order to avoid these problems by being
 entirely platform independent, hence G for generalised. SGML as well as XML achieve
@@ -175,7 +175,7 @@ XML should be consulted. A good place to start would be the World
    Wide Web Consortium’s own XML pages: [http://www.w3c.org/XML/](http://www.w3c.org/XML/).
 
 
-## 2.2 Appearance vs. structure
+## 2.2 Appearance vs. structure [#sec2.2]
 
 It is customary, in English and
 most other Western European languages, to use italic type in texts
@@ -213,7 +213,7 @@ example, to tag the names of persons, so that a search for “King George”,
 for example, would turn up only persons of that name rather
 than vessels or public houses.
 
-## 2.3 Elements
+## 2.3 Elements [#sec2.3]
 
 The key concept in XML markup
 is the element. An element is essentially a textual unit, the idea
@@ -239,7 +239,7 @@ In XML pairs of tags are used to mark off such units, a start tag and an end tag
      paragraphs, usually tagged with `<p>{:xml}`. Since XML is structured hierarchically, elements
      can contain each other, but only in their intirety. Overlapping structures of elements are not
      allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
-      [ch. 3.12](HB3_ch3.xml#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
+      [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
 
 The way two elements relate to each other hierarchically is determined by the
 <em>schema</em> used, which in our case would stipulate
@@ -324,8 +324,8 @@ If we abstract from this and attempt to describe the structure of
    poems in general we could say that a poem consists of 
    one or more stanzas (`<lg>{:xml}`) each of which is made up of one or more lines (`<l>{:xml}`). 
    A poem will also normally have a
-title and be attributable to an author (even if that author – as in 
-the case of _Þrymskviða_ – is the 
+title and be attributable to an author (even if that author &ndash; as in 
+the case of _Þrymskviða_ &ndash; is the 
    highly prolific “Anon.”). The name of the author will obviously not
    always appear with the text of the poem, however, for example in a series or
    collection, where there are several poems by the same author. 
@@ -354,7 +354,7 @@ example, wish to markup all names in the poem above. The personal name “Vingþ
 
 
 
-## 2.4 Attributes
+## 2.4 Attributes [#sec2.4]
 
 Without further information, the
 usefulness of such tagging is sometimes limited. More specific
@@ -396,7 +396,7 @@ value is acceptable for each attribute, as well as a default
 value if that is desired.
 
 
-## 2.5 Entities
+## 2.5 Entities [#sec2.5]
 
 The aspects of XML discussed so far are all concerned with the markup of elements within the
      document. XML also provides a mechanism for encoding and naming parts of the document’s
@@ -480,9 +480,9 @@ For our purposes entities are particularly useful for providing descriptive mapp
 
 
 In fact, all characters in the official part of the Unicode Standard can now be entered directly from the keyboard. See
-   [ch. 5.2.2](HB3_ch5.xml#sec5.2.2) for more details on this.
+   [ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2) for more details on this.
 
-Even more specialized characters might not be defined as part of the Unicode Standard  – yet – 
+Even more specialized characters might not be defined as part of the Unicode Standard  &ndash; yet &ndash; 
    and thus have to be defined as entities.
   For instance, the producer of
 a diplomatic text edition might want to distinguish between single
@@ -498,7 +498,7 @@ standard browsers as they can be different for each font. Instead, they need to 
 
 Special characters useful for Old Norse are created, for instance, by the [Medieval Unicode Font Initiative (MUFI)](http://www.mufi.info). 
 The most commonly used ones have been compiled by Menota into a list of entities, mapping them to their Unicode PUA values
-(see also [ch. 5.2.2](HB3_ch5.xml#sec5.2.2)).
+(see also [ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2)).
 This Menota entity list is available as an external file, which can conveniently be referred to from any XML 
 document using a system entity:
 ```xml
@@ -511,7 +511,7 @@ document using a system entity:
 In recent years, the TEI community has moved towards the use of the `<g>{:xml}` element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
      This requires an extensive `<charDecl>{:xml}` section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations – for the `&ocurl;{:xml}` entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/HB3_ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/HB3_ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
@@ -519,9 +519,9 @@ As can be seen throughout the chapters in this handbook, we use the tested and t
 
 In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, `E7D3`. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
 
-The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1) below. 
+The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1) below. 
 
-## 2.6 The Text Encoding Initiative and TEI conformant schemas
+## 2.6 The Text Encoding Initiative and TEI conformant schemas [#sec2.6]
 
 The most widely used XML
                   implementation for more sophisticated text encoding is that devised
@@ -598,9 +598,9 @@ A schema, as was said, defines the
                specification of the schema, then the document is not only well-formed,
                but also **valid**.
 
-Validation only checks the markup –
-               not the content – of the document. A document can consist entirely of
-               gibberish and still be valid – as, indeed, can a document with no
+Validation only checks the markup &ndash;
+               not the content &ndash; of the document. A document can consist entirely of
+               gibberish and still be valid &ndash; as, indeed, can a document with no
                content at all. The correctness of the contents remains
                the responsibility of the transcriber.
 
@@ -609,7 +609,7 @@ XML-aware software, such as
                validator (see [app. C](/handbook/v3/HB3_C_editors) for different XML editors). 
                Separate validator programs are also available.
 
-## 2.7 Putting the pieces together
+## 2.7 Putting the pieces together [#sec2.7]
 
 The first line of our XML document
                is the XML declaration, which tells any processing software that the
@@ -639,7 +639,7 @@ The main difference, however, is that the (older) DTD schema cannot handle multi
 The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
       Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
       The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
-      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](HB3_D_schemas.xml#D.1.1).
+      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](/handbook/v3/HB3_D_schemas#D.1.1).
       An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
 ```xml
 <?xml-model href="http://www.menota.org/menotaP5.rng"?>
@@ -656,7 +656,7 @@ Some XML editors additionally have their own way of referencing external schemas
 
 Following the schema, the entities used in the document are referenced.
     Entities can either be defined manually or provided by means of external entity lists, for instance as a system entity (see [ch. 2.5](#sec2.5).)
-    After that – finally – the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
+    After that &ndash; finally &ndash; the proper XML code follows, which is then supported and checked against the data provided by the schema and entities. 
             
 
 A structured XML document contains different kinds of components. We have already
@@ -665,7 +665,7 @@ A structured XML document contains different kinds of components. We have alread
      also contain <em>comments</em>. Comments begin with “&lt;!--” and end with
       “--&gt;”. They are allowed anywhere in the document (but not before the XML declaration),
      as long as they are outside other markup, i.e. not within a tag. Any markup or contents inside
-     a comment is considered as not actually part of the document – it is “commented out”
+     a comment is considered as not actually part of the document &ndash; it is “commented out”
      and ignored by the parser. Comments are particularly useful for anyone working in XML who wants
      to make a note to him or herself or others without it being processed.
 
@@ -688,7 +688,7 @@ In addition to purely structural
       etc. The other chapters in this handbook explain in detail how they
       can be used. 
 
-## 2.8 The namespace: Adding elements and attributes
+## 2.8 The namespace: Adding elements and attributes [#sec2.8]
 
 In this handbook, we are following the recommendations in the TEI Guidelines P5 closely. 
                We have, however, introduced a few additional elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts 
@@ -713,57 +713,57 @@ In the Menota XML files, all additional elements and attributes will be preceded
 
 The following is a complete list of additional elements and attributes in _The Menota handbook_:
 
-### 2.8.1 Elements
+### 2.8.1 Elements [#sec2.8.1]
 
-`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](HB3_ch4.xml#sec4.2).
+`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
 
-`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](HB3_ch4.xml#sec4.3).
+`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
 
-`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](HB3_ch4.xml#sec4.4).
+`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
 
-`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](HB3_ch4.xml#sec4.6.5.2).
+`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
 
 `<me:suppressed>{:xml}` for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
-                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](HB3_ch9.xml#sec9.3.2).
+                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
 
 `<me:textSpan/>{:xml}` for encoding any discontinous structures, thus avoiding a full set of elements 
                   like `<addSpan/>{:xml}`, `<delSpan/>{:xml}`, `<suppliedSpan/>{:xml}`, `<suppressedSpan/>{:xml}`, etc. 
                   Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
-                  cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
+                  cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
-`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
+`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
-`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
+`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
-### 2.8.2 Attributes
+### 2.8.2 Attributes [#sec2.8.2]
 
 `@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
-                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](HB3_ch11.xml#sec11.3).
+                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
 
 `@me:type{:sh}` for classification purposes. This is an attribute to the `<ex>{:xml}` and `<am>{:xml}` elements, 
-                  cf. [ch. 6.1](HB3_ch6.xml#sec6.1).
+                  cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
 
 `@me:key{:sh}` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](HB3_ch15.xml#sec15.2.2).
+                  in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](/handbook/v3/HB3_ch15#sec15.2.2).
 
 `@me:ref{:sh}` for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](HB3_ch15.xml#sec15.4.1).
+                  in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
 
 `@me:level{:sh}` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
                   This is an attribute to the `<normalization>{:xml}` element used in the header, 
-                  cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:lemmatized{:sh}` for identifying those texts which have been lemmatised. This is an attribute to the 
-                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:morphAnalyzed{:sh}` for identifying those texts which have been morphologically analysed, 
                   i.e. given grammatical form. This is another attribute to the `<interpretation>{:xml}` element used in the header,  
-                  cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:category{:sh}` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>{:xml}` element 
-                  used to encode overlapping structures, cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
+                  used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
-## 2.9 Displaying the text
+## 2.9 Displaying the text [#sec2.9]
 
 We have mentioned several times the possibility of displaying XML documents in standard web
      browers. In order to do so, one final piece is necessary: a stylesheet. As has been said, XML
@@ -950,11 +950,11 @@ The display is different, but the XML encoding is not changed at all. It is only
    and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, plain text, a PDF, RTF or PostScript file.
    And the same XML file can be transformed again and again into dozens of different formats.
 
-## 2.10 Menotic stylesheets
+## 2.10 Menotic stylesheets [#sec2.10]
 
 Menota makes available XSLT stylesheets that have been optimised for displaying digital transcriptions that were produced according to the guidelines of this handbook. 
    The stylesheets as well as an introduction to how to apply them are found in [app. F](/handbook/v3/HB3_F_xslt). 
    The latest version of the XSLT (for the present version of the handbook) now allows for sophisticated display of many manuscript-specific features on the facsimile level, 
    such as multi-part rubrics and scaled initials. Please bear in mind, however, that preference was given to incorporate features that were deemed essential and 
-   less common features or special cases might not be rendered correctly – yet – even though they are encoded in
+   less common features or special cases might not be rendered correctly &ndash; yet &ndash; even though they are encoded in
    accordance with the handbook’s recommendations.

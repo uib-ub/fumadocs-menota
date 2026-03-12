@@ -3,7 +3,7 @@ title: "Menota handbook appendix A (v. 3.0): Characters"
 author:
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -46,13 +46,13 @@ changeLog:
 ---
 
 
-# Appendix A: Characters
+# Appendix A: Characters [#secA]
 
 Version 3.0 (12 December 2019)
 
 by Odd Einar Haugen
 
-## A.1 Characters in Medieval Nordic sources
+## A.1 Characters in Medieval Nordic sources [#secA.1]
 
 The [Unicode Standard](http://unicode.org) now offers a large selection of characters in the Latin alphabet for the encoding of Medieval Nordic texts. For texts encoded on a diplomatic level, hardly any characters will be missing in the Standard, and even for texts encoded on a facsimile level, the great majority of characters, perhaps all, will be available. (See [ch. 4](/handbook/v3/HB3_ch4) for an explanation of levels of transcription.)
 
@@ -66,19 +66,19 @@ The Wikipedia article on runes in Unicode can be recommended:
 
 - [Runic (Unicode block)](https://en.wikipedia.org/wiki/Runic_(Unicode_block))
 
-## A.2 Synchronisation with MUFI
+## A.2 Synchronisation with MUFI [#secA.2]
 
 As of v. 2.0 of the Menota handbook, the selection and encoding of characters have been synchronised with the MUFI character recommendation. In v. 4.0 of this recommendation, there are more than 1,500 characters in the Latin alphabet of potential use for the encoding of Medieval Nordic primary sources:
 
 - [The MUFI character recommendation v. 4.0](http://hdl.handle.net/1956/10699) (published 22 December 2015) 
 
-The MUFI character recommendation lists Unicode codepoints and entity names for all characters in the file. Exactly the same entity names have been used in the Menota list of entities, cf. [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1).
+The MUFI character recommendation lists Unicode codepoints and entity names for all characters in the file. Exactly the same entity names have been used in the Menota list of entities, cf. [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1).
 
 The MUFI character recommendation and the Menota entity list was compatible with the Unicode Standard v. 8.0, published 17 June 2015. The Unicode Standard has now moved on to v. 12.0, but to the best of our knowledge, there are no additions to the Standard with respect to Medieval Nordic characters.
 
 The MUFI website has been redesigned after Tarrin Wills took over as chair of MUFI in 2016. It is now possible to search for characters directly from the website: [http://mufi.info](http://mufi.info).
 
-## A.3 Characters outside the Menota entity list
+## A.3 Characters outside the Menota entity list [#secA.3]
 
 If a character is not listed in the Menota entity list, it can still be encoded using a suitable character entity. Note, however, that a display of such characters require a proprietary font. These entities must be declared at the beginning of the XML file, at the end of the **!ENTITY** declaration. A list of entities for runic characters with corresponding codepoints in the Unicode Standard may look like this:
 

@@ -4,7 +4,7 @@ author:
  - Odd Einar Haugen
  - Beeke Stegmann
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -61,13 +61,13 @@ changeLog:
 ---
 
 
-# Appendix E: Menota header
+# Appendix E: Menota header [#secE]
 
 Version 3.0 (12 December 2019)
 
 by Odd Einar Haugen and Beeke Stegmann
 
-## E.1 Introduction
+## E.1 Introduction [#secE.1]
 
 We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount
 					of information about the text, its background and its encoding. This should be entered in
@@ -91,7 +91,7 @@ a RELAX NG schema when encoding a text rather than a DTD (Document Type Declarat
 The schema being used in a file is declared at the very beginning of the file. The headers that can be 
                             downloaded in [app. E.5](#secE.5) below are all using the RELAX NG schema, and can thus be used as models.
 
-## E.2 Minimal header for a source with a single text
+## E.2 Minimal header for a source with a single text [#secE.2]
 
 Although many medieval manuscripts contain more than one text, there are some manuscripts which only
 					contain a single piece of text. That is also generally true of charters (diplomas). We have
@@ -103,7 +103,7 @@ Please note that the distinction between single-text and multi-text sources is n
 					straightforward and ultimately rests on the definition of key concepts such as
 					“text” and “work”. If in doubt, we recommend using
 					the established categories in catalogues and indices, e.g. the index volume of 
-				  [Ordbog over det norrøne prosasprog](HB3_literature.xml#ONP) (Copenhagen 1989).
+				  [Ordbog over det norrøne prosasprog](/handbook/v3/HB3_literature#ONP) (Copenhagen 1989).
 
 We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative process of
 					text encoding can be documented in the header. This text was initially transcribed and edited in an
@@ -299,14 +299,14 @@ The source text is placed within the `<text>{:xml}` element. The attribute `@xml
 This header is also an example of how change of scribal hands in the source can be recorded. Note
 						that rather than putting each hand in an element of its own (which would cause problems
 						of overlapping) the actual change is recorded using a milestone element,
-					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
+					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above. 
 					  Note that the number of hands must be recorded in the
 							`<profileDesc>{:xml}` element of the header.
 
-## E.3 Minimal header for a source with multiple texts
+## E.3 Minimal header for a source with multiple texts [#secE.3]
 
-AM 242 fol – often referred to as _Codex Wormianus_ or
-			    _Órmsbók_ – is a good example of a multi-text source. It
+AM 242 fol &ndash; often referred to as _Codex Wormianus_ or
+			    _Órmsbók_ &ndash; is a good example of a multi-text source. It
 					contains the prose version of _Edda_ (by Snorri Sturlusonar), the four
 					grammatical treatises, and a few other poetic texts (_Maríukvæði_,
 						_Rígsþula_ and _ókennd heiti_). _Edda Snorra Sturlusonar_ is usually
@@ -621,10 +621,10 @@ The divisions of the text correspond to the list of `<msItem>{:xml}` elements in
 
 The `<head>{:xml}` element specifies the title of the work (or a part of it). If the title is given as a 
 					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
-					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
+					    in [ch. 3.9](/handbook/v3/HB3_ch3#sec3.9) above). If the title is not stated in the source, the editor may
 					    add a title in the `<supplied>{:xml}` element (as has been done above). 
 
-## E.4 Detailed header with more codicological information
+## E.4 Detailed header with more codicological information [#secE.4]
 
 As the third example we have
 		      chosen Copenhagen, Royal Library, NKS 235 g 4to which is a fragment of a single leaf. 
@@ -851,7 +851,7 @@ The body follows immediately after the header. This is where the actual transcri
 ```
 
 
-## E.5 Sample XML headers for download
+## E.5 Sample XML headers for download [#secE.5]
 
 We offer the three headers in this chapter for download:
 

@@ -4,7 +4,7 @@ author:
  - Robert K. Paulsen
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -93,13 +93,13 @@ by Robert K. Paulsen and Odd Einar Haugen
 
 &ensp;
 
-## T.1 Introduction
+## T.1 Introduction [#secT.1]
 
 This is a tutorial for the transcription of a text from a facsimile of the primary
                source (or the source itself) to a valid XML file according to the Menota
                standard.
 
-The tutorial outlines two ways of performing the transcription – either [T.2 Directly in an XML editor](#secT.2) or by
+The tutorial outlines two ways of performing the transcription &ndash; either [T.2 Directly in an XML editor](#secT.2) or by
                way of a [T.3 Simplified interface & conversion to XML](#secT.3). Whichever way should lead to a valid XML file. The
                next step, which is common to both approaches, is making the XML file readable, i.e.
                   [<span className="text-blue-500">T.4</span> Displaying the text with the help of an XSLT
@@ -125,7 +125,7 @@ Finally, it will be helpful to have a skeleton XML file to work with, as well as
 
 &ensp;
 
-## T.2 Transcribing directly in an XML editor
+## T.2 Transcribing directly in an XML editor [#secT.2]
 
 This can be done simply by copying an existing, valid XML file from the archive, preferably 
                one of the shorter files. After having corrected the header where necessary, the transcription 
@@ -136,7 +136,7 @@ This can be done simply by copying an existing, valid XML file from the archive,
 
 &ensp;
 
-## T.3 Simplified transcription & conversion to XML
+## T.3 Simplified transcription & conversion to XML [#secT.3]
 
 This is the transcription procedure developed by Robert K. Paulsen in Bergen. In this
                tutorial, the procedure is demonstrated based on a diplomatic transcription of the text, but it
@@ -144,7 +144,7 @@ This is the transcription procedure developed by Robert K. Paulsen in Bergen. In
 
 ### T.3.1 Simplified transcription
 
-Begin the transcription by opening the skeleton XML file called **etf.xml** from [Samples S.4](HB3_S1.xml#secS.4). As you might have
+Begin the transcription by opening the skeleton XML file called **etf.xml** from [Samples S.4](/handbook/v3/HB3_S1#secS.4). As you might have
                   guessed, the file name means “empty transcription file”. However, when saving this
                   file, you should give it a more descriptive name. If you have been using the
                   facsimile from the Old Norwegian Homily Book (AM 619 4to), f. 57v, offered in
@@ -170,7 +170,7 @@ When transcribing on the diplomatic level, follow these simple rules:
                   for the case described in section 5 below 
 
 <span className="text-red-500">3</span>. Transcribe words on a diplomatic level, as defined in the
-                  Menota handbook [ch. 4.2](HB3_ch4.xml#sec4.2). Use the space bar (or any
+                  Menota handbook [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2). Use the space bar (or any
                   amount of or kind of white space) between each graphic word in the text.
 
 <span className="text-red-500">3.1</span>. Two or more graphic words representing a single lexical
@@ -204,7 +204,7 @@ After having transcribed the text (or part of it) as explained above, you can us
                   the menotaBlitzS script to convert your simplified transcription to a full XML
                   file according to the Menota standard. Download the script from the [Samples](/handbook/v3/HB3_S1) page.
 
-<span className="text-red-500">1</span>. Installing Perl – or checking that you already have it on
+<span className="text-red-500">1</span>. Installing Perl &ndash; or checking that you already have it on
                   your computer 
 
 In order to run menotaBlitzS, you need to have a Perl interpreter installed on
@@ -370,16 +370,16 @@ Congratulations!
 
 &ensp;
 
-## T.4 Making the XML readable: Using an XSLT stylesheet
+## T.4 Making the XML readable: Using an XSLT stylesheet [#secT.4]
 
 The final step towards a readable transcription is to use an XSLT stylesheet, so that the XML file can 
                be converted to an HTML file. After this conversion, your file will be easily readable in any browser. 
-               This procedure is described in detail in [app. F.3](HB3_F_xslt.xml#secF.3) so it 
+               This procedure is described in detail in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3) so it 
                need not be re-iterated here.
 
 &ensp;
 
-## T.5 Encoding a Medieval Nordic text
+## T.5 Encoding a Medieval Nordic text [#secT.5]
 
 The following PDF tutorial has been made for students not familiar with Medieval Nordic manuscripts. 
             Fortunately, many of these manuscripts are eminently readable, and even with a limited understanding of 

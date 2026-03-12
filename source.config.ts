@@ -1,5 +1,6 @@
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config';
 import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
+import { remarkHeading } from 'fumadocs-core/mdx-plugins';
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.dev/docs/mdx/collections
@@ -24,6 +25,12 @@ export default defineConfig({
         dark: 'github-dark',
       },
       inline: 'tailing-curly-colon'
-    }
+    },
+    remarkPlugins: [
+      [remarkHeading, { 
+        generateId: false,
+        generateToc: true
+      }]
+    ]
   },
 });

@@ -5,7 +5,7 @@ author:
  - Beeke Stegmann
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -100,11 +100,11 @@ changeLog:
 
 # Ch. 14. The header
 
-Version 3.1 (7 January 2021) – cf. [version 3.0](/handbook/v3/HB3_ch14-0) (12 December 2019)
+Version 3.1 (7 January 2021) &ndash; cf. [version 3.0](/handbook/v3/HB3_ch14-0) (12 December 2019)
 
 by Matthew Driscoll, Beeke Stegmann and Odd Einar Haugen
 
-## 14.1 Introduction
+## 14.1 Introduction [#sec14.1]
 
 This chapter deals with the first major part of any Menota XML file, the header. 
   The header should describe the file so that meta level information about the text itself, its source, its encoding and its revisions are sufficiently documented. 
@@ -125,7 +125,7 @@ This chapter will discuss the recommended (minimal) amount of information for ea
   the `<fileDesc>{:xml}` is treated in two separate subsections, one dealing with the meta-level information on the file history, the other
 concerning the source from which the XML file is created, i.e. in our case usually the manuscript.
 
-## 14.2 The file description: Title, edition, extent and publication
+## 14.2 The file description: Title, edition, extent and publication [#sec14.2]
 
 The file description is a mandatory part of the header and must include information on the title, on the publication and on the source, cf. the File Description of the TEI P5 Guidelines, 
   [ch. 2.2 ](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2). It contains a number of elements, several of which were discussed in [ch. 12](/handbook/v3/HB3_ch12)
@@ -136,7 +136,7 @@ The first part of the `<fileDesc>{:xml}` supplies the necessary bibliographical 
   Please note: The description of the source for transcription (done in the element `<sourceDesc>{:xml}`) is also part of the `<fileDesc>{:xml}`. 
     However, in order to improve legibility, that part is treated in a separate subchapter (see [ch. 14.3](#sec14.3) below).
 
-### 14.2.1 Title statement
+### 14.2.1 Title statement [#sec14.2.1]
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -177,7 +177,7 @@ If  the text is a fragment of a manuscript, this should be stated in the title:
 
 The full list of titles for the works treated in the document will be given in the `<sourceDesc>{:xml}` (see [ch. 14.3](#sec14.3) below), 
   meaning that it is not necessary to include all details in the document title. In general, however, manuscripts are referred to based on the principles described in 
-  chapter [ch. 15.4.4](HB3_ch15.xml#sec15.4.4).
+  chapter [ch. 15.4.4](/handbook/v3/HB3_ch15#sec15.4.4).
 
 In addition to the title, the `<titleStmt>{:xml}` must also list the editor(s) and other contributors to the edition. 
     We recommend that one or more people (or institutions) are identified as the main editor(s) of the text in the `<editor>{:xml}` element. In this case, there is a single editor:
@@ -263,7 +263,7 @@ The TEI P5 Guidelines, [ch. 2.2.1](https://www.tei-c.org/release/doc/tei-p5-doc/
     `<titleStmt>{:xml}`. 
     Since almost all Medieval Nordic texts are anonymous we suggest that this element is optional.
 
-### 14.2.2 Edition statement
+### 14.2.2 Edition statement [#sec14.2.2]
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -292,7 +292,7 @@ A complete edition statement may be as simple as this:
 ```
 
 
-### 14.2.3 Extent
+### 14.2.3 Extent [#sec14.2.3]
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -309,7 +309,7 @@ The `<extent>{:xml}` element specifies the size of the file. The exact number of
 ```
 
 
-### 14.2.4 Publication statement
+### 14.2.4 Publication statement [#sec14.2.4]
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -349,14 +349,14 @@ Further specifications can be added in a `<p>{:xml}` element. Almost all texts i
 ```
 
 
-## 14.3 The file description: Identifying and describing the source
+## 14.3 The file description: Identifying and describing the source [#sec14.3]
 
 The `<sourceDesc>{:xml}` is a mandatory part of the header and describes the source material
     (cf. the TEI P5 Guidelines, [ch. 2.2.7](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3)). It is a child of `<fileDesc>{:xml}`, and in the case of a digital edition, the source is the manuscript carrying the transcribed text. 
     Therefore, the source is usually described using the element 
     `<msDesc>{:xml}` (manuscript description), which is placed within `<sourceDesc>{:xml}`. 
-    With TEI P5, this part of the header includes specific elements for manuscript description, based chiefly on the work of the EU-funded MASTER project (1999–2001) 
-    and the TEI Medieval Manuscripts Description Work Group (1998–2000). For detailed information on the manuscript description module, see the TEI P5 Guidelines,  
+    With TEI P5, this part of the header includes specific elements for manuscript description, based chiefly on the work of the EU-funded MASTER project (1999&ndash;2001) 
+    and the TEI Medieval Manuscripts Description Work Group (1998&ndash;2000). For detailed information on the manuscript description module, see the TEI P5 Guidelines,  
     [ch. 10](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html).
 
 The `<msDesc>{:xml}`
@@ -403,7 +403,7 @@ descriptions (so-called “legacy data”), the exact form of
 which one may wish, or be required, to maintain. 
 If at all possible, we recommend to use the available specific elements to structure and mark-up the manuscript description.
 
-### 14.3.1 Manuscript identifier
+### 14.3.1 Manuscript identifier [#sec14.3.1]
 
 The only mandatory element within `<msDesc>{:xml}` is `<msIdentifier>{:xml}`. For `<msIdentifier>{:xml}`, a number of
 sub-elements is available, among others,
@@ -461,7 +461,7 @@ In addition to the commonly used shelfmark, this example also has an `<altIdenti
  That this reference is to Kålund’s catalogue can be seen from the `@type{:sh}` attribute with the abbreviation “KKKat” as its value. The `<msName>{:xml}`
 elements additionally give two forms of the manuscript’s nickname, one in Latin, one in Icelandic.
 
-### 14.3.2 Intellectual content 
+### 14.3.2 Intellectual content  [#sec14.3.2]
 
 A detailed description of a manuscript’s intellectual contents is put in the
 `<msContents>{:xml}` element, which is the next major sub-element of `<msDesc>{:xml}`.
@@ -519,7 +519,7 @@ editions of the item in question. Bibliographical information
 pertaining to the manuscript as a whole should be placed in the
 `<additional>{:xml}` element, described below (see [ch. 14.3.5](#sec14.3.5)).
 
-### 14.3.3 Codicological features
+### 14.3.3 Codicological features [#sec14.3.3]
 
 The next major element in
 `<msDesc>{:xml}` is `<physDesc>{:xml}`, i.e. a
@@ -570,7 +570,7 @@ The example below shows a simple `<objectDesc>{:xml}`.
 
 
 The second group of elements within a structured physical description concerns aspects of the writing,
-  illumination or other notation (notably, music) found in a manuscript, including additions made in later hands – the text, 
+  illumination or other notation (notably, music) found in a manuscript, including additions made in later hands &ndash; the text, 
   as opposed to the carrier. Possible elements are: 
 `<handDesc>{:xml}`, usually containing one or more `<handNote>{:xml}` elements, 
 `<decoDesc>{:xml}`, containing one or more `<decoNote>{:xml}` elements, 
@@ -642,7 +642,7 @@ initial) or a homogenous class of such components (e.g. sentence
 initials in general). 
 The example blow shows the usage of multiple `<decoNote>{:xml}` elements
  in `<decoDesc>{:xml}`. For detailed step-by-step guidelines on the description of illuminations
-using `<decoNote>{:xml}`, see [ch. 7.2](HB3_ch7.xml#sec7.2) above.
+using `<decoNote>{:xml}`, see [ch. 7.2](/handbook/v3/HB3_ch7#sec7.2) above.
 ```xml
 <decoDesc>
   <decoNote>
@@ -709,7 +709,7 @@ while merely referring to them in other contexts.
 
 It should be noted that the various
     mechanisms for the transcription of primary sources described
-    elsewhere in this handbook – expansion of abbreviations and so on – may
+    elsewhere in this handbook &ndash; expansion of abbreviations and so on &ndash; may
     be employed here as well.
 
 The third group of elements in `<physDesc>{:xml}` pertains to things such as the binding and other material, that might be attached to the manuscript or stored with it.
@@ -721,7 +721,7 @@ The third group of elements in `<physDesc>{:xml}` pertains to things such as the
   on which Árni Magnússon frequently noted details about a manuscript or its provenance, which are frequently kept with the manuscript in question,
   can be described here using one or more paragraphs. 
 
-### 14.3.4 The history of the manuscript
+### 14.3.4 The history of the manuscript [#sec14.3.4]
 
 The `<history>{:xml}` element
 contains information on the history of the manuscript. Available
@@ -762,7 +762,7 @@ Information regarding the provenance and acquisition of a manuscript are frequen
  The same applies for other additions and marginalia (noted and potentially transcribed in `<additions>{:xml}`) that may contain hints at
    the provenance or general history of a manuscript.
 
-### 14.3.5 Other information
+### 14.3.5 Other information [#sec14.3.5]
 
 The final large grouping element in
   a manuscript description is the already mentioned element
@@ -793,7 +793,7 @@ whole. Inside `<listBibl>{:xml}`, one ore more `<bibl>{:xml}` elements are used 
  should rather be given under the appropriate
 `<msItem>{:xml}` (see [ch. 14.3.2](#sec14.3.2) above).
 
-### 14.3.6 Mark-up for names and bibliographical references using authority records
+### 14.3.6 Mark-up for names and bibliographical references using authority records [#sec14.3.6]
 
 Most of the elements that have been
 mentioned so far have the character of predefined boxes into which information
@@ -805,7 +805,7 @@ TEI standard. These are primarily used in order to
 facilitate certain types of processing and/or for search purposes.
 
 The discussion in this subchapter follows the TEI P5 Guidelines. Note that [ch. 15](/handbook/v3/HB3_ch15) below offers alternative ways of linking 
-    to names and bibliographical records in external resources. See also the discussion on external references to names in [ch. 12.2.5](HB3_ch12.xml#sec12.2.5) above.
+    to names and bibliographical records in external resources. See also the discussion on external references to names in [ch. 12.2.5](/handbook/v3/HB3_ch12#sec12.2.5) above.
 
 Wherever names occur (both in the header and the text), they can be tagged using 
   phrase-level elements such as the
@@ -862,9 +862,9 @@ Please note that the value of the attribute `@sex{:sh}` has in the Old Norse sch
     `"O"{:js}` for other, `"N"{:js}` for none or not applicable, and `"U"{:js}` for unknown.
 
 
-    Once a reference description of a name is available – either in the `<profileDesc>{:xml}` of the header in the same XML document or 
+    Once a reference description of a name is available &ndash; either in the `<profileDesc>{:xml}` of the header in the same XML document or 
     in an external authority file to which the 
-    processor has access –
+    processor has access &ndash;
       naming elements anywhere in the document, i.e. both in the header and the text, can point to it:
 ```xml
 <p> . . . [some text here]
@@ -948,7 +948,7 @@ Again, using the unique value of `@xml:id{:sh}`, a `<bibl>{:xml}` element anywhe
 ```
 
 
-## 14.4 The encoding description
+## 14.4 The encoding description [#sec14.4]
 
 The `<encodingDesc>{:xml}` should document the relationship between the electronic edition and the source it is based upon. 
   It is an optional part of the header, but we recommend that it contains information on the standard of encoding and level of quality. 
@@ -995,7 +995,7 @@ Finally within the `<editorialDecl>{:xml}` element, an `<interpretation>{:xml}`
 	  `"partly"{:js}` and `"none"{:js}`, but an additional description in prose may be added in a `<p>{:xml}` element.
 	  A lemmatised text will have lemmata (i.e. dictionary entries) added in the `@lemma{:sh}` attribute of the 
 	  `<w>{:xml}` element, while a morphologically analysed text will have grammatical forms specified in the `@me:msa{:sh}` attribute of the same element. 
-	  See [ch. 5.3](HB3_ch5.xml#sec5.3) for a general overview and [ch. 11](/handbook/v3/HB3_ch11) 
+	  See [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) for a general overview and [ch. 11](/handbook/v3/HB3_ch11) 
 	  for details on this lexical and morphological encoding.
 
 A complete `<encodingDesc>{:xml}` may look like this:
@@ -1029,7 +1029,7 @@ A complete `<encodingDesc>{:xml}` may look like this:
 ```
 
 
-## 14.5 The profile description
+## 14.5 The profile description [#sec14.5]
 
 The `<profileDesc>{:xml}` is an optional part of the header. We recommend that
  the language(s) used in the source are listed here within the element `<langUsage>{:xml}`. 
@@ -1075,9 +1075,9 @@ A `<profileDesc>{:xml}`may look like this:
 
 
 Note that the Profile Description may list more languages than actually 
-    referred to in the text. (See also [ch. 11.7](HB3_ch11.xml#sec11.7).) 
+    referred to in the text. (See also [ch. 11.7](/handbook/v3/HB3_ch11#sec11.7).) 
 
-## 14.6 The revision description
+## 14.6 The revision description [#sec14.6]
 
 Even if this is an optional part of the header, it is essential that all changes to the file are recorded. 
   Each change is described within a separate `<change>{:xml}` element. Within it, the `<date>{:xml}` is given first, 
@@ -1106,7 +1106,7 @@ A short series of `<change>{:xml}` elements may look like this:
 ```
 
 
-## 14.7 Example headers
+## 14.7 Example headers [#sec14.7]
 
 Three examples of Menota headers can be accessed in [app. E](/handbook/v3/HB3_E_menotaheader). 
 
@@ -1116,6 +1116,6 @@ The first two examples are for full manuscripts: One header is for a single-text
 
 Note that almost all texts in the Menota archive can be downloaded as XML files. This means that almost any header in the archive can be inspected, and, if convenient, used as an example.
 
-## Updates to ch. 14
+## Updates to ch. 14 [#sec14.8]
 
 On 7 January 2021,  two sentences were added in [ch. 14.3.4](#sec14.3.4) on the usefulness and practice of dating in conjunction with language encoding, and the latter practice was discussed in a revised [ch. 14.5](#sec14.5). Rather than using the non-ISO codes “oic” (Old Icelandic), “onw” (Old Norwegian), “osw” (Old Swedish) and “oda” (Old Danish), we now recommend using the standard ISO codes “isl” (Icelandic), “nor” (Norwegian), “swe” (Swedish) and “dan” (Danish) combined with dating of the manuscript in question.

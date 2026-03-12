@@ -30,6 +30,7 @@
                 => replace('&gt;', '&amp;gt;')
                 => replace('\s+\+', ' +')
                 => replace('&#x00a0;', '&amp;ensp;')
+                => replace('&#x2013;', '&amp;ndash;')
                 => menota:simple-spaces(.)
             "/>
     </xsl:template>

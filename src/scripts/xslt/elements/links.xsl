@@ -10,6 +10,7 @@
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
                 => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
+                => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
