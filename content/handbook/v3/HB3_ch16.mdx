@@ -86,7 +86,7 @@ In this chapter, we offer a similar overview and discussion in [ch. 16.2](#sec16
 ## 16.2 Spanning and linking encoding [#sec16.2]
 
 In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), the elements <E>addSpan/</E>, <E>delSpan/</E> and <E>damageSpan/</E> are defined. These elements are counterparts to the elements <E>add</E>, <E>del</E> and <E>damage</E>, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. <E>sic</E>, <E>corr</E>, <E>unclear</E> and <E>supplied</E>, but there are no corresponding <E>sicSpan</E>, <E>corrSpan</E>, <E>unclearSpan</E> and <E>suppliedSpan</E>. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element <E>me:textSpan/</E> and given it attributes from the classes
-              “att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute `@me:category{:sh}`. Note that we in this table include the <E>anchor</E> element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
+“att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute `@me:category{:sh}`. Note that we in this table include the <E>anchor</E> element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
 
 <div className="table-xml-elements">
 | Elements & attributes | Explanation |
@@ -115,7 +115,7 @@ In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/e
 We will discuss an example of an overlapping structure in AM 673 b 4to (<em>Plácitusdrápa</em> 1), as seen in ill. 16.1.
 
 
-               
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch16/AM-673-b-4to-1r,1-4.jpg" alt="ch16/AM-673-b-4to-1r,1-4.jpg"/>
@@ -283,7 +283,7 @@ A suitable XSLT stylesheet will be able to display this piece of text according 
  7 vera hvær við annan þar til er þeir koma heim til sins hæimi<br/>
  8 .............................. <br/>
 
-          
+
 
 as well as its logical structure, by displaying the rubric on a separate line, but otherwise in the same order as above:
 
@@ -295,7 +295,7 @@ as well as its logical structure, by displaying the rubric on a separate line, b
  7 vera hvær við annan þar til er þeir koma heim til sins hæimi<br/>
  8 .............................. <br/>
 
-          
+
 
 Note that in the latter display, the line number 5 appears twice, since the last part of this line, the rubric, has been displayed on a separate line.
 
@@ -342,7 +342,7 @@ A suitable XSLT stylesheet will be able to display this piece of text according 
  17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<br/>
  18 .............................. <br/>
 
-          
+
 
 Alternatively, a suitable stylesheet will be able to display this piece of text according to its logical order:
 
@@ -354,7 +354,7 @@ Alternatively, a suitable stylesheet will be able to display this piece of text 
  17 mysteri guði. ok bauð lyð ſinum at halda hotið þa er<br/>
  18 .............................. <br/>
 
-          
+
 
 
 
@@ -405,7 +405,7 @@ Once again, our stylesheet should be able to display the text according to its p
  5 suo viða at þeir verði full aflla til upp at setia ok vt<br/>
  6 .............................. <br/>
 
-          
+
 
 as well as according to its logical order:
 
@@ -418,7 +418,7 @@ as well as according to its logical order:
  5 suo viða at þeir verði full aflla til upp at setia ok vt<br/>
  6 .............................. <br/>
 
-          
+
 
 When double (or even triple) numbering of line beginnings is used in a transcription, one should make sure that any automatic numbering program that is run on the <E>lb/</E> elements is set up not to override manually given numbers.
 
@@ -487,7 +487,7 @@ According to the display recommended in this handbook, this solution is appropri
 
 
 
-         
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch16/NRA-58C-1rA,24-27.jpg" alt="ch16/NRA-58C-1rA,24-27.jpg"/>

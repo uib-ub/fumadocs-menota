@@ -200,13 +200,13 @@ We suggest that there are two different types of scribal additions, and that the
 
 
 Changes in scribal hands are not considered additions. For markup of 
-    such phenomena, the <E>handShift/</E> element should be used (cf. [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above). Note that this element is parallel to empty elements
-    like <E>pb/</E>, <E>cb/</E> and <E>lb/</E> in that it only points to a break in the text.
+such phenomena, the <E>handShift/</E> element should be used (cf. [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above). Note that this element is parallel to empty elements
+like <E>pb/</E>, <E>cb/</E> and <E>lb/</E> in that it only points to a break in the text.
 
 ### 9.2.1.1 Encoding of text supplied by the scribe [#sec9.2.1.1]
 
 
-      
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/Holm-B59-6v,8-10.png" alt="ch9/Holm-B59-6v,8-10.png"/>
@@ -214,11 +214,11 @@ Changes in scribal hands are not considered additions. For markup of
 </Figure>
 
 
-    
+
 <Caption title="Ill. 9.1">. Words added above the line. _Äldre Västgötalagen_. Holm B 59, f. 6v, l. 8&ndash;11.</Caption>
 
 In the second line of ill. 9.1, there are no less than three supralinear words. The first is <em>var</em> ‘was’, which is inserted between <em>Iak</em>
-      and&ensp;<em>þa a þingi</em>. The encoding in a single-level transcription would be as follows:
+and&ensp;<em>þa a þingi</em>. The encoding in a single-level transcription would be as follows:
 ```xml
 . . .
 <w><me:dipl>Iak</me:dipl></w>
@@ -233,7 +233,7 @@ In the second line of ill. 9.1, there are no less than three supralinear words. 
 
 
 
-      
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-13v,8-10.jpg" alt="ch9/AM-619-4to-13v,8-10.jpg"/>
@@ -241,11 +241,11 @@ In the second line of ill. 9.1, there are no less than three supralinear words. 
 </Figure>
 
 
-    
+
 <Caption title="Ill. 9.2">. A word added in the margin. _The Old Norwegian Homily Book_. AM 619 4to, f. 13v, l. 8&ndash;10.</Caption>
 
 In the second line of ill. 9.2, the word “of” is placed in the margin, indicated by a triangular insertion sign.  In a multi-level encoding, we recommend that additions are encoded on the facsimile and diplomatic level,
-      but not on the normalised level. This is an example of a word added in the margin:
+but not on the normalised level. This is an example of a word added in the margin:
 ```xml
 . . .
 <w>
@@ -309,12 +309,12 @@ In the second line of ill. 9.2, the word “of” is placed in the margin, indic
 
 
 The location of the addition is indicated by the 
-      attribute `@place{:sh}`. In this example, the addition is made outside the text column and therefore described by the value `"margin"{:js}`. Note that we are not encoding the triangular signs as such.
+attribute `@place{:sh}`. In this example, the addition is made outside the text column and therefore described by the value `"margin"{:js}`. Note that we are not encoding the triangular signs as such.
 
  Scribal additions 
-      are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
-      In some cases, however, the addition can be longer, especially when placed in the margin. These additions
-      should as far as possible be located within the main text.
+are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
+In some cases, however, the addition can be longer, especially when placed in the margin. These additions
+should as far as possible be located within the main text.
 
 As discussed in [ch. 6.5.2](/handbook/v3/HB3_ch6#sec6.5.2) above, when a scribe adds parts of a word above the line, in order to complement the word, e.g. “v.  ” for <em>fimti</em> (type c) or for reasons of space, e.g. “eᷤ” for <em>es</em> (type d), we do not regard this as an addition as long as it seems to be part of the actual writing process. These instances will be encoded with appropriate supralinear entities, such as `&ssup;{:xml}` for the supralinear “s” in `eᷤ{:xml}` for <em>es</em>. The element <E>add</E> is thus reserved for any additions which are made (or most likely were made) after the first writing session, either by the scribe himself or by a later hand.
 
@@ -340,7 +340,7 @@ In the Icelandic homily book, Holm perg 15 4to, fol. 1r.9, the word “stirðlei
 ### 9.2.1.3 Display of scribal additions [#sec9.2.1.3]
 
 In the stylesheet for the Menota archive, scribal additions are displayed by insertion signs, either downwards-pointing 
-     (for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript). As for glosses, we suggest using top left and top right half brackets. To the best of our knowledge, there is no commonly accepted way of indicating glosses in edited texts.
+(for additions inline, above or below the line in the manuscript) or upwards-pointing (for additions in the margin of the manuscript). As for glosses, we suggest using top left and top right half brackets. To the best of our knowledge, there is no commonly accepted way of indicating glosses in edited texts.
 <DisplayFrame>
 
 
@@ -372,7 +372,7 @@ In the stylesheet for the Menota archive, scribal additions are displayed by ins
 In the Unicode Standard, the first set of insertion signs, ⸌...⸍, are located at `2E0C` and `2E0D`, the second set, ⸝...⸜, at `2E1D` and `2E1C`.
 
 We suggest that it is sufficient to display two main types, so that additions 
-         within the text column (typically supralinear, but also inline and infralinear) are displayed by the first set and additions in the margin with the second set. It can be left to the photographic facsimile to show exactly how the additions have been placed.
+within the text column (typically supralinear, but also inline and infralinear) are displayed by the first set and additions in the margin with the second set. It can be left to the photographic facsimile to show exactly how the additions have been placed.
 
 The third set of insertion signs, ⸢...⸣, are located at `2E22` and `2E23` in the Unicode Standard. We suggest that a gloss is encoded directly after the glossed word on the line.
 
@@ -388,7 +388,7 @@ Text suppressed by a modern editor is dealt with in [ch. 9.3.2](#sec9.3.2) below
 #### 9.2.2.1 Encoding of scribal deletions [#sec9.2.2.1]
 
 The element <E>del</E> should be used for deletions made in the manuscript by the scribe himself
-      or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.
+or a later compiler, annotator or corrector. Identifying a deletion in a manuscript is usually simple, while identifying the hand responsible for the deletion can be difficult. For this reason, we suggest that the first identification should be obligatory, the second optional.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
@@ -400,7 +400,7 @@ The element <E>del</E> should be used for deletions made in the manuscript by th
 
 
 
-      
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-243-ba-fol-5ra,24-26.jpg" alt="ch9/AM-243-ba-fol-5ra,24-26.jpg"/>
@@ -408,7 +408,7 @@ The element <E>del</E> should be used for deletions made in the manuscript by th
 </Figure>
 
 
-    
+
 <Caption title="Ill. 9.3">. Characters deleted by erasure. _Konungs skuggsjá_. AM 243 bα fol, f. 5ra, l. 24&ndash;26.</Caption>
 
 In the middle line of ill. 9.3, two characters have been erased in the word <em>skilningar laus</em>. In a single-level encoding, the deletion will be recorded as it appears in the manuscript:
@@ -422,8 +422,8 @@ In the middle line of ill. 9.3, two characters have been erased in the word <em>
 
 
 In a multi-level encoding, we recommend that deletions are encoded on the facsimile
-      and diplomatic level, but not on the normalised level. This is the same recommendation as for the <E>add</E> element 
-      discussed above:
+and diplomatic level, but not on the normalised level. This is the same recommendation as for the <E>add</E> element 
+discussed above:
 ```xml
 . . .
 <w>
@@ -454,17 +454,17 @@ In a multi-level encoding, we recommend that deletions are encoded on the facsim
 Text which has been encoded as deleted
 must be at least partly legible in the manuscript. If the deleted text is completely illegible we recommend that the
 deleted passage should be encoded with the <E>gap/</E> element,
-  described in [ch.
-    8.2](/handbook/v3/HB3_ch8#sec8.2) above.
+described in [ch.
+8.2](/handbook/v3/HB3_ch8#sec8.2) above.
 
 Sometimes, a scribe would delete a word and add another above the line. 
-      We regard this as a substitution which should be encoded with a combination of a
-      <E>del</E> and an <E>add</E> element. See [ch. 9.2.4](#sec9.2.4) below.
+We regard this as a substitution which should be encoded with a combination of a
+<E>del</E> and an <E>add</E> element. See [ch. 9.2.4](#sec9.2.4) below.
 
 #### 9.2.2.2 Display of deletions by the scribe [#sec9.2.2.2]
 
 In the stylesheet for the Menota archive, scribal deletions are displayed by vertical bars with quills. The beginning of the deletion will be indicated 
-      by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
+by a vertical bar with the quill to the right, and the end of the deletion with a vertical bar with a quill to the left.
 <DisplayFrame>
 
 
@@ -494,7 +494,7 @@ The sequence of words in a manuscript was sometimes transposed by the scribe or 
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.4">. Transpositions of two words. _The Old Norwegian Homily Book_. AM 619 4to, fol. 47r, l. 8&ndash;10.</Caption>
 
 In ill. 9.4, there are two transposition signs, one above each of the two words “vaner” and “váro” (simplified spelling) in the middle line indicating that the sequence should rather be “váro vaner”. There are different types of transposition signs; this one looks like three dots in a downwards-pointing triangle.
@@ -597,19 +597,19 @@ Other stylesheets may display transpositions differently. It is, for example, no
 This section describes the markup of text substituted by a scribe, 
 i.e. where a scribe deletes text and replaces it with some other 
 text. These actions should be encoded by a combination of the <E>del</E> and <E>add</E> 
-  elements introduced in [ch. 9.2.1](#sec9.2.1) and [ch. 9.2.2](#sec9.2.2) above.
+elements introduced in [ch. 9.2.1](#sec9.2.1) and [ch. 9.2.2](#sec9.2.2) above.
 It is not always possible, however, to ascertain the relation between
 the two. If someone has deleted the originally written text inline
 this does not automatically mean that a corresponding addition above
 the line or in the margin is made by the same scribe. A correspondence 
 can be expressed by the `@resp{:sh}` attribute, 
 whenever the editor is able make this identification.
- 
+
 
 A common type of substitution occurs when a scribe makes changes to one character in order to make it into another one, e.g. making an“e” into an “o”.
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-26v,7-11.jpg" alt="ch9/AM-619-4to-26v,7-11.jpg"/>
@@ -617,13 +617,13 @@ A common type of substitution occurs when a scribe makes changes to one characte
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.5">. Substitution of one character with another. _The Old Norwegian Homily Book_. AM 619 4to, f. 26v, l. 7&ndash;11.</Caption>
 
 In the 4th line of ill. 9.5, the 5th word has been changed from “ſundu<em>m</em>” to “ſẏndu<em>m</em>”. We suggest that this action is encoded as a deletion of the “u” and the addition of the “y”. The change consists of adding a stem to the “u” and presumably a dot above it.
 
 We recommend that in a single-level encoding, the <E>del</E> and <E>add</E> elements
-    are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:
+are included on the same level, one after another. This is what the above substitution would look like in a transcription on the diplomatic level:
 ```xml
 . . .
 <w>
@@ -635,8 +635,8 @@ We recommend that in a single-level encoding, the <E>del</E> and <E>add</E> elem
 
 
 In a multi-level encoding, we recommend that the <E>del</E> and <E>add</E> elements
-    are included at the facsimile and diplomatic level, while the normalised level should
-    give the text as it was intended:
+are included at the facsimile and diplomatic level, while the normalised level should
+give the text as it was intended:
 ```xml
 . . .
 <w>
@@ -653,7 +653,7 @@ In a multi-level encoding, we recommend that the <E>del</E> and <E>add</E> eleme
 
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/HolmPerg-34-4to-8r,17-19.jpg" alt="ch9/HolmPerg-34-4to-8r,17-19.jpg"/>
@@ -661,13 +661,13 @@ In a multi-level encoding, we recommend that the <E>del</E> and <E>add</E> eleme
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.6">. Substitution of one character with another written above. _Landslǫg Magnúss
-    Hákonarsonar_. Holm perg 34 4to, f. 8r, l. 17&ndash;19.</Caption>
+Hákonarsonar_. Holm perg 34 4to, f. 8r, l. 17&ndash;19.</Caption>
 
 Another common example is the substitution by writing the replacement 
-    above (or below) the word.  In ill. 9.6,
-  in the middle of the middle line, the word “yður” has been altered, most likely by the scribe, so 
+above (or below) the word.  In ill. 9.6,
+in the middle of the middle line, the word “yður” has been altered, most likely by the scribe, so 
 that the original “u” has been deleted by 
 subpunctuation and an “e” has been added as the replacement character 
 above the line. This word should be marked up as follows in a single-level encoding on the diplomatic level:
@@ -682,8 +682,8 @@ above the line. This word should be marked up as follows in a single-level encod
 
 
 As stated above, we recommend that in a multi-level encoding, 
-    the <E>del</E> and <E>add</E> elements
-  are included at the facsimile and diplomatic level, while the normalised level has the text as it was intended:
+the <E>del</E> and <E>add</E> elements
+are included at the facsimile and diplomatic level, while the normalised level has the text as it was intended:
 ```xml
 . . .
 <w>
@@ -700,10 +700,10 @@ As stated above, we recommend that in a multi-level encoding,
 
 
 In this example, the corrected form “yðer” is rendered as “yðr” in normalised orthography. 
-    See the discussion on orthography in [ch. 9.3.4](#sec9.3.4) below.
+See the discussion on orthography in [ch. 9.3.4](#sec9.3.4) below.
 
 If a substitution spans a structural
-  boundary, we refer to the advice in [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2) below.
+boundary, we refer to the advice in [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2) below.
 
 #### 9.2.4.1 Display of scribal substitutions [#sec9.2.4.1]
 
@@ -751,7 +751,7 @@ If text seems to be missing in the manuscript, the editor can supply it using th
 **Restoration** is a common feature in the transcription of manuscripts. The various types discussed in ch. 8 belong to this category, including lost text, such as in lacunas ([ch. 8.2](/handbook/v3/HB3_ch8#sec8.2)), empty spaces ([ch. 8.3](/handbook/v3/HB3_ch8#sec8.3)), and unclear passages ([ch. 8.4](/handbook/v3/HB3_ch8#sec8.4)).
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-677-4to-1v,1-3.jpg" alt="ch9/AM-677-4to-1v,1-3.jpg"/>
@@ -759,7 +759,7 @@ If text seems to be missing in the manuscript, the editor can supply it using th
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.7">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1&ndash;3.</Caption>
 
 In ill. 9.7, an initial is obviously missing in the first line. It can hardly be any doubt that the intended character is the ‘S’ of the normalised word <em>sá</em> ‘this’. This is a single-level encoding on the diplomatic level:
@@ -806,7 +806,7 @@ In a multi-level encoding, the facsimile level should encode the text as is, usi
 A similar example is found in [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) above, from the law text AM 309 fol.
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch8/AM-619-4to-9v,23-30.jpg" alt="ch8/AM-619-4to-9v,23-30.jpg"/>
@@ -814,7 +814,7 @@ A similar example is found in [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) above, from
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.8">. Damage to the parchment caused by acidity. _The Old Norwegian Homily Book_. AM 619 4to, f. 9v, l. 23&ndash;30.</Caption>
 
 For a slightly more extensive restoration, we may return to the example in [ch. 8.2](/handbook/v3/HB3_ch8#sec8.2) above. This is a single-level encoding on a diplomatic level, where “GI1931” refers to Gustav Indrebø’s 1931 edition of _The Old Norwegian Homily Book_:
@@ -877,7 +877,7 @@ In a multi-level encoding, the <E>gap/</E> element will be used on the facsimile
 
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-645-4to-51v,32-35.jpg" alt="ch9/AM-645-4to-51v,32-35.jpg"/>
@@ -885,7 +885,7 @@ In a multi-level encoding, the <E>gap/</E> element will be used on the facsimile
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.9">. An illegible word. _Niðrstigningar saga_. AM 645 4to, f. 51v, l. 32&ndash;35.</Caption>
 
 In ill. 9.9, the first character in the second line is so smudged that it has become illegible. As stated in [ch. 8.4.1](/handbook/v3/HB3_ch8#sec8.4.1) above, we recommended that illegible characters are encoded by a standard sign such as `25CC` `DOTTED CIRCLE`. A single-level encoding of this passage is given in [ch. 8.4.1](/handbook/v3/HB3_ch8#sec8.4.1), while we here offer a multi-level encoding with supplied text on the diplomatic as well as the normalised level:
@@ -930,12 +930,12 @@ Note that the reading on the facsimile level uses the dotted circle for the ille
 #### 9.3.1.2 Encoding of emendations [#sec9.3.1.2]
 
 **Emendation** is here used to describe the addition of one or more characters or 
-      words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, <em>ope codicum</em>, and emendations based on the subjective judgment of the editor, <em>ope ingenii</em>. In the following, we shall give examples of both.
+words intended to make the text simpler or smoother according to criteria of morphology, syntax or semantics. There is a traditional and long-standing distinction between emendations based on other manuscripts (or foreign exemplars) of the work, <em>ope codicum</em>, and emendations based on the subjective judgment of the editor, <em>ope ingenii</em>. In the following, we shall give examples of both.
 
 The first example is of an emendation <em>ope codicum</em>. The bottom line in ill. 9.10 reads “Vitt<em>ra</em> er hyggiændi guðleg<em>ra</em> luta sva sem gefet er man<em>n</em>e”. This looks fine, and if the Latin exemplar for this part of the homily book, Alcuin’s _De virtutibus et vitiis_, had not been available, nobody might have proposed an emendation.
 
 
-      
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-14r,26-30.jpg" alt="ch9/AM-619-4to-14r,26-30.jpg"/>
@@ -943,7 +943,7 @@ The first example is of an emendation <em>ope codicum</em>. The bottom line in i
 </Figure>
 
 
-    
+
 <Caption title="Ill. 9.10">. Supplied text. _The Old Norwegian Homily Book_. AM 619 4to, f. 14r, l. 26&ndash;30.</Caption>
 
 However, based on Alcuin’s version “Prudentia est rerum divinarum humanarumque, prout homini datum est, scientia”, Gustav Indrebø added “ok mannlegra” to the Old Norwegian text in his 1931 edition. This seems like a convincing rendering of “humanarumque”, and as such it is an emendation <em>ope codicum</em>. If Indrebø’s emendation is accepted, this would be a single-level encoding:
@@ -997,11 +997,11 @@ In a multi-level encoding, the facsimile level will be left empty for the suppli
 
 
 The second example is of an emendation <em>ope ingenii</em>. This is offered by ill. 9.11, in which the middle line reads “Iesus Christus, sá er nú er krossfestr, hafi þangat sent”.
-      Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add <em>þik</em>, “Iesus Christus, sá er nú er krossfestr, 
-        hafi <em>þik</em> þangat sent”. The editor’s <em>ingenium</em> is in this case based on the syntactic analysis of Old Norse.
+Depending on the understanding of the rules for object deletion in Old Norse, it might make sense to add <em>þik</em>, “Iesus Christus, sá er nú er krossfestr, 
+hafi <em>þik</em> þangat sent”. The editor’s <em>ingenium</em> is in this case based on the syntactic analysis of Old Norse.
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-645-4to-55v,5-7.jpg" alt="ch9/AM-645-4to-55v,5-7.jpg"/>
@@ -1009,11 +1009,11 @@ The second example is of an emendation <em>ope ingenii</em>. This is offered by 
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.11">. Supplied text. _Niðrstigningar saga_. AM 645 4to, f. 55v, l. 5&ndash;7.</Caption>
 
 As suggested above, the <E>supplied</E> element should be specified with the 
-    attribute `@reason{:sh}` and the value `"emendation"{:js}`. This would be a single-level encoding of the last four words:
+attribute `@reason{:sh}` and the value `"emendation"{:js}`. This would be a single-level encoding of the last four words:
 ```xml
 . . .
 <w><me:dipl>hafe</me:dipl></w>
@@ -1098,7 +1098,7 @@ Other stylesheets will display supplied text differently. In particular, they ma
 If a piece of text is thought to be superfluous, the editor might want to indicate the superfluous passage and in effect suppress it. This is common editorial practice, although it should always be done in a way that records the suppressed passage (whether by suppression signs or by a note stating the manuscript reading).
 
 Dittographies are probably the most common cause for suppression. The TEI P5 Guidelines, [ch. 11.3.1.7](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHOM),
-    recommends the <E>surplus</E> element for dittographies, and we do the same. This element can also be used to suppress passages which the editor believe are superfluous for other reasons, such as being excessive or even incoherent. As with the <E>supplied</E> element, this is more often than not a subjective evaluation by the editor, based on his or her understanding of the rules of grammar.
+recommends the <E>surplus</E> element for dittographies, and we do the same. This element can also be used to suppress passages which the editor believe are superfluous for other reasons, such as being excessive or even incoherent. As with the <E>supplied</E> element, this is more often than not a subjective evaluation by the editor, based on his or her understanding of the rules of grammar.
 
 As for other instances of editorial suppression, we recommend using the <E>sic</E> and <E>corr</E> elements, so that the <E>sic</E> element contains the suppressed reading and the <E>corr</E> element is left empty. This will be dealt with in [ch. 9.3.3](#sec9.3.3) below.
 
@@ -1117,7 +1117,7 @@ As for other instances of editorial suppression, we recommend using the <E>sic</
 In the following, we give examples of <E>surplus</E> text due to dittography, ill. 9.12, and incoherence, ill. 9.13.
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-243-ba-fol-2vB,18-21.png" alt="ch9/AM-243-ba-fol-2vB,18-21.png"/>
@@ -1125,7 +1125,7 @@ In the following, we give examples of <E>surplus</E> text due to dittography, il
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.12">. Dittography. _Konungs skuggsjá_. AM 243 ba fol, f. 2v, col. B, l. 18&ndash;21.</Caption>
 
 In ill. 9.12, there is a dittography “sialfr sialfr” at the end of the first line and in the opening of the second. It has not been deleted by the scribe, so it is left to the editor to suppress it. This is what it would look like in a multi-level encoding:
@@ -1169,7 +1169,7 @@ In ill. 9.12, there is a dittography “sialfr sialfr” at the end of the first
 From a pragmatic point of view, the second, not the first, instance of “sialfr” has been defined as a dittography. Both instances will be displayed on the facsimile level, but only the first “sialfr” will be displayed on the diplomatic and normalised levels. For this reason, these levels are empty in the example above.
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/NKS-66-8vo-73r,9-13.png" alt="ch9/NKS-66-8vo-73r,9-13.png"/>
@@ -1179,7 +1179,7 @@ From a pragmatic point of view, the second, not the first, instance of “sialfr
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.13">. Incoherence. _Henrik Harpestreng_. NKS 66 8vo, f. 73r, l. 9&ndash;13 and f. 73v, l. 1&ndash;2.</Caption>
 
 In ill. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the <E>surplus</E> element and the `"incoherence"{:js}` value of the `@reason{:sh}` attribute:
@@ -1248,7 +1248,7 @@ elements <E>sic</E> and
 
 
 
-    
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-619-4to-8v,23-26.jpg" alt="ch9/AM-619-4to-8v,23-26.jpg"/>
@@ -1256,7 +1256,7 @@ elements <E>sic</E> and
 </Figure>
 
 
-  
+
 <Caption title="Ill. 9.14">. Correction by editor. _The Old Norwegian Homily Book_. AM 619 4to, f. 8v, l. 23&ndash;26.</Caption>
 
 In the third line of ill. 9.14, the editor has decided to correct “tíu æggiat” ‘with ten edges’ to “tuí æggiat” ‘with two edges, i.e. double-edged’. This is an example of a <em>minim</em> correction from <em>iu</em> to <em>ui</em>. In a single-level transcription, the encoding is straight-forward. Note, however, that the <E>sic</E> and <E>corr</E> elements must be placed within a <E>choice</E> element:
@@ -1437,7 +1437,7 @@ In the Menota archive, the text of Codex Wormianus is opened with a comment stat
 In the archive, explanatory notes are displayed in the edited text in a light grey colour:
 
 
-        
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch9/AM-242-fol-p1-explanatory-comment.png" alt="ch9/AM-242-fol-p1-explanatory-comment.png"/>
@@ -1445,7 +1445,7 @@ In the archive, explanatory notes are displayed in the edited text in a light gr
 </Figure>
 
 
-      
+
 
 ### 9.4.3 Other types of comments [#sec9.4.3]
 
@@ -1458,5 +1458,4 @@ On 30 December 2025, [ch. 9.2.1](#sec9.2.1) was reorganised so that it was divid
 On 27 April 2020, in [ch. 9.3.2.1](#sec9.3.2.1) the sentence “For this reason, these levels are empty in the example above” was added immediately after “... only the first “sialfr” will be displayed on the diplomatic and normalised levels”. Consequently, the encoding example above was changed so that the <E>me:dipl</E> and <E>me:norm</E> levels for the second “sialfr” were left empty.
 
 Furthermore, in [ch. 9.3.2.2](#sec9.3.2.2) the following paragraph was added immediately below the text box: “Note that if a word has been deleted on a specific level in a multi-level encoding, such as the second “sjalfr” in ill. 9.12 above, the stylesheet should not display any deletion signs on this level. This is to preclude a display such as “... várr sjalfr \{\} ok ...”, where the more intuitive display would be “... várr sjalfr ok ...”, suppressing the second “sialfr” silently.”  
-  
-          
+

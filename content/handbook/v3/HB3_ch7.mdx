@@ -263,35 +263,35 @@ by Friederike Richter and Beeke Stegmann
 ## 7.1 How and where to encode illuminations [#sec7.1]
 
 Medieval manuscripts often contain some degree of illumination as e.g. marginal
-                  drawings or initials. Encoding and systematic recording of the occurring
-                  illuminations enables the XML data to become a highly useful tool for scholars
-                  working from many different angles. For instance, studies in material philology
-                  and art history will highly benefit from it, because it enables scholars to
-                  search for and, thus, easily find relevant instances. What is
-                  more, the careful encoding of initials and their decoration will provide deeper
-                  insight into the indented hierarchy, structure and layout of manuscripts. In
-                  fact, one of the major advantages of including descriptions of these visual
-                  elements into digital transcriptions is the direct linking to the manuscript’s
-                  text.
+drawings or initials. Encoding and systematic recording of the occurring
+illuminations enables the XML data to become a highly useful tool for scholars
+working from many different angles. For instance, studies in material philology
+and art history will highly benefit from it, because it enables scholars to
+search for and, thus, easily find relevant instances. What is
+more, the careful encoding of initials and their decoration will provide deeper
+insight into the indented hierarchy, structure and layout of manuscripts. In
+fact, one of the major advantages of including descriptions of these visual
+elements into digital transcriptions is the direct linking to the manuscript’s
+text.
 
 In a menotic XML-file, we recommend that information on the illuminations (incl.
-                  the initials) is distributed and encoded in two designated places: 
+the initials) is distributed and encoded in two designated places: 
 
  1. in the header as part of the manuscript description (see [7.2](#sec7.2) below) and 
 
  2. in the body as part of the transcription (see [7.3](#sec7.3) below). 
 
 While the manuscript description in the header should include a register of 
-                  all illuminations including the initials (see also [
-                     ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)), in the transcription only initials are encoded, as they are part of the
-                  wording of the text. The register of illuminations in the header is mainly a
-                  description in prose and can even be rather elaborate (if desired and
-                  appropriate). By contrast, the encoding in the transcription is more basic and
-                  covers only a few central characteristics that are specified by means of
-                  attributes, which makes them highly searchable.
+all illuminations including the initials (see also [
+ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)), in the transcription only initials are encoded, as they are part of the
+wording of the text. The register of illuminations in the header is mainly a
+description in prose and can even be rather elaborate (if desired and
+appropriate). By contrast, the encoding in the transcription is more basic and
+covers only a few central characteristics that are specified by means of
+attributes, which makes them highly searchable.
 
 The following overview summarizes what to encode where and links to the
-                  respective subchapters of these guidelines:
+respective subchapters of these guidelines:
 
 <table>
 <thead>
@@ -315,31 +315,31 @@ The following overview summarizes what to encode where and links to the
 
 
 Note also the glossary in the end of the chapter that helps, among others, to
-                  identify and name the different parts of an initial (see [7.4](#sec7.4)). Furthermore, we refer to the introduction to manuscript
-                  illumination by [Michelle Brown (1994)](/handbook/v3/HB3_literature#Brown1994),
-                  which is available in an updated version in
-                  the [Glossaries 
-                     of the British Library](https://www.bl.uk/catalogues/illuminatedmanuscripts/glossary.asp), as well as to [Christine 
-                        Jakobi-Mirwald (2008)](/handbook/v3/HB3_literature#Jakobi-Mirwald2008). Both works were used to prepare this chapter, while some definitions were
-                  adapted for the corpus of Scandinavian manuscripts.
+identify and name the different parts of an initial (see [7.4](#sec7.4)). Furthermore, we refer to the introduction to manuscript
+illumination by [Michelle Brown (1994)](/handbook/v3/HB3_literature#Brown1994),
+which is available in an updated version in
+the [Glossaries 
+of the British Library](https://www.bl.uk/catalogues/illuminatedmanuscripts/glossary.asp), as well as to [Christine 
+Jakobi-Mirwald (2008)](/handbook/v3/HB3_literature#Jakobi-Mirwald2008). Both works were used to prepare this chapter, while some definitions were
+adapted for the corpus of Scandinavian manuscripts.
 
 ## 7.2 Listing all illuminations in the header [#sec7.2]
 
 As a minimum standard, we recommend to register all instances of illumination, including initials, 
-                  as part of the manuscript description in the header.
-                  This section describes how to register illuminations
-                  in a consecutive list covering the main informations 
+as part of the manuscript description in the header.
+This section describes how to register illuminations
+in a consecutive list covering the main informations 
 
 All illuminations should be listed within the element <E>decoDesc</E> in the
-                  manuscript description section of the header (see also [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). A separate <E>decoNote</E> is used for each
-                  illumination &ndash; including the major initials. The register should be
-                  chronological, i.e. following the order of occurrence in the manuscript. 
+manuscript description section of the header (see also [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). A separate <E>decoNote</E> is used for each
+illumination &ndash; including the major initials. The register should be
+chronological, i.e. following the order of occurrence in the manuscript. 
 
 A basic list registering the illuminations within the header could look like
-                  this:
+this:
 
 
-                  
+
 ```xml
 <decoDesc>
   <decoNote>
@@ -364,68 +364,68 @@ A basic list registering the illuminations within the header could look like
 </decoDesc>
 ```
 
-                  
-               
+
+
 
 Each <E>decoNote</E>-entry starts with the indication of the folio (and if
-                  applicable the column) of the respective illumination, which is encoded in a
-                     <E>locus</E> element. Second, each <E>decoNote</E> should indicate the
-                  illumination type in question, e.g. full-page illumination or opening initial.
-                  These would then be supplemented with brief information on motif/ornament and
-                  colours. However, the degree of detail that can be given in the description of
-                  illuminations is virtually unlimited. For non-specialists we recommend to aim for
-                  a basic description that should not take too much time, but still gives someone
-                  who does not have access to the manuscript or images thereof a good overview as to
-                  how many and what kind of illuminations the manuscript contains. 
+applicable the column) of the respective illumination, which is encoded in a
+<E>locus</E> element. Second, each <E>decoNote</E> should indicate the
+illumination type in question, e.g. full-page illumination or opening initial.
+These would then be supplemented with brief information on motif/ornament and
+colours. However, the degree of detail that can be given in the description of
+illuminations is virtually unlimited. For non-specialists we recommend to aim for
+a basic description that should not take too much time, but still gives someone
+who does not have access to the manuscript or images thereof a good overview as to
+how many and what kind of illuminations the manuscript contains. 
 
 In the specifications below, initials will be discussed separately from other
-                  illumination types (see [ch. 7.2.1](#sec7.2.1) for initials and
-                     [ch. 7.2.2](#sec7.2.2) for other illuminations), because they
-                  partly require different terms and procedures in the respective entries. Please
-                  note, that the listing of illuminations in the header does not separate the
-                  major initials from other illuminations, but registers all instances
-                  consistently in the order of their occurrences in the manuscript. The occurrence
-                  of minor initials, on the other hand, can be summarized at the end (as in the example above). Common
-                  categories, that apply to both various initials and other illuminations may be
-                  treated subsequently (i.a. colours, captions, hands and dating). 
+illumination types (see [ch. 7.2.1](#sec7.2.1) for initials and
+[ch. 7.2.2](#sec7.2.2) for other illuminations), because they
+partly require different terms and procedures in the respective entries. Please
+note, that the listing of illuminations in the header does not separate the
+major initials from other illuminations, but registers all instances
+consistently in the order of their occurrences in the manuscript. The occurrence
+of minor initials, on the other hand, can be summarized at the end (as in the example above). Common
+categories, that apply to both various initials and other illuminations may be
+treated subsequently (i.a. colours, captions, hands and dating). 
 
 ### 7.2.1 Initials [#sec7.2.1]
 
 Initials are according to their hierarchy distinguished into two categories in the
-                  manuscript which are treated differently: major and minor intials (see below). It
-                  is good practice to register all major initials in the same way as other
-                  illuminations in the chronological order as they appear in the manuscript (i.e. in
-                  a separate <E>decoNote</E> element). Minor initials may be summarized at the
-                  end of the list in a common <E>decoNote</E> element for each subtype. Each
-                  entry for an intial should, as a minimum, comprise information on the following: 
-                  a) Folio/column, b) Decoration and hierarchy, c) Letter, size
-                  and colour(s).
+manuscript which are treated differently: major and minor intials (see below). It
+is good practice to register all major initials in the same way as other
+illuminations in the chronological order as they appear in the manuscript (i.e. in
+a separate <E>decoNote</E> element). Minor initials may be summarized at the
+end of the list in a common <E>decoNote</E> element for each subtype. Each
+entry for an intial should, as a minimum, comprise information on the following: 
+a) Folio/column, b) Decoration and hierarchy, c) Letter, size
+and colour(s).
 
 ### 7.2.1.1 Major and minor initials [#sec7.2.1.1]
 
 The occurrence of the different subtypes of the initials has to be assessed for
-                  every manuscript individually. Manuscripts often comprise different initial
-                  subtypes that can be distinguished both by their hierarchy in relation to the
-                  structure of the text as well as by their size and degree of decoration. 
-                  When, however, the traditional chapter division of a text or other structural interpretations common in printed editions 
-                  do not match the hierarchy indicated in the manuscript by means of size and decoration of the initials,
-                  the subtypes are treated according to the manuscript’s own hierarchy.
+every manuscript individually. Manuscripts often comprise different initial
+subtypes that can be distinguished both by their hierarchy in relation to the
+structure of the text as well as by their size and degree of decoration. 
+When, however, the traditional chapter division of a text or other structural interpretations common in printed editions 
+do not match the hierarchy indicated in the manuscript by means of size and decoration of the initials,
+the subtypes are treated according to the manuscript’s own hierarchy.
 
 The possible subtypes for initials are: opening initial, text initial, chapter initial, paragraph
-                  initial and sentence initial (littera notabilior). It is, however, also legitimate to
-                  only distinguish between major and minor initials. Most
-                  manuscripts do not comprise all subtypes; their occurrence can depend on
-                  the genre, the number of the works included in the manuscript, and the general
-                  degree of illumination. One has, thus, to identify which levels are present in the
-                  manuscript and meaningful to be distinguished (see also
-                     [7.3.2 Hierarchy of initials](#sec7.3.2)). 
+initial and sentence initial (littera notabilior). It is, however, also legitimate to
+only distinguish between major and minor initials. Most
+manuscripts do not comprise all subtypes; their occurrence can depend on
+the genre, the number of the works included in the manuscript, and the general
+degree of illumination. One has, thus, to identify which levels are present in the
+manuscript and meaningful to be distinguished (see also
+[7.3.2 Hierarchy of initials](#sec7.3.2)). 
 
 Put simply, as major initials we consider rather large and elaborate initials. They are usually
-                  opening, text or &ndash; depending on the manuscript’s structure &ndash; chapter
-                  initials. These initials will typically not appear on every page, but rather
-                  divide the written text into major sections. For each of these major initials, the letter
-                  is named, its folio (and if applicable the column) is given, the kind of initial
-                  is indicated as well as its height (i.e. number of indented lines): 
+opening, text or &ndash; depending on the manuscript’s structure &ndash; chapter
+initials. These initials will typically not appear on every page, but rather
+divide the written text into major sections. For each of these major initials, the letter
+is named, its folio (and if applicable the column) is given, the kind of initial
+is indicated as well as its height (i.e. number of indented lines): 
 
 &ensp;
 
@@ -447,14 +447,14 @@ Put simply, as major initials we consider rather large and elaborate initials. T
 
 
 As minor initials we consider less elaborate, but highly frequent initials, that
-                  will typically appear more than once on a single page. Depending on the
-                  manuscript’s structure these can be paragraph and sentence initials (i.e. littera notabilior), but in some cases also chapter
-                  intials. All occurrences of minor initials may be treated in groups, using 
-                  one <E>decoNote</E> element for each subtype. Such summary entries are
-                  usually placed at the end of the list of initials, simply indicating the first and
-                  the last folio of their respective occurrence and summarizing the average height
-                  (i.e. number of indented or covered lines), skipping the indication of the
-                  respective letters: 
+will typically appear more than once on a single page. Depending on the
+manuscript’s structure these can be paragraph and sentence initials (i.e. littera notabilior), but in some cases also chapter
+intials. All occurrences of minor initials may be treated in groups, using 
+one <E>decoNote</E> element for each subtype. Such summary entries are
+usually placed at the end of the list of initials, simply indicating the first and
+the last folio of their respective occurrence and summarizing the average height
+(i.e. number of indented or covered lines), skipping the indication of the
+respective letters: 
 ```xml
 <decoDesc>
  ...
@@ -468,10 +468,10 @@ As minor initials we consider less elaborate, but highly frequent initials, that
 
 
 Please note that it is also of interest to register missing initials, i.e. those
-                  cases where an initial was laid out, but the allowed space was never filled.
-                  Sometimes, these instances contain guiding notes for the illuminator e.g.
-                  indicating the respective letter to be filled in (guide
-                     letter).
+cases where an initial was laid out, but the allowed space was never filled.
+Sometimes, these instances contain guiding notes for the illuminator e.g.
+indicating the respective letter to be filled in (guide
+letter).
 ```xml
 <decoDesc>
  ...
@@ -486,11 +486,11 @@ Please note that it is also of interest to register missing initials, i.e. those
 ### 7.2.1.2 Initial forms and decoration [#sec7.2.1.2]
 
 Initials occur in various shapes and decorations. The overview below lists
-                  characteristic  initial forms and common modes of decoration that are
-                  desirable to identify with the correct terms. Please note that the forms and
-                  decoration often occur in combination and the encoder would in these cases
-                  indicate more than one form or decoration, e.g. a dragon initial that is foliate or a pen-flourished lombard.
-                Certain forms and modes of decoration, however, are mutually exclusive, e.g. a versal cannot be inhabited.
+characteristic  initial forms and common modes of decoration that are
+desirable to identify with the correct terms. Please note that the forms and
+decoration often occur in combination and the encoder would in these cases
+indicate more than one form or decoration, e.g. a dragon initial that is foliate or a pen-flourished lombard.
+Certain forms and modes of decoration, however, are mutually exclusive, e.g. a versal cannot be inhabited.
 
 <table>
 <thead>
@@ -677,10 +677,10 @@ Initials occur in various shapes and decorations. The overview below lists
 
 
 Table [1](#tab1). Ill. 7.2&ndash;7.16 listing the most common initial forms and
-                  and modes of decoration. 
+and modes of decoration. 
 
 The initial form and/or decoration are incorporated into the
-                  description of the illumination type:
+description of the illumination type:
 ```xml
 <decoNote>
   <p>F. <locus from="3r" to="3r">3r:24-26</locus>: 
@@ -692,24 +692,24 @@ The initial form and/or decoration are incorporated into the
 
 
 A longer and somewhat more detailed description that would obscure the readability
-                  if provided in the beginning may be given later in the <E>decoNote</E>
-                  (see [ch. 7.2.7](#sec7.2.7)).
+if provided in the beginning may be given later in the <E>decoNote</E>
+(see [ch. 7.2.7](#sec7.2.7)).
 
 ### 7.2.2 Other illuminations [#sec7.2.2]
 
 In the same way as for the major initials, each occurence of the other
-                  illumination types, for instance a miniature, is registered in a separate
-                     <E>decoNote</E> element in the header. A register entry of illuminations
-                  other than initials comprises as a minimum of the following: a) Folio/column, b) Type
-                  and motif/ornament, c) Caption (if applicable), d) Colours. 
+illumination types, for instance a miniature, is registered in a separate
+<E>decoNote</E> element in the header. A register entry of illuminations
+other than initials comprises as a minimum of the following: a) Folio/column, b) Type
+and motif/ornament, c) Caption (if applicable), d) Colours. 
 
 ### 7.2.2.1 Illumination types  [#sec7.2.2.1]
 
 When registering illuminations in <E>decoNote</E>, the place where it occurs is given, followed by the
-                  identification of the illumination type. The different types are characterized by
-                  their position and size in relation to the written text. The following table gives
-                  an overview over the most frequent types of illuminations (other than initials) that we consider desirable to be
-                  identified. 
+identification of the illumination type. The different types are characterized by
+their position and size in relation to the written text. The following table gives
+an overview over the most frequent types of illuminations (other than initials) that we consider desirable to be
+identified. 
 
 <table>
 <thead>
@@ -872,28 +872,28 @@ Table [2](#tab2). Ill. 7.17&ndash;7.29 showing the most common types of illumina
 	            (other than initials).
 
 Examples applying these terms are given in the following section dealing
-                  with motifs. Please note that the occurrence of minor but highly frequent
-                  illumination types (e.g. line fillers and maniculi) can be summarized at the end
-                  of the list, similar to minor initials (see [ch. 7.2.1.1](#sec7.2.1.1)). Furthermore, it is of interest to register missing
-                  illuminations as they document conditions of manuscript production (e.g. planned, but
-                  not executed elements), intended text structure or re-use (e.g. removed at a later point in time). 
+with motifs. Please note that the occurrence of minor but highly frequent
+illumination types (e.g. line fillers and maniculi) can be summarized at the end
+of the list, similar to minor initials (see [ch. 7.2.1.1](#sec7.2.1.1)). Furthermore, it is of interest to register missing
+illuminations as they document conditions of manuscript production (e.g. planned, but
+not executed elements), intended text structure or re-use (e.g. removed at a later point in time). 
 
 ### 7.2.2.2 Motifs [#sec7.2.2.2]
 
 The motifs and composition of the various illuminations is normally listed using
-                  basic key words. As for the decoration of initials, a longer and more detailed description that would
-                  obscure the readability if provided in the beginning, may be given later in
-                  the same <E>decoNote</E> (see [ch. 7.2.7](#sec7.2.7)).
+basic key words. As for the decoration of initials, a longer and more detailed description that would
+obscure the readability if provided in the beginning, may be given later in
+the same <E>decoNote</E> (see [ch. 7.2.7](#sec7.2.7)).
 
 Representational motifs include both objects as well as animate beings, such as
-                  humans, animals or hybrid creatures. To register these, one simply identifies what
-                  one sees (as best as possible) and briefly names the depicted objects, beings and
-                  scenes. The description is given in free text, possibly supplemented by a
-                  distinctive attribute, e.g. “sword”, “hanged thief”, “dog”,
-                     “bearded face”, “gryllus”. In case of a narrative scene a verbal
-                  phrase may be used, e.g. “man hitting mermaid with a sword”, “judges leading
-                     thief to the gallows”. Terms for some rather specific, but frequent
-                  motifs are explained in the following overview.
+humans, animals or hybrid creatures. To register these, one simply identifies what
+one sees (as best as possible) and briefly names the depicted objects, beings and
+scenes. The description is given in free text, possibly supplemented by a
+distinctive attribute, e.g. “sword”, “hanged thief”, “dog”,
+“bearded face”, “gryllus”. In case of a narrative scene a verbal
+phrase may be used, e.g. “man hitting mermaid with a sword”, “judges leading
+thief to the gallows”. Terms for some rather specific, but frequent
+motifs are explained in the following overview.
 
 <table>
 <thead>
@@ -1001,9 +1001,9 @@ Representational motifs include both objects as well as animate beings, such as
 Table [3](#tab3). Ill. 7.30&ndash;7.37 showing common motifs found in illuminations. 
 
 The very first XML example given in ch. 7.2 above already includes a brief description of the
-                  motif(s). Such descriptions should be included in the prose description 
-                  of a <E>decoNote</E> when applicable, and they have their natural place right after the location and
-                   illumination type: 
+motif(s). Such descriptions should be included in the prose description 
+of a <E>decoNote</E> when applicable, and they have their natural place right after the location and
+illumination type: 
 ```xml
 <decoNote>
   <p>F. <locus from="7r" to="7r">7r</locus>: 
@@ -1014,31 +1014,31 @@ The very first XML example given in ch. 7.2 above already includes a brief descr
 
 
 In case of abstract motifs such as ornaments, the form and type(s) as well as potentially involved 
-                  motifs are described as best as possible. 
+motifs are described as best as possible. 
 
 ### 7.2.3 Use of colours [#sec7.2.3]
 
 It is relevant to note the usage of different shades of ink and colours and (their
-               distribution) in both initials and other illuminations. Among others, this helps understanding the indented
-               structure of a text from the hierarchy of the initials and other illuminations. This is
-               particularly relevant for readers who do not have access to either the manuscript or colour
-               photographs thereof. In the optimal case the colours and their hues are listed
-               separately for each <E>decoNote</E>. However, the colours may also be usefully be given 
-               in a summary, e.g. in the case of alternating use of colours as occurs frequently
-               with initials. It would be desirable to be as accurate as possible with regards to
-               naming the colours with reference to the pigments and inks used (e.g. white lead,
-               massicot, orpiment, yellow ochre, burnt sienna, minium, vermillion, madder, crimson,
-               burnt umber, azurite, cobalt blue, ultramarine, woad, malachite, verdigris, raw umber
-               etc.). Nonetheless, such identification is often not possible from the available
-               images or without scientific analysis. Therefore, if it is not possible to determine
-               the pigments used, we encourage encoders not to hesitate to use simple descriptions
-               such as “light blue” or “brown red”. If applicable, the colour hue of the
-               outline of the illumination can be listed separately in the end prefixed by
-                  “Outline: ”. 
+distribution) in both initials and other illuminations. Among others, this helps understanding the indented
+structure of a text from the hierarchy of the initials and other illuminations. This is
+particularly relevant for readers who do not have access to either the manuscript or colour
+photographs thereof. In the optimal case the colours and their hues are listed
+separately for each <E>decoNote</E>. However, the colours may also be usefully be given 
+in a summary, e.g. in the case of alternating use of colours as occurs frequently
+with initials. It would be desirable to be as accurate as possible with regards to
+naming the colours with reference to the pigments and inks used (e.g. white lead,
+massicot, orpiment, yellow ochre, burnt sienna, minium, vermillion, madder, crimson,
+burnt umber, azurite, cobalt blue, ultramarine, woad, malachite, verdigris, raw umber
+etc.). Nonetheless, such identification is often not possible from the available
+images or without scientific analysis. Therefore, if it is not possible to determine
+the pigments used, we encourage encoders not to hesitate to use simple descriptions
+such as “light blue” or “brown red”. If applicable, the colour hue of the
+outline of the illumination can be listed separately in the end prefixed by
+“Outline: ”. 
 
 For example, the below description of the illumination in AM 345 fol. on f. 1v 
-               lists information on the colours and ink following the basic description of the motif (and the caption). 
-               After that mention is made of the outline’s hue:
+lists information on the colours and ink following the basic description of the motif (and the caption). 
+After that mention is made of the outline’s hue:
 
 <Figure>
 <AutoImage src="/images/hb3/ch7/AM-345-fol-1v.jpg" alt="ch7/AM-345-fol-1v.jpg"/>
@@ -1060,19 +1060,19 @@ For example, the below description of the illumination in AM 345 fol. on f. 1v
 
 
 Note: The colours of initials are also described as part of the encoding in the
-               transcription (see [ ch. 7.3.4](#sec7.3.4)). There, however, colours
-               found in individual initials are only encoded in a simple manner. Consequently, we
-               recommend to include the detailed &ndash; and potentially more specialized &ndash;
-               description in the manuscript description, i.e. as part of the header, instead. 
+transcription (see [ ch. 7.3.4](#sec7.3.4)). There, however, colours
+found in individual initials are only encoded in a simple manner. Consequently, we
+recommend to include the detailed &ndash; and potentially more specialized &ndash;
+description in the manuscript description, i.e. as part of the header, instead. 
 
 ### 7.2.4 Captions [#sec7.2.4]
 
 Illuminations, including initials, can contain captions. If present, the text of
-               captions should be transcribed separately. Like other transcriptions from the
-               manuscript, transcriptions of caption are treated as quotes
-               in the header and, thus, they are wrapped in <E>q</E>-elements. The example
-               below shows how the caption found in the illumination on f. 1r of AM 345
-               fol. may be transcribed.
+captions should be transcribed separately. Like other transcriptions from the
+manuscript, transcriptions of caption are treated as quotes
+in the header and, thus, they are wrapped in <E>q</E>-elements. The example
+below shows how the caption found in the illumination on f. 1r of AM 345
+fol. may be transcribed.
 
 <Figure>
 <AutoImage src="/images/hb3/ch7/AM-345-fol-1r.jpg" alt="ch7/AM-345-fol-1r.jpg"/>
@@ -1101,14 +1101,14 @@ Illuminations, including initials, can contain captions. If present, the text of
 ### 7.2.5 Hands and dating (if known) [#sec7.2.5]
 
 In case the hand(s) and/or the dating of illuminations differ from the hand(s) or dating of the
-               adjacent main text, this information should be included if available. A mention can
-               either be made in a general statement for all illuminations or
-               given separately in the individual <E>decoNote</E> elements
-               in question. As in other places where information about involved people or dates occurs
-               in free text, these are marked-up using the elements <E>name</E> and
-                  <E>date</E>, respectively, with the appropriate attributes `@type{:sh}` and
-                  `@when{:sh}` or `@notBefore{:sh}`/`@notAfter {:sh}`. The encoded
-               information could look like this:
+adjacent main text, this information should be included if available. A mention can
+either be made in a general statement for all illuminations or
+given separately in the individual <E>decoNote</E> elements
+in question. As in other places where information about involved people or dates occurs
+in free text, these are marked-up using the elements <E>name</E> and
+<E>date</E>, respectively, with the appropriate attributes `@type{:sh}` and
+`@when{:sh}` or `@notBefore{:sh}`/`@notAfter {:sh}`. The encoded
+information could look like this:
 ```xml
 <decoNote>
   <p>Ff. <locus from="1r" to="27v">1r-27v</locus>: 
@@ -1239,13 +1239,13 @@ Table [4](#tab4). Ill. 7.40&ndash;7.47 showing common illumination techniques.
 ### 7.2.7 Advanced description of motifs and composition (optional) [#sec7.2.7]
 
 When describing motifs one may want to provide more detail than one-word
-               descriptions can cover. In particular, the description of motifs can be improved by
-               accounting for the composition of the illumination and/or connecting them to the
-               different parts of the initial, such as the counter or the termination (see also the
-               glossary provided at the end of this chapter, [ch. 7.4](#sec7.4)).
-               We recommend to always provide basic information at the beginning of each
-                  <E>decoNote</E>, potentially followed by more specialized details at the end
-               as shown in the following example:
+descriptions can cover. In particular, the description of motifs can be improved by
+accounting for the composition of the illumination and/or connecting them to the
+different parts of the initial, such as the counter or the termination (see also the
+glossary provided at the end of this chapter, [ch. 7.4](#sec7.4)).
+We recommend to always provide basic information at the beginning of each
+<E>decoNote</E>, potentially followed by more specialized details at the end
+as shown in the following example:
 ```xml
 <decoNote>
   <p>F. <locus from="4v" to="4v">4va:28-30</locus>: 
@@ -1259,54 +1259,54 @@ When describing motifs one may want to provide more detail than one-word
 
 
 With regards to Christian iconography, it is desirable to identify the most
-               common motifs. While it would be sufficient to give a general identification, such as
-                  “Christ on the cross” or “female Saint”, more specific descriptions are
-               highly welcome and will increase their value for other researchers. For help
-               identifying Christian iconography we recommend the Iconclass Browser [http://www.iconclass.org/help/outline](), a tool developed for
-               identification of iconography of art with a special focus on Christian iconography.
-               For example, if you are in doubt about what is depicted in an illumination and the
-               text does not give any clue, you can conduct a combined search in the Iconclass
-               Browser searching for the elements you can identify. A search for “female saint AND
-                  wheel”, for instance, will tell you that, according to iconographic tradition,
-               a wheel identifies either St. Catherine or St. Christina. Furthermore, the search
-               results will guide you to identify the female saint as one or the other,
-               depending on other details of the depiction.
+common motifs. While it would be sufficient to give a general identification, such as
+“Christ on the cross” or “female Saint”, more specific descriptions are
+highly welcome and will increase their value for other researchers. For help
+identifying Christian iconography we recommend the Iconclass Browser [http://www.iconclass.org/help/outline](), a tool developed for
+identification of iconography of art with a special focus on Christian iconography.
+For example, if you are in doubt about what is depicted in an illumination and the
+text does not give any clue, you can conduct a combined search in the Iconclass
+Browser searching for the elements you can identify. A search for “female saint AND
+wheel”, for instance, will tell you that, according to iconographic tradition,
+a wheel identifies either St. Catherine or St. Christina. Furthermore, the search
+results will guide you to identify the female saint as one or the other,
+depending on other details of the depiction.
 
 For an exemplary and very detailed manuscript description with regards to the iconography and
-               composition of illuminations see the entry for AM 226 fol. in the online catalogue on the 
-               [handrit.is](https://handrit.is) website:
-               [https://handrit.is/en/manuscript/view/da/AM02-226]().
-               (Please note, however, that the details of the XML encoding guidelines for
-               handrit.org differ slightly from the practices recommended here.)
+composition of illuminations see the entry for AM 226 fol. in the online catalogue on the 
+[handrit.is](https://handrit.is) website:
+[https://handrit.is/en/manuscript/view/da/AM02-226]().
+(Please note, however, that the details of the XML encoding guidelines for
+handrit.org differ slightly from the practices recommended here.)
 
 Finally, in the advanced description part of illuminations it is possible to
-               include more specific art-historical aspects, such as the classification of the
-               illumination style, e.g. Gothic, Insular, Romanesque or Renaissance.
+include more specific art-historical aspects, such as the classification of the
+illumination style, e.g. Gothic, Insular, Romanesque or Renaissance.
 
 ## 7.3 Encoding initials in the transcription [#sec7.3]
 
 This section describes how to encode initials, including sentence initials (also
-               called littera notabilior), as part of the transcription. The
-               decoration of initial letters can vary considerably, but the degree of decoration
-               (motifs/ornaments and uses of colours) is usually connected to their function. Thus,
-               a manuscript may have quite large and splendid main initials while at the same time
-               displaying more modest decoration for initials introducing subordinate sections such as paragraphs or
-               sentences. This information is worth to be marked-up in the transcription, 
-               so that it can be directly linked to the corresponding text.
+called littera notabilior), as part of the transcription. The
+decoration of initial letters can vary considerably, but the degree of decoration
+(motifs/ornaments and uses of colours) is usually connected to their function. Thus,
+a manuscript may have quite large and splendid main initials while at the same time
+displaying more modest decoration for initials introducing subordinate sections such as paragraphs or
+sentences. This information is worth to be marked-up in the transcription, 
+so that it can be directly linked to the corresponding text.
 
 In the transcription, the mark-up of initials 
-                  and other emphasized letters is rather standardized and confined to a couple of basic categories. 
-                  We recommend to use the element <E>c</E>, which can take several attributes (see further below).
-                  The more detailed description of initials (usually in prose) should be given in the document header as described above
-                  (see [ ch. 7.2](#sec7.2)). 
+and other emphasized letters is rather standardized and confined to a couple of basic categories. 
+We recommend to use the element <E>c</E>, which can take several attributes (see further below).
+The more detailed description of initials (usually in prose) should be given in the document header as described above
+(see [ ch. 7.2](#sec7.2)). 
 
 Since the specific characteristics of initials are visual, the special mark-up of such letters is usually restricted
-                to the facsimile level of the transcription. This is at least the case when a transcription is conducted on multiple levels.
-                When initials are marked-up on the facsimile level, that information is not repeated on the
-                diplomatic or normalized level. Instead, initials are simply transcribed like any other letter on those levels.
-                If a transcriber, however, chooses not to transcribe a text on the facsimile level, but still wishes to include information
-                on initials, the mark-up may be used on the diplomatic level (or on the only present level in case of a single-level transcription).
-               Simple mark-up of an initial in a three-level transcription looks like this: 
+to the facsimile level of the transcription. This is at least the case when a transcription is conducted on multiple levels.
+When initials are marked-up on the facsimile level, that information is not repeated on the
+diplomatic or normalized level. Instead, initials are simply transcribed like any other letter on those levels.
+If a transcriber, however, chooses not to transcribe a text on the facsimile level, but still wishes to include information
+on initials, the mark-up may be used on the diplomatic level (or on the only present level in case of a single-level transcription).
+Simple mark-up of an initial in a three-level transcription looks like this: 
 ```xml
 <w>
   <choice>
@@ -1319,37 +1319,37 @@ Since the specific characteristics of initials are visual, the special mark-up o
 
 
 Please note: Besides defining some 
-                  of the most relevant characteristics of the initials and providing that information
-                  in a consistent and thus highly valuable manner for analysis, 
-                  the initial mark-up in the transcription can be read by appropriate stylesheets 
-                  that transform the XML transcription for display. However, the display options 
-                  of XSLT stylesheets may differ, and at the current point of the technical development
-                  (that is easily accessible), the display of initials in the Menota-stylesheet
-                  is confined to a rather basic approximation.
+of the most relevant characteristics of the initials and providing that information
+in a consistent and thus highly valuable manner for analysis, 
+the initial mark-up in the transcription can be read by appropriate stylesheets 
+that transform the XML transcription for display. However, the display options 
+of XSLT stylesheets may differ, and at the current point of the technical development
+(that is easily accessible), the display of initials in the Menota-stylesheet
+is confined to a rather basic approximation.
 
 ### 7.3.1 The letter and its form [#sec7.3.1]
 
 An initial (as any other character) is part of the transcribed text. Therefore, 
-      it needs to be written, or rather typed, by the transcriber. In the same way as for other characters, 
-      the letter form may be noted and reproduced on the facsimile level using one of the 
-      Unicode characters. For instance, an insular capital “F” can be encoded with the entity `&Fins;{:xml}` 
-      (for more details on characters and encoding rules see [ch. 5.2.](/handbook/v3/HB3_ch5#sec5.2)). The mark-up for further describing 
-      the special characteristics of the initial is then built around the character, since it is understood as a qualification of how the letter 
-      was executed in the manuscript.
+it needs to be written, or rather typed, by the transcriber. In the same way as for other characters, 
+the letter form may be noted and reproduced on the facsimile level using one of the 
+Unicode characters. For instance, an insular capital “F” can be encoded with the entity `&Fins;{:xml}` 
+(for more details on characters and encoding rules see [ch. 5.2.](/handbook/v3/HB3_ch5#sec5.2)). The mark-up for further describing 
+the special characteristics of the initial is then built around the character, since it is understood as a qualification of how the letter 
+was executed in the manuscript.
 
 If an initial is missing &ndash; because it was never filled in, because it 
-      has been erased from the manuscript or because it was cut out &ndash; the missing letter is
-                  encoded in accordance with the general rules for transcription. The same 
-                  applies to initials that were added later
-                  (see [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) for the encoding of the <E>space/</E> element, and
-      [ch. 9](/handbook/v3/HB3_ch9#sec9) for the encoding of scribal or editorial intervention). 
-      The mark-up of the missing or added initial is wrapped in the element <E>c</E>
-      as normal.
-      The following example shows how a missing initial “N” is encoded using <E>space/</E>. 
-      The attribute `@quantity{:sh}` is used on <E>space/</E> to indicate the number of characters omitted,
-                  which is specified by the value `"chars"{:js}` of the attribute `@unit{:sh}`. 
-      
-      
+has been erased from the manuscript or because it was cut out &ndash; the missing letter is
+encoded in accordance with the general rules for transcription. The same 
+applies to initials that were added later
+(see [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) for the encoding of the <E>space/</E> element, and
+[ch. 9](/handbook/v3/HB3_ch9#sec9) for the encoding of scribal or editorial intervention). 
+The mark-up of the missing or added initial is wrapped in the element <E>c</E>
+as normal.
+The following example shows how a missing initial “N” is encoded using <E>space/</E>. 
+The attribute `@quantity{:sh}` is used on <E>space/</E> to indicate the number of characters omitted,
+which is specified by the value `"chars"{:js}` of the attribute `@unit{:sh}`. 
+
+
 ```xml
 <w>
   <choice>
@@ -1361,7 +1361,7 @@ If an initial is missing &ndash; because it was never filled in, because it
 </w>
 ```
 
-               
+
 
 ### 7.3.2 Hierarchy of initials [#sec7.3.2]
 
@@ -1372,47 +1372,47 @@ If an initial is missing &ndash; because it was never filled in, because it
 
 
 <Caption title="Ill. 7.48">. Hierarchy of initials exemplified in AM 351 fol., f. 2r and 72v. 
-      Red: historiated opening initial, 8 l. Yellow: pen-flourished chapter initial, 5 l. Blue: pen-flourished 
-      paragraph initials (note that the “I” is not indented), 2-3 l. Green: colour-stroked sentence initials 
-      (littera notabilior).</Caption>
+Red: historiated opening initial, 8 l. Yellow: pen-flourished chapter initial, 5 l. Blue: pen-flourished 
+paragraph initials (note that the “I” is not indented), 2-3 l. Green: colour-stroked sentence initials 
+(littera notabilior).</Caption>
 
 In most manuscripts, structurally different types of initials and highlighted characters
-                  occur. Usually, the various types are distributed in a systematic hierarchical way
-                  and can be identified based on their size, their decoration, their location on the
-                  page and their position regarding the text’s overall structure. Going beyond the rough dichotomy 
-                  between major and minor initials, it is common to distinguish between opening
-                  initials, text initials, chapter initials, paragraph initials and sentence initials.
+occur. Usually, the various types are distributed in a systematic hierarchical way
+and can be identified based on their size, their decoration, their location on the
+page and their position regarding the text’s overall structure. Going beyond the rough dichotomy 
+between major and minor initials, it is common to distinguish between opening
+initials, text initials, chapter initials, paragraph initials and sentence initials.
 
 The attribute `@type{:sh}` (with the value `"initital"{:js}`) is used to 
-                  distinguish the character from other characters that are marked-up by means of
-                  the <E>c</E>-element, such as hyphens (see [ch.
-                     5.5](/handbook/v3/HB3_ch5#sec5.5)). The more specific attribute `@subtype{:sh}` will then
-         indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
-         If it is not possible to distinguish between more than major and minor initials, however, 
-         these two main subtypes may also be used. 
-         Possible values for `@subtype{:sh}` when used for initials
-         are thus: `"opening"{:js}`, `"text"{:js}`, `"para"{:js}` and `"littNot"{:js}` (for
-                     littera notabilior or sentence initial) as well as 
-          `"major"{:js}` and `"minor"{:js}`.
-  Please note that some manuscripts do not display any hierarchy in the way the initials are presented (for instance when all initials 
-   are of the same size and have the same (simple) degree of ornamentation). In those cases, as well as in cases when the 
-   initial subtype has not been defined, the attribute `@subtype{:sh}` is omitted.
+distinguish the character from other characters that are marked-up by means of
+the <E>c</E>-element, such as hyphens (see [ch.
+5.5](/handbook/v3/HB3_ch5#sec5.5)). The more specific attribute `@subtype{:sh}` will then
+indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
+If it is not possible to distinguish between more than major and minor initials, however, 
+these two main subtypes may also be used. 
+Possible values for `@subtype{:sh}` when used for initials
+are thus: `"opening"{:js}`, `"text"{:js}`, `"para"{:js}` and `"littNot"{:js}` (for
+littera notabilior or sentence initial) as well as 
+`"major"{:js}` and `"minor"{:js}`.
+Please note that some manuscripts do not display any hierarchy in the way the initials are presented (for instance when all initials 
+are of the same size and have the same (simple) degree of ornamentation). In those cases, as well as in cases when the 
+initial subtype has not been defined, the attribute `@subtype{:sh}` is omitted.
 
 The mark-up of initial subtypes is supposed to represent the hierarchical division                
-   indicated in the manuscript by means of the initials’ size and their degree of decoration. This categorization
-   is thought to summarize the results of the encoder’s analysis considering the overall distribution 
-   and presentation of initials in a given manuscript that are specified in more detail in the attributes `@style{:sh}` 
-      and `@rend{:sh}` (see sections [ch. 7.3.3](#sec7.3.3) to [ch. 7.3.5](#sec7.3.5)) . 
-      The hierarchical division indicated by the size and artistic features 
-   of initials may therefore divert from the traditionally perceived structure of a text, such as chapter divisions in standard editions.
-   
+indicated in the manuscript by means of the initials’ size and their degree of decoration. This categorization
+is thought to summarize the results of the encoder’s analysis considering the overall distribution 
+and presentation of initials in a given manuscript that are specified in more detail in the attributes `@style{:sh}` 
+and `@rend{:sh}` (see sections [ch. 7.3.3](#sec7.3.3) to [ch. 7.3.5](#sec7.3.5)) . 
+The hierarchical division indicated by the size and artistic features 
+of initials may therefore divert from the traditionally perceived structure of a text, such as chapter divisions in standard editions.
+
 
 If an initial is omitted or missing, this is indicated by the attribute `@type{:sh}` 
-         with the value `"noInitial"{:js}`. Even though
-         this might seem somewhat redundant if other mark-up such 
-         as <E>space/</E> or <E>gap/</E> is present, it has the advantage that, for instance
-         the subtype and the intended size of the missing initial may be encoded 
-         and thus searched for.
+with the value `"noInitial"{:js}`. Even though
+this might seem somewhat redundant if other mark-up such 
+as <E>space/</E> or <E>gap/</E> is present, it has the advantage that, for instance
+the subtype and the intended size of the missing initial may be encoded 
+and thus searched for.
 
 | type | subtype | Defines the subtype of **c**, if **type="initial"** |
 |-----|-----|-----|
@@ -1440,13 +1440,13 @@ Let us have a look at some examples:
 
 
 <Caption title="Ill. 7.49">. Puzzle chapter initial “S” (l. 16-22) and several sentence
-      initials, for instance in the word Ða in the middle of
-      l. 18 in AM 619 4to, f. 47r, l. 15&ndash;29.</Caption>
+initials, for instance in the word Ða in the middle of
+l. 18 in AM 619 4to, f. 47r, l. 15&ndash;29.</Caption>
 
 In the transcription, initials are encoded in their logical place
-            within the text. In a single-level transcription, the chapter initial "S" in the 
-            first word of line 16 (second line in the picture above) is, therefore,
-            encoded as follows with regards to the type and subtype:
+within the text. In a single-level transcription, the chapter initial "S" in the 
+first word of line 16 (second line in the picture above) is, therefore,
+encoded as follows with regards to the type and subtype:
 ```xml
 <w>
   <c type="initial" subtype="chapt">S</c>alomon
@@ -1455,7 +1455,7 @@ In the transcription, initials are encoded in their logical place
 
 
 In comparison, the sentence initial in the word Ða
-      on line 18 is encoded as:
+on line 18 is encoded as:
 ```xml
 <w>
   <c type="initial" subtype="littNot">Ð</c>a
@@ -1464,40 +1464,40 @@ In comparison, the sentence initial in the word Ða
 
 
 While a rather plain mark-up as shown in the two examples above would be perfectly valid, we highly recommend also to
-      describe the characters’ specific features using additional attributes.
-      We consider it good practice to indicate at least the size (see [ch. 7.3.3](#sec7.3.3)) and 
-         colour(s) (see [ch. 7.3.4](#sec7.3.4)) in addition to the type and subtype. 
-      
+describe the characters’ specific features using additional attributes.
+We consider it good practice to indicate at least the size (see [ch. 7.3.3](#sec7.3.3)) and 
+colour(s) (see [ch. 7.3.4](#sec7.3.4)) in addition to the type and subtype. 
+
 
 ### 7.3.3 Size of initial [#sec7.3.3]
 
 The size of the initial is often connected to its type and function. In the transcription we
-                  recommend to indicate separately the height of different parts of the initial. All
-                  measurements are given in natural numbers corresponding to the writing lines on
-                  the same page: 1. The initial height, indicating how many lines have been indented
-                  &ndash; often corresponding to the x-height or cap height of the letter. In case
-                  the initial was laid out but never executed, it should still be possible to
-                  determine the intended initial height of the non-existing initial due to the space
-                  left blank by the scribe; 2. The ascender and descender heights, giving the number
-                  of lines that each ascender and descender (or attached shaft) extend
-                  above and below the initial height, respectively (usually in the left margin next to the text).
-                  Note: The letters “I/J” and “L” present special cases, which are
-                  discussed below.
+recommend to indicate separately the height of different parts of the initial. All
+measurements are given in natural numbers corresponding to the writing lines on
+the same page: 1. The initial height, indicating how many lines have been indented
+&ndash; often corresponding to the x-height or cap height of the letter. In case
+the initial was laid out but never executed, it should still be possible to
+determine the intended initial height of the non-existing initial due to the space
+left blank by the scribe; 2. The ascender and descender heights, giving the number
+of lines that each ascender and descender (or attached shaft) extend
+above and below the initial height, respectively (usually in the left margin next to the text).
+Note: The letters “I/J” and “L” present special cases, which are
+discussed below.
 
 In XML, we recommend to indicate the size of initials as part of the `@style{:sh}` attribute on the
-                  element <E>c</E>. In order to document both its size and
-                  relative position in the written area, the value of the initial height, i.e. the number of indented lines, 
-   is marked-up as a combination of two values. These two values denote separately how many
-                  lines the initial height extends upwards including the line on which the character has its
-                  logical position in the text (i.e. “up”), and how many lines it extends below
-                  that line (i.e. “down”).
+element <E>c</E>. In order to document both its size and
+relative position in the written area, the value of the initial height, i.e. the number of indented lines, 
+is marked-up as a combination of two values. These two values denote separately how many
+lines the initial height extends upwards including the line on which the character has its
+logical position in the text (i.e. “up”), and how many lines it extends below
+that line (i.e. “down”).
 
 For example, in the picture below
 the initial height corresponds to eight writing lines and the character “A” belongs logically on the fourth 
 of these eight lines where it forms part of the word “AT”. In the XML mark-up we therefore indicate
-   that the initial height goes four lines up (i.e. the line that starts with “AT” is indented, and the initial height
-   extends for three more lines above that) and four lines down. The two values together give the total 
-   number of indented lines: 4+4 = 8. The initial height of the “A” from the example can thus be marked-up as shown below the image.
+that the initial height goes four lines up (i.e. the line that starts with “AT” is indented, and the initial height
+extends for three more lines above that) and four lines down. The two values together give the total 
+number of indented lines: 4+4 = 8. The initial height of the “A” from the example can thus be marked-up as shown below the image.
 
 <Figure>
 <AutoImage src="/images/hb3/ch7/AM-226-fol-96va,2-17.jpg" alt="ch7/AM-226-fol-96va,2-17.jpg"/>
@@ -1506,82 +1506,82 @@ of these eight lines where it forms part of the word “AT”. In the XML mark-u
 
 
 <Caption title="Ill. 7.50">. Historiated text initial “A”
-      in the word AT in AM 226 fol., f. 96va, l. 2&ndash;17.</Caption>
+in the word AT in AM 226 fol., f. 96va, l. 2&ndash;17.</Caption>
 ```xml
 <c type="initial" subtype="chapt" style="u4 d4">A</c>
 ```
 
 
 The various values of `@style{:sh}` are separated by white spaces, and the numbers are preceded by 
-   an identifying letter (or letter combination), in this case “u” for up and “d” 
-   for down. In the same 
-   way, we can indicate the size of the ascender and descender of the initial in the margin, using the preceding
-   letters “mu” (for margin up) to denote the height of the ascender and “md” 
-   (for margin down) to denote 
-   how far down the descender extends 
-   below the initial height. For the initial “A” the complete markup of the size then looks like this
-   (note, however, that the image does not show the entire descender, which extends far down): 
+an identifying letter (or letter combination), in this case “u” for up and “d” 
+for down. In the same 
+way, we can indicate the size of the ascender and descender of the initial in the margin, using the preceding
+letters “mu” (for margin up) to denote the height of the ascender and “md” 
+(for margin down) to denote 
+how far down the descender extends 
+below the initial height. For the initial “A” the complete markup of the size then looks like this
+(note, however, that the image does not show the entire descender, which extends far down): 
 ```xml
 <c type="initial" subtype="chapt" style="u3 d4 mu5 md28">A</c>
 ```
 
 
 If any of the values are omitted they are assumed to be zero. 
-   The size of the initial “S” from ill. 7.49 
-   above can therefore be encoded as: 
-    
+The size of the initial “S” from ill. 7.49 
+above can therefore be encoded as: 
+
 ```xml
 <c type="initial" subtype="chapt" style="u1 d6 md2">S</c>
 ```
 
 
 Note that the value of `@style{:sh}` is given as “u1 d6 md2”, indicating that the initial height merely
-               goes up one line (the line of the initial’s logical position) and six lines 
-               down from there.  The initial also extends below the indented initial height by two lines, which is denoted with “md2”.
-               Since no value is given for “mu”, it is assumed to be “mu0”. This is correct,  
-               because there is no ascender exceeding above the initial height. 
-            
+goes up one line (the line of the initial’s logical position) and six lines 
+down from there.  The initial also extends below the indented initial height by two lines, which is denoted with “md2”.
+Since no value is given for “mu”, it is assumed to be “mu0”. This is correct,  
+because there is no ascender exceeding above the initial height. 
+
 
  Sometimes the adjacent lines to initials, especially with“I/J”, are not indented even if the lines for 
-         other initials in the manuscript that belong to the same hierarchical level
-         are indented. This is often due to the letter’s shape that lends itself particularly well to being in the margin only. 
-         According to its degree of decoration (and potentially how far the initial stretches out into the margins)
-         it is nevertheless normally possible to identify the correct initial type. In other words, the number of indented lines
-         (the initial height) is not crucial for the functional analysis of these letters. 
-      In the XML-markup of an initial “I/J”, which does not have an indented initial height, the values for “u” and “d” 
-         are simply omitted, since they equal zero.
-      The values for “mu” and “MD” are counted relative to the line, onto which the initial logically belongs, 
-         and “mu” also counts the line of the initial’s logical placement. For instance, a text initial “I” that 
-         is not indented in the written area, but extends 8 lines into the margin (3 lines up from its logical place and 5 lines down), 
-         would be encoded as follows:
-     
+other initials in the manuscript that belong to the same hierarchical level
+are indented. This is often due to the letter’s shape that lends itself particularly well to being in the margin only. 
+According to its degree of decoration (and potentially how far the initial stretches out into the margins)
+it is nevertheless normally possible to identify the correct initial type. In other words, the number of indented lines
+(the initial height) is not crucial for the functional analysis of these letters. 
+In the XML-markup of an initial “I/J”, which does not have an indented initial height, the values for “u” and “d” 
+are simply omitted, since they equal zero.
+The values for “mu” and “MD” are counted relative to the line, onto which the initial logically belongs, 
+and “mu” also counts the line of the initial’s logical placement. For instance, a text initial “I” that 
+is not indented in the written area, but extends 8 lines into the margin (3 lines up from its logical place and 5 lines down), 
+would be encoded as follows:
+
 ```xml
 <c type="initial" subtype="text" style="mu3 md5">I</c>
 ```
 
 
  The initial letter “L” is equally sometimes found with fewer indented lines than
-                  other letters of the same level of hierarchy. Other than for “I/J”, however,
-                  it is common that “L” is formed with an initial height of one (or tow)
-                  indented line(s) for the horizontal bar of the letter. 
-                  The values for “u” is thus often 1 (or sometimes 2), 
-          and the value for “mu” equals the number of lines the initials extents above
-      the indented line(s) as normal. 
+other letters of the same level of hierarchy. Other than for “I/J”, however,
+it is common that “L” is formed with an initial height of one (or tow)
+indented line(s) for the horizontal bar of the letter. 
+The values for “u” is thus often 1 (or sometimes 2), 
+and the value for “mu” equals the number of lines the initials extents above
+the indented line(s) as normal. 
 
 When (minor) initials are executed as versals they are entirely out-dented into the margin and, thus, 
-         do not have any indented initial height either. The values for “u” and “d” are accordingly omitted as they equal zero.
-         Instead, only “mu” and “md” are encoded (in the same way as for initials that are not indented due to their letter form).  
-         Again, the size is denoted relative to the logical placement of the initial in the text counting lines up and down from
-         the line onto which the initial belongs. 
-         
+do not have any indented initial height either. The values for “u” and “d” are accordingly omitted as they equal zero.
+Instead, only “mu” and “md” are encoded (in the same way as for initials that are not indented due to their letter form).  
+Again, the size is denoted relative to the logical placement of the initial in the text counting lines up and down from
+the line onto which the initial belongs. 
+
 
 In case of a missing initial, the number of indented lines, i.e. the initial height (if present), is 
-         encoded in the same way as for existing initials. 
-      Since it is usually impossible to know if the initial was supposed to extend into to margins or how far, 
-      no indication is made for
-      “mu” and “md”, even if a missing initial was supposed to be “I/J” or a versal. 
-         The mark-up of a planned, but not executed chapter initial for which a total of four lines 
-      are indented (three lines upwards and one downwards), would thus be:
+encoded in the same way as for existing initials. 
+Since it is usually impossible to know if the initial was supposed to extend into to margins or how far, 
+no indication is made for
+“mu” and “md”, even if a missing initial was supposed to be “I/J” or a versal. 
+The mark-up of a planned, but not executed chapter initial for which a total of four lines 
+are indented (three lines upwards and one downwards), would thus be:
 ```xml
 <c type="noInitial" subtype="chapt" style="u3 d1"> 
    <space quantity="1" unit="chars"/></c>
@@ -1591,31 +1591,31 @@ In case of a missing initial, the number of indented lines, i.e. the initial hei
 ### 7.3.4 Colour(s) [#sec7.3.4]
 
 It is relevant to note the colour(s) of initials and other highlighted characters. 
-         If initials are monochrome, i.e. only a single colour or hue is used, one might be
-         interested in if and how the colours alternate with other initials; and in the case of 
-         multiple colours or hues, the number and 
-         distribution of these may be important with
-         regards to the structural layout of the text.
-      
+If initials are monochrome, i.e. only a single colour or hue is used, one might be
+interested in if and how the colours alternate with other initials; and in the case of 
+multiple colours or hues, the number and 
+distribution of these may be important with
+regards to the structural layout of the text.
+
 
 We recommend encoding the colour(s) of initials by adding yet another value to the
-                  attribute `@style{:sh}`. The value shall be preceded by “c” for colour and can be used to describe both monochrome and
-                  polychrome initials. In case of a monochrome letter, either the simple name of that
-                  colour/hue or the more precise six-digit hexadecimal CSS colour code (preceded by #) is given. 
-                  (For standard CSS colours codes and names see e.g. 
-         [https://www.w3schools.com/cssref/css_colors.asp](https://www.w3schools.com/cssref/css_colors.asp).)
-                  A monochrome red initial would thus take the value “cRed” or “c#FF0000”.
-                  If a letter is bichrome, i.e. uses two colours, both colours are given (again
-                  either by name or hexadecimal colour code) and separated by an underscore. If an
-                  initial is truly polychrome, i.e. uses three or more different colours or hues,
-                  these are equally listed using underscores. The order in which the colours of bi-
-                  and polychrome initials are named should follow the order of importance. In other
-                  words, the only (or main) colour/hue of the actual initial, i.e. the body of the
-                  letter, is mentioned first, followed by a potential second colour of the actual
-                  initial or otherwise the main colour of the ornamentation or decoration. 
+attribute `@style{:sh}`. The value shall be preceded by “c” for colour and can be used to describe both monochrome and
+polychrome initials. In case of a monochrome letter, either the simple name of that
+colour/hue or the more precise six-digit hexadecimal CSS colour code (preceded by #) is given. 
+(For standard CSS colours codes and names see e.g. 
+[https://www.w3schools.com/cssref/css_colors.asp](https://www.w3schools.com/cssref/css_colors.asp).)
+A monochrome red initial would thus take the value “cRed” or “c#FF0000”.
+If a letter is bichrome, i.e. uses two colours, both colours are given (again
+either by name or hexadecimal colour code) and separated by an underscore. If an
+initial is truly polychrome, i.e. uses three or more different colours or hues,
+these are equally listed using underscores. The order in which the colours of bi-
+and polychrome initials are named should follow the order of importance. In other
+words, the only (or main) colour/hue of the actual initial, i.e. the body of the
+letter, is mentioned first, followed by a potential second colour of the actual
+initial or otherwise the main colour of the ornamentation or decoration. 
 
 Expanding on the description of the initial “S” from above (ill. 7.49), 
-         its encoding with simple references to the colours used looks like this:
+its encoding with simple references to the colours used looks like this:
 ```xml
 <c type="initial" subtype="chapt" 
   style="d6 md2 cGreen_Red_Blue">S</c>
@@ -1623,33 +1623,33 @@ Expanding on the description of the initial “S” from above (ill. 7.49),
 
 
 If a clear hierarchy of colours is impossible to establish, for instance if a bichrome
-                  initial is drawn with two colours that are used on equal terms, that relationship
-                  can be encoded by means of using an equals sign instead of an underscore in
-                  between the two colours. However,
-                  we recommend limiting the analysis of colours in the context of <E>c</E> to a
-                  general level. More specific and sophisticated descriptions of initials
-                  and the colours used should instead be placed in the manuscript description part of the
-                  header (i.e. <E>decoDesc</E> inside <E>msDesc</E>, see [ch. 7.2.1](#sec7.2.1)
-            above and further [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). 
+initial is drawn with two colours that are used on equal terms, that relationship
+can be encoded by means of using an equals sign instead of an underscore in
+between the two colours. However,
+we recommend limiting the analysis of colours in the context of <E>c</E> to a
+general level. More specific and sophisticated descriptions of initials
+and the colours used should instead be placed in the manuscript description part of the
+header (i.e. <E>decoDesc</E> inside <E>msDesc</E>, see [ch. 7.2.1](#sec7.2.1)
+above and further [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). 
 
 If the encoder should be unable to determine the colour(s) employed for executing initials,
-                  for instance because they are working from black-and-white images, the indication
-                  of color is simply omitted in the transcription.
+for instance because they are working from black-and-white images, the indication
+of color is simply omitted in the transcription.
 
 ### 7.3.5 Artistic rendition [#sec7.3.5]
 
 The attribute `@rend{:sh}` is used to encode the form and kind of decoration found in or
-                  around the initial. This attribute provides a general description of the initial’s
-                  artistic rendition without going into too much detail, i.e. by means of keywords only (see the list
-                  below). In basic terms the information given here should agree with the description
-                  in the header, where a more detailed prose description of the initial’s form and
-                  its ornamentation can be included (see [ch. 7.2.1.2](#sec7.2.1.2) as 
-                  well as [ch. 7.2.7](#sec7.2.7)).
+around the initial. This attribute provides a general description of the initial’s
+artistic rendition without going into too much detail, i.e. by means of keywords only (see the list
+below). In basic terms the information given here should agree with the description
+in the header, where a more detailed prose description of the initial’s form and
+its ornamentation can be included (see [ch. 7.2.1.2](#sec7.2.1.2) as 
+well as [ch. 7.2.7](#sec7.2.7)).
 
 The attribute `@rend{:sh}` is used for indicating both the way in which an initial is drawn and the main 
-            means of decoration/ornamentation. Even the presence of guide letters can be indicated here.
-         In order to encompass all of that information, the attribute can take several values 
-         (in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. 
+means of decoration/ornamentation. Even the presence of guide letters can be indicated here.
+In order to encompass all of that information, the attribute can take several values 
+(in no specific order) that are simply separated by white spaces. However, things should be kept to a minimum. 
 
 | Rend | Indicates the rendition and/or composition of the character (usually initial); more than one value may be combined. |
 |-----|-----|
@@ -1670,8 +1670,8 @@ The attribute `@rend{:sh}` is used for indicating both the way in which an initi
 
 
 The encoding of the puzzle chapter initial “S” from the example above (ill. 7.49 above) may thus be
-                  further expanded with the attribute `@rend{:sh}`
-            taking the value `"puzzle"{:js}`: 
+further expanded with the attribute `@rend{:sh}`
+taking the value `"puzzle"{:js}`: 
 ```xml
 <c type="initial" subtype="chapt" style="d6 md2 cGreen_Red_Blue" 
   rend="puzzle">S</c>
@@ -1679,9 +1679,9 @@ The encoding of the puzzle chapter initial “S” from the example above (ill. 
 
 
 Since multiple different forms and decorations can occur in connection with
-            the same intitial, these values may be combined, using whitespace(s) for separation.
-            For example, the initial “A” from AM 226 fol. (ill. 7.50 above) can be encoded as such:
-         
+the same intitial, these values may be combined, using whitespace(s) for separation.
+For example, the initial “A” from AM 226 fol. (ill. 7.50 above) can be encoded as such:
+
 ```xml
 <c type="initial" subtype="chapt" style="u3 d4 mu5 md28" 
   rend="historiated inhabited foliate">A</c>
@@ -1689,17 +1689,17 @@ Since multiple different forms and decorations can occur in connection with
 
 
 In case the encoder wishes to additionally distinguish between different degrees of the same type of ornamentation, a numbering system may
-     be used in addition to the proposed values. For example, if one wants to indicate how elaborate the pen flourish is in different initials, these 
-     can be referred to as `"penFlourish-1"{:js}` and `"penFlourish-2"{:js}`, respectively. Please note, however, that such quantifications 
-     are neither standardized nor transferable and thus 
-     only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
-     in the <E>teiHeader</E> if they are employed.
+be used in addition to the proposed values. For example, if one wants to indicate how elaborate the pen flourish is in different initials, these 
+can be referred to as `"penFlourish-1"{:js}` and `"penFlourish-2"{:js}`, respectively. Please note, however, that such quantifications 
+are neither standardized nor transferable and thus 
+only apply to observations made for individual manuscripts. We suggest that the encoder explains his or her usage of such distinctions
+in the <E>teiHeader</E> if they are employed.
 
 ## 7.4 Glossary [#sec7.4]
 
 The following is an alphabetically organized glossary covering the most common terms used
-               for describing initials and other illuminations used in this chapter. Terms related to the anatomy of
-      initials are moreover illustrated in ill. 7.51 below.
+for describing initials and other illuminations used in this chapter. Terms related to the anatomy of
+initials are moreover illustrated in ill. 7.51 below.
 
 
 
@@ -1747,10 +1747,10 @@ The following is an alphabetically organized glossary covering the most common t
 Most images are taken from the online repository of the respective manuscript’s collection (exceptions mentioned). These are:
 
 [Handrit.org](http://handrit.org) for the manuscripts owned by The Arnamagnæan Collection in Copenhagen as well 
-            as the National and University Library of Iceland and The Árni Magnússon Institute for 
-         Icelandic Studies, both in Reykjavík. Exceptions are the images of the following manuscripts that had not yet been made available  
-         on [Handrit.org](http://handrit.org): The Árni Magnússon Institute for Icelandic Studies, Reykjavík, AM 345 fol. (accessed via CD-ROM) and The Arnamagnæan 
-         Collection, Copenhagen, AM 421 12mo (accessed via http://haandskrift.ku.dk) and AM 322 fol. (photo by Friederike Richter).
+as the National and University Library of Iceland and The Árni Magnússon Institute for 
+Icelandic Studies, both in Reykjavík. Exceptions are the images of the following manuscripts that had not yet been made available  
+on [Handrit.org](http://handrit.org): The Árni Magnússon Institute for Icelandic Studies, Reykjavík, AM 345 fol. (accessed via CD-ROM) and The Arnamagnæan 
+Collection, Copenhagen, AM 421 12mo (accessed via http://haandskrift.ku.dk) and AM 322 fol. (photo by Friederike Richter).
 
 [Alvin](https://www.alvin-portal.org) for the manuscripts owned by Lund University Library.
 
@@ -1759,4 +1759,4 @@ Most images are taken from the online repository of the respective manuscript’
 [E-manuskripter (Det Kgl. Bibliotek)](http://www.kb.dk/da/nb/materialer/haandskrifter/HA/e-mss/mdr.html) for the manuscripts owned by the Royal Library, Copenhagen.
 
 The diagrams illuminating the hierarchy as well as the anatomy of the initials are by Friederike Richter, 
-         based on the images of the aforementioned repositories of the respective collections.
+based on the images of the aforementioned repositories of the respective collections.

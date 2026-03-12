@@ -123,33 +123,33 @@ by Matthew Driscoll, Rune Kyrkjebø and Odd Einar Haugen
 ## 3.1 The structure of the manuscript vs. the structure of the work [#sec3.1]
 
 Viewed as physical objects, rather than as vehicles for texts, manuscripts have a
-     certain structural hierarchy. What is regarded as a single manuscript may in fact comprise more
-     than one volume; _Flateyjarbók_, for example, is bound in two volumes, and the large rímur codex
-     Acc. 22 in three. A manuscript book is made up of quires or gatherings, each of which contains
-     a number of leaves, normally eight. Each leaf has a recto side and a verso side, and each side
-     may be further divided into columns. The text is then written in lines across the page or
-     column. In order to be able to locate a word quickly and easily, all, or at least most, of
-     these structural divisions must be registered. We need to know that a given word appears e.g.
-     in the fifth line of the right-hand or b column on the recto side of folio 34. As it is
-     customary to foliate manuscripts without regard to their quire division, the quires will not
-     normally need to be included in the hierarchical structure, but since the quiring can have
-     implications for the text itself this division should be indicated, and will also generally
-     form part of the <E>msDesc</E> element, found in the document header.
+certain structural hierarchy. What is regarded as a single manuscript may in fact comprise more
+than one volume; _Flateyjarbók_, for example, is bound in two volumes, and the large rímur codex
+Acc. 22 in three. A manuscript book is made up of quires or gatherings, each of which contains
+a number of leaves, normally eight. Each leaf has a recto side and a verso side, and each side
+may be further divided into columns. The text is then written in lines across the page or
+column. In order to be able to locate a word quickly and easily, all, or at least most, of
+these structural divisions must be registered. We need to know that a given word appears e.g.
+in the fifth line of the right-hand or b column on the recto side of folio 34. As it is
+customary to foliate manuscripts without regard to their quire division, the quires will not
+normally need to be included in the hierarchical structure, but since the quiring can have
+implications for the text itself this division should be indicated, and will also generally
+form part of the <E>msDesc</E> element, found in the document header.
 
 At the same time, of course, manuscripts obviously do contain texts, which is the reason why most of us are interested in them in the first place. A single manuscript will often contain more than one work, each of which may, in the case of lengthy prose works such as sagas, be divided into chapters or sections. In the case of Medieval Icelandic poetry, <em>rímur</em> for example, a single work (<em>rímnaflokkur</em>) will usually consist of several cantos or fits, each containing a number of stanzas, made up of a number of lines. It may be necessary to group these lines in some other ways as well. The stanzas comprising the <em>mansöngur</em> should be distinguished from the main body of the fit, for example, while to facilitate certain types of metrical analysis it might be desirable to divide the individual stanzas into couplets. Some types of poetry, such as the <em>vikivakakvæði</em>, will have a refrain or burden, which should ideally also be distinguished from the narrative section(s) of the stanza.
 
 XML has at its foundation the notion of a text as a single hierarchical structure, which means that it does not work well where there are several concurrent hierarchies, as is obviously the case when one wishes for example to indicate the line divisions both in a poem and in the manuscript in which the poem is contained. The [TEI
-               Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this problem, enabling both the structure of the document and the structure of the text to be encoded.
+Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this problem, enabling both the structure of the document and the structure of the text to be encoded.
 
 ### 3.1.1 Hierarchical divisions [#sec3.1.1]
 
 The principal means of representing hierarchy is the <E>div</E> (i.e. “division”) element. <E>div</E> elements may freely nest within each other. The <E>div</E> element has, in addition to the universally available `@id{:sh}` and `@n{:sh}` attributes, a `@type{:sh}` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"{:js}`, `"stanza"{:js}`, `"couplet"{:js}`, if attempting to represent the structure of the text, or `"page"{:js}`, `"column"{:js}`, `"line"{:js}` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type{:sh}` attribute in the <E>div</E> element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
 
 The complex structure of a work such as a set of rímur could be represented by using four levels of <E>div</E> elements, <E>div type="canto"</E> for the cantos or fits, <E>div type="part"</E> for the parts (for example the <em>mansöngvar</em>), <E>div type="stanza"</E> for the stanzas, and <E>div type="line"</E> for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use <E>div type="canto"</E> for each set. A simpler form of mark-up is possible, however. Instead of <E>div</E> elements, the <E>l</E> element (for “line”) and the <E>lg</E> element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the <E>div</E> element for larger structural units. The `@type{:sh}` attribute is then used to identify the type of unit, e.g. `"stanza"{:js}`, `"couplet"{:js}`, like in <E>lg type="stanza"</E>. Here again the type need
-                  only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
+only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance &ndash; if of importance at all &ndash; when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using <E>div</E> elements, which are then
-                  given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. <E>pb/</E>, <E>cb/</E> and <E>lb/</E>. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
+given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. <E>pb/</E>, <E>cb/</E> and <E>lb/</E>. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
 
@@ -356,8 +356,8 @@ The solution recommended here is analoguous to the division of a text into <E>di
 ## 3.6 Words: &lt;w&gt; [#sec3.6]
 
 Although words need not be delimited by anything else than white space, we recommend
-     placing each word in a <E>w</E> element. This will be helpful for word constituent analysis
-     as well as for any morphological (and lexicographical) annotation.
+placing each word in a <E>w</E> element. This will be helpful for word constituent analysis
+as well as for any morphological (and lexicographical) annotation.
 
 | Elements | Contents |
 |-----|-----|
@@ -427,11 +427,11 @@ Nesting of <E>lg</E> elements is useful for marking up longer poems. When a poem
 The <E>lg</E> and <E>l</E> elements may have several attributes, among other things for encoding information about rhyme or other metrical phenomena. See [ch. 13](/handbook/v3/HB3_ch13) of this handbook for a more detailed presentation of metrical encoding.
 
 Having <E>p</E> and <E>lg</E> as siblings can create problems for the encoding of
-     prosimetrum texts, where lines or verse or even whole poems can appear within prose text, often
-     as part of direct speech. However, rather than including <E>lg</E> directly within the
-      <E>p</E> element (which would not be valid), we recommend inserting the <E>p</E> and
-      <E>lg</E> elements within <E>div</E> elements, using one <E>div</E> for each of
-     them:
+prosimetrum texts, where lines or verse or even whole poems can appear within prose text, often
+as part of direct speech. However, rather than including <E>lg</E> directly within the
+<E>p</E> element (which would not be valid), we recommend inserting the <E>p</E> and
+<E>lg</E> elements within <E>div</E> elements, using one <E>div</E> for each of
+them:
 
 | Elements | Contents |
 |-----|-----|
@@ -481,7 +481,7 @@ It is not required that a <E>div</E> contains a head, but if the <E>head</E> ele
 From a logical point of view, a heading is located at the beginning of a new chapter. If one accepts that the heading may be located on the same line as the end of the previous chapter, this is not uncommon in manuscripts. One should not expect headings in manuscripts to be set out with blank lines above and below as in modern print.
 
 
-               
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch3/HolmPerg-34-4to-10v,1-10.jpg" alt="ch3/HolmPerg-34-4to-10v,1-10.jpg"/>
@@ -489,12 +489,12 @@ From a logical point of view, a heading is located at the beginning of a new cha
 </Figure>
 
 
-            
+
 <Caption title="Ill. 3.1">. A chapter heading. _Landslǫg Magnúss
-               Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1&ndash;10.</Caption>
+Hákonarsonar_. Holm perg 34 4to, f. 10v, l. 1&ndash;10.</Caption>
 
 In ill. 3.1, the heading, which is written in red, is located after the end of one chapter and at the beginning of a new chapter.
-               The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
+The sequence of elements is thus straight-forward (beginning with the 5th line in the illustration):
 ```xml
 <div>
    . . .
@@ -521,7 +521,7 @@ Unfortunately (from the point of view of the encoder) many manuscripts locate he
 As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript into chapters is marked up by  <E>div</E> elements. Each chapter is usually indicated by an initial, often decorated and in colour, and a heading, a rubric, typically in red ink, as illustrated in fig. 3.2.
 
 
-               
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch3/AM-619-4to-47r,15-24.jpg" alt="ch3/AM-619-4to-47r,15-24.jpg"/>
@@ -529,7 +529,7 @@ As stated in [ch. 3.3](#sec3.3) above, the structuring of a medieval manuscript 
 </Figure>
 
 
-            
+
 <Caption title="3.2">. Initials and highlighted characters. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 15&ndash;24.</Caption>
 
 The initial “S” marks the opening of a new homily, while the emphasised characters mark divisions at a lower level, such as the  “Ð” in the 4th line of the image, the “H” in the 5th line, etc. An initial as well as an emphasised character (<em>littera notabilior</em>) should be encoded with the <E>c</E> element.
@@ -642,5 +642,4 @@ In [ch. 3.5.2](#sec3.5.2) above, we have been using the <E>milestone/</E> elemen
 ## Updates to ch. 3 [#sec3.16]
 
 On 19 July 2020, two subchapters were added on the linking of sentences 
-               between files and possible conflicts that may arise in this connection, [ch. 3.5.1](#sec3.5.1) and [ch. 3.5.2](#sec3.5.2). On the same day, a new subchapter was added on the generic empty <E>milestone/</E> element, [ch. 3.15](#sec3.15). 
-               
+between files and possible conflicts that may arise in this connection, [ch. 3.5.1](#sec3.5.1) and [ch. 3.5.2](#sec3.5.2). On the same day, a new subchapter was added on the generic empty <E>milestone/</E> element, [ch. 3.15](#sec3.15). 

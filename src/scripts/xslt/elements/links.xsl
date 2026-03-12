@@ -12,7 +12,8 @@
                 => replace('^(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
-                => replace('^(menotaP5\.xml$)', '/$1') 
+                => replace('^(menota-entities)\.txt$', '/$1.txt') 
+                => replace('^(menotaP5)\.xml$', '/$1.xml') 
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>

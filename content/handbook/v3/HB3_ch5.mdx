@@ -225,10 +225,10 @@ by Odd Einar Haugen and Beeke Stegmann
 ## 5.1 Introduction [#sec5.1]
 
 When transcribing a text, the transcriber will usually make a distinction between the
-          individual characters, the white space between some of the characters, the words made up
-          by sequences of characters, and the punctuation marks which are inserted between some of
-          the words. The actual encoding can be as straightforward as in the example below, introduced in [ch. 2.3](/handbook/v3/HB3_ch2#sec2.3). Here, characters, punctuation marks and
-          spaces have been typed directly from the keyboard:
+individual characters, the white space between some of the characters, the words made up
+by sequences of characters, and the punctuation marks which are inserted between some of
+the words. The actual encoding can be as straightforward as in the example below, introduced in [ch. 2.3](/handbook/v3/HB3_ch2#sec2.3). Here, characters, punctuation marks and
+spaces have been typed directly from the keyboard:
 ```xml
 Reiðr var þá Vingþórr
 er hann vaknaði
@@ -242,42 +242,42 @@ um at þreifask.
 
 
 In a more complex encoding, the transcriber might like to identify the basic units as
-          such, so that a distinction easily can be drawn between single characters, words,
-          punctuation marks and the white space surrounding them. This chapter will discuss these
-          basic units and how they can be encoded specifically, if needed, using elements like
-            <E>c</E> for individual characters and <E>w</E> for individual words.
+such, so that a distinction easily can be drawn between single characters, words,
+punctuation marks and the white space surrounding them. This chapter will discuss these
+basic units and how they can be encoded specifically, if needed, using elements like
+<E>c</E> for individual characters and <E>w</E> for individual words.
 
 ## 5.2 Characters [#sec5.2]
 
 The basic unit in any transcription of an alphabetic script is the individual letters. In
-          a linguistic context a distinction is often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a
-          written document. Variant forms are referred to as **allographs**, e.g.
-          the Roman type of “s” and the Fraktur (black letter) type. The
-          terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general
-          introduction to this terminology, see e.g. [Sture Allén
-            1971](/handbook/v3/HB3_literature#Allen1971), [Manfred Kohrt 1985](/handbook/v3/HB3_literature#Kohrt1985) or [Christa Dürscheid 2016](/handbook/v3/HB3_literature#Durscheid2016).
+a linguistic context a distinction is often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a
+written document. Variant forms are referred to as **allographs**, e.g.
+the Roman type of “s” and the Fraktur (black letter) type. The
+terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general
+introduction to this terminology, see e.g. [Sture Allén
+1971](/handbook/v3/HB3_literature#Allen1971), [Manfred Kohrt 1985](/handbook/v3/HB3_literature#Kohrt1985) or [Christa Dürscheid 2016](/handbook/v3/HB3_literature#Durscheid2016).
 
 In this handbook we shall adopt the terminology of the [Unicode Standard](http://www.unicode.org/). The fundamental
-          distinction drawn is between **characters** and **glyphs**. Characters are, as Unicode defines it, “the smallest components of
-            written language that have semantic value”, while glyphs are “the shapes that
-              characters can have when they are rendered or displayed” (cf. Unicode v. 12.0, [ch. 2.2
-                Unicode Design Principles](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf)). 
-          What the transcriber sees in a manuscript is a series
-          of individual glyphs, and the act of transcribing essentially involves linking these
-          glyphs to the characters at the transcriber’s disposal.
+distinction drawn is between **characters** and **glyphs**. Characters are, as Unicode defines it, “the smallest components of
+written language that have semantic value”, while glyphs are “the shapes that
+characters can have when they are rendered or displayed” (cf. Unicode v. 12.0, [ch. 2.2
+Unicode Design Principles](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf)). 
+What the transcriber sees in a manuscript is a series
+of individual glyphs, and the act of transcribing essentially involves linking these
+glyphs to the characters at the transcriber’s disposal.
 
 The concept of a character is similar to, but not identical with the linguistic concept
-          of a grapheme. These concepts are notoriously difficult, but for the purposes of this
-          handbook we believe that the Unicode usage is robust and sufficiently well-defined.
+of a grapheme. These concepts are notoriously difficult, but for the purposes of this
+handbook we believe that the Unicode usage is robust and sufficiently well-defined.
 
 The Unicode Standard puts great emphasis on the fact that individual characters may be
-          represented by a number of glyphs, and is therefore reticent to accept as new characters
-          what it percieves to be variant glyphs. It will be obvious to most people that the various
-          shapes of letters in printed type faces, such as Courier, Times, Lucida etc.,
-          should not be seen as different characters, as shown in ill. 5.1.
+represented by a number of glyphs, and is therefore reticent to accept as new characters
+what it percieves to be variant glyphs. It will be obvious to most people that the various
+shapes of letters in printed type faces, such as Courier, Times, Lucida etc.,
+should not be seen as different characters, as shown in ill. 5.1.
 
 
-          
+
 
 <Figure>
 <AutoImage src="/images/hb3/ch5/AAAaaa.gif" alt="ch5/AAAaaa.gif"/>
@@ -285,42 +285,42 @@ The Unicode Standard puts great emphasis on the fact that individual characters 
 </Figure>
 
 
-        
+
 <Caption title="Ill. 5.1">. Various shapes (glyphs) of the characters
-          “A” and “a” in Courier, Times and Lucida typefaces.</Caption>
+“A” and “a” in Courier, Times and Lucida typefaces.</Caption>
 
 Unicode draws a distinction between small (minuscule) characters such as “a” and
-          large (majuscule) characters such as “A”, since there is a possible semantic value
-          attached to each set of characters. Thus, “the white house” can refer to any house
-          which is white in colour, while “the White House” refers (normally) to one specific
-          building. It can be argued that the same applies to the distinction between regular characters,
-            “a”, and italics, “<em>a</em>”. For example, while “Metope”
-          refers a poem by the Norwegian author Olaf Bull, <em>Metope</em> (according
-          to a widespread bibliographical practice) refers to the book in which this poem is
-          published (a book which, co-incidentally, bears the same name as one of the poems
-          contained in the book). However, Unicode does not regard italics (or bold type) as
-          individual characters. There are good reasons for this, but the example serves to
-          illustrate the fact that the definition of a character is not always clear-cut.
+large (majuscule) characters such as “A”, since there is a possible semantic value
+attached to each set of characters. Thus, “the white house” can refer to any house
+which is white in colour, while “the White House” refers (normally) to one specific
+building. It can be argued that the same applies to the distinction between regular characters,
+“a”, and italics, “<em>a</em>”. For example, while “Metope”
+refers a poem by the Norwegian author Olaf Bull, <em>Metope</em> (according
+to a widespread bibliographical practice) refers to the book in which this poem is
+published (a book which, co-incidentally, bears the same name as one of the poems
+contained in the book). However, Unicode does not regard italics (or bold type) as
+individual characters. There are good reasons for this, but the example serves to
+illustrate the fact that the definition of a character is not always clear-cut.
 
 Medieval Nordic manuscripts and charters were written in the Latin alphabet from the very beginning.
-          The basic inventory is thus the characters a&ndash;z / A&ndash;Z. They were supplemented by a number
-          of new (or borrowed) characters, several ligatures and a variety of diacritical marks.
-          There was also a large number of abbreviation marks in use, especially in Old Icelandic
-          and Old Norwegian manuscripts. Some abbreviation marks behave as ordinary characters in the
-          sense that they occupy a separate position on the base line, such as the Tironian note for 
-          <em>ok</em> ‘and’. We recommend that ordinary base-line characters and abbreviation base-line 
-          characters are encoded as individual, separate characters. In addition to the ordinary base-line characters, there were quite 
-          a few diacritical marks, which were placed above (or through or below) another character. There were also many 
-          abbreviation marks which appeared in similar positions. For this reason, we suggest that the rules
-          for transcribing ordinary characters and abbreviation marks should be essentially the same.
+The basic inventory is thus the characters a&ndash;z / A&ndash;Z. They were supplemented by a number
+of new (or borrowed) characters, several ligatures and a variety of diacritical marks.
+There was also a large number of abbreviation marks in use, especially in Old Icelandic
+and Old Norwegian manuscripts. Some abbreviation marks behave as ordinary characters in the
+sense that they occupy a separate position on the base line, such as the Tironian note for 
+<em>ok</em> ‘and’. We recommend that ordinary base-line characters and abbreviation base-line 
+characters are encoded as individual, separate characters. In addition to the ordinary base-line characters, there were quite 
+a few diacritical marks, which were placed above (or through or below) another character. There were also many 
+abbreviation marks which appeared in similar positions. For this reason, we suggest that the rules
+for transcribing ordinary characters and abbreviation marks should be essentially the same.
 
 We believe that it is possible to identify a base line in all texts, as shown in ill.
-          5.2. These characters
-          would be transcribed as `abpþ{:xml}` or `abp&thorn;{:xml}`, 
-          i.e. in the order of appearance on the base line. The last
-          character may be encoded with its Unicode codepoint, `þ{:xml}` at 
-          `00FE`, or with an entity,
-          `&thorn;{:xml}`. Both encodings are strictly equivalent. 
+5.2. These characters
+would be transcribed as `abpþ{:xml}` or `abp&thorn;{:xml}`, 
+i.e. in the order of appearance on the base line. The last
+character may be encoded with its Unicode codepoint, `þ{:xml}` at 
+`00FE`, or with an entity,
+`&thorn;{:xml}`. Both encodings are strictly equivalent. 
 
 
 
@@ -333,13 +333,13 @@ We believe that it is possible to identify a base line in all texts, as shown in
 <Caption title="Ill. 5.2">. Position of characters on the base line.</Caption>
 
 If there are marks of any sort placed above, through or below any base-line character, we
-          recommend that these marks are transcribed
-          immediately <em>after</em> the base-line character. In general, we refer to
-          these marks as diacritics. As mentioned above, abbreviation marks are also frequently
-          placed in diacritical positions. Assuming that
-          the sign above `h{:xml}` should be referred to with the entity
-          `&er;{:xml}`, the
-          transcription of the very first word in ill. 5.3 would be `h&er;{:xml}`.
+recommend that these marks are transcribed
+immediately <em>after</em> the base-line character. In general, we refer to
+these marks as diacritics. As mentioned above, abbreviation marks are also frequently
+placed in diacritical positions. Assuming that
+the sign above `h{:xml}` should be referred to with the entity
+`&er;{:xml}`, the
+transcription of the very first word in ill. 5.3 would be `h&er;{:xml}`.
 
 
 
@@ -352,103 +352,103 @@ If there are marks of any sort placed above, through or below any base-line char
 <Caption title="Ill. 5.3">. Diacritical marks and abbreviation marks.</Caption>
 
 Diacritical marks are often seen as forming an integral part of a base-line character and
-          the whole is being encoded as a single character. This applies to accent marks, such as the one
-          above `e{:xml}` in ill. 5.3. The combination of a base-line character and a combining mark
-          can be encoded as a single character, in Unicode referred to as `LATIN SMALL LETTER E WITH
+the whole is being encoded as a single character. This applies to accent marks, such as the one
+above `e{:xml}` in ill. 5.3. The combination of a base-line character and a combining mark
+can be encoded as a single character, in Unicode referred to as `LATIN SMALL LETTER E WITH
           ACUTE` and the hexidecimal code value `00E9`. Alternatively, this letter can be decomposed and
-          encoded as a combination of `LATIN SMALL LETTER E` 
-          and `COMBINING ACUTE ACCENT`. We would like to emphasise that both encodings are strictly
-          equivalent.
+encoded as a combination of `LATIN SMALL LETTER E` 
+and `COMBINING ACUTE ACCENT`. We would like to emphasise that both encodings are strictly
+equivalent.
 
 Abbreviation marks, on the other hand, are usually treated as separate characters and
-          encoded as characters in their own right. From a purely graphical point of view, the
-          distinction between the acute accent in “é” and abbreviation marks such as the
-            “zigzag” mark and the bar, both exemplified in ill. 5.3, is far from obvious, but
-          the semantics are different. The acute accent may in some manuscripts be used to signify
-          length, but it is often used quite freely, sometimes only to distinguish one minim
-          character from another. Abbreviation marks have a definite (if sometimes ambiguous)
-          meaning and can be expanded into one or more characters; the zigzag mark above “h” in
-          ill. 5.3 signifies “er”, and the bar above “n” signifies another “n”.
+encoded as characters in their own right. From a purely graphical point of view, the
+distinction between the acute accent in “é” and abbreviation marks such as the
+“zigzag” mark and the bar, both exemplified in ill. 5.3, is far from obvious, but
+the semantics are different. The acute accent may in some manuscripts be used to signify
+length, but it is often used quite freely, sometimes only to distinguish one minim
+character from another. Abbreviation marks have a definite (if sometimes ambiguous)
+meaning and can be expanded into one or more characters; the zigzag mark above “h” in
+ill. 5.3 signifies “er”, and the bar above “n” signifies another “n”.
 
 ### 5.2.1 Rules for encoding characters [#sec5.2.1]
 
 We recommend the following basic rules for encoding characters, irrespective of whether
-            they are ordinary (alphabetic) characters or abbreviation marks.
+they are ordinary (alphabetic) characters or abbreviation marks.
 
 1. Each character is encoded according to its position in the direction of writing.
 
 2. Alphabetical characters on the base line are encoded first:
 
 2.1 If the character belongs to the ordinary Latin character set a&ndash;z / A&ndash;Z (commonly
-            known as `ISO 646` or Basic Latin) it is always encoded as such.<br/>
+known as `ISO 646` or Basic Latin) it is always encoded as such.<br/>
  2.2 Characters
-            outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g.
-            either as `abpþ{:xml}` (recommended) or as `abp&thorn;{:xml}`.<br/>
+outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g.
+either as `abpþ{:xml}` (recommended) or as `abp&thorn;{:xml}`.<br/>
  2.3 Characters
-            which are not part of the Unicode Standard must always be encoded by entities. See [app. A](/handbook/v3/HB3_A_characters) for more details.
+which are not part of the Unicode Standard must always be encoded by entities. See [app. A](/handbook/v3/HB3_A_characters) for more details.
 
 3. Abbreviation marks occupying a separate position on the base line are encoded in the
-            same manner as alphabetical characters. This applies to e.g. `LATIN SMALL LETTER P WITH
+same manner as alphabetical characters. This applies to e.g. `LATIN SMALL LETTER P WITH
             STROKE THROUGH DESCENDER` (for “per” or “par”), as explained in [ch. 6](/handbook/v3/HB3_ch6) below.
 
 4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of
-            two equivalent ways:
+two equivalent ways:
 
 4.1 As a base-line character + one or more combining marks. Thus the character `é{:xml}`
-            would be encoded as `e{:xml}` + `&combacute;{:xml}` (the latter entity meaning
-            `COMBINING ACUTE ACCENT)`.<br/>
+would be encoded as `e{:xml}` + `&combacute;{:xml}` (the latter entity meaning
+`COMBINING ACUTE ACCENT)`.<br/>
  4.2 As a composite base-line character and encoded with a
-            single Unicode codepoint or an entity. Thus, the character `é{:xml}` would be encoded as
-            either `é{:xml}` or as `&eacute;{:xml}`.
+single Unicode codepoint or an entity. Thus, the character `é{:xml}` would be encoded as
+either `é{:xml}` or as `&eacute;{:xml}`.
 
 5. Characters with abbreviation marks are encoded in the same manner as alphabetical
-            characters, i.e. in one of two equivalent ways:
+characters, i.e. in one of two equivalent ways:
 
 5.1 As a base-line character + one or more combining marks. Thus the first character in
-            ill. 5.3 above would be encoded as `h{:xml}` + `&er;{:xml}` (the latter entity meaning
-            `COMBINING ABBREVIATION MARK ER`).<br/>
+ill. 5.3 above would be encoded as `h{:xml}` + `&er;{:xml}` (the latter entity meaning
+`COMBINING ABBREVIATION MARK ER`).<br/>
  5.2 As a composite base-line character and
-            encoded with a single entity. Thus the above character might be encoded with a single
-            entity, e.g. as `&her;{:xml}`.
+encoded with a single entity. Thus the above character might be encoded with a single
+entity, e.g. as `&her;{:xml}`.
 
 As a rule, we would recommend the first solution, since the number of combinations of
-            base-line characters and combining abbreviation marks is very high. Furthermore, we
-            recommend that the abbreviation mark is identified by the <E>am</E> element (if it
-            is encoded as such, typically on the facsimile level) or by the <E>ex</E> element
-            (if it has been expanded, in this case as “er”, typically on the diplomatic level).
-            See [ch. 4](/handbook/v3/HB3_ch4) above for an explanation of levels.
+base-line characters and combining abbreviation marks is very high. Furthermore, we
+recommend that the abbreviation mark is identified by the <E>am</E> element (if it
+is encoded as such, typically on the facsimile level) or by the <E>ex</E> element
+(if it has been expanded, in this case as “er”, typically on the diplomatic level).
+See [ch. 4](/handbook/v3/HB3_ch4) above for an explanation of levels.
 
 6. If there is more than one combining character, they are encoded in this order:
 
 (a) Combinations with the base-line character within the x height of the base-line
-            character.<br/>
+character.<br/>
  (b) Combinations with the base-line character outside its `x{:xml}` height, but
-            still in contact with it.<br/>
+still in contact with it.<br/>
  (c) Combinations with the base-line character outside its
-            `x{:xml}` height height and without any contact with it.
+`x{:xml}` height height and without any contact with it.
 
 7. If there is more than one combining character in any of the three positions defined
-            in (6) above, we refer to the rules in the Unicode Standard v. 12, [ch. 2.11 Combining Characters](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf).
-          
+in (6) above, we refer to the rules in the Unicode Standard v. 12, [ch. 2.11 Combining Characters](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf).
+
 
 ### 5.2.2 Entities and Unicode values [#sec5.2.2]
 
 By using entities it is possible to define as many characters as one believes are
-            necessary for the transcription of a certain corpus of texts. However, since most
-            applications now fully support Unicode, we recommend that characters in the Unicode
-            Standard are encoded by their Unicode codepoints.
+necessary for the transcription of a certain corpus of texts. However, since most
+applications now fully support Unicode, we recommend that characters in the Unicode
+Standard are encoded by their Unicode codepoints.
 
 Note that the type of encoding is specifed at the very begining of an XML file. If the
-            specification is
+specification is
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 ```
 
 
 entities must be used for all characters outside Basic Latin and Latin-1 Supplement.
-            Thus, “a”, “é” and “þ” can be entered directly, but characters like
-            `&oogon;{:xml}` (`LATIN SMALL LETTER O WITH OGONEK`) must be encoded with an entity,
-            `&oogon;{:xml}`.
+Thus, “a”, “é” and “þ” can be entered directly, but characters like
+`&oogon;{:xml}` (`LATIN SMALL LETTER O WITH OGONEK`) must be encoded with an entity,
+`&oogon;{:xml}`.
 
 If, however, the encoding is specified as
 ```xml
@@ -457,38 +457,38 @@ If, however, the encoding is specified as
 
 
 all characters in the Unicode Standard can be encoded with their Unicode codepoints,
-            without resorting to entities.
+without resorting to entities.
 
 In the TEI P5 Guidelines, all entities must be declared in a separate list. An extensive list of
-            entities for Medieval Nordic texts can be downloaded from
-              [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1). An encoding using these entities
-            will always be valid with respect to character encoding (but may, of course, be invalid
-            for other reasons). The Menota entities are synchronised with the codepoints defined in
-            the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec),
-            so that if a Menota text is displayed with a fully compliant [MUFI font](http://www.mufi.info), all entities will be displayed
-            correctly.
+entities for Medieval Nordic texts can be downloaded from
+[app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1). An encoding using these entities
+will always be valid with respect to character encoding (but may, of course, be invalid
+for other reasons). The Menota entities are synchronised with the codepoints defined in
+the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec),
+so that if a Menota text is displayed with a fully compliant [MUFI font](http://www.mufi.info), all entities will be displayed
+correctly.
 
 The Basic Multilingual Plane of the Unicode Standard has 65,536 different codepoints.
-            This includes a large Private Use Area (PUA), comprising some 6,000 codepoints. This
-            area can be used for characters not defined in the Standard (so far). Our present
-            recommendation is to use this area for characters not included in the Unicode Standard
-            and to coordinate the allocation of codepoints with the recommendations by the [Medieval Unicode Font Initiative](http://www.mufi.info).
-            It should be noted that the use of PUA is an interim solution. A long-term solution is
-            to apply to Unicode for the inclusion of additional characters and/or use other
-            rendering techniques (such as OpenType).
+This includes a large Private Use Area (PUA), comprising some 6,000 codepoints. This
+area can be used for characters not defined in the Standard (so far). Our present
+recommendation is to use this area for characters not included in the Unicode Standard
+and to coordinate the allocation of codepoints with the recommendations by the [Medieval Unicode Font Initiative](http://www.mufi.info).
+It should be noted that the use of PUA is an interim solution. A long-term solution is
+to apply to Unicode for the inclusion of additional characters and/or use other
+rendering techniques (such as OpenType).
 
 Code points in Unicode are usually given in hexadecimal format, in which each digit
-            spans a sequence of 16 positions, `0-1-2-3-4-5-6-7-8-9-A-B-C-D-E-F`. Thus, `0001` equals `1`
-            in the decimal system, `000F` equals `15`, `0010` equals `16`etc. The whole range thus goes
-            from `0000` to `FFFF` (65,536). The PUA is located at `E000–F8FF`.
+spans a sequence of 16 positions, `0-1-2-3-4-5-6-7-8-9-A-B-C-D-E-F`. Thus, `0001` equals `1`
+in the decimal system, `000F` equals `15`, `0010` equals `16`etc. The whole range thus goes
+from `0000` to `FFFF` (65,536). The PUA is located at `E000–F8FF`.
 
 The Latin alphabet is the first to be described in the Unicode Standard. As was
-            mentioned, many characters in Unicode can be defined in several ways, either as a
-            single base-line character (including any diacritical marks) or as combination of a base-line character and one or more
-            combining marks.
+mentioned, many characters in Unicode can be defined in several ways, either as a
+single base-line character (including any diacritical marks) or as combination of a base-line character and one or more
+combining marks.
 
 (a) Commonly used characters have a single description in Unicode. This applies to all
-            base-line characters in the Latin alphabet.
+base-line characters in the Latin alphabet.
 
 <div className="table-abbr">
 | Glyph  | Encoding  | Code point  | Unicode descriptive name  |
@@ -498,8 +498,8 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 
 (b) Composite characters may be described in more than one way. Thus, an “a with acute
-              accent” can be encoded as a combination of an “a” and a combining acute accent or
-            as a single character, “a with acute accent”. Both descriptions are equivalent:
+accent” can be encoded as a combination of an “a” and a combining acute accent or
+as a single character, “a with acute accent”. Both descriptions are equivalent:
 
 <div className="table-abbr">
 | Glyph  | Entity  | Code point  | Unicode descriptive name  |
@@ -510,13 +510,13 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 
 (c) Some characters are not found in Unicode and must therefore be assigned to the
-      Private Use Area (PUA), either as a character with its own codepoint or as a combination of
-      an existing character and a combining diacritical mark in the PUA. The ligature of “k”
-      and “ſ” is not included in the Unicode Standard (as of v. 12.0), and since there may be
-      good reasons not to encode it as a sequence of “k” + “zero width joiner” + “ſ”,
-      we have assigned it to a codepoint in the PUA, `EBAE`. This practice
-            is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
-            for the current recommendation.
+Private Use Area (PUA), either as a character with its own codepoint or as a combination of
+an existing character and a combining diacritical mark in the PUA. The ligature of “k”
+and “ſ” is not included in the Unicode Standard (as of v. 12.0), and since there may be
+good reasons not to encode it as a sequence of “k” + “zero width joiner” + “ſ”,
+we have assigned it to a codepoint in the PUA, `EBAE`. This practice
+is under consideration and may change at a future point. See the [Medieval Unicode Font Initiative](http://www.mufi.info)
+for the current recommendation.
 
 <div className="table-abbr">
 | Glyph  |  Entity  | Code point  | Descriptive name  |
@@ -526,14 +526,14 @@ The Latin alphabet is the first to be described in the Unicode Standard. As was
 
 
 Encoding with entities referring to the PUA may look unnecessarily complicated. It
-            should be borne in mind, however, that the great majority of characters <em>are</em> defined in Unicode, and in many transcriptions the need for
-            special characters in the PUA will not arise. With appropriate fonts, the transcriber
-            does not need to spend much time on technicalities of this type.
+should be borne in mind, however, that the great majority of characters <em>are</em> defined in Unicode, and in many transcriptions the need for
+special characters in the PUA will not arise. With appropriate fonts, the transcriber
+does not need to spend much time on technicalities of this type.
 
 Finally, it should be noted that a text may be encoded with a mixture of Unicode code
-            points and entities even for characters within the Unicode Standard. For the sake of
-            clarity, some encoders might like to insert combining marks as entities. Thus, the
-            example above might be encoded as:
+points and entities even for characters within the Unicode Standard. For the sake of
+clarity, some encoders might like to insert combining marks as entities. Thus, the
+example above might be encoded as:
 ```xml
 h&er; sér han&bar;
 ```
@@ -546,13 +546,13 @@ h<am>&er;</am> sér han<am>&bar;</am>
 
 
 The two abbreviation characters `COMBINING ZIGZAG ABOVE` and `COMBINING OVERLINE` are part
-            of the Unicode Standard, at `035B` and `0305` respectively, so entitites are not really
-            needed. However, some XML editors may not show combining characters in correct
-            positions, and it is thus more legible to use entities, `&er;{:xml}` for the
-            combining zigzag above, and `&bar;{:xml}` for the combining bar above.
+of the Unicode Standard, at `035B` and `0305` respectively, so entitites are not really
+needed. However, some XML editors may not show combining characters in correct
+positions, and it is thus more legible to use entities, `&er;{:xml}` for the
+combining zigzag above, and `&bar;{:xml}` for the combining bar above.
 
 If an encoder, for some reason, would like to encode a character which is not in the
-            Menota list of entities, this character has to be declared in the header of the file.
+Menota list of entities, this character has to be declared in the header of the file.
 
 An ordinary Menota XML file will typically refer to the whole list of Menota entities in the third line of the file like this:
 ```xml
@@ -577,10 +577,10 @@ In this example, it is specified that the first entity, `&trotdot;{:xml}`, is go
 ### 5.2.3 Encoding characters as such [#sec5.2.3]
 
 In some cases, a character should be encoded as such. That kind of separate mark-up
-            allows for association with additional meta-data as well as easier processing. 
-            The TEI P5 Guidelines recommend the element
-            <E>c</E> for this type of encoding, and we recommend using
-            the attribute `@type{:sh}` (and potential others) for further specification.
+allows for association with additional meta-data as well as easier processing. 
+The TEI P5 Guidelines recommend the element
+<E>c</E> for this type of encoding, and we recommend using
+the attribute `@type{:sh}` (and potential others) for further specification.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -593,10 +593,10 @@ In some cases, a character should be encoded as such. That kind of separate mark
 
 
 A character should, for instance, be encoded as such when it forms a word in itself
-            instead of merely being part of a larger word. This can be the case if a character is 
-            the object of a grammatical discussion. 
-            A sentence like the following from the _First
-              Grammatical Treatise_
+instead of merely being part of a larger word. This can be the case if a character is 
+the object of a grammatical discussion. 
+A sentence like the following from the _First
+Grammatical Treatise_
 ```xml
 X, hann er samsettr í látinu af c ok s.
 ```
@@ -610,37 +610,37 @@ would thus be encoded as
 
 
 The usage of the attribute `@type{:sh}` with the value `"word"{:js}` distinguishes 
-            it from other kinds of characters one might want to mark-up.
-            Note that the <E>c</E> element is placed within the element <E>w</E>. This might seem somewhat
-            redundant in this case, since that information is also provided by the attribute. However, if 
-            a character behaves like a word, such as in a sentence like “The left descender of the
-            x’es in this script go below the base line”, it has inflection and could
-            easily be lemmatised as the noun “x”. (See [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2)
-            on lemmatisation).
+it from other kinds of characters one might want to mark-up.
+Note that the <E>c</E> element is placed within the element <E>w</E>. This might seem somewhat
+redundant in this case, since that information is also provided by the attribute. However, if 
+a character behaves like a word, such as in a sentence like “The left descender of the
+x’es in this script go below the base line”, it has inflection and could
+easily be lemmatised as the noun “x”. (See [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2)
+on lemmatisation).
 
 When displaying the text from the _First Grammatical Treatise_ on the normalised
-            level, one might  choose to render the
-            contents of the <E>c</E> element in italics, which would be possible with the suggested mark-up:
+level, one might  choose to render the
+contents of the <E>c</E> element in italics, which would be possible with the suggested mark-up:
 <Quote>
 <em>X</em>, hann er samsettr í látinu af <em>c</em> ok <em>s</em>.
 </Quote>
 
 Individual characters are moreover marked-up as such, when the character in question
-            is an initial or sentence initial. In that case, the character
-            is part of a larger word, meaning that the entire word is enclosed by the <E>w</E>
-            element, while only the visually highlighted initial is enclosed by the <E>c</E>
-            element. 
-            A detailed description of how to mark-up initials in the transcription is provided
-            in [ch. 7.3](/handbook/v3/HB3_ch7#sec7.3). Note, however, that 
-            the visual rendering of initials in a manuscript usually is only encoded on the facsimile level, not on the
-            diplomatic or normalised levels.
+is an initial or sentence initial. In that case, the character
+is part of a larger word, meaning that the entire word is enclosed by the <E>w</E>
+element, while only the visually highlighted initial is enclosed by the <E>c</E>
+element. 
+A detailed description of how to mark-up initials in the transcription is provided
+in [ch. 7.3](/handbook/v3/HB3_ch7#sec7.3). Note, however, that 
+the visual rendering of initials in a manuscript usually is only encoded on the facsimile level, not on the
+diplomatic or normalised levels.
 
 ## 5.3 Words [#sec5.3]
 
 ### 5.3.1 Basic mark-up [#sec5.3.1]
 
 The fundamental concept of the word is discussed in [ch. 3.6](/handbook/v3/HB3_ch3#sec3.6) above, and in [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5) and [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
-            of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
+of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -657,10 +657,10 @@ The fundamental concept of the word is discussed in [ch. 3.6](/handbook/v3/HB3_c
 
 
 As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a clearly
-            identifiable space between each word. This obviously facilitates the work for the
-            transcriber, since the word is a basic linguistic unit in grammars and dictionaries. In
-            a simple transcription, word division can simply be entered by the space bar on the
-            keyboard.
+identifiable space between each word. This obviously facilitates the work for the
+transcriber, since the word is a basic linguistic unit in grammars and dictionaries. In
+a simple transcription, word division can simply be entered by the space bar on the
+keyboard.
 
 
 
@@ -671,9 +671,9 @@ As a rule, medieval Nordic manuscripts in the Latin alphabet were written with a
 
 
 <Caption title="Ill. 5.4">. According to 
-              _Barlaams saga ok Jósafats_, falling into old sins is to behave like a dog 
-              returning to its own vomit. Note that the word “ſundr” in the 4th line of the illustration has been corrected to 
-              “hundr” by a younger hand. Holm perg 6 fol, f. 18vb, l. 18&ndash;24.</Caption>
+_Barlaams saga ok Jósafats_, falling into old sins is to behave like a dog 
+returning to its own vomit. Note that the word “ſundr” in the 4th line of the illustration has been corrected to 
+“hundr” by a younger hand. Holm perg 6 fol, f. 18vb, l. 18&ndash;24.</Caption>
 
 Thus, with a somewhat simplified character inventory the text in ill. 5.4 can be rendered as
 <Quote>
@@ -681,13 +681,13 @@ En ef ver fallum i hinar for<em>n</em>no syndir. oc huerfum aptr. til hi<em>n</e
 </Quote>
 
 Here, each word is delimited by a space (although, as discussed in [ch. 5.5](#sec5.5) below,
-            a word sometimes extends over a linebreak). While the space bar in many cases would be a sufficient way of delimiting words,
-           for several reasons we recommend that each word is identified with a separate
-              <E>w</E> element (for “word”). The <E>w</E> element functions as a
-            container for information on levels of text representation ([ch. 4](/handbook/v3/HB3_ch4) above) and morphological analysis ([ch.
-            11](/handbook/v3/HB3_ch11) below). In this example, each word has been identified by the <E>w</E> element,
-            and the lemma (dictionary entry) specified as an attribute to the <E>w</E>
-            element:
+a word sometimes extends over a linebreak). While the space bar in many cases would be a sufficient way of delimiting words,
+for several reasons we recommend that each word is identified with a separate
+<E>w</E> element (for “word”). The <E>w</E> element functions as a
+container for information on levels of text representation ([ch. 4](/handbook/v3/HB3_ch4) above) and morphological analysis ([ch.
+11](/handbook/v3/HB3_ch11) below). In this example, each word has been identified by the <E>w</E> element,
+and the lemma (dictionary entry) specified as an attribute to the <E>w</E>
+element:
 ```xml
 <w lemma="en">En</w>
 <w lemma="ef">ef</w>
@@ -702,20 +702,20 @@ etc.
 
 
 For practical reasons, each word has a separate line in this encoding. Unless otherwise
-            specified, it is assumed that there is white space between each <E>w</E>
-            element.
+specified, it is assumed that there is white space between each <E>w</E>
+element.
 
 ### 5.3.2 One word or two? Graphical and lexical words [#sec5.3.2]
 
 Although words as a rule are separated by spaces in medieval Nordic manuscripts, there
-            are many exceptions to this rule. For this reason, a distinction should be drawn between
-              **graphical** words and **lexical** words. A
-            graphical word is a sequence set out by space on either side, while a lexical word is a
-            member of the set of word forms defined by grammars and dictionaries for the language in
-            question. In the great majority of cases, graphical and lexical words are identical.
-            However, we sometimes see that compounds are written as two separate words 
-            (“veiði kona” = “veiðikona”) or  that a preposition and its object may be 
-            written as a single word (“aveiðiskap” = “á veiðiskap”).
+are many exceptions to this rule. For this reason, a distinction should be drawn between
+**graphical** words and **lexical** words. A
+graphical word is a sequence set out by space on either side, while a lexical word is a
+member of the set of word forms defined by grammars and dictionaries for the language in
+question. In the great majority of cases, graphical and lexical words are identical.
+However, we sometimes see that compounds are written as two separate words 
+(“veiði kona” = “veiðikona”) or  that a preposition and its object may be 
+written as a single word (“aveiðiskap” = “á veiðiskap”).
 
 
 
@@ -726,11 +726,11 @@ Although words as a rule are separated by spaces in medieval Nordic manuscripts,
 
 
 <Caption title="Ill. 5.5">. The ancient goddess Diana is introduced as a huntress, “veiði kona”, in 
-            _Barlaams saga ok Jósafats_. Holm perg 6 fol, f. 69va, l. 15&ndash;19. The word is located in the 3rd line of the illustration.</Caption>
+_Barlaams saga ok Jósafats_. Holm perg 6 fol, f. 69va, l. 15&ndash;19. The word is located in the 3rd line of the illustration.</Caption>
 
 If the transcriber wishes to analyse two (or more) graphical words as a single lexical
-            word, we suggest that this is done by putting the whole sequence within the <E>w</E>
-            element:
+word, we suggest that this is done by putting the whole sequence within the <E>w</E>
+element:
 ```xml
 <w>veiði kona</w>   
 ```
@@ -743,14 +743,14 @@ Information on e.g. lemma can be given as an attribute to the <E>w</E> element:
 
 
 The sequence “veiði kona” thus appears within a single element. In other words,
-            the transcriber interprets it as one lexical word, “veiðikona”. The space is left
-            untouched, so that in a display of the transcription, the sequence will still show up as
-            two graphical words, “veiði” and “kona”. However, since both graphical words
-            are placed within a single element the <em>lemma</em> will refer to both
-            parts.
+the transcriber interprets it as one lexical word, “veiðikona”. The space is left
+untouched, so that in a display of the transcription, the sequence will still show up as
+two graphical words, “veiði” and “kona”. However, since both graphical words
+are placed within a single element the <em>lemma</em> will refer to both
+parts.
 
 In a multi-level encoding, the word will be transcribed with a space on the facsimile and diplomatic levels, 
-            but without a space on the normalised level:
+but without a space on the normalised level:
 ```xml
 <w lemma="veiðikona">
   <choice>
@@ -766,7 +766,7 @@ In a multi-level encoding, the word will be transcribed with a space on the facs
 Stylesheets will simply display the whitespaces within the <E>w</E> element as they have been encoded, i.e. on the <E>me:facs</E> and <E>me:dipl</E> levels with a space, “veiði kona”, but without a space on the <E>me:norm</E> level, “veiðikona”.
 
 The converse case is a single graphical word which the transcriber would like to
-            analyse as two (or more) lexical words, e.g. “aveiðiskap” = “á veiðiskap”, as illustrated in ill. 5.6.
+analyse as two (or more) lexical words, e.g. “aveiðiskap” = “á veiðiskap”, as illustrated in ill. 5.6.
 
 
 
@@ -777,15 +777,15 @@ The converse case is a single graphical word which the transcriber would like to
 
 
 <Caption title="Ill. 5.6">. In _Barlaams saga ok Jósafats_, the Greek god Adonis (in the text in accusative, 
-            <em>Adonidem</em>) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12&ndash;14.</Caption>
+<em>Adonidem</em>) is said to be keen at hunting, in normalised orthography “ágjarn á veiðiskap”. Holm perg 6 fol, f. 69vb, l. 12&ndash;14.</Caption>
 
 Each lexical word should be placed within a <E>w</E> element, and information on
-            lemma, morphological form etc. can be given within each <E>w</E> element. However,
-            to generate a correct display of the text, i.e. a display with no space between each
-            part, we suggest that the <E>seg</E> element is used with a type attribute. The
-            value `"nb"{:js}` would indicate that there is no break between the parts in the
-              <E>w</E> element. If the lemma is given by way of an attribute, the encoding would
-            look like this:
+lemma, morphological form etc. can be given within each <E>w</E> element. However,
+to generate a correct display of the text, i.e. a display with no space between each
+part, we suggest that the <E>seg</E> element is used with a type attribute. The
+value `"nb"{:js}` would indicate that there is no break between the parts in the
+<E>w</E> element. If the lemma is given by way of an attribute, the encoding would
+look like this:
 ```xml
 <seg type="nb">
   <w lemma="á">a</w>
@@ -795,8 +795,8 @@ Each lexical word should be placed within a <E>w</E> element, and information on
 
 
 In some rather marginal cases, a sequence may be encoded as both types. A simplified
-            example from Codex Regius is “aravk stola” which should be read as “a
-              ravkstola”. This sequence might be encoded in this way:
+example from Codex Regius is “aravk stola” which should be read as “a
+ravkstola”. This sequence might be encoded in this way:
 ```xml
 <seg type="nb">
   <w lemma="á">a</w>
@@ -806,14 +806,14 @@ In some rather marginal cases, a sequence may be encoded as both types. A simpli
 
 
 This encoding shows that “a” in “aravk stola” is a lexical word, i.e. the
-            preposition “á”, and that “ravk stola” is another lexical word, i.e. the noun
-              “rǫkstóll”. It will allow a correct display of the sequence, since it
-            specifies that there should be no space between “a” and “rauk stola”, and the
-            space between “rauk” and “stola” is also encoded (analoguous to the encoding
-            of “veiði kona” above).
+preposition “á”, and that “ravk stola” is another lexical word, i.e. the noun
+“rǫkstóll”. It will allow a correct display of the sequence, since it
+specifies that there should be no space between “a” and “rauk stola”, and the
+space between “rauk” and “stola” is also encoded (analoguous to the encoding
+of “veiði kona” above).
 
 Enclitic words may be encoded in a smiliar way, e.g. “emk” which should be read as
-              “em” + “[e]k” meaning ‘am I’:
+“em” + “[e]k” meaning ‘am I’:
 ```xml
 <seg type="enc">
   <w lemma="vera">em</w>
@@ -859,19 +859,19 @@ The morphological encoding of enclitic words is further discussed in [ch. 11.3.2
 ### 5.3.3 Encoding of word constituents [#sec5.3.3]
 
 The encoder might want to encode constituent parts of a word, e.g. prefixes, roots,
-            derivational forms, etc. We recommend using the <E>m</E> element (for
-            “morpheme”) in such cases (cf. the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html)). This element may also be used for
-            constituent parts such as “veiði” and “kona” in the examples above. The
-              <E>m</E> element may contain information on level of text representation, lemma
-            etc. We shall repeat the encoding of “veiði kona” above:
+derivational forms, etc. We recommend using the <E>m</E> element (for
+“morpheme”) in such cases (cf. the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html)). This element may also be used for
+constituent parts such as “veiði” and “kona” in the examples above. The
+<E>m</E> element may contain information on level of text representation, lemma
+etc. We shall repeat the encoding of “veiði kona” above:
 ```xml
 <w lemma="veiðikona">veiði kona</w>
 ```
 
 
 Now, if the encoder wishes to add lexicographical (or other) information to the two
-            constituent parts, that can easily be done by inserting <E>m</E> elements in the
-              <E>w</E> element:
+constituent parts, that can easily be done by inserting <E>m</E> elements in the
+<E>w</E> element:
 ```xml
 <w lemma="veiðikona">veiði kona
   <m baseForm="veiði">veiði</m>
@@ -881,22 +881,22 @@ Now, if the encoder wishes to add lexicographical (or other) information to the 
 
 
 This encoding would make a clear distinction between lemmata on the first level of
-            encoding, in this case “veiðikona”, and the base form, `@baseForm{:sh}`, of each
-            constituent part, in this case “veiði” and “kona”.
+encoding, in this case “veiðikona”, and the base form, `@baseForm{:sh}`, of each
+constituent part, in this case “veiði” and “kona”.
 
 Lemmatisation is further discussed in [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) below and
-            is here only given as an example of a word-based type of mark-up. Grammatical
-            information can also be conveniently attached to the word through the `@me:msa{:sh}`
-            (morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
+is here only given as an example of a word-based type of mark-up. Grammatical
+information can also be conveniently attached to the word through the `@me:msa{:sh}`
+(morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
 
 ## 5.4 Punctuation  [#sec5.4]
 
 Having introduced elements for the encoding of individual characters and words, it can
-          also be useful to tag punctuation marks specifically. For punctuation characters in
-          general, we recommend using the <E>pc</E> element. In some cases, it can be convenient to
-          encode punctuation marks on more than one level of representation, such as the three levels 
-          <E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> introduced in 
-          [ch. 4](/handbook/v3/HB3_ch4) above.
+also be useful to tag punctuation marks specifically. For punctuation characters in
+general, we recommend using the <E>pc</E> element. In some cases, it can be convenient to
+encode punctuation marks on more than one level of representation, such as the three levels 
+<E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> introduced in 
+[ch. 4](/handbook/v3/HB3_ch4) above.
 
 <div className="table-xml-elements">
 | Elements | Explanation |
@@ -910,29 +910,29 @@ Having introduced elements for the encoding of individual characters and words, 
 
 
 Note the prefix “me:” which indicates that these elements
-          belong to the Menota namespace and are not part of the elements defined in TEI P5 Guidelines. See
-            [ch. 2.8](/handbook/v3/HB3_ch2#sec2.8) above on the use of namespaces in TEI
-          schemas. Since the levels of text representations offer parallel readings, we recommend that 
-          they are grouped by the <E>choice</E> element.
+belong to the Menota namespace and are not part of the elements defined in TEI P5 Guidelines. See
+[ch. 2.8](/handbook/v3/HB3_ch2#sec2.8) above on the use of namespaces in TEI
+schemas. Since the levels of text representations offer parallel readings, we recommend that 
+they are grouped by the <E>choice</E> element.
 
 Note that punctuation characters such as the full stop may also be used as abbreviation marks. This is discussed in
-          [ch. 6.3.8](/handbook/v3/HB3_ch6#sec6.3.8), while a border case (between abbreviation and punctuation) 
-          is discussed towards the end of [ch. 5.4.2](#sec5.4.2) below.
+[ch. 6.3.8](/handbook/v3/HB3_ch6#sec6.3.8), while a border case (between abbreviation and punctuation) 
+is discussed towards the end of [ch. 5.4.2](#sec5.4.2) below.
 
 ### 5.4.1 Punctuation in a single-level transcription [#sec5.4.1]
 
 In [ch. 5.3.1](#sec5.3.1) above, we said that a text can be encoded
-            character by character. Punctuation marks are simply inserted where they occur in the
-            manuscript, even if the position is wrong according to modern rules. If the actual
-            punctuation in <em>Barlaams saga ok Jósafats</em> is added, the example above
-            looks like this:
+character by character. Punctuation marks are simply inserted where they occur in the
+manuscript, even if the position is wrong according to modern rules. If the actual
+punctuation in <em>Barlaams saga ok Jósafats</em> is added, the example above
+looks like this:
 <Quote>
 En ef ver fallum i hinar fornno syndir. oc huerfum aptr. til hinna fyrrv misverka sem hundr til spyu sinnar. þa kann lettlega at vera. at oss kunni til hannda at berazt. sem i guðspialleno segir.
 </Quote>
 
 If a text is encoded using the <E>w</E> element, we recommend using a <E>pc</E>
-            element for punctuation marks. This is what an encoding looks like on a single,
-            diplomatic level:
+element for punctuation marks. This is what an encoding looks like on a single,
+diplomatic level:
 ```xml
 <w>En</w>
 <w>ef</w>
@@ -952,33 +952,33 @@ etc.
 
 
 The main reason for doing so follows from the encoding of more than one level of
-            transcription. At a diplomatic level, the transcriber should encode the punctuation
-            marks exactly where they are in the source, but at a normalised level, some punctuation
-            marks should be suppressed, some should be retained and some should be added.
+transcription. At a diplomatic level, the transcriber should encode the punctuation
+marks exactly where they are in the source, but at a normalised level, some punctuation
+marks should be suppressed, some should be retained and some should be added.
 
 In addition to punctuation marks like `FULL STOP`, `COMMA`, `COLON`, `SEMICOLON` and `HYPHEN`,
-            there are a number of specific medieval punctuation marks, including an early form of
-            the `QUESTION MARK` and a `PUNCTUS ELEVATUS`. A full list of additional punctuation marks
-            can be found in the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec)
-            with appropriate character entities.
+there are a number of specific medieval punctuation marks, including an early form of
+the `QUESTION MARK` and a `PUNCTUS ELEVATUS`. A full list of additional punctuation marks
+can be found in the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec)
+with appropriate character entities.
 
 If the encoder wishes to represent specific types of punctuation marks apart from the ordinary ones, this can 
-            be done by using the relevant entities, e.g. `&middot;{:xml}` for `MIDDLE DOT`,
-            `&punctelev;{:xml}` for `PUNCTUS ELEVATUS`, etc. In all cases, 
-            the punctuation mark should be 
-            placed within the <E>pc</E> element.
+be done by using the relevant entities, e.g. `&middot;{:xml}` for `MIDDLE DOT`,
+`&punctelev;{:xml}` for `PUNCTUS ELEVATUS`, etc. In all cases, 
+the punctuation mark should be 
+placed within the <E>pc</E> element.
 
 ### 5.4.2 Punctuation in a multi-level transcription [#sec5.4.2]
 
 While punctuation on the <E>me:facs</E> and <E>me:dipl</E> levels in most cases
-            will be identical, it is often radically different on the <E>me:norm</E> level.
-            Here, many dots in the manuscript will simply be suppressed, while other punctuation
-            marks will be added, including modern punctuation marks like quotation marks and
-            exclamation marks. Suppressing a punctuation mark is simply done by leaving the element
-            empty, while any supplied marks are encoded by adding a new <E>pc</E> element
-            in which the <E>me:facs</E> and possibly also the <E>me:dipl</E> element will be
-            empty. (See [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) for more information
-            on multi-level transcriptions.)
+will be identical, it is often radically different on the <E>me:norm</E> level.
+Here, many dots in the manuscript will simply be suppressed, while other punctuation
+marks will be added, including modern punctuation marks like quotation marks and
+exclamation marks. Suppressing a punctuation mark is simply done by leaving the element
+empty, while any supplied marks are encoded by adding a new <E>pc</E> element
+in which the <E>me:facs</E> and possibly also the <E>me:dipl</E> element will be
+empty. (See [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) for more information
+on multi-level transcriptions.)
 
 A text transcribed as
 <Quote>
@@ -991,15 +991,15 @@ on the <E>me:dipl</E> level would probably be rendered as
 </Quote>
 
 on the <E>me:norm</E> level, allowing for some variation in the type of quotation
-            marks and the order of comma or full stop and quotation mark. In a fully marked-up text,
-            the dot after “sva” would probably be suppressed on the <E>me:norm</E> level,
-            while a comma after “nu” would be added and the dot
-            after “hann” would be changed into a comma. Finally, quotation marks would be added.
-            However, other than punctuation characters (e.g. commas and full stops), 
-            quotation marks do not need to be written out by the transcriber, as recommended in [ch. 5.6](#sec5.6) below. Instead, the element <E>q</E> is
-            simply placed around any part in direct speach, and it is left to the stylesheet to
-            render the displayed text and potential punctuation characters inside
-            quotation marks:
+marks and the order of comma or full stop and quotation mark. In a fully marked-up text,
+the dot after “sva” would probably be suppressed on the <E>me:norm</E> level,
+while a comma after “nu” would be added and the dot
+after “hann” would be changed into a comma. Finally, quotation marks would be added.
+However, other than punctuation characters (e.g. commas and full stops), 
+quotation marks do not need to be written out by the transcriber, as recommended in [ch. 5.6](#sec5.6) below. Instead, the element <E>q</E> is
+simply placed around any part in direct speach, and it is left to the stylesheet to
+render the displayed text and potential punctuation characters inside
+quotation marks:
 ```xml
 <q>
 <w>
@@ -1093,9 +1093,9 @@ on the <E>me:norm</E> level, allowing for some variation in the type of quotatio
 
 
 In some cases, a dot should be interpreted as an abbreviation mark rather than a
-            punctuation mark. We recommend that the dot is encoded by the ordinary
-            full stop in Basic Latin, but that it is placed within the <E>am</E> element. A text
-            transcribed as
+punctuation mark. We recommend that the dot is encoded by the ordinary
+full stop in Basic Latin, but that it is placed within the <E>am</E> element. A text
+transcribed as
 <Quote>
 nu fann kgr. engan mann þar
 </Quote>
@@ -1106,9 +1106,9 @@ nu fann k<em>onon</em>gr engan mann þar
 </Quote>
 
 on the <E>me:dipl</E> level. In a fully marked-up text, the abbreviated word
-              “kgr.” would be encoded within an <E>am</E> element around the dot (the abbreviation mark) 
-            on the <E>me:facs</E> level, while it would be
-            expanded into “onon” (or “onun”) on the <E>me:dipl</E> level:
+“kgr.” would be encoded within an <E>am</E> element around the dot (the abbreviation mark) 
+on the <E>me:facs</E> level, while it would be
+expanded into “onon” (or “onun”) on the <E>me:dipl</E> level:
 ```xml
 <w>
   <choice>
@@ -1156,18 +1156,18 @@ on the <E>me:dipl</E> level. In a fully marked-up text, the abbreviated word
 
 
 In certain cases, a word abbreviated with a dot may occur at the end of a sentence,
-            e.g.
+e.g.
 <Quote>
 nu fann hann eigi kgr.
 </Quote>
 
 This dot would be interpreted as an abbreviation mark and possibly also as a
-            punctuation mark. On the <E>me:facs</E> level it would be encoded as no more than a   
-            dot (inside an <E>am</E> element), while on the <E>me:dipl</E> level it would be suppressed when “kgr.” had
-            been expanded to “konongr”. The encoder might, however, add a dot as a punctuation
-            mark within a <E>pc</E> element. That would certainly be the case on the
-            <E>me:norm</E> level, possibly also on the <E>me:dipl</E> level, but not on the 
-            <E>me:facs</E> level:
+punctuation mark. On the <E>me:facs</E> level it would be encoded as no more than a   
+dot (inside an <E>am</E> element), while on the <E>me:dipl</E> level it would be suppressed when “kgr.” had
+been expanded to “konongr”. The encoder might, however, add a dot as a punctuation
+mark within a <E>pc</E> element. That would certainly be the case on the
+<E>me:norm</E> level, possibly also on the <E>me:dipl</E> level, but not on the 
+<E>me:facs</E> level:
 ```xml
 <w>
   <choice>
@@ -1215,10 +1215,10 @@ This dot would be interpreted as an abbreviation mark and possibly also as a
 
 
 With this markup, a dot will be displayed after the word “konungr” on all three levels, but the dot
-            on the <E>me:facs</E> level is classified as an abbreviation mark (since it occurs
-            within the <E>am</E> element), while the dot on the <E>me:dipl</E> and the
-            <E>me:norm</E> levels is classified as a punctuation mark (since it occurs within
-            the <E>pc</E> element).
+on the <E>me:facs</E> level is classified as an abbreviation mark (since it occurs
+within the <E>am</E> element), while the dot on the <E>me:dipl</E> and the
+<E>me:norm</E> levels is classified as a punctuation mark (since it occurs within
+the <E>pc</E> element).
 
 ### 5.4.3 Punctuation marks as delimiters [#sec5.4.3]
 
@@ -1233,7 +1233,7 @@ In some manuscripts, certain words &ndash; typically short ones &ndash; are deli
 
 
 <Caption title="Ill. 5.7">. Encoding of a word delimited by dots. _Landslǫg Magnúss 
-            Hákonarsónar_. Holm perg 34 4to, f. 8r, l. 14&ndash;16.</Caption>
+Hákonarsónar_. Holm perg 34 4to, f. 8r, l. 14&ndash;16.</Caption>
 
 We recommend that these dots are encoded as punctuation marks within the <E>w</E> element, so as to distinguish them from ordinary pause or sentence punctuation. In a multi-level encoding, they would be rendered on the facsimile and diplomatic levels, but not on the normalised level. The last part of the middle sentence in ill. 5.7 would then be encoded as:
 ```xml
@@ -1277,26 +1277,26 @@ We recommend that these dots are encoded as punctuation marks within the <E>w</E
 
 
 Punctuation marks are also used as delimiters for numerals, especially Roman numerals. As stated in [ch. 5.7](#sec5.7) below, we 
-            recommend the same type of encoding.
+recommend the same type of encoding.
 
 ## 5.5 Hyphenation [#sec5.5]
 
 Like modern texts, medieval manuscripts were by and large justified, i.e. each line had
-          approximatley equal length. As a consequence, words often were split with one part 
-          at the end of a line and the remaining part on the next line.
-          However, hyphens were used a lot less than in modern texts, where they are more or less
-          obligatory.
+approximatley equal length. As a consequence, words often were split with one part 
+at the end of a line and the remaining part on the next line.
+However, hyphens were used a lot less than in modern texts, where they are more or less
+obligatory.
 
 We recommend that hyphens are encoded whenever they occur in the manuscript, using the
-          <E>pc</E> element. When this element encodes hyphenation, it may optionally have a `@resp{:sh}` 
-          attribute specifying the person responsible for the hyphenation, e.g. a later hand. If the scribe is responsible
-          for the hyphenation, we suggest that the `@resp{:sh}` attribute be left out.
+<E>pc</E> element. When this element encodes hyphenation, it may optionally have a `@resp{:sh}` 
+attribute specifying the person responsible for the hyphenation, e.g. a later hand. If the scribe is responsible
+for the hyphenation, we suggest that the `@resp{:sh}` attribute be left out.
 
 When there is no hyphen, we do not think it is necessary to add a hyphen in the encoding, as long as
-          the word is placed within the <E>w</E> element, which also contains a <E>lb/</E>
-          element. A hyphen can then be supplied by the stylesheet at one or more levels, based on the
-          position of the <E>lb/</E> element within a <E>w</E> element. We suggest that a missing hyphen should not be
-          displayed on the facsimile level, but on the diplomatic and normalised levels.
+the word is placed within the <E>w</E> element, which also contains a <E>lb/</E>
+element. A hyphen can then be supplied by the stylesheet at one or more levels, based on the
+position of the <E>lb/</E> element within a <E>w</E> element. We suggest that a missing hyphen should not be
+displayed on the facsimile level, but on the diplomatic and normalised levels.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -1317,7 +1317,7 @@ can be encoded when there actually is a hyphen in the manuscript.
 
 
 If the hyphen is missing in the manuscript, and that happens quite frequently, we suggest
-          that no hyphen is encoded:
+that no hyphen is encoded:
 ```xml
 This how <w>hyphen<lb ed="ms" n="2"/>ation</w> can be encoded
 when there is no hyphen in the manuscript.  
@@ -1325,14 +1325,14 @@ when there is no hyphen in the manuscript.
 
 
 If a stylesheet displays the text line by line, such as the one used in the Menota archive, it is informative to make
-          a distinction between hyphenation in the manuscript and hyphenation supplied by the editor. The former can be displayed 
-          by an ordinary hyphen and the latter by a middot, for example. Other stylesheets may display
-          the text without showing the line beginnings in the manuscript, and thus do not need to make any distinction between
-          the two types of hyphenation, such as the **Menota stylesheets** offered in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3). The one exception is the <E>me:facs</E> level, where hyphens that are in the manuscript should always be displayed. For examples, see [ch. 5.5.3](#sec5.5.3) below.
+a distinction between hyphenation in the manuscript and hyphenation supplied by the editor. The former can be displayed 
+by an ordinary hyphen and the latter by a middot, for example. Other stylesheets may display
+the text without showing the line beginnings in the manuscript, and thus do not need to make any distinction between
+the two types of hyphenation, such as the **Menota stylesheets** offered in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3). The one exception is the <E>me:facs</E> level, where hyphens that are in the manuscript should always be displayed. For examples, see [ch. 5.5.3](#sec5.5.3) below.
 
 At the normalised level, there will sometimes be hard hyphens such as in the name
-            “Egill Skalla-Grímssonar” (also spelt “Egill Skallagrímssonar”). This type of
-          hyphen should be encoded with the ordinary hyphen character:
+“Egill Skalla-Grímssonar” (also spelt “Egill Skallagrímssonar”). This type of
+hyphen should be encoded with the ordinary hyphen character:
 ```xml
 This is how the name <w>Egill</w> 
 <w>Skalla-Grímssonar</w> can be encoded.  
@@ -1340,12 +1340,12 @@ This is how the name <w>Egill</w>
 
 
 The ordinary hyphen will be displayed in any position of the word, whether in the line or
-          at the end of a line.
+at the end of a line.
 
 ### 5.5.1 Hyphenation in a single-level transcription [#sec5.5.1]
 
 The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5)) is essentially the same as in a multi-level
-            transcription (cf. [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6)). We give examples of both.
+transcription (cf. [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6)). We give examples of both.
 
 
 
@@ -1358,7 +1358,7 @@ The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](/handbo
 <Caption title="Ill. 5.8">. Hyphenation in a manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 47r, l. 1&ndash;4.</Caption>
 
 This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in lines 3&ndash;4
-            in ill. 5.8 should be encoded on the diplomatic level:
+in ill. 5.8 should be encoded on the diplomatic level:
 ```xml
 <w>
   hæ<pc>-</pc><lb ed="ms" n="4"/>góma
@@ -1375,10 +1375,10 @@ This is how the hyphenated word “hæ-góma” (normalised “hégóma”) in l
 
 
 <Caption title="Ill. 5.9">. Missing hyphenation in a manuscript. _Henrik
-            Harpestreng_. NKS 66 8vo, f. 116r, l. 1&ndash;3.</Caption>
+Harpestreng_. NKS 66 8vo, f. 116r, l. 1&ndash;3.</Caption>
 
 The non-hyphenated word “hwilk-kæ” in ill. 5.9, lines 2&ndash;3 should receive this
-            encoding, not recording any hyphenation:
+encoding, not recording any hyphenation:
 ```xml
 <w>
   hwilk<lb ed="ms" n="3"/>kæ
@@ -1389,7 +1389,7 @@ The non-hyphenated word “hwilk-kæ” in ill. 5.9, lines 2&ndash;3 should rece
 ### 5.5.2 Hyphenation in a multi-level transcription [#sec5.5.2]
 
 In a multi-level transcription, the rules for hyphenation will be identical to the ones
-            above. This would be the encoding of the hyphen in ill. 5.7 above:
+above. This would be the encoding of the hyphen in ill. 5.7 above:
 ```xml
 <w>
   <choice>
@@ -1402,7 +1402,7 @@ In a multi-level transcription, the rules for hyphenation will be identical to t
 
 
 When the hyphen is missing, as in ill. 5.8 above, we recommend that the encoder simply
-            encodes the word as it is, leaving it to the style sheet to display a hyphen:
+encodes the word as it is, leaving it to the style sheet to display a hyphen:
 ```xml
 <w>
   <choice>
@@ -1415,17 +1415,17 @@ When the hyphen is missing, as in ill. 5.8 above, we recommend that the encoder 
 
 
 In this example, the encoder might decide to render the word as “hwilkæ” on the
-            normalised level, assuming that the line beginning in the manuscript had led to the
-            dittography “hwilkkæ”.
+normalised level, assuming that the line beginning in the manuscript had led to the
+dittography “hwilkkæ”.
 
 Note that a line beginning will appear several times in a multi-level transcriptions, if it
-            occurs within a word. Great caution must therefore be taken with automatic numbering of
-              <E>lb/</E> elements.
+occurs within a word. Great caution must therefore be taken with automatic numbering of
+<E>lb/</E> elements.
 
 In some cases, there may be a dash at the end of a line, which is not being used for hyphenation purposes. This dash can 
-            be placed in an ordinary <E>pc</E> element, and the encoder may decide whether it should be represented by e.g. an 
-            ordinary hyphen or, perhaps, as a dash, `&ndash;{:xml}` for a somewhat longer dash than the hyphen,
-            or `&mdash;{:xml}` for an even longer dash.
+be placed in an ordinary <E>pc</E> element, and the encoder may decide whether it should be represented by e.g. an 
+ordinary hyphen or, perhaps, as a dash, `&ndash;{:xml}` for a somewhat longer dash than the hyphen,
+or `&mdash;{:xml}` for an even longer dash.
 
 ### 5.5.3 Display of hyphenation [#sec5.5.3]
 
@@ -1510,15 +1510,15 @@ When using the Menota stylesheets in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3),
 ## 5.6 Direct speech and quotations [#sec5.6]
 
 We recommend that direct speech is encoded
-     with the <E>q</E> element for each turn in the dialogue (e.g. for each question and answer).
-     In multi-level transcriptions, quotation marks will typically be displayed on
-     the <E>me:norm</E> level, sometimes also on the <E>me:dipl</E> level, but never on the
-      <E>me:facs</E> level. There were no quotation marks in medieval manuscripts, so a display on
-     the <E>me:facs</E> level would be anachronistic. 
+with the <E>q</E> element for each turn in the dialogue (e.g. for each question and answer).
+In multi-level transcriptions, quotation marks will typically be displayed on
+the <E>me:norm</E> level, sometimes also on the <E>me:dipl</E> level, but never on the
+<E>me:facs</E> level. There were no quotation marks in medieval manuscripts, so a display on
+the <E>me:facs</E> level would be anachronistic. 
 
 Texts may also contain quotations from other sources. These are usually not indicated by 
-          quotation marks, but might be displayed by italics or the like, or perhaps by a note. Stylesheets 
-          will vary with respect to the display of quotations.
+quotation marks, but might be displayed by italics or the like, or perhaps by a note. Stylesheets 
+will vary with respect to the display of quotations.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Explanation |
@@ -1669,7 +1669,7 @@ If an encoder wants to single out numerals, this should be done by the <E>num</E
 
 
 Roman numerals are typically delimited by a dot immediately
-          before and after the number:
+before and after the number:
 <Quote>
 Hann er .xij. vetra gamall.
 </Quote>
@@ -1826,16 +1826,16 @@ Many texts contain a large number of words that can be singled out by the <E>num
 ## 5.8 White space [#sec5.8]
 
 Note that
-          in XML as well as in HTML encoding, any amount of white space following each other (spaces, tabs and line breaks) are
-          interpreted as a single space. The stylesheets will take care of the correct display of white space, so that there will be a single space between <E>w</E> elements, and as a rule after each <E>pc</E> element, but not before it, i.e. no space between a <E>w</E> element and a subsequent <E>pc</E> element. There are some exceptions to the latter rule in connection with quotation marks, which will be handled by the stylesheets, too.
+in XML as well as in HTML encoding, any amount of white space following each other (spaces, tabs and line breaks) are
+interpreted as a single space. The stylesheets will take care of the correct display of white space, so that there will be a single space between <E>w</E> elements, and as a rule after each <E>pc</E> element, but not before it, i.e. no space between a <E>w</E> element and a subsequent <E>pc</E> element. There are some exceptions to the latter rule in connection with quotation marks, which will be handled by the stylesheets, too.
 
 It is not possible to encode a long space in the manuscript
-          simply by hitting the space bar several times. In our experience, there is no significant variation in word spacing
-          in Medieval Nordic manuscripts. If, however, a transcriber believes there are more than
-          one length of the space, the simplest way of encoding this is probably to define the
-          standard space, `0020`, as the default space and to define deviating spaces with
-          reference to the list of various space lenghts in the Unicode chart [General
-            Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec).
+simply by hitting the space bar several times. In our experience, there is no significant variation in word spacing
+in Medieval Nordic manuscripts. If, however, a transcriber believes there are more than
+one length of the space, the simplest way of encoding this is probably to define the
+standard space, `0020`, as the default space and to define deviating spaces with
+reference to the list of various space lenghts in the Unicode chart [General
+Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec).
 
 
 
