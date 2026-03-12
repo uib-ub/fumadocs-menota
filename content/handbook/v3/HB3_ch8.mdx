@@ -4,7 +4,7 @@ author:
  - Odd Einar Haugen
  - Nina Stensaker
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -149,7 +149,7 @@ Some Medieval Nordic manuscripts have been preserved in their entirety and they
 In some of these cases, the encoder might want to supply the missing or unclear
                text, either from other manuscripts or by conjecture, using the
                   `<supplied>{:xml}` element. This type of editorial intervention will be discussed
-               in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below.
+               in [ch. 9.3.1](/handbook/v3/HB3_ch9#sec9.3.1) below.
 
 In some
                manuscripts, there are holes or imperfections which must have been original, such as in
@@ -170,7 +170,7 @@ In some
 <Caption title="Ill. 8.1">. An original hole in the manuscript. _The Old Norwegian Homily Book_. AM 619 4to, f. 35v, l.
                15&ndash;22.</Caption>
 
-In the present ch. 8 and the ensuing [ch. 9](/handbook/v3/HB3_ch9) we will frequently refer to and give examples of single-level and multi-level transcriptions. Please refer to [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) for these important concepts.
+In the present ch. 8 and the ensuing [ch. 9](/handbook/v3/HB3_ch9) we will frequently refer to and give examples of single-level and multi-level transcriptions. Please refer to [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5) and [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) for these important concepts.
 
 ## 8.2 Lacunas [#sec8.2]
 
@@ -191,7 +191,7 @@ Whenever the manuscript contains a lacuna we suggest using the element
 | <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"{:js}` (character), `"word"{:js}`, `"line"{:js}` or `"leaf"{:js}`, or even `"indeterminate"{:js}`. |
 | <span className="p-3"/>`@quantity{:sh}` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.If the extent of the gap is described as `"indeterminate"{:js}` in the `@unit{:sh}` attribute, it does not make sense to try and specify a quantity. |
 | <span className="p-3"/>`@reason{:sh}` | Optional | Gives the reason for omission. Sample values include: `"damaged"{:js}`, `"cut"{:js}`, `"missing"{:js}`. |
-| <span className="p-3"/>`@agent{:sh}` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"{:js}`, `"smoke"{:js}`, `"fungus"{:js}` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>{:xml}` element discussed in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) below. |
+| <span className="p-3"/>`@agent{:sh}` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"{:js}`, `"smoke"{:js}`, `"fungus"{:js}` or the like. Intended removal of text, i.e. by erasure, should be encoded using the `<del>{:xml}` element discussed in [ch. 9.2.2](/handbook/v3/HB3_ch9#sec9.2.2) below. |
 </div>
 
 
@@ -226,11 +226,11 @@ On the facsimile level, we encode the gaps as such and do not offer any hypothes
 ```
 
 
-If the encoder would like to restore the lost text, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below.
+If the encoder would like to restore the lost text, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](/handbook/v3/HB3_ch9#sec9.3.1) below.
 
 On the normalised level, the text should be supplied, if possible, while it is a matter of editorial policy whether it should be supplied or not on the diplomatic level. If there are rather few examples of damaged text, such as in the _Old Norwegian Homily Book_ most encoders would supply damaged text on the diplomatic level, especially if it is a single-level edition. This has been done in the edition of the text in the Menota archive. If the source text is an extensively damaged fragment, on the other hand, the encoder may choose to retain the encoding with its uncertainties on the diplomatic level, and leave any restoration to the normalised level. Some of the damaged fragments of _Konungs skuggsjá_ has been encoded in this way in the Menota archive, e.g. NRA 58C.
 
-This is what a single-level encoding on the diplomatic level would look like if the encoder wanted to use the `<supplied>{:xml}` element. Here, Gustav Indrebø in his [1931 edition](HB3_literature.xml#Indrebo1931) of the text is credited with the restoration:
+This is what a single-level encoding on the diplomatic level would look like if the encoder wanted to use the `<supplied>{:xml}` element. Here, Gustav Indrebø in his [1931 edition](/handbook/v3/HB3_literature#Indrebo1931) of the text is credited with the restoration:
 ```xml
 . . .
 <w><me:dipl>Fegiarn</me:dipl></w>
@@ -283,7 +283,7 @@ A suitable stylesheet will be able to pick values from the attributes of the `<g
 </DisplayFrame>
 
 
-Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD` `SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](HB3_literature.xml#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
+Other stylesheets may prefer to render missing characters with a small zero sign, such as  `F1BD` `SMALL BASE LINE ZERO SIGN`, entity `&smallzero;{:xml}` in the Private Use Area of the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec). They might also add that if the number of presumed missing characters is too high, e.g. more than 10, it will be stated in numbers, such as “ca. 15”.
 
 ## 8.3 Empty space [#sec8.3]
 
@@ -350,7 +350,7 @@ On the facsimile level, the space left for the amount of silver in fig. 8.3 can 
 ```
 
 
-If the encoder would like to restore the text intended for the space, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations in a multi-level transcription are the same as for the treatment of lacunas above, i.e. that a space should be encoded as a space and nothing more on the facsimile level, the intended text should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore the text intended for the space, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](/handbook/v3/HB3_ch9#sec9.3.1) below. The editorial considerations in a multi-level transcription are the same as for the treatment of lacunas above, i.e. that a space should be encoded as a space and nothing more on the facsimile level, the intended text should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
 A single-level transcription on the diplomatic level would look like this if the encoder decided to use the `<supplied>{:xml}` element:
 ```xml
@@ -381,7 +381,7 @@ A single-level transcription on the diplomatic level would look like this if the
 ```
 
 
-Since the scribe left room for approximately three characters, he would obviously not have written “halfa mork” in full, but perhaps something like “.ɟ. ᴍ.”. However, when supplying text, we recommend to make it as readable as possible. See [ch. 9.3.4](HB3_ch9.xml#sec9.3.4) below for a brief discussion of the orthography of supplied (and corrected) text.
+Since the scribe left room for approximately three characters, he would obviously not have written “halfa mork” in full, but perhaps something like “.ɟ. ᴍ.”. However, when supplying text, we recommend to make it as readable as possible. See [ch. 9.3.4](/handbook/v3/HB3_ch9#sec9.3.4) below for a brief discussion of the orthography of supplied (and corrected) text.
 
 In another example, fig. 8.4, there is an empty space for an initial. This is often seen in manuscripts, since initials typically were drawn after the main text was written. Here, the space is evidently intended for the single character “S” in the word <em>sá</em> ‘this’.
 
@@ -429,9 +429,9 @@ If the transcriber would like to restore the text intended for the space, this c
 ```
 
 
-This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) below.
+This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1) below.
 
-For more details on the encoding of initials and other graphical elements, see [ch. 7.3](HB3_ch7.xml#sec7.3) above.
+For more details on the encoding of initials and other graphical elements, see [ch. 7.3](/handbook/v3/HB3_ch7#sec7.3) above.
 
 ### 8.3.2. Display of empty space [#sec8.3.2]
 
@@ -579,7 +579,7 @@ Since the transcriber can insert a suitable text in the `<unclear>{:xml}` elemen
 ```
 
 
-If the encoder would like to restore illegible characters, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](HB3_ch9.xml#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC` `DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
+If the encoder would like to restore illegible characters, this can be done by the `<supplied>{:xml}` element discussed in [ch. 9.3.1](/handbook/v3/HB3_ch9#sec9.3.1) below. The editorial considerations are similar to the treatment of lacunas above, i.e. that illegible characters should be encoded with a sign like `25CC` `DOTTED CIRCLE` on the facsimile level, the characters should, if possible, be supplied at the normalised level, while the policy on the diplomatic level depends on the manuscript and its degree of preservation and completeness.
 
 A single-level transcription on the diplomatic level would look like this if the enocder decided to use the `<supplied>{:xml}` element:
 ```xml
@@ -615,7 +615,7 @@ Previously, Menota displayed characters in the `<unclear>{:xml}` element using a
 </DisplayFrame>
 
 
-We are aware of the fact that in medieval manuscripts, scribes often used subpunction in order to delete a part of the text. As stated in [ch. 9.2.2](HB3_ch9.xml#sec9.2.2) and specifically in [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2), deletions should be encoded with the `<del>{:xml}` element and displayed within vertical bars with quills, ⸠ and ⸡, on all levels.
+We are aware of the fact that in medieval manuscripts, scribes often used subpunction in order to delete a part of the text. As stated in [ch. 9.2.2](/handbook/v3/HB3_ch9#sec9.2.2) and specifically in [ch. 9.2.2.2](/handbook/v3/HB3_ch9#sec9.2.2.2), deletions should be encoded with the `<del>{:xml}` element and displayed within vertical bars with quills, ⸠ and ⸡, on all levels.
 
 Illegible characters are commonly rendered by small zeros in printed editions. In some fonts, small zeros look very much like small ‘o’ characters, so we recommend using the dotted circle at `25CC`. This recommendation does not exclude small zeros, since they are well established in editions.
 
@@ -692,7 +692,7 @@ When the loss of leaves is so high as in this case, it may be difficult to
 ```
 
 
-As for the use of the `<note>{:xml}` element here, see [ch. 9.4](HB3_ch9.xml#sec9.4) below.
+As for the use of the `<note>{:xml}` element here, see [ch. 9.4](/handbook/v3/HB3_ch9#sec9.4) below.
 
 From this encoding, we understand that the beginning and the end of the once
                   complete manuscript is missing, and that there are gaps in between all leaves apart
@@ -797,7 +797,7 @@ Since the extent of the gap is specified by the attributes to the `<gap/>{:xml}`
 
 
 In the Menota archive, explanatory notes will be displayed at relevant places in the edited text. 
-                  The use of these notes is discussed in [ch. 9.4](HB3_ch9.xml#sec9.4) below.
+                  The use of these notes is discussed in [ch. 9.4](/handbook/v3/HB3_ch9#sec9.4) below.
 
 ### 8.5.3 A single leaf [#sec8.5.3]
 

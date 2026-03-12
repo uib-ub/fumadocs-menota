@@ -5,7 +5,7 @@ author:
  - Beeke Stegmann
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -209,7 +209,7 @@ by Odd Einar Haugen and Beeke Stegmann
 When transcribing a text, the transcriber will usually make a distinction between the
           individual characters, the white space between some of the characters, the words made up
           by sequences of characters, and the punctuation marks which are inserted between some of
-          the words. The actual encoding can be as straightforward as in the example below, introduced in [ch. 2.3](HB3_ch2.xml#sec2.3). Here, characters, punctuation marks and
+          the words. The actual encoding can be as straightforward as in the example below, introduced in [ch. 2.3](/handbook/v3/HB3_ch2#sec2.3). Here, characters, punctuation marks and
           spaces have been typed directly from the keyboard:
 ```xml
 Reiðr var þá Vingþórr
@@ -237,7 +237,7 @@ The basic unit in any transcription of an alphabetic script is the individual le
           the Roman type of “s” and the Fraktur (black letter) type. The
           terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general
           introduction to this terminology, see e.g. [Sture Allén
-            1971](HB3_literature.xml#Allen1971), [Manfred Kohrt 1985](HB3_literature.xml#Kohrt1985) or [Christa Dürscheid 2016](HB3_literature.xml#Durscheid2016).
+            1971](/handbook/v3/HB3_literature#Allen1971), [Manfred Kohrt 1985](/handbook/v3/HB3_literature#Kohrt1985) or [Christa Dürscheid 2016](/handbook/v3/HB3_literature#Durscheid2016).
 
 In this handbook we shall adopt the terminology of the [Unicode Standard](http://www.unicode.org/). The fundamental
           distinction drawn is between **characters** and **glyphs**. Characters are, as Unicode defines it, “the smallest components of
@@ -443,10 +443,10 @@ all characters in the Unicode Standard can be encoded with their Unicode codepoi
 
 In the TEI P5 Guidelines, all entities must be declared in a separate list. An extensive list of
             entities for Medieval Nordic texts can be downloaded from
-              [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1). An encoding using these entities
+              [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1). An encoding using these entities
             will always be valid with respect to character encoding (but may, of course, be invalid
             for other reasons). The Menota entities are synchronised with the codepoints defined in
-            the [MUFI character recommendation](HB3_literature.xml#MUFIrec),
+            the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec),
             so that if a Menota text is displayed with a fully compliant [MUFI font](http://www.mufi.info), all entities will be displayed
             correctly.
 
@@ -598,7 +598,7 @@ The usage of the attribute `@type{:sh}` with the value `"word"{:js}` distinguish
             redundant in this case, since that information is also provided by the attribute. However, if 
             a character behaves like a word, such as in a sentence like “The left descender of the
             x’es in this script go below the base line”, it has inflection and could
-            easily be lemmatised as the noun “x”. (See [ch. 11.2](HB3_ch11.xml#sec11.2)
+            easily be lemmatised as the noun “x”. (See [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2)
             on lemmatisation).
 
 When displaying the text from the _First Grammatical Treatise_ on the normalised
@@ -614,7 +614,7 @@ Individual characters are moreover marked-up as such, when the character in ques
             element, while only the visually highlighted initial is enclosed by the `<c>{:xml}`
             element. 
             A detailed description of how to mark-up initials in the transcription is provided
-            in [ch. 7.3](HB3_ch7.xml#sec7.3). Note, however, that 
+            in [ch. 7.3](/handbook/v3/HB3_ch7#sec7.3). Note, however, that 
             the visual rendering of initials in a manuscript usually is only encoded on the facsimile level, not on the
             diplomatic or normalised levels.
 
@@ -625,7 +625,7 @@ Finally, hypens &ndash; where they occur in manuscripts &ndash; are encoded with
 
 ### 5.3.1 Basic mark-up [#sec5.3.1]
 
-The fundamental concept of the word is discussed in [ch. 3.6](HB3_ch3.xml#sec3.6) above, and in [ch. 4.5](HB3_ch4.xml#sec4.5) and [ch. 4.6](HB3_ch4.xml#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
+The fundamental concept of the word is discussed in [ch. 3.6](/handbook/v3/HB3_ch3#sec3.6) above, and in [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5) and [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) an introduction is given to single-level and multi-level encoding of words. In this subchapter, we will introduce some further elements and attributes for the encoding
             of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html). Most examples are single-level transcriptions.
 
 <div className="table-xml-elements">
@@ -840,7 +840,7 @@ Multi-level encodings follow the same rules, e.g. “scalltu” ‘you shall’:
 
 Stylesheets will display the reading with no space on the `<me:facs>{:xml}` and `<me:dipl>{:xml}` levels, “ſcallꞇu” and “scalltu” respectively, but with a space on the `<me:norm>{:xml}` level, “skalt þú”.
 
-The morphological encoding of enclitic words is further discussed in [ch. 11.3.2.11](HB3_ch11.xml#sec11.3.2.11) below.
+The morphological encoding of enclitic words is further discussed in [ch. 11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11) below.
 
 ### 5.3.3 Encoding of word constituents [#sec5.3.3]
 
@@ -870,10 +870,10 @@ This encoding would make a clear distinction between lemmata on the first level 
             encoding, in this case “veiðikona”, and the base form, `@baseForm{:sh}`, of each
             constituent part, in this case “veiði” and “kona”.
 
-Lemmatisation is further discussed in [ch. 11.2](HB3_ch11.xml#sec11.2) below and
+Lemmatisation is further discussed in [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) below and
             is here only given as an example of a word-based type of mark-up. Grammatical
             information can also be conveniently attached to the word through the `@me:msa{:sh}`
-            (morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](HB3_ch11.xml#sec11.3) below.
+            (morphosyntactical analysis) attribute. This attribute is discussed in [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
 
 ## 5.4 Punctuation  [#sec5.4]
 
@@ -897,7 +897,7 @@ Having introduced elements for the encoding of individual characters and words, 
 
 Note the prefix “me:” which indicates that these elements
           belong to the Menota namespace and are not part of the elements defined in TEI P5 Guidelines. See
-            [ch. 2.8](HB3_ch2.xml#sec2.8) above on the use of namespaces in TEI
+            [ch. 2.8](/handbook/v3/HB3_ch2#sec2.8) above on the use of namespaces in TEI
           schemas. Since the levels of text representations offer parallel readings, we recommend that 
           they are grouped by the `<choice>{:xml}` element.
 
@@ -941,7 +941,7 @@ The main reason for doing so follows from the encoding of more than one level of
 In addition to punctuation marks like `FULL STOP`, `COMMA`, `COLON`, `SEMICOLON` and `HYPHEN`,
             there are a number of specific medieval punctuation marks, including an early form of
             the `QUESTION MARK` and a `PUNCTUS ELEVATUS`. A full list of additional punctuation marks
-            can be found in the [MUFI character recommendation](HB3_literature.xml#MUFIrec)
+            can be found in the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec)
             with appropriate character entities. For example, the `PUNCTUS
             ELEVATUS`, which sometimes appear in Medieval Nordic texts, should be encoded with the
             entity `&punctelev;{:xml}`.
@@ -955,7 +955,7 @@ While punctuation on the `<me:facs>{:xml}` and `<me:dipl>{:xml}` levels in most 
             exclamation marks. Suppressing a punctuation mark is simply done by leaving the element
             empty, while any supplied marks are encoded by adding a new `<pc>{:xml}` element
             in which the `<me:facs>{:xml}` and possibly also the `<me:dipl>{:xml}` element will be
-            empty. (See [ch. 4.6](HB3_ch4.xml#sec4.6) for more information
+            empty. (See [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6) for more information
             on multi-level transcriptions.)
 
 A text transcribed as
@@ -1251,7 +1251,7 @@ If a stylesheet displays the text line by line, such as the one used in the Meno
           a distinction between hyphenation in the manuscript and hyphenation supplied by the editor. The former can be displayed 
           by an ordinary hyphen and the latter by a middot, for example. Other stylesheets may display
           the text without showing the line beginnings in the manuscript, and thus do not need to make any distinction between
-          the two types of hyphenation, such as the **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3). The one exception is the `<me:facs>{:xml}` level, where hyphens that are in the manuscript should always be displayed. For examples, see [ch. 5.5.3](#sec5.5.3) below.
+          the two types of hyphenation, such as the **Menota stylesheets** offered in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3). The one exception is the `<me:facs>{:xml}` level, where hyphens that are in the manuscript should always be displayed. For examples, see [ch. 5.5.3](#sec5.5.3) below.
 
 At the normalised level, there will sometimes be hard hyphens such as in the name
             “Egill Skalla-Grímssonar” (also spelt “Egill Skallagrímssonar”). This type of
@@ -1267,8 +1267,8 @@ The ordinary hyphen will be displayed in any position of the word, whether in th
 
 ### 5.5.1 Hyphenation in a single-level transcription [#sec5.5.1]
 
-The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](HB3_ch4.xml#sec4.5)) is essentially the same as in a multi-level
-            transcription (cf. [ch. 4.6](HB3_ch4.xml#sec4.6)). We give examples of both.
+The encoding of hyphenation in single-level transcription (cf. [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5)) is essentially the same as in a multi-level
+            transcription (cf. [ch. 4.6](/handbook/v3/HB3_ch4#sec4.6)). We give examples of both.
 
 
 
@@ -1347,7 +1347,7 @@ Note that a line beginning will appear several times in a multi-level transcript
 
 ### 5.5.3 Display of hyphenation [#sec5.5.3]
 
-The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook.
+The display of hyphenation varies with the stylesheets being used. Since texts must be aligned in the Menota archive, the display differs from that of the stylesheets offered in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3) of this handbook.
 <DisplayFrame>
 
 
@@ -1374,7 +1374,7 @@ In the **Menota archive**, hyphens in a manuscript will be displayed with a hyph
 
 At the end of line 11 in the table above, there is a hyphen in the manuscript, and this is displayed as such on all three levels. In line 16, there is no hyphen, and consequently no display on the `<me:facs>{:xml}`. However, since “umboðs maðr” has been analysed as one word, a middot is displayed on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels.
 
-In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3) of this handbook, hyphens in a manuscript are displayed only on the `<me:facs>{:xml}` level, since at this level, line beginnings are displayed according to the manuscript. On the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels, hyphens in the manuscript are not displayed, since the text is rendered in continuous lines on these levels. As for missing hyphenation, no hyphen is displayed on the `<me:facs>{:xml}`, nor is any hyphen displayed on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels. However, since the text is rendered in continuous lines on the latter two levels, words will be displayed without any breaks. See the examples below.
+In the three **Menota stylesheets** offered in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3) of this handbook, hyphens in a manuscript are displayed only on the `<me:facs>{:xml}` level, since at this level, line beginnings are displayed according to the manuscript. On the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels, hyphens in the manuscript are not displayed, since the text is rendered in continuous lines on these levels. As for missing hyphenation, no hyphen is displayed on the `<me:facs>{:xml}`, nor is any hyphen displayed on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels. However, since the text is rendered in continuous lines on the latter two levels, words will be displayed without any breaks. See the examples below.
 
 <table>
 <thead>
@@ -1421,7 +1421,7 @@ In the three **Menota stylesheets** offered in [app. F.3](HB3_F_xslt.xml#secF.3)
 
 
 
-When using the Menota stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>{:xml}` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>{:xml}` element, it is displayed as a single word on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels.
+When using the Menota stylesheets in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3), the hyphen in “lo-gum” (end of line 11) is displayed only on the `<me:facs>{:xml}` level, otherwise not. Neither is the missing hyphen in “vmboðs maðr” (end of line 16) indicated on any level, but since “umboðs maðr” has been encoded in a single `<w>{:xml}` element, it is displayed as a single word on the `<me:dipl>{:xml}` and `<me:norm>{:xml}` levels.
 </DisplayFrame>
 
 
@@ -1642,7 +1642,7 @@ If there is a combination of a Roman and a spelt-out numeral, only the latter wi
 ```
 
 
-See [ch. 11.2](HB3_ch11.xml#sec11.2) for details on morphological lemmatisation.
+See [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) for details on morphological lemmatisation.
 
 ## 5.8 White space [#sec5.8]
 
@@ -1656,5 +1656,5 @@ It is not possible to encode a long space in the manuscript
           one length of the space, the simplest way of encoding this is probably to define the
           standard space, `0020`, as the default space and to define deviating spaces with
           reference to the list of various space lenghts in the Unicode chart [General
-            Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](HB3_literature.xml#MUFIrec).
+            Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec).
 

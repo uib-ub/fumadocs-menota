@@ -5,7 +5,7 @@ author:
  - Tone Merete Bruvik
  - Beeke Stegmann
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -239,7 +239,7 @@ In XML pairs of tags are used to mark off such units, a start tag and an end tag
      paragraphs, usually tagged with `<p>{:xml}`. Since XML is structured hierarchically, elements
      can contain each other, but only in their intirety. Overlapping structures of elements are not
      allowed (instead, so-called <em>milestones</em> (empty elements) are used; see
-      [ch. 3.12](HB3_ch3.xml#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
+      [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) below and, in general, [ch. 16](/handbook/v3/HB3_ch16) below).
 
 The way two elements relate to each other hierarchically is determined by the
 <em>schema</em> used, which in our case would stipulate
@@ -480,7 +480,7 @@ For our purposes entities are particularly useful for providing descriptive mapp
 
 
 In fact, all characters in the official part of the Unicode Standard can now be entered directly from the keyboard. See
-   [ch. 5.2.2](HB3_ch5.xml#sec5.2.2) for more details on this.
+   [ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2) for more details on this.
 
 Even more specialized characters might not be defined as part of the Unicode Standard  &ndash; yet &ndash; 
    and thus have to be defined as entities.
@@ -498,7 +498,7 @@ standard browsers as they can be different for each font. Instead, they need to 
 
 Special characters useful for Old Norse are created, for instance, by the [Medieval Unicode Font Initiative (MUFI)](http://www.mufi.info). 
 The most commonly used ones have been compiled by Menota into a list of entities, mapping them to their Unicode PUA values
-(see also [ch. 5.2.2](HB3_ch5.xml#sec5.2.2)).
+(see also [ch. 5.2.2](/handbook/v3/HB3_ch5#sec5.2.2)).
 This Menota entity list is available as an external file, which can conveniently be referred to from any XML 
 document using a system entity:
 ```xml
@@ -519,7 +519,7 @@ As can be seen throughout the chapters in this handbook, we use the tested and t
 
 In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, `E7D3`. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
 
-The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](HB3_D_schemas.xml#secD.1.1) below. 
+The [menota-entities.txt](menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/HB3_D_schemas#secD.1.1) below. 
 
 ## 2.6 The Text Encoding Initiative and TEI conformant schemas [#sec2.6]
 
@@ -639,7 +639,7 @@ The main difference, however, is that the (older) DTD schema cannot handle multi
 The Menota schema is designed to cover the relevant elements needed for encoding Old Norse texts. 
       Its usage is strongly recommended for producing transcriptions or other documents according to the standards described in this handbook. 
       The schema is available online and can be referred to in the schema declaration (internet access required) using the URL
-      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](HB3_D_schemas.xml#D.1.1).
+      “http://www.menota.org/menotaP5.rng”. It can be downloaded from [app. D.1.1 (4)](/handbook/v3/HB3_D_schemas#D.1.1).
       An external RELAX NG schema, in this case the current Menota schema, is referenced like this:
 ```xml
 <?xml-model href="http://www.menota.org/menotaP5.rng"?>
@@ -715,53 +715,53 @@ The following is a complete list of additional elements and attributes in _The M
 
 ### 2.8.1 Elements [#sec2.8.1]
 
-`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](HB3_ch4.xml#sec4.2).
+`<me:facs>{:xml}` for readings on a facsimile level, cf. [ch. 4.2](/handbook/v3/HB3_ch4#sec4.2).
 
-`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](HB3_ch4.xml#sec4.3).
+`<me:dipl>{:xml}` for readings on a diplomatic level, cf. [ch. 4.3](/handbook/v3/HB3_ch4#sec4.3).
 
-`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](HB3_ch4.xml#sec4.4).
+`<me:norm>{:xml}` for readings on a normalised level, cf. [ch. 4.4](/handbook/v3/HB3_ch4#sec4.4).
 
-`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](HB3_ch4.xml#sec4.6.5.2).
+`<me:pal>{:xml}` for readings on a paleographical level, cf. [ch. 4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2).
 
 `<me:suppressed>{:xml}` for readings that are deleted by the editor (as opposed to deletions by the scribe, which are 
-                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](HB3_ch9.xml#sec9.3.2).
+                  encoded by the `<del>{:xml}` element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2).
 
 `<me:textSpan/>{:xml}` for encoding any discontinous structures, thus avoiding a full set of elements 
                   like `<addSpan/>{:xml}`, `<delSpan/>{:xml}`, `<suppliedSpan/>{:xml}`, `<suppressedSpan/>{:xml}`, etc. 
                   Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
-                  cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
+                  cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
-`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
+`<me:all>{:xml}` for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
-`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](HB3_ch13.xml#sec13.2).
+`<me:ass>{:xml}` for internal rhyme in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
 
 ### 2.8.2 Attributes [#sec2.8.2]
 
 `@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
-                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](HB3_ch11.xml#sec11.3).
+                  This is an attribute to the `<w>{:xml}` element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
 
 `@me:type{:sh}` for classification purposes. This is an attribute to the `<ex>{:xml}` and `<am>{:xml}` elements, 
-                  cf. [ch. 6.1](HB3_ch6.xml#sec6.1).
+                  cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
 
 `@me:key{:sh}` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](HB3_ch15.xml#sec15.2.2).
+                  in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](/handbook/v3/HB3_ch15#sec15.2.2).
 
 `@me:ref{:sh}` for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
-                  in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](HB3_ch15.xml#sec15.4.1).
+                  in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
 
 `@me:level{:sh}` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
                   This is an attribute to the `<normalization>{:xml}` element used in the header, 
-                  cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:lemmatized{:sh}` for identifying those texts which have been lemmatised. This is an attribute to the 
-                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  `<interpretation>{:xml}` element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:morphAnalyzed{:sh}` for identifying those texts which have been morphologically analysed, 
                   i.e. given grammatical form. This is another attribute to the `<interpretation>{:xml}` element used in the header,  
-                  cf. [ch. 14.4](HB3_ch14.xml#sec14.4).
+                  cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
 `@me:category{:sh}` for identifying the type of a text span. This is an attribute to the `<me:textSpan/>{:xml}` element 
-                  used to encode overlapping structures, cf. [ch. 16.2](HB3_ch16.xml#sec16.2).
+                  used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 ## 2.9 Displaying the text [#sec2.9]
 

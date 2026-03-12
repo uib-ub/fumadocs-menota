@@ -4,7 +4,7 @@ author:
  - Odd Einar Haugen
  - Beeke Stegmann
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -103,7 +103,7 @@ Please note that the distinction between single-text and multi-text sources is n
 					straightforward and ultimately rests on the definition of key concepts such as
 					“text” and “work”. If in doubt, we recommend using
 					the established categories in catalogues and indices, e.g. the index volume of 
-				  [Ordbog over det norrøne prosasprog](HB3_literature.xml#ONP) (Copenhagen 1989).
+				  [Ordbog over det norrøne prosasprog](/handbook/v3/HB3_literature#ONP) (Copenhagen 1989).
 
 We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative process of
 					text encoding can be documented in the header. This text was initially transcribed and edited in an
@@ -299,7 +299,7 @@ The source text is placed within the `<text>{:xml}` element. The attribute `@xml
 This header is also an example of how change of scribal hands in the source can be recorded. Note
 						that rather than putting each hand in an element of its own (which would cause problems
 						of overlapping) the actual change is recorded using a milestone element,
-					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](HB3_ch3.xml#sec3.14) above. 
+					  `<handShift/>{:xml}`, as discussed in [ch. 3.14](/handbook/v3/HB3_ch3#sec3.14) above. 
 					  Note that the number of hands must be recorded in the
 							`<profileDesc>{:xml}` element of the header.
 
@@ -621,7 +621,7 @@ The divisions of the text correspond to the list of `<msItem>{:xml}` elements in
 
 The `<head>{:xml}` element specifies the title of the work (or a part of it). If the title is given as a 
 					    rubric in the manuscript, a `@type{:sh}` attribute can be used with the value `"rubric"{:js}` (as exemplified 
-					    in [ch. 3.9](HB3_ch3.xml#sec3.9) above). If the title is not stated in the source, the editor may
+					    in [ch. 3.9](/handbook/v3/HB3_ch3#sec3.9) above). If the title is not stated in the source, the editor may
 					    add a title in the `<supplied>{:xml}` element (as has been done above). 
 
 ## E.4 Detailed header with more codicological information [#secE.4]

@@ -4,7 +4,7 @@ author:
  - Haraldur Bernharðsson
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -459,12 +459,12 @@ Ligatures and fusions are also treated differently depending on whether they con
 
 By contrast, consonant ligatures or fusions, are only optionally reproduced in a
                facsimile transcription and replaced by their individual components in the diplomatic
-               transcription, as shown in the table below. In [ch. 6.5.6](HB3_ch6.xml#sec6.5.6),
+               transcription, as shown in the table below. In [ch. 6.5.6](/handbook/v3/HB3_ch6#sec6.5.6),
                we recommend encoding consonant ligatures by the `<seg>{:xml}` element with the 
                `@type="lig"{:sh}` attribute,
                e.g. &lt;seg type="lig"&gt;bb&lt;/seg&gt;. The `<seg>{:xml}` element offers a convenient way of 
-               grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](HB3_ch5.xml#sec5.3.1) and 
-               [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) below.
+               grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](/handbook/v3/HB3_ch5#sec5.3.1) and 
+               [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) below.
 
 <div className="table-abbr">
 | Facsimile level | Diplomatic level |
@@ -614,7 +614,7 @@ While this handbook contains a number of examples of texts that have been transc
 | `<me:norm>{:xml}` | Contains a reading on the normalised level. |
 
 
-The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>{:xml}` element and each punctuation mark in a `<pc>{:xml}` element. As explained in [ch. 5.3](HB3_ch5.xml#sec5.3) below, the `<w>{:xml}` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` or `<me:norm>{:xml}`.
+The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a `<w>{:xml}` element and each punctuation mark in a `<pc>{:xml}` element. As explained in [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) below, the `<w>{:xml}` element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` or `<me:norm>{:xml}`.
 
 **Note**: The “me” prefix can only be used with a RELAX NG
                schema. It must be left out in texts which will be validated against a DTD.
@@ -714,7 +714,7 @@ A single-level transcription may contain the normalised level only, but this is 
 ```
 
 
-As discussed in [ch. 10.3](HB3_ch10.xml#sec10.3) below and exemplified in [ch. 10.4.2](HB3_ch10.xml#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
+As discussed in [ch. 10.3](/handbook/v3/HB3_ch10#sec10.3) below and exemplified in [ch. 10.4.2](/handbook/v3/HB3_ch10#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
 
 ## 4.6 Multi-level transcriptions [#sec4.6]
 
@@ -751,7 +751,7 @@ Editorial intervention is sometimes required to produce a readable text &ndash; 
                   facsimile transcription allows only minimal intervention while the normalised
                   level is produced by maximising the role of the editor.
 
-The question of editorial intervention will be discussed in more detail in [ch. 9.3](HB3_ch9.xml#sec9.3) below, giving a number of examples of
+The question of editorial intervention will be discussed in more detail in [ch. 9.3](/handbook/v3/HB3_ch9#sec9.3) below, giving a number of examples of
                   single-level and multi-level transcriptions. Although a single-level transcription
                   can be made on either of the three levels discussed here, it is as a rule done on
                   the diplomatic level.
@@ -883,7 +883,7 @@ Occasionally, all three levels are identical:
 </div>
 
 
-If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](HB3_ch10.xml#sec10.3.1.4) below).
+If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](/handbook/v3/HB3_ch10#sec10.3.1.4) below).
 
 ### 4.6.3 Structural properties [#sec4.6.3]
 
@@ -902,7 +902,7 @@ In the facsimile transcription, the punctuation of the manuscript is accurately
                   there is no normalised transcription) may need different punctuation or the
                   insertion of punctuation marks missing at the facsimile level. In such cases, the
                   punctuation in the `<pc>{:xml}` element will only be inserted in the
-                     `<me:norm>{:xml}` level. See [ch. 5.4](HB3_ch5.xml#sec5.4)
+                     `<me:norm>{:xml}` level. See [ch. 5.4](/handbook/v3/HB3_ch5#sec5.4)
                   for more details on the encoding of punctuation. 
 
 ### 4.6.5 A sample encoding of a three-level transcription [#sec4.6.5]
@@ -1146,7 +1146,7 @@ This is an approximate rendering of the display in the Menota archive of the tex
 
 For reasons of line alignment in the Menota archive, the stylesheet will present 
                      the text on all levels with line beginnings and line numbers. In other stylesheets, line beginnings 
-                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](HB3_F_xslt.xml#secF.3) below.
+                     will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](/handbook/v3/HB3_F_xslt#secF.3) below.
 
 #### 4.6.5.2 Focal levels [#sec4.6.5.2]
 
@@ -1157,12 +1157,12 @@ As stated above, the elements `<me:facs>{:xml}`, `<me:dipl>{:xml}` and
 The three levels discussed here can be seen as **focal** in the
                      sense that they are typical and frequently used levels of text representations in
                      Medieval Nordic editions (as defined in [Haugen
-                        2004](HB3_literature.xml#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>{:xml}`
+                        2004](/handbook/v3/HB3_literature#Haugen2004)). Several additional levels can be added, e.g. a `<me:pal>{:xml}`
                      level for an even more detailed palaeographical encoding of the text. This level
                      has been included in the Menota schemas, but is not seen as one of the focal
                      levels.
 
 [Guðvarður Már Gunnlaugsson
-                     2003](HB3_literature.xml#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
+                     2003](/handbook/v3/HB3_literature#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
                      For example, a level between the diplomatic and normalised, usually called “halvdiplomatrisk”
                      (semi-diplomatic), is the standard level in many of the Arnmagnæan editions.

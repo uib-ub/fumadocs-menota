@@ -6,7 +6,7 @@ author:
  - Robert K. Paulsen
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -75,7 +75,7 @@ by Andreas Witt, Beeke Stegmann, Robert Paulsen and Odd Einar Haugen
 
 There are no simple ways of encoding overlapping structures in XML, since XML is a strict tree structure in which every element must be part of a single “parent” element. For example, a word or sentence may be written over two manuscript pages. If we represent the manuscript page as an element, the words will not belong to a single page and a parser error will occur.
 
-This problem is dealt with in [ch. 3.12](HB3_ch3.xml#sec3.12) by using empty elements to represent page beginnings in the manuscript, rather than a page of text. The same is true for columns and lines, where words, sentences and paragraphs routinely overlap with the physical features of the manuscript. These elements, `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`, are empty in the sense that they are inserted at a specific point in the structure without any extension. For this reason, they are often referred to as milestones. Note the position of the slash in these elements.
+This problem is dealt with in [ch. 3.12](/handbook/v3/HB3_ch3#sec3.12) by using empty elements to represent page beginnings in the manuscript, rather than a page of text. The same is true for columns and lines, where words, sentences and paragraphs routinely overlap with the physical features of the manuscript. These elements, `<pb/>{:xml}`, `<cb/>{:xml}` and `<lb/>{:xml}`, are empty in the sense that they are inserted at a specific point in the structure without any extension. For this reason, they are often referred to as milestones. Note the position of the slash in these elements.
 
 In many cases, the combination of ordinary, hierarchical elements such as `<div>{:xml}`, `<s>{:xml}`, `<w>{:xml}`, `<pc>{:xml}` with the milestones exemplified here give the encoder sufficient flexibility. It is thus possible to represent in XML a text which from the point of view of its contents is divided into chapters, sentences, words and punctuation marks, and from the point of view of its embodiment in a physical document divided into pages, columns and lines. This way, the same text can easily be compared between two or more manuscripts of different length and size, as long as the division into chapters etc. is the same.
 
@@ -130,7 +130,7 @@ The first three lines read approximately:
 genget fiornes ualdr [quaþ........fr]egr nu \| mun er lægiasc miuks scalldu manra[un sli] \| ca morlin<em>s</em> boþe fi<em>n</em>na uestu i frægre f[rest] 
 </Quote>
 
-The letters in brackets were read by earlier editors, especially Finnur Jónsson in 1889. For this section, we will discuss the text at the end of the second line and at the start of the third. It is clear that part of each word is missing, but the damaged manuscript forms a single feature. Text can be supplied from Finnur Jónsson’s transcription, but we want to represent the illegible text as a single feature, even if it overlaps with the middle of the two words. Note that in accordance with [ch. 8.4](HB3_ch8.xml#sec8.4) above, we do not encode the illegible characters with the `<gap/>{:xml}` element, since there is no physical hole or the like in the parchment, but rather with the `<unclear>{:xml}` element. Since the characters are illegible, they are rendered by the dotted circle. The simple encoding would be:
+The letters in brackets were read by earlier editors, especially Finnur Jónsson in 1889. For this section, we will discuss the text at the end of the second line and at the start of the third. It is clear that part of each word is missing, but the damaged manuscript forms a single feature. Text can be supplied from Finnur Jónsson’s transcription, but we want to represent the illegible text as a single feature, even if it overlaps with the middle of the two words. Note that in accordance with [ch. 8.4](/handbook/v3/HB3_ch8#sec8.4) above, we do not encode the illegible characters with the `<gap/>{:xml}` element, since there is no physical hole or the like in the parchment, but rather with the `<unclear>{:xml}` element. Since the characters are illegible, they are rendered by the dotted circle. The simple encoding would be:
 ```xml
 <w>manra<unclear>◌◌</unclear></w>
 <w><unclear>◌◌</unclear><lb ed="ms" n="3"/>ca</w>
@@ -198,7 +198,7 @@ Adding all three textual levels, including the unclear text encoded at the facs 
 ```
 
 
-For the combination of the `<unclear>{:xml}` element on the facs level and the `<supplied >{:xml}` element on the dipl and norm levels, please see the encoding of ill. 9.9 in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1). Note that we have simplified the example above by leaving out the `@reason{:sh}` and `@resp{:sh}` attributes.
+For the combination of the `<unclear>{:xml}` element on the facs level and the `<supplied >{:xml}` element on the dipl and norm levels, please see the encoding of ill. 9.9 in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1). Note that we have simplified the example above by leaving out the `@reason{:sh}` and `@resp{:sh}` attributes.
 
 It is recommended that the additional information for the feature (such as the editor responsible, type, etc.) be only included in the first element, but editors may wish to include the attributes in all elements.
 
@@ -239,7 +239,7 @@ There is no simple answer to the problem of non-hierarchical structures in XML e
 
 ## 16.3 Discontinuous headings [#sec16.3]
 
-The element `<head>{:xml}` is used for containing headings on all levels of the document. If the `<head>{:xml}` element is used, it should be the first within its `<div>{:xml}` element, preceding any `<p>{:xml}` or `<lg>{:xml}` elements. As stated in [ch. 3.9](HB3_ch3.xml#sec3.9) above, there can only be one `<head>{:xml}` element within a `<div>{:xml}`.
+The element `<head>{:xml}` is used for containing headings on all levels of the document. If the `<head>{:xml}` element is used, it should be the first within its `<div>{:xml}` element, preceding any `<p>{:xml}` or `<lg>{:xml}` elements. As stated in [ch. 3.9](/handbook/v3/HB3_ch3#sec3.9) above, there can only be one `<head>{:xml}` element within a `<div>{:xml}`.
 
 Unfortunately (at least from the point of view of the encoder), headings in many manuscripts are not located as a continuous stretch of text at the very beginning of the `<div>{:xml}`, but they may be intercalated in the first line or at the end of several lines, including the previous `<div>{:xml}` as well as the present. Below, we discuss two examples of discontinuous headings.
 
@@ -253,7 +253,7 @@ Unfortunately (at least from the point of view of the encoder), headings in many
 
 <Caption title="Ill. 16.2">. Continuous heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, f. 10v, l. 4&ndash;7.</Caption>
 
-Ill. 16.2 is a straightforward example (which was introduced in [ch. 3.9](HB3_ch3.xml#sec3.9) above). The only thing to note is that the first chapter ends in the middle of line 5 and the next chapter begins immediately afterwards. Encoding this, there would be two `<div>{:xml}` elements, the first closing after the word “loglegare”, and the second opening right afterwards, starting with a `<head>{:xml}` element, which encloses the red rubric. Note that the `<lb/>{:xml}`element is only used once here, and that is to mark the beginning of the line, i.e. inside the first `<div>{:xml}` element.
+Ill. 16.2 is a straightforward example (which was introduced in [ch. 3.9](/handbook/v3/HB3_ch3#sec3.9) above). The only thing to note is that the first chapter ends in the middle of line 5 and the next chapter begins immediately afterwards. Encoding this, there would be two `<div>{:xml}` elements, the first closing after the word “loglegare”, and the second opening right afterwards, starting with a `<head>{:xml}` element, which encloses the red rubric. Note that the `<lb/>{:xml}`element is only used once here, and that is to mark the beginning of the line, i.e. inside the first `<div>{:xml}` element.
 ```xml
 <div>
     . . .
@@ -394,7 +394,7 @@ In this simplified example, the element `<w>{:xml}` has only been used in the `<
 ```
 
 
-See [ch. 5.5](HB3_ch5.xml#sec5.5) above for the encoding of hyphenation, including cases where there are no hyphens in the manuscript.
+See [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) above for the encoding of hyphenation, including cases where there are no hyphens in the manuscript.
 
 Once again, our stylesheet should be able to display the text according to its physical order, like here,
 
@@ -426,7 +426,7 @@ When double (or even triple) numbering of line beginnings is used in a transcrip
 
 In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the `<s>{:xml}` element (dividing the text into sentences) or even one or more `<div>{:xml}` elements (dividing the text into chapters). An extreme example is _Gylfaginning_, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like _Konungs skuggsjá_ and _Barlaams saga ok Jósafats_. In these and many other works, the standard `<q>{:xml}` element will create conflicts with other and probably more important hierarchical divisions of the text.
 
-Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general `<milestone/>{:xml}` element as a work-around. As stated in [ch. 3.11](HB3_ch3.xml#sec3.11) above, the `<milestone/>{:xml}` element can be specified with the `@unit{:sh}` and `@rend{:sh}` attributes:
+Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general `<milestone/>{:xml}` element as a work-around. As stated in [ch. 3.11](/handbook/v3/HB3_ch3#sec3.11) above, the `<milestone/>{:xml}` element can be specified with the `@unit{:sh}` and `@rend{:sh}` attributes:
 
 <div className="table-xml-elements">
 | Element and attributes | Obl/Opt | Contents |
@@ -437,7 +437,7 @@ Since the encoding of dialogue belongs primarily on the normalised level, we sug
 </div>
 
 
-As suggested in [ch. 3.11](HB3_ch3.xml#sec3.11) this would be a valid encoding:
+As suggested in [ch. 3.11](/handbook/v3/HB3_ch3#sec3.11) this would be a valid encoding:
 ```xml
 <s>Eyvindr sagðisk eigi mundu brott undan ríða, 
 <milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
@@ -473,16 +473,16 @@ The solution is dependent on the intended display of the text, of which there ar
 
 ### 16.5.1 Display by rendering of single characters [#sec16.5.1]
 
-This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of `<unclear>{:xml}` text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See [ch. 8.4.2](HB3_ch8.xml#sec8.4.2) above. If this kind of display is chosen, no additional encoding is needed.
+This is a type of display where every character is rendered in a specific way, and there are no opening or closing signs. This applies to e.g. the display of `<unclear>{:xml}` text, which typically is displayed by subpunction of each character or, as suggested here, by grey colouring. See [ch. 8.4.2](/handbook/v3/HB3_ch8#sec8.4.2) above. If this kind of display is chosen, no additional encoding is needed.
 
 According to the display recommended in this handbook, this solution is appropriate for the following elements:
 
 <div className="table-xml-elements">
 | Elements | Display |
 |-----|-----|
-| `<gap/>{:xml}` | If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](HB3_ch8.xml#sec8.2.2). |
-| `<space/>{:xml}` | If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](HB3_ch8.xml#sec8.3.2). |
-| `<unclear>{:xml}` | By grey colouring, cf. [ch. 8.4.2](HB3_ch8.xml#sec8.4.2). |
+| `<gap/>{:xml}` | If there is an estimate of the size of the gap, by a number of spaces, cf. [ch. 8.2.2](/handbook/v3/HB3_ch8#sec8.2.2). |
+| `<space/>{:xml}` | If there is an estimate of the size of the space, by a number of spaces, cf. [ch. 8.3.2](/handbook/v3/HB3_ch8#sec8.3.2). |
+| `<unclear>{:xml}` | By grey colouring, cf. [ch. 8.4.2](/handbook/v3/HB3_ch8#sec8.4.2). |
 </div>
 
 
@@ -497,7 +497,7 @@ According to the display recommended in this handbook, this solution is appropri
 
 <Caption title="Ill. 16.5">. Unclear text. _Konungs skuggsjá_. NRA 58C, f. 1rA, 24&ndash;27.</Caption>
 
-The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated in [ch. 9.3.1.1](HB3_ch9.xml#sec9.3.1.1) above, while the facsimile level should record the text “as is” and the normalised level should offer a restored text, if possible, the diplomatic level may follow either of these two models. In this example, it follows the facsimile encoding in not making any restoration of the text, leaving the `<supplied>{:xml}` element to the normalised level.
+The two bottom lines in ill. 16.5 contains a passage of unclear text. As stated in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1) above, while the facsimile level should record the text “as is” and the normalised level should offer a restored text, if possible, the diplomatic level may follow either of these two models. In this example, it follows the facsimile encoding in not making any restoration of the text, leaving the `<supplied>{:xml}` element to the normalised level.
 ```xml
 . . .
 <w>
@@ -558,10 +558,10 @@ According to the display recommended in this handbook, this solution is appropri
 <div className="table-xml-elements">
 | Elements | Display |
 |-----|-----|
-| `<add>{:xml}` | By insertion signs, cf. [ch. 9.2.1.2](HB3_ch9.xml#sec9.2.1.2). |
-| `<del>{:xml}` | By vertical bars with quill, cf. [ch. 9.2.2.2](HB3_ch9.xml#sec9.2.2.2). |
-| `<supplied>{:xml}` | By square brackets or by open angle brackets, [ch. 9.3.1.3](HB3_ch9.xml#sec9.3.1.3). |
-| `<surplus>{:xml}` | By curly brackets, [ch. 9.3.2.2](HB3_ch9.xml#sec9.3.2.2). |
+| `<add>{:xml}` | By insertion signs, cf. [ch. 9.2.1.2](/handbook/v3/HB3_ch9#sec9.2.1.2). |
+| `<del>{:xml}` | By vertical bars with quill, cf. [ch. 9.2.2.2](/handbook/v3/HB3_ch9#sec9.2.2.2). |
+| `<supplied>{:xml}` | By square brackets or by open angle brackets, [ch. 9.3.1.3](/handbook/v3/HB3_ch9#sec9.3.1.3). |
+| `<surplus>{:xml}` | By curly brackets, [ch. 9.3.2.2](/handbook/v3/HB3_ch9#sec9.3.2.2). |
 </div>
 
 

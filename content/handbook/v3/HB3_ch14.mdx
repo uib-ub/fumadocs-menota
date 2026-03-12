@@ -5,7 +5,7 @@ author:
  - Beeke Stegmann
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -177,7 +177,7 @@ If  the text is a fragment of a manuscript, this should be stated in the title:
 
 The full list of titles for the works treated in the document will be given in the `<sourceDesc>{:xml}` (see [ch. 14.3](#sec14.3) below), 
   meaning that it is not necessary to include all details in the document title. In general, however, manuscripts are referred to based on the principles described in 
-  chapter [ch. 15.4.4](HB3_ch15.xml#sec15.4.4).
+  chapter [ch. 15.4.4](/handbook/v3/HB3_ch15#sec15.4.4).
 
 In addition to the title, the `<titleStmt>{:xml}` must also list the editor(s) and other contributors to the edition. 
     We recommend that one or more people (or institutions) are identified as the main editor(s) of the text in the `<editor>{:xml}` element. In this case, there is a single editor:
@@ -642,7 +642,7 @@ initial) or a homogenous class of such components (e.g. sentence
 initials in general). 
 The example blow shows the usage of multiple `<decoNote>{:xml}` elements
  in `<decoDesc>{:xml}`. For detailed step-by-step guidelines on the description of illuminations
-using `<decoNote>{:xml}`, see [ch. 7.2](HB3_ch7.xml#sec7.2) above.
+using `<decoNote>{:xml}`, see [ch. 7.2](/handbook/v3/HB3_ch7#sec7.2) above.
 ```xml
 <decoDesc>
   <decoNote>
@@ -805,7 +805,7 @@ TEI standard. These are primarily used in order to
 facilitate certain types of processing and/or for search purposes.
 
 The discussion in this subchapter follows the TEI P5 Guidelines. Note that [ch. 15](/handbook/v3/HB3_ch15) below offers alternative ways of linking 
-    to names and bibliographical records in external resources. See also the discussion on external references to names in [ch. 12.2.5](HB3_ch12.xml#sec12.2.5) above.
+    to names and bibliographical records in external resources. See also the discussion on external references to names in [ch. 12.2.5](/handbook/v3/HB3_ch12#sec12.2.5) above.
 
 Wherever names occur (both in the header and the text), they can be tagged using 
   phrase-level elements such as the
@@ -995,7 +995,7 @@ Finally within the `<editorialDecl>{:xml}` element, an `<interpretation>{:xml}`
 	  `"partly"{:js}` and `"none"{:js}`, but an additional description in prose may be added in a `<p>{:xml}` element.
 	  A lemmatised text will have lemmata (i.e. dictionary entries) added in the `@lemma{:sh}` attribute of the 
 	  `<w>{:xml}` element, while a morphologically analysed text will have grammatical forms specified in the `@me:msa{:sh}` attribute of the same element. 
-	  See [ch. 5.3](HB3_ch5.xml#sec5.3) for a general overview and [ch. 11](/handbook/v3/HB3_ch11) 
+	  See [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) for a general overview and [ch. 11](/handbook/v3/HB3_ch11) 
 	  for details on this lexical and morphological encoding.
 
 A complete `<encodingDesc>{:xml}` may look like this:
@@ -1075,7 +1075,7 @@ A `<profileDesc>{:xml}`may look like this:
 
 
 Note that the Profile Description may list more languages than actually 
-    referred to in the text. (See also [ch. 11.7](HB3_ch11.xml#sec11.7).) 
+    referred to in the text. (See also [ch. 11.7](/handbook/v3/HB3_ch11#sec11.7).) 
 
 ## 14.6 The revision description [#sec14.6]
 

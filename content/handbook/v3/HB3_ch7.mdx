@@ -5,7 +5,7 @@ author:
  - Beeke Stegmann
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -283,7 +283,7 @@ In a menotic XML-file, we recommend that information on the illuminations (incl.
 
 While the manuscript description in the header should include a register of 
                   all illuminations including the initials (see also [
-                     ch. 14.3.3](HB3_ch14.xml#sec14.3.3)), in the transcription only initials are encoded, as they are part of the
+                     ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)), in the transcription only initials are encoded, as they are part of the
                   wording of the text. The register of illuminations in the header is mainly a
                   description in prose and can even be rather elaborate (if desired and
                   appropriate). By contrast, the encoding in the transcription is more basic and
@@ -316,11 +316,11 @@ The following overview summarizes what to encode where and links to the
 
 Note also the glossary in the end of the chapter that helps, among others, to
                   identify and name the different parts of an initial (see [7.4](#sec7.4)). Furthermore, we refer to the introduction to manuscript
-                  illumination by [Michelle Brown (1994)](HB3_literature.xml#Brown1994),
+                  illumination by [Michelle Brown (1994)](/handbook/v3/HB3_literature#Brown1994),
                   which is available in an updated version in
                   the [Glossaries 
                      of the British Library](https://www.bl.uk/catalogues/illuminatedmanuscripts/glossary.asp), as well as to [Christine 
-                        Jakobi-Mirwald (2008)](HB3_literature.xml#Jakobi-Mirwald2008). Both works were used to prepare this chapter, while some definitions were
+                        Jakobi-Mirwald (2008)](/handbook/v3/HB3_literature#Jakobi-Mirwald2008). Both works were used to prepare this chapter, while some definitions were
                   adapted for the corpus of Scandinavian manuscripts.
 
 ## 7.2 Listing all illuminations in the header [#sec7.2]
@@ -331,7 +331,7 @@ As a minimum standard, we recommend to register all instances of illumination, i
                   in a consecutive list covering the main informations 
 
 All illuminations should be listed within the element `<decoDesc>{:xml}` in the
-                  manuscript description section of the header (see also [ch. 14.3.3](HB3_ch14.xml#sec14.3.3)). A separate `<decoNote>{:xml}` is used for each
+                  manuscript description section of the header (see also [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). A separate `<decoNote>{:xml}` is used for each
                   illumination &ndash; including the major initials. The register should be
                   chronological, i.e. following the order of occurrence in the manuscript. 
 
@@ -1333,7 +1333,7 @@ An initial (as any other character) is part of the transcribed text. Therefore,
       it needs to be written, or rather typed, by the transcriber. In the same way as for other characters, 
       the letter form may be noted and reproduced on the facsimile level using one of the 
       Unicode characters. For instance, an insular capital “F” can be encoded with the entity `&Fins;{:xml}` 
-      (for more details on characters and encoding rules see [ch. 5.2.](HB3_ch5.xml#sec5.2)). The mark-up for further describing 
+      (for more details on characters and encoding rules see [ch. 5.2.](/handbook/v3/HB3_ch5#sec5.2)). The mark-up for further describing 
       the special characteristics of the initial is then built around the character, since it is understood as a qualification of how the letter 
       was executed in the manuscript.
 
@@ -1341,8 +1341,8 @@ If an initial is missing &ndash; because it was never filled in, because it
       has been erased from the manuscript or because it was cut out &ndash; the missing letter is
                   encoded in accordance with the general rules for transcription. The same 
                   applies to initials that were added later
-                  (see [ch. 8.3](HB3_ch8.xml#sec8.3) for the encoding of the `<space/>{:xml}` element, and
-      [ch. 9](HB3_ch9.xml#sec9) for the encoding of scribal or editorial intervention). 
+                  (see [ch. 8.3](/handbook/v3/HB3_ch8#sec8.3) for the encoding of the `<space/>{:xml}` element, and
+      [ch. 9](/handbook/v3/HB3_ch9#sec9) for the encoding of scribal or editorial intervention). 
       The mark-up of the missing or added initial is wrapped in the element `<c>{:xml}`
       as normal.
       The following example shows how a missing initial “N” is encoded using `<space/>{:xml}`. 
@@ -1386,7 +1386,7 @@ In most manuscripts, structurally different types of initials and highlighted ch
 The attribute `@type{:sh}` (with the value `"initital"{:js}`) is used to 
                   distinguish the character from other characters that are marked-up by means of
                   the `<c>{:xml}`-element, such as hyphens (see [ch.
-                     5.5](HB3_ch5.xml#sec5.5)). The more specific attribute `@subtype{:sh}` will then
+                     5.5](/handbook/v3/HB3_ch5#sec5.5)). The more specific attribute `@subtype{:sh}` will then
          indicate the type of the initial, e.g. whether it is a text initial or a sentence initial. 
          If it is not possible to distinguish between more than major and minor initials, however, 
          these two main subtypes may also be used. 
@@ -1630,7 +1630,7 @@ If a clear hierarchy of colours is impossible to establish, for instance if a bi
                   general level. More specific and sophisticated descriptions of initials
                   and the colours used should instead be placed in the manuscript description part of the
                   header (i.e. `<decoDesc>{:xml}` inside `<msDesc>{:xml}`, see [ch. 7.2.1](#sec7.2.1)
-            above and further [ch. 14.3.3](HB3_ch14.xml#sec14.3.3)). 
+            above and further [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3)). 
 
 If the encoder should be unable to determine the colour(s) employed for executing initials,
                   for instance because they are working from black-and-white images, the indication

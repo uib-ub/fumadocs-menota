@@ -4,7 +4,7 @@ author:
  - Nina Stensaker
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -91,7 +91,7 @@ Most elements can have several attributes, and each attribute a number of values
 HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in a few
 			    cases in the handbook (particularly in [ch. 2](/handbook/v3/HB3_ch2)), but are not included in the index. The same goes for possible (but discarded)
 			    elements, such as `<damageSpan>{:xml}`, `<sicSpan>{:xml}`, `<suppliedSpan>{:xml}`, 
-			    `<suppressedSpan>{:xml}` and `<unclearSpan>{:xml}` (discussed in [ch. 16.2](HB3_ch16.xml#sec16.2)). They are not part of the TEI repertoire nor 
+			    `<suppressedSpan>{:xml}` and `<unclearSpan>{:xml}` (discussed in [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2)). They are not part of the TEI repertoire nor 
 			    recommended by Menota.
 
 ## 2. TEI conformant elements and attributes [#sec2]
@@ -112,26 +112,26 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td>`<abbr>{:xml}`</td>
 <td></td>
-<td>Abbreviation. Contains an abbreviation of any sort in the manuscript, often used in conjunction with the `<am>{:xml}` element. In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using only the `<am>{:xml}` element for abbreviations (see `<am>{:xml}` below).</td>
-<td>[ch. 6.1](HB3_ch6.xml#sec6.1).</td>
+<td>Abbreviation. Contains an abbreviation of any sort in the manuscript, often used in conjunction with the `<am>{:xml}` element. In [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1), we recommend using only the `<am>{:xml}` element for abbreviations (see `<am>{:xml}` below).</td>
+<td>[ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).</td>
 </tr>
 <tr>
 <td>`<accMat>{:xml}`</td>
 <td></td>
 <td>Accompanying material. Description and/or transcription of any material not originally part of the manuscript but bound with it or otherwise accompanying it.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4). </td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [14.3.4](/handbook/v3/HB3_ch14#sec14.3.4). </td>
 </tr>
 <tr>
 <td>`<acquisition>{:xml}`</td>
 <td></td>
 <td>Describes when and how the manuscript was acquired by its current owner or holding institution.</td>
-<td>[ch. 14.3.4](HB3_ch14.xml#sec14.3.4).</td>
+<td>[ch. 14.3.4](/handbook/v3/HB3_ch14#sec14.3.4).</td>
 </tr>
 <tr>
 <td>`<add>{:xml}`</td>
 <td></td>
 <td>Addition. Contains characters, words or phrases added to the manuscript text or in the margins of the manuscript by the scribe, an annotator or a corrector.</td>
-<td rowSpan="4">[ch. 6.5.2](HB3_ch6.xml#sec6.5.2), [9.2.1](HB3_ch9.xml#sec9.2.1), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.2.2.2](HB3_ch9.xml#sec9.2.2.2), [9.2.2.3](HB3_ch9.xml#sec9.2.2.3), [9.2.4](HB3_ch9.xml#sec9.2.4), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [16.2](HB3_ch16.xml#sec16.2), [16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td rowSpan="4">[ch. 6.5.2](/handbook/v3/HB3_ch6#sec6.5.2), [9.2.1](/handbook/v3/HB3_ch9#sec9.2.1), [9.2.2.1](/handbook/v3/HB3_ch9#sec9.2.2.1), [9.2.2.2](/handbook/v3/HB3_ch9#sec9.2.2.2), [9.2.2.3](/handbook/v3/HB3_ch9#sec9.2.2.3), [9.2.4](/handbook/v3/HB3_ch9#sec9.2.4), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -152,26 +152,26 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@rendition{:sh}`</td>
 <td>Optional</td>
-<td>If an addition has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td>If an addition has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 <td></td>
 </tr>
 <tr>
 <td>`<additional>{:xml}`</td>
 <td></td>
 <td>Groups other information about the manuscript, in particular, administrative information relating to its availability, custodial history, surrogates and so on.</td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 <tr>
 <td>`<additions>{:xml}`</td>
 <td></td>
 <td>Lists or describes any marginalia or other additions to the manuscript which may be considered of interest or importance.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4). </td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [14.3.4](/handbook/v3/HB3_ch14#sec14.3.4). </td>
 </tr>
 <tr>
 <td>`<addName>{:xml}`</td>
 <td></td>
 <td>An additional name of a person. See `<forename>{:xml}` and `<surname>{:xml}` below.</td>
-<td rowSpan="2">[ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [12.2.3](HB3_ch12.xml#sec12.2.3), [14.2](HB3_ch14.xml#sec14.2). </td>
+<td rowSpan="2">[ch. 12.2](/handbook/v3/HB3_ch12#sec12.2), [12.2.1](/handbook/v3/HB3_ch12#sec12.2.1), [12.2.3](/handbook/v3/HB3_ch12#sec12.2.3), [14.2](/handbook/v3/HB3_ch14#sec14.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -182,26 +182,26 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td>`<addSpan/>{:xml}`</td>
 <td></td>
-<td>Beginning of a span of additional text. This is a counterpart to the `<add>{:xml}` element. It is an empty element and can be used when the addition crosses structural divisions. The use of `<addSpan/>{:xml}` is deprecated in this handbook. In [ch. 16.2](HB3_ch16.xml#sec16.2), we suggest another way of encoding these cases.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [16.2](HB3_ch16.xml#sec16.2). </td>
+<td>Beginning of a span of additional text. This is a counterpart to the `<add>{:xml}` element. It is an empty element and can be used when the addition crosses structural divisions. The use of `<addSpan/>{:xml}` is deprecated in this handbook. In [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2), we suggest another way of encoding these cases.</td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
 <td>`<adminInfo>{:xml}`</td>
 <td></td>
 <td>Administrative information. Contains information pertaining to the curation and management of the manuscript. Sub-element of `<additional>{:xml}`.</td>
-<td>[ch. 14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td>[ch. 14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 <tr>
 <td>`<altIdentifier>{:xml}`</td>
 <td></td>
 <td>Alternative identifier. Contains an alternative, structured identifier of a manuscript, such as a catalogue number or former shelfmark. Sub-element of `<msIdentifier>{:xml}`.</td>
-<td>[ch. 14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td>[ch. 14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td>`<am>{:xml}`</td>
 <td></td>
 <td>Abbreviation marker. Contains the abbreviation marker used in the manuscript, making it clear that this marker is an abbreviation sign, not an ordinary character. See also `<ex>{:xml}` below.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [5.2.2](HB3_ch5.xml#sec5.2.2), [5.4.2](HB3_ch5.xml#sec5.4.2), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8), [6.5.2](HB3_ch6.xml#sec6.5.2), [6.5.8](HB3_ch6.xml#sec6.5.8). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [4.5](/handbook/v3/HB3_ch4#sec4.5), [5.2.1](/handbook/v3/HB3_ch5#sec5.2.1), [5.2.2](/handbook/v3/HB3_ch5#sec5.2.2), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [6.1](/handbook/v3/HB3_ch6#sec6.1), [6.3.8](/handbook/v3/HB3_ch6#sec6.3.8), [6.5.2](/handbook/v3/HB3_ch6#sec6.5.2), [6.5.8](/handbook/v3/HB3_ch6#sec6.5.8). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:type{:sh}`</td>
@@ -213,7 +213,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<anchor/>{:xml}`</td>
 <td></td>
 <td> An empty element (milestone) which attaches an identifier to a point within a text. The element is used to specify the end of a span and must be specified with the `@xml:id{:sh}` attribute.</td>
-<td rowSpan="2">[ch. 16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2). </td>
+<td rowSpan="2">[ch. 16.2](/handbook/v3/HB3_ch16#sec16.2), [16.2.2](/handbook/v3/HB3_ch16#sec16.2.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@xml:id{:sh}`</td>
@@ -225,13 +225,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<author>{:xml}`</td>
 <td></td>
 <td> The TEI p5 Guidelines recommend that this element is included in the `<titleStmt>{:xml}`. Since almost all Medieval Nordic texts are anonymous we believe that the `<author>{:xml}` element usually is not required. However, it is relevant for the encoding of names and bibliographical references in the `<teiHeader>{:xml}`. </td>
-<td>[ch. 2.3](HB3_ch2.xml#sec2.3), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.2](HB3_ch14.xml#sec14.3.2). </td>
+<td>[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [14.2.1](/handbook/v3/HB3_ch14#sec14.2.1), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). </td>
 </tr>
 <tr>
 <td>`<availability>{:xml}`</td>
 <td></td>
 <td>A description of the conditions for the distribution and use of the text.</td>
-<td rowSpan="2">[ch. 14.2.4](HB3_ch14.xml#sec14.2.4), [14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td rowSpan="2">[ch. 14.2.4](/handbook/v3/HB3_ch14#sec14.2.4), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@status{:sh}`</td>
@@ -262,13 +262,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<back>{:xml}`</td>
 <td></td>
 <td> Back matter. Contains any appendices and the like following the main body of a text. Within the `<text>{:xml}` element, the `<back>{:xml}` element will be placed after the `<body>{:xml}` element. </td>
-<td>[ch. 3.2](HB3_ch3.xml#sec3.2). </td>
+<td>[ch. 3.2](/handbook/v3/HB3_ch3#sec3.2). </td>
 </tr>
 <tr>
 <td>`<bibl>{:xml}`</td>
 <td></td>
 <td>Bibliographic citation. Used for each bibliographic reference. It can be specified with an `@xml:id{:sh}` attribute (exemplified in [ch. 14](/handbook/v3/HB3_ch14)) or a `@me:ref{:sh}` attribute (exemplified in [ch. 15](/handbook/v3/HB3_ch15)). </td>
-<td rowSpan="3">[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5), [14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1), [15.4.1](HB3_ch15.xml#sec15.4.1). </td>
+<td rowSpan="3">[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5), [14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [15.1](/handbook/v3/HB3_ch15#sec15.1), [15.4.1](/handbook/v3/HB3_ch15#sec15.4.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:ref{:sh}`</td>
@@ -286,25 +286,25 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<biblStruct>{:xml}`</td>
 <td></td>
 <td>Structured bibliographic citation. In this element, only bibliographic sub-elements appear and in a specified order. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3). </td>
 </tr>
 <tr>
 <td>`<binding>{:xml}`</td>
 <td></td>
 <td>Contains a description of the state of the present as well as potential former bindings of a manuscript (given either as a series of paragraphs or as one or more distinct `<binding>{:xml}` elements. Sub-element of `<bindingDesc>{:xml}`. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3). </td>
 </tr>
 <tr>
 <td>`<bindingDesc>{:xml}`</td>
 <td></td>
 <td>Binding description. Describes the present and former bindings of a manuscript or other object, either as a series of paragraphs, `<p>{:xml}`, or as a series of distinct `<binding>{:xml}` elements. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3). </td>
 </tr>
 <tr>
 <td>`<body>{:xml}`</td>
 <td></td>
 <td>The main body of the text. This element is required in any TEI conformant document.</td>
-<td>[ch. 2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.2](HB3_ch3.xml#sec3.2), [3.2.1](HB3_ch3.xml#sec3.2.1), [3.3](HB3_ch3.xml#sec3.3), [7.1](HB3_ch7.xml#sec7.1). </td>
+<td>[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.2](/handbook/v3/HB3_ch3#sec3.2), [3.2.1](/handbook/v3/HB3_ch3#sec3.2.1), [3.3](/handbook/v3/HB3_ch3#sec3.3), [7.1](/handbook/v3/HB3_ch7#sec7.1). </td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +329,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<c>{:xml}`</td>
 <td></td>
 <td>Any character, typically occupying a separate place on the base line of a manuscript.</td>
-<td rowSpan="6">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.10](HB3_ch3.xml#sec3.10), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [7.3](HB3_ch7.xml#sec7.3), [7.3.1](HB3_ch7.xml#sec7.3.1), [7.3.2](HB3_ch7.xml#sec7.3.2), [7.3.3](HB3_ch7.xml#sec7.3.3), [7.3.4](HB3_ch7.xml#sec7.3.4). </td>
+<td rowSpan="6">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.10](/handbook/v3/HB3_ch3#sec3.10), [5.1](/handbook/v3/HB3_ch5#sec5.1), [5.2.3](/handbook/v3/HB3_ch5#sec5.2.3), [7.3](/handbook/v3/HB3_ch7#sec7.3), [7.3.1](/handbook/v3/HB3_ch7#sec7.3.1), [7.3.2](/handbook/v3/HB3_ch7#sec7.3.2), [7.3.3](/handbook/v3/HB3_ch7#sec7.3.3), [7.3.4](/handbook/v3/HB3_ch7#sec7.3.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -352,7 +352,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@style{:sh}`</td>
 <td>Optional</td>
-<td>Indicates the size of an initial, using positional values like `"u"{:js}`, `"d"{:js}`, `"mu"{:js}` and `"md"{:js}`, and the colour of an initial using colour names such as `"cRed"{:js}` or hexadecimal CSS colour codes, such as `"c#FF0000"{:js}`. For details, see [ch. 7.3.3](HB3_ch7.xml#sec7.3.3) and [7.3.4](HB3_ch7.xml#sec7.3.4). </td>
+<td>Indicates the size of an initial, using positional values like `"u"{:js}`, `"d"{:js}`, `"mu"{:js}` and `"md"{:js}`, and the colour of an initial using colour names such as `"cRed"{:js}` or hexadecimal CSS colour codes, such as `"c#FF0000"{:js}`. For details, see [ch. 7.3.3](/handbook/v3/HB3_ch7#sec7.3.3) and [7.3.4](/handbook/v3/HB3_ch7#sec7.3.4). </td>
 <td></td>
 </tr>
 <tr>
@@ -365,7 +365,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<cb/>{:xml}`</td>
 <td></td>
 <td>Column beginning. An empty element which marks the beginning of a new column of a text on a multi-column page.</td>
-<td rowSpan="3">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [3.12.1](HB3_ch3.xml#sec3.12.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1). </td>
+<td rowSpan="3">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.8](/handbook/v3/HB3_ch3#sec3.8), [3.9](/handbook/v3/HB3_ch3#sec3.9), [3.12.1](/handbook/v3/HB3_ch3#sec3.12.1), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1), [16.1](/handbook/v3/HB3_ch16#sec16.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ed{:sh}`</td>
@@ -383,49 +383,49 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<change>{:xml}`</td>
 <td></td>
 <td> Documents a change or set of changes made during the production of a source document, or during the revision of an electronic file.</td>
-<td>[ch. 14.6](HB3_ch14.xml#sec14.6). </td>
+<td>[ch. 14.6](/handbook/v3/HB3_ch14#sec14.6). </td>
 </tr>
 <tr>
 <td>`<charDecl>{:xml}`</td>
 <td></td>
-<td> Character declarations. Provides information about nonstandard characters and glyphs. Sub-element of `<encodingDesc>{:xml}`. Briefly discussed in [ch. 2](/handbook/v3/HB3_ch2), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](HB3_ch5.xml#sec5.2). </td>
-<td>[ch. 2.5](HB3_ch2.xml#sec2.5). </td>
+<td> Character declarations. Provides information about nonstandard characters and glyphs. Sub-element of `<encodingDesc>{:xml}`. Briefly discussed in [ch. 2](/handbook/v3/HB3_ch2), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](/handbook/v3/HB3_ch5#sec5.2). </td>
+<td>[ch. 2.5](/handbook/v3/HB3_ch2#sec2.5). </td>
 </tr>
 <tr>
 <td>`<choice>{:xml}`</td>
 <td></td>
 <td>Groups a number of alternative encodings for the same point in the text, such as `<me:facs>{:xml}`, `<me:dipl>{:xml}` and `<me:norm>{:xml}`.</td>
-<td>[ch. 4.4](HB3_ch4.xml#sec4.4), [4.6](HB3_ch4.xml#sec4.6), [5.4](HB3_ch5.xml#sec5.4), [9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.3](HB3_ch9.xml#sec9.3.3). </td>
+<td>[ch. 4.4](/handbook/v3/HB3_ch4#sec4.4), [4.6](/handbook/v3/HB3_ch4#sec4.6), [5.4](/handbook/v3/HB3_ch5#sec5.4), [9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.3.3](/handbook/v3/HB3_ch9#sec9.3.3). </td>
 </tr>
 <tr>
 <td>`<collation>{:xml}`</td>
 <td></td>
 <td> Contains a description of how the leaves, bifolia, or similar objects are physically arranged. </td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td>`<collection>{:xml}`</td>
 <td></td>
 <td> Contains the name of a collection of manuscripts or other objects, not necessarily located within a single repository. </td>
-<td>[ch. 2.3](HB3_ch2.xml#sec2.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td>[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td>`<colophon>{:xml}`</td>
 <td></td>
 <td> Contains the colophon of an item, i.e. a statement providing information regarding the date, place, agency, or reason for production of the manuscript or other object. </td>
-<td>[ch. 14.3.2](HB3_ch14.xml#sec14.3.2). </td>
+<td>[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). </td>
 </tr>
 <tr>
 <td>`<condition>{:xml}`</td>
 <td></td>
 <td> Contains a description of the physical condition of the manuscript or object.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<corr>{:xml}`</td>
 <td></td>
 <td>Contains the correct form of a passage apparently incorrect or inaccurate in the manuscript text. Usually accompanied by the `<sic>{:xml}` element, in which the manuscript text is rendered as is. </td>
-<td rowSpan="2">[ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.3](HB3_ch9.xml#sec9.3.3), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [9.4.1](HB3_ch9.xml#sec9.4.1). </td>
+<td rowSpan="2">[ch. 9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.3.2](/handbook/v3/HB3_ch9#sec9.3.2), [9.3.3](/handbook/v3/HB3_ch9#sec9.3.3), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [9.4.1](/handbook/v3/HB3_ch9#sec9.4.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@resp{:sh}`</td>
@@ -437,7 +437,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<correction>{:xml}`</td>
 <td></td>
 <td>Specifies the level of quality control. Sub-element of `<editorialDecl>{:xml}`.</td>
-<td rowSpan="2">[ch. 14.4](HB3_ch14.xml#sec14.4).</td>
+<td rowSpan="2">[ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@status{:sh}`</td>
@@ -449,7 +449,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<country>{:xml}`</td>
 <td></td>
 <td>The contry where the manuscript is located. Sub-element of `<msIdentifier>{:xml}`. </td>
-<td rowSpan="3">[ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td rowSpan="3">[ch. 12.3](/handbook/v3/HB3_ch12#sec12.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@key{:sh}`</td>
@@ -467,13 +467,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<custEvent>{:xml}`</td>
 <td></td>
 <td>Custodial event. Describes a single event during the custodial history of a manuscript or other object. Information can be given on such matters as conservation, loans and exhibitions and so on, either as a series of paragraphs or one or more dated `<custEvent>{:xml}` elements.</td>
-<td>[ch. 14.3.5](HB3_ch14.xml#sec14.3.5).</td>
+<td>[ch. 14.3.5](/handbook/v3/HB3_ch14#sec14.3.5).</td>
 </tr>
 <tr>
 <td>`<custodialHist>{:xml}`</td>
 <td></td>
 <td>Custodial history. This element contains information on such matters as conservation, loans and exhibitions and so on, either as a series of `<p>{:xml}` (paragraphs) or one or more dated `<custEvent>{:xml}` elements. Sub-element of `<adminInfo>{:xml}`.</td>
-<td>[ch. 14.3.5](HB3_ch14.xml#sec14.3.5).</td>
+<td>[ch. 14.3.5](/handbook/v3/HB3_ch14#sec14.3.5).</td>
 </tr>
 </tbody>
 </table>
@@ -497,20 +497,20 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td>`<damage>{:xml}`</td>
 <td></td>
-<td>Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook. In [ch. 8.2.1](HB3_ch8.xml#sec8.2.1), we recommend encoding damaged text by the `<gap/>{:xml}` element, in which the `@reason{:sh}` attribute can take the value `"damaged"{:js}`. </td>
-<td>[ch. 16.2](HB3_ch16.xml#sec16.2). </td>
+<td>Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook. In [ch. 8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), we recommend encoding damaged text by the `<gap/>{:xml}` element, in which the `@reason{:sh}` attribute can take the value `"damaged"{:js}`. </td>
+<td>[ch. 16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
 <td>`<damageSpan/>{:xml}`</td>
 <td></td>
-<td>Beginning of a span of damaged text. This is a TEI element which is a counterpart to the element `<damage>{:xml}`, in the same way as `<addSpan/>{:xml}` is a counterpart to the `<add>{:xml}` element. The use of `<damageSpan/>{:xml}` is deprecated in this handbook. As is the case with other “Span” elements, we recommend in [ch. 16.2](HB3_ch16.xml#sec16.2) another way of encoding these cases.</td>
-<td>[ch. 16.2](HB3_ch16.xml#sec16.2). </td>
+<td>Beginning of a span of damaged text. This is a TEI element which is a counterpart to the element `<damage>{:xml}`, in the same way as `<addSpan/>{:xml}` is a counterpart to the `<add>{:xml}` element. The use of `<damageSpan/>{:xml}` is deprecated in this handbook. As is the case with other “Span” elements, we recommend in [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2) another way of encoding these cases.</td>
+<td>[ch. 16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
 <td>`<date>{:xml}`</td>
 <td></td>
 <td>The date for the publication of the present work (edition).</td>
-<td rowSpan="2">[ch. 7.2.5](HB3_ch7.xml#sec7.2.5), [14.2.4](HB3_ch14.xml#sec14.2.4), [14.6](HB3_ch14.xml#sec14.6). </td>
+<td rowSpan="2">[ch. 7.2.5](/handbook/v3/HB3_ch7#sec7.2.5), [14.2.4](/handbook/v3/HB3_ch14#sec14.2.4), [14.6](/handbook/v3/HB3_ch14#sec14.6). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@when{:sh}`</td>
@@ -522,19 +522,19 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<decoDesc>{:xml}`</td>
 <td></td>
 <td> Decoration description. Contains a description of the decoration of a manuscript or other object, either as in paragraphs, `<p>{:xml}`, or as one or more `<decoNote>{:xml}` elements.</td>
-<td>[ch. 7.2](HB3_ch7.xml#sec7.2), [7.3.2](HB3_ch7.xml#sec7.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td>[ch. 7.2](/handbook/v3/HB3_ch7#sec7.2), [7.3.2](/handbook/v3/HB3_ch7#sec7.3.2), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td>`<decoNote>{:xml}`</td>
 <td></td>
 <td>Note on decoration. Contains a note describing either a decorative component of a manuscript (e.g. a single illuminated initial) or a homogenous class of such components (e.g. sentence initials in general).</td>
-<td>[ch. 7.2](HB3_ch7.xml#sec7.2), [7.2.1](HB3_ch7.xml#sec7.2.1), [14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td>[ch. 7.2](/handbook/v3/HB3_ch7#sec7.2), [7.2.1](/handbook/v3/HB3_ch7#sec7.2.1), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td>`<del>{:xml}`</td>
 <td></td>
 <td>Deletion. Describes any type of deletion made in the manuscript.</td>
-<td rowSpan="4">[ch. 8.2.1](HB3_ch8.xml#sec8.2.1), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.2.2.2](HB3_ch9.xml#sec9.2.2.2), [9.2.4](HB3_ch9.xml#sec9.2.4), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [16.2](HB3_ch16.xml#sec16.2)[16.5.2](HB3_ch16.xml#sec16.5.2)</td>
+<td rowSpan="4">[ch. 8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), [9.2.2.1](/handbook/v3/HB3_ch9#sec9.2.2.1), [9.2.2.2](/handbook/v3/HB3_ch9#sec9.2.2.2), [9.2.4](/handbook/v3/HB3_ch9#sec9.2.4), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [16.2](/handbook/v3/HB3_ch16#sec16.2)[16.5.2](/handbook/v3/HB3_ch16#sec16.5.2)</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@hand{:sh}`</td>
@@ -551,25 +551,25 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@rendition{:sh}`</td>
 <td>Optional</td>
-<td>If a deletion has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td>If a deletion has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td>`<delSpan/>{:xml}`</td>
 <td></td>
-<td>Beginning of a span of deleted text. This is a counterpart to the `<del>{:xml}` element. It is an empty element and can be used when the deletion crosses structural divisions. The use of `<delSpan/>{:xml}` is deprecated in this handbook. In [ch. 16.2](HB3_ch16.xml#sec.16.2), we suggest another way of encoding these cases.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [16.2](HB3_ch16.xml#sec16.2). </td>
+<td>Beginning of a span of deleted text. This is a counterpart to the `<del>{:xml}` element. It is an empty element and can be used when the deletion crosses structural divisions. The use of `<delSpan/>{:xml}` is deprecated in this handbook. In [ch. 16.2](/handbook/v3/HB3_ch16#sec.16.2), we suggest another way of encoding these cases.</td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
 <td>`<distributor>{:xml}`</td>
 <td></td>
 <td>A reference to the distributor, e.g. Medieval Nordic Text Archive.</td>
-<td>[ch. 14.2.4](HB3_ch14.xml#sec14.2.4).</td>
+<td>[ch. 14.2.4](/handbook/v3/HB3_ch14#sec14.2.4).</td>
 </tr>
 <tr>
 <td>`<div>{:xml}`</td>
 <td></td>
 <td>Text division. Contains a subdivision of the front, body, or back of a text.</td>
-<td rowSpan="4">[ch. 1.4](HB3_ch1.xml#sec1.4), [2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.3](HB3_ch3.xml#sec3.3), [3.3.1](HB3_ch3.xml#sec3.3.1), [3.3.2](HB3_ch3.xml#sec3.3.2), [3.3.3](HB3_ch3.xml#sec3.3.3), [3.4](HB3_ch3.xml#sec3.4), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [3.10](HB3_ch3.xml#sec3.10), [11.7](HB3_ch11.xml#sec11.7), [16.1](HB3_ch16.xml#sec16.1), [16.3](HB3_ch16.xml#sec16.3), [16.4](HB3_ch16.xml#sec16.4). </td>
+<td rowSpan="4">[ch. 1.4](/handbook/v3/HB3_ch1#sec1.4), [2.3](/handbook/v3/HB3_ch2#sec2.3), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.3](/handbook/v3/HB3_ch3#sec3.3), [3.3.1](/handbook/v3/HB3_ch3#sec3.3.1), [3.3.2](/handbook/v3/HB3_ch3#sec3.3.2), [3.3.3](/handbook/v3/HB3_ch3#sec3.3.3), [3.4](/handbook/v3/HB3_ch3#sec3.4), [3.8](/handbook/v3/HB3_ch3#sec3.8), [3.9](/handbook/v3/HB3_ch3#sec3.9), [3.10](/handbook/v3/HB3_ch3#sec3.10), [11.7](/handbook/v3/HB3_ch11#sec11.7), [16.1](/handbook/v3/HB3_ch16#sec16.1), [16.3](/handbook/v3/HB3_ch16#sec16.3), [16.4](/handbook/v3/HB3_ch16#sec16.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@n{:sh}`</td>
@@ -612,7 +612,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<edition>{:xml}`</td>
 <td></td>
 <td>A description of the edition (i.e. version), typically by means of a number.</td>
-<td rowSpan="3">[ch. 14.2.2](HB3_ch14.xml#sec14.2.2).</td>
+<td rowSpan="3">[ch. 14.2.2](/handbook/v3/HB3_ch14#sec14.2.2).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@n{:sh}`</td>
@@ -630,13 +630,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<editionStmt>{:xml}`</td>
 <td></td>
 <td>Edition statement. Groups information relating to one edition of a text.</td>
-<td>[ch. 14.2.2](HB3_ch14.xml#sec14.2.2).</td>
+<td>[ch. 14.2.2](/handbook/v3/HB3_ch14#sec14.2.2).</td>
 </tr>
 <tr>
 <td>`<editor>{:xml}`</td>
 <td></td>
 <td>The name of the (main) editor of the encoded work.</td>
-<td rowSpan="2">[ch. 14.2.1](HB3_ch14.xml#sec14.2.1).</td>
+<td rowSpan="2">[ch. 14.2.1](/handbook/v3/HB3_ch14#sec14.2.1).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@role{:sh}`</td>
@@ -648,25 +648,25 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<editorialDecl>{:xml}`</td>
 <td></td>
 <td>Editorial practice declaration. Sub-element of `<encodingDesc>{:xml}`. The `<editorialDecl>{:xml}` element uses the `<correction>{:xml}` element to specify the level of quality control, the `<normalization>{:xml}` element to specify the level on which the text is encoded, and the `<interpretation>{:xml}` element to specify the amount of lexical and grammatical information in the encoded text. </td>
-<td>[ch. 14.4](HB3_ch14.xml#sec14.4). </td>
+<td>[ch. 14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td>`<encodingDesc>{:xml}`</td>
 <td></td>
 <td>Encoding description. Documents the relationship between the electronic edition and the source it is based upon. </td>
-<td>[ch. 14.1](HB3_ch14.xml#sec14.1), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td>[ch. 14.1](/handbook/v3/HB3_ch14#sec14.1), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td>`<event>{:xml}`</td>
 <td></td>
 <td>Contains data relating to any kind of significant event associated with a person, place, or organization. </td>
-<td>[ch. 15.1](HB3_ch15.xml#sec15.1). </td>
+<td>[ch. 15.1](/handbook/v3/HB3_ch15#sec15.1). </td>
 </tr>
 <tr>
 <td>`<ex>{:xml}`</td>
 <td></td>
 <td>Editorial expansion. Contains an expansion made by the editor, corresponding to the abbreviation marker in the manuscript. See also `<am>{:xml}` above.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.3](HB3_ch4.xml#sec4.3), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [4.3](/handbook/v3/HB3_ch4#sec4.3), [4.5](/handbook/v3/HB3_ch4#sec4.5), [5.2.1](/handbook/v3/HB3_ch5#sec5.2.1), [6.1](/handbook/v3/HB3_ch6#sec6.1), [6.3.8](/handbook/v3/HB3_ch6#sec6.3.8). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:type{:sh}`</td>
@@ -677,14 +677,14 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td>`<expan>{:xml}`</td>
 <td></td>
-<td> Expansion. Contains the expansion of an abbreviation, which at the next level can be specified by the `<ex>{:xml}` element. In [ch. 6.1](HB3_ch6.xml#sec6.1), we recommend using only the `<ex>{:xml}` element for expansions. </td>
-<td>[ch. 6.1](HB3_ch6.xml#sec6.1)</td>
+<td> Expansion. Contains the expansion of an abbreviation, which at the next level can be specified by the `<ex>{:xml}` element. In [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1), we recommend using only the `<ex>{:xml}` element for expansions. </td>
+<td>[ch. 6.1](/handbook/v3/HB3_ch6#sec6.1)</td>
 </tr>
 <tr>
 <td>`<explicit>{:xml}`</td>
 <td></td>
 <td>Contains the explicit of a item, i.e. the closing words of the text proper, exclusive of any rubric or colophon which might follow it. When dealing with collections of fragments, each fragment may be given as a separate `<msItem>{:xml}` element and the first and last words of each transcribed as defective incipits and explicits. </td>
-<td rowSpan="2">[ch. 14.3.2](HB3_ch14.xml#sec14.3.2).</td>
+<td rowSpan="2">[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@defective{:sh}`</td>
@@ -696,7 +696,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<extent>{:xml}`</td>
 <td></td>
 <td>Specifies the size of the file. The exact number of words should be given in the attribute `@n{:sh}` as well as in plain text within the element.</td>
-<td rowSpan="2">[ch. 14.2.3](HB3_ch14.xml#sec14.2.3), [14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td rowSpan="2">[ch. 14.2.3](/handbook/v3/HB3_ch14#sec14.2.3), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@n{:sh}`</td>
@@ -715,11 +715,11 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <div className="table-xml-elements">
 | Elements and attributes | Obl / Opt | Contents | Links |
 |-----|-----|-----|-----|
-| `<fileDesc>{:xml}` |  | File description. Contains information on the title, on the publication and on the source. This element is a mandatory part of the header and is treated in two separate subsections, one dealing with the meta-level information on the file history, `<titleStmt>{:xml}`, the other concerning the source from which the XML-file is created, i.e. in our case usually the manuscript, `<sourceDesc>{:xml}`.  | [ch. 14.1](HB3_ch14.xml#sec14.1), [14.2](HB3_ch14.xml#sec14.2), [14.3](HB3_ch14.xml#sec14.3).  |
-| `<finalRubric>{:xml}` |  | Final rubric. Contains the string of words that denotes the end of a text division, often with an assertion as to its author and title, usually set off from the text itself by red ink, by a different size or type of script, or by some other such visual device. | [ch. 14.3.2](HB3_ch14.xml#sec14.3.2). |
-| `<foliation>{:xml}` |  | Describes how and, if known, when and by whom the manuscript was paginated or foliated. | [ch. 14.3.3](HB3_ch14.xml#sec14.3.3). |
-| `<forname>{:xml}` |  | The first name of a person, contained in the `<persName>{:xml}` element. | [ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [14.2](HB3_ch14.xml#sec14.2).  |
-| `<front>{:xml}` |  |  Front matter. Contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, and so on.) found at the start of a document, before the main body. Within the `<text>{:xml}` element, the `<front>{:xml}` element will be placed before the `<body>{:xml}` element.  | [ch. 3.2](HB3_ch3.xml#sec3.2). |
+| `<fileDesc>{:xml}` |  | File description. Contains information on the title, on the publication and on the source. This element is a mandatory part of the header and is treated in two separate subsections, one dealing with the meta-level information on the file history, `<titleStmt>{:xml}`, the other concerning the source from which the XML-file is created, i.e. in our case usually the manuscript, `<sourceDesc>{:xml}`.  | [ch. 14.1](/handbook/v3/HB3_ch14#sec14.1), [14.2](/handbook/v3/HB3_ch14#sec14.2), [14.3](/handbook/v3/HB3_ch14#sec14.3).  |
+| `<finalRubric>{:xml}` |  | Final rubric. Contains the string of words that denotes the end of a text division, often with an assertion as to its author and title, usually set off from the text itself by red ink, by a different size or type of script, or by some other such visual device. | [ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). |
+| `<foliation>{:xml}` |  | Describes how and, if known, when and by whom the manuscript was paginated or foliated. | [ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). |
+| `<forname>{:xml}` |  | The first name of a person, contained in the `<persName>{:xml}` element. | [ch. 12.2](/handbook/v3/HB3_ch12#sec12.2), [12.2.1](/handbook/v3/HB3_ch12#sec12.2.1), [14.2](/handbook/v3/HB3_ch14#sec14.2).  |
+| `<front>{:xml}` |  |  Front matter. Contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, and so on.) found at the start of a document, before the main body. Within the `<text>{:xml}` element, the `<front>{:xml}` element will be placed before the `<body>{:xml}` element.  | [ch. 3.2](/handbook/v3/HB3_ch3#sec3.2). |
 </div>
 
 
@@ -739,14 +739,14 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td>`<g>{:xml}`</td>
 <td></td>
-<td>External character (from Japanese “gaiji”). Briefly discussed in [ch. 2.5](HB3_ch2.xml#sec2.5), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](HB3_ch5.xml#sec5.2).</td>
-<td>[ch. 2.5](HB3_ch2.xml#sec2.5).</td>
+<td>External character (from Japanese “gaiji”). Briefly discussed in [ch. 2.5](/handbook/v3/HB3_ch2#sec2.5), but not used elsewhere in the handbook. We recommend encoding nonstandard characters by character entities, as explained in [ch. 5.2](/handbook/v3/HB3_ch5#sec5.2).</td>
+<td>[ch. 2.5](/handbook/v3/HB3_ch2#sec2.5).</td>
 </tr>
 <tr>
 <td>`<gap/>{:xml}`</td>
 <td></td>
 <td>Gap. An element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include:</td>
-<td rowSpan="5">[ch. 7.3.2](HB3_ch7.xml#sec7.3.2), [8.2.1](HB3_ch8.xml#sec8.2.1), [8.2.2](HB3_ch8.xml#sec8.2.2), [8.5.1](HB3_ch8.xml#sec8.5.1), [8.5.2](HB3_ch8.xml#sec8.5.2), [8.5.4](HB3_ch8.xml#sec8.5.4), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [9.3.1](HB3_ch9.xml#sec9.3.1). </td>
+<td rowSpan="5">[ch. 7.3.2](/handbook/v3/HB3_ch7#sec7.3.2), [8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), [8.2.2](/handbook/v3/HB3_ch8#sec8.2.2), [8.5.1](/handbook/v3/HB3_ch8#sec8.5.1), [8.5.2](/handbook/v3/HB3_ch8#sec8.5.2), [8.5.4](/handbook/v3/HB3_ch8#sec8.5.4), [9.2.2.1](/handbook/v3/HB3_ch9#sec9.2.2.1), [9.3.1](/handbook/v3/HB3_ch9#sec9.3.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@agent{:sh}`</td>
@@ -776,7 +776,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<group>{:xml}`</td>
 <td></td>
 <td> This element can be used to divide a document into more than one text. </td>
-<td>[ch. 3.2.1](HB3_ch3.xml#sec3.2.1).</td>
+<td>[ch. 3.2.1](/handbook/v3/HB3_ch3#sec3.2.1).</td>
 </tr>
 </tbody>
 </table>
@@ -801,7 +801,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<handDesc>{:xml}`</td>
 <td></td>
 <td>Description of hands. Contains a description of all the different hands used in a manuscript. The description may be encoded as one or more paragraphs, `<p>{:xml}`, but more commonly, the various paragraphs are structured as a series of `<handNote>{:xml}` elements, each containing a prose description of the hands.</td>
-<td rowSpan="2">[ch. 14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td rowSpan="2">[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@hands{:sh}`</td>
@@ -813,7 +813,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<handNote>{:xml}`</td>
 <td></td>
 <td> Note on a hand. Contains a prose description of one of the hands, containing one or more paragraphs, `<p>{:xml}`.</td>
-<td rowSpan="3">[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td rowSpan="3">[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@scope{:sh}`</td>
@@ -831,19 +831,19 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<handNotes>{:xml}`</td>
 <td></td>
 <td>Contains one or more `<handNote>{:xml}` elements documenting the different hands identified within the source texts. </td>
-<td>[ch. 14.5](HB3_ch14.xml#sec14.5).</td>
+<td>[ch. 14.5](/handbook/v3/HB3_ch14#sec14.5).</td>
 </tr>
 <tr>
 <td>`<handShift/>{:xml}`</td>
 <td></td>
 <td>Change of scribal hand. Since a shift of hands in most cases will conflict with other divisions of the text, the recommended element is an empty one. If there are two hands in a document there will thus be a single `<handShift/>{:xml}` element, located at the break between hand 1 and hand 2. </td>
-<td>[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.14](HB3_ch3.xml#sec3.14), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1). </td>
+<td>[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.14](/handbook/v3/HB3_ch3#sec3.14), [9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1). </td>
 </tr>
 <tr>
 <td>`<head>{:xml}`</td>
 <td></td>
 <td>Heading. Contains headings on all levels of the document.</td>
-<td rowSpan="2">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.4](HB3_ch3.xml#sec3.4), [3.9](HB3_ch3.xml#sec3.9). </td>
+<td rowSpan="2">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.4](/handbook/v3/HB3_ch3#sec3.4), [3.9](/handbook/v3/HB3_ch3#sec3.9). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -855,7 +855,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<history>{:xml}`</td>
 <td></td>
 <td>Provides information on the history of the manuscript or a part of the manuscript, its origin, provenance and acquisition by its holding institution. It may consist of one or more paragraphs, `<p>{:xml}`, in which the history of the manuscript is summarised. Available within it are three sub-elements: `<origin>{:xml}`, `<provenance>{:xml}` and `<acquisition>{:xml}`. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.4](HB3_ch14.xml#sec14.3.4). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [14.3.4](/handbook/v3/HB3_ch14#sec14.3.4). </td>
 </tr>
 </tbody>
 </table>
@@ -880,7 +880,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<idno>{:xml}`</td>
 <td></td>
 <td>Identifier. In the case of manuscripts, it may be a number within a collection, e.g. “Ms. 1” or a conventional siglum, e.g. “AM 242 fol”.</td>
-<td rowSpan="2">[ch. 14.2.3](HB3_ch14.xml#sec14.2.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td rowSpan="2">[ch. 14.2.3](/handbook/v3/HB3_ch14#sec14.2.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -892,7 +892,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<incipit>{:xml}`</td>
 <td></td>
 <td> Contains the incipit of a item, that is, the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely. Such incipits were in former times frequently used a means of reference to a work in place of a title. When dealing with collections of fragments, each fragment may be given as a separate `<msItem>{:xml}` and the first and last words of each transcribed as defective incipits and explicits. </td>
-<td rowSpan="2">[ch. 14.3.2](HB3_ch14.xml#sec14.3.2).</td>
+<td rowSpan="2">[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@defective{:sh}`</td>
@@ -904,13 +904,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<institution>{:xml}`</td>
 <td></td>
 <td> Contains the name of an organisation such as a university or library, with which a manuscript or other object is identified, generally its holding institution. Sub-element of `<msIdentifier>{:xml}`. </td>
-<td>[ch. 14.3.1](HB3_ch14.xml#sec14.3.1).</td>
+<td>[ch. 14.3.1](/handbook/v3/HB3_ch14#sec14.3.1).</td>
 </tr>
 <tr>
 <td>`<interpretation>{:xml}`</td>
 <td></td>
 <td>Specifies the amount of lexical and grammatical information in the encoded text. Sub-element of `<editorialDecl>{:xml}`.</td>
-<td rowSpan="3">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td rowSpan="3">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:lemmatized{:sh}`</td>
@@ -947,7 +947,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<l>{:xml}`</td>
 <td></td>
 <td>Verse line. Marks the beginning of a line within the stanza.</td>
-<td rowSpan="5">[ch. 2.3](HB3_ch2.xml#sec2.3), [2.4](HB3_ch2.xml#sec2.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [13.2](HB3_ch13.xml#sec13.2)</td>
+<td rowSpan="5">[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [2.4](/handbook/v3/HB3_ch2#sec2.4), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.8](/handbook/v3/HB3_ch3#sec3.8), [13.2](/handbook/v3/HB3_ch13#sec13.2)</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@met{:sh}`</td>
@@ -977,7 +977,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<language>{:xml}`</td>
 <td></td>
 <td>Characterises a single language or sublanguage used within a text. Sub-element of `<langUsage>{:xml}`.</td>
-<td rowSpan="2">[ch. 14.5](HB3_ch14.xml#sec14.5).</td>
+<td rowSpan="2">[ch. 14.5](/handbook/v3/HB3_ch14#sec14.5).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ident{:sh}`</td>
@@ -989,13 +989,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<langUsage>{:xml}`</td>
 <td></td>
 <td>Languages used in the source are listed in this element.</td>
-<td>[ch. 14.5](HB3_ch14.xml#sec14.5).</td>
+<td>[ch. 14.5](/handbook/v3/HB3_ch14#sec14.5).</td>
 </tr>
 <tr>
 <td>`<layout>{:xml}`</td>
 <td></td>
 <td>Describes how a text is organised on the page, specifying the number of columns, the dimensions of the written area, the number of lines per page/column, and so on. Sub-element of `<layoutDesc>{:xml}`. </td>
-<td rowSpan="3">[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td rowSpan="3">[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@columns{:sh}`</td>
@@ -1013,13 +1013,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<layoutDesc>{:xml}`</td>
 <td></td>
 <td>Layout description, contains one or more `<layout>{:xml}` elements. It details the way(s) in which the text is organised on the page, specifying the number of columns, the dimensions of the written area, the number of lines per page/column, and so on.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<lb/>{:xml}`</td>
 <td></td>
 <td>Line beginning. An empty element which marks the beginning of a new line of a page (or a column).</td>
-<td rowSpan="4">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [5.5](HB3_ch5.xml#sec5.5), [5.5.2](HB3_ch5.xml#sec5.5.2), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1), [16.3](HB3_ch16.xml#sec16.3). </td>
+<td rowSpan="4">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.2](/handbook/v3/HB3_ch5#sec5.5.2), [9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1), [16.1](/handbook/v3/HB3_ch16#sec16.1), [16.3](/handbook/v3/HB3_ch16#sec16.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ed{:sh}`</td>
@@ -1043,7 +1043,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<lg>{:xml}`</td>
 <td></td>
 <td>Line group. Marks the stanza in relation to the surrounding prose text.</td>
-<td rowSpan="4">[ch. 2.3](HB3_ch2.xml#sec2.3), [2.4](HB3_ch2.xml#sec2.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [13.2](HB3_ch13.xml#sec13.2), [16.3](HB3_ch16.xml#sec16.3). </td>
+<td rowSpan="4">[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [2.4](/handbook/v3/HB3_ch2#sec2.4), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.8](/handbook/v3/HB3_ch3#sec3.8), [3.9](/handbook/v3/HB3_ch3#sec3.9), [13.2](/handbook/v3/HB3_ch13#sec13.2), [16.3](/handbook/v3/HB3_ch16#sec16.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@n{:sh}`</td>
@@ -1067,25 +1067,25 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<list>{:xml}`</td>
 <td></td>
 <td>Contains any sequence of items organised as a list.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<listBibl>{:xml}`</td>
 <td></td>
 <td>Citation list. Contains a list of bibliographic citations of any kind regarding the manuscript as a whole. Sub-element of `<additional>{:xml}`. Inside the `<listBibl>{:xml}` element, one or more `<bibl>{:xml}` elements are used for each bibliographic reference. </td>
-<td>[ch. 14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td>[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 <tr>
 <td>`<listPerson>{:xml}`</td>
 <td></td>
 <td>List of persons. Can contain one or more `<person>{:xml}`elements within the header’s `<ProfileDesc>{:xml}`. The contents of the individual `<person>{:xml}` elements in `<listPerson>{:xml}` provide information on birth, death, residence, occupation and so on, either as one or more paragraphs of running prose, or through the use of specialised sub-elements. </td>
-<td>[ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5)</td>
+<td>[ch. 14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [14.5](/handbook/v3/HB3_ch14#sec14.5)</td>
 </tr>
 <tr>
 <td>`<locus>{:xml}`</td>
 <td></td>
 <td> Defines a location within a manuscript or a manuscript part. Sub-element of `<msItem>{:xml}`. Used to indicate specifically which parts of a manuscript are written in a given hand.</td>
-<td rowSpan="3">[ch. 7.2](HB3_ch7.xml#sec7.2), [14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td rowSpan="3">[ch. 7.2](/handbook/v3/HB3_ch7#sec7.2), [14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@from{:sh}`</td>
@@ -1122,7 +1122,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<m>{:xml}`</td>
 <td></td>
 <td>Morpheme. Contains a morpheme, i.e. a grammatically defined part of a word. </td>
-<td rowSpan="2">[ch. 5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.3](HB3_ch5.xml#sec5.3.3). </td>
+<td rowSpan="2">[ch. 5.3.1](/handbook/v3/HB3_ch5#sec5.3.1), [5.3.3](/handbook/v3/HB3_ch5#sec5.3.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@baseForm{:sh}`</td>
@@ -1134,43 +1134,43 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<me:all>{:xml}`</td>
 <td></td>
 <td>Indicates the alliteration of the line.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [13.2](/handbook/v3/HB3_ch13#sec13.2), [13.3](/handbook/v3/HB3_ch13#sec13.3). </td>
 </tr>
 <tr>
 <td>`<me:ass>{:xml}`</td>
 <td></td>
 <td>Indicates the internal rhymes of the line, where relevant.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [13.2](/handbook/v3/HB3_ch13#sec13.2), [13.3](/handbook/v3/HB3_ch13#sec13.3). </td>
 </tr>
 <tr>
 <td>`<me:facs>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1). </td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [13.1](/handbook/v3/HB3_ch13#sec13.1). </td>
 </tr>
 <tr>
 <td>`<me:dipl>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [13.1](HB3_ch13.xml#sec13.1)</td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [13.1](/handbook/v3/HB3_ch13#sec13.1)</td>
 </tr>
 <tr>
 <td>`<me:norm>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the normalised level, a transcription in normalised orthography.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8](HB3_ch2.xml#sec2.8), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [10.1](HB3_ch10.xml#sec10.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1). </td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8](/handbook/v3/HB3_ch2#sec2.8), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.4](/handbook/v3/HB3_ch4#sec4.6.4), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [10.1](/handbook/v3/HB3_ch10#sec10.1), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [13.1](/handbook/v3/HB3_ch13#sec13.1). </td>
 </tr>
 <tr>
 <td>`<me:pal>{:xml}`</td>
 <td></td>
 <td>Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>{:xml}` level.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [4.2](HB3_ch4.xml#sec4.2), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [4.2](/handbook/v3/HB3_ch4#sec4.2), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2). </td>
 </tr>
 <tr>
 <td>`<me:textSpan/>{:xml}`</td>
 <td></td>
 <td>A generic element to handle overlapping text structures.</td>
-<td rowSpan="3">[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [2.8.2](HB3_ch2.xml#sec2.8.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2). </td>
+<td rowSpan="3">[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.2.2](/handbook/v3/HB3_ch16#sec16.2.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:category{:sh}`</td>
@@ -1188,7 +1188,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<milestone/>{:xml}`</td>
 <td></td>
 <td>An empty element which marks any break in the transcription. It can be used when other elements will lead to problems of overlap, e.g. for conflicting sentence divisions, turns in dialogues, and the like. </td>
-<td rowSpan="3">[ch. 3.5.2](HB3_ch3.xml#sec3.5.2), [3.11](HB3_ch3.xml#sec3.11), [3.15](HB3_ch3.xml#sec3.15), [16.4](HB3_ch16.xml#sec16.4). </td>
+<td rowSpan="3">[ch. 3.5.2](/handbook/v3/HB3_ch3#sec3.5.2), [3.11](/handbook/v3/HB3_ch3#sec3.11), [3.15](/handbook/v3/HB3_ch3#sec3.15), [16.4](/handbook/v3/HB3_ch16#sec16.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@unit{:sh}`</td>
@@ -1212,13 +1212,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<msContents>{:xml}`</td>
 <td></td>
 <td>Manuscript contents. Contains an itemised list of the intellectual content of the manuscript or manuscript part, either as a series of paragraphs, `<p>{:xml}`, or as a series of structured manuscript items, possibly including transcriptions of rubrics, incipits, explicits and so on., as well as primary bibliographic references. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). </td>
 </tr>
 <tr>
 <td>`<msDesc>{:xml}`</td>
 <td></td>
 <td>Manuscript description. Contains a description of a single identifiable manuscript. Within this element six sub-elements are available: `<msIdentifier>{:xml}`, `<msContents>{:xml}`, `<physDesc>{:xml}`, `<history>{:xml}`, `<additional>{:xml}` and `<msPart>{:xml}`. </td>
-<td rowSpan="3">[ch. 3.1](HB3_ch3.xml#sec3.1), [7.3.4](HB3_ch7.xml#sec7.3.4), [14.3](HB3_ch14.xml#sec14.3), [14.3.1](HB3_ch14.xml#sec14.3.1), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3), [15.4.4.1](HB3_ch15.xml#sec15.4.4.1). </td>
+<td rowSpan="3">[ch. 3.1](/handbook/v3/HB3_ch3#sec3.1), [7.3.4](/handbook/v3/HB3_ch7#sec7.3.4), [14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [15.4.4.1](/handbook/v3/HB3_ch15#sec15.4.4.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ref{:sh}`</td>
@@ -1236,13 +1236,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<msIdentifier>{:xml}`</td>
 <td></td>
 <td>Manuscript identifier. Contains the information required to identify the manuscript, i.e. its location, holding institution and shelfmark. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td>`<msItem>{:xml}`</td>
 <td></td>
 <td> Manuscript item. Contains at least the elements `<locus>{:xml}` and `<title>{:xml}` to specify the location in the manuscript and the title of the text in question. More detail can be provided by means of further elements, such as `<author>{:xml}`, `<incipit>{:xml}`, `<explicit>{:xml}`, `<rubric>{:xml}`, `<finalRubric>{:xml}`, `<colophon>{:xml}`, `<textLang>{:xml}` and `<note>{:xml}`. This element can also “nest”, by which is meant that an `<msItem>{:xml}` can contain other `<msItem>{:xml}` elements. This is useful where separate items (or sub-items) in a manuscript are grouped under a single title or rubric, for example in collections of prayers. The `<msItem>{:xml}` element is a sub-element of `<msContents>{:xml}`. </td>
-<td rowSpan="2">[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td rowSpan="2">[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@defective{:sh}`</td>
@@ -1254,7 +1254,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<msName>{:xml}`</td>
 <td></td>
 <td>Alternative name of a manuscript. Contains any form of unstructured alternative name used for a manuscript, such as a nickname. Sub-element of `<msIdentifier>{:xml}`.</td>
-<td rowSpan="3">[ch. 14.3.1](HB3_ch14.xml#sec14.3.1).</td>
+<td rowSpan="3">[ch. 14.3.1](/handbook/v3/HB3_ch14#sec14.3.1).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1272,13 +1272,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<msPart>{:xml}`</td>
 <td></td>
 <td>Manuscript part. Contains information about an originally distinct manuscript or part of a manuscript, which is now part of a composite manuscript. </td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3).</td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3).</td>
 </tr>
 <tr>
 <td>`<musicNotation>{:xml}`</td>
 <td></td>
 <td>Musical notation. The form, and possibly location, of musical notation is specified using one or more paragraphs, `<p>{:xml}`.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 </tbody>
 </table>
@@ -1303,7 +1303,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<name>{:xml}`</td>
 <td></td>
 <td>Contains a name, i.e. a proper noun or a noun phrase.</td>
-<td rowSpan="7">[ch. 2.3](HB3_ch2.xml#sec2.3), [7.2.5](HB3_ch7.xml#sec7.2.5), [12.1](HB3_ch12.xml#sec12.1), [12.3](HB3_ch12.xml#sec12.3), [12.4.1](HB3_ch12.xml#sec12.4.1), [14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.6](HB3_ch14.xml#sec14.3.6), [14.6](HB3_ch14.xml#sec14.6), [15.1](HB3_ch15.xml#sec15.1), [15.2.1](HB3_ch15.xml#sec15.2.1), [15.2.2](HB3_ch15.xml#sec15.2.2). </td>
+<td rowSpan="7">[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [7.2.5](/handbook/v3/HB3_ch7#sec7.2.5), [12.1](/handbook/v3/HB3_ch12#sec12.1), [12.3](/handbook/v3/HB3_ch12#sec12.3), [12.4.1](/handbook/v3/HB3_ch12#sec12.4.1), [14.2](/handbook/v3/HB3_ch14#sec14.2), [14.2.1](/handbook/v3/HB3_ch14#sec14.2.1), [14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [14.6](/handbook/v3/HB3_ch14#sec14.6), [15.1](/handbook/v3/HB3_ch15#sec15.1), [15.2.1](/handbook/v3/HB3_ch15#sec15.2.1), [15.2.2](/handbook/v3/HB3_ch15#sec15.2.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@key{:sh}`</td>
@@ -1351,7 +1351,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<normalization>{:xml}`</td>
 <td></td>
 <td>Used to specify the level on which the text is encoded.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:level{:sh}`</td>
@@ -1363,7 +1363,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<note>{:xml}`</td>
 <td></td>
 <td>Contains comments to the text by the editor.</td>
-<td rowSpan="3">[ch. 5.6](HB3_ch5.xml#sec5.6), [8.5.1](HB3_ch8.xml#sec8.5.1), [9.4](HB3_ch9.xml#sec9.4), [9.4.2](HB3_ch9.xml#sec9.4.2), [14.3.2](HB3_ch14.xml#sec14.3.2). </td>
+<td rowSpan="3">[ch. 5.6](/handbook/v3/HB3_ch5#sec5.6), [8.5.1](/handbook/v3/HB3_ch8#sec8.5.1), [9.4](/handbook/v3/HB3_ch9#sec9.4), [9.4.2](/handbook/v3/HB3_ch9#sec9.4.2), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@source{:sh}`</td>
@@ -1381,7 +1381,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<num>{:xml}`</td>
 <td></td>
 <td>Numeral. Contains a numeral, including any delimiters (typically dots, such as “.xij.”.</td>
-<td rowSpan="3">[ch. 5.7](HB3_ch5.xml#sec5.7), [11.6.3](HB3_ch11.xml#sec11.6.3). </td>
+<td rowSpan="3">[ch. 5.7](/handbook/v3/HB3_ch5#sec5.7), [11.6.3](/handbook/v3/HB3_ch11#sec11.6.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1418,7 +1418,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<objectDesc>{:xml}`</td>
 <td></td>
 <td>Object description. This is the first element within `<physDesc>{:xml}` and it relates specifically to the text-bearing object and contains two further sub-elements, `<supportDesc>{:xml}` and `<layoutDesc>{:xml}`.</td>
-<td rowSpan="2">[ch. 14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td rowSpan="2">[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@form{:sh}`</td>
@@ -1430,13 +1430,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<objectName>{:xml}`</td>
 <td></td>
 <td>Name of an object. Contains a proper noun or noun phrase used to refer to an object. If a text contains many object names it might be useful to use this element for a more clear-cut distinction between names of artefacts and other types of names. </td>
-<td>[ch. 12.4.2](HB3_ch12.xml#sec12.4.2). </td>
+<td>[ch. 12.4.2](/handbook/v3/HB3_ch12#sec12.4.2). </td>
 </tr>
 <tr>
 <td>`<orig>{:xml}`</td>
 <td></td>
 <td>Original form. Contains a passage in the manuscript in its original form. Any correction by the scribe is usually encoded in an accompanying `<reg>{:xml}` element.</td>
-<td rowSpan="2">[ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2). </td>
+<td rowSpan="2">[ch. 9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@rend{:sh}`</td>
@@ -1448,7 +1448,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<orgName>{:xml}`</td>
 <td></td>
 <td>Organisation name, usually given in its English form.</td>
-<td rowSpan="2">[ch. 14.2.1](HB3_ch14.xml#sec14.2.1).</td>
+<td rowSpan="2">[ch. 14.2.1](/handbook/v3/HB3_ch14#sec14.2.1).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1460,7 +1460,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<origDate>{:xml}`</td>
 <td></td>
 <td>Date of origin. Contains any form of date, used to identify the date of origin for a manuscript. The usage of this element with various suitable attributes is not required, but highly recommended as it facilitates searches.</td>
-<td rowSpan="3">[ch. 14.3.4](HB3_ch14.xml#sec14.3.4).</td>
+<td rowSpan="3">[ch. 14.3.4](/handbook/v3/HB3_ch14#sec14.3.4).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@notAfter{:sh}`</td>
@@ -1478,13 +1478,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<origin>{:xml}`</td>
 <td></td>
 <td>Contains information on when, where and potentially for whom the manuscript was written. Sub-element of `<history>{:xml}`.</td>
-<td>[ch. 14.3.4](HB3_ch14.xml#sec14.3.4).</td>
+<td>[ch. 14.3.4](/handbook/v3/HB3_ch14#sec14.3.4).</td>
 </tr>
 <tr>
 <td>`<origPlace>{:xml}`</td>
 <td></td>
 <td>Place of origin. Contains any form of place name, used to identify the place of origin for a manuscript. This element is not required, but highly recommended as it facilitates searches.</td>
-<td>[ch. 14.3.4](HB3_ch14.xml#sec14.3.4).</td>
+<td>[ch. 14.3.4](/handbook/v3/HB3_ch14#sec14.3.4).</td>
 </tr>
 </tbody>
 </table>
@@ -1509,13 +1509,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<p>{:xml}`</td>
 <td></td>
 <td>Paragraph, marks paragraphs in prose.</td>
-<td>[ch. 2.3](HB3_ch2.xml#sec2.3), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.3.3](HB3_ch3.xml#sec3.3.3), [3.4](HB3_ch3.xml#sec3.4), [3.5](HB3_ch3.xml#sec3.5), [3.6](HB3_ch3.xml#sec3.6), [3.8](HB3_ch3.xml#sec3.8), [3.9](HB3_ch3.xml#sec3.9), [14.2.4](HB3_ch14.xml#sec14.2.4), [14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td>[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.3.3](/handbook/v3/HB3_ch3#sec3.3.3), [3.4](/handbook/v3/HB3_ch3#sec3.4), [3.5](/handbook/v3/HB3_ch3#sec3.5), [3.6](/handbook/v3/HB3_ch3#sec3.6), [3.8](/handbook/v3/HB3_ch3#sec3.8), [3.9](/handbook/v3/HB3_ch3#sec3.9), [14.2.4](/handbook/v3/HB3_ch14#sec14.2.4), [14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td>`<pc>{:xml}`</td>
 <td></td>
-<td>Punctuation character. All punctuation characters in general (dot, comma, hyphen and so on) should be encoded by this element. This obviously applies to punctuation marks in the manuscript, but the element will also be used for punctuation marks that are added on the normalised level. Note that punctuation characters such as the dot may also be used as abbreviation marks. This is discussed in [ch. 6.3.8](HB3_ch6.xml#sec6.3.6) and [ch. 5.4.2](HB3_ch5.xml#sec5.4.2). Furthermore, dots can be used as delimiters for short words, as discussed and exemplified in [ch. 5.4.3](HB3_ch5.xml#sec5.4.3), and they are frequently used for delimiting Roman numerals. We recommend that dots used as delimiters are encoded as punctuation marks with the `<pc>{:xml}` element. </td>
-<td>[ch. 1.4](HB3_ch1.xml#sec1.4), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.7](HB3_ch3.xml#sec3.7), [3.11](HB3_ch3.xml#sec3.11), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [5.4](HB3_ch5.xml#sec5.4), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.4.3](HB3_ch5.xml#sec5.4.3), [5.5](HB3_ch5.xml#sec5.5), [5.5.2](HB3_ch5.xml#sec5.5.2), [5.6](HB3_ch5.xml#sec5.6), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [16.1](HB3_ch16.xml#sec16.1). </td>
+<td>Punctuation character. All punctuation characters in general (dot, comma, hyphen and so on) should be encoded by this element. This obviously applies to punctuation marks in the manuscript, but the element will also be used for punctuation marks that are added on the normalised level. Note that punctuation characters such as the dot may also be used as abbreviation marks. This is discussed in [ch. 6.3.8](/handbook/v3/HB3_ch6#sec6.3.6) and [ch. 5.4.2](/handbook/v3/HB3_ch5#sec5.4.2). Furthermore, dots can be used as delimiters for short words, as discussed and exemplified in [ch. 5.4.3](/handbook/v3/HB3_ch5#sec5.4.3), and they are frequently used for delimiting Roman numerals. We recommend that dots used as delimiters are encoded as punctuation marks with the `<pc>{:xml}` element. </td>
+<td>[ch. 1.4](/handbook/v3/HB3_ch1#sec1.4), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.7](/handbook/v3/HB3_ch3#sec3.7), [3.11](/handbook/v3/HB3_ch3#sec3.11), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.4](/handbook/v3/HB3_ch4#sec4.6.4), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.1](/handbook/v3/HB3_ch5#sec5.4.1), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.4.3](/handbook/v3/HB3_ch5#sec5.4.3), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.2](/handbook/v3/HB3_ch5#sec5.5.2), [5.6](/handbook/v3/HB3_ch5#sec5.6), [5.7](/handbook/v3/HB3_ch5#sec5.7), [5.8](/handbook/v3/HB3_ch5#sec5.8), [16.1](/handbook/v3/HB3_ch16#sec16.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@resp{:sh}`</td>
@@ -1527,7 +1527,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<pb/>{:xml}`</td>
 <td></td>
 <td>Page beginning. An empty element which marks the beginning of a new page in a paginated document. It is also used in foliated documents (having numbers like `"1r"{:js}`, `"1v"{:js}`, `"2r"{:js}`, `"2v"{:js}`, and so on.)</td>
-<td rowSpan="3">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.12](HB3_ch3.xml#sec3.12), [3.12.1](HB3_ch3.xml#sec3.12.1), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.6.3](HB3_ch4.xml#sec4.6.3), [9.2.1.1](HB3_ch9.xml#sec9.2.1.1), [16.1](HB3_ch16.xml#sec16.1). </td>
+<td rowSpan="3">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.12](/handbook/v3/HB3_ch3#sec3.12), [3.12.1](/handbook/v3/HB3_ch3#sec3.12.1), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1), [16.1](/handbook/v3/HB3_ch16#sec16.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ed{:sh}`</td>
@@ -1545,7 +1545,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<persName>{:xml}`</td>
 <td></td>
 <td>Personal name. Contains a proper noun or a proper noun phrase referring to a person, consisting of one or more words.</td>
-<td rowSpan="5">[ch. 12.1](HB3_ch12.xml#sec12.1), [12.2](HB3_ch12.xml#sec12.2), [12.2.1](HB3_ch12.xml#sec12.2.1), [12.4.1](HB3_ch12.xml#sec12.4.1), [14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.6](HB3_ch14.xml#sec14.3.6). </td>
+<td rowSpan="5">[ch. 12.1](/handbook/v3/HB3_ch12#sec12.1), [12.2](/handbook/v3/HB3_ch12#sec12.2), [12.2.1](/handbook/v3/HB3_ch12#sec12.2.1), [12.4.1](/handbook/v3/HB3_ch12#sec12.4.1), [14.2](/handbook/v3/HB3_ch14#sec14.2), [14.2.1](/handbook/v3/HB3_ch14#sec14.2.1), [14.3.6](/handbook/v3/HB3_ch14#sec14.3.6). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ref{:sh}`</td>
@@ -1575,7 +1575,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<person>{:xml}`</td>
 <td></td>
 <td>Provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source.</td>
-<td rowSpan="4">[ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5). </td>
+<td rowSpan="4">[ch. 14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [14.5](/handbook/v3/HB3_ch14#sec14.5). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@role{:sh}`</td>
@@ -1599,13 +1599,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<physDesc>{:xml}`</td>
 <td></td>
 <td>Physical description. Contains a full physical description of a manuscript, e.g. material, size, format, script, decoration, binding, marginalia, and so on. Sub-element of `<msDesc>{:xml}`.</td>
-<td>[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.3](HB3_ch14.xml#sec14.3.3). </td>
+<td>[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.3](/handbook/v3/HB3_ch14#sec14.3.3). </td>
 </tr>
 <tr>
 <td>`<placeName>{:xml}`</td>
 <td></td>
 <td>A name of a specific location. This element can contain different sub-elements such as `<settlement>{:xml}`, `<region>{:xml}` and `<country>{:xml}`.</td>
-<td rowSpan="2">[ch. 12.1](HB3_ch12.xml#sec12.1), [12.3](HB3_ch12.xml#sec12.3), [12.4.1](HB3_ch12.xml#sec12.4.1). </td>
+<td rowSpan="2">[ch. 12.1](/handbook/v3/HB3_ch12#sec12.1), [12.3](/handbook/v3/HB3_ch12#sec12.3), [12.4.1](/handbook/v3/HB3_ch12#sec12.4.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ref{:sh}`</td>
@@ -1617,31 +1617,31 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<profileDesc>{:xml}`</td>
 <td></td>
 <td>Profile description. Provides a detailed description of non-bibliographic aspects of a text, such as the languages and sublanguages used, the situation in which it was produced, the participants and their setting.</td>
-<td>[ch. 11.7](HB3_ch11.xml#sec11.7), [14.1](HB3_ch14.xml#sec14.1), [14.3.6](HB3_ch14.xml#sec14.3.6), [14.5](HB3_ch14.xml#sec14.5). </td>
+<td>[ch. 11.7](/handbook/v3/HB3_ch11#sec11.7), [14.1](/handbook/v3/HB3_ch14#sec14.1), [14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [14.5](/handbook/v3/HB3_ch14#sec14.5). </td>
 </tr>
 <tr>
 <td>`<projectDesc>{:xml}`</td>
 <td></td>
 <td> Project description. Describes in detail the aim or purpose for which an electronic file was encoded, together with any other relevant information concerning the process by which it was assembled or collected. Sub-element of `<encodingDesc>{:xml}`. </td>
-<td>[ch. 14.4](HB3_ch14.xml#sec14.4).</td>
+<td>[ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).</td>
 </tr>
 <tr>
 <td>`<provenance>{:xml}`</td>
 <td></td>
 <td> Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, e.g. any evidence of ownership and use.</td>
-<td>[ch. 14.3.4](HB3_ch14.xml#sec14.3.4).</td>
+<td>[ch. 14.3.4](/handbook/v3/HB3_ch14#sec14.3.4).</td>
 </tr>
 <tr>
 <td>`<publicationStmt>{:xml}`</td>
 <td></td>
 <td>Publication statement. Groups information concerning the publication or distribution of an electronic or other text.</td>
-<td>[ch. 14.2.4](HB3_ch14.xml#sec14.2.4).</td>
+<td>[ch. 14.2.4](/handbook/v3/HB3_ch14#sec14.2.4).</td>
 </tr>
 <tr>
 <td>`<publisher>{:xml}`</td>
 <td></td>
 <td>Provides the name of the organisation responsible for the publication or distribution of a bibliographic item, e.g. the Medieval Nordic Text Archive (Menota).</td>
-<td>[ch. 14.2.4](HB3_ch14.xml#sec14.2.4).</td>
+<td>[ch. 14.2.4](/handbook/v3/HB3_ch14#sec14.2.4).</td>
 </tr>
 </tbody>
 </table>
@@ -1666,7 +1666,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<q>{:xml}`</td>
 <td></td>
 <td>Direct speech. Contains a part of a dialogue. The element is placed outside the word(s) in the dialogue, irrespective of whether the encoding is on one or more levels. </td>
-<td rowSpan="3">[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.8](HB3_ch3.xml#sec3.8), [3.11](HB3_ch3.xml#sec3.11), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.6](HB3_ch5.xml#sec5.6), [7.2.4](HB3_ch7.xml#sec7.2.4), [16.4](HB3_ch16.xml#sec16.4)</td>
+<td rowSpan="3">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.8](/handbook/v3/HB3_ch3#sec3.8), [3.11](/handbook/v3/HB3_ch3#sec3.11), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.6](/handbook/v3/HB3_ch5#sec5.6), [7.2.4](/handbook/v3/HB3_ch7#sec7.2.4), [16.4](/handbook/v3/HB3_ch16#sec16.4)</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1684,7 +1684,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<quote>{:xml}`</td>
 <td></td>
 <td>Quotation. Contains a quotation from another source.</td>
-<td>[ch. 3.1.1](HB3_ch3.xml#sec3.1.1), [3.11](HB3_ch3.xml#sec3.11), [5.6](HB3_ch5.xml#sec5.6). </td>
+<td>[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.11](/handbook/v3/HB3_ch3#sec3.11), [5.6](/handbook/v3/HB3_ch5#sec5.6). </td>
 </tr>
 </tbody>
 </table>
@@ -1709,7 +1709,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<ref>{:xml}`</td>
 <td></td>
 <td>Reference. Defines a reference to another location, possibly modified by additional text or comment.</td>
-<td rowSpan="2">[ch. 14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1).</td>
+<td rowSpan="2">[ch. 14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [15.1](/handbook/v3/HB3_ch15#sec15.1).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@target{:sh}`</td>
@@ -1721,7 +1721,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<reg>{:xml}`</td>
 <td></td>
 <td>Regularised form. Contains a passage in the manuscript corrected by the scribe (or a later scribe). It is usually accompanied by an `<orig>{:xml}` element in which the uncorrected form in the manuscript is rendered. </td>
-<td rowSpan="3">[ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.3.4](HB3_ch9.xml#sec9.3.4). </td>
+<td rowSpan="3">[ch. 9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.3.4](/handbook/v3/HB3_ch9#sec9.3.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1739,7 +1739,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<region>{:xml}`</td>
 <td></td>
 <td> Contains the name of an administrative unit such as a state, province, or county, larger than a settlement, but smaller than a country. </td>
-<td rowSpan="3">[ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td rowSpan="3">[ch. 12.3](/handbook/v3/HB3_ch12#sec12.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ref{:sh}`</td>
@@ -1757,31 +1757,31 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<repository>{:xml}`</td>
 <td></td>
 <td> Contains the name of a repository within which manuscripts are stored, possibly forming part of an institution. Sub-element of `<msIdentifier>{:xml}`. </td>
-<td>[ch. 14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td>[ch. 14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td>`<resp>{:xml}`</td>
 <td></td>
 <td>Responsibility. Contains a phrase describing the type of responsibility, e.g. transcription, conversion, proof-reading.</td>
-<td>[ch. 14.2.1](HB3_ch14.xml#sec14.2.1).</td>
+<td>[ch. 14.2.1](/handbook/v3/HB3_ch14#sec14.2.1).</td>
 </tr>
 <tr>
 <td>`<respStmt>{:xml}`</td>
 <td></td>
 <td>Statement of responsibility. Particularly important when listing the contributors to an edition.</td>
-<td>[ch. 14.2.1](HB3_ch14.xml#sec14.2.1).</td>
+<td>[ch. 14.2.1](/handbook/v3/HB3_ch14#sec14.2.1).</td>
 </tr>
 <tr>
 <td>`<revisionDesc>{:xml}`</td>
 <td></td>
 <td>Revision description. Summarises the revision history of the text.</td>
-<td>[ch. 14.1](HB3_ch14.xml#sec14.1). </td>
+<td>[ch. 14.1](/handbook/v3/HB3_ch14#sec14.1). </td>
 </tr>
 <tr>
 <td>`<roleName>{:xml}`</td>
 <td></td>
 <td>Contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank.</td>
-<td rowSpan="2">[ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.3](HB3_ch12.xml#sec12.2.3).</td>
+<td rowSpan="2">[ch. 12.2](/handbook/v3/HB3_ch12#sec12.2), [12.2.3](/handbook/v3/HB3_ch12#sec12.2.3).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1793,7 +1793,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<rubric>{:xml}`</td>
 <td></td>
 <td>Contains the text of any rubric or heading in (or attached to) a particular manuscript item. Sub-element of `<msItem>{:xml}`. </td>
-<td>[ch. 14.3.2](HB3_ch14.xml#sec14.3.2).</td>
+<td>[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2).</td>
 </tr>
 </tbody>
 </table>
@@ -1818,7 +1818,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<s>{:xml}`</td>
 <td></td>
 <td>Sentence. Contains a sentence-like division of a text.</td>
-<td rowSpan="3">[ch. 3.5](HB3_ch3.xml#sec3.5), [ch. 3.5.2](HB3_ch3.xml#sec3.5.2)[3.11](HB3_ch3.xml#sec3.11), [16.1](HB3_ch16.xml#sec16.1), [16.4](HB3_ch16.xml#sec16.4). </td>
+<td rowSpan="3">[ch. 3.5](/handbook/v3/HB3_ch3#sec3.5), [ch. 3.5.2](/handbook/v3/HB3_ch3#sec3.5.2)[3.11](/handbook/v3/HB3_ch3#sec3.11), [16.1](/handbook/v3/HB3_ch16#sec16.1), [16.4](/handbook/v3/HB3_ch16#sec16.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@xml:id{:sh}`</td>
@@ -1829,26 +1829,26 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@n{:sh}`</td>
 <td>Optional</td>
-<td>Specifies another sentence division with numerical or alphanumerical values, e.g. `"m1"{:js}`, `"m2"{:js}`, `"m3"{:js}`, and so on, to be used in conjunction with the `<milestone/>{:xml}` element, as recommended in [ch. 3.5.2](HB3_ch3.xml#sec3.5.2). </td>
+<td>Specifies another sentence division with numerical or alphanumerical values, e.g. `"m1"{:js}`, `"m2"{:js}`, `"m3"{:js}`, and so on, to be used in conjunction with the `<milestone/>{:xml}` element, as recommended in [ch. 3.5.2](/handbook/v3/HB3_ch3#sec3.5.2). </td>
 <td></td>
 </tr>
 <tr>
 <td>`<seal>{:xml}`</td>
 <td></td>
 <td>Contains a description of a seal. Sub-element of `<sealDesc>{:xml}`.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<sealDesc>{:xml}`</td>
 <td></td>
 <td> Seal description. Contains information about the seal(s) attached to a document or charter, either as paragraphs, `<p>{:xml}`, summarising the overall nature of the seals, or one or more `<seal>{:xml}` elements.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<seg>{:xml}`</td>
 <td></td>
 <td>Segment. Groups one or more strings of text, e.g. words.</td>
-<td rowSpan="2">[ch. 4.3](HB3_ch4.xml#sec4.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [6.5.6](HB3_ch6.xml#sec6.5.6), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11). </td>
+<td rowSpan="2">[ch. 4.3](/handbook/v3/HB3_ch4#sec4.3), [5.3.1](/handbook/v3/HB3_ch5#sec5.3.1), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [6.5.6](/handbook/v3/HB3_ch6#sec6.5.6), [11.2](/handbook/v3/HB3_ch11#sec11.2), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -1860,7 +1860,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<settlement>{:xml}`</td>
 <td></td>
 <td> Contains the smallest component of a place name expressed as a hierarchy of geo-political or administrative units, e.g. farms, villages or cities. Sub-element of `<msIdentifier>{:xml}`.</td>
-<td rowSpan="2">[ch. 12.3](HB3_ch12.xml#sec12.3), [14.3.1](HB3_ch14.xml#sec14.3.1). </td>
+<td rowSpan="2">[ch. 12.3](/handbook/v3/HB3_ch12#sec12.3), [14.3.1](/handbook/v3/HB3_ch14#sec14.3.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@ref{:sh}`</td>
@@ -1872,19 +1872,19 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<sic>{:xml}`</td>
 <td></td>
 <td>Contains a passage in the manuscript reproduced as is although apparently incorrect or inaccurate, latin for “thus” or “so”. Usually accompanied by the `<corr>{:xml}` element, in which the editor offers a correction of the text.</td>
-<td>[ch. 9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.2.2](HB3_ch9.xml#sec9.3.2.2), [9.3.3](HB3_ch9.xml#sec9.3.3), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [9.4.1](HB3_ch9.xml#sec9.4.1), [16.2](HB3_ch16.xml#sec16.2). </td>
+<td>[ch. 9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.3.2](/handbook/v3/HB3_ch9#sec9.3.2), [9.3.2.2](/handbook/v3/HB3_ch9#sec9.3.2.2), [9.3.3](/handbook/v3/HB3_ch9#sec9.3.3), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [9.4.1](/handbook/v3/HB3_ch9#sec9.4.1), [16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
 <td>`<sourceDesc>{:xml}`</td>
 <td></td>
 <td> Source description. Mandatory part of the header and describes the source material. Sub-element of `<fileDesc>{:xml}`.</td>
-<td>[ch. 14.2](HB3_ch14.xml#sec14.2), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3](HB3_ch14.xml#sec14.3). </td>
+<td>[ch. 14.2](/handbook/v3/HB3_ch14#sec14.2), [14.2.1](/handbook/v3/HB3_ch14#sec14.2.1), [14.3](/handbook/v3/HB3_ch14#sec14.3). </td>
 </tr>
 <tr>
 <td>`<space/>{:xml}`</td>
 <td></td>
 <td>Space is an empty element which . indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. </td>
-<td rowSpan="4">[ch. 7.3.1](HB3_ch7.xml#sec7.3.1), [7.3.2](HB3_ch7.xml#sec7.3.2), [8.1](HB3_ch8.xml#sec8.1), [8.3.1](HB3_ch8.xml#sec8.3.1), [8.3.2](HB3_ch8.xml#sec8.3.2), [9.3.1.1](HB3_ch9.xml#sec9.3.1.1), [16.5.1](HB3_ch16.xml#sec16.5.1). </td>
+<td rowSpan="4">[ch. 7.3.1](/handbook/v3/HB3_ch7#sec7.3.1), [7.3.2](/handbook/v3/HB3_ch7#sec7.3.2), [8.1](/handbook/v3/HB3_ch8#sec8.1), [8.3.1](/handbook/v3/HB3_ch8#sec8.3.1), [8.3.2](/handbook/v3/HB3_ch8#sec8.3.2), [9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1), [16.5.1](/handbook/v3/HB3_ch16#sec16.5.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@quantity{:sh}`</td>
@@ -1908,13 +1908,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<summary>{:xml}`</td>
 <td></td>
 <td> Contains an overview of the available information concerning some aspect of an item or object. One or more `<msItem>{:xml}` elements can be prefaced by a `<summary>{:xml}` element.</td>
-<td>[ch. 14.3.2](HB3_ch14.xml#sec14.3.2). </td>
+<td>[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2). </td>
 </tr>
 <tr>
 <td>`<supplied>{:xml}`</td>
 <td></td>
 <td>Signifies text supplied by the transcriber, encoder or editor either in place of text which is missing or to clarify a reading.</td>
-<td rowSpan="6">[ch. 6.5.3](HB3_ch6.xml#sec6.5.3), [8.1](HB3_ch8.xml#sec8.1), [8.2.1](HB3_ch8.xml#sec8.2.1), [8.3.1](HB3_ch8.xml#sec8.3.1), [8.4.1](HB3_ch8.xml#sec8.4.1), [9.2.3.1](HB3_ch9.xml#sec9.2.3.1), [9.3.1](HB3_ch9.xml#sec9.3.1), [9.3.1.2](HB3_ch9.xml#sec9.3.1.2), [9.3.1.3](HB3_ch9.xml#sec9.3.1.3), [9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.4](HB3_ch9.xml#sec9.3.4), [11.2](HB3_ch11.xml#sec11.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.1](HB3_ch16.xml#sec16.2.1), [16.2.2](HB3_ch16.xml#sec16.2.2), [16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td rowSpan="6">[ch. 6.5.3](/handbook/v3/HB3_ch6#sec6.5.3), [8.1](/handbook/v3/HB3_ch8#sec8.1), [8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), [8.3.1](/handbook/v3/HB3_ch8#sec8.3.1), [8.4.1](/handbook/v3/HB3_ch8#sec8.4.1), [9.2.3.1](/handbook/v3/HB3_ch9#sec9.2.3.1), [9.3.1](/handbook/v3/HB3_ch9#sec9.3.1), [9.3.1.2](/handbook/v3/HB3_ch9#sec9.3.1.2), [9.3.1.3](/handbook/v3/HB3_ch9#sec9.3.1.3), [9.3.2](/handbook/v3/HB3_ch9#sec9.3.2), [9.3.4](/handbook/v3/HB3_ch9#sec9.3.4), [11.2](/handbook/v3/HB3_ch11#sec11.2), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.2.1](/handbook/v3/HB3_ch16#sec16.2.1), [16.2.2](/handbook/v3/HB3_ch16#sec16.2.2), [16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@reason{:sh}`</td>
@@ -1931,7 +1931,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@rendition{:sh}`</td>
 <td>Optional</td>
-<td>If a piece of supplied text has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).</td>
+<td>If a piece of supplied text has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
 <td></td>
 </tr>
 <tr>
@@ -1950,25 +1950,25 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<support>{:xml}`</td>
 <td></td>
 <td> Contains a description of the materials, whether the text is written on parchment, paper or other materials, and a description thereof.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<supportDesc>{:xml}`</td>
 <td></td>
 <td> Support description. Contains various elements relating to the physical object, or carrier, on which the text is inscribed. Sub-element of `<objectDesc>{:xml}`.</td>
-<td>[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td>[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td>`<surname>{:xml}`</td>
 <td></td>
 <td> Contains a family (inherited) name of a person, excluding patronyms and metronyms.</td>
-<td>[ch. 12.2](HB3_ch12.xml#sec12.2), [12.2.2](HB3_ch12.xml#sec12.2.2), [14.2](HB3_ch14.xml#sec14.2). </td>
+<td>[ch. 12.2](/handbook/v3/HB3_ch12#sec12.2), [12.2.2](/handbook/v3/HB3_ch12#sec12.2.2), [14.2](/handbook/v3/HB3_ch14#sec14.2). </td>
 </tr>
 <tr>
 <td>`<surplus>{:xml}`</td>
 <td></td>
 <td>Contains text which the editor believes should be recognised as superfluous.</td>
-<td rowSpan="3">[ch. 9.3.2](HB3_ch9.xml#sec9.3.2), [9.3.2.1](HB3_ch9.xml#sec9.3.2.1), [9.3.2.2](HB3_ch9.xml#sec9.3.2.2), [16.2](HB3_ch16.xml#sec16.2), [16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td rowSpan="3">[ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.2), [9.3.2.1](/handbook/v3/HB3_ch9#sec9.3.2.1), [9.3.2.2](/handbook/v3/HB3_ch9#sec9.3.2.2), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@reason{:sh}`</td>
@@ -1979,14 +1979,14 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <tr>
 <td><span className="p-3"/>`@rendition{:sh}`</td>
 <td>Optional</td>
-<td>If a superfluous passage has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](HB3_ch16.xml#sec16.5.2).</td>
+<td>If a superfluous passage has a structural overlap with two or more `<w>{:xml}` elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
 <td></td>
 </tr>
 <tr>
 <td>`<surrogates>{:xml}`</td>
 <td></td>
 <td> Contains information about any representations of the manuscript being described which may exist in the holding institution or elsewhere, e.g. photographic reproductions. Sub-element of `<additional>{:xml}`.</td>
-<td>[ch. 14.3.5](HB3_ch14.xml#sec14.3.5). </td>
+<td>[ch. 14.3.5](/handbook/v3/HB3_ch14#sec14.3.5). </td>
 </tr>
 </tbody>
 </table>
@@ -2011,19 +2011,19 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<TEI>{:xml}`</td>
 <td></td>
 <td>A TEI document is always at its highest level enclosed by this start element. The `<TEI>{:xml}` element must contain two sub-elements, `<teiHeader>{:xml}` and `<text>{:xml}`.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [3.2](HB3_ch3.xml#sec3.2).</td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [3.2](/handbook/v3/HB3_ch3#sec3.2).</td>
 </tr>
 <tr>
 <td>`<teiHeader>{:xml}`</td>
 <td></td>
 <td>The TEI-based header. Contains structured meta-data, i.e. information about the electronic document provided.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [3.2](HB3_ch3.xml#sec3.2), [3.4](HB3_ch3.xml#sec3.4), [7.1](HB3_ch7.xml#sec7.1). </td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [3.2](/handbook/v3/HB3_ch3#sec3.2), [3.4](/handbook/v3/HB3_ch3#sec3.4), [7.1](/handbook/v3/HB3_ch7#sec7.1). </td>
 </tr>
 <tr>
 <td>`<term>{:xml}`</td>
 <td></td>
 <td>Contains a single-word, multi-word, or symbolic designation which is regarded as a technical term.</td>
-<td rowSpan="2">[ch. 14.3.3](HB3_ch14.xml#sec14.3.3).</td>
+<td rowSpan="2">[ch. 14.3.3](/handbook/v3/HB3_ch14#sec14.3.3).</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@type{:sh}`</td>
@@ -2035,7 +2035,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<text>{:xml}`</td>
 <td></td>
 <td>Contains a single text of any kind.</td>
-<td rowSpan="3">[ch. 2.3](HB3_ch2.xml#sec2.3), [2.7](HB3_ch2.xml#sec2.7), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.2](HB3_ch3.xml#sec3.2), [3.2.1](HB3_ch3.xml#sec3.2.1), [11.7](HB3_ch11.xml#sec11.7), [15.1](HB3_ch15.xml#sec15.1). </td>
+<td rowSpan="3">[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [2.7](/handbook/v3/HB3_ch2#sec2.7), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.2](/handbook/v3/HB3_ch3#sec3.2), [3.2.1](/handbook/v3/HB3_ch3#sec3.2.1), [11.7](/handbook/v3/HB3_ch11#sec11.7), [15.1](/handbook/v3/HB3_ch15#sec15.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@xml:id{:sh}`</td>
@@ -2053,13 +2053,13 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<textLang>{:xml}`</td>
 <td></td>
 <td> Text language. Describes the languages and writing systems identified within the bibliographic work being described, rather than its description. Sub-element of `<msItem>{:xml}`.</td>
-<td>[ch. 14.3.2](HB3_ch14.xml#sec14.3.2).</td>
+<td>[ch. 14.3.2](/handbook/v3/HB3_ch14#sec14.3.2).</td>
 </tr>
 <tr>
 <td>`<title>{:xml}`</td>
 <td></td>
 <td>Contains a title for any kind of work. Sub-element of `<msItem>{:xml}`. </td>
-<td rowSpan="2">[ch. 2.3](HB3_ch2.xml#sec2.3), [2.9](HB3_ch2.xml#sec2.9), [14.2.1](HB3_ch14.xml#sec14.2.1), [14.3.2](HB3_ch14.xml#sec14.3.2)</td>
+<td rowSpan="2">[ch. 2.3](/handbook/v3/HB3_ch2#sec2.3), [2.9](/handbook/v3/HB3_ch2#sec2.9), [14.2.1](/handbook/v3/HB3_ch14#sec14.2.1), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2)</td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@level{:sh}`</td>
@@ -2071,7 +2071,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<titleStmt>{:xml}`</td>
 <td></td>
 <td>Title statement. Contains information on the title, editor and other people who have been responsible for the edition.</td>
-<td>[ch. 14.2.1](HB3_ch14.xml#sec14.2.1). </td>
+<td>[ch. 14.2.1](/handbook/v3/HB3_ch14#sec14.2.1). </td>
 </tr>
 </tbody>
 </table>
@@ -2096,7 +2096,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<unclear>{:xml}`</td>
 <td></td>
 <td>Contains a character, word, phrase or passage which cannot be transcribed with certainty.</td>
-<td rowSpan="5">[ch. 8.1](HB3_ch8.xml#sec8.1), [8.4](HB3_ch8.xml#sec8.4), [8.4.1](HB3_ch8.xml#sec8.4.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.2.1](HB3_ch9.xml#sec9.2.2.1), [16.2](HB3_ch16.xml#sec16.2), [16.2.1](HB3_ch16.xml#sec16.2.1), [16.5.1](HB3_ch16.xml#sec16.5.1). </td>
+<td rowSpan="5">[ch. 8.1](/handbook/v3/HB3_ch8#sec8.1), [8.4](/handbook/v3/HB3_ch8#sec8.4), [8.4.1](/handbook/v3/HB3_ch8#sec8.4.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.2.1](/handbook/v3/HB3_ch9#sec9.2.2.1), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.2.1](/handbook/v3/HB3_ch16#sec16.2.1), [16.5.1](/handbook/v3/HB3_ch16#sec16.5.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@agent{:sh}`</td>
@@ -2145,7 +2145,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 <td>`<w>{:xml}`</td>
 <td></td>
 <td>Word. Contains a lexical word, not necessarily a graphical word.</td>
-<td rowSpan="5">[ch. 1.4](HB3_ch1.xml#sec1.4), [2.8.2](HB3_ch2.xml#sec2.8.2), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.6](HB3_ch3.xml#sec3.6), [3.7](HB3_ch3.xml#sec3.7), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.5](HB3_ch4.xml#sec4.5), [4.6.3](HB3_ch4.xml#sec4.6.3), [4.6.5](HB3_ch4.xml#sec4.6.5), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.3.3](HB3_ch5.xml#sec5.3.3), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [8.4.1](HB3_ch8.xml#sec8.4.1), [11.1](HB3_ch11.xml#sec11.1), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [12.1](HB3_ch12.xml#sec12.1), [14.4](HB3_ch14.xml#sec14.4), [15.1](HB3_ch15.xml#sec15.1), [15.4.2.1](HB3_ch15.xml#sec15.4.2.1), [16.1](HB3_ch16.xml#sec16.1), [16.2](HB3_ch16.xml#sec16.2), [16.3](HB3_ch16.xml#sec16.3), [16.5](HB3_ch16.xml#sec16.5), [16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td rowSpan="5">[ch. 1.4](/handbook/v3/HB3_ch1#sec1.4), [2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [3.7](/handbook/v3/HB3_ch3#sec3.7), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [5.1](/handbook/v3/HB3_ch5#sec5.1), [5.2.3](/handbook/v3/HB3_ch5#sec5.2.3), [5.3.1](/handbook/v3/HB3_ch5#sec5.3.1), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.3.3](/handbook/v3/HB3_ch5#sec5.3.3), [5.4.1](/handbook/v3/HB3_ch5#sec5.4.1), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.7](/handbook/v3/HB3_ch5#sec5.7), [5.8](/handbook/v3/HB3_ch5#sec5.8), [8.4.1](/handbook/v3/HB3_ch8#sec8.4.1), [11.1](/handbook/v3/HB3_ch11#sec11.1), [11.2](/handbook/v3/HB3_ch11#sec11.2), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [12.1](/handbook/v3/HB3_ch12#sec12.1), [14.4](/handbook/v3/HB3_ch14#sec14.4), [15.1](/handbook/v3/HB3_ch15#sec15.1), [15.4.2.1](/handbook/v3/HB3_ch15#sec15.4.2.1), [16.1](/handbook/v3/HB3_ch16#sec16.1), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.3](/handbook/v3/HB3_ch16#sec16.3), [16.5](/handbook/v3/HB3_ch16#sec16.5), [16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@lemma{:sh}`</td>
@@ -2179,7 +2179,7 @@ HTML elements such as `<a>{:xml}`, `<br>{:xml}` and `<i>{:xml}` are discussed in
 
 ## 3. Menota-specific elements and attributes [#sec3]
 
-Many of the elements or attributes in this section have been defined specifically for Menota, and are for this reason prefixed with “me:”. Cf. the list in [ch. 2.8](HB3_ch2.xml#sec2.8).
+Many of the elements or attributes in this section have been defined specifically for Menota, and are for this reason prefixed with “me:”. Cf. the list in [ch. 2.8](/handbook/v3/HB3_ch2#sec2.8).
 
 All elements in this list have been included in section 2 above, but are here collected so as to show the extent of the Menota-specific elements and attributes; in some cases there are new elements compared to the TEI repertoire, in other cases there are new attributes to TEI conformant elements.
 
@@ -2198,7 +2198,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<am>{:xml}`</td>
 <td></td>
 <td>Abbreviation marker. Contains the abbreviation marker used in the manuscript, making it clear that the marker is an abbreviation sign, not an ordinary character.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [5.2.2](HB3_ch5.xml#sec5.2.2), [5.4.2](HB3_ch5.xml#sec5.4.2), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8), [6.5.2](HB3_ch6.xml#sec6.5.2), [6.5.8](HB3_ch6.xml#sec6.5.8). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [4.5](/handbook/v3/HB3_ch4#sec4.5), [5.2.1](/handbook/v3/HB3_ch5#sec5.2.1), [5.2.2](/handbook/v3/HB3_ch5#sec5.2.2), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [6.1](/handbook/v3/HB3_ch6#sec6.1), [6.3.8](/handbook/v3/HB3_ch6#sec6.3.8), [6.5.2](/handbook/v3/HB3_ch6#sec6.5.2), [6.5.8](/handbook/v3/HB3_ch6#sec6.5.8). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:type{:sh}`</td>
@@ -2210,7 +2210,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<bibl>{:xml}`</td>
 <td></td>
 <td>Bibliographic citation. Used for each bibliographic reference. It can be specified with an `@xml:id{:sh}` attribute (exemplified in [ch. 14](/handbook/v3/HB3_ch14)) or a `@me:ref{:sh}` attribute (exemplified in [ch. 15](/handbook/v3/HB3_ch15)). </td>
-<td rowSpan="3">[ch. 14.3](HB3_ch14.xml#sec14.3), [14.3.2](HB3_ch14.xml#sec14.3.2), [14.3.5](HB3_ch14.xml#sec14.3.5), [14.3.6](HB3_ch14.xml#sec14.3.6), [15.1](HB3_ch15.xml#sec15.1), [15.4.1](HB3_ch15.xml#sec15.4.1). </td>
+<td rowSpan="3">[ch. 14.3](/handbook/v3/HB3_ch14#sec14.3), [14.3.2](/handbook/v3/HB3_ch14#sec14.3.2), [14.3.5](/handbook/v3/HB3_ch14#sec14.3.5), [14.3.6](/handbook/v3/HB3_ch14#sec14.3.6), [15.1](/handbook/v3/HB3_ch15#sec15.1), [15.4.1](/handbook/v3/HB3_ch15#sec15.4.1). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:ref{:sh}`</td>
@@ -2228,7 +2228,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<ex>{:xml}`</td>
 <td></td>
 <td>Editorial expansion. Contains an expansion inserted by the editor, replacing the abbreviation marker.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [4.3](HB3_ch4.xml#sec4.3), [4.5](HB3_ch4.xml#sec4.5), [5.2.1](HB3_ch5.xml#sec5.2.1), [6.1](HB3_ch6.xml#sec6.1), [6.3.8](HB3_ch6.xml#sec6.3.8). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [4.3](/handbook/v3/HB3_ch4#sec4.3), [4.5](/handbook/v3/HB3_ch4#sec4.5), [5.2.1](/handbook/v3/HB3_ch5#sec5.2.1), [6.1](/handbook/v3/HB3_ch6#sec6.1), [6.3.8](/handbook/v3/HB3_ch6#sec6.3.8). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:type{:sh}`</td>
@@ -2240,7 +2240,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<interpretation>{:xml}`</td>
 <td></td>
 <td>Specifies the amount of lexical and grammatical information in the encoded text. Sub-element of `<editorialDecl>{:xml}`.</td>
-<td rowSpan="3">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td rowSpan="3">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:lemmatized{:sh}`</td>
@@ -2258,43 +2258,43 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<me:all>{:xml}`</td>
 <td></td>
 <td>Indicates the alliteration of the line.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [13.2](/handbook/v3/HB3_ch13#sec13.2), [13.3](/handbook/v3/HB3_ch13#sec13.3). </td>
 </tr>
 <tr>
 <td>`<me:ass>{:xml}`</td>
 <td></td>
 <td>Indicates the internal rhymes of the line, where relevant.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [13.2](HB3_ch13.xml#sec13.2), [13.3](HB3_ch13.xml#sec13.3). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [13.2](/handbook/v3/HB3_ch13#sec13.2), [13.3](/handbook/v3/HB3_ch13#sec13.3). </td>
 </tr>
 <tr>
 <td>`<me:facs>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the facsimile level, a letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1). </td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [13.1](/handbook/v3/HB3_ch13#sec13.1). </td>
 </tr>
 <tr>
 <td>`<me:dipl>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the diplomatic level, a letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [13.1](HB3_ch13.xml#sec13.1)</td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [13.1](/handbook/v3/HB3_ch13#sec13.1)</td>
 </tr>
 <tr>
 <td>`<me:norm>{:xml}`</td>
 <td></td>
 <td>Contains a reading on the normalised level, a transcription in normalised orthography.</td>
-<td>[ch. 2.7](HB3_ch2.xml#sec2.7), [2.8](HB3_ch2.xml#sec2.8), [2.8.1](HB3_ch2.xml#sec2.8.1), [3.6](HB3_ch3.xml#sec3.6), [4.1](HB3_ch4.xml#sec4.1), [4.5](HB3_ch4.xml#sec4.5), [4.6.4](HB3_ch4.xml#sec4.6.4), [4.6.5](HB3_ch4.xml#sec4.6.5), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.4](HB3_ch5.xml#sec5.4), [5.4.2](HB3_ch5.xml#sec5.4.2), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.6](HB3_ch5.xml#sec5.6), [6.1](HB3_ch6.xml#sec6.1), [8.4.2](HB3_ch8.xml#sec8.4.2), [9.2.3.2](HB3_ch9.xml#sec9.2.3.2), [9.2.4.1](HB3_ch9.xml#sec9.2.4.1), [9.3.3.1](HB3_ch9.xml#sec9.3.3.1), [10.1](HB3_ch10.xml#sec10.1), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [13.1](HB3_ch13.xml#sec13.1). </td>
+<td>[ch. 2.7](/handbook/v3/HB3_ch2#sec2.7), [2.8](/handbook/v3/HB3_ch2#sec2.8), [2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [4.1](/handbook/v3/HB3_ch4#sec4.1), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.4](/handbook/v3/HB3_ch4#sec4.6.4), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.4](/handbook/v3/HB3_ch5#sec5.4), [5.4.2](/handbook/v3/HB3_ch5#sec5.4.2), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.6](/handbook/v3/HB3_ch5#sec5.6), [6.1](/handbook/v3/HB3_ch6#sec6.1), [8.4.2](/handbook/v3/HB3_ch8#sec8.4.2), [9.2.3.2](/handbook/v3/HB3_ch9#sec9.2.3.2), [9.2.4.1](/handbook/v3/HB3_ch9#sec9.2.4.1), [9.3.3.1](/handbook/v3/HB3_ch9#sec9.3.3.1), [10.1](/handbook/v3/HB3_ch10#sec10.1), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [13.1](/handbook/v3/HB3_ch13#sec13.1). </td>
 </tr>
 <tr>
 <td>`<me:pal>{:xml}`</td>
 <td></td>
 <td>Contains a reading on a strictly paleographic level, closer to the source than the `<me:facs>{:xml}` level.</td>
-<td>[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [4.2](HB3_ch4.xml#sec4.2), [4.6.5.2](HB3_ch4.xml#sec4.6.5.2). </td>
+<td>[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [4.2](/handbook/v3/HB3_ch4#sec4.2), [4.6.5.2](/handbook/v3/HB3_ch4#sec4.6.5.2). </td>
 </tr>
 <tr>
 <td>`<me:textSpan/>{:xml}`</td>
 <td></td>
 <td>A generic element to handle overlapping text structures.</td>
-<td rowSpan="3">[ch. 2.8.1](HB3_ch2.xml#sec2.8.1), [2.8.2](HB3_ch2.xml#sec2.8.2), [16.2](HB3_ch16.xml#sec16.2), [16.2.2](HB3_ch16.xml#sec16.2.2). </td>
+<td rowSpan="3">[ch. 2.8.1](/handbook/v3/HB3_ch2#sec2.8.1), [2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.2.2](/handbook/v3/HB3_ch16#sec16.2.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:category{:sh}`</td>
@@ -2312,7 +2312,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<normalization>{:xml}`</td>
 <td></td>
 <td>Used to specify the level on which the text is encoded.</td>
-<td rowSpan="2">[ch. 2.8.2](HB3_ch2.xml#sec2.8.2), [14.4](HB3_ch14.xml#sec14.4). </td>
+<td rowSpan="2">[ch. 2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [14.4](/handbook/v3/HB3_ch14#sec14.4). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@me:level{:sh}`</td>
@@ -2324,7 +2324,7 @@ All elements in this list have been included in section 2 above, but are here co
 <td>`<w>{:xml}`</td>
 <td></td>
 <td>Word. Contains a lexical word, not necessarily a graphical word.</td>
-<td rowSpan="5">[ch. 1.4](HB3_ch1.xml#sec1.4), [2.8.2](HB3_ch2.xml#sec2.8.2), [3.1.1](HB3_ch3.xml#sec3.1.1), [3.6](HB3_ch3.xml#sec3.6), [3.7](HB3_ch3.xml#sec3.7), [3.12.2](HB3_ch3.xml#sec3.12.2), [4.5](HB3_ch4.xml#sec4.5), [4.6.3](HB3_ch4.xml#sec4.6.3), [4.6.5](HB3_ch4.xml#sec4.6.5), [5.1](HB3_ch5.xml#sec5.1), [5.2.3](HB3_ch5.xml#sec5.2.3), [5.3.1](HB3_ch5.xml#sec5.3.1), [5.3.2](HB3_ch5.xml#sec5.3.2), [5.3.3](HB3_ch5.xml#sec5.3.3), [5.4.1](HB3_ch5.xml#sec5.4.1), [5.5](HB3_ch5.xml#sec5.5), [5.5.3](HB3_ch5.xml#sec5.5.3), [5.7](HB3_ch5.xml#sec5.7), [5.8](HB3_ch5.xml#sec5.8), [8.4.1](HB3_ch8.xml#sec8.4.1), [11.1](HB3_ch11.xml#sec11.1), [11.2](HB3_ch11.xml#sec11.2), [11.3.2.11](HB3_ch11.xml#sec11.3.2.11), [12.1](HB3_ch12.xml#sec12.1), [14.4](HB3_ch14.xml#sec14.4), [15.1](HB3_ch15.xml#sec15.1), [15.4.2.1](HB3_ch15.xml#sec15.4.2.1), [16.1](HB3_ch16.xml#sec16.1), [16.2](HB3_ch16.xml#sec16.2), [16.3](HB3_ch16.xml#sec16.3), [16.5](HB3_ch16.xml#sec16.5), [16.5.2](HB3_ch16.xml#sec16.5.2). </td>
+<td rowSpan="5">[ch. 1.4](/handbook/v3/HB3_ch1#sec1.4), [2.8.2](/handbook/v3/HB3_ch2#sec2.8.2), [3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.6](/handbook/v3/HB3_ch3#sec3.6), [3.7](/handbook/v3/HB3_ch3#sec3.7), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.5](/handbook/v3/HB3_ch4#sec4.5), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [4.6.5](/handbook/v3/HB3_ch4#sec4.6.5), [5.1](/handbook/v3/HB3_ch5#sec5.1), [5.2.3](/handbook/v3/HB3_ch5#sec5.2.3), [5.3.1](/handbook/v3/HB3_ch5#sec5.3.1), [5.3.2](/handbook/v3/HB3_ch5#sec5.3.2), [5.3.3](/handbook/v3/HB3_ch5#sec5.3.3), [5.4.1](/handbook/v3/HB3_ch5#sec5.4.1), [5.5](/handbook/v3/HB3_ch5#sec5.5), [5.5.3](/handbook/v3/HB3_ch5#sec5.5.3), [5.7](/handbook/v3/HB3_ch5#sec5.7), [5.8](/handbook/v3/HB3_ch5#sec5.8), [8.4.1](/handbook/v3/HB3_ch8#sec8.4.1), [11.1](/handbook/v3/HB3_ch11#sec11.1), [11.2](/handbook/v3/HB3_ch11#sec11.2), [11.3.2.11](/handbook/v3/HB3_ch11#sec11.3.2.11), [12.1](/handbook/v3/HB3_ch12#sec12.1), [14.4](/handbook/v3/HB3_ch14#sec14.4), [15.1](/handbook/v3/HB3_ch15#sec15.1), [15.4.2.1](/handbook/v3/HB3_ch15#sec15.4.2.1), [16.1](/handbook/v3/HB3_ch16#sec16.1), [16.2](/handbook/v3/HB3_ch16#sec16.2), [16.3](/handbook/v3/HB3_ch16#sec16.3), [16.5](/handbook/v3/HB3_ch16#sec16.5), [16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><span className="p-3"/>`@lemma{:sh}`</td>

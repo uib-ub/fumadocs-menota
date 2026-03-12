@@ -3,7 +3,7 @@ title: "11: Linguistic annotation"
 author:
  - Odd Einar Haugen
 changeLog:
- - date: 2026-03-11
+ - date: 2026-03-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -100,7 +100,7 @@ The two major types of linguistic annotation are morphological (lemma, word clas
 
 Several texts in the Menota archive have been morphologically annotated, so this type of annotation is part and parcel of a full, Menotic XML file. Some of the texts in the archive have also been syntactically annotated, but this work has been done in projects outside Menota, such as PROIEL (more information in [ch. 11.8](#sec11.8) below). For this reason, the present chapter will deal almost exclusively with morphological annotation.
 
-In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form:
+In [ch. 3.6](/handbook/v3/HB3_ch3#sec3.6) and [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3), we suggested that the word, `<w>{:xml}`, is a basic unit in any transcription. Each `<w>{:xml}` element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form:
 
 <div className="table-abbr">
 | Element & attributes | Contents |
@@ -111,7 +111,7 @@ In [ch. 3.6](HB3_ch3.xml#sec3.6) and [ch. 5.3](HB3_ch5.xml#sec5.3), we suggested
 </div>
 
 
-It is essential that the lemmatisation of Medieval Nordic manuscript text is done in adherence to the principles developed for handling large corpora in linguistic research. We have found the guidelines provided by [EAGLES 1996](HB3_literature.xml#Eagles) to be particularly useful, but have decided to deviate somewhat from these guidelines in order to produce a more self-explanatory, although slightly more verbose, system. 
+It is essential that the lemmatisation of Medieval Nordic manuscript text is done in adherence to the principles developed for handling large corpora in linguistic research. We have found the guidelines provided by [EAGLES 1996](/handbook/v3/HB3_literature#Eagles) to be particularly useful, but have decided to deviate somewhat from these guidelines in order to produce a more self-explanatory, although slightly more verbose, system. 
 
 The model provided here is aimed at Medieval Norwegian and Icelandic texts. For Medieval Swedish and Danish texts and also for later Norwegian texts, we can expect a radical levelling in the grammatical system, e.g. in the nominal and verbal inflections. The model provided here will therefore often provide the possibility for encoding distinctions that were not themselves extant or applicable in the languages under study, when applied to Medieval Swedish and Danish texts, and to late Medieval Norwegian texts.
 
@@ -133,7 +133,7 @@ In general, we recommend that the `@lemma{:sh}` attribute is used for the standa
 ```
 
 
-Note that [ch. 15.4.2](HB3_ch15.xml#sec15.4.2) offers another way of linking annotated words to lexicographical resources. This subchapter also discusses Old Swedish and Old Danish dictionaries.
+Note that [ch. 15.4.2](/handbook/v3/HB3_ch15#sec15.4.2) offers another way of linking annotated words to lexicographical resources. This subchapter also discusses Old Swedish and Old Danish dictionaries.
 
 Lemmatised texts are useful for any language, and in particular for languages with complex morphology or variable orthography. The morphology of Old Norse is more complex than that of the modern Nordic languages, but not particularly difficult &ndash; it is rather like the morphology of Modern German. The orthography, however, was far from fixed, and since many transcriptions are likely to be fairly diplomatic, any lemma may be expressed by a large number of orthographic forms. For example, the pronoun “hann” has only three forms in the normalised orthography of Old Norse: “hann” (nominative and accusative), “hans” (genitive), and “honum” (dative). In an actual transcription, however, a dozen or more forms may occur, as shown in the table below. 
 
@@ -193,9 +193,9 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 
 
 
-In [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above the use of `<w>{:xml}` for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as ` &fins;{:xml}` and `&nscap;{:xml}`, or abbreviations such as `&bar;{:xml}`. These are described in [ch. 5](/handbook/v3/HB3_ch5).
+In [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above the use of `<w>{:xml}` for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as ` &fins;{:xml}` and `&nscap;{:xml}`, or abbreviations such as `&bar;{:xml}`. These are described in [ch. 5](/handbook/v3/HB3_ch5).
 
-As noted in [ch. 4.5](HB3_ch4.xml#sec4.5), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single `<w>{:xml}` element and the attribute is valid for the whole contents: 
+As noted in [ch. 4.5](/handbook/v3/HB3_ch4#sec4.5), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single `<w>{:xml}` element and the attribute is valid for the whole contents: 
 ```xml
 <w lemma="hafa">
   <choice>  
@@ -260,7 +260,7 @@ Certain words appear as part of multi-word phrases, such as the subjunctions “
 ```
 
 
-In this encoding, we use the `<seg>{:xml}` element as a container in a similar way to the encoding of words which are written together, cf. [ch. 5.3.2](HB3_ch5.xml#sec5.3.2).
+In this encoding, we use the `<seg>{:xml}` element as a container in a similar way to the encoding of words which are written together, cf. [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2).
 
 Sometimes, a word can be associated with more than one lemma. For example, the dative “lífi” can be mapped to the lemma “líf” as well as to “lífi”. This problem is discussed in [ch. 11.4](#sec11.4) below.
 
@@ -634,7 +634,7 @@ This category applies only to verbs. Finiteness is denoted by a name token consi
 
 #### 11.3.2.11 Enclitics [#sec11.3.2.11]
 
-In some cases, a word may be attached to the previous word resulting in a single, new word. This process of cliticisation occurs after finite verbs with personal pronouns and negative particles. Examples of the first type are “emk” for “em ek” ‘I am’ and “fórtu” for “fórt þú” ‘you went’, of the second type “erat” for “er at” ‘is not’ and “bárut” for “báru t” ‘did not carry’. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s[i]k” = “kallask”. However, it may be argued that the enclitic words retain their characters as words to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s[i]k”. For this reason, we suggest that enclitic forms are encoded with the `<seg>{:xml}` element, as suggested in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above:
+In some cases, a word may be attached to the previous word resulting in a single, new word. This process of cliticisation occurs after finite verbs with personal pronouns and negative particles. Examples of the first type are “emk” for “em ek” ‘I am’ and “fórtu” for “fórt þú” ‘you went’, of the second type “erat” for “er at” ‘is not’ and “bárut” for “báru t” ‘did not carry’. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s[i]k” = “kallask”. However, it may be argued that the enclitic words retain their characters as words to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s[i]k”. For this reason, we suggest that enclitic forms are encoded with the `<seg>{:xml}` element, as suggested in [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above:
 ```xml
 <seg type="enc">
   <w lemma="vera">em</w>
@@ -652,7 +652,7 @@ In some cases, a word may be attached to the previous word resulting in a single
 ```
 
 
-The segmentation is in several cases open to discussion. Thus, the “t” in “fórtu” may be seen as part of the verb form or as part of the pronoun. From a phonological point of view, it is an assimilation product of the final “t” in the verb and the initial “þ” in the pronoun. As recommended in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above, the main word should be encoded with the fullest form and the enclitic with a reduced form, e.g.
+The segmentation is in several cases open to discussion. Thus, the “t” in “fórtu” may be seen as part of the verb form or as part of the pronoun. From a phonological point of view, it is an assimilation product of the final “t” in the verb and the initial “þ” in the pronoun. As recommended in [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above, the main word should be encoded with the fullest form and the enclitic with a reduced form, e.g.
 ```xml
 <seg type="enc">
   <w lemma="fara">fórt</w>
@@ -705,7 +705,7 @@ In marginal cases, there can be two or even three enclitics, such as “vilkat�
 
 With the `<seg>{:xml}` encoding, the stylesheet would ensure that these words were displayed with no internal spaces as “vilkat” and “bjargigak” respectively, but the individual, partly reduced word forms should be annotated as separate words. Importantly, in a syntactic analysis, in which a distinction between a verb and a pronoun (i.e. a predicate and a subject) is essential, these words would easily be identified.
 
-In a multi-level encoding, the stylesheet should not display any space between the main word and the enclitic on the `<me:facs>{:xml}` and `<me:norm>{:xml}` levels, but a space should be displayed on the `<me:norm>{:xml}` level. See the example in [ch. 5.3.2](HB3_ch5.xml#sec5.3.2) above.
+In a multi-level encoding, the stylesheet should not display any space between the main word and the enclitic on the `<me:facs>{:xml}` and `<me:norm>{:xml}` levels, but a space should be displayed on the `<me:norm>{:xml}` level. See the example in [ch. 5.3.2](/handbook/v3/HB3_ch5#sec5.3.2) above.
 
 #### 11.3.2.12 Government [#sec11.3.2.12]
 
@@ -1272,7 +1272,7 @@ Quantifiers are encoded for **gender**, **number** and **case**. This category m
 
 ### 11.5.5 Pronouns/determiners (PD) [#sec11.5.5]
 
-This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](HB3_literature.xml#Noreen1923) and [Iversen 1973](HB3_literature.xml#Iversen1973). From a inflectional point of view this is a heterogeneous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper ([ch. 11.5.3](#sec11.5.3)) and determiners ([ch. 11.5.4](#sec11.5.4)).
+This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](/handbook/v3/HB3_literature#Noreen1923) and [Iversen 1973](/handbook/v3/HB3_literature#Iversen1973). From a inflectional point of view this is a heterogeneous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper ([ch. 11.5.3](#sec11.5.3)) and determiners ([ch. 11.5.4](#sec11.5.4)).
 
 Pronouns/determiners are encoded for **person** (only personal pronouns), **gender**, **number** and **case**.
 
@@ -1714,7 +1714,7 @@ The relative particle is not inflected and only marked as xRP. In Old Norse it u
 </div>
 
 
-NOTE: We might reconsider this encoding, and recommend encoding the relative particle as a subjunction,  “xCS”. See the discussion in [Haugen and Øverland 2014](HB3_literature.xml#Guidelines2014), p. 38.
+NOTE: We might reconsider this encoding, and recommend encoding the relative particle as a subjunction,  “xCS”. See the discussion in [Haugen and Øverland 2014](/handbook/v3/HB3_literature#Guidelines2014), p. 38.
 
 ### 11.5.15 Expletive particle (EX) [#sec11.5.15]
 
@@ -1742,12 +1742,12 @@ Some words are corrupt, difficult to analyse, belong to another language or are 
 
 ## 11.6 Specifications for Old Norse [#sec11.6]
 
-In the previous chapter, we have given a few alternative analyses, especially the choice between a broad class of pronouns and a smaller class of pronouns and a new class of determiners. We have also pointed out that Old Swedish and particularly Old Danish texts may require a simpler analysis. There is thus a need for further specification. This chapter will deal with Old Norse, i.e. Old Icelandic up to ca. 1550 and Old Norwegian up to ca. 1350. This is the same period as defined by [Ordbog over det norrøne prosasprog](HB3_literature.xml#ONP).
+In the previous chapter, we have given a few alternative analyses, especially the choice between a broad class of pronouns and a smaller class of pronouns and a new class of determiners. We have also pointed out that Old Swedish and particularly Old Danish texts may require a simpler analysis. There is thus a need for further specification. This chapter will deal with Old Norse, i.e. Old Icelandic up to ca. 1550 and Old Norwegian up to ca. 1350. This is the same period as defined by [Ordbog over det norrøne prosasprog](/handbook/v3/HB3_literature#ONP).
 
 ### 11.6.1 Normalised orthography [#sec11.6.1]
 
 There is some variation in the normalised orthography of Old Norse in standard grammars, dictionaries and editions. 
-			As stated in [ch. 10.2](HB3_ch10.xml#sec10.2)	and	[ch. 11.2](#sec11.2) above, we
+			As stated in [ch. 10.2](/handbook/v3/HB3_ch10#sec10.2)	and	[ch. 11.2](#sec11.2) above, we
 		 recommend that the orthography of the [ONP](http://www.onp.hum.ku.dk/) dictionary in Copenhagen is taken as normative, irrespective of whether the source is Old Icelandic or Old Norwegian. The lemma is above all an address, and as such there should be no variation. Thus, in a Old Norwegian text, the word “hnakki” might be normalised to “nakki” (or even “nakke”) in an edition, but the lemma should be “hnakki”. Otherwise, Norwegian and Icelandic examples of this word will appear under two different lemmata, “nakki” and “hnakki”.
 
 The main points in the ONP orthography are the following:
@@ -1792,7 +1792,7 @@ The word classes in [ONP](http://www.onp.hum.ku.dk/) should be taken as normativ
 
 **Cardinal numbers**. With the exception of “einn”, which has plural forms, there is no need to encode cardinal numbers (i.e. “tveir”, “þrír”, “fjórir”, “fimm”, etc.) for number, nP. For cardinal numbers above one, plural is inherent.
 
-**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the `<num>{:xml}` element, e.g. `<num>{:xml}`.iv.`</num>{:xml}`. They should not be lemmatised. Cf. the discussion in [ch. 5.7](HB3_ch5.xml#sec5.7) above.
+**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the `<num>{:xml}` element, e.g. `<num>{:xml}`.iv.`</num>{:xml}`. They should not be lemmatised. Cf. the discussion in [ch. 5.7](/handbook/v3/HB3_ch5#sec5.7) above.
 
 **Participles vs. adjectives**. If a participle can be referred to a verb, the infinitive should be used as the lemma. Thus, “búa” should be the lemma for “búinn”, even if this participle is on the verge of being lexicalised as an adjective in Old Norse. For a participle like “ítrborinn” there is no corresponding verb “ítrbera”, so “ítrborinn” should be chosen as lemma and the word class must be adjective, xAJ xRP gN nS cM sI.
 
@@ -1851,7 +1851,7 @@ The three-letter language codes used here are conformant with the ISO 639-3:2017
 
 Note that the Profile Description may list more languages than actually referred to in the text.
 
-See [ch. 14.5](HB3_ch14.xml#sec14.5) for more details on language codes.
+See [ch. 14.5](/handbook/v3/HB3_ch14#sec14.5) for more details on language codes.
 
 ### 11.7.1 Additional categories for Latin [#sec11.7.1]
 
@@ -1911,9 +1911,9 @@ The PROIEL project was initiated by Dag T.T. Haug in Oslo, and originally covere
 
 - [The PROIEL treebank](http://proiel.github.io) 
 
-The texts in PROIEL have been annotated using dependency structure analysis, which is regarded as particularly helpful in languages of a comparatively free word order. Guidelines for the annotation of Old Norwegian have been published by Odd Einar Haugen and Fartein Th. Øverland in parallel versions in Norwegian nynorsk, [Retningslinjer 2014](HB3_literature.xml#Retningslinjer2014), and in English, [Guidelines 2014](HB3_literature.xml#Guidelines2014).
+The texts in PROIEL have been annotated using dependency structure analysis, which is regarded as particularly helpful in languages of a comparatively free word order. Guidelines for the annotation of Old Norwegian have been published by Odd Einar Haugen and Fartein Th. Øverland in parallel versions in Norwegian nynorsk, [Retningslinjer 2014](/handbook/v3/HB3_literature#Retningslinjer2014), and in English, [Guidelines 2014](/handbook/v3/HB3_literature#Guidelines2014).
 
-In a project at Språkbanken in Göteborg, _The MAÞIR treebank_, Old Swedish texts have been annotated according, by and large, to the Guidelines for Old Norwegian referred gto above. This and other PROIEL-related projects have been presented in [Hanne Eckhoff et al. 2017](HB3_literature.xml#Eckhoff2017).
+In a project at Språkbanken in Göteborg, _The MAÞIR treebank_, Old Swedish texts have been annotated according, by and large, to the Guidelines for Old Norwegian referred gto above. This and other PROIEL-related projects have been presented in [Hanne Eckhoff et al. 2017](/handbook/v3/HB3_literature#Eckhoff2017).
       			
       			
       			
