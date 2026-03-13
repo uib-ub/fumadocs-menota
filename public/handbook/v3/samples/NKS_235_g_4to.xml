@@ -1,0 +1,198 @@
+<?oxygen RNGSchema="http://www.menota.org/menotaP5.rng" type="xml" ?>
+<!DOCTYPE TEI 
+[
+<!ENTITY % Menota_entities SYSTEM 'http://www.menota.org/menota-entities.txt'>
+%Menota_entities; ]>
+
+<!-- 2019-05-12 Odd Einar Haugen: This is an example of a Menota header for a manuscript fragment, 
+     published as part of the Menota handbook v. 3.0 -->
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:me="http://www.menota.org/ns/1.0">
+    <teiHeader xml:lang="eng">
+        <fileDesc>
+            <titleStmt>
+                <title>A fragment of Konungs skuggsjá : NKS 235 g 4to : A digital 
+                    edition</title>
+                <editor>
+                    <name type="person">Nina Stensaker</name>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </editor>
+                <respStmt>
+                    <resp>Transcription</resp>
+                    <name type="person">Nina Stensaker</name>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </respStmt> 
+                <respStmt>
+                    <resp>Conversion of transcription to XML</resp>
+                    <name type="person">Robert K. Paulsen</name>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </respStmt>
+                <respStmt>
+                    <resp>Project overview</resp>
+                    <name type="person">Odd Einar Haugen</name>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </respStmt>
+            </titleStmt>            
+            <editionStmt>
+                <edition n="1.1">Version 1.1 <date when="2018-02-01">1 February 2018</date>.</edition>
+            </editionStmt>
+            <extent n="824">824 words</extent>            
+            <publicationStmt>
+                <distributor>Medieval Nordic Text Archive</distributor>
+                <idno type="Menota">Ms. 38</idno>
+                <date when="2016-07-19">19 July 2016</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</licence>
+                    <p>Licence accepted by the editor Nina Stensaker in a meeting with Odd Einar Haugen, 12 May 2016.</p>
+                </availability>
+            </publicationStmt>
+            <notesStmt>
+                <note>Produced as part of my master's thesis on Konungs skuggsjá 
+                    at <orgName type="affiliation">University of Bergen</orgName>.</note>
+            </notesStmt>
+            <sourceDesc>
+                <bibl facs="yes">Photographic facsimiles of the whole fragment from the Royal Library 
+                    (Kongelige Bibliotek) in Copenhagen.</bibl>
+                <msDesc>
+                    <msIdentifier>
+                        <country key="DK">Denmark</country>
+                        <settlement>Copenhagen</settlement>
+                        <repository>Det Kongelige Bibliotek</repository>
+                        <idno>NKS 235 g 4to</idno>
+                        <msName>A fragment of Konungs skuggsjá</msName>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem n="1">
+                            <locus from="1r" to="1v">1r–1v</locus>
+                            <title type="main">Konungs skuggsjá</title>
+                            <title type="abbreviated">Kgs</title>
+                            <incipit defective="true">ſꝩa heımſkır ꝼrenꝺꝛ þeır er epꞇír lıꝩa.</incipit>
+                            <explicit defective="true">þo aꞇ hann ſe mıok ꝩıꞇr ſıalꝼr eꝼ þaꞇ haꝼðe</explicit>
+                            <textLang mainLang="onw">Old Norwegian</textLang>
+                            <note>Fragment. See the edition by Ludvig Holm-Olsen (1983), p. 140,
+                                for textual correspondence with the main manuscript, AM 243 b alfa fol.</note>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="fragment">
+                            <supportDesc>
+                                <support>
+                                    <p><material>Parchment</material>.</p>
+                                </support>
+                                <extent>1 leaf; ca 282 mm (height) by 216
+                                    mm (width).</extent>
+                                <foliation>
+                                    <p>The fragmented is not foliated or paginated.</p>
+                                </foliation>
+                                <collation>One singleton.</collation>
+                                <condition><p>The leaf is very worn and has many stains. </p>
+                                    <p>It had been reused in a book binding, which caused 
+                                        discolouration and wear that is worse on fol. 
+                                        <locus from="1v" to="1v">1v</locus>.</p>
+                                    <p>Some of the words are difficult to read due to the condition 
+                                        of the fragment.</p></condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="2" writtenLines="27">
+                                    <p>The text is written in two columns with 27 lines each.</p>
+                                    <p>There are approximately 8 to 10 words per line.</p>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>                       
+                        <handDesc hands="1">
+                            <handNote scope="sole" script="Textualis">The fragment was written by a single unidentified scribe.</handNote>
+                        </handDesc>                       
+                        <decoDesc>
+                            <decoNote type="initial">
+                                <p>Fol. <locus from="1vb" to="1vb">1vb:7-1vb:12</locus>: Major pen flourished initial Þ.
+                                    Main colour: bright red; pen flourish in light blue and bright red. </p>
+                            </decoNote>
+                            <decoNote type="littNot">
+                                <p>Fols. <locus from="1ra" to="1vb">1r-1v</locus>: There are sentence initials
+                                    throught the text of the fragment. The sentence initials are executed in some very delicate penwork.</p>
+                            </decoNote>
+                            <decoNote type="paratext">
+                                <p>Fol. <locus from="1vb" to="1vb">1vb:7-1vb:7</locus>: The only preserved
+                                    rubric is written in bright red ink and followed by a line filler in light blue.</p>
+                            </decoNote>
+                        </decoDesc>
+                        <additions>
+                            <p>There are a few later additions on fol. <locus from="1v" to="1v">1v</locus>. In the top
+                                and bottom margin, a later hand added the monogram <q>DGS</q>,
+                                underneath which the year <q>1636</q> can be made out. There is further some illegible 
+                                writing in the outer margin as well as pen trials in the lower margin.</p>
+                        </additions>                      
+                        <bindingDesc>
+                            <binding contemporary="false"><p>The fragment is bound in a later half binding with brown leather 
+                                on the spine and the corners, and black and green marbled paper on the boards.</p></binding>
+                        </bindingDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <p>The fragment was written in <origPlace>Norway</origPlace>
+                                <origDate notBefore="1250" notAfter="1280">c. 1260–1270</origDate>.</p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>       
+            <projectDesc>
+                <p>This encoding follows the standard set out in <title>The
+                    Menota Handbook</title> (version 3.0), at <ref
+                        target="http://www.menota.org/handbook">
+                        http://www.menota.org/handbook</ref> as of <date>2019-05-10</date>.</p>
+                <p>The encoded text has numbered page beginnings, column beginnings and line beginnings according to the
+                    manuscript.</p>
+            </projectDesc>
+            <editorialDecl>
+                <correction status="high">
+                    <p>This text has been transcribed directly from photographic colour facsimiles of the
+                        manuscript.</p>
+                </correction>
+                <normalization me:level="facs dipl norm">
+                    <p>This text has been encoded on all three focal levels: facsimile, diplomatic and normalised.</p>
+                </normalization>
+                <interpretation me:lemmatized="none" me:morphAnalyzed="none">
+                    <p>This text has not yet been annotated.</p>
+                </interpretation>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="onw">Old Norwegian</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date>2019-05-12</date>
+                <name>
+                    <persName>Odd Einar Haugen</persName>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </name>: Made some minor changes to the header so that it could be 
+                published as an example header in v. 3.0 of the handbook.
+            </change>
+            <change>
+                <date>2018-01-22</date>
+                <name>
+                    <persName>Nina Stensaker</persName>
+                    <orgName type="affiliation">University of Bergen</orgName>
+                </name>: Finished the encoding on all three focal levels.
+            </change>
+            <change>
+                <date>2017-08-09</date>
+                <name>
+                    <persName>Beeke Stegmann</persName>
+                    <orgName type="affiliation">University of Copenhagen</orgName>
+                </name>: Expanded the header by adding more detail about the fragment.
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text xml:lang="onw">
+        <body>
+            <div>
+                <p>The text goes here, divided into as many “div” elements as necessary.</p>
+            </div>           
+        </body>
+    </text>
+</TEI>
