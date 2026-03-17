@@ -587,8 +587,8 @@ the attribute <Att>type</Att> (and potential others) for further specification.
 |-----|-----|-----|
 | <E>c</E> |  | Contains an individual character. |
 | <Att>type</Att> | Obligatory | Type of character. Suggested values: |
-| <span className="p-6"/>`"word"{:js}` |  | The character is a full word. |
-| <span className="p-6"/>`"initial"{:js}` |  | The character is an initial. |
+| <Val>word</Val> |  | The character is a full word. |
+| <Val>initial</Val> |  | The character is an initial. |
 </div>
 
 
@@ -609,7 +609,7 @@ would thus be encoded as
 ```
 
 
-The usage of the attribute <Att>type</Att> with the value `"word"{:js}` distinguishes 
+The usage of the attribute <Att>type</Att> with the value <Val>word</Val> distinguishes 
 it from other kinds of characters one might want to mark-up.
 Note that the <E>c</E> element is placed within the element <E>w</E>. This might seem somewhat
 redundant in this case, since that information is also provided by the attribute. However, if 
@@ -651,8 +651,8 @@ of word or word parts, based on the TEI P5 Guidelines, [ch. 17.1](http://www.tei
 | <Att>baseForm</Att> | Optional | States the base form of a morpheme. |
 | <E>seg</E> |  | Groups one or more segments of text, e.g. words. |
 | <Att>type</Att> | Optional | States the type of segmentation. Suggested values: |
-| <span className="p-6"/>`"nb"{:js}` |  | No break |
-| <span className="p-6"/>`"enc"{:js}` |  | Enclitic |
+| <Val>nb</Val> |  | No break |
+| <Val>enc</Val> |  | Enclitic |
 </div>
 
 
@@ -783,7 +783,7 @@ Each lexical word should be placed within a <E>w</E> element, and information on
 lemma, morphological form etc. can be given within each <E>w</E> element. However,
 to generate a correct display of the text, i.e. a display with no space between each
 part, we suggest that the <E>seg</E> element is used with a type attribute. The
-value `"nb"{:js}` would indicate that there is no break between the parts in the
+value <Val>nb</Val> would indicate that there is no break between the parts in the
 <E>w</E> element. If the lemma is given by way of an attribute, the encoding would
 look like this:
 ```xml
@@ -1303,9 +1303,9 @@ displayed on the facsimile level, but on the diplomatic and normalised levels.
 |-----|-----|-----|
 | <E>pc</E> |  | Contains a punctutation character, such as a hyphen. |
 | <Att>resp</Att> | Optional | States who is responsible for the hyphenation. Suggested values: |
-| <span className="p-6"/>`"scribe"{:js}` |  | The scribe of the manuscript. |
-| <span className="p-6"/>`"mainscribe"{:js}` |  | The main scribe of the manuscript (if more than one). |
-| <span className="p-6"/>`"laterscribe"{:js}` |  | A later scribe. |
+| <Val>scribe</Val> |  | The scribe of the manuscript. |
+| <Val>mainscribe</Val> |  | The main scribe of the manuscript (if more than one). |
+| <Val>laterscribe</Val> |  | A later scribe. |
 </div>
 
 
@@ -1525,8 +1525,8 @@ will vary with respect to the display of quotations.
 |-----|-----|-----|
 | <E>q</E> |  | Direct speech. Contains a part of a dialogue. |
 | <Att>type</Att> | Optional | May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: |
-| <span className="p-6"/>`"spoken"{:js}` |  | The part of the dialogue is spoken. |
-| <span className="p-6"/>`"thought"{:js}` |  | The part of the dialogue is thought. |
+| <Val>spoken</Val> |  | The part of the dialogue is spoken. |
+| <Val>thought</Val> |  | The part of the dialogue is thought. |
 | <E>quote</E> |  | Contains a quotation from another source. |
 </div>
 
@@ -1660,11 +1660,11 @@ If an encoder wants to single out numerals, this should be done by the <E>num</E
 |-----|-----|-----|
 | <E>num</E> |  | Contains a numeral, including any delimiters. |
 | <Att>type</Att> | Optional | States the type of numeral. Recommended values: |
-| <span className="p-6"/>`"cardinal"{:js}` |  | A cardinal number, like “one”, “two”, “three”. . . |
-| <span className="p-6"/>`"ordinal"{:js}` |  | An ordinal number, like “first”, “second”, “third”. . . |
+| <Val>cardinal</Val> |  | A cardinal number, like “one”, “two”, “three”. . . |
+| <Val>ordinal</Val> |  | An ordinal number, like “first”, “second”, “third”. . . |
 | <Att>value</Att> | Optional | States the actual number in Hindu-Aarabic numerals. Suggested values: |
-| <span className="p-6"/>`"1"{:js}` |  | The numeral has the value 1. |
-| <span className="p-6"/>`"2"{:js}` |  | The numeral has the value 2, etc. |
+| <Val>1</Val> |  | The numeral has the value 1. |
+| <Val>2</Val> |  | The numeral has the value 2, etc. |
 </div>
 
 
@@ -1685,7 +1685,7 @@ We recommend that these delimiters are encoded as punctuation marks, using the <
 ```
 
 
-Using the optional attributes introduced above, we can specify the type (cardinal or ordinal) and the value (in this case, 12) of the numeral. Note that in the case of Roman numerals, we recommend that the <E>w</E> element is supplied by the <Att>xml:lang</Att> attribute with the value `"lat"{:js}` (for “Latin”). This makes it abundantly clear whether the single character “i” is a preposition, “in”, or a Roman numeral, “one”.
+Using the optional attributes introduced above, we can specify the type (cardinal or ordinal) and the value (in this case, 12) of the numeral. Note that in the case of Roman numerals, we recommend that the <E>w</E> element is supplied by the <Att>xml:lang</Att> attribute with the value <Val>lat</Val> (for “Latin”). This makes it abundantly clear whether the single character “i” is a preposition, “in”, or a Roman numeral, “one”.
 ```xml
 <w>Hann</w>
 <w>er</w>
@@ -1851,4 +1851,4 @@ As of 21 December 2020, we no longer suggest that <Att>hyphen</Att> is a suitabl
 
 On 10 February 2021, two examples of multi-level encoding of a numeral were added at the end of [ch. 5.7](#sec5.7).
 
-On 4 October 2023, the <E>w</E> element was included in all examples (also with Roman numerals) in [ch. 5.7](#sec5.7), the attribute <Att>xml:lang</Att> with the value `"lat"{:js}` was recommended for Roman numerals, and an example of a very complex dating was added at the end of the chapter.
+On 4 October 2023, the <E>w</E> element was included in all examples (also with Roman numerals) in [ch. 5.7](#sec5.7), the attribute <Att>xml:lang</Att> with the value <Val>lat</Val> was recommended for Roman numerals, and an example of a very complex dating was added at the end of the chapter.

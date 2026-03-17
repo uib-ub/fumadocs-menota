@@ -140,8 +140,12 @@ strong {
     border-style: dotted;
 }
 
-.table-xml-elements td .xml-attribute {
+.table-xml-elements td .xml-attribute:first-child {
     margin-left: 1em;
+}
+
+.table-xml-elements td .xml-attvalue:first-child {
+    margin-left: 2em;
 }
 
 .display-frame th, .display-frame td {

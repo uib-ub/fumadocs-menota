@@ -148,7 +148,7 @@ However, in order to improve legibility, that part is treated in a separate subc
 | <E>editor</E> |  | The name of the (main) editor of the encoded work. |
 | <Att>role</Att> | Optional | The role of an editor, in particular in case the editor is an institution or project. |
 | <E>orgName</E> |  | The name of an organisation. |
-| <Att>type</Att> | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, using the the value `"affiliation"{:js}`. |
+| <Att>type</Att> | Obligatory | Specifies that the organisation is the institution with which the editor is affiliated, using the the value <Val>affiliation</Val>. |
 | <E>respStmt</E> |  | A statment of responsibility. |
 | <E>resp</E> |  | Type of responsibility, e.g. transcription, conversion, proof-reading. |
 </div>
@@ -231,7 +231,7 @@ The institution “Språksamlingane” is now located at the University of Berge
 ```
 
 
-For an individual editor, the <Att>role</Att> with the value `"person"{:js}` is optional, but may be inserted for clarity. If an <E>editor</E> element  does not have any <Att>role</Att> attribute, 
+For an individual editor, the <Att>role</Att> with the value <Val>person</Val> is optional, but may be inserted for clarity. If an <E>editor</E> element  does not have any <Att>role</Att> attribute, 
 it is assumed to describe a person.
 
 If other people than the main editor(s) contributed to the work, this is specified in one or more responsibility statements (<E>respStmt</E>). This also applies to cases where an institution is regarded as an the editor.
@@ -274,15 +274,15 @@ Since almost all Medieval Nordic texts are anonymous we suggest that this elemen
 | <E>edition</E> |  | A description of the edition (i.e. version), typically by means of a number. |
 | <Att>n</Att> | Obligatory | The number of the edition. |
 | <E>date</E> |  | The date for the publication of the present work (edition). |
-| <Att>when</Att> | Obligatory | Date in the format year-month-day, e.g. `"2019-10-15’"{:js}`. |
+| <Att>when</Att> | Obligatory | Date in the format year-month-day, e.g. <Val>2019-10-15’</Val>. |
 </div>
 
 
 The <E>editionStmt</E> should be used to specify whether the present text is a new or a revised edition of the 
 electronic text as described in the title statement above. Here, “edition” is to be understood as “version”. 
 The version number should be given in the <Att>n</Att> attribute with the usual number 
-system, i.e. `"1.0"{:js}`, `"1.0.1"{:js}`, `"1.1"{:js}`, `"1.2"{:js}`, etc., while the date of the version 
-should be given in the format year-month-day in the attribute <Att>when</Att>, e.g. `"2004-02-01"{:js}`.
+system, i.e. <Val>1.0</Val>, <Val>1.0.1</Val>, <Val>1.1</Val>, <Val>1.2</Val>, etc., while the date of the version 
+should be given in the format year-month-day in the attribute <Att>when</Att>, e.g. <Val>2004-02-01</Val>.
 
 A complete edition statement may be as simple as this:
 ```xml
@@ -319,21 +319,21 @@ The <E>extent</E> element specifies the size of the file. The exact number of wo
 | <E>publicationStmt</E> |  | A statement of the publication. |
 | <E>distributor</E> |  | A reference to the distributor, e.g. Medieval Nordic Text Archive. |
 | <E>idno</E> |  | A reference (identification number), e.g. “Ms. 1”. |
-| <Att>type</Att> | Optional | The type of reference, e.g. `"Menota"{:js}`. |
+| <Att>type</Att> | Optional | The type of reference, e.g. <Val>Menota</Val>. |
 | <E>date</E> |  | The date for the publication of the present work (edition). |
-| <Att>when</Att> | Obligatory | Date in the format year-month-day, e.g. `"2019-10-15"{:js}`. |
+| <Att>when</Att> | Obligatory | Date in the format year-month-day, e.g. <Val>2019-10-15</Val>. |
 | <E>availability</E> |  | A description of the conditions for the distribution and use of the text. |
-| <Att>status</Att> | Obligatory | The type of availability, typically with the values `"free"{:js}`, `"restricted"{:js}` or `"unknown"{:js}`. |
+| <Att>status</Att> | Obligatory | The type of availability, typically with the values <Val>free</Val>, <Val>restricted</Val> or <Val>unknown</Val>. |
 </div>
 
 
 The <E>publisher</E> element specifies the body (publisher, archive) which has made the text available, e.g. the Medieval Nordic Text Archive (Menota).
 
-The <E>idno</E> is a unique identification of the text. For texts in the Menota archive the attribute value will be `"Menota"{:js}`, and the contents of the element 
+The <E>idno</E> is a unique identification of the text. For texts in the Menota archive the attribute value will be <Val>Menota</Val>, and the contents of the element 
 will be an acquisition number, beginning with Ms. 1. Note that this information will be supplied by Menota, if the text is being deposited in this archive.
 
 The <E>availability</E> element specifies the accessibility of the text. We recommend adding a <Att>status</Att> 
-attribute with one of the three values `"free"{:js}`, `"restricted"{:js}`, `"unknown"{:js}`
+attribute with one of the three values <Val>free</Val>, <Val>restricted</Val>, <Val>unknown</Val>
 (cf. the TEI P5 Guidelines, [ch. 2.2.4](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24)).
 
 Further specifications can be added in a <E>p</E> element. Almost all texts in the Menota archive are now available under an open CC license, and this should be stated in a <E>license</E> element with link to the Creative Commons website. Details on the transferral of this license should be added in a <E>p</E>  element. A complete publication statement may thus look like this:
@@ -455,9 +455,9 @@ Collection may look like this:
 ```
 
 
-The <Att>key</Att> attribute to the <E>country</E> element can take values such as `"IS"{:js}` for Iceland, 
-`"NO"{:js}` for Norway, `"SE"{:js}` for Sweden, 
-`"DK"{:js}` for Denmark, and so on according to ISO 3166-1 alpha-2.
+The <Att>key</Att> attribute to the <E>country</E> element can take values such as <Val>IS</Val> for Iceland, 
+<Val>NO</Val> for Norway, <Val>SE</Val> for Sweden, 
+<Val>DK</Val> for Denmark, and so on according to ISO 3166-1 alpha-2.
 
 In addition to the commonly used shelfmark, this example also has an <E>altIdentifier</E>, giving the running number from Kålund’s printed catalogue. 
 That this reference is to Kålund’s catalogue can be seen from the <Att>type</Att> attribute with the abbreviation “KKKat” as its value. The <E>msName</E>
@@ -482,8 +482,8 @@ grouped under a single title or rubric, for example in collections of
 prayers.
 
 A <Att>defective</Att> attribute, with
-possible values of `"true"{:js}`, `"false"{:js}`, `"unknown"{:js}` or
-`"unspecified"{:js}`, is available on <E>msItem</E>, providing the means 
+possible values of <Val>true</Val>, <Val>false</Val>, <Val>unknown</Val> or
+<Val>unspecified</Val>, is available on <E>msItem</E>, providing the means 
 of distinguishing between texts which are fragmentary
 and those which are not. The attribute is also available on the
 specialised elements <E>incipit</E> and
@@ -605,8 +605,8 @@ The next example (below) is taken from a manuscript written by six different scr
 <E>handNote</E> element is used to describe each individual
 hand.  The <Att>script</Att> attribute on <E>handNote</E> is
 employed to indicate the type of script. Note also the <Att>scope</Att> attribute,
-with the possible values of `"major"{:js}`, `"minor"{:js}` and
-`"sole"{:js}`.
+with the possible values of <Val>major</Val>, <Val>minor</Val> and
+<Val>sole</Val>.
 Finally, the <E>locus</E>
 element, which we have already encountered in <E>msItem</E>, is used to
 indicate specifically which parts of a manuscript are written in a
@@ -857,9 +857,9 @@ could for example look like this:
 
 Please note that the value of the attribute <Att>sex</Att> has in the Old Norse scholarly world traditionally been encoded based on the ISO standard 
 [Representation of Human Sexes](http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip),
-in which `"0"{:js}` indicates “unknown”; `"1"{:js}` “male”; `"2"{:js}` “female”; and `"9"{:js}` “not applicable”
-even though the this standard is now widely considered inadequate. Alternative values are `"M"{:js}` for male, `"F"{:js}` for female, 
-`"O"{:js}` for other, `"N"{:js}` for none or not applicable, and `"U"{:js}` for unknown.
+in which <Val>0</Val> indicates “unknown”; <Val>1</Val> “male”; <Val>2</Val> “female”; and <Val>9</Val> “not applicable”
+even though the this standard is now widely considered inadequate. Alternative values are <Val>M</Val> for male, <Val>F</Val> for female, 
+<Val>O</Val> for other, <Val>N</Val> for none or not applicable, and <Val>U</Val> for unknown.
 
 
 Once a reference description of a name is available &ndash; either in the <E>profileDesc</E> of the header in the same XML document or 
@@ -973,8 +973,8 @@ Once the <Att>status</Att> attribute is given a value, the <E>correction</E> ele
 However, if desired, further specification can be given in prose within a <E>p</E> element.
 
 Next within the <E>editorialDecl</E>element, a <E>normalization</E> element with a Menota-specific <Att>me:level</Att> attribute 
-is used to specify the level on which the text is encoded. The prototypical levels are `"facs"{:js}`, `"dipl"{:js}` and `"norm"{:js}`, 
-but other levels can also be used in the transcription and should thus be specified, e.g. a `"pal"{:js}` level. 
+is used to specify the level on which the text is encoded. The prototypical levels are <Val>facs</Val>, <Val>dipl</Val> and <Val>norm</Val>, 
+but other levels can also be used in the transcription and should thus be specified, e.g. a <Val>pal</Val> level. 
 (See [ch. 4](/handbook/v3/HB3_ch4) on levels of text representation.) 
 Also here, a description in prose may be added in a <E>p</E> element. 
 Note that more than one level may be specified, simply separating the values by whitespaces:
@@ -991,8 +991,8 @@ Note that more than one level may be specified, simply separating the values by 
 
 Finally within the <E>editorialDecl</E> element, an <E>interpretation</E> 
 	  element is used to specify the amount of lexical and grammatical information in the encoded text. 
-	  We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values `"completely"{:js}`, 
-	  `"partly"{:js}` and `"none"{:js}`, but an additional description in prose may be added in a <E>p</E> element.
+	  We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values <Val>completely</Val>, 
+	  <Val>partly</Val> and <Val>none</Val>, but an additional description in prose may be added in a <E>p</E> element.
 	  A lemmatised text will have lemmata (i.e. dictionary entries) added in the <Att>lemma</Att> attribute of the 
 	  <E>w</E> element, while a morphologically analysed text will have grammatical forms specified in the <Att>me:msa</Att> attribute of the same element. 
 	  See [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) for a general overview and [ch. 11](/handbook/v3/HB3_ch11) 

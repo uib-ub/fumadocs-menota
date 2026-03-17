@@ -193,8 +193,8 @@ or a later compiler, annotator or corrector. The latter additions are traditiona
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>add</E> |  | Contains characters, words or phrases added to the manuscript text or in the margins of the manuscript by the scribe, an annotator or a corrector. Attributes include: |
-| <Att>place</Att> | Obligatory | Indicates where the addition is made. Suggested values include `"inline"{:js}`, `"supralinear"{:js}`, `"infralinear"{:js}` and `"margin"{:js}`. |
-| <Att>hand</Att> | Optional | Signifies the scribe who made the addition. Sample values may be `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`. |
+| <Att>place</Att> | Obligatory | Indicates where the addition is made. Suggested values include <Val>inline</Val>, <Val>supralinear</Val>, <Val>infralinear</Val> and <Val>margin</Val>. |
+| <Att>hand</Att> | Optional | Signifies the scribe who made the addition. Sample values may be <Val>scribe</Val>, <Val>mainscribe</Val> and <Val>laterscribe</Val>. |
 </div>
 
 
@@ -302,7 +302,7 @@ but not on the normalised level. This is an example of a word added in the margi
 
 
 The location of the addition is indicated by the 
-attribute <Att>place</Att>. In this example, the addition is made outside the text column and therefore described by the value `"margin"{:js}`. Note that we are not encoding the triangular signs as such.
+attribute <Att>place</Att>. In this example, the addition is made outside the text column and therefore described by the value <Val>margin</Val>. Note that we are not encoding the triangular signs as such.
 
  Scribal additions 
 are often brief, perhaps consisting of only one or a few characters above the line or likewise in the margin. 
@@ -368,8 +368,8 @@ or a later compiler, annotator or corrector. Identifying a deletion in a manuscr
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>del</E> |  | Contains a character, word or passage deleted or otherwise indicated as superfluous or spurious in the manuscript text by a scribe, annotator or corrector. Attributes include: |
-| <Att>rend</Att> | Obligatory | This attribute is used to classify the deletion, using any convenient typology. Sample values include `"overstrike"{:js}`, `"erasure"{:js}` and `"subpunction"{:js}`.  |
-| <Att>hand</Att> | Optional | Signifies the scribe who made the deletion. Values include `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`.  |
+| <Att>rend</Att> | Obligatory | This attribute is used to classify the deletion, using any convenient typology. Sample values include <Val>overstrike</Val>, <Val>erasure</Val> and <Val>subpunction</Val>.  |
+| <Att>hand</Att> | Optional | Signifies the scribe who made the deletion. Values include <Val>scribe</Val>, <Val>mainscribe</Val> and <Val>laterscribe</Val>.  |
 </div>
 
 
@@ -481,14 +481,14 @@ There are two pairs of elements used in this handbook, <E>orig</E> + <E>reg</E> 
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>orig</E> |  | Contains the reading in the manuscript. Attributes include: |
-| <Att>rend</Att> | Obligatory | The correction markers in the manuscript. A typical value would be `"transposition-signs"{:js}`. |
+| <Att>rend</Att> | Obligatory | The correction markers in the manuscript. A typical value would be <Val>transposition-signs</Val>. |
 | <E>reg</E> |  | Contains the reading corrected in the manuscript. Attributes include: |
-| <Att>type</Att> | Obligatory | The type of correction. We recommend the value `"transposition"{:js}`. |
-| <Att>resp</Att> | Optional | The one who is responsible for the regularisation. Sample values include `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`. |
+| <Att>type</Att> | Obligatory | The type of correction. We recommend the value <Val>transposition</Val>. |
+| <Att>resp</Att> | Optional | The one who is responsible for the regularisation. Sample values include <Val>scribe</Val>, <Val>mainscribe</Val> and <Val>laterscribe</Val>. |
 </div>
 
 
-In a single-level encoding, we recommend that the original reading is given within the <E>orig</E> element with a <Att>rend</Att> attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing <E>reg</E> element, and both elements are contained in a <E>choice</E> element. The <E>reg</E> element should have a <Att>type</Att> attribute with the value `"transposition"{:js}`, and preferably a <Att>resp</Att> attribute with a suitable value, e.g. `"mainscribe"{:js}` or `"laterscribe"{:js}`, or, if a distinction is difficult to draw, just `"scribe"{:js}`:
+In a single-level encoding, we recommend that the original reading is given within the <E>orig</E> element with a <Att>rend</Att> attribute specifying the type of transposition signs in the manuscript. The transposed reading is encoded in an ensuing <E>reg</E> element, and both elements are contained in a <E>choice</E> element. The <E>reg</E> element should have a <Att>type</Att> attribute with the value <Val>transposition</Val>, and preferably a <Att>resp</Att> attribute with a suitable value, e.g. <Val>mainscribe</Val> or <Val>laterscribe</Val>, or, if a distinction is difficult to draw, just <Val>scribe</Val>:
 ```xml
 . . .
 <choice>
@@ -706,15 +706,15 @@ we sometimes encounter text which for one reason or another should be supplied, 
 
 If text is missing in the manuscript, the editor can supply it using the <E>supplied</E> element. We suggest that there are two major types of supplied text:
 
-(1) **Restoration** is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the <Att>reason</Att> attribute and the value `"restoration"{:js}`. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a <Att>resp</Att> attribute. We regard restoration as the default type of supplied text.
+(1) **Restoration** is the supplying of any piece of text which obviously is missing, typically a few characters or words. It may be an initial that the scribe did not fill in or a physical damage to the manuscript which has left some of the text missing. Restoration will in general be specified by the <Att>reason</Att> attribute and the value <Val>restoration</Val>. Even if the restoration of the text may seem more or less certain, we recommend that the person who is responsible for the restoration is identified in a <Att>resp</Att> attribute. We regard restoration as the default type of supplied text.
 
-(2) **Emendation** is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the <Att>reason</Att> attribute and the value `"emendation"{:js}`. Also here, the person who is responsible for the emendation should be identified in a <Att>resp</Att> attribute.
+(2) **Emendation** is the supplying of any piece of text, typically one or a few words that give a more sensible or complete reading from a grammatical or semantic point of view. An emendation will be specified by the <Att>reason</Att> attribute and the value <Val>emendation</Val>. Also here, the person who is responsible for the emendation should be identified in a <Att>resp</Att> attribute.
 
 <div className="table-xml-elements">
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>supplied</E> |  | Signifies text supplied by the editor in order to restore or emend the manuscript text. Attributes include: |
-| <Att>reason</Att> | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, `"restoration"{:js}` or `"emendation"{:js}`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
+| <Att>reason</Att> | Obligatory | Indicates why the text has been supplied. It should be given one of the two values, <Val>restoration</Val> or <Val>emendation</Val>. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like. |
 | <Att>resp</Att> | Obligatory | Indicates the individual responsible for the addition of characters, words or passages contained within the <E>supplied</E> element. |
 | <Att>source</Att> | Optional | States the source of the supplied text if this can be located. |
 </div>
@@ -987,7 +987,7 @@ hafi <em>þik</em> þangat sent”. The editor’s <em>ingenium</em> is in this 
 <Caption title="Fig. 9.11">. Supplied text. _Niðrstigningar saga_. AM 645 4to, f. 55v, l. 5&ndash;7.</Caption>
 
 As suggested above, the <E>supplied</E> element should be specified with the 
-attribute <Att>reason</Att> and the value `"emendation"{:js}`. This would be a single-level encoding of the last four words:
+attribute <Att>reason</Att> and the value <Val>emendation</Val>. This would be a single-level encoding of the last four words:
 ```xml
 . . .
 <w><me:dipl>hafe</me:dipl></w>
@@ -1038,7 +1038,7 @@ In general, emendations belongs on the normalised level and will  not be part of
 
 #### 9.3.1.3 Display of editorial insertions [#sec9.3.1.3]
 
-In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](/handbook/v3/HB3_literature#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the <E>supplied</E> element has the <Att>reason</Att> attribute and the `"emendation"{:js}` value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](/handbook/v3/HB3_literature#Dow1969), p. 11).
+In the stylesheet for the Menota archive, supplied text as a default is displayed in square brackets, in line with the Leiden convention (see e.g. [Dow 1969](/handbook/v3/HB3_literature#Dow1969)), p. 5, and the [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/dev/trans-restored.html). If, however, the <E>supplied</E> element has the <Att>reason</Att> attribute and the <Val>emendation</Val> value, the stylesheet uses open angle brackets for the display (cf. [Dow 1969](/handbook/v3/HB3_literature#Dow1969), p. 11).
 <DisplayFrame>
 
 
@@ -1084,7 +1084,7 @@ As for other instances of editorial suppression, we recommend using the <E>sic</
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>surplus</E> |  | Contains text which the editor believes should be recognised as superfluous. |
-| <Att>reason</Att> | Optional | Indicates the reason for the piece of text being superfluous. It can be given values like `"dittography"{:js}`, `"excess"{:js}` and `"incoherence"{:js}`. |
+| <Att>reason</Att> | Optional | Indicates the reason for the piece of text being superfluous. It can be given values like <Val>dittography</Val>, <Val>excess</Val> and <Val>incoherence</Val>. |
 </div>
 
 
@@ -1156,7 +1156,7 @@ From a pragmatic point of view, the second, not the first, instance of “sialfr
 
 <Caption title="Fig. 9.13">. Incoherence. _Henrik Harpestreng_. NKS 66 8vo, f. 73r, l. 9&ndash;13 and f. 73v, l. 1&ndash;2.</Caption>
 
-In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the <E>surplus</E> element and the `"incoherence"{:js}` value of the <Att>reason</Att> attribute:
+In fig. 9.13, the conjunction “oc” (the last word on f. 73r) does not really make any sense. The text has been corrected by the editor, following the edition by Christian Molbech (1826). In the following single-level encoding on the diplomatic level, the word “oc” has been encoded with the <E>surplus</E> element and the <Val>incoherence</Val> value of the <Att>reason</Att> attribute:
 ```xml
 . . .
 <lb ed="ms" n="11"/>
@@ -1374,8 +1374,8 @@ Comments are additional text by the editor and not intended to supply or correct
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>note</E> |  | Contains comments to the text by the editor. Main attributes: |
-| <Att>type</Att> | Optional | Stating what kind of a note it is, e.g. `"explanation"{:js}`, `"variation"{:js}`, `"codicology"{:js}`, `"paleography"{:js}`. |
-| <Att>source</Att> | Optional | Stating the source for a passage in the text, particularly relevant for the `"variation"{:js}` value of the <Att>type</Att> attribute. |
+| <Att>type</Att> | Optional | Stating what kind of a note it is, e.g. <Val>explanation</Val>, <Val>variation</Val>, <Val>codicology</Val>, <Val>paleography</Val>. |
+| <Att>source</Att> | Optional | Stating the source for a passage in the text, particularly relevant for the <Val>variation</Val> value of the <Att>type</Att> attribute. |
 </div>
 
 

@@ -367,7 +367,7 @@ adding an attribute for the number: <Att>n</Att>.
 One ore more attributes are added to the opening tag of elements in such a way that they follow
 the element name, separated by a white space. The value of an attribute
 is given in double quotations to the right of an equals sign.
-Adding a <Att>n</Att> attribute (with the value `"1"{:js}`) to the <E>l</E> element of the first line would  
+Adding a <Att>n</Att> attribute (with the value <Val>1</Val>) to the <E>l</E> element of the first line would  
 be encoded like this:
 ```xml
 <l n="1">
@@ -620,15 +620,15 @@ document is in XML:
 
 
 The <Att>version</Att> attribute is required and the
-standard version is currently `"1.0"{:js}`, but it is possible that there will be further
+standard version is currently <Val>1.0</Val>, but it is possible that there will be further
 versions in the future. Two more attributes are optional: <Att>encoding</Att>, which specifies
 which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
 is assumed by all the standard browsers), and <Att>standalone</Att>, the possible values for
-which are `"yes"{:js}` and `"no"{:js}` to specify if the document makes use of an external
+which are <Val>yes</Val> and <Val>no</Val> to specify if the document makes use of an external
 schema. XML documents do not in fact require a schema, provided they are “well-formed”
 (see below), but in most cases it is adventageous to employ a schema. In cases where there is
-no schema the value of the <Att>standalone</Att> attribute should be `"yes"{:js}`. If the
-attribute is omitted, on the other hand, the default value `"no"{:js}` is assumed.
+no schema the value of the <Att>standalone</Att> attribute should be <Val>yes</Val>. If the
+attribute is omitted, on the other hand, the default value <Val>no</Val> is assumed.
 
 The document’s second line, following the XML declaration, is the reference to the schema used.
 In the handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. 

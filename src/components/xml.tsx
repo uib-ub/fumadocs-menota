@@ -18,7 +18,14 @@ export async function Att({ children }: { children: string }) {
         dangerouslySetInnerHTML={{ __html: await parse(`@${children}`, "sh") }}/>
 }
 
-async function parse(input: string, lang: 'xml' | 'sh') {
+export async function Val({ children }: { children: string }) {
+    return <span
+        suppressHydrationWarning
+        className="xml-attvalue inline-flex"
+        dangerouslySetInnerHTML={{ __html: await parse(`"${children}"`, "js") }}/>
+}
+
+async function parse(input: string, lang: 'xml' | 'js' | 'sh') {
     return (await codeToHtml(input, {
         lang, 
         theme: 'github-light',

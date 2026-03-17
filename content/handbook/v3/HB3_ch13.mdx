@@ -101,12 +101,12 @@ attributes:
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | <E>lg</E> |  | Marks the stanza in relation to the surrounding prose text.  |
-| <Att>n</Att> | Obl | Indicates the identity of the stanza within the manuscript, i.e. its number in the manuscript, using values such as `"1"{:js}`, `"2"{:js}`, `"3"{:js}`.  |
+| <Att>n</Att> | Obl | Indicates the identity of the stanza within the manuscript, i.e. its number in the manuscript, using values such as <Val>1</Val>, <Val>2</Val>, <Val>3</Val>.  |
 | <Att>xml:id</Att> | Optional | Indicates the identity of the stanza within the medieval poetic corpus. The id should refer to a standard edition of the works. Menota recommends using the sigla for verses used by the Skaldic Poetry project ([https://skaldic.abdn.ac.uk/db.php](https://skaldic.abdn.ac.uk/db.php)) for non-Eddic verse, and the numbering in [Neckel and Kuhn 1983](/handbook/v3/HB3_literature#Kuhn1983) for Eddic verse. If no standard corpus contains the verse (e.g. rímur), it should be indicated by a separate typology.  |
-| <Att>type</Att> | Optional | Indicates the general metrical form of the stanza, e.g. `"dróttkvætt"{:js}` or `"fornyrðislag."{:js}` |
+| <Att>type</Att> | Optional | Indicates the general metrical form of the stanza, e.g. <Val>dróttkvætt</Val> or <Val>fornyrðislag.</Val> |
 | <E>l</E> |  | Marks the line within the stanza. |
-| <Att>n</Att> | Obl | Indicates the line number within the stanza, using values such as `"1"{:js}`, `"2"{:js}`, `"3"{:js}`. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. |
-| <Att>type</Att> | Optional | Indicates the type of line for formatting purposes; the implied value, `"normal"{:js}`, is not indented; use `"b-line"{:js}` for the b-line of eddic metres which should have the caesura represented by a long space; use `"ljod-long"{:js}` for <em>ljóðaháttr</em> long lines, which should have a line break and be indented. |
+| <Att>n</Att> | Obl | Indicates the line number within the stanza, using values such as <Val>1</Val>, <Val>2</Val>, <Val>3</Val>. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. |
+| <Att>type</Att> | Optional | Indicates the type of line for formatting purposes; the implied value, <Val>normal</Val>, is not indented; use <Val>b-line</Val> for the b-line of eddic metres which should have the caesura represented by a long space; use <Val>ljod-long</Val> for <em>ljóðaháttr</em> long lines, which should have a line break and be indented. |
 | <Att>met</Att> | Optional | Indicates the metrical form of the line. The form should be according to a standard typology, e.g. types A&ndash;E of the common germanic verse form. Sub-types can also be represented, using, e.g. [Gade 1995](/handbook/v3/HB3_literature#Gade1995). Alternatively, the actual scansion of the line can be represented using a series of symbols (e.g. ‘/’ for a lift, ‘\’ for a secondary stress, ‘x’ for a dip and ‘\|’ for a syntactic caesura; or cf. the [MUFI character recommendation](/handbook/v3/HB3_literature#MUFIrec) for metrical symbols).  |
 | <E>me:all</E> |  | Indicates the alliteration of the line.  |
 | <E>me:ass</E> |  | Indicates the internal rhymes of the line, where relevant.  |
@@ -242,7 +242,7 @@ The transcription is encoded thus (long “s” is normalised to “s”; encode
 
 
 The value of <Att>n</Att> is 3, as this is the third verse recorded in the manuscript. The verse’s <Att>xml:id</Att> is the siglum from the  
-[Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is `"dróttkvætt"{:js}`, 
+[Skaldic project](https://skaldic.abdn.ac.uk/db.php?table=verses&id=1939). The type of metre is <Val>dróttkvætt</Val>, 
 but this categorisation is unnecessary, as the link to the skaldic project also provides information on the metrical category of each verse. 
 Each line is encoded with the <E>l</E> element, with the line number given and the metrical categorisation (here, from
 [Gade 1995](/handbook/v3/HB3_literature#Gade1995); “X” means 

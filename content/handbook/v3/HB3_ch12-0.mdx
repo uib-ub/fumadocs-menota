@@ -120,7 +120,7 @@ simultaneously or at a later stage.
 For a more detailed encoding of personal names and place names, we recommend using
 the elements <E>persName</E> and <E>placeName</E> respectively. They should be
 treated as strictly equivalent with the <E>name</E> element and the <Att>type</Att>
-attribute with the values `"person"{:js}` and `"place"{:js}`. 
+attribute with the values <Val>person</Val> and <Val>place</Val>. 
 
 Thus, ...
 ```xml
@@ -169,14 +169,14 @@ the naming conventions of the time.
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | <E>persName</E> |  | The name of a person, consisting of one or more words. |
-| <Att>type</Att> | Optional | Indicates the type of name. Suggested values: `"historical"{:js}`, `"mythological"{:js}`.  |
+| <Att>type</Att> | Optional | Indicates the type of name. Suggested values: <Val>historical</Val>, <Val>mythological</Val>.  |
 | <Att>ref</Att> | Optional | Identifier(s), i.e. xml:id(s) and/or external URI(s). |
 | <E>forename</E> |  | The first name of a person. |
 | <E>addName</E> |  | An additional name of a person. |
-| <Att>type</Att> | Optional | Indicates the type of name. Suggested values: `"epithet"{:js}`, `"metronym"{:js}`, `"mythological"{:js}`, `"nickname"{:js}`, `"patronym"{:js}`. |
+| <Att>type</Att> | Optional | Indicates the type of name. Suggested values: <Val>epithet</Val>, <Val>metronym</Val>, <Val>mythological</Val>, <Val>nickname</Val>, <Val>patronym</Val>. |
 | <E>surname</E> |  | The family name of a person, excluding patronyms and metronyms. |
 | <E>roleName</E> |  | The name for a role held by a person. |
-| <Att>type</Att> | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested value: `"political"{:js}`. |
+| <Att>type</Att> | Optional | Indicates the role of the person, e.g. in the form of a title. Suggested value: <Val>political</Val>. |
 </div>
 
 
@@ -193,7 +193,7 @@ Forenames are encoded with the element <E>forename</E> contained in the
 
 We recommend that patronymica, i.e. a father’s name such as Haraldsson or
 Haraldsdóttir, should be encoded with the element <E>addName</E> and the
-<Att>type</Att> attribute set to `"patronym"{:js}`:
+<Att>type</Att> attribute set to <Val>patronym</Val>:
 ```xml
 <persName>
   <forename>Egill</forename>
@@ -229,7 +229,7 @@ found in the _Poetic Edda_:
 
 
 As Loki has the second name from his mother Laufey, the value of the attribute is
-`"metronym"{:js}` (meaning that it is derived from the name of the person’s
+<Val>metronym</Val> (meaning that it is derived from the name of the person’s
 mother).
 
 ### 12.2.2 Surnames [#sec12.2.2]
@@ -374,7 +374,7 @@ resources and more examples, and also [ch. 14.3.6](/handbook/v3/HB3_ch14#sec14.3
 The encoding of place names should be rather straight-forward, but there are a few
 things that need to be mentioned and exemplified. The starting point is the
 above-mentioned encoding of all place names with the element <E>name</E> and an
-attribute <Att>type</Att> with the value `"place"{:js}`:
+attribute <Att>type</Att> with the value <Val>place</Val>:
 ```xml
 <name type="place">Borg</name>
 ```
@@ -443,7 +443,7 @@ searchability.
 Medieval texts contain names for horses, dogs and other domestic animals. These
 could be encoded with the <E>name</E> element and the <Att>type</Att>
 attribute. On a basic level we would suggest that all animal names are marked with
-the attribute value `"animal"{:js}`:
+the attribute value <Val>animal</Val>:
 ```xml
 <name type="animal">Freyfaxi</name>
 ```
@@ -459,8 +459,8 @@ the name of a horse:
 
 There are also names of animals in relation to myths and legends. For example,
 Sigurðr Fáfnisbani had a horse named Grani. If we wish to encode a mythological or
-legendary name this could be done by specifying the value `"horse"{:js}` of the
-<Att>type</Att> attribute, and `"legendary"{:js}` in a <Att>subtype</Att>
+legendary name this could be done by specifying the value <Val>horse</Val> of the
+<Att>type</Att> attribute, and <Val>legendary</Val> in a <Att>subtype</Att>
 attribute:
 ```xml
 <name type="horse" subtype="legendary">Grani</name>
@@ -469,7 +469,7 @@ attribute:
 
 There is no element <E>animalName</E> on par with <E>persName</E> and
 <E>placeName</E>. For all but the most detailed encodings, we suggest that
-the type value `"animal"{:js}` is sufficient.
+the type value <Val>animal</Val> is sufficient.
 
 ### 12.4.2 Artefact names [#sec12.4.2]
 
@@ -494,7 +494,7 @@ And it could further be encoded as a mythological name:
 ```
 
 
-In most cases, we believe that the attribute value `"artefact"{:js}` is
+In most cases, we believe that the attribute value <Val>artefact</Val> is
 sufficient. However, if a text contains many object names it might be convenient to
 use the element <E>objectName</E> for a more clear-cut distinction between names
 of artefacts and other types of names. 

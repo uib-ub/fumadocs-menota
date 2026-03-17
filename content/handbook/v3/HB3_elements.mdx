@@ -136,23 +136,23 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the type of addition made. If it is a scribal supplying of text, the value would be `"supplement"{:js}`, if it is a scribal gloss, the value would be `"gloss"{:js}`. </td>
+<td>Indicates the type of addition made. If it is a scribal supplying of text, the value would be <Val>supplement</Val>, if it is a scribal gloss, the value would be <Val>gloss</Val>. </td>
 </tr>
 <tr>
 <td><Att>place</Att></td>
 <td>Obligatory</td>
-<td>Indicates where the addition is made. Suggested values include: `"supralinear"{:js}`, `"inline"{:js}`, `"infralinear"{:js}` and `"margin"{:js}`. </td>
+<td>Indicates where the addition is made. Suggested values include: <Val>supralinear</Val>, <Val>inline</Val>, <Val>infralinear</Val> and <Val>margin</Val>. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>hand</Att></td>
 <td>Optional</td>
-<td>Signifies the scribe who made the addition. Sample values: `"scribe"{:js}`, `"mainscribe"{:js}`, `"laterscribe"{:js}`. </td>
+<td>Signifies the scribe who made the addition. Sample values: <Val>scribe</Val>, <Val>mainscribe</Val>, <Val>laterscribe</Val>. </td>
 </tr>
 <tr>
 <td><Att>rendition</Att></td>
 <td>Optional</td>
-<td>If an addition has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
+<td>If an addition has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the <Val>first</Val>, <Val>middle</Val> and <Val>last</Val> values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 <td></td>
 </tr>
 <tr>
@@ -176,7 +176,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the type of name. Sample values: `"epithet"{:js}`, `"metronym"{:js}`, `"mythological"{:js}`, `"nickname"{:js}`, `"patronym"{:js}`.</td>
+<td>Indicates the type of name. Sample values: <Val>epithet</Val>, <Val>metronym</Val>, <Val>mythological</Val>, <Val>nickname</Val>, <Val>patronym</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -236,7 +236,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>status</Att></td>
 <td>Obligatory</td>
-<td>The type of availability. Sample values: `"free"{:js}`, `"restricted"{:js}`, `"unknown"{:js}`. </td>
+<td>The type of availability. Sample values: <Val>free</Val>, <Val>restricted</Val>, <Val>unknown</Val>. </td>
 <td></td>
 </tr>
 </tbody>
@@ -334,31 +334,31 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Obligatory</td>
-<td>States the type of character. Sample values: `"word"{:js}` and `"initial"{:js}`. If an initial is omitted or missing, this can be indicated by the value `"noInitial"{:js}`, even though this might seem somewhat redundant if other mark-up such as <E>space/</E> or <E>gap/</E> is present. However, it has the advantage that, for instance, the subtype and the intended size of the missing initial may be encoded and thus searched for. </td>
+<td>States the type of character. Sample values: <Val>word</Val> and <Val>initial</Val>. If an initial is omitted or missing, this can be indicated by the value <Val>noInitial</Val>, even though this might seem somewhat redundant if other mark-up such as <E>space/</E> or <E>gap/</E> is present. However, it has the advantage that, for instance, the subtype and the intended size of the missing initial may be encoded and thus searched for. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rend</Att></td>
 <td>Optional</td>
-<td> Describes the form and kind of decoration found in or around the initial, indicating both the way in which an initial is drawn and the main means of decoration/ornamentation. The attribute can take several values (in no specific order) that are simply seperated by white space. Sample values: `"historiated"{:js}`, `"foliate"{:js}`,`"penFlourish"{:js}`, `"penwork"{:js}`, `"interlaced"{:js}`, `"puzzle"{:js}`, `"zoomorphic"{:js}`, `"dragon"{:js}`, `"inhabited"{:js}`, `"lombard"{:js}`, `"versal"{:js}`, `"colourStroked"{:js}`, `"guideLetter"{:js}`, `"other"{:js}` (anything else). </td>
+<td> Describes the form and kind of decoration found in or around the initial, indicating both the way in which an initial is drawn and the main means of decoration/ornamentation. The attribute can take several values (in no specific order) that are simply seperated by white space. Sample values: <Val>historiated</Val>, <Val>foliate</Val>,<Val>penFlourish</Val>, <Val>penwork</Val>, <Val>interlaced</Val>, <Val>puzzle</Val>, <Val>zoomorphic</Val>, <Val>dragon</Val>, <Val>inhabited</Val>, <Val>lombard</Val>, <Val>versal</Val>, <Val>colourStroked</Val>, <Val>guideLetter</Val>, <Val>other</Val> (anything else). </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>resp</Att></td>
 <td>Optional</td>
-<td>States who is responsible for the hyphenation, when <Att>type</Att> is `"hyphen"{:js}`. Sample values: `"scribe"{:js}`, `"mainscribe"{:js}`, `"laterscribe"{:js}`, or, if several scribes are identified in the header, `"#h2"{:js}`, `"#h3"{:js}`, `"#h4"{:js}`, and so on.</td>
+<td>States who is responsible for the hyphenation, when <Att>type</Att> is <Val>hyphen</Val>. Sample values: <Val>scribe</Val>, <Val>mainscribe</Val>, <Val>laterscribe</Val>, or, if several scribes are identified in the header, <Val>#h2</Val>, <Val>#h3</Val>, <Val>#h4</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>style</Att></td>
 <td>Optional</td>
-<td>Indicates the size of an initial, using positional values like `"u"{:js}`, `"d"{:js}`, `"mu"{:js}` and `"md"{:js}`, and the colour of an initial using colour names such as `"cRed"{:js}` or hexadecimal CSS colour codes, such as `"c#FF0000"{:js}`. For details, see [ch. 7.3.3](/handbook/v3/HB3_ch7#sec7.3.3) and [7.3.4](/handbook/v3/HB3_ch7#sec7.3.4). </td>
+<td>Indicates the size of an initial, using positional values like <Val>u</Val>, <Val>d</Val>, <Val>mu</Val> and <Val>md</Val>, and the colour of an initial using colour names such as <Val>cRed</Val> or hexadecimal CSS colour codes, such as <Val>c#FF0000</Val>. For details, see [ch. 7.3.3](/handbook/v3/HB3_ch7#sec7.3.3) and [7.3.4](/handbook/v3/HB3_ch7#sec7.3.4). </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>subtype</Att></td>
 <td>Optional</td>
-<td>Indicates the type of the initial, e.g. whether it is a text initial or a sentence initial. Sample values: `"opening"{:js}`, `"text"{:js}`, `"para"{:js}`, `"littNot"{:js}` (for <em>littera notabilior</em> or sentence initial) as well as `"major"{:js}` and `"minor"{:js}`. </td>
+<td>Indicates the type of the initial, e.g. whether it is a text initial or a sentence initial. Sample values: <Val>opening</Val>, <Val>text</Val>, <Val>para</Val>, <Val>littNot</Val> (for <em>littera notabilior</em> or sentence initial) as well as <Val>major</Val> and <Val>minor</Val>. </td>
 <td></td>
 </tr>
 <tr>
@@ -370,13 +370,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>ed</Att></td>
 <td>Obligatory</td>
-<td>Specifies what kind of source the column beginning refers to, typically a manuscript, expressed by the `"ms"{:js}` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"{:js}` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the columns of a manuscript as well as to the columns of one or more editions. For texts to be displayed in the Menota archive, each <E>cb/</E> element must have at least one <Att>ed</Att> attribute with the `"ms"{:js}` value, and a <Att>n</Att> attribute with the number of the column.</td>
+<td>Specifies what kind of source the column beginning refers to, typically a manuscript, expressed by the <Val>ms</Val> value. It can also refer to an edition, in which case the value should state which edition it is, e.g. <Val>LHO1945</Val> for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the columns of a manuscript as well as to the columns of one or more editions. For texts to be displayed in the Menota archive, each <E>cb/</E> element must have at least one <Att>ed</Att> attribute with the <Val>ms</Val> value, and a <Att>n</Att> attribute with the number of the column.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Obligatory</td>
-<td>Specifies the number of the column in manuscripts with two or more columns. Recommended values: `"A"{:js}` (first column), `"B"{:js}` (second column). We are not familiar with Medieval Nordic manuscripts having three or more columns.</td>
+<td>Specifies the number of the column in manuscripts with two or more columns. Recommended values: <Val>A</Val> (first column), <Val>B</Val> (second column). We are not familiar with Medieval Nordic manuscripts having three or more columns.</td>
 <td></td>
 </tr>
 <tr>
@@ -442,7 +442,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>status</Att></td>
 <td>Optional</td>
-<td>The degree of quality control. Recommended values: `"high"{:js}` (the text has been thoroughly checked and proofread), `"medium"{:js}` (the text has been checked at least once), `"low"{:js}` (the text has not been checked), `"unknown"{:js}` (the correction status of the text is unknown). However, if desired, further specification can be given in prose within a <E>p</E> element. </td>
+<td>The degree of quality control. Recommended values: <Val>high</Val> (the text has been thoroughly checked and proofread), <Val>medium</Val> (the text has been checked at least once), <Val>low</Val> (the text has not been checked), <Val>unknown</Val> (the correction status of the text is unknown). However, if desired, further specification can be given in prose within a <E>p</E> element. </td>
 <td></td>
 </tr>
 <tr>
@@ -454,7 +454,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>key</Att></td>
 <td>Optional</td>
-<td>Provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind, e.g. `"IS"{:js}` for Iceland, `"NO"{:js}` for Norway, `"SE"{:js}` for Sweden, `"DK"{:js}` for Denmark, and so on according to ISO 3166-1 alpha-2.</td>
+<td>Provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind, e.g. <Val>IS</Val> for Iceland, <Val>NO</Val> for Norway, <Val>SE</Val> for Sweden, <Val>DK</Val> for Denmark, and so on according to ISO 3166-1 alpha-2.</td>
 <td></td>
 </tr>
 <tr>
@@ -497,7 +497,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><E>damage</E></td>
 <td></td>
-<td>Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook. In [ch. 8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), we recommend encoding damaged text by the <E>gap/</E> element, in which the <Att>reason</Att> attribute can take the value `"damaged"{:js}`. </td>
+<td>Contains an area of damage to the text witness. This is a TEI element but not recommended in this handbook. In [ch. 8.2.1](/handbook/v3/HB3_ch8#sec8.2.1), we recommend encoding damaged text by the <E>gap/</E> element, in which the <Att>reason</Att> attribute can take the value <Val>damaged</Val>. </td>
 <td>[ch. 16.2](/handbook/v3/HB3_ch16#sec16.2). </td>
 </tr>
 <tr>
@@ -515,7 +515,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>when</Att></td>
 <td>Obligatory</td>
-<td>Recommended value is a date in the format year-month-day, e.g. `"2019-10-15"{:js}`.</td>
+<td>Recommended value is a date in the format year-month-day, e.g. <Val>2019-10-15</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -539,19 +539,19 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>hand</Att></td>
 <td>Obligatory</td>
-<td>Signifies the agent which made the deletion. Sample values: `"scribe"{:js}` (the scribe of the manuscript, indicating that there is a single scribe), `"mainscribe"{:js}` (the main scribe of the manuscript, indicating that there are more than one scribe), `"laterscribe"{:js}` (a later scribe, typically correcting the manuscript).</td>
+<td>Signifies the agent which made the deletion. Sample values: <Val>scribe</Val> (the scribe of the manuscript, indicating that there is a single scribe), <Val>mainscribe</Val> (the main scribe of the manuscript, indicating that there are more than one scribe), <Val>laterscribe</Val> (a later scribe, typically correcting the manuscript).</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rend</Att></td>
 <td>Obligatory</td>
-<td>Specifies the deletion, using any convenient typology. Sample values: `"overstrike"{:js}`, `"erasure"{:js}`, `"subpunction"{:js}`.</td>
+<td>Specifies the deletion, using any convenient typology. Sample values: <Val>overstrike</Val>, <Val>erasure</Val>, <Val>subpunction</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rendition</Att></td>
 <td>Optional</td>
-<td>If a deletion has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
+<td>If a deletion has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the <Val>first</Val>, <Val>middle</Val> and <Val>last</Val> values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2). </td>
 </tr>
 <tr>
 <td><E>delSpan/</E></td>
@@ -574,13 +574,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>Number. Sample values: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, or `"I"{:js}`, `"II"{:js}`, `"III"{:js}`, and so on.</td>
+<td>Number. Sample values: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, or <Val>I</Val>, <Val>II</Val>, <Val>III</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Specifies the name conventionally given to the type of division. Sample values: `"chapter"{:js}`, `"part"{:js}`, `"canto"{:js}`, `"stanza"{:js}`, `"couplet"{:js}`, `"work"{:js}` and`"text"{:js}`. If attempting to represent the physical structure of the text, `"page"{:js}`, `"column"{:js}` and `"line"{:js}` may be used, but we recommend the empty elements <E>pb/</E>, <E>cb/</E> and <E>lb/</E> for this type of structure. </td>
+<td>Specifies the name conventionally given to the type of division. Sample values: <Val>chapter</Val>, <Val>part</Val>, <Val>canto</Val>, <Val>stanza</Val>, <Val>couplet</Val>, <Val>work</Val> and<Val>text</Val>. If attempting to represent the physical structure of the text, <Val>page</Val>, <Val>column</Val> and <Val>line</Val> may be used, but we recommend the empty elements <E>pb/</E>, <E>cb/</E> and <E>lb/</E> for this type of structure. </td>
 <td></td>
 </tr>
 <tr>
@@ -617,13 +617,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>The number of the edition. Sample values: `"1"{:js}`, `"2"{:js}`, `"3"{:js}` or, in decimal format, `"1.0"{:js}`, `"1.1"{:js}`, `"1.2"{:js}`, `"2.0"{:js}`, `"2.1"{:js}`, `"2.2"{:js}`, and so on.</td>
+<td>The number of the edition. Sample values: <Val>1</Val>, <Val>2</Val>, <Val>3</Val> or, in decimal format, <Val>1.0</Val>, <Val>1.1</Val>, <Val>1.2</Val>, <Val>2.0</Val>, <Val>2.1</Val>, <Val>2.2</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>when</Att></td>
 <td>Optional</td>
-<td>Recommended value is a date in the format year-month-day, e.g. `"2019-10-15"{:js}`.</td>
+<td>Recommended value is a date in the format year-month-day, e.g. <Val>2019-10-15</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -641,7 +641,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>role</Att></td>
 <td>Optional</td>
-<td>The role of an editor, in particular in case the editor is an institution or project. For an individual editor the <Att>role</Att> with the value `"person"{:js}` is optional, but may be inserted for clarity. If an institution is regarded as the editor, it should be specified by the attribute <Att>role</Att> and value `"institution"{:js}`. If an <E>editor</E> does not have any <Att>role</Att> attribute, it is assumed to describe a person.</td>
+<td>The role of an editor, in particular in case the editor is an institution or project. For an individual editor the <Att>role</Att> with the value <Val>person</Val> is optional, but may be inserted for clarity. If an institution is regarded as the editor, it should be specified by the attribute <Att>role</Att> and value <Val>institution</Val>. If an <E>editor</E> does not have any <Att>role</Att> attribute, it is assumed to describe a person.</td>
 <td></td>
 </tr>
 <tr>
@@ -671,7 +671,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>me:type</Att></td>
 <td>Optional</td>
-<td>Specifies the type of expansion, using a convenient typology. Sample values: `"suspension"{:js}`, `"contraction"{:js}`, `"superscript"{:js}`, `"brevigraph"{:js}`.</td>
+<td>Specifies the type of expansion, using a convenient typology. Sample values: <Val>suspension</Val>, <Val>contraction</Val>, <Val>superscript</Val>, <Val>brevigraph</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -689,7 +689,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>defective</Att></td>
 <td>Optional</td>
-<td>Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"{:js}`, `"false"{:js}`, `"unknown"{:js}`, `"unspecified"{:js}`.</td>
+<td>Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: <Val>true</Val>, <Val>false</Val>, <Val>unknown</Val>, <Val>unspecified</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -701,7 +701,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>n</Att></td>
 <td>Obligatory</td>
-<td>The number of words (or any other measure), e.g. `"1019"{:js}`.</td>
+<td>The number of words (or any other measure), e.g. <Val>1019</Val>.</td>
 <td></td>
 </tr>
 </tbody>
@@ -751,25 +751,25 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>agent</Att></td>
 <td>Optional</td>
-<td>Specifies the cause of the damage, if this can be identified. Sample values: `"smoke"{:js}`, `"fungus"{:js}`, `"rubbing"{:js}`. Deliberate removal of text, i.e. by erasure, should be encoded using the <E>del</E> element.</td>
+<td>Specifies the cause of the damage, if this can be identified. Sample values: <Val>smoke</Val>, <Val>fungus</Val>, <Val>rubbing</Val>. Deliberate removal of text, i.e. by erasure, should be encoded using the <E>del</E> element.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>quantity</Att></td>
 <td>Optional</td>
-<td>Indicates approximately the extent of the gap. Values refer to the <Att>unit</Att> attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on. </td>
+<td>Indicates approximately the extent of the gap. Values refer to the <Att>unit</Att> attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>reason</Att></td>
 <td>Optional</td>
-<td>States the reason for omission. Sample values: `"damaged"{:js}`, `"missing"{:js}`, `"removed"{:js}`, `"cut"{:js}`.</td>
+<td>States the reason for omission. Sample values: <Val>damaged</Val>, <Val>missing</Val>, <Val>removed</Val>, <Val>cut</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>unit</Att></td>
 <td>Optional</td>
-<td> Names the unit used for describing the extent of the gap. Sample values: `"char"{:js}` (characters), `"word"{:js}`, `"line"{:js}`, `"leaf"{:js}`, `"quire"{:js}`, `"indeterminate"{:js}`.</td>
+<td> Names the unit used for describing the extent of the gap. Sample values: <Val>char</Val> (characters), <Val>word</Val>, <Val>line</Val>, <Val>leaf</Val>, <Val>quire</Val>, <Val>indeterminate</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -806,7 +806,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>hands</Att></td>
 <td>Optional</td>
-<td>Specifies the number of distinct hands identified within the manuscript. Value must be given as a number: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Specifies the number of distinct hands identified within the manuscript. Value must be given as a number: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -818,13 +818,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>scope</Att></td>
 <td>Optional</td>
-<td>Specifies how widely the hand is used in the manuscript. Sample values: `"major"{:js}`, `"minor"{:js}`, `"sole"{:js}`.</td>
+<td>Specifies how widely the hand is used in the manuscript. Sample values: <Val>major</Val>, <Val>minor</Val>, <Val>sole</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>script</Att></td>
 <td>Optional</td>
-<td>Indicates the type of script. Sample values: `"Carolingian"{:js}`, `"Insular"{:js}`, `"Proto-Gothic"{:js}`, `"Hybrida"{:js}`, `"Textualis"{:js}`, and so on.</td>
+<td>Indicates the type of script. Sample values: <Val>Carolingian</Val>, <Val>Insular</Val>, <Val>Proto-Gothic</Val>, <Val>Hybrida</Val>, <Val>Textualis</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -848,7 +848,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Specifies the type of heading. Sample value: `"rubric"{:js}`.</td>
+<td>Specifies the type of heading. Sample value: <Val>rubric</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -885,7 +885,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>The type of reference, e.g: `"Menota"{:js}`.</td>
+<td>The type of reference, e.g: <Val>Menota</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -897,7 +897,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>defective</Att></td>
 <td>Optional</td>
-<td>Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"{:js}`, `"false"{:js}`, `"unknown"{:js}` and `"unspecified"{:js}`.</td>
+<td>Providing the means of distinguishing between texts which are fragmentary and those which are not. Sample values: <Val>true</Val>, <Val>false</Val>, <Val>unknown</Val> and <Val>unspecified</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -915,13 +915,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>me:lemmatized</Att></td>
 <td>Obligatory</td>
-<td>Specifies the degree of lemmatisation: `"completely"{:js}`, `"partly"{:js}` and `"none"{:js}`.</td>
+<td>Specifies the degree of lemmatisation: <Val>completely</Val>, <Val>partly</Val> and <Val>none</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>me:morphAnalyzed</Att></td>
 <td>Optional</td>
-<td>Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): `"completely"{:js}`, `"partly"{:js}` and `"none"{:js}`.</td>
+<td>Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): <Val>completely</Val>, <Val>partly</Val> and <Val>none</Val>.</td>
 <td></td>
 </tr>
 </tbody>
@@ -952,19 +952,19 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>met</Att></td>
 <td>Optional</td>
-<td>Metrical structure. Contains a user-specified encoding for the conventional metrical structure of the element, e.g. `"D2"{:js}` (<em>dróttkvǽtt</em>), `"X"{:js}` (uncategorised), and so on.</td>
+<td>Metrical structure. Contains a user-specified encoding for the conventional metrical structure of the element, e.g. <Val>D2</Val> (<em>dróttkvǽtt</em>), <Val>X</Val> (uncategorised), and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>Indicates the line number within the stanza. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. Values must be given as numbers: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Indicates the line number within the stanza. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. Values must be given as numbers: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the type of line for display purposes. The implied value, `"normal"{:js}`, is not indented. For for the b-line of eddic metres which should have the caesura represented by a long space, `"b-line"{:js}` should be used. For <em>ljóðaháttr</em> long lines, which should have a line break and be indented, `"ljod-long"{:js}` should be used.</td>
+<td>Indicates the type of line for display purposes. The implied value, <Val>normal</Val>, is not indented. For for the b-line of eddic metres which should have the caesura represented by a long space, <Val>b-line</Val> should be used. For <em>ljóðaháttr</em> long lines, which should have a line break and be indented, <Val>ljod-long</Val> should be used.</td>
 <td></td>
 </tr>
 <tr>
@@ -982,7 +982,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>ident</Att></td>
 <td>Optional</td>
-<td>Language identification. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin.</td>
+<td>Language identification. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin.</td>
 <td></td>
 </tr>
 <tr>
@@ -1000,13 +1000,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>columns</Att></td>
 <td>Optional</td>
-<td>Specifies the number of columns per page. Values must be given as numbers: `"1"{:js}`, `"2"{:js}`. We are not familiar with Medieval Nordic manuscripts having three or more columns.</td>
+<td>Specifies the number of columns per page. Values must be given as numbers: <Val>1</Val>, <Val>2</Val>. We are not familiar with Medieval Nordic manuscripts having three or more columns.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>writtenLines</Att></td>
 <td>Optional</td>
-<td>Specifies the number of written lines per column. Values must be given as numbers: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Specifies the number of written lines per column. Values must be given as numbers: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -1024,19 +1024,19 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>ed</Att></td>
 <td>Obligatory</td>
-<td>Specifies what kind of source the line beginning refers to, typically a manuscript, expressed by the `"ms"{:js}` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"{:js}` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the lines of a manuscript as well as to the lines of one or more editions. For texts to be displayed in the Menota archive, each <E>lb/</E> element must have at least one <Att>ed</Att> attribute with the `"ms"{:js}` value and a <Att>n</Att> attribute with the number of the line.</td>
+<td>Specifies what kind of source the line beginning refers to, typically a manuscript, expressed by the <Val>ms</Val> value. It can also refer to an edition, in which case the value should state which edition it is, e.g. <Val>LHO1945</Val> for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the lines of a manuscript as well as to the lines of one or more editions. For texts to be displayed in the Menota archive, each <E>lb/</E> element must have at least one <Att>ed</Att> attribute with the <Val>ms</Val> value and a <Att>n</Att> attribute with the number of the line.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Obligatory</td>
-<td>Specifies the line number with numerical values: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Specifies the line number with numerical values: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rend</Att></td>
 <td>Optional</td>
-<td>Specifies the physical position of the following part of a line. This attribute is only to be used in the case of discontinuous headings. Values must be given as numbers: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Specifies the physical position of the following part of a line. This attribute is only to be used in the case of discontinuous headings. Values must be given as numbers: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -1048,13 +1048,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>Indicates the identity of the stanza within the manuscript, i.e. its commonly recognised number in the manuscript. Values must be given as numbers: `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Indicates the identity of the stanza within the manuscript, i.e. its commonly recognised number in the manuscript. Values must be given as numbers: <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the general metrical form of the stanza. Sample values: `"dróttkvætt"{:js}`, `"fornyrðislag"{:js}`, `"ljóðaháttr"{:js}`.</td>
+<td>Indicates the general metrical form of the stanza. Sample values: <Val>dróttkvætt</Val>, <Val>fornyrðislag</Val>, <Val>ljóðaháttr</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1090,13 +1090,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>from</Att></td>
 <td>Optional</td>
-<td>Specifies the starting point of the location in a normalised form, e.g. `"3v"{:js}` for folio 3v or `"4v.12"{:js}` for line 12 of folio 4v.</td>
+<td>Specifies the starting point of the location in a normalised form, e.g. <Val>3v</Val> for folio 3v or <Val>4v.12</Val> for line 12 of folio 4v.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>to</Att></td>
 <td>Optional</td>
-<td>Specifies the end-point of the location in a normalised form, e.g. `"4v"{:js}` for folio 4v or `"5v.12"{:js}` for line 12 of folio 5v.</td>
+<td>Specifies the end-point of the location in a normalised form, e.g. <Val>4v</Val> for folio 4v or <Val>5v.12</Val> for line 12 of folio 5v.</td>
 <td></td>
 </tr>
 </tbody>
@@ -1175,13 +1175,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>me:category</Att></td>
 <td>Optional</td>
-<td>Specifies the type of span, restricted to this list of values (which correspond to elements): `"gap"{:js}` for contents that would otherwise be contained by the <E>gap/</E> element; `"unclear"{:js}` for contents that would otherwise be contained by the <E>unclear</E> element; `"add"{:js}` for contents that would otherwise be contained by the <E>add</E> element; `"del"{:js}` for contents that would otherwise be contained by the <E>del</E> element; `"sic"{:js}` for contents that would otherwise be contained by the <E>sic</E> element; `"corr"{:js}` for contents that would otherwise be contained by the <E>corr</E> element; `"surplus"{:js}` for contents that would otherwise be contained by the <E>surplus</E> element; `"other"{:js}` for for contents that would otherwise be contained by other elements. </td>
+<td>Specifies the type of span, restricted to this list of values (which correspond to elements): <Val>gap</Val> for contents that would otherwise be contained by the <E>gap/</E> element; <Val>unclear</Val> for contents that would otherwise be contained by the <E>unclear</E> element; <Val>add</Val> for contents that would otherwise be contained by the <E>add</E> element; <Val>del</Val> for contents that would otherwise be contained by the <E>del</E> element; <Val>sic</Val> for contents that would otherwise be contained by the <E>sic</E> element; <Val>corr</Val> for contents that would otherwise be contained by the <E>corr</E> element; <Val>surplus</Val> for contents that would otherwise be contained by the <E>surplus</E> element; <Val>other</Val> for for contents that would otherwise be contained by other elements. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>spanTo</Att></td>
 <td>Optional</td>
-<td>Specifies the end point of the text span. Recommended values: `"an1"{:js}`, `"an2"{:js}`, `"an3"{:js}` and so on.</td>
+<td>Specifies the end point of the text span. Recommended values: <Val>an1</Val>, <Val>an2</Val>, <Val>an3</Val> and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -1193,19 +1193,19 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>unit</Att></td>
 <td>Obligatory</td>
-<td>Indicates the type of break, such as `"sentence"{:js}` (for sentence divisions), `"turn"{:js}` (in dialogues), or more generally, `"segment"{:js}` or `"section"{:js}`.</td>
+<td>Indicates the type of break, such as <Val>sentence</Val> (for sentence divisions), <Val>turn</Val> (in dialogues), or more generally, <Val>segment</Val> or <Val>section</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>Indicates the identity of the <Att>unit</Att>. Specifies the break with numerical or alphanumerical values, e.g. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, or `"m1"{:js}`, `"m2"{:js}`, `"m3"{:js}`, and so on. </td>
+<td>Indicates the identity of the <Att>unit</Att>. Specifies the break with numerical or alphanumerical values, e.g. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, or <Val>m1</Val>, <Val>m2</Val>, <Val>m3</Val>, and so on. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rendition</Att></td>
 <td>Optional</td>
-<td>Indicates how the break should be rendered. In the case of dialogues, `"opening-quote"{:js}` and `"closing-quote"{:js}` are appropriate. </td>
+<td>Indicates how the break should be rendered. In the case of dialogues, <Val>opening-quote</Val> and <Val>closing-quote</Val> are appropriate. </td>
 <td></td>
 </tr>
 <tr>
@@ -1247,7 +1247,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>defective</Att></td>
 <td>Optional</td>
-<td>Provides the means of distinguishing between texts which are fragmentary and those which are not. Sample values: `"true"{:js}`, `"false"{:js}`,`"unknown"{:js}`, `"unspecified"{:js}`.</td>
+<td>Provides the means of distinguishing between texts which are fragmentary and those which are not. Sample values: <Val>true</Val>, <Val>false</Val>,<Val>unknown</Val>, <Val>unspecified</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1259,13 +1259,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Characterises the element in some sense, using any convenient classification scheme or typology, e.g. `"nickname"{:js}`.</td>
+<td>Characterises the element in some sense, using any convenient classification scheme or typology, e.g. <Val>nickname</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin. </td>
+<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin. </td>
 <td></td>
 </tr>
 <tr>
@@ -1332,7 +1332,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates what type of name it is. Sample values: `"person"{:js}`, `"place"{:js}`, `"animal"{:js}`, `"artefact"{:js}`.</td>
+<td>Indicates what type of name it is. Sample values: <Val>person</Val>, <Val>place</Val>, <Val>animal</Val>, <Val>artefact</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1356,7 +1356,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>me:level</Att></td>
 <td>Obligatory</td>
-<td>Specifies the level on which the text is encoded. The three focal levels are `"facs"{:js}` (facsimile), `"dipl"{:js}` (diplomatic) and `"norm"{:js}` (normalised). In addition, a strictly paleographic level, `"pal"{:js}` is defined.</td>
+<td>Specifies the level on which the text is encoded. The three focal levels are <Val>facs</Val> (facsimile), <Val>dipl</Val> (diplomatic) and <Val>norm</Val> (normalised). In addition, a strictly paleographic level, <Val>pal</Val> is defined.</td>
 <td></td>
 </tr>
 <tr>
@@ -1368,13 +1368,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>source</Att></td>
 <td>Optional</td>
-<td>Stating the source for a passage in the text, particularly relevant for the <Att>type</Att> attribute with the `"variation"{:js}` value.</td>
+<td>Stating the source for a passage in the text, particularly relevant for the <Att>type</Att> attribute with the <Val>variation</Val> value.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Stating what kind of a note it is, e.g.`"explanation"{:js}`, `"variation"{:js}``"codicology"{:js}`, `"paleography"{:js}`.</td>
+<td>Stating what kind of a note it is, e.g.<Val>explanation</Val>, <Val>variation</Val><Val>codicology</Val>, <Val>paleography</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1386,13 +1386,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Specifies the type of numeral. Recommended values: `"cardinal"{:js}` (one, two, three) and `"ordinal"{:js}` (first, second, third).</td>
+<td>Specifies the type of numeral. Recommended values: <Val>cardinal</Val> (one, two, three) and <Val>ordinal</Val> (first, second, third).</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>value</Att></td>
 <td>Optional</td>
-<td>Specifies the numeral in numbers, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Specifies the numeral in numbers, i.e. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 </tbody>
@@ -1423,7 +1423,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>form</Att></td>
 <td>Optional</td>
-<td>A short project-specific name identifying the physical form of the carrier, e.g. `"codex"{:js}`, `"roll"{:js}`, `"fragment"{:js}`.</td>
+<td>A short project-specific name identifying the physical form of the carrier, e.g. <Val>codex</Val>, <Val>roll</Val>, <Val>fragment</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1441,7 +1441,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>rend</Att></td>
 <td>Obligatory</td>
-<td>The correction markers in the manuscript. Sample value: `"transposition-signs"{:js}`.</td>
+<td>The correction markers in the manuscript. Sample value: <Val>transposition-signs</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1453,7 +1453,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Obligatory</td>
-<td>Specifies that the organisation is the institution with which the editor is affiliated, using the the value `"affiliation"{:js}`.</td>
+<td>Specifies that the organisation is the institution with which the editor is affiliated, using the the value <Val>affiliation</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1520,25 +1520,25 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>resp</Att></td>
 <td>Optional</td>
-<td>States who is responsible for the punctuation mark. Suggested values: `"scribe"{:js}`, `"mainscribe"{:js}` and `"laterscribe"{:js}`.</td>
+<td>States who is responsible for the punctuation mark. Suggested values: <Val>scribe</Val>, <Val>mainscribe</Val> and <Val>laterscribe</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><E>pb/</E></td>
 <td></td>
-<td>Page beginning. An empty element which marks the beginning of a new page in a paginated document. It is also used in foliated documents (having numbers like `"1r"{:js}`, `"1v"{:js}`, `"2r"{:js}`, `"2v"{:js}`, and so on.)</td>
+<td>Page beginning. An empty element which marks the beginning of a new page in a paginated document. It is also used in foliated documents (having numbers like <Val>1r</Val>, <Val>1v</Val>, <Val>2r</Val>, <Val>2v</Val>, and so on.)</td>
 <td rowSpan="3">[ch. 3.1.1](/handbook/v3/HB3_ch3#sec3.1.1), [3.12](/handbook/v3/HB3_ch3#sec3.12), [3.12.1](/handbook/v3/HB3_ch3#sec3.12.1), [3.12.2](/handbook/v3/HB3_ch3#sec3.12.2), [4.6.3](/handbook/v3/HB3_ch4#sec4.6.3), [9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1), [16.1](/handbook/v3/HB3_ch16#sec16.1). </td>
 </tr>
 <tr>
 <td><Att>ed</Att></td>
 <td>Obligatory</td>
-<td>Specifies what kind of source the page beginning refers to, typically a manuscript, expressed by the `"ms"{:js}` value. It can also refer to an edition, in which case the value should state which edition it is, e.g. `"LHO1945"{:js}` for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the pages of a manuscript as well as to the pages of one or more editions. For texts to be displayed in the Menota archive, each <E>pb/</E> element must have at least one <Att>ed</Att> attribute with the `"ms"{:js}` value and a <Att>n</Att> attribute with the number of the page.</td>
+<td>Specifies what kind of source the page beginning refers to, typically a manuscript, expressed by the <Val>ms</Val> value. It can also refer to an edition, in which case the value should state which edition it is, e.g. <Val>LHO1945</Val> for Ludvig Holm-Olsen’s 1945 edition (of _Konungs skuggsjá_). Note that it is possible to refer to more than one document structure in a single XML document, e.g. to the pages of a manuscript as well as to the pages of one or more editions. For texts to be displayed in the Menota archive, each <E>pb/</E> element must have at least one <Att>ed</Att> attribute with the <Val>ms</Val> value and a <Att>n</Att> attribute with the number of the page.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Obligatory</td>
-<td>Number. In a paginated document, the values will be numbers like `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on. In a foliated document, it should indicate front or back pages (recto, verso), with values like `"1r"{:js}`, `"1v"{:js}`, `"2r"{:js}`, `"2v"{:js}`, and so on.</td>
+<td>Number. In a paginated document, the values will be numbers like <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on. In a foliated document, it should indicate front or back pages (recto, verso), with values like <Val>1r</Val>, <Val>1v</Val>, <Val>2r</Val>, <Val>2v</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -1556,7 +1556,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the type of name. Sample values: `"historical"{:js}`, `"mythological"{:js}`.</td>
+<td>Indicates the type of name. Sample values: <Val>historical</Val>, <Val>mythological</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1568,7 +1568,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin.</td>
+<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin.</td>
 <td></td>
 </tr>
 <tr>
@@ -1580,13 +1580,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>role</Att></td>
 <td>Optional</td>
-<td>Specifies a primary role or classification for the person. Sample value: `"owner"{:js}`.</td>
+<td>Specifies a primary role or classification for the person. Sample value: <Val>owner</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>sex</Att></td>
 <td>Optional</td>
-<td>Specifies the sex of the person. Sample values: `"M"{:js}` for male, `"F"{:js}` for female, `"O"{:js}` for other, `"N"{:js}` for none or not applicable, and`"U"{:js}` for unknown.</td>
+<td>Specifies the sex of the person. Sample values: <Val>M</Val> for male, <Val>F</Val> for female, <Val>O</Val> for other, <Val>N</Val> for none or not applicable, and<Val>U</Val> for unknown.</td>
 <td></td>
 </tr>
 <tr>
@@ -1671,13 +1671,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: `"spoken"{:js}`, `"thought"{:js}`, `"foreign"{:js}`, `"term"{:js}` (technical term), `"emph"{:js}` (emphasised). </td>
+<td>May be used to indicate whether the offset passage is spoken or thought, or to characterise it more finely. Sample values: <Val>spoken</Val>, <Val>thought</Val>, <Val>foreign</Val>, <Val>term</Val> (technical term), <Val>emph</Val> (emphasised). </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin.</td>
+<td>States the language of the element content. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin.</td>
 <td></td>
 </tr>
 <tr>
@@ -1726,13 +1726,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Obligatory</td>
-<td>The type of correction. Sample value: `"transposition"{:js}`.</td>
+<td>The type of correction. Sample value: <Val>transposition</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>resp</Att></td>
 <td>Optional</td>
-<td>The one who is responsible for the correction. Sample values: `"scribe"{:js}`, `"mainscribe"{:js}`, `"laterscribe"{:js}`.</td>
+<td>The one who is responsible for the correction. Sample values: <Val>scribe</Val>, <Val>mainscribe</Val>, <Val>laterscribe</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1750,7 +1750,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Characterises the element in some sense, using any convenient classification scheme or typology. Sample values: `"farm"{:js}`, `"parish"{:js}`, `"county"{:js}`.</td>
+<td>Characterises the element in some sense, using any convenient classification scheme or typology. Sample values: <Val>farm</Val>, <Val>parish</Val>, <Val>county</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1786,7 +1786,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>Indicates the role of the person, e.g. in the form of a title. Sample value: `"political"{:js}`.</td>
+<td>Indicates the role of the person, e.g. in the form of a title. Sample value: <Val>political</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -1823,13 +1823,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>xml:id</Att></td>
 <td>Optional</td>
-<td>Specifies the sentence with numerical or alphanumerical values, e.g. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, or `"s1"{:js}`, `"s2"{:js}`, `"s3"{:js}`, and so on.</td>
+<td>Specifies the sentence with numerical or alphanumerical values, e.g. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, or <Val>s1</Val>, <Val>s2</Val>, <Val>s3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>n</Att></td>
 <td>Optional</td>
-<td>Specifies another sentence division with numerical or alphanumerical values, e.g. `"m1"{:js}`, `"m2"{:js}`, `"m3"{:js}`, and so on, to be used in conjunction with the <E>milestone/</E> element, as recommended in [ch. 3.5.2](/handbook/v3/HB3_ch3#sec3.5.2). </td>
+<td>Specifies another sentence division with numerical or alphanumerical values, e.g. <Val>m1</Val>, <Val>m2</Val>, <Val>m3</Val>, and so on, to be used in conjunction with the <E>milestone/</E> element, as recommended in [ch. 3.5.2](/handbook/v3/HB3_ch3#sec3.5.2). </td>
 <td></td>
 </tr>
 <tr>
@@ -1853,7 +1853,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>type</Att></td>
 <td>Optional</td>
-<td>States the type of segmentation. Recommended values: `"nb"{:js}` (no break), `"enc"{:js}` (enclitic), `"lig"{:js}` (for characters in ligature).</td>
+<td>States the type of segmentation. Recommended values: <Val>nb</Val> (no break), <Val>enc</Val> (enclitic), <Val>lig</Val> (for characters in ligature).</td>
 <td></td>
 </tr>
 <tr>
@@ -1889,19 +1889,19 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>quantity</Att></td>
 <td>Obligatory</td>
-<td>Indicates approximately the extent of the space. Values refer to the <Att>unit</Att> attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, and so on.</td>
+<td>Indicates approximately the extent of the space. Values refer to the <Att>unit</Att> attribute and are thus the number of characters, words, lines, leaves or quires in the manuscript, i.e. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, and so on.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>unit</Att></td>
 <td>Obligatory</td>
-<td>Names the unit used for describing the extent of the space. Sample values: `"char"{:js}` (characters), `"word"{:js}`, `"line"{:js}`, `"leaf"{:js}`, `"quire"{:js}`, `"indeterminate"{:js}`. </td>
+<td>Names the unit used for describing the extent of the space. Sample values: <Val>char</Val> (characters), <Val>word</Val>, <Val>line</Val>, <Val>leaf</Val>, <Val>quire</Val>, <Val>indeterminate</Val>. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>dim</Att></td>
 <td>Optional</td>
-<td> Dimension. Indicates the dimension of the space, i.e. whether it is `"horizontal"{:js}` or `"vertical"{:js}`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical.</td>
+<td> Dimension. Indicates the dimension of the space, i.e. whether it is <Val>horizontal</Val> or <Val>vertical</Val>. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical.</td>
 <td></td>
 </tr>
 <tr>
@@ -1919,7 +1919,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>reason</Att></td>
 <td>Obligatory</td>
-<td>Indicates why the text has been supplied. It should be given one of the two values, `"restoration"{:js}` or `"emendation"{:js}`. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.</td>
+<td>Indicates why the text has been supplied. It should be given one of the two values, <Val>restoration</Val> or <Val>emendation</Val>. The former covers text which is lost through damage or left empty by intention, text which is unclear, and text which is simply illegible. The latter covers editorial enhancement with respect to grammar, lexicon, syntax, context or the like.</td>
 <td></td>
 </tr>
 <tr>
@@ -1931,7 +1931,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>rendition</Att></td>
 <td>Optional</td>
-<td>If a piece of supplied text has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
+<td>If a piece of supplied text has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the <Val>first</Val>, <Val>middle</Val> and <Val>last</Val> values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
 <td></td>
 </tr>
 <tr>
@@ -1973,13 +1973,13 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>reason</Att></td>
 <td>Optional</td>
-<td>Indicates the reason for the piece of text being superfluous. Sample values: `"dittography"{:js}`, `"excess"{:js}`, `"incoherence"{:js}`.</td>
+<td>Indicates the reason for the piece of text being superfluous. Sample values: <Val>dittography</Val>, <Val>excess</Val>, <Val>incoherence</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>rendition</Att></td>
 <td>Optional</td>
-<td>If a superfluous passage has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
+<td>If a superfluous passage has a structural overlap with two or more <E>w</E> elements, we suggest using this attribute with the <Val>first</Val>, <Val>middle</Val> and <Val>last</Val> values for a more robust display. See the discussion in [ch. 16.5.2](/handbook/v3/HB3_ch16#sec16.5.2).</td>
 <td></td>
 </tr>
 <tr>
@@ -2046,7 +2046,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>Lanuage. The dominant language in a transcription should be specified in an attribute to the <E>text</E> element. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin.</td>
+<td>Lanuage. The dominant language in a transcription should be specified in an attribute to the <E>text</E> element. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin.</td>
 <td></td>
 </tr>
 <tr>
@@ -2064,7 +2064,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>level</Att></td>
 <td>Optional</td>
-<td>Indicates the bibliographic level for a title. Sample values: `"a"{:js}` (analytic), `"m"{:js}` (monographic), `"j"{:js}` (journal), `"s"{:js}` (series), `"u"{:js}` (unpublished). </td>
+<td>Indicates the bibliographic level for a title. Sample values: <Val>a</Val> (analytic), <Val>m</Val> (monographic), <Val>j</Val> (journal), <Val>s</Val> (series), <Val>u</Val> (unpublished). </td>
 <td></td>
 </tr>
 <tr>
@@ -2101,7 +2101,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>agent</Att></td>
 <td>Optional</td>
-<td>Identifiable cause for the difficulty in transcribing the material. Sample values: `"rubbing"{:js}`, `"mildew"{:js}`, `"smoke"{:js}`.</td>
+<td>Identifiable cause for the difficulty in transcribing the material. Sample values: <Val>rubbing</Val>, <Val>mildew</Val>, <Val>smoke</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -2113,7 +2113,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>reason</Att></td>
 <td>Optional</td>
-<td>Indicates why the material is hard to transcribe. Sample values: `"faded"{:js}`, `"smudged"{:js}`, `"erased"{:js}`.</td>
+<td>Indicates why the material is hard to transcribe. Sample values: <Val>faded</Val>, <Val>smudged</Val>, <Val>erased</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -2168,7 +2168,7 @@ HTML elements such as <E>a</E>, <E>br</E> and <E>i</E> are discussed in a few
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>Language. If there are words, phrases or passages in another language than the one stated in the <E>text</E> element, they should be set out by this attribute, preferably one for each word. All <Att>xml:lang</Att> attributes should be defined in the <E>profileDesc</E> element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin. </td>
+<td>Language. If there are words, phrases or passages in another language than the one stated in the <E>text</E> element, they should be set out by this attribute, preferably one for each word. All <Att>xml:lang</Att> attributes should be defined in the <E>profileDesc</E> element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin. </td>
 <td></td>
 </tr>
 </tbody>
@@ -2245,13 +2245,13 @@ All elements in this list have been included in section 2 above, but are here co
 <tr>
 <td><Att>me:lemmatized</Att></td>
 <td>Obligatory</td>
-<td>Specifies the degree of lemmatisation: `"completely"{:js}`, `"partly"{:js}` and `"none"{:js}`.</td>
+<td>Specifies the degree of lemmatisation: <Val>completely</Val>, <Val>partly</Val> and <Val>none</Val>.</td>
 <td></td>
 </tr>
 <tr>
 <td><Att>me:morphAnalyzed</Att></td>
 <td>Optional</td>
-<td>Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): `"completely"{:js}`, `"partly"{:js}` and `"none"{:js}`.</td>
+<td>Specifies the degree of morphological analysis (i.e. the grammatical form of an inflected word): <Val>completely</Val>, <Val>partly</Val> and <Val>none</Val>.</td>
 <td></td>
 </tr>
 <tr>
@@ -2299,13 +2299,13 @@ All elements in this list have been included in section 2 above, but are here co
 <tr>
 <td><Att>me:category</Att></td>
 <td>Optional</td>
-<td>Specifies the type of span, restricted to this list of values (which correspond to elements): `"gap"{:js}` for contents that would otherwise be contained by the <E>gap/</E> element; `"unclear"{:js}` for contents that would otherwise be contained by the <E>unclear</E> element; `"add"{:js}` for contents that would otherwise be contained by the <E>add</E> element; `"del"{:js}` for contents that would otherwise be contained by the <E>del</E> element; `"sic"{:js}` for contents that would otherwise be contained by the <E>sic</E> element; `"corr"{:js}` for contents that would otherwise be contained by the <E>corr</E> element; `"surplus"{:js}` for contents that would otherwise be contained by the <E>surplus</E> element; `"other"{:js}` for for contents that would otherwise be contained by other elements. </td>
+<td>Specifies the type of span, restricted to this list of values (which correspond to elements): <Val>gap</Val> for contents that would otherwise be contained by the <E>gap/</E> element; <Val>unclear</Val> for contents that would otherwise be contained by the <E>unclear</E> element; <Val>add</Val> for contents that would otherwise be contained by the <E>add</E> element; <Val>del</Val> for contents that would otherwise be contained by the <E>del</E> element; <Val>sic</Val> for contents that would otherwise be contained by the <E>sic</E> element; <Val>corr</Val> for contents that would otherwise be contained by the <E>corr</E> element; <Val>surplus</Val> for contents that would otherwise be contained by the <E>surplus</E> element; <Val>other</Val> for for contents that would otherwise be contained by other elements. </td>
 <td></td>
 </tr>
 <tr>
 <td><Att>spanTo</Att></td>
 <td>Optional</td>
-<td>Specifies the end point of the text span. Recommended values: `"an1"{:js}`, `"an2"{:js}`, `"an3"{:js}` and so on.</td>
+<td>Specifies the end point of the text span. Recommended values: <Val>an1</Val>, <Val>an2</Val>, <Val>an3</Val> and so on.</td>
 <td></td>
 </tr>
 <tr>
@@ -2317,7 +2317,7 @@ All elements in this list have been included in section 2 above, but are here co
 <tr>
 <td><Att>me:level</Att></td>
 <td>Obligatory</td>
-<td>Specifies the level on which the text is encoded. The three focal levels are `"facs"{:js}` (facsimile), `"dipl"{:js}` (diplomatic) and `"norm"{:js}` (normalised). In addition, a strictly paleographic level, `"pal"{:js}` is defined.</td>
+<td>Specifies the level on which the text is encoded. The three focal levels are <Val>facs</Val> (facsimile), <Val>dipl</Val> (diplomatic) and <Val>norm</Val> (normalised). In addition, a strictly paleographic level, <Val>pal</Val> is defined.</td>
 <td></td>
 </tr>
 <tr>
@@ -2347,7 +2347,7 @@ All elements in this list have been included in section 2 above, but are here co
 <tr>
 <td><Att>xml:lang</Att></td>
 <td>Optional</td>
-<td>Language. If there are words, phrases or passages in another language than the one stated in the <E>text</E> element, they should be set out by this attribute, preferably one for each word. All <Att>xml:lang</Att> attributes should be defined in the <E>profileDesc</E> element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend `"dan"{:js}` for Danish, `"isl"{:js}` for Icelandic, `"nor"{:js}` for Norwegian, `"swe"{:js}` for Swedish and `"lat"{:js}` for Latin. </td>
+<td>Language. If there are words, phrases or passages in another language than the one stated in the <E>text</E> element, they should be set out by this attribute, preferably one for each word. All <Att>xml:lang</Att> attributes should be defined in the <E>profileDesc</E> element of the header, which must contain a list of all languages referred to in the encoded text. The values should be given as a three-letter code, wherever possible based on the international standard ISO 639-3:2007. We recommend <Val>dan</Val> for Danish, <Val>isl</Val> for Icelandic, <Val>nor</Val> for Norwegian, <Val>swe</Val> for Swedish and <Val>lat</Val> for Latin. </td>
 <td></td>
 </tr>
 </tbody>
