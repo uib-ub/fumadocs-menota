@@ -86,29 +86,29 @@ In this chapter, we offer a similar overview and discussion in [ch. 16.2](#sec16
 ## 16.2 Spanning and linking encoding [#sec16.2]
 
 In the TEI P5 Guidelines, [ch. 11](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html), the elements <E>addSpan/</E>, <E>delSpan/</E> and <E>damageSpan/</E> are defined. These elements are counterparts to the elements <E>add</E>, <E>del</E> and <E>damage</E>, but are all empty, and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. <E>sic</E>, <E>corr</E>, <E>unclear</E> and <E>supplied</E>, but there are no corresponding <E>sicSpan</E>, <E>corrSpan</E>, <E>unclearSpan</E> and <E>suppliedSpan</E>. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures. We have called this new element <E>me:textSpan/</E> and given it attributes from the classes
-“att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute `@me:category{:sh}`. Note that we in this table include the <E>anchor</E> element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
+“att.spanning”, “att.transcriptional”, “att.typed” and “att.global”, and the attribute <Att>me:category</Att>. Note that we in this table include the <E>anchor</E> element which is used to specify the end of a span. This is explained in [ch. 16.2.2](#sec16.2.2) below.
 
 <div className="table-xml-elements">
 | Elements & attributes | Explanation |
 |-----|-----|
 | <E>me:textSpan/</E> | A generic element to handle overlapping text structures. |
-| <span className="p-3"/>`@me:category{:sh}` | Specifies the type of span, restricted to this list of values: |
-| <span className="p-6"/>`"gap"{:js}` | For contents that would otherwise be contained by the <E>gap/</E> element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
-| <span className="p-6"/>`"unclear"{:js}` | For contents that would otherwise be contained by the <E>unclear</E> element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
-| <span className="p-6"/>`"add"{:js}` | For contents that would otherwise be contained by the <E>add</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"del"{:js}` | For contents that would otherwise be contained by the <E>del</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"sic"{:js}` | For contents that would otherwise be contained by the <E>sic</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"corr"{:js}` | For contents that would otherwise be contained by the <E>corr</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"surplus"{:js}` | For contents that would otherwise be contained by the <E>surplus</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"supplied"{:js}` | For contents that would otherwise be contained by the <E>supplied</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
-| <span className="p-6"/>`"other"{:js}` | For any other contents. |
-| <span className="p-3"/>`@spanTo{:sh}` | Specifies the end point of the text span, using values like: |
-| <span className="p-6"/>`"an1"{:js}` | anchor 1 |
-| <span className="p-6"/>`"an2"{:js}` | anchor 2, etc. |
+| <Att>me:category</Att> | Specifies the type of span, restricted to this list of values: |
+| <Val>gap</Val> | For contents that would otherwise be contained by the <E>gap/</E> element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
+| <Val>unclear</Val> | For contents that would otherwise be contained by the <E>unclear</E> element, cf. [ch. 8](/handbook/v3/HB3_ch8). |
+| <Val>add</Val> | For contents that would otherwise be contained by the <E>add</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>del</Val> | For contents that would otherwise be contained by the <E>del</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>sic</Val> | For contents that would otherwise be contained by the <E>sic</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>corr</Val> | For contents that would otherwise be contained by the <E>corr</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>surplus</Val> | For contents that would otherwise be contained by the <E>surplus</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>supplied</Val> | For contents that would otherwise be contained by the <E>supplied</E> element, cf. [ch. 9](/handbook/v3/HB3_ch9). |
+| <Val>other</Val> | For any other contents. |
+| <Att>spanTo</Att> | Specifies the end point of the text span, using values like: |
+| <Val>an1</Val> | anchor 1 |
+| <Val>an2</Val> | anchor 2, etc. |
 | <E>anchor/</E> | An empty element (milestone) which attaches an identifier to a point within a text. |
-| <span className="p-3"/>`@xml:id{:sh}` | Specifies the identifier corresponding to the one used in the `@spanTo{:sh}` attribute of the preceding <E>me:textSpan/</E> element, using values like: |
-| <span className="p-6"/>`"an1"{:js}` | anchor 1 |
-| <span className="p-6"/>`"an2"{:js}` | anchor 2, etc. |
+| <Att>xml:id</Att> | Specifies the identifier corresponding to the one used in the <Att>spanTo</Att> attribute of the preceding <E>me:textSpan/</E> element, using values like: |
+| <Val>an1</Val> | anchor 1 |
+| <Val>an2</Val> | anchor 2, etc. |
 </div>
 
 
@@ -154,14 +154,14 @@ In these guidelines, we offer two solutions to the problem of overlapping struct
 
 The following approach is more sound from the point of view of an XML document, but creates extra tagging. The feature is encoded in a series of separate elements, linked together.
 
-In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the `@xml:id{:sh}` attribute, and they are linked together using the following attributes:
+In order to encode linked segments, the encoder should break the overlapping feature into parts which fit within the XML structure (usually within the word or dipl/facs/norm elements). Each part is identified using the <Att>xml:id</Att> attribute, and they are linked together using the following attributes:
 
 <div className="table-xml-elements">
 | Attributes | Contents |
 |-----|-----|
-| <span className="p-3"/>`@xml:id{:sh}` | Provides a unique identifier for the element bearing the attribute. |
-| <span className="p-3"/>`@next{:sh}` | Used at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature. |
-| <span className="p-3"/>`@prev{:sh}` | Used in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature. |
+| <Att>xml:id</Att> | Provides a unique identifier for the element bearing the attribute. |
+| <Att>next</Att> | Used at the start and in the middle: an IDREF pointing to the element which marks the next tag of the same feature. |
+| <Att>prev</Att> | Used in the middle and at the end: an IDREF pointing to the element which marks the previous tag of the same feature. |
 </div>
 
 
@@ -198,15 +198,15 @@ Adding all three textual levels, including the unclear text encoded at the facs 
 ```
 
 
-For the combination of the <E>unclear</E> element on the facs level and the <E>supplied </E> element on the dipl and norm levels, please see the encoding of ill. 9.9 in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1). Note that we have simplified the example above by leaving out the `@reason{:sh}` and `@resp{:sh}` attributes.
+For the combination of the <E>unclear</E> element on the facs level and the <E>supplied </E> element on the dipl and norm levels, please see the encoding of ill. 9.9 in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1). Note that we have simplified the example above by leaving out the <Att>reason</Att> and <Att>resp</Att> attributes.
 
 It is recommended that the additional information for the feature (such as the editor responsible, type, etc.) be only included in the first element, but editors may wish to include the attributes in all elements.
 
-Note that the start of a feature is always marked by the element with the `@next{:sh}` attribute set, but not the `@prev{:sh}` attribute; and the end by the element of the same name with the `@prev{:sh}` attribute set but not the `@next{:sh}`.
+Note that the start of a feature is always marked by the element with the <Att>next</Att> attribute set, but not the <Att>prev</Att> attribute; and the end by the element of the same name with the <Att>prev</Att> attribute set but not the <Att>next</Att>.
 
 ### 16.2.2 Boundary marking with empty elements [#sec16.2.2]
 
-Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in the TEI P5 Guidelines, [ch. 20](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html), and will be applied here in a slightly modified version. As outlined above, we have introduced a generic element <E>me:textSpan/</E> which is specified by way of a `@me:category{:sh}` attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the `@me:category{:sh}` attribute:
+Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in the TEI P5 Guidelines, [ch. 20](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html), and will be applied here in a slightly modified version. As outlined above, we have introduced a generic element <E>me:textSpan/</E> which is specified by way of a <Att>me:category</Att> attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the <Att>me:category</Att> attribute:
 ```xml
 <me:textSpan me:category="supplied"/> 
 ```
@@ -214,13 +214,13 @@ Another solution is to encode the beginning and end of a text span with empty el
 
 Thus, all instances of supplied text in the file will either be contained in <E>supplied</E> elements (in non-overlapping contexts) or in <E>me:textSpan me:category="supplied"/</E> elements (in overlapping contexts).
 
-In addition to inserting the empty <E>me:textSpan/</E> element at the beginning of the textual span, an attribute `@spanTo{:sh}` is added with a suitable index, e.g.
+In addition to inserting the empty <E>me:textSpan/</E> element at the beginning of the textual span, an attribute <Att>spanTo</Att> is added with a suitable index, e.g.
 ```xml
 <me:textSpan me:category="supplied" spanTo="an1"/> 
 ```
 
 
-It now remains to mark the end of the span, i.e. the extent of the supplied text, with another empty element, the TEI <E>anchor/</E> element. This must be specified with an `@xml:id{:sh}` attribute having the same index as the `@me:spanTo{:sh}` attribute at the beginning of the span:
+It now remains to mark the end of the span, i.e. the extent of the supplied text, with another empty element, the TEI <E>anchor/</E> element. This must be specified with an <Att>xml:id</Att> attribute having the same index as the <Att>me:spanTo</Att> attribute at the beginning of the span:
 ```xml
 <anchor xml:id="an1"/> 
 ```
@@ -233,7 +233,7 @@ The full encoding will be like this:
 ```
 
 
-Note that the value of `@xml:id{:sh}` attribute must be unique within the whole document.
+Note that the value of <Att>xml:id</Att> attribute must be unique within the whole document.
 
 There is no simple answer to the problem of non-hierarchical structures in XML encoding. However, we believe that using empty elements as boundary markers may prove to be the simplest and most general encoding, and it is therefore the solution we recommend. With either technique, only one method should be used in each document.
 
@@ -329,9 +329,9 @@ The chapter division between lines 15 and 16 in ill. 16.3 is not completely stra
 ```
 
 
-In this encoding, the rubric is located correctly within the second <E>div</E> of the example, and the fact that it is physically located to the left of the beginning of the chapter text is indicated by the `@rend{:sh}` attribute to the <E>lb/</E> element. Since the first part of line 16 contains the beginning of the text in the second <E>div</E> and the second part of the line contains the rubric which logically precedes the text, both parts should be specified with a <E>lb/</E> element with attributes for line number, `"n="16""{:js}`, and for their physical order, `"rend="1""{:js}` and `"rend="2""{:js}`. The `@rend{:sh}` attributes are needed to indicate that in spite of both parts being located on the same line, “Salomon konungr gerðe fyrst”, is rendered first and “In dedicatione templi. sermo.” is rendered second. These `@rend{:sh}` attributes were not needed in the previous example, since there was no conflict between the logical and physical order.
+In this encoding, the rubric is located correctly within the second <E>div</E> of the example, and the fact that it is physically located to the left of the beginning of the chapter text is indicated by the <Att>rend</Att> attribute to the <E>lb/</E> element. Since the first part of line 16 contains the beginning of the text in the second <E>div</E> and the second part of the line contains the rubric which logically precedes the text, both parts should be specified with a <E>lb/</E> element with attributes for line number, <Val>n="16"</Val>, and for their physical order, <Val>rend="1"</Val> and <Val>rend="2"</Val>. The <Att>rend</Att> attributes are needed to indicate that in spite of both parts being located on the same line, “Salomon konungr gerðe fyrst”, is rendered first and “In dedicatione templi. sermo.” is rendered second. These <Att>rend</Att> attributes were not needed in the previous example, since there was no conflict between the logical and physical order.
 
-Note that the values for the `@rend{:sh}` attribute always begin with 1 and continue upwards, but usually not to a higher number than 3. Since our recommended encoding gives priority to the logical order of the text, the numbering of the `@rend{:sh}` attribute is needed to specify the physical order of the parts when there is a conflict between the logical and physical order &ndash; in this case that the <E>head</E> is located in the second part of line 16, not in the first part of the line, which one might expect from a logical point of view.
+Note that the values for the <Att>rend</Att> attribute always begin with 1 and continue upwards, but usually not to a higher number than 3. Since our recommended encoding gives priority to the logical order of the text, the numbering of the <Att>rend</Att> attribute is needed to specify the physical order of the parts when there is a conflict between the logical and physical order &ndash; in this case that the <E>head</E> is located in the second part of line 16, not in the first part of the line, which one might expect from a logical point of view.
 
 A suitable XSLT stylesheet will be able to display this piece of text according to its physical order:
 
@@ -366,7 +366,7 @@ Alternatively, a suitable stylesheet will be able to display this piece of text 
 
 <Caption title="Ill. 16.4">. Discontinuous and dislocated heading. _Landslǫg Magnúss Hákonarsonar_. Holm Perg 34 4to, fol. 52r, lines 2&ndash;5.</Caption>
 
-The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips\|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the `@rend{:sh}` attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
+The next example, ill. 16.4, is somewhat more complicated. Here, the rubric extends over two lines, beginning at the end of line 3 and continuing at the end of line 4. (Note that the first line in the illustration is line number 2). Furthermore, the word “skips\|brotzmanna” is divided between lines 3 and 4. Like in the previous example, we use the <Att>rend</Att> attributes to specify the physical order of the parts when they are at odds with the logical order of the text. In this case, the conflict applies to the two parts of line 4:
 ```xml
 <div>
     . . .
@@ -426,14 +426,14 @@ When double (or even triple) numbering of line beginnings is used in a transcrip
 
 In many cases, dialogue can be quite long-winded, and it may cross boundaries such as the <E>s</E> element (dividing the text into sentences) or even one or more <E>div</E> elements (dividing the text into chapters). An extreme example is _Gylfaginning_, which is written as a dialogue with unusually long turns, many covering several chapters. To a lesser extent, the same applies to works like _Konungs skuggsjá_ and _Barlaams saga ok Jósafats_. In these and many other works, the standard <E>q</E> element will create conflicts with other and probably more important hierarchical divisions of the text.
 
-Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general <E>milestone/</E> element as a work-around. As stated in [ch. 3.11](/handbook/v3/HB3_ch3#sec3.11) above, the <E>milestone/</E> element can be specified with the `@unit{:sh}` and `@rend{:sh}` attributes:
+Since the encoding of dialogue belongs primarily on the normalised level, we suggest that it can be encoded using the general <E>milestone/</E> element as a work-around. As stated in [ch. 3.11](/handbook/v3/HB3_ch3#sec3.11) above, the <E>milestone/</E> element can be specified with the <Att>unit</Att> and <Att>rend</Att> attributes:
 
 <div className="table-xml-elements">
 | Element and attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>milestone/</E> |  | Marks any break in the transcription. Attributes include: |
-| <span className="p-3"/>`@unit{:sh}` | Obligatory | Indicates the type of break, such as `"turn"{:js}` (in dialogues) or more generally, `"segment"{:js}` or `"section"{:js}`. |
-| <span className="p-3"/>`@rendition{:sh}` | Optional | Indicates how the break should be rendered. In the case of dialogues, `"opening-quote"{:js}` and `"closing-quote"{:js}` are appropriate. |
+| <Att>unit</Att> | Obligatory | Indicates the type of break, such as <Val>turn</Val> (in dialogues) or more generally, <Val>segment</Val> or <Val>section</Val>. |
+| <Att>rendition</Att> | Optional | Indicates how the break should be rendered. In the case of dialogues, <Val>opening-quote</Val> and <Val>closing-quote</Val> are appropriate. |
 </div>
 
 
@@ -467,7 +467,7 @@ or slightly less verbose
 This is an exa[mple] [of a] [miss]ing passage
 </Quote>
 
-The encoding suggested in this subchapter is a simplified version of 16.2.1 above, in the sense that the linking is not expressed by way of IDREF pointing but by way of the `@rendition{:sh}` attribute. It is a robust solution and it has been successfully implemented in the display of the Menota archive. More advanced stylesheets may be developed that can replace this solution, but for now this is our offer for any texts that should be displayed in the Menota archive, using the Corpuscle application.
+The encoding suggested in this subchapter is a simplified version of 16.2.1 above, in the sense that the linking is not expressed by way of IDREF pointing but by way of the <Att>rendition</Att> attribute. It is a robust solution and it has been successfully implemented in the display of the Menota archive. More advanced stylesheets may be developed that can replace this solution, but for now this is our offer for any texts that should be displayed in the Menota archive, using the Corpuscle application.
 
 The solution is dependent on the intended display of the text, of which there are two types, rendering by single-characters and rendering by opening & closing signs.
 
@@ -551,7 +551,7 @@ See the Menota archive, NRA 58C, f. 1r, col. A, l. 27, for a display of this enc
 
 ### 16.5.2 Display by opening and closing signs [#sec16.5.2]
 
-This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the `@rendition{:sh}` attribute with the `"first"{:js}`, `"middle"{:js}` and `"last"{:js}` values.
+This is a type of display where the beginning of the passage is displayed by an opening sign and the end by a closing sign. As long as the passage does not cross any word boundary, no additional encoding is used. If it does, we recommend using the <Att>rendition</Att> attribute with the <Val>first</Val>, <Val>middle</Val> and <Val>last</Val> values.
 
 According to the display recommended in this handbook, this solution is appropriate for the following elements:
 
@@ -570,7 +570,7 @@ In the next passage in fig 16.5, we can hardly read all the words. Beginning at 
 um þes\|se lond .................. þau þo
 </Quote>
 
-In the following encoding, the three words “rǿða þá eru” have been supplied on the normalised level, but this sequence is left out on the facsimile and diplomatic level. However, based on the supplied text on the normalised level, the encoder has inserted them as three words in <E>w</E> elements. These words have been given the `@rendition{:sh}` attribute.
+In the following encoding, the three words “rǿða þá eru” have been supplied on the normalised level, but this sequence is left out on the facsimile and diplomatic level. However, based on the supplied text on the normalised level, the encoder has inserted them as three words in <E>w</E> elements. These words have been given the <Att>rendition</Att> attribute.
 ```xml
 . . .
 <w>

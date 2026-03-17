@@ -114,7 +114,7 @@ While the <E>abbr</E> and <E>expan</E> elements are fully compatible with the sc
 in this handbook, we suggest that it is sufficient to only use the elements <E>am</E> and <E>ex</E> 
 for the encoding and expansion of abbreviations.
 
-The <E>am</E> element may have a `@me:type{:sh}` attribute specifying what kind
+The <E>am</E> element may have a <Att>me:type</Att> attribute specifying what kind
 of abbreviation it is. The same applies to the <E>ex</E> element. We have not given
 examples of these attributes in the present chapter, but users may refer to the
 typology in [ch. 6.2](#sec6.2) below if they would like to make a
@@ -124,9 +124,9 @@ more detailed encoding.
 | Elements & attributes | Obl/Opt | Explanation |
 |-----|-----|-----|
 | <E>am</E> |  | Contains the abbreviation sign used in the manuscript. |
-| <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of abbreviation. |
+| <Att>me:type</Att> | Optional | Specifies the type of abbreviation. |
 | <E>ex</E> |  | Contains the expansion inserted by the editor, replacing the abbreviation marker. |
-| <span className="p-3"/>`@me:type{:sh}` | Optional | Specifies the type of expansion. |
+| <Att>me:type</Att> | Optional | Specifies the type of expansion. |
 </div>
 
 
@@ -767,7 +767,7 @@ recommend the usage of the <E>am</E> element and entities such as
 
 When superscript characters are used for adding characters which are missing on
 the base line we recommend that they are encoded by use of the element
-<E>add</E> and the attribute `@place="supralinear"{:sh}` (cf. [ch. 9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1)). One might argue that if the
+<E>add</E> and the attribute <Att>place="supralinear"</Att> (cf. [ch. 9.2.1.1](/handbook/v3/HB3_ch9#sec9.2.1.1)). One might argue that if the
 scribe has added the superscript character as part of the writing process, it
 should not be regarded as an addition, but rather as an ordinary character which
 just happened to be placed over the line. However, it is difficult to make a
@@ -775,7 +775,7 @@ distinction between characters written above the line as part of the writing
 process and characters that were added later, maybe shortly afterwards, whether by
 the same scribe or by another scribe. As a general rule we therefore recommend
 encoding supralinear characters by the <E>add</E> element and the attribute
-`@place="supralinear"{:sh}`. There is no need for an entity of the type
+<Att>place="supralinear"</Att>. There is no need for an entity of the type
 `&asup;{:xml}` since the location of the character is indicated by the
 element.
 
@@ -906,7 +906,7 @@ right. Cf. the reference in [ch. 6.4.1](#sec6.4.1) above.
 
 We recommended that sporadic ligatures should not be encoded by use of separate
 entities but by the element <E>seg</E> with the attribute
-`@type="lig"{:sh}`. A sporadic ligature is basically a joining of two
+<Att>type="lig"</Att>. A sporadic ligature is basically a joining of two
 base line characters which together do not reflect a separate phonological value.
 This is the case with ligatures such as “s+k” and “p+p” which in this
 respect are identical to “s”&ensp;+&ensp;“k” and

@@ -60,8 +60,8 @@
         <xsl:choose>
             <xsl:when test="@rend='inline'">
                 <xsl:text>`</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>`</xsl:text>
+                <xsl:value-of select="string() => normalize-space()"/>
+                <xsl:text>{:xml}`</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>&#x0a;```xml&#x0a;</xsl:text>

@@ -143,13 +143,13 @@ Guidelines](http://www.tei-c.org/Guidelines/P5/) offer various solutions to this
 
 ### 3.1.1 Hierarchical divisions [#sec3.1.1]
 
-The principal means of representing hierarchy is the <E>div</E> (i.e. “division”) element. <E>div</E> elements may freely nest within each other. The <E>div</E> element has, in addition to the universally available `@id{:sh}` and `@n{:sh}` attributes, a `@type{:sh}` attribute, which specifies the name conventionally given to the level of division, e.g. `"chapter"{:js}`, `"stanza"{:js}`, `"couplet"{:js}`, if attempting to represent the structure of the text, or `"page"{:js}`, `"column"{:js}`, `"line"{:js}` if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the `@type{:sh}` attribute in the <E>div</E> element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
+The principal means of representing hierarchy is the <E>div</E> (i.e. “division”) element. <E>div</E> elements may freely nest within each other. The <E>div</E> element has, in addition to the universally available <Att>id</Att> and <Att>n</Att> attributes, a <Att>type</Att> attribute, which specifies the name conventionally given to the level of division, e.g. <Val>chapter</Val>, <Val>stanza</Val>, <Val>couplet</Val>, if attempting to represent the structure of the text, or <Val>page</Val>, <Val>column</Val>, <Val>line</Val> if the physical structure of the manuscript is to be preferred. It will be convenient to specify a value for the <Att>type</Att> attribute in the <E>div</E> element at least each time a change of level occurs. The software, however, will keep count of the levels of nesting even if the type attribute is not used.
 
-The complex structure of a work such as a set of rímur could be represented by using four levels of <E>div</E> elements, <E>div type="canto"</E> for the cantos or fits, <E>div type="part"</E> for the parts (for example the <em>mansöngvar</em>), <E>div type="stanza"</E> for the stanzas, and <E>div type="line"</E> for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use <E>div type="canto"</E> for each set. A simpler form of mark-up is possible, however. Instead of <E>div</E> elements, the <E>l</E> element (for “line”) and the <E>lg</E> element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the <E>div</E> element for larger structural units. The `@type{:sh}` attribute is then used to identify the type of unit, e.g. `"stanza"{:js}`, `"couplet"{:js}`, like in <E>lg type="stanza"</E>. Here again the type need
-only be defined once. Lines and line-groups can also be numbered and identified using the `@n{:sh}` and `@id{:sh}` attributes.
+The complex structure of a work such as a set of rímur could be represented by using four levels of <E>div</E> elements, <E>div type="canto"</E> for the cantos or fits, <E>div type="part"</E> for the parts (for example the <em>mansöngvar</em>), <E>div type="stanza"</E> for the stanzas, and <E>div type="line"</E> for the lines. If the manuscript being encoded contains more than one set of rímur, as is frequently the case, it might be sensible to use <E>div type="canto"</E> for each set. A simpler form of mark-up is possible, however. Instead of <E>div</E> elements, the <E>l</E> element (for “line”) and the <E>lg</E> element (for “line-group”, i.e. a group of lines functioning as a formal unit) can be used, reserving the <E>div</E> element for larger structural units. The <Att>type</Att> attribute is then used to identify the type of unit, e.g. <Val>stanza</Val>, <Val>couplet</Val>, like in <E>lg type="stanza"</E>. Here again the type need
+only be defined once. Lines and line-groups can also be numbered and identified using the <Att>n</Att> and <Att>id</Att> attributes.
 
 This type of markup focusses on the hierarchical structure of the text. The actual physical realisation of the text is considered of secondary importance &ndash; if of importance at all &ndash; when dealing with modern printed literary works: little significance is attached to the page and line beginnings in the various editions of, say, Orwell’s _Nineteen Eighty-Four_. In some cases, however, the early editions of Joyce’s works, for example, supervised by the author himself, the physical make-up of the text can be of great consequence. It may also be necessary to maintain the pagination and lineation of standard editions of major works, as these are frequently used in citations in scholarly works. In the case of chirographically transmitted material, the physical organisation of the text is more likely to be recognised as being of importance and in need of encoding. This can be done hierarchically, as above, using <E>div</E> elements, which are then
-given the appropriate `@type{:sh}` attributes, e.g. `"page"{:js}`, `"column"{:js}` or `"line"{:js}`, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. <E>pb/</E>, <E>cb/</E> and <E>lb/</E>. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
+given the appropriate <Att>type</Att> attributes, e.g. <Val>page</Val>, <Val>column</Val> or <Val>line</Val>, but it seems more appropriate to reserve these elements for structural divisions in the text, while indicating the physical structure of the document through the use of so-called “milestone” elements, i.e. <E>pb/</E>, <E>cb/</E> and <E>lb/</E>. These elements make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in [ch. 16](/handbook/v3/HB3_ch16) below.
 
 The rest of this chapter presents how the text may be encoded at higher structural levels than characters and words. Important elements here are the larger divisions of the text, like chapters, paragraphs (with headings), and stanzas. This chapter also presents how pagination and foliation, together with column and line beginnings, may be encoded. The following [TEI](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html) elements are presented:
 
@@ -227,7 +227,7 @@ Further division of the <E>body</E> block is achieved through <E>div</E> element
 
 ### 3.3.1 Type- and level-specified &lt;div&gt; elements [#sec3.3.1]
 
-In a complex document, <E>div</E> elements may be specified by `@type{:sh}` and `@n{:sh}` attributes. In this example, the three first chapters of a work have been contained in <E>div</E> elements at the same hierarchical level (siblings):
+In a complex document, <E>div</E> elements may be specified by <Att>type</Att> and <Att>n</Att> attributes. In this example, the three first chapters of a work have been contained in <E>div</E> elements at the same hierarchical level (siblings):
 
 | Elements | Contents |
 |-----|-----|
@@ -295,7 +295,7 @@ In TEI XML encoding, paragraphs are usually not divided into sentences, but will
 
 ### 3.5.1 Linking sentences in two files [#sec3.5.1]
 
-If a medieval text is going to be linked to a translation, one may divide each file into chapters, using the <E>div</E> element, or into sentences, using the <E>s</E> element. Any smaller units such as words, would not be advisable. When linking sentences in two files, each <E>s</E> element should have an `@xml:id{:sh}` attribute with corresponding values in each file. The following is a simplified example from a Christmas homily in the Old Norwegian Homily Book:
+If a medieval text is going to be linked to a translation, one may divide each file into chapters, using the <E>div</E> element, or into sentences, using the <E>s</E> element. Any smaller units such as words, would not be advisable. When linking sentences in two files, each <E>s</E> element should have an <Att>xml:id</Att> attribute with corresponding values in each file. The following is a simplified example from a Christmas homily in the Old Norwegian Homily Book:
 ```xml
 Old Norwegian text (AM 619 4to, fol. 16v, l. 9–10):
 <s xml:id="s748">
@@ -315,7 +315,7 @@ Note that while Medieval Nordic texts in Menota will have each word in a <E>w</E
 
 ### 3.5.2 Conflicts in the linking of sentences [#sec3.5.2]
 
-If more than two files are going to be linked to the original XML file, for example one containing a translation and one containing a syntactic analysis, and if the division of sentences in these files are partly overlapping (which is highly likely), we recommend using the empty <E>milestone/</E> element for sentence divisions that do not correspond. The <E>milestone/</E> element must have a `@unit{:sh}` attribute and (we suggest) an `@n{:sh}` attribute with the same function as the `@xml:id{:sh}` attribute in the <E>s</E> element. This way, conflicting sentence structures can be encoded without problems of overlap:
+If more than two files are going to be linked to the original XML file, for example one containing a translation and one containing a syntactic analysis, and if the division of sentences in these files are partly overlapping (which is highly likely), we recommend using the empty <E>milestone/</E> element for sentence divisions that do not correspond. The <E>milestone/</E> element must have a <Att>unit</Att> attribute and (we suggest) an <Att>n</Att> attribute with the same function as the <Att>xml:id</Att> attribute in the <E>s</E> element. This way, conflicting sentence structures can be encoded without problems of overlap:
 ```xml
 <s xml:id="s1" n="m1">
   this is one way of encoding the text
@@ -335,7 +335,7 @@ If more than two files are going to be linked to the original XML file, for exam
 ```
 
 
-The above example is an encoding of partly conflicting sentence divisions in two files. The primary file uses the <E>s</E> element with the `@xml:id{:sh}` attribute (capitalisation and punctuation have been added for clarification):
+The above example is an encoding of partly conflicting sentence divisions in two files. The primary file uses the <E>s</E> element with the <Att>xml:id</Att> attribute (capitalisation and punctuation have been added for clarification):
 <Quote>
 [s1] This is one way of encoding the text, even if there are other ways of doing it.<br/>
  [s2] They may be rare, in spite of any efforts to come up with convincing examples.<br/>
@@ -343,7 +343,7 @@ The above example is an encoding of partly conflicting sentence divisions in two
  [s4] Fortunately, sometimes sentence divisions are identical.
 </Quote>
 
-The sentence division in the additional file can be encoded by a <E>milestone/</E> element with the `@n{:sh}` attribute. Note that this attribute is also used in the <E>s</E> element wherever the sentence divisions are corresponding, such as between the 3rd and 4th sentence:
+The sentence division in the additional file can be encoded by a <E>milestone/</E> element with the <Att>n</Att> attribute. Note that this attribute is also used in the <E>s</E> element wherever the sentence divisions are corresponding, such as between the 3rd and 4th sentence:
 <Quote>
 [m1] This is one way of encoding the text.<br/>
  [m2] Even if there are other ways of doing it, they may be rare.<br/>
@@ -368,7 +368,7 @@ as well as for any morphological (and lexicographical) annotation.
 | <E>/p</E> | the paragraph ends here. |
 
 
-If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The <E>w</E> element may be given several morphological attributes, in particular `@lemma{:sh}` for the dictionary entry and `@me:msa{:sh}` for the grammatical form. These attributes are discussed in [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) and [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
+If the text is going to be annotated for morphology it is necessary to establish the exact word boundaries. The <E>w</E> element may be given several morphological attributes, in particular <Att>lemma</Att> for the dictionary entry and <Att>me:msa</Att> for the grammatical form. These attributes are discussed in [ch. 11.2](/handbook/v3/HB3_ch11#sec11.2) and [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3) below.
 
 Another motivation for delimiting words by the <E>w</E> element is the fact that a number of graphical words (i.e. sequences of characters with space on either side) should be split or merged according to standard dictionaries, e.g. “aveiðiskap” for “á veiðiskap” and “veiði kona” for “veiðikona”. Splitting and merging of graphical words will be discussed in [ch. 5.3](/handbook/v3/HB3_ch5#sec5.3) below. The encoding of word constituents will also be discussed here.
 
@@ -512,7 +512,7 @@ The sequence of elements is thus straight-forward (beginning with the 5th line i
 ```
 
 
-The fact that the heading is a rubric has been encoded by the `@type="rubric"{:sh}` attribute.
+The fact that the heading is a rubric has been encoded by the <Att>type="rubric"</Att> attribute.
 
 Unfortunately (from the point of view of the encoder) many manuscripts locate headings so that they are in conflict with this simple sequencing, for example by positioning them at the end of more than one line, or even in the middle of a line containing the beginning of one chapter and the end of the previous chapter. Examples of these complications are discussed in some detail in [ch. 16.3](/handbook/v3/HB3_ch16#sec16.3) below.
 
@@ -556,7 +556,7 @@ In some cases, there may be a structural conflict between the opening and closin
 
 - Eyvindr sagðisk eigi mundu brott undan ríða, “því at ek veit eigi hverir þessir eru. Mundi þat mǫrgum manni hlǿgiligt þykkja ef ek renn at ǫllu úreyndu.” (_Hrafnkels saga Freysgoða_, ch. 18)
 
-A possibe work-around is to use the general empty element <E>milestone/</E> with the obligatory `@unit{:sh}` attribute and a `@rendition{:sh}` attribute specifying the opening and closing quotation mark:
+A possibe work-around is to use the general empty element <E>milestone/</E> with the obligatory <Att>unit</Att> attribute and a <Att>rendition</Att> attribute specifying the opening and closing quotation mark:
 ```xml
 <s>Eyvindr sagðisk eigi mundu brott undan ríða, 
 <milestone unit="turn" rendition="opening-quote"/>því at ek veit eigi hverir þessir eru.</s>
@@ -571,7 +571,7 @@ There are several other ways of solving this type of conflict, as we discuss at 
 
 ### 3.12.1 Page beginnings and column beginnings [#sec3.12.1]
 
-TEI uses the empty element <E>pb/</E> to indicate a page beginning. This element has an attribute `@n{:sh}` which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the `@n{:sh}` attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, <E>cb/</E>, should also be indicated in manuscripts with two or more columns. Recommended values for the `@n{:sh}` attribute of the <E>cb/</E> element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
+TEI uses the empty element <E>pb/</E> to indicate a page beginning. This element has an attribute <Att>n</Att> which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the <Att>n</Att> attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, <E>cb/</E>, should also be indicated in manuscripts with two or more columns. Recommended values for the <Att>n</Att> attribute of the <E>cb/</E> element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 
 | Elements | Contents |
 |-----|-----|
@@ -584,7 +584,7 @@ TEI uses the empty element <E>pb/</E> to indicate a page beginning. This element
 | <E>cb ed="ms" n="B"/</E> | and the second column begins here. |
 
 
-Page beginning information from, for example, a printed standard edition, can be encoded in addition to the <E>pb ed="ms"/</E> elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the `@ed{:sh}` attribute with a suitable value:
+Page beginning information from, for example, a printed standard edition, can be encoded in addition to the <E>pb ed="ms"/</E> elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the <Att>ed</Att> attribute with a suitable value:
 ```xml
 <pb ed="Standard Edition" n="1"/>
 ```
@@ -596,7 +596,7 @@ The relevant editions should be declared in the header. As a rule, we suggest th
 
 ### 3.12.2 Line beginnings [#sec3.12.2]
 
-Line beginnings are also indicated with an empty element, the <E>lb/</E>, which is placed at the beginning of a new line and may be numbered by using the `@n{:sh}` attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
+Line beginnings are also indicated with an empty element, the <E>lb/</E>, which is placed at the beginning of a new line and may be numbered by using the <Att>n</Att> attribute. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the line beginnings refer to the manuscript (and not to e.g. an edition of the text):
 ```xml
 <lb ed="ms" n="1"/>Line number one begins here.
 ```
@@ -615,7 +615,7 @@ etc.
 
 In other words, there should be as many <E>pb/</E> elements as there are pages, as many <E>cb/</E> elements as there are columns, and as many <E>lb/</E> elements as there are lines. We strongly discourage the use of the <E>lb/</E> element in the same way as the <E>br</E> element in HTML, in which there typically is one <E>br</E> element less than the number of lines (as the <E>br</E> element is inserted between the lines).
 
-As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the `@ed{:sh}` attribute.
+As discussed above, one may include more than one layer of line beginnings, for example one according to the manuscript and another according to an edition, distinguishing them from each another with the <Att>ed</Att> attribute.
 
 It is not uncommon for a word to be continued on the next line, with or without a hyphenation mark in the margin. In a single-level encoding, the <E>lb/</E> element will be located within the relevant <E>w</E> element, and in a multi-level encoding it will be repeated for each level. See examples of this in [ch. 5.5](/handbook/v3/HB3_ch5#sec5.5) below.
 
@@ -635,9 +635,9 @@ Information on the hands of a document can be given as part of the header in the
 
 ## 3.15 Generic empty element: &lt;milestone/&gt; [#sec3.15]
 
-TEI offers the generic <E>milestone/</E> element for any division of a text outside the specified ones. The type of segment delimited by the <E>milestone/</E> element should be specified by a `@unit{:sh}` attribute.
+TEI offers the generic <E>milestone/</E> element for any division of a text outside the specified ones. The type of segment delimited by the <E>milestone/</E> element should be specified by a <Att>unit</Att> attribute.
 
-In [ch. 3.5.2](#sec3.5.2) above, we have been using the <E>milestone/</E> element for additional (and partly conflicting) sentence divisions. The value of the `@unit{:sh}` attribute has in this case been `"sentence"{:js}`.
+In [ch. 3.5.2](#sec3.5.2) above, we have been using the <E>milestone/</E> element for additional (and partly conflicting) sentence divisions. The value of the <Att>unit</Att> attribute has in this case been <Val>sentence</Val>.
 
 ## Updates to ch. 3 [#sec3.16]
 

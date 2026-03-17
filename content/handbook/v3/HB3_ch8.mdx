@@ -188,10 +188,10 @@ Whenever the manuscript contains a lacuna we suggest using the element
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>gap/</E> |  | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because it is physically missing in the manuscript. Attributes include: |
-| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be `"char"{:js}` (character), `"word"{:js}`, `"line"{:js}` or `"leaf"{:js}`, or even `"indeterminate"{:js}`. |
-| <span className="p-3"/>`@quantity{:sh}` | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.If the extent of the gap is described as `"indeterminate"{:js}` in the `@unit{:sh}` attribute, it does not make sense to try and specify a quantity. |
-| <span className="p-3"/>`@reason{:sh}` | Optional | Gives the reason for omission. Sample values include: `"damaged"{:js}`, `"cut"{:js}`, `"missing"{:js}`. |
-| <span className="p-3"/>`@agent{:sh}` | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be `"rubbing"{:js}`, `"smoke"{:js}`, `"fungus"{:js}` or the like. Intended removal of text, i.e. by erasure, should be encoded using the <E>del</E> element discussed in [ch. 9.2.2](/handbook/v3/HB3_ch9#sec9.2.2) below. |
+| <Att>unit</Att> | Obligatory | Names the unit used for describing the extent of the gap. Values will typically be <Val>char</Val> (character), <Val>word</Val>, <Val>line</Val> or <Val>leaf</Val>, or even <Val>indeterminate</Val>. |
+| <Att>quantity</Att> | Optional | Indicates approximately how much text has been omitted from the transcription. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, etc. Note that only numbers are accepted as values; the category is described in the <Att>unit</Att> attribute.If the extent of the gap is described as <Val>indeterminate</Val> in the <Att>unit</Att> attribute, it does not make sense to try and specify a quantity. |
+| <Att>reason</Att> | Optional | Gives the reason for omission. Sample values include: <Val>damaged</Val>, <Val>cut</Val>, <Val>missing</Val>. |
+| <Att>agent</Att> | Optional | In the case of text omitted because of damage, categorises the cause of the damage, if it can be identified. Values can be <Val>rubbing</Val>, <Val>smoke</Val>, <Val>fungus</Val> or the like. Intended removal of text, i.e. by erasure, should be encoded using the <E>del</E> element discussed in [ch. 9.2.2](/handbook/v3/HB3_ch9#sec9.2.2) below. |
 </div>
 
 
@@ -298,9 +298,9 @@ words. This element has several attributes, specifying the size and dimension of
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>space/</E> |  | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the manuscript has a deliberate omission and has left an open space for later usage, either by the scribe or another scribe. Attributes include: |
-| <span className="p-3"/>`@quantity{:sh}` | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. `"1"{:js}`, `"2"{:js}`, `"3"{:js}`, etc. Note that only numbers are accepted as values; the category is described in the `@unit{:sh}` attribute.  |
-| <span className="p-3"/>`@unit{:sh}` | Obligatory | Names the unit used for describing the extent of the space. Values will typically be `"char"{:js}` (characters) and `"word"{:js}`.  |
-| <span className="p-3"/>`@dim{:sh}` | Optional | Indicates the dimension of the space, i.e. whether it is `"horizontal"{:js}` or `"vertical"{:js}`. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
+| <Att>quantity</Att> | Obligatory | Indicates approximately the size of the space. Values can be given as e.g. number of characters, words, lines or leaves in the manuscript, i.e. <Val>1</Val>, <Val>2</Val>, <Val>3</Val>, etc. Note that only numbers are accepted as values; the category is described in the <Att>unit</Att> attribute.  |
+| <Att>unit</Att> | Obligatory | Names the unit used for describing the extent of the space. Values will typically be <Val>char</Val> (characters) and <Val>word</Val>.  |
+| <Att>dim</Att> | Optional | Indicates the dimension of the space, i.e. whether it is <Val>horizontal</Val> or <Val>vertical</Val>. For irregular shapes in two dimensions, the value for this attribute should reflect the more important of the two dimensions. In conventional left-right scripts, a space with both vertical and horizontal components should be classified as vertical. |
 </div>
 
 
@@ -398,7 +398,7 @@ In another example, fig. 8.4, there is an empty space for an initial. This is of
 <Caption title="Ill. 8.4">. Missing initial. _Gregory’s Homilies and Dialogues_. AM 677 4to, f. 1v, l. 1&ndash;3.</Caption>
 
 The space has a size of approximately four characters horizontally and two lines vertically. According to the TEI P5 Guidelines, a space with both vertical and horizontal components should be classified as vertical (cf. the [description](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html)
-of the `@dim{:sh}` attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
+of the <Att>dim</Att> attribute). So, in this case, we might measure the space along the vertical dimension and the natural measure is the number of lines. This would be a single-level transcription on the facsimile level:
 ```xml
 . . .
 <w><me:facs><space quantity="2" unit="line" dim="vertical"/>a</me:facs></w>
@@ -429,7 +429,7 @@ If the transcriber would like to restore the text intended for the space, this c
 ```
 
 
-This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the `@resp{:sh}` attribute. We will return to this example in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1) below.
+This restoration is so obvious that the encoder might not want to hunt it down in earlier editions of the text, but only give his or her initials in the <Att>resp</Att> attribute. We will return to this example in [ch. 9.3.1.1](/handbook/v3/HB3_ch9#sec9.3.1.1) below.
 
 For more details on the encoding of initials and other graphical elements, see [ch. 7.3](/handbook/v3/HB3_ch7#sec7.3) above.
 
@@ -451,7 +451,7 @@ including having no display at all.
 
 ## 8.4 Unclear text [#sec8.4]
 
-Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the <E>unclear</E> element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute `@reason{:sh}` and values such as `"faded"{:js}`, `"smudged"{:js}` and `"erased"{:js}`. In cases where the physical reason for the unclearness can be identifed, this may be set out in the `@agent{:sh}` attribute.
+Many manuscripts contain text that is difficult or even impossible to read. It can be a single character, a word, a phrase or even longer passages. We recommend using the <E>unclear</E> element in such cases whatever the degree of unclearness. The reason for the unclearness may be described by the attribute <Att>reason</Att> and values such as <Val>faded</Val>, <Val>smudged</Val> and <Val>erased</Val>. In cases where the physical reason for the unclearness can be identifed, this may be set out in the <Att>agent</Att> attribute.
 
 When a character can be read with some degree of certainty, we recommend that this character is entered in the <E>unclear</E> element, so that it can be displayed as such. If a character is completley unreadable, it should still be entered in the <E>unclear</E> element, but using a specific character such as a dotted circle or a small zero (explained below).
 
@@ -463,8 +463,8 @@ One might be tempted to try and indicate the degree of unclearness by a suitable
 | Elements & attributes | Obl/Opt | Contents |
 |-----|-----|-----|
 | <E>unclear</E> |  | Contains a character, word, phrase or passage which cannot be transcribed with certainty. Attributes include: |
-| <span className="p-3"/>`@reason{:sh}` | Optional | Indicates why the material is hard to transcribe. Sample values include: `"faded"{:js}`, `"smudged"{:js}`, `"erased"{:js}`. |
-| <span className="p-3"/>`@agent{:sh}` | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: `"rubbing"{:js}`, `"mildew"{:js}`, `"smoke"{:js}`. |
+| <Att>reason</Att> | Optional | Indicates why the material is hard to transcribe. Sample values include: <Val>faded</Val>, <Val>smudged</Val>, <Val>erased</Val>. |
+| <Att>agent</Att> | Optional | Where the difficulty in transcription arises from an identifiable cause, this can be described. Sample values include: <Val>rubbing</Val>, <Val>mildew</Val>, <Val>smoke</Val>. |
 </div>
 
 
@@ -696,7 +696,7 @@ As for the use of the <E>note</E> element here, see [ch. 9.4](/handbook/v3/HB3_c
 
 From this encoding, we understand that the beginning and the end of the once
 complete manuscript is missing, and that there are gaps in between all leaves apart
-from between folios 3 and 4, and between folios 6 and 7. Since the attribute `@quantity{:sh}` requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the <E>note</E> element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
+from between folios 3 and 4, and between folios 6 and 7. Since the attribute <Att>quantity</Att> requires an exact number,  and it in many cases is impossible to give an estimate of this, we suggest using the <E>note</E> element to specify this, perhaps adding some comment on which parts might have been part of the gap (if the text is known from other manuscripts). 
 
 ### 8.5.2 A pair of leaves [#sec8.5.2]
 
