@@ -15,8 +15,9 @@
                 => replace('^samplefiles/(.+\.xml)$', '/handbook/v3/samples/$1')
                 => replace('^(\w+)\.dtd$', '/$1.dtd') 
                 => replace('^(\w+)\.rng$', '/$1.rng') 
-                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt') 
+                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
                 => replace('^(\w+)\.xml$', '/$1.xml')
+                => replace('^([\w_0-9]+)\.xsl$', '/$1.xsl')
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
