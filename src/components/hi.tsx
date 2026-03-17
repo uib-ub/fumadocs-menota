@@ -5,7 +5,8 @@ export default function HI({ color, style, children }: {
 ) {
     return (
         <span className={`highlight
-            ${color ? `text-${color}-500` : ''}
+            ${color && color == 'blue' ? `text-blue-500` : ''}
+            ${color && color == 'red' ? `text-red-500` : ''}
             ${style == 'bold' ? 'font-bold' : ''}
         `}>
             {children}

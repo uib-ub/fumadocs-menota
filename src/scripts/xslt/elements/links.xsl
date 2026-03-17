@@ -18,6 +18,7 @@
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
                 => replace('^(\w+)\.xml$', '/$1.xml')
                 => replace('^([\w_0-9]+)\.xsl$', '/$1.xsl')
+                => replace(' ', '%20')
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
