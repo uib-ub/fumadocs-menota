@@ -9,14 +9,15 @@
         <xsl:apply-templates/>
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
-                => replace('^(HB2_.*?)\.xml$', '/handbook/v2/$1')
+                => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
                 => replace('^samplefiles/(.+\.xml)$', '/handbook/v3/samples/$1')
                 => replace('^(\w+)\.dtd$', '/$1.dtd') 
                 => replace('^(\w+)\.rng$', '/$1.rng') 
-                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt') 
-                => replace('^(\w+)\.xml$', '/$1.xml') 
+                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
+                => replace('^(\w+)\.xml$', '/$1.xml')
+                => replace('^([\w_0-9]+)\.xsl$', '/$1.xsl')
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>

@@ -31,6 +31,11 @@
             <xsl:when test="@rend='bold'">
                 <xsl:choose>
                     <xsl:when test="parent::tei:p[@rend='caption'] and position() = 1"/>
+                    <xsl:when test="string() => ends-with(' ')">
+                        <xsl:text>&lt;HI style="bold"&gt;</xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text>&lt;/HI&gt;</xsl:text>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:text>**</xsl:text>
                         <xsl:apply-templates/>
@@ -49,11 +54,9 @@
                 <xsl:text>&lt;/Glyph&gt;</xsl:text>
             </xsl:when>
             <xsl:when test="@rend='red' or @rend='blue'">
-                <xsl:text>&lt;span className="</xsl:text>
-                <xsl:value-of select="concat('text-', @rend, '-500')"/>
-                <xsl:text>"&gt;</xsl:text>
+                <xsl:text expand-text="true">&lt;HI color="{@rend}"&gt;</xsl:text>
                 <xsl:apply-templates/>
-                <xsl:text>&lt;/span&gt;</xsl:text>
+                <xsl:text>&lt;/HI&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
