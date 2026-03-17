@@ -5,6 +5,7 @@ import Caption from '@/components/caption';
 import DisplayFrame from '@/components/display-frame';
 import Figure from '@/components/figure';
 import Glyph from '@/components/glyph';
+import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
 import Quote from '@/components/quote';
 import { E } from '@/components/xml';
@@ -20,6 +21,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     DisplayFrame,
     Figure,
     Glyph,
+    HI,
     Image,
     InlineImage,
     LitItem,
