@@ -10,13 +10,15 @@
         </xsl:if>
         <xsl:value-of select="concat('`@', ., '{:sh}`')"/>
     </xsl:template>
-    <xsl:template match="tei:gi">
+    <xsl:template match="tei:gi|tei:tag">
         <xsl:choose>
             <xsl:when test="ancestor::tei:head">
                 <xsl:value-of select="concat('`&lt;', string(.), '&gt;`')"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text expand-text="true">&lt;E&gt;{string(.)}&lt;/E&gt;</xsl:text>
+                <xsl:text expand-text="true">&lt;E&gt;{
+                        string(.) => replace('\s+', ' ')
+                    }&lt;/E&gt;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

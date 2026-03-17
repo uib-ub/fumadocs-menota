@@ -116,7 +116,7 @@ All values of `@rend{:sh}` and `@xml:id{:sh}` will be passed to html
 <div className="table-xml-elements">
 | tei:xml | html | function | Comment |
 |-----|-----|-----|-----|
-| code | <E>pre</E><E>code</E> | Code example | [See H.7 on styling of code](#secH.7) |
+| <E>code</E> | <E>pre</E><E>code</E> | Code example | [See H.7 on styling of code](#secH.7) |
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
 | <span className="p-6"/>`"inline"{:js}` |  | Inline code example |  |
 | <E>eg</E> | <E>pre</E><E>code</E> | Example of code | [See H.7 on styling of code](#secH.7) |
@@ -135,7 +135,7 @@ All values of `@rend{:sh}` and `@xml:id{:sh}` will be passed to html
 | <span className="p-6"/>`"[number]"{:js}` | &lt;figcaption&gt;&lt;span class="imagelabel"&gt;Fig. &lt;span class="imageid"&gt;2.1&lt;&gt;/span&gt;.&lt;/span&gt;Caption&lt;/figcaption&gt; |  | Usage in xml: `&lt;figDesc n="2.1"&gt;Caption&lt;/figDesc&gt;`, i.e. the figure’s number should passed through `@n{:sh}` and not be put between the <E>figDesc</E> tags |
 | <E>graphic</E> | <E>img</E> | Image | If used together with a parent element <E>figure</E>, the image element will be wrapped in a <E>figure</E> element together with its caption. It may, however, also be used alone. |
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
-| <E>head</E> | <E>h1</E>, <E>h2</E>, <E>h3</E>, <E>h4</E>, <E>head</E> | Heading | <E>h1</E>&ndash;<E>h4</E> are chosen according to their position in the dom. If the position does not match, a generic div class="head" is output.  |
+| <E>head</E> | <E>h1</E>, <E>h2</E>, <E>h3</E>, <E>h4</E>, <E>head</E> | Heading | <E>h1</E>&ndash;<E>h4</E> are chosen according to their position in the dom. If the position does not match, a generic <E>div class="head"</E> is output.  |
 | <span className="p-3"/>`@rend{:sh}` |  |  |  |
 | <span className="p-3"/>`@xml:id{:sh}` |  |  | When no `@xml:id{:sh}` is passed, the xsl will introduce an `@id{:sh}` with a random value |
 | <E>l</E> | <E>li</E> | List item |  |
@@ -284,7 +284,7 @@ first table row. Below is the xml code of the html table above:
 
 A table with explanations of xml-elements and their attributes ([such as H.4.1 above](#tab.1)) can be given
 `@rend{:sh}`=`"xml-elements"{:js}` in the <E>table</E> element. The
-xls stylesheet tries to wrap all rows with a <E>gi</E> or a tag in
+xls stylesheet tries to wrap all rows with a <E>gi</E> or a <E>tag</E> in
 the first cell into a <E>tbody</E> element together with the following rows.
 Such tables must adhere to the following principles: 
 
@@ -298,8 +298,7 @@ are indented automatically.
 ### H.5.2 Styling glyph tables [#secH.5.2]
 
 Tables with explanations of abbreviations and other glyphs can be marked upp with
-table rend="abbr". In such tables, cells containing a tag hi
-rend="glyph" (and nothing else) are rendered differently.
+<E>table rend="abbr"</E>. In such tables, cells containing a tag <E>hi rend="glyph"</E> (and nothing else) are rendered differently.
 
 ## H.6 Styling images [#secH.6]
 
