@@ -5,15 +5,19 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:template match="tei:att">
-        <xsl:if test="position() = 1 and ancestor::tei:table[@rend='xml-elements']">
-            <xsl:text>&lt;span className="p-3"/&gt;</xsl:text>
-        </xsl:if>
-        <xsl:value-of select="concat('`@', ., '{:sh}`')"/>
+        <xsl:choose>
+            <xsl:when test="ancestor::tei:head">
+                <xsl:text expand-text="true">`@{string()}`</xsl:text>             
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text expand-text="true">&lt;Att&gt;{string()}&lt;/Att&gt;</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:gi|tei:tag">
         <xsl:choose>
             <xsl:when test="ancestor::tei:head">
-                <xsl:value-of select="concat('`&lt;', string(.), '&gt;`')"/>
+                <xsl:text expand-text="true">`&lt;{string()}&gt;`</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text expand-text="true">&lt;E&gt;{

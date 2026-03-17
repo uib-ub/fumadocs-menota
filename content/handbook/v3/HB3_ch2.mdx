@@ -363,11 +363,11 @@ attribute. Looking at the stanzas just cited, one might, for example,
 want to add attributes to individual elements, using convenient typologies to indicate number, genre, form,
 metre or rhyme-scheme.
 The elements <E>lg</E> and <E>l</E>, denoting stanzas and lines, could for instance be described in more detail by
-adding an attribute for the number: `@n{:sh}`. 
+adding an attribute for the number: <Att>n</Att>. 
 One ore more attributes are added to the opening tag of elements in such a way that they follow
 the element name, separated by a white space. The value of an attribute
 is given in double quotations to the right of an equals sign.
-Adding a `@n{:sh}` attribute (with the value `"1"{:js}`) to the <E>l</E> element of the first line would  
+Adding a <Att>n</Att> attribute (with the value `"1"{:js}`) to the <E>l</E> element of the first line would  
 be encoded like this:
 ```xml
 <l n="1">
@@ -619,15 +619,15 @@ document is in XML:
 ```
 
 
-The `@version{:sh}` attribute is required and the
+The <Att>version</Att> attribute is required and the
 standard version is currently `"1.0"{:js}`, but it is possible that there will be further
-versions in the future. Two more attributes are optional: `@encoding{:sh}`, which specifies
+versions in the future. Two more attributes are optional: <Att>encoding</Att>, which specifies
 which encoding is to be used (the variable length encoding of the Unicode character set, UTF-8,
-is assumed by all the standard browsers), and `@standalone{:sh}`, the possible values for
+is assumed by all the standard browsers), and <Att>standalone</Att>, the possible values for
 which are `"yes"{:js}` and `"no"{:js}` to specify if the document makes use of an external
 schema. XML documents do not in fact require a schema, provided they are “well-formed”
 (see below), but in most cases it is adventageous to employ a schema. In cases where there is
-no schema the value of the `@standalone{:sh}` attribute should be `"yes"{:js}`. If the
+no schema the value of the <Att>standalone</Att> attribute should be `"yes"{:js}`. If the
 attribute is omitted, on the other hand, the default value `"no"{:js}` is assumed.
 
 The document’s second line, following the XML declaration, is the reference to the schema used.
@@ -728,7 +728,7 @@ encoded by the <E>del</E> element), cf. [ch. 9.3.2](/handbook/v3/HB3_ch9#sec9.3.
 
 <E>me:textSpan/</E> for encoding any discontinous structures, thus avoiding a full set of elements 
 like <E>addSpan/</E>, <E>delSpan/</E>, <E>suppliedSpan/</E>, <E>suppressedSpan/</E>, etc. 
-Note that the attribute `@me:category{:sh}` is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
+Note that the attribute <Att>me:category</Att> is used to specify what type of textspan it is, i.e. an addition, deletion, supplement, suppression, etc., 
 cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 <E>me:all</E> for alliteration in encoding of verse, cf. [ch. 13.2](/handbook/v3/HB3_ch13#sec13.2).
@@ -737,30 +737,30 @@ cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 ### 2.8.2 Attributes [#sec2.8.2]
 
-`@me:msa{:sh}` for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
+<Att>me:msa</Att> for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. 
 This is an attribute to the <E>w</E> element, cf. [ch. 11.3](/handbook/v3/HB3_ch11#sec11.3).
 
-`@me:type{:sh}` for classification purposes. This is an attribute to the <E>ex</E> and <E>am</E> elements, 
+<Att>me:type</Att> for classification purposes. This is an attribute to the <E>ex</E> and <E>am</E> elements, 
 cf. [ch. 6.1](/handbook/v3/HB3_ch6#sec6.1).
 
-`@me:key{:sh}` for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+<Att>me:key</Att> for linking to another resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
 in the form of a database key or similar, used as an attribute to a number of elements, cf. [ch. 15.2.2](/handbook/v3/HB3_ch15#sec15.2.2).
 
-`@me:ref{:sh}` for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
+<Att>me:ref</Att> for linking to an external resource which describes the thing(s) the element references (e.g. person, text, place, word, etc.), 
 in the form of one or more URIs or similar identifiers, cf. [ch. 15.4.1](/handbook/v3/HB3_ch15#sec15.4.1).
 
-`@me:level{:sh}` for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
+<Att>me:level</Att> for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). 
 This is an attribute to the <E>normalization</E> element used in the header, 
 cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
-`@me:lemmatized{:sh}` for identifying those texts which have been lemmatised. This is an attribute to the 
+<Att>me:lemmatized</Att> for identifying those texts which have been lemmatised. This is an attribute to the 
 <E>interpretation</E> element used in the header, cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
-`@me:morphAnalyzed{:sh}` for identifying those texts which have been morphologically analysed, 
+<Att>me:morphAnalyzed</Att> for identifying those texts which have been morphologically analysed, 
 i.e. given grammatical form. This is another attribute to the <E>interpretation</E> element used in the header,  
 cf. [ch. 14.4](/handbook/v3/HB3_ch14#sec14.4).
 
-`@me:category{:sh}` for identifying the type of a text span. This is an attribute to the <E>me:textSpan/</E> element 
+<Att>me:category</Att> for identifying the type of a text span. This is an attribute to the <E>me:textSpan/</E> element 
 used to encode overlapping structures, cf. [ch. 16.2](/handbook/v3/HB3_ch16#sec16.2).
 
 ## 2.9 Displaying the text [#sec2.9]
@@ -793,11 +793,11 @@ Most standard XML editors offer for example functions to set up personalised tra
 apply a selected stylesheet to any given XML input and open the results in a Web browser.
 Easier to use might be an XSLT stylesheet processing instruction (also called “stylesheet link”), 
 which is simply inserted at the top of the document, i.e. in front of the root element, similar to a RNG schema reference.
-The `@href{:sh}` attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
+The <Att>href</Att> attribute of this processing instruction refers to the absolute or relative location of the stylesheet that 
 is supposed to be associated, and 
-depending on the stylesheet format used, the `@type{:sh}` attribute must be 
+depending on the stylesheet format used, the <Att>type</Att> attribute must be 
 set to "text/css" or "text/xsl". There are other
-(pseudo-) attributes, such as `@media{:sh}`, but they need not concern
+(pseudo-) attributes, such as <Att>media</Att>, but they need not concern
 us here (For instructions on how to apply an XSLT stylesheet see also [app. F](/handbook/v3/HB3_F_xslt)).
 The first example shows a local reference to a CSS stylesheet, while the second associates an XSLT stylesheet 
 from the web with the XML file in question:

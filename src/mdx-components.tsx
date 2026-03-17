@@ -8,7 +8,7 @@ import Glyph from '@/components/glyph';
 import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
 import Quote from '@/components/quote';
-import { E } from '@/components/xml';
+import { Att, E } from '@/components/xml';
 import type { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,6 +16,7 @@ import Image from 'next/image';
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
+    Att,
     AutoImage,
     Caption,
     DisplayFrame,
