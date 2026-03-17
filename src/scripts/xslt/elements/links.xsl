@@ -16,7 +16,7 @@
                 => replace('^(\w+)\.dtd$', '/$1.dtd') 
                 => replace('^(\w+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt') 
-                => replace('^(\w+)\.xml$', '/$1.xml') 
+                => replace('^(\w+)\.xml$', '/$1.xml')
             })</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
