@@ -13,6 +13,7 @@
                 => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
                 => replace('^samplefiles/(.+\.xml)$', '/handbook/v3/samples/$1')
+                => replace('^samples/(.+\.pdf)$', '/handbook/v3/samples/$1')
                 => replace('^(\w+)\.dtd$', '/$1.dtd') 
                 => replace('^(\w+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
