@@ -81,6 +81,7 @@
                     => replace('^Friederike Richter(( ?:)? )?', '')
                     => replace('^Marco Bianchi: ', '')
                     => replace('^Alex Speed Kjeldsen: ', '')
+                    => replace('^Robert K\. Paulsen: ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')
                     => replace('&quot;', '\\&quot;')
