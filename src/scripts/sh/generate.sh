@@ -38,3 +38,16 @@ if [[ $segment == "all" || $segment == "hb3" ]]; then
     done
     mv $contentdir/handbook/v3/HB3_index.mdx $contentdir/handbook/v3/index.mdx
 fi
+
+if [[ $segment == "all" || $segment == "hb4" ]]; then
+    echo "Compiling handbook v4:"
+    for file in $sourcedir/handbok/v4/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            if [[ "$sourceID" =~ ^HB4_ ]]; then
+                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v4/${sourceID}.mdx
+            fi
+        fi
+    done
+    mv $contentdir/handbook/v4/HB4_index.mdx $contentdir/handbook/v4/index.mdx
+fi

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Menota handbook (v. 4.0 beta): List of contents</title>
+				<author xml:id="oeh">Odd Einar Haugen, <name>Universitetet i Bergen</name></author>
+
+			</titleStmt>
+			<publicationStmt>
+				<p>Published in the web at <ref target="http://www.menota.org/"
+						>http://www.menota.org/</ref>/</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Made by copying the corresponding files for v. 3.0 of the handbook</p>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<langUsage>
+				<language ident="en">English</language>
+			</langUsage>
+
+		</profileDesc>
+		<revisionDesc>
+			<change>
+				<date>11 June 2025</date>
+				<persName>Juliane Tiemann</persName>Test, no significant changes made</change>
+			<change>
+				<date>2 February 2023</date>
+				<persName>Odd Einar Haugen</persName>: Added information about the editor </change>
+			<change>
+				<date>7 January 2021</date>
+				<persName>Odd Einar Haugen</persName>: Added ch. 17, 18, 19 and 20 </change>
+			<change>
+				<date>26 December 2019</date>
+				<persName>Odd Einar Haugen</persName>: Set up the page </change>
+
+		</revisionDesc>
+	</teiHeader>
+	
+	<!-- OEH 2019-12-12: This is a note to myself on things that should be revised or added for the next version of the handbook, 
+		inserted here, so that I would be likely to find it! 
+		(a) A new chapter, perhaps nr. 17, on the encoding of charters (diplom)
+		(b) A new chapter, perhaps nr. 18, on the encoding of runic inscriptions
+		(c) A revision of ch. 11, perhaps introducing @pos for word class (now the first name token in each @me:msa,
+		     replacing @me:msa with @msd (which probably has the same function, and is a standard attribute;
+		     this would of course mean a revision of all annotated texts in the archive (ouch!)
+		(d) A linguistic revision of ch. 7, and merging the image credits in this with the one at the end of the literature list
+		(e) A reorganising of ch. 15, so the links look more like elsewhere in the handbook	
+	-->
+	<text xml:lang="en">
+		<body rend="index">
+			<head>List of contents</head>
+
+			<p>Version 4.0 beta</p>
+						
+<!--
+			<div>
+				<head>Preliminaries</head>
+				<list rend="toc">
+					<item><ref target="HB4_TitlePage.pdf">Title page</ref> </item>
+					<item><ref target="HB4_preface.xml">Preface</ref> </item>
+					</list>
+			</div>
+-->
+			
+			<div>
+				<head>Chapters</head>
+				<list rend="toc">
+<!--					<item><ref target="HB4_ch1.xml">Ch. 1: What is Menota?</ref></item>
+					<item><ref target="HB4_ch2.xml">Ch. 2. Text encoding using XML</ref></item>
+					<item><ref target="HB4_ch3.xml">Ch. 3. Document structure</ref></item>
+					<item><ref target="HB4_ch4.xml">Ch. 4. Levels of text
+						representation</ref></item>
+					<item><ref target="HB4_ch5.xml">Ch. 5. Characters and words</ref></item>
+					<item><ref target="HB4_ch6.xml">Ch. 6. Abbreviations</ref></item>
+					<item><ref target="HB4_ch7.xml">Ch. 7. Initials and other
+						illuminations</ref></item>
+					<item><ref target="HB4_ch8.xml">Ch. 8. Fragmentation and
+							uncertainty</ref></item>
+					<item><ref target="HB4_ch9.xml">Ch. 9. Scribal and editorial
+							intervention</ref></item>
+					<item><ref target="HB4_ch10.xml">Ch. 10. Normalisation</ref></item>
+					<item><ref target="HB4_ch11.xml">Ch. 11. Linguistic annotation</ref></item>
+					<item><ref target="HB4_ch12.xml">Ch. 12. Names</ref></item>
+					<item><ref target="HB4_ch13.xml">Ch. 13. Metrical structure</ref></item>
+					<item><ref target="HB4_ch14.xml">Ch. 14. The header</ref></item>
+					<item><ref target="HB4_ch15.xml">Ch. 15. Linking to external
+						resources</ref></item>
+					<item><ref target="HB4_ch16.xml">Ch. 16. Dealing with overlapping structures</ref></item>
+					-->
+					<item><ref target="HB4_ch17.xml">Ch. 17. Diplomas</ref></item>
+					<item><ref target="HB4_ch18.xml">Ch. 18. Runic inscriptions</ref></item>
+					<item><ref target="HB4_ch19.xml">Ch. 19. Variants</ref></item>
+					<item><ref target="HB4_ch20.xml">Ch. 20. Contents of a scholarly edition</ref></item>
+				    </list>
+			</div>
+
+<!--
+			<div>
+				<head>References and index</head>
+				<list rend="toc">
+					<item><ref target="HB4_literature.xml">Literature and images</ref></item>
+					<item><ref target="HB4_elements.xml">Index of elements and attributes</ref></item>
+				</list>
+			</div>
+			
+			<div>
+				<head>Appendices</head>
+				<list rend="toc">
+					<item><ref target="HB4_A_characters.xml">A. Characters</ref></item>
+					<item><ref target="HB4_B_fonts.xml">B. Fonts</ref></item>
+					<item><ref target="HB4_C_editors.xml">C. XML editors</ref></item>
+					<item><ref target="HB4_D_schemas.xml">D. Menota schemas (DTD, RELAX NG, and
+							entity list)</ref></item>
+					<item><ref target="HB4_E_menotaheader.xml">E. Menota header</ref></item>
+					<item><ref target="HB4_F_xslt.xml">F. XSLT stylesheets</ref></item>
+					<item><ref target="HB4_G_linking.xml">G. Linking to external
+						resources</ref></item>
+					<item><ref target="HB4_H_the-handbook.xml">H. Stylesheets (XSL and CSS) for the
+							handbook</ref></item>
+					<item><ref target="HB4_I_MenotaLight.xml">I. Menota Light</ref></item>
+				</list>
+			</div>
+ -->			
+			<div>
+				<head>Tutorials and samples</head>
+				<list rend="toc">
+					<item><ref target="HB4_MenBlitzDocu.xml">MenotaBlitz.html Documentation</ref></item>
+				</list>
+			</div>
+
+
+			<div>
+				<head>Citing the handbook</head>
+				<p><hi rend="bold">The whole handbook may be cited as:</hi></p>
+				<p><title>The Menota handbook: Guidelines for the electronic encoding of Medieval
+						Nordic primary sources.</title> Gen. ed. Beeke Stegmann. Version 4.0 β.
+					Medieval Nordic Text Archive, 2023.
+					&lt;http://www.menota.org/handbook.xml&gt;</p>
+				<p><hi rend="bold">A chapter of the handbook may be cited as:</hi></p>
+				<p>Odd Einar Haugen. Runic inscriptions.” Ch. 18 of <title>The Menota handbook: 
+					Guidelines for the electronic encoding of Medieval
+					Nordic primary sources.</title> Gen. ed. Beeke Stegmann. Version 4.0 β.
+					Medieval Nordic Text Archive, 2023.
+					&lt;http://www.menota.org/handbook.xml&gt;</p>
+				<p>&nbsp;</p>
+			</div>			
+
+			
+		</body>
+	</text>
+</TEI>

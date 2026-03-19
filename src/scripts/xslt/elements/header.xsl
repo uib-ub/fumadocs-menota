@@ -15,7 +15,7 @@
     <xsl:template match="tei:titleStmt">
         <xsl:text expand-text="true">title: "{tei:title 
                 => replace('\s+', ' ')
-                => replace('^(Menota handbook) \(v\.( 3\.0)\): List of contents$', '$1$2')
+                => replace('^(Menota handbook) \(v\.( (?:3\.0|4\.0 beta))\): List of contents$', '$1$2')
                 => replace('^Menota handbook ch\. ([0-9]+) \(v\. 3\.[01]\)(: .*)$', '$1$2')
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook preface .*$', 'Preface')
