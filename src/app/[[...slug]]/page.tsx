@@ -10,42 +10,34 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
-  const contentType: 'hbx' | 'hb3' | 'hb4' | 'main' = (slug => {
+  const { contentGroup, contentStyle }: { 
+    contentGroup: 'hbx' | 'hb3' | 'hb4' | 'main',
+    contentStyle: 'hb-new' | 'main'
+  } = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
         case "v3":
-          return "hb3";
+          return { contentGroup: "hb3", contentStyle: "hb-new" };
         case "v4":
-          return "hb4";
+          return { contentGroup: "hb4", contentStyle: "hb-new" };
         default:
-          return "hbx";
+          return { contentGroup: "hbx", contentStyle: "hb-new" };
       }
     }
-    return 'main';
+    return { contentGroup: 'main', contentStyle: 'main' };
   })(params.slug);
 
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white dark:bg-black ${contentType}`}>
-      {(() => {switch (contentType) {
+    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white dark:bg-black ${contentStyle}`}>
+      {(() => {switch (contentGroup) {
         case "hb3":
-          return (
-            <div className='mb-5 border-b border-solid border-black pb-3'>
-              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
-                Menota Handbook 3.0
-              </div>
-              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
-                Guidelines for the electronic encoding of<br/>
-                Medieval Nordic primary sources
-              </div>
-            </div>
-          );
         case "hb4":
           return (
             <div className='mb-5 border-b border-solid border-black pb-3'>
               <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
-                Menota Handbook 4.0 β 
+                Menota Handbook {contentGroup == "hb3" ? "3.0" : "4.0 β"}
               </div>
               <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
                 Guidelines for the electronic encoding of<br/>
