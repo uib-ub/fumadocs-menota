@@ -26,9 +26,7 @@
             <xsl:text>&#x0a;</xsl:text>
         </xsl:if>
         <xsl:text>&lt;AutoImage</xsl:text>
-        <xsl:text> src="</xsl:text>
-        <xsl:value-of select="concat('/images/hb3/', @url)"/>
-        <xsl:text>"</xsl:text>
+        <xsl:text expand-text="true"> src="/images/hb{$version}/{@url}"</xsl:text>
         <xsl:text> alt="</xsl:text>
         <xsl:value-of select="(../tei:figDesc, @url)[1]"/>
         <xsl:text>"</xsl:text>
