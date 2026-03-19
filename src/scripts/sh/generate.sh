@@ -36,4 +36,5 @@ if [[ $segment == "all" || $segment == "hb3" ]]; then
             fi
         fi
     done
+    mv $contentdir/handbook/v3/HB3_index.mdx $contentdir/handbook/v3/index.mdx
 fi
