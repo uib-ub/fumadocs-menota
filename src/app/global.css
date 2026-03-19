@@ -30,6 +30,12 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Runic';
+    src: url('@/lib/webfonts/uni-runes.woff') format('woff');
+    unicode-range: U+16A0-16F0, U+E000-F8FF;
+}
+
 #nd-docs-layout {
     background-color: white;
     font-family: 'Verdana', sans-serif;
@@ -103,13 +109,13 @@ strong {
 
 .hb-new div.prose p, .hb-new div.prose .highlight {
     font-size: 1em;
-    font-family: 'Handbook', serif;
+    font-family: 'Runic', 'Handbook', serif;
     text-align: justify;
 }
 
 .hb-new ol, .hb-new ul {
     font-size: 1em;
-    font-family: 'Handbook', serif;
+    font-family: 'Runic', 'Handbook', serif;
 }
 
 .hb-new table {
@@ -129,7 +135,7 @@ strong {
     padding: .5em 1em;
     background-color: white;
     font-size: 1em;
-    font-family: 'Handbook', serif;
+    font-family: 'Runic', 'Handbook', serif;
 }
 
 .hb-new tbody, .hb-new th, .hb-new td {
