@@ -515,15 +515,44 @@ There are several other ways of solving this type of conflict, as we discuss at 
 
 TEI uses the empty element <E>pb/</E> to indicate a page beginning. This element has an attribute <Att>n</Att> which can be used for the page numbers. As it is customary to refer to the manuscript leaves, rather than pages, the value of the <Att>n</Att> attribute should indicate front or back pages (recto, verso), e.g. 1r, 1v, 2r, 2v, 3r, 3v, and so on. Column beginnings, <E>cb/</E>, should also be indicated in manuscripts with two or more columns. Recommended values for the <Att>n</Att> attribute of the <E>cb/</E> element are “A”, “B” and so on. For texts that are going to be displayed in the Menota archive, it is necessary to add an **ed="ms"** attribute to specify that the page and column beginning refer to the manuscript (and not to e.g. an edition of the text). Example:
 
-| Elements | Contents |
-|-----|-----|
-| <E>pb ed="ms" n="1r"/</E> | Folio one, recto page, begins here, |
-| <E>cb ed="ms" n="A"/</E> | the first column begins here, |
-| <E>cb ed="ms" n="B"/</E> | and the second column begins here. |
-| . . . |
-| <E>pb ed="ms" n="1v"/</E> | Folio one, verso page, begins here, |
-| <E>cb ed="ms" n="A"/</E> | the first column of the verso page begins here, |
-| <E>cb ed="ms" n="B"/</E> | and the second column begins here. |
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><E>pb ed="ms" n="1r"/</E></td>
+<td>Folio one, recto page, begins here,</td>
+</tr>
+<tr>
+<td><E>cb ed="ms" n="A"/</E></td>
+<td>the first column begins here,</td>
+</tr>
+<tr>
+<td><E>cb ed="ms" n="B"/</E></td>
+<td>and the second column begins here.</td>
+</tr>
+<tr>
+<td colSpan="2">. . .</td>
+</tr>
+<tr>
+<td><E>pb ed="ms" n="1v"/</E></td>
+<td>Folio one, verso page, begins here,</td>
+</tr>
+<tr>
+<td><E>cb ed="ms" n="A"/</E></td>
+<td>the first column of the verso page begins here,</td>
+</tr>
+<tr>
+<td><E>cb ed="ms" n="B"/</E></td>
+<td>and the second column begins here.</td>
+</tr>
+</tbody>
+</table>
+
 
 
 Page beginning information from, for example, a printed standard edition, can be encoded in addition to the <E>pb ed="ms"/</E> elements that refers to the manuscript itself. If one for example would like to add page beginning information from a standard edition, one should use the <Att>ed</Att> attribute with a suitable value:

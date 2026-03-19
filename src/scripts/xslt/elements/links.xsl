@@ -15,7 +15,7 @@
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB([34])_.*?)\.xml#?$', '/handbook/v$2/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
-                => replace('^samplefiles/(.+\.xml)$', $samples-path)
+                => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
                 => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^(\w+)\.dtd$', '/$1.dtd')
                 => replace('^(\w+)\.rng$', '/$1.rng') 
