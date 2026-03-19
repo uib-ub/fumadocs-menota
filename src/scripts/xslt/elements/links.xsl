@@ -10,7 +10,7 @@
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
-                => replace('^(HB3_.*?)\.xml#?$', '/handbook/v3/$1')
+                => replace('^(HB([34])_.*?)\.xml#?$', '/handbook/v$2/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
                 => replace('^samplefiles/(.+\.xml)$', '/handbook/v3/samples/$1')
                 => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', '/handbook/v3/samples/$1')
