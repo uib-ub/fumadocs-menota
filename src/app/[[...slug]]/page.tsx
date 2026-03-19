@@ -10,11 +10,13 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
-  const contentType: 'hbx' | 'hb3' | 'main' = (slug => {
+  const contentType: 'hbx' | 'hb3' | 'hb4' | 'main' = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
         case "v3":
           return "hb3";
+        case "v4":
+          return "hb4";
         default:
           return "hbx";
       }
@@ -32,6 +34,18 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
             <div className='mb-5 border-b border-solid border-black pb-3'>
               <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
                 Menota Handbook 3.0
+              </div>
+              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
+                Guidelines for the electronic encoding of<br/>
+                Medieval Nordic primary sources
+              </div>
+            </div>
+          );
+        case "hb4":
+          return (
+            <div className='mb-5 border-b border-solid border-black pb-3'>
+              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
+                Menota Handbook 4.0 β 
               </div>
               <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
                 Guidelines for the electronic encoding of<br/>
