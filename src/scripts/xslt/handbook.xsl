@@ -67,7 +67,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>&#x0a;```xml&#x0a;</xsl:text>
-                <xsl:value-of select="."/>
+                <xsl:value-of select="string() => replace('&#x2018;', '')"/>
                 <xsl:text>&#x0a;```&#x0a;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
