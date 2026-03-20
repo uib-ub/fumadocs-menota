@@ -8,6 +8,9 @@
         <xsl:variable name="samples-path">
             <xsl:text expand-text="true">/handbook/v{$version}/samples/$1</xsl:text>
         </xsl:variable>
+        <xsl:variable name="file-path">
+            <xsl:text expand-text="true">/handbook/v{$version}/$1</xsl:text>
+        </xsl:variable>
         <xsl:text>[</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>]</xsl:text>
@@ -18,6 +21,7 @@
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
                 => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
+                => replace('^([\w\-0-9]+\.pdf)', $file-path)
                 => replace('^(\w+)\.dtd$', '/$1.dtd')
                 => replace('^(\w+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
