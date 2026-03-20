@@ -17,11 +17,27 @@
         </xsl:choose>
         <xsl:choose>
             <xsl:when test="
-                @rend='plain' or 
-                descendant::tei:cell//tei:lb or 
-                descendant::tei:cell//tei:figure or
-                descendant::tei:cell[number(@rows) > 1] or
-                descendant::tei:cell[number(@cols) > 1]">
+                tei:row[@role='label'] and
+                not(descendant::tei:cell//tei:lb or 
+                    descendant::tei:cell//tei:figure or
+                    descendant::tei:cell[number(@rows) > 1] or
+                    descendant::tei:cell[number(@cols) > 1])">
+                <xsl:for-each select="tei:row">
+                    <xsl:text>&#x0a;|</xsl:text>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:text> </xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text> |</xsl:text>
+                    </xsl:for-each>
+                    <xsl:if test="@role='label'">
+                        <xsl:text>&#x0a;|</xsl:text>
+                        <xsl:for-each select="tei:cell">
+                            <xsl:text>-----|</xsl:text>
+                        </xsl:for-each>
+                    </xsl:if>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
                 <xsl:text>&#x0a;&lt;table&gt;</xsl:text>
                 <xsl:if test="tei:row[@role='label']">
                     <xsl:text>&#x0a;&lt;thead&gt;</xsl:text>
@@ -64,26 +80,6 @@
                 </xsl:for-each>
                 <xsl:text>&#x0a;&lt;/tbody&gt;</xsl:text>
                 <xsl:text>&#x0a;&lt;/table&gt;&#x0a;</xsl:text>
-            </xsl:when>
-            <xsl:when test="tei:row[@role='label']">
-                <xsl:for-each select="tei:row">
-                    <xsl:text>&#x0a;|</xsl:text>
-                    <xsl:for-each select="tei:cell">
-                        <xsl:text> </xsl:text>
-                        <xsl:apply-templates/>
-                        <xsl:text> |</xsl:text>
-                    </xsl:for-each>
-                    <xsl:if test="@role='label'">
-                        <xsl:text>&#x0a;|</xsl:text>
-                        <xsl:for-each select="tei:cell">
-                            <xsl:text>-----|</xsl:text>
-                        </xsl:for-each>
-                    </xsl:if>
-                </xsl:for-each>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#x0a;</xsl:text>
-                <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
         <xsl:if test="@rend">

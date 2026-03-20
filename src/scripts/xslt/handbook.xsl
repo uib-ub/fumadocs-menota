@@ -7,6 +7,7 @@
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change"/>
+    <xsl:include href="elements/code.xsl"/>
     <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/head.xsl"/>
     <xsl:include href="elements/header.xsl"/>
@@ -57,20 +58,6 @@
         <xsl:text>&#x0a;&lt;Quote&gt;&#x0a;</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>&#x0a;&lt;/Quote&gt;</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei_samples:egXML">
-        <xsl:choose>
-            <xsl:when test="@rend='inline'">
-                <xsl:text>`</xsl:text>
-                <xsl:value-of select="string() => normalize-space()"/>
-                <xsl:text>{:xml}`</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#x0a;```xml&#x0a;</xsl:text>
-                <xsl:value-of select="."/>
-                <xsl:text>&#x0a;```&#x0a;</xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:list">
         <xsl:text>&#x0a;</xsl:text>
