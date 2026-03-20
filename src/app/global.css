@@ -31,6 +31,12 @@
 }
 
 @font-face {
+    font-family: 'MUFI-add';
+    src: url('@/lib/webfonts/mufi-additional.woff') format('woff');
+    unicode-range: U+E000-F8FF;
+}
+
+@font-face {
     font-family: 'Runic';
     src: url('@/lib/webfonts/uni-runes.woff') format('woff');
     unicode-range: U+16A0-16F0, U+E000-F8FF;
@@ -108,14 +114,16 @@ strong {
 }
 
 .hb-new div.prose p, .hb-new div.prose .highlight {
-    font-size: 1em;
-    font-family: 'Runic', 'Handbook', serif;
     text-align: justify;
 }
 
-.hb-new ol, .hb-new ul {
+.hb-new div.prose p, 
+.hb-new div.prose .highlight, 
+.hb-new ol, 
+.hb-new ul,
+.hb-new td {
     font-size: 1em;
-    font-family: 'Runic', 'Handbook', serif;
+    font-family: 'Runic',  'Handbook', 'MUFI-add', serif;
 }
 
 .hb-new table {
@@ -134,8 +142,6 @@ strong {
 .hb-new td {
     padding: .5em 1em;
     background-color: white;
-    font-size: 1em;
-    font-family: 'Runic', 'Handbook', serif;
 }
 
 .hb-new tbody, .hb-new th, .hb-new td {
