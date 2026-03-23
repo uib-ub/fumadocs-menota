@@ -1,0 +1,361 @@
+---
+title: "H: Stylesheets (XSL and CSS) for the handbook"
+author:
+ - Marco Bianchi
+ - 
+changeLog:
+ - date: 2026-03-23
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2019-12-12
+   author: Odd Einar Haugen
+   changes:
+    - "Defined this appendix as belonging to v. 3.0 of the handbook (12 December 2019)"
+ - date: 2019-12-08
+   author: Odd Einar Haugen
+   changes:
+    - "Removed a number of superfluous hyphens (but not in values and the like); reorganised the indents in the egXML examples; made the single cetered table left adjusted (like all other tables in the book); added the appendix number (H.7 etc.) in the links in the comment column"
+ - date: 2019-10-13
+   author:
+    - Odd Einar Haugen
+    - Patrick Farrugia
+   changes:
+    - "Made a couple of corrections suggested by Patrick Farrugia"
+ - date: 2018-08-22
+   author: Marco Bianchi
+   changes:
+    - "Made some minor additions and changes."
+ - date: 2018-01-29
+   author: Marco Bianchi
+   changes:
+    - "Changed the title of the document and made some minor changes."
+ - date: 2018-01-26
+   author: Marco Bianchi
+   changes:
+    - "Various minor changes."
+ - date: 2018-01-23
+   author: Marco Bianchi
+   changes:
+    - "Various updates."
+ - date: 2017-12-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added the name of the author and renumbered the appendix as H. Otherwise, no changes."
+ - date: 2017-12-01
+   author: Marco Bianchi
+   changes:
+    - "First complete version"
+---
+
+
+# Appendix H: Stylesheets (XSL and CSS) for the handbook
+
+Version 3.0 (12 December 2019)
+
+by Marco Bianchi
+
+## H.1 Introduction [#secH.1]
+
+Version 3 of the Menota handbook is transformed to html with the stylesheet
+handbook_v3.xsl. The stylesheet outputs clean box-based html5. Generally, all
+<Att>rend</Att> are converted to html classes. All styling is taken care of by
+menota_handbook_3.css.
+
+## H.2 The HTML [#secH.2]
+
+handbook_v3.xls produces clean html5 without any form styling in html code. The
+html skeleton:
+```xml
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="page">
+      <div id="main-wrapper">
+        <div id="header-wrapper">
+          <header> </header>
+          <nav> Site-navigation</nav>
+        </div>
+        <div id="content-wrapper">
+          <section id="sidebar" role="navigation">Page-MENU</section>
+          <main id="content">
+            <article>HANDBOOK ENTRIES</article>
+          </main>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+  </body>
+</html>
+```
+
+
+## H.3 The CSS [#secH.3]
+
+The css sheets use css3 but should degrade gracefully in non-compliant browsers. The
+main typeface for handbook v3 is Andron, which is read in with css
+<Att>font-face</Att> and thus does not need to be installed on users’ computers.
+<Att>font-face</Att> is supported in all major modern browsers. Non compliant
+browsers will display a serif-font. 
+
+Handbook v3 uses one css sheet: menota_handbook_3.css
+
+Breaking points for small screens are set at 960px (width of header items and main
+content 100%) and 450px in portrait mode (larger main font-size).
+
+## H.4 XML markup [#secH.4]
+
+In the tables below supported xml markup and its corresponding html output is listed.
+All values of <Att>rend</Att> and <Att>xml:id</Att> will be passed to html
+<Att>class</Att> and <Att>id</Att> respectively, unless otherwise noted.
+
+### H.4.1 CSS Block elements [#secH.4.1]
+
+<div className="table-xml-elements">
+| tei:xml | html | function | Comment |
+|-----|-----|-----|-----|
+| <E>code</E> | <E>pre</E><E>code</E> | Code example | [See H.7 on styling of code](#secH.7) |
+| <Att>rend</Att> |  |  |  |
+| <Val>inline</Val> |  | Inline code example |  |
+| <E>eg</E> | <E>pre</E><E>code</E> | Example of code | [See H.7 on styling of code](#secH.7) |
+| <Att>rend</Att> |  |  |  |
+| <Val>inline</Val> |  | Inline code example |  |
+| <E>egXML</E> | <E>pre</E><E>code</E> | Example of xml code | [See H.7 on styling of code](#secH.7) |
+| <Att>rend</Att> |  |  |  |
+| <Val>inline</Val> |  | Inline code example |  |
+| <E>figure</E> | <E>figure</E> | Illustration | Typically, a <E>figure</E> element contains a <E>graphic</E> and a <E>figDesc</E> element. [See H.6 on styling of images](#secH.6) |
+| <Att>rend</Att> |  |  |  |
+| <Val>leftalign</Val> |  |  | The figure is placed to the left, with text floating to the right |
+| <Val>rightalign</Val> |  |  | The figure is placed to the right, with text floating to the left |
+| <Val>center</Val> |  |  | The figure is placed in the center. No floating occurs. |
+| <E>figure</E>/<E>figDesc</E> | `<figcaption span class="imagelabel">` | Figure caption | Should be used together with a sibling <E>graphic</E> and a parent <E>figure</E> |
+| <Att>n</Att> |  |  |  |
+| <Val>[number]</Val> | `<figcaption><span class="imagelabel">Fig. <span class="imageid">2.1<>/span>.</span>Caption</figcaption>` |  | Usage in xml: `<figDesc n="2.1">Caption</figDesc>{:xml}`, i.e. the figure’s number should passed through <Att>n</Att> and not be put between the <E>figDesc</E> tags |
+| <E>graphic</E> | <E>img</E> | Image | If used together with a parent element <E>figure</E>, the image element will be wrapped in a <E>figure</E> element together with its caption. It may, however, also be used alone. |
+| <Att>rend</Att> |  |  |  |
+| <E>head</E> | <E>h1</E>, <E>h2</E>, <E>h3</E>, <E>h4</E>, <E>head</E> | Heading | <E>h1</E>&ndash;<E>h4</E> are chosen according to their position in the dom. If the position does not match, a generic <E>div class="head"</E> is output.  |
+| <Att>rend</Att> |  |  |  |
+| <Att>xml:id</Att> |  |  | When no <Att>xml:id</Att> is passed, the xsl will introduce an <Att>id</Att> with a random value |
+| <E>l</E> | <E>li</E> | List item |  |
+| <E>lg</E> | <E>ul</E> | Unordered list |  |
+| <E>list</E> | <E>ul</E> | List | Unordered list |
+| <Att>rend</Att> |  |  |  |
+| <Val>numbered</Val> | <E>ol</E> | Ordered list | Ordered (= numbered) list |
+| <Att>type</Att> |  |  | <Att>type</Att> is converted to a css <Att>class</Att> for backwards compatibility with earlier style sheets |
+| <Att>xml:id</Att> |  |  |  |
+| <E>list</E>/<E>item</E> | <E>li</E> | List item |  |
+| <E>p</E> | <E>p</E> | Paragraph |  |
+| <Att>rend</Att> |  |  |  |
+| <Val>sample</Val> | <E>blockquote</E> | Blockquote |  |
+| <Att>xml:id</Att> |  |  |  |
+| <E>quote</E> | <E>blockquote</E> | Blockquote |  |
+| <E>table</E> | <E>table</E> | Table | [See H.5 on styling of tables](#secH.5) |
+| <Att>rend</Att> |  |  |  |
+| <Val>xml-elements</Val> |  |  | This value can be used for tables with lists of xml-elements and their attributes. [See H.5.1 for more information](#secH.5.1) |
+| <Val>abbr</Val> |  |  | This value can be used for tables with explanations of abbreviations and other glyphs. [See H.5.2 for more information](#secH.5.2) |
+| <Att>xml:id</Att> |  |  |  |
+| <E>table</E>/<E>row</E> | <E>tr</E> | Table row |  |
+| <Att>rend</Att> |  |  |  |
+| <Att>xml:id</Att> |  |  |  |
+| <Att>role</Att> |  |  |  |
+| <Val>label</Val> | <E>tr</E>/<E>th</E> | Table header | i.e. table header |
+| <E>table</E>/<E>cell</E> | <E>td</E> or <E>th</E> | Table cell | <E>th</E> when the parent <E>row</E><Att>role</Att>=<Val>label</Val> |
+| <Att>rend</Att> |  |  |  |
+</div>
+
+
+### H.4.2 CSS Inline elements [#secH.4.2]
+
+<div className="table-xml-elements">
+| tei:xml | html | Function | Comment |
+|-----|-----|-----|-----|
+| <E>att</E> | `<span class="attribute"><code>@att</code></span>{:xml}` | xml/html attribute |  In a table with <Att>rend</Att>=<Val>xml-elements</Val> attributes in the first columns are automatically indented 1em. [See H.7 on styling of code](#secH.7).  |
+| <E>emph</E> | <E>em</E> | Emphasis |  |
+| <E>gi</E> | `<span class="tag"><code>@att</code></span>{:xml}` | xml/html element | [See H.7 on styling of code](#secH.7) |
+| <E>hi</E> | <E>span</E> | Highlighted |  |
+| <Att>rend</Att> |  |  |  |
+| <Val>bold</Val> | <E>b</E> |  | If <Att>rend</Att> contains multiple values, <Val>bold</Val> is passed to `<span class="bold [othervalue]">{:xml}` |
+| <Val>code</Val> | <E>code</E> |  | If <Att>rend</Att> contains multiple values, <Val>code</Val> is passed to `<span class="code [othervalue]">{:xml}`[See H.7 on styling of code](#secH.7) |
+| <Val>codepoint</Val> | `<span class="codepoint"><code>U+01eb</code></span>` | A Unicode codepoint: `U+01eb` | Lowercase letters are transformed to uppercase letters in the css stylesheet. |
+| <Val>descName</Val> | `<span class="descname"><code>LATIN SMALL LETTER O WITH OGONEK</code></span>` | A Unicode descriptive name: `LATIN SMALL LETTER O WITH OGONEK` | Lowercase letters are transformed to uppercase letters in the css stylesheet. |
+| <Val>entity</Val> | `<span class="entity"><code>&amp;oogon;</code></span>` | A Unicode entity: `&oogon;{:xml}` |  |
+| <Val>glyph</Val> | `<span class="glyph">` |  | Characters marked upp with <Val>glyph</Val> are displayed in a deviant color. See also the section about [styling tables](#secH.5.2). |
+| <Val>italic</Val> | <E>i</E> |  | If <Att>rend</Att> contains multiple values, <Val>italic</Val> is passed to `<span class="italic [othervalue]">{:xml}` |
+| <Val>red</Val> | `<span class="red">` |  |  |
+| <Val>blue</Val> | `<span class="blue">` |  |  |
+| <Val>initial</Val> | `<span class="initial">` |  |  |
+| <E>lb/</E> | <E>br/</E> | Line break |  |
+| <E>q</E> | <E>q</E> | Quoted |  |
+| <E>ref</E> | <E>a</E> | Reference |  |
+| <Att>target</Att> | <Att>href</Att> |  |  |
+| <Att>rend</Att> |  |  |  |
+| <E>tag</E> | `<code><span class="tag">@att</span></code>{:xml}` | Tagged content | [See H.7 on styling of code](#secH.7) |
+| <E>title</E> | <E>cite</E> | Title of a work |  |
+| <E>val</E> | `<span class="value">'value'</span>{:xml}` | Value of a xml/html element | [See H.7 on styling of code](#secH.7). In a table with <Att>rend</Att>=<Val>xml-elements</Val> values in the first columns are automatically indented 2em |
+</div>
+
+
+### H.4.3 Generic values for `@rend` [#secH.4.3]
+
+The following <Att>rend</Att> values can be given to any xml-element with support
+for <Att>rend</Att>:
+
+- <Val>blue</Val> (blue font color)
+- <Val>bold</Val> (bold style)
+- <Val>code</Val> (monospace font)
+- <Val>red</Val> (red font color)
+- <Val>style</Val> (italic style)
+
+The following <Att>rend</Att> values can be given to any xml-element that
+translates into a block-element in html/css and supports the
+<Att>rend</Att> attribute. Percentages are always relative to the width of the
+parent element’s width. The available values for <Att>rend</Att> behave the
+following way at different screen resolutions:
+
+| <Att>rend</Att>=... | default | medium screens | small screens |
+|-----|-----|-----|-----|
+| <Val>alignleft</Val> | align:left |  |  |
+| <Val>alignright</Val> | align:right |  |  |
+| <Val>aligncenter</Val> | centered |  |  |
+| <Val>center</Val> | text-align:center |  |  |
+| <Val>clearboth</Val> | float:none; clear:both (forces the element to be placed on a new line, i.e surrounding text will not float around the element) |  |  |
+| <Val>width10</Val> | width:10% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width20</Val> | width:20% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width25</Val> | width:25% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width30</Val> | width:30% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width33</Val> | width:33,33% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width40</Val> | width:40% | <E>figure</E> width:50% | <E>figure</E> width:100% |
+| <Val>width50</Val> | width:50% |  | <E>figure</E> width:100% |
+| <Val>width60</Val> | width:60% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width66</Val> | width:66,66% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width70</Val> | width:70% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width75</Val> | width:75% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width80</Val> | width:80% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width90</Val> | width:90% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+| <Val>width100</Val> | width:100% | <E>figure</E> width:100% | <E>figure</E> width:100% |
+
+
+## H.5 Styling tables [#secH.5]
+
+Tables are structured according to the following pattern in html:
+```xml
+<table>
+  <colgroup>
+    <col style="width20">
+    <col style="width80">
+  </colgroup>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+```
+
+
+The <E>colgroup</E> element is created dynamically if the first row contains cells
+with the attribute <Att>rend</Att>. This means that the column widths of the
+html table can be controlled with the attribute <Att>rend</Att> in the cells of the
+first table row. Below is the xml code of the html table above:
+```xml
+<table>
+  <row rend="label">
+    <cell rend="width20"></cell>
+    <cell rend="width80"></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+</table>
+```
+
+
+### H.5.1 Styling tables with explanations of xml-elements [#secH.5.1]
+
+A table with explanations of xml-elements and their attributes ([such as H.4.1 above](#tab.1)) can be given
+<Att>rend</Att>=<Val>xml-elements</Val> in the <E>table</E> element. The
+xls stylesheet tries to wrap all rows with a <E>gi</E> or a <E>tag</E> in
+the first cell into a <E>tbody</E> element together with the following rows.
+Such tables must adhere to the following principles: 
+
+- The <E>table</E> tag must have a <Att>rend</Att> with the value <Val>xml-elements</Val>
+- The first cell of the first row in each block must contain a <E>gi</E> or a <E>tag</E> element
+- The first cells of all other rows in a block must not contain any <E>gi</E> element (otherwise, the respective row will be treated as the first row in a block)
+
+Strings marked with <E>att</E> and <E>val</E> in the first cell of each row
+are indented automatically.
+
+### H.5.2 Styling glyph tables [#secH.5.2]
+
+Tables with explanations of abbreviations and other glyphs can be marked upp with
+<E>table rend="abbr"</E>. In such tables, cells containing a tag <E>hi rend="glyph"</E> (and nothing else) are rendered differently.
+
+## H.6 Styling images [#secH.6]
+
+An image and its caption should be structured as follows:
+```xml
+<figure rend="leftalign width33">
+  <graphic url="path/to/image.jpg" />
+  <figDesc n="1.2">Figure Caption</figDesc>
+</figure>
+```
+
+
+The position and width of the image can be controlled with <E>rend</E> in the
+wrapping <E>figure</E> element. By default, <E>figure</E> is displayed floating
+to the left of the text at a width of 50% with a border around the containing
+elements. The figure’s number should passed through <Att>n</Att> in <E>figDesc</E>.
+The xslt adds automatically a figure label. The above <E>figDesc</E> will thus be
+rendered as “Fig. 1.2: Figure Caption”.
+
+If used without a wrapping <E>figure</E> element, images placed in a
+<E>graphic</E> element are displayed at their original size without any
+border
+
+## H.7 Styling code [#secH.7]
+
+Block level code elements are wrapped into a html <E>pre</E> tag that preserves
+line breaks, white spaces and indentations. Such elements should thus not follow the
+indentation of surrounding xml. The following coding of a CDATA section with
+surrounding xml ...
+```xml
+<p>Some text before the code</p>
+  <egXML><![CDATA[<figure rend="leftalign width33">
+   <graphic url="path/to/image.jpg"/>
+   <figDesc n="1.2">Figure Caption</figDesc>
+   </figure>]]>
+  </egXML>
+<p>Some text after the code</p>
+```
+
+
+... will be output as:
+```xml
+<figure rend="leftalign width33">
+  <graphic url="path/to/image.jpg" />
+  <figDesc n="1.2">Figure Caption</figDesc>
+</figure>
+```
+
+
+By default, code within <E>eg</E>, <E>egXML</E> and <E>code</E> is displayed as
+a block element. With <Att>rend</Att>=<Val>inline</Val> it can be forced to be
+treated as an inline element. Alternatively, the markup `<hi rend="code">{:xml}` or <E>tag</E> may be used for inline code.
+
+Xml elements, attributes and values should be tagged with their respective semantic
+markup: <E>gi</E>, <E>att</E> and <E>val</E>.
+
+## H.8 Table of Contents [#secH.8]
+
+A table of contents is added automatically in the beginning of each page. The table
+includes all second level headers.
