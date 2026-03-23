@@ -12,7 +12,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'hbx' | 'hb3' | 'hb4' | 'main',
-    contentStyle: 'hb-new' | 'main'
+    contentStyle: 'hb-new' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
@@ -24,7 +24,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
           return { contentGroup: "hbx", contentStyle: "hb-new" };
       }
     }
-    return { contentGroup: 'main', contentStyle: 'main' };
+    return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(params.slug);
 
   const MDX = page.data.body;
@@ -45,7 +45,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
               </div>
             </div>
           );
-        case "main":
+        default:
           return (
             <div className='flex flex-wrap mb-5'>
               <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
