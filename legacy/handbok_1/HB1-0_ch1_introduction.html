@@ -1,0 +1,1122 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<!--This file created 20.05.03 16:57 by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>Ch. 1. Text encoding using XML</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+   <X-CLARIS-WINDOW TOP=63 BOTTOM=861 LEFT=111 RIGHT=953>
+   <X-CLARIS-TAGVIEW MODE=minimal>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><FONT SIZE="-1" FACE="Verdana"><B><A NAME=top></A>
+
+<HR>
+
+<IMG SRC="handbok_1/Handbook.gif" WIDTH=500 HEIGHT=100 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></B></FONT><FONT SIZE="-1">
+
+<HR>
+
+</FONT></P>
+
+<P><FONT SIZE="+1" FACE="Verdana"><B>Chapter 1. Text encoding using
+XML</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Version 1.0 (20 May
+2003)</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#1.1"><FONT SIZE="-1" FACE="Verdana">1.1 What is
+XML?</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.2"><FONT SIZE="-1" FACE="Verdana">1.2 Appearance
+vs. structure</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.3"><FONT SIZE="-1" FACE="Verdana">1.3
+Elements</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.4"><FONT SIZE="-1" FACE="Verdana">1.4
+Attributes</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.5"><FONT SIZE="-1" FACE="Verdana">1.5
+Entities</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.6"><FONT SIZE="-1" FACE="Verdana">1.6 Putting the
+pieces together</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.7"><FONT SIZE="-1" FACE="Verdana">1.7 The Text
+Encoding Initiative</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#1.8"><FONT SIZE="-1" FACE="Verdana">1.8 The TEI DTD
+(Document Type Definition)</FONT></A><BR>
+<A HREF="#1.9"><FONT SIZE="-1" FACE="Verdana">1.9 Displaying the
+text</FONT></A></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="1.1"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>1.1 What is XML?</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">XML, Extensible Markup Language, is
+a standard, endorsed by the </FONT><A HREF="http://www.w3.org/XML/"><FONT SIZE="-1" FACE="Verdana">World
+Wide Web Consortium</FONT></A><FONT SIZE="-1" FACE="Verdana">, which
+defines a simple yet flexible generic syntax for document markup.
+XML, like its predecessor SGML, Standard Generalised Markup Language,
+developed by IBM in the 1970s, allows for the definition of
+system-independent methods of representing texts of any kind in
+electronic form.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The term 'markup', originally used
+for the (hand-written) instructions added to a manuscript or
+typescript to indicate to the compositor how the printed text was to
+look in terms of spacing, font size, use of italics and so on, has
+been carried over into electronic word-processing to describe the
+codes used to indicate these same features and other aspects of
+processing. A 'markup language' is therefore at its most simple a set
+of codes which are used to indicate or 'tag' certain features in the
+text, normally for formatting purposes. In most modern software
+packages the markup is generated with little or no conscious effort
+on the part of the user - in many modern word processing programs,
+such as the ubiquitous Microsoft Word, the user is not even given the
+option of viewing the codes. But they are there: and to see just how
+many one need only open a document produced in, say, Word or
+WordPerfect in a plain text editor such as Notepad. A text of even a
+few short lines will be prefaced by several dozen lines - possibly
+even pages - of code.</FONT>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The problem is that every program
+has its own set of codes, and it is only rarely possible to convert
+files from one to another without at least some loss of formatting.
+And it isn't just the formatting that goes haywire - any exotic (read
+non-English) characters are also likely to mutate. SGML was
+originally developed in order to avoid these problems be being
+entirely platform independent - hence G for generalised. It achieves
+this by identifying the logical elements of the document rather than
+specifying the processing to be performed on it: the markup is
+descriptive, in other words, rather than procedural. With descriptive
+markup, the same document can be processed by many different pieces
+of software, each of which can apply different processing
+instructions to those parts of it which are considered
+relevant.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">SGML's greatest success has been
+HTML, Hyper-Text Markup Language, the language of the World Wide Web.
+HTML restricts document authors to a finite set of tags, however,
+most of which are presentationally oriented, and is thus
+inappropriate for most things other than web design. XML is
+essentially 'trimmed down' SGML. It is not, in other words, a single,
+predefined markup language like HTML: like SGML it is a metalanguage
+- a language for describing other languages. The syntax is
+essentially the same as SGML, but some of the more complex and lesser
+used options have been removed.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The great advantage of XML is that
+it brings the power and flexibility of SGML to the Web; an XML
+document can be marked-up entirely in accordance with the needs of
+the user and the result displayed in a standard web browser (see
+section 1.8 below). The implications for philologists are
+staggering.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In what follows, most of the more
+relevant areas of XML markup are touched upon. For a more thorough
+grounding, one of the many printed handbooks or websites devoted to
+XML should be consulted. A good place to start would be the World
+Wide Web Consortium's own XML pages: </FONT><A HREF="http://www.w3c.org/XML/"><FONT SIZE="-1" FACE="Verdana">http://www.w3c.org/XML/</FONT></A><FONT SIZE="-1" FACE="Verdana">.
+</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.2"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.2 Appearance vs.
+structure</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">It is customary, in English and
+most other western European languages, to use italic type in texts
+printed otherwise in plain roman to set certain things off the rest.
+<I>Hart's rules for compositors and readers at the University Press,
+Oxford</I> (39th ed.), for example, stipulates that the titles of
+books, films, plays, works of art and periodicals (but not chapters,
+shorter poems, articles) should be printed in italic, as should the
+names of ships (but not public houses), words and short phrases in
+foreign languages (other than those, such as quiche and blitzkrieg,
+that have been sufficiently anglicised so as to render this
+unnecessary), stage directions in plays, theorems in mathematical
+works and biological and zoological nomenclature. Although Hart's
+doesn't mention it, italic is also regularly used to indicate
+emphasis, for example in novels: 'I most certainly <I>didn't</I> ask
+him to come.' With ordinary word-processing software, all these
+things would be marked-up in the same way, i.e. with the relevant
+codes for 'italic-on' and 'italic-off'. If you think of the computer
+as a glorified typewriter and are only interested in producing copy
+with the correct formatting, fine. If you wish to take advantage of
+the possibilities offered by sophisticated information retrieval
+systems, however, you're in trouble, since a search engine will not
+be able to distinguish foreign words from book titles or the names of
+ships, for the simple reason that procedural markup such as that
+produced by ordinary word-processing software only indicates how
+something is to be displayed, but not why is it to be displayed that
+way. With descriptive markup, on the other hand, elements in the text
+are tagged according to their function - titles as titles, foreign
+words as foreign words, stage directions as stage directions and so
+on. These can then be processed in whatever way one desires, for
+example displayed in italics. By concentrating on the structure of
+the document rather than its appearance a great many possibilities
+are opened up. Elements in the text can be marked-up even where one
+has no desire to format them in any special way. One might wish, for
+example, to tag the names of persons, so that a search for 'King
+George', for example, would turn up only persons of that name rather
+than vessels or public houses.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.3"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.3 Elements</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The key concept in SGML/XML markup
+is the element. An element is essentially a textual unit, the idea
+being that texts, like houses, are made up of repeated occurrences of
+basic units arranged in a hierarchical structure; longer works in
+prose will be divided into chapters or sections, and these into
+sub-sections and then further into paragraphs, and there also may be
+lists and tables. Works of poetry may be divided into cantos or fits,
+and these into stanzas, and the stanzas into couplets, the couplets
+into lines, the lines into feet etc. The individual sections, whether
+chapters or cantos, will often have headings, which are not strictly
+speaking part of the main text, but nevertheless belong with it.
+Moreover, these elements will only combine in certain ways. A chapter
+will not begin in the middle of a paragraph, for example, or in a
+footnote. In SGML/XML pairs of tags are used to mark off these units,
+a start tag and an end tag, with the text in between being referred
+to as the element's content. Tags are placed within angle brackets,
+with a solidus to indicate an end tag. Chapters in a book, for
+example, could be demarcated by placing a &lt;chapter&gt; tag at the
+beginning of each one and a corresponding &lt;/chapter&gt; tag at the
+end, while within each chapter there would be any number of
+paragraphs, tagged, say, &lt;paragraph&gt;. The way these two
+elements relate to each other hierarchically is determined by the
+DTD, or Document Type Definition, which in this case would stipulate
+that a &lt;chapter&gt; must contain one or more &lt;paragraph&gt;
+elements. SGML/XML syntax is really quite simple: for each element
+there is a declaration enumerating what other elements it may or must
+contain, how many of each, and if there are any constraints on the
+order. The more elements one has in one's system the more
+complicated, and subtle, that system becomes.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Let us take a concrete example, the
+poem 'Upon Julia's Clothes' by Robert Herrick:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>When as in silks
+my Julia goes,<BR>
+Then, then (me thinks) how sweetly flowes<BR>
+That liquefaction of her clothes.&nbsp;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Next, when I
+cast mine eyes, and see<BR>
+That brave Vibration each way free;<BR>
+O how that glittering taketh me!</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The structure of the poem is clear
+enough: it is made up of two stanzas each of which contains three
+lines. This structure could be marked-up in the following
+way:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;poem&gt;<BR>
+&lt;stanza&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>When
+as in silks my Julia goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Then,
+then (me thinks) how sweetly flowes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>That
+liquefaction of her clothes.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;/stanza&gt;<BR>
+&lt;stanza&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Next,
+when I cast mine eyes, and see</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>That
+brave Vibration each way free;</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Oh,
+how that glittering taketh me!</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;/stanza&gt;<BR>
+&lt;/poem&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">If we abstract from this and
+attempt to describe the structure of poems in general we could say
+that a poem consists of one or more stanzas each of which is made up
+of one or more lines. This structure could be expressed in a Document
+Type Definition as follows:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+poem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(stanza+)
+&gt;<BR>
+&lt;!ELEMENT stanza&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(line+)
+&gt;<BR>
+&lt;!ELEMENT
+line&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA)
+&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The + sign after stanza and line
+means they are required and repeatable, i.e. can occur one or more
+times (a question mark would indicate an optional element, i.e. one
+which can occur zero or one time, while an asterisk would indicate
+that the element was optional and repeatable, i.e. can occur zero or
+more times; if there is no occurence indicator, the element must
+occur once and only once). #PCDATA is 'parsed character data', which
+essentially means any number of valid characters. There is one
+obvious problem with this model, which is that it requires that all
+poems consist of at least one stanza, which is somewhat
+counter-intuitive, since it could be argued that a poem of only one
+stanza is made up only of lines. To remedy this, the content model
+for the poem element could be given as (line+ | stanza+); the two are
+separated by a vertical bar, the 'or' connector, which shows that
+either can be used but not both, and each is marked with a plus sign
+to show that whichever is used, it can be used more than once. A
+poem, in other words, consists either of one or more lines or of one
+or more stanzas (each comprising one or more lines).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">A poem will also normally have a
+title and be attributable to an author (even if that author is the
+highly prolific 'Anon.'). The name of the author will obviously not
+always appear with the poem, however, for example in a series or
+collection, where there are several poems by the same author. These
+could be added by redefining the content model of poem as:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+poem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(title, author?,
+(stanza+ | line+))&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Here, the pair of elements stanza
+and line are grouped together in round brackets (parentheses) to show
+they are to be treated together; the comma acts as 'sequence
+connector', indicating that the elements/groups must occur in this
+order. In plain prose this means that a poem must have a title, may
+have an author, and then will have either one or more stanzas or one
+or more lines. This is still not entirely satisfactory, however,
+since there will also be poems without titles (haikus for example),
+which would not be allowed with this content model. Nor would it be
+possible to reverse the order of author and title. The content model
+must therefore ideally allow for optional and non-repeatable title
+and author elements which can appear in either order, but only
+preceding the text of the poem itself. In order to allow for this
+kind of flexibility, the DTD needs to become slightly more
+complex:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+poem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((title |
+author?) | (author | title?)?), (stanza+ | line+))&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Here, the two possibilities are
+grouped together in round brackets with an or connector in between -
+title with an optional author or author with an optional title - and
+both possibilities are marked as optional.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">A simpler way of dealing with this
+might be to define an element called, say, head, with the following
+content model:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+head&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA | author
+| title)*&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This would allow one to preface the
+poem with plain text, author and title elements in any combination.
+This allows much greater flexibility, but also reduces greatly the
+amount of control one has over the document. With this content model,
+for example, there would be nothing to prevent one from having more
+than one title.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">It is obvious too that a larger
+unit is required in order to accommodate more poems, for example
+&lt;collection&gt;. If one envisaged this collection as an anthology,
+one would probably wish to divide it into sections, in which poems by
+a particular poet were grouped together. Each of these sections would
+have a heading and possibly some prefatory matter, giving information
+on the author. Given the complex structure of all but the simplest
+documents, it is easy to see how a DTD can quickly become very
+complicated indeed.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Other elements used in markup have
+less to do with the overall structural hierarchy of the document and
+are more free-floating, i.e. can appear in a variety of contexts. The
+principal use of tagging such as this is to enable searches: one
+marks things so as to be able to find them later. One might, for
+example, wish to indicate that 'Julia' in line one of our poem is the
+name of a person:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;line&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>When
+as in silks my</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">
+&lt;name&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Julia</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/name&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>
+goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.4"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.4 Attributes</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Without further information, the
+usefulness of such tagging is sometimes limited. More specific
+information about a particular element instance can be given as an
+attribute. Looking at the poem just cited, one might, for example,
+want to add attributes to the elements &lt;poem&gt; and
+&lt;stanza&gt;, using convenient typologies to indicate genre, form,
+metre or rhyme-scheme, and a <B>number</B> attribute to the stanza
+and line elements. It might also be an advantage to indicate the type
+of name, in order to distinguish personal names from the the names of
+places, ships, public houses etc., or perhaps even have a separate
+element &lt;person&gt;, with attributes such as <B>gender</B> and
+<B>role</B>:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;line
+number="1"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>When
+as in silks my</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">
+&lt;person gender="female" role="object of
+desire"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Julia</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/person&gt;
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">One might want to identify the
+author in some more precise or uniform way, for example to distiguish
+this Robert Herrick, the 17th-century English poet and divine, from
+the early 20th-century American novelist of the same name (useful too
+for indexing); this could be done with an attribute called
+<B>reg</B>, for 'regularlised', as follows:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;author
+reg="Herrick, Robert (1591-1674)"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Robert
+Herrick</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/author&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Like elements, attributes are
+declared in the DTD, a list of possible attributes (ATTLIST) being
+given for each element; it is also possible to specify what kind of
+value is acceptable for each attribute, and if necessary a default
+value.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA)
+&gt;<BR>
+&lt;!ATTLIST person &nbsp;&nbsp;&nbsp;gender&nbsp;&nbsp;&nbsp;(male |
+female | unknown) "unknown"<BR>
+&nbsp;&nbsp;&nbsp;
+role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED
+&nbsp;&nbsp;&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In the original 1648 edition of
+Herrick's <I>Hesperides</I>, which included the poem cited here, all
+names of persons were printed in italics. Reproducing this would be
+an easy matter if all personal names were tagged as such, but the
+real advantage of this kind of tagging is for search purposes. One
+could, for example, search for all the women who were the objects of
+Herrick's desire - and there were many (the fact that he probably
+made them all up needn't concern us).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Attributes such as <B>type</B> and
+<B>subtype</B> are useful precisely because they allow for searches
+at varying degrees of abstraction. Markup such as the
+following:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>I have a
+</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;dog&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>dog</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/dog&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>.</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">is all but pointless, since a
+free-text search for the word 'dog' would yield the same result. If,
+on the other hand, one moves to a greater level of abstraction, for
+example to:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>I have
+a</B></FONT> <FONT SIZE="-1" FACE="Verdana" COLOR="#000000">
+&lt;animal class="mammalia" order="carnivora" family="canidae"
+genus="canis" species="familiaris"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>dog</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/animal&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>.</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">one could search for all animals,
+all mammals, all carnivores, all dog-like creatures and finally all
+dogs (wild and domestic), depending on how widely one wished to cast
+one's net. The use of standard international typologies such as this
+also allows for cross-linguistic searches.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.5"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.5 Entities</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The aspects of SGML/XML discussed
+so far are all concerned with the markup of structural elements
+within the document. SGML/XML also provides a mechanism for encoding
+and naming parts of the document's content, through entities. An
+entity is a kind of shorthand, a way of stating that a particular
+string of characters in the document should be replaced when the
+document is processed by some other string; this other string can be
+of any length, from a single character to a separate file containing
+millions of bytes, for example a text file or digital image. The name
+of the entity (entity reference) is placed between an ampersand and a
+semicolon: &amp;entityname;. Such entities, which are known as
+General Enities, are defined in the DTD, in the Document Type
+Declaration subset or in an external entity set which is itself
+referenced in the Document Type Declaration subset. A simple
+declaration for a general entity looks like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ENTITY rh "Robert Herrick"&gt;
+</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Here, whenever the processing
+software (a parser or browser) encounters the entity &amp;rh; it
+replaces it with the text 'Robert Herrick'. In the case of our single
+poem, there is obviously no real advantage to treating the name of
+the author in this way, but in longer documents or collections of
+documents it can be an extremely efficient way of dealing with
+repeated content. Entities may also contain XML markup (provided it
+is well-formed) as well as text:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ENTITY rh
+"&lt;author&gt;Robert Herrick&lt;/author&gt;"&gt; </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">An entity can also refer to an
+external file, as in the following example: </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ENTITY chapter1 SYSTEM
+"chapter1.xml"&gt; </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Such entities are called system
+entities: instead of the replacement text, the SYSTEM keyword and a
+relative or absolute URL is given. The processing software will then
+replace the entity with the document found at the address given, i.e.
+insert that document into the existing document. The resulting
+document must be well-formed XML, so one must ensure that that the
+document to be inserted is itself well-formed (although it need not
+have a single root element) and does not for example contain a
+prologue (i.e. XML and/or DOCTYPE declaration). </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ENTITY chapter1 SYSTEM
+"chapter1.xml"&gt; </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">A third type of entities are called
+parameter entities; these are used inside markup declarations and
+need not concern us here. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Entities are particularly useful
+for providing descriptive mappings for non-standard (i.e.
+non-English) characters, such as the accented vowels (&iacute;,
+&ecirc;, &auml; etc.) used in many European languages, the German
+&szlig;, Icelandic &THORN; or Danish and Norwegian &oslash;, which
+are notoriously non-portable. There are standard entity sets for
+characters used in the western-European languages (ISOlat1 and
+ISOlat2), as well as character sets for Greek (ISOgrk1), Cyrillic
+(ISOcyrl1) and other alphabets. The Unicode standard covers all the
+world's languages, living and dead, and also allows for user-defined
+characters; the current version contains over 96,000 characters. Each
+of these characters is assigned a unique code point, which can be
+encoded in a variety of ways. The most common, mentioned above, is
+UTF-8. Numerical character references are either decimal or
+hexidecimal; decimal references begin with an ampersand and the
+number sign or hash mark (#), to which hexidecimal references add an
+x. Thus the hexidecimal character reference for the letter &thorn; is
+&amp;#x00FE;, while the decimal reference is &amp;#254;. These
+numerical character references are supported by standard browsers and
+do not need to be defined specially in the DTD. One may, however,
+prefer to use entities which are more immedieately intelligible to
+humans, for reasons of proof-reading or whatever, for example
+&amp;thorn; for &thorn;. It is a simple matter to define characters
+as entities, giving as the replacement text the numerical character
+reference.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ENTITY thorn
+"&amp;#x00FE;"&gt; </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Entity references can also be used
+for characters required for specific kinds of texts; the producer of
+a diplomatic text edition might want to distinguish between single
+and two-storey a, for example, by using separate entities. These
+entities could have the same replacement text, and thus appear
+identical when displayed, but still be available for
+search-purposes.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Entities for Old Norse special
+characters are defined, with their Unicode values, in
+</FONT><A HREF="HB1-0_ch5_characters.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+   5</FONT></A><FONT SIZE="-1" FACE="Verdana"> and </FONT><A HREF="HB1-0_ch6_abbreviations.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+6</FONT></A><FONT SIZE="-1" FACE="Verdana">, and a complete list is
+   given in the </FONT><A HREF="HB1-0_charlist.xhtml"><FONT SIZE="-1" FACE="Verdana">character
+list</FONT></A><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.6"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.6 Putting the pieces
+together</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">These, then, are the basic parts of
+a SGML/XML document. The key is the DTD, in which the elements, with
+their attributes, are defined in terms both of their content and
+their relationship to other elements, and entities or entity sets are
+defined or referenced. Anyone can, if he or she so wishes, devise a
+DTD to meet whatever encoding needs he or she may have. A host of XML
+authoring tools, parsers, browsers and search engines are available,
+many for free over the web. If all you want to do is make a
+searchable list of your cd collection, for instance, it is a
+relatively simple matter to create your own DTD. Most people will
+prefer to use an existing application, however. As was said, the most
+successful implementation of SGML to date is HTML (the XML version is
+known as XHTML). But HTML is not flexible enough to deal with all but
+the most basic of texts: there simply aren't enough elements. Another
+fundamental weakness of HTML is that it has, despite its origins in
+SGML, decidedly procedural (rather than descriptive) tendencies, in
+that many elements are used for the effect they will produce when the
+document is displayed rather than to mark up structural features.
+&lt;p&gt;, for paragraph, for example, is used to give white space,
+rather than necessarily indicating the beginning of paragraph, and
+&lt;ul&gt;, for unordered (i.e. unnumbered) list, is frequently used
+to produce indentation rather than for lists.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The Herrick poem, marked-up in
+HTML, would look like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;html&gt;<BR>
+&lt;body&gt;<BR>
+&lt;h2&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Upon
+Julia's Clothes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/h2&gt;<BR>
+&lt;h3&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Robert
+Herrick</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/h3&gt;<BR>
+&lt;p&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>When as in
+silks my </B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;i&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Julia</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/i&gt;
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;br&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Then, then
+(me thinks) how sweetly flowes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;br&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>That
+liquefaction of her clothes.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/p&gt;<BR>
+&lt;p&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Next, when I
+cast mine eyes, and see</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;br&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>That brave
+Vibration each way free;</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;br&gt;<BR>
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Oh, how that
+glittering taketh me!</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/p&gt;<BR>
+&lt;/body&gt;<BR>
+&lt;/html&gt;<BR>
+</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Marked-up in XML, the poem looks
+like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;?xml
+version="1.0" encoding="UTF-8" standalone="no"?&gt;<BR>
+&lt;!DOCTYPE poem SYSTEM "poem.dtd" &#91;<BR>
+&lt;!ENTITY rh "Robert Herrick"&gt;<BR>
+&#93;&gt;<BR>
+&lt;poem type="lyric" subtype="erotic"&gt;<BR>
+&lt;title&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Upon
+Julia's Clothes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/title&gt;<BR>
+&lt;author reg="Herrick, Robert
+(1591-1674)"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>&amp;rh;</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/author&gt;<BR>
+&lt;stanza number="1" form="tercet" rhyme="AAA" metre="iambic
+tetrameter"&gt;<BR>
+&lt;line number="1"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>When
+as in silks my </B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;person
+gender="female" role="object of
+desire"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Julia</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/person&gt;
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line number="2"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Then,
+then (me thinks) how sweetly flowes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line number="3"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>That
+liquefaction of her clothes.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;/stanza&gt;<BR>
+&lt;stanza number="2" form="tercet" rhyme="AAA" metre="iambic
+tetrameter"&gt;<BR>
+&lt;line number="1"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Next,
+when I cast mine eyes, and see</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line number="2"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>That
+brave Vibration each way free;</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;line number="3"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Oh,
+how that glittering taketh me!</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/line&gt;<BR>
+&lt;/stanza&gt;<BR>
+&lt;/poem&gt;<BR>
+</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Displayed in a browser, there would
+not necessarily be any difference between this and the same text
+marked-up in HTML, but the underlying information is far greater.
+From the point of view of a search engine, all that can be said about
+the HTML text is that it consists of two paragraphs each of which
+contains three line breaks, but there is no indication as to why this
+should be, i.e. there is nothing that says 'this is a poem', 'this is
+a stanza', 'this is a line of verse'. The name Julia, in the same
+way, will be rendered in italics, but there is nothing which
+indicates that it is the name of a person.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The first line of our XML document
+is the XML declaration, which tells any processing software that the
+document is in XML; it is not strictly speaking necessary to have an
+XML declaration, since any XML-aware software can work out for itself
+whether a document is in XML or not (the *.xml file extension also
+does this), but every XML document should ideally begin with one. The
+value of the <B>version</B> attribute is always "1.0"; it is
+possible, but unlikely, that there will be further versions. The
+other two attributes are optional: <B>encoding</B>, which specifies
+which encoding is to be used (the variable length encoding of the
+Unicode character set, UTF-8, is assumed by all the standard
+browsers), and <B>standalone</B>, the possible values for which are
+"yes" and "no", which indicates whether the document makes use of an
+external DTD. XML documents do not in fact require a DTD, provided
+they are 'well formed', i.e. do not contain any errors in syntax
+(elements which overlap, or are opened but not closed etc.); in cases
+where there is no DTD the value of the <B>standalone</B> attribute
+should be "yes". If the attribute is omitted, the value "no" is
+assumed. The second line, following the XML declaration, is the
+Document Type Declaration, which gives the root element (also called
+the document element), i.e. the 'outermost' element inside which all
+other elements in the document are contained, in our case collection,
+and states which DTD is to be used, given either as a relative or
+absolute URL, i.e. a local file name or a web address. The DTD
+referred to in the Document Type Declaration, 'poem.dtd', now looks
+like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!ELEMENT
+poem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((title |
+author?) | (author | title?)?), (stanza+ | line+))&gt;<BR>
+&lt;!ATTLIST poem<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;subtype&nbsp;&nbsp;
+CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED&nbsp;&nbsp; &gt;<BR>
+&lt;!ELEMENT author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA)
+&gt;<BR>
+&lt;!ATTLIST author<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;norm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED&nbsp;&nbsp;
+&gt;<BR>
+&lt;!ELEMENT title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (#PCDATA)
+&gt;<BR>
+&lt;!ELEMENT
+stanza&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(line+)&nbsp;&nbsp;
+&gt;<BR>
+&lt;!ATTLIST stanza<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;&nbsp;&nbsp;&nbsp;CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED&nbsp;&nbsp; &gt;<BR>
+&lt;!ELEMENT
+line&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA |
+person)* &gt;<BR>
+&lt;!ATTLIST line<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;&nbsp;&nbsp;&nbsp;CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED&nbsp;&nbsp;
+&gt;<BR>
+&lt;!ELEMENT person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(#PCDATA)
+&gt;<BR>
+&lt;!ATTLIST person<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;gender&nbsp;&nbsp;&nbsp;&nbsp;(male | female
+| unknown) "unknown"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CDATA&nbsp;&nbsp;&nbsp;&nbsp;#IMPLIED&nbsp;&nbsp; &gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The DTD, as was said, defines the
+structure of the document, and is thus like a grammar, detailing the
+elements which can appear in the text and their hierarchical
+relationship to each other. In order to ensure that this is done
+correctly, every encoded text needs to be checked against the DTD, if
+there is one, or checked for 'well-formedness' if there isn't. A
+computer program called a parser runs through the encoding and gives
+an error message if there are errors or inconsistencies in the
+markup, e.g. if elements are not opened and closed correctly, or used
+in the wrong place, or if elements overlap. If the elements in a
+document are correctly opened and closed, and non-overlapping, the
+document is called <I>well-formed</I>; a parser can determine
+'well-formedness', as was mentioned above, without recourse to a DTD.
+If, in addition, the content types of elements, the nesting of
+elements and the use of attributes are all done according to the
+specification of the DTD, then the document is not only well-formed,
+but also <I>valid</I>.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Validation only checks the markup -
+not the content - of the document. A document can consist entirely of
+gibberish and still be valid - as, indeed, can a document with no
+content at all. The correctness or otherwise of the content is still
+the responsibility of the transcriber.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">XML-aware software, such as
+SoftQuad's XMetaL, generally comes with a built-in validator, and
+separate validator programs are also available; the one probably most
+commonly used is James Clark's </FONT><A HREF="http://www.jclark.com/sp/"><FONT SIZE="-1" FACE="Verdana">SP</FONT></A><FONT SIZE="-1" FACE="Verdana">.
+It is also possible to validate documents online, for example with
+</FONT><A HREF="http://www.stg.brown.edu/pub/xmlvalid/"><FONT SIZE="-1" FACE="Verdana">
+the validator at Brown University</FONT></A><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.7"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.7 The Text Encoding
+Initiative</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The most widely used SGML/XML
+implementation for more sophisticated text encoding is that devised
+by the Text Encoding Initiative (TEI), an international and
+interdisciplinary standard for the preparation and interchange of
+electronic texts. The TEI began with a planning conference which took
+place at Vassar College in New York on 12-13 November 1987. The
+participants agreed on both the desirability and feasibility of
+creating a common encoding scheme for use both in creating new
+documents and in exchanging existing documents among text and data
+archives, and the TEI began the task of developing a draft set of
+Guidelines for Electronic Text Encoding and Interchange, with working
+committees comprising scholars from all over North America and Europe
+drafting recommendations on various aspects of the problem. These
+were integrated into a first public draft, TEI P1 (P for 'Proposal'),
+published in June 1990. A second draft (TEI P2) followed in 1992 and
+93, and the first official version of the guidelines (TEI P3) was
+published in May 1994. a fully XML-compliant version, P4, is
+available in electronic form at the </FONT><A HREF="http://www.tei-c.org/P4X/"><FONT SIZE="-1" FACE="Verdana">TEI
+Guidelines</FONT></A><FONT SIZE="-1" FACE="Verdana"> web site; a
+print edition is also available from the University of Virginia
+Press.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The TEI began as a research effort
+cooperatively organised by three scholarly societies (the Association
+for Computers and the Humanities, the Association for Computational
+Linguistics, and the Association for Literary and Linguistic
+Computing), and funded solely by research grants from the US National
+Endowment for the Humanities, the European Union, the Canadian Social
+Science Research Council, the Mellon Foundation and others. In
+December 2000, after a year's negotiation, a new non-profit
+corporation called the TEI Consortium was set up to maintain and
+develop the TEI standard. Four universities serve as hosts for this
+consortium: Brown University (Scholarly Technology Group) and the
+University of Virginia (Electronic Text Center and Institute for
+Advanced Technology in the Humanities) in the United States, Oxford
+University (Humanities Computing Unit) and the University of Bergen
+(Humanities Information Technologies Research Programme) in Europe.
+Executive offices for the consortium are in Bergen. The Consortium is
+managed by a Board of Directors, and its technical work is overseen
+by an elected Council.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">There are hundreds if not thousands
+of projects currently using the TEI encoding scheme; Menota is one of
+them.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="1.8"></A></P>
+
+<P><FONT FACE="Verdana"><B>1.8 The TEI DTD</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">One of the great strengths of the
+TEI DTD is that it actually consists of a number of different tag
+sets which can be used in a variety of combinations, according to the
+needs of the encoder and nature of the material being encoded. First
+there are the core and header tag sets, which must always be
+included. The core tag set defines elements which may be said to be
+universal, i.e. not specific to particular types of texts. The header
+tag set defines elements which allow for the provision of documentary
+and bibliographic information about the electronic text itself. In
+addition to these there are eight possible base tag sets. Six of
+these are intended to be used with texts of a specific type (i.e.
+prose, verse, drama, transcriptions of spoken material, dictionaries
+and terminological data), while the other two ('general' and 'mixed')
+are for use on more heterogenous materials and contain elements from
+the other sets. Finally there are a number of additional tag sets
+which are designed for use with particular types of processing or
+research, for example for the transcription of primary sources and
+for textual criticism. In this way the encoder can tailor the DTD to
+his or her individual needs, selecting from the very large number of
+elements available those which are most relevant to the material to
+be encoded. Both base and additional tag sets are specified in the
+Document Type Declaration at the start of the document, as in the
+following example:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;!DOCTYPE tei.2 SYSTEM tei2.dtd
+&#91;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!ENTITY % TEI.prose "INCLUDE"&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!ENTITY % TEI.transcr "INCLUDE"&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!ENTITY % TEI.textcrit "INCLUDE"&gt;<BR>
+&#93;&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">All TEI conformant documents must
+contain two elements, a header, tagged &lt;teiHeader&gt;, in which,
+as was mentioned, meta-data, information about the electronic
+document, is provided, and the text itself, tagged &lt;text&gt;. What
+elements go into the &lt;text&gt; is to a great extent determined by
+which base and additional tag sets have been chosen.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The TEI tagset for verse has, not
+surprisingly, elements corresponding to line, stanza and so on in the
+DTD presented above. The Herrick poem, tagged in TEI conformant XML,
+would look like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;?xml
+version="1.0"?&gt;<BR>
+&lt;!DOCTYPE text SYSTEM "-/-/tei2.dtd" &#91;<BR>
+&lt;!ENTITY % TEI.verse "INCLUDE"&gt;<BR>
+&#93;&gt;<BR>
+&lt;text&gt;<BR>
+&lt;body&gt;<BR>
+&lt;lg type="lyric" met="iambic tetrameter"&gt;<BR>
+&lt;head&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Upon
+</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;name
+type="person"&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Julia's</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/name&gt;
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Clothes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/head&gt;<BR>
+&lt;lg n="1" type="triplet"&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>When
+as in silks my </B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;name
+type="person"&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Julia</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/name&gt;
+</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>goes,</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Then,
+then (me thinks) how sweetly flowes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>That
+liquefaction of her clothes.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;&lt;/lg&gt;<BR>
+&lt;lg n="2" type="triplet"&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>Next,
+when I cast mine eyes, and see</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>That
+brave Vibration each way free;</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;<BR>
+&lt;l&gt;</FONT><FONT SIZE="-2" FACE="Verdana" COLOR="#006600"><B>O
+how that glittering taketh me!</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/l&gt;&lt;/lg&gt;<BR>
+&lt;/lg&gt;<BR>
+&lt;/body&gt;<BR>
+&lt;/text&gt;<BR>
+</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The element &lt;l&gt; is used for a
+line of verse (as opposed to line breaks in written or printed texts,
+which are dealt with in another way; see ch. 4), while &lt;lg&gt;,
+for 'line group', is used for a group of lines functioning as a
+formal unit - here both the poem as a whole and the individual
+stanzas - with a <B>type</B> attribute to indicate what sort of unit.
+The advantage of &lt;lg&gt; over our &lt;stanza&gt; is that, being
+more abstract, it is also more flexible; &lt;lg&gt; elements can also
+nest, i.e. appear within each other, which allows quite sophisticated
+markup of complex verse forms. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In addition to these structural
+elements the TEI also makes available a host of elements for
+indicating features of typography and layout; although these were
+originally intended for use in the description of printed materials
+most if not all are equally applicable to manuscripts. There are also
+tags which can be used for normalisation, grammatical information
+etc. The other chapters in this handbook explain in detail how they
+can be used. </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="1.9"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>1.9 Displaying the text</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">We have mentioned several times the
+possibility of displaying XML documents in standard web browers. In
+order to do so, one final piece is necessary: a stylesheet. As has
+been said, XML elements describe, ideally at least, the semantic
+structure of the text, rather than its appearance (although there is
+obviously a degree of overlap). Web browsers have built-in
+stylesheets for displaying HTML, and know that in an HTML document
+anything tagged &lt;i&gt; is to be displayed in italic, because HTML
+markup is essentially presentational: &lt;i&gt; means 'display in
+italic'. XML markup is semantic (and the elements user-defined), and
+in order for a browser to display an XML document, it needs to know
+what formatting to apply to what elements. It needs to be told, for
+example, that things within &lt;title&gt; tags should be displayed in
+italic. A stylesheet does precisely that.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">There are essentially two options,
+Cascading stylesheets (CSS) and Extensible style language
+transformations(XSLT). CSS is a simple, non-XML syntax used to
+describe the appearance of any element in a document. XSLT, on the
+other hand, is itself an XML application which specifies rules by
+which the XML document is transformed into another document, either
+another XML document or something else; its most obvious use is to
+take XML and turn it into something more browser-friendly, i.e. HTML
+(or XHTML). The original document retains its complexity, but for
+viewing purposes it is changed into something even older browsers can
+deal with. This transformation can be done either at the browser-end,
+by the webserver, when the XML document is called up by the user, or
+by the creator of the document, who may not wish to make it available
+in its orginal state.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The stylesheet to be associated
+with the document is indicated by a xml-stylesheet processing
+instruction (or stylesheet link), which comes after the XML
+declaration, either before or after the Document Type Declaration, if
+there is one, but before the root element.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;?xml
+version="1.0" encoding="UTF-8" standalone="no"?&gt;<BR>
+&lt;!DOCTYPE poem SYSTEM "poem.dtd"&gt;<BR>
+&lt;?xml-stylesheet href="poem.css" type="text/css"?&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The value of <B>href</B> is the URL
+(absolute or relative) where the stylesheet can be found, while the
+value of <B>type</B> will either be "text/css" for cascading
+stylesheets or "text/xml" for XSL transformations. There are other
+(pseudo-) attributes, such as <B>media</B>, but they need not concern
+us here. The style sheet referred to here is a CSS style sheet, which
+indicates how each of the elements is to be displayed: </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">poem {<BR>
+&nbsp;&nbsp;&nbsp;display: block;<BR>
+&nbsp;&nbsp;&nbsp;font-family: "Book Antiqua";<BR>
+&nbsp;&nbsp;&nbsp;margin: 25pt 15pt 15pt 45pt;<BR>
+&nbsp;&nbsp;&nbsp;font-size: 13pt;<BR>
+&nbsp;&nbsp;&nbsp;line-height: 15pt}<BR>
+title {<BR>
+&nbsp;&nbsp;&nbsp;display: block;<BR>
+&nbsp;&nbsp;&nbsp;font-size: 18pt;<BR>
+&nbsp;&nbsp;&nbsp;padding: 5pt}<BR>
+author {<BR>
+&nbsp;&nbsp;&nbsp;display: block;<BR>
+&nbsp;&nbsp;&nbsp;font-size: 14pt;<BR>
+&nbsp;&nbsp;&nbsp;padding: 5pt }<BR>
+stanza {<BR>
+&nbsp;&nbsp;&nbsp;display: block;<BR>
+&nbsp;&nbsp;&nbsp;padding: 5pt}<BR>
+line {display: block}<BR>
+person {font-style: italic} </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Displayed by an XML-aware browser,
+such as </FONT><A HREF="http://www.microsoft.com/windows/ie/default.asp"><FONT SIZE="-1" FACE="Verdana">Internet
+Explorer</FONT></A><FONT SIZE="-1" FACE="Verdana"> (version 5 and
+higher), </FONT><A HREF="http://wp.netscape.com/computing/download/index.html"><FONT SIZE="-1" FACE="Verdana">Netscape</FONT></A><FONT SIZE="-1" FACE="Verdana">
+(version 6 and higher) or </FONT><A HREF="http://www.opera.com/"><FONT SIZE="-1" FACE="Verdana">Opera</FONT></A><FONT SIZE="-1" FACE="Verdana">,
+this looks like this: </FONT></P>
+
+<CENTER><IMG SRC="handbok_1/ch1/julia.gif" WIDTH=594 HEIGHT=464 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></CENTER>
+
+<P><FONT SIZE="-1" FACE="Verdana">XSLT is far more powerful than CSS.
+With CSS one can determine exactly how the content of an element is
+to be displayed, in terms of font, colour etc., or whether it is to
+be dislayed at all (one might not, for example, wish to display some
+of the administrative information contained in the TEI header). CSS
+(CSS 2, which is not yet supported by all browsers) will also allow
+you to insert text before and/or after an element (using the
+<B>before</B> and <B>after</B> pseudo-element selectors). But that's
+about it. With XSLT, on the other hand, one can, for example,
+re-arrange the order of the elements or display the value of an
+element's attribute instead of its actual content (very useful, for
+example, if one wishes to produced normalised and unnormalised texts
+from a single marked-up file). An XML document can also be
+transformed into a non-XML format, for example, a PDF, RTF or
+PostScript file. And the same XML file can be transformed again and
+again into dozens of different formats, without any effect on the
+content itself. </FONT></P>
+
+<CENTER>&nbsp;
+
+<P><A HREF="#top"><FONT SIZE="-1" FACE="Verdana">Top of
+page</FONT></A></P>
+
+<P>&nbsp;</P></CENTER>
+
+<P><!--
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="1.9"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>1.9 A problem: Encoding overlapping
+phenomena in SGML/XML</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The encoding languages SGML and XML
+work on the assumption that textual phenomena generally are
+representable by hierarchical structures consisting of
+<I>non-overlapping</I> elements. Elements may nest, one within the other, but they may not overlap. This can, however, present a problem, probably the greatest problem with the entire standard, from a theoretical point of view. The problem
+is that this restriction does not hold for real
+textual pheonmena, which frequently overlap. A simple example:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><U>These </U><B><U>three</U>
+words</B>.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">How can we encode the use of
+underline and boldface in this example? We would be tempted to encode
+like this, marking the start and end of each phenomenon with start
+tags and end tags:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;underline&gt;</FONT><FONT SIZE="-1" FACE="Verdana"><U>These</U>
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;bold&gt;</FONT><FONT SIZE="-1" FACE="Verdana">
+<B><U>three</U></B> </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/underline&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0033FF">
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>words</B>.</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0033FF">
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/bold&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">But this encoding is impossible in
+SGML/XML. One may not open one element <I>inside</I> another element,
+like we do with boldface in the example. This is a disadvantage of
+SGML/XML. However we choose to live with it, and have to find ad hoc
+solutions to overlap problems that arise.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>Solution (A): Empty elements as
+markers of extent</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">One solution to the overlap problem
+is to use markers for starting point and ending point of a
+phenomenon, instead of containing it in an element. This solution
+uses attribute values to link the empty elements. This method may for
+example be used for encoding manuscript additions, if overlapping
+prevents us from using the container element &lt;add&gt;. The empty
+element is called &lt;addSpan&gt;. Here is an example:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;addSpan
+to="first anchor"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">Here
+goes an addition, it extends to the 'first anchor'. It is now
+unproblematic that<B> </B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;hi
+rend="bold"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>boldface
+starts within the addition and in fact reaches out beyond it</B>
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;anchor
+id="first anchor"&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>,
+that is, all the way up to here</B> </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/hi&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">,
+where boldface also ends.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In this example the information
+about the extent of the addition is given by the "to=" attribute
+pointing forward in the string, to an anchor which identifies itself
+by a corresponding "id=" attribute. See </FONT><A HREF="../ch6/abbreviations.xhtml"><FONT SIZE="-1" FACE="Verdana">chapter
+6</FONT></A><FONT SIZE="-1" FACE="Verdana"> on the encoding of
+additions.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>Solution (B): Splitting the
+textual phenomenon and containing it in more than one
+element</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Another solution might be to split
+the textual phenomenon in question, and encode it in more than one
+container element. This means that the continuity of the piece of
+text is lost, but breaking it up lets us avoid overlaps. A manuscript
+migh place the heading of a new chapter like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Her ends the
+previous<BR>
+chapter. </B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000"><B>Here
+goes the heading<BR>
+for next chapter</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>.<BR>
+Here starts the text of the chapter...</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Assume now that the three words
+"chapter. </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000">Here
+goes</FONT><FONT SIZE="-1" FACE="Verdana">" are unclear, and that we
+want to encode that fact. While we of course would contain all the
+words "</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000">Here
+goes the heading for next chapter</FONT><FONT SIZE="-1" FACE="Verdana">"
+in a &lt;head&gt; element, we might in fact not use one single
+&lt;unclear&gt; container element to mark our three first words. In
+such cases, one might split one of the pheomena into more elements.
+In this particular case, it seems natural to split the
+&lt;unclear&gt; information, while keeping the &lt;header&gt;
+information in one piece:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Her ends the
+previous<BR>
+</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>chapter.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/unclear&gt;&lt;head&gt;&lt;unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana">
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000"><B>Here
+goes</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000">
+<B>the heading for next chapter.</B></FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/head&gt;<BR>
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600"><B>Here starts
+the text of the chapter...</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">As you can see, the second of the
+two &lt;unclear&gt; elements is now nested within the &lt;head&gt;
+element, and the encoding is well formed.</FONT></P>
+
+<CENTER><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT><A HREF="#2.0"><FONT SIZE="-1" FACE="Verdana">Top
+of page</FONT></A></CENTER>
+
+<P>&nbsp;</P>
+-->
+<TABLE BGCOLOR="#CCCCCC" CELLSPACING=6 CELLPADDING=2 WIDTH="100%">
+   <TR>
+      <TD>
+         <P><FONT SIZE="-2" FACE="Verdana">Preliminary version
+         created 4 March 2002. Version 1.0 published 20 May
+         2003.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+</P>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>

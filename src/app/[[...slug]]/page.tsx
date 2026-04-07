@@ -21,7 +21,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
         case "v4":
           return { contentGroup: "hb4", contentStyle: "hb-new" };
         default:
-          return { contentGroup: "hbx", contentStyle: "hb-new" };
+          return { contentGroup: "hbx", contentStyle: "menota-main" };
       }
     }
     return { contentGroup: 'main', contentStyle: 'menota-main' };
@@ -47,7 +47,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
           );
         default:
           return (
-            <div className='flex flex-wrap mb-5'>
+            <div className='flex flex-wrap mb-5 dark:invert'>
               <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
               <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
             </div>

@@ -1,0 +1,897 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook - Ch. 9 (v. 1.1): Metrical encoding</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Ch. 9. Metrical encoding</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#9.1">9.1 Introduction</A><BR>
+<A HREF="#9.2">9.2 Stanzas</A><BR>
+<A HREF="#9.3">9.3 Markup of the metrics in lines</A></P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<P><A NAME="9.1"></A>&nbsp;</P>
+
+<h2>9.1 Introduction</h2>
+
+<P>There are good reasons to establish
+a system for the encoding of metrics in the medieval manuscripts even
+if this structure is not generally represented graphically in the
+manuscripts. For many users of the established text the stanzas are
+of great interest and it is therefore practical to mark them in a way
+that makes it possible to find and delimit them from the surrounding
+text. A more detailed encoding of the stanzas can open up for new
+ways of research on different metrical variants, concerning e.g.
+alliteration, internal rhyme and stress.</P>
+
+<P>The same rules that apply for prose
+are relevant also for the encoding of stanzas. In addition to these
+rules we suggest codes that fascilitate the search for and
+identification of stanzas. We also give guidelines as to the encoding
+of the metrics. It should be pointed out, however, that these codes
+would have to be given a more detailed form if the stanzas should be
+analysed in a special database.</P>
+
+<P>On the primary level we recommend
+that the stanzas are encoded with the following elements and
+attributes:</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements &amp; attributes</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Explanation</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;lg&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Marks the stanza in
+         relation to the surrounding prose text.</P>
+      </TD>
+   </TR>
+   <TD VALIGN=top WIDTH="160" HEIGHT=9>
+         <p id="indent1">n</p>
+      </TD>
+      <TD VALIGN=top HEIGHT=9>
+         <P>Indicates the identity of
+         the stanza within the manuscript, i.e. its number in the
+         manuscript.</P>
+      </TD>
+   </TR>
+   <TR>
+   <TD VALIGN=top WIDTH="160">
+         <p id="indent1">id</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the identity of
+         the stanza within the medieval poetic corpus.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="160">
+         <p id="indent1">type</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the general
+         metrical form of the stanza, e.g.
+         <em>dr&oacute;ttkv&aelig;tt</em> or
+         <em>fornyr&eth;islag.</em></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="160">
+         <P><strong>&lt;l&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Marks the line within the
+         stanza.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="160">
+         <p id="indent1">n</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the line number
+         within the stanza.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="160">
+         <p id="indent1">met</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the metrical
+         form of the line.</P>
+      </TD>
+   </TR>
+      <TD VALIGN=top WIDTH="160">
+         <p id="indent1">all</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the alliteration
+         of the line<em>.</em></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="160">
+         <p id="indent1">ass</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the internal rhymes
+         of the line.</P>
+      </TD>
+   </TR>
+   <tbody>
+</TABLE>
+
+<p>&nbsp;</p>
+<P><A NAME="9.2"></A></P>
+
+<h2>9.2 Stanzas</h2>
+
+<P>A stanza is marked with the element
+<strong>&lt;lg&gt;</strong>, <em>linegroup</em>. It should be noted that the TEI
+Guidelines do not accept an element <strong>&lt;lg&gt;</strong> within an
+element <strong>&lt;p&gt;</strong>. The element <strong>&lt;p&gt;</strong> will therefore
+always have to be closed before each encoded linegroup and reopened
+after <strong>&lt;/lg&gt;</strong>.</P>
+
+<P>The attributes <em>n</em> and
+<em>id</em> are used to identify the stanza. The first attribute
+defines the stanza within the manuscript, while the second attribute
+indicates the relation of the stanza to the medieval poetic
+corpus.</P>
+
+<P>The information given in the
+attribute <em>n</em> is divided into two sub-groups with a
+dot.</P>
+
+<table border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH=160>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>Manuscript</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>Number</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH=160>
+         <P>Example 1</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>W</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>1</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=160>
+         <P>Example 2</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>RE</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>23</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>The first field in the attribute
+<em>n</em> indicates a manuscript siglum. We suggest that the sigla
+from Finnur J&oacute;nsson <A HREF="HB1-1_literature.xhtml">Den
+norsk-islandske skjaldedigtning</A>
+(Skj) are used. Manuscripts that are not given a siglum in Skj are
+marked with the relevant catalogue number. For example the Codex
+Regius of the Elder Edda should be marked as RE and the Codex
+Wormianus as W. In the second field the place of the stanza within
+the manuscript is given. The linegroup for a stanza should be given
+as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em> <em id="code">n="W.1"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>The attribute <em>id</em> identifies
+the stanza in relation to the total corpus of Old Norse-Icelandic
+poetry. It has three sub-groups divided with a dot that can be
+presented as follows:</P>
+
+<table border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH=160>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=160 colspan=2>
+         <P>Type/Skald</P>
+      </TD>
+      <TD WIDTH=160 colspan=2>
+         <P>Poem</P>
+      </TD>
+      <TD WIDTH=160 colspan=2>
+         <P>Stanza</P>
+      </TD>
+   </TR>
+</thead>
+<tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH=160>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Eddic</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Skaldic</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Eddic</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Skaldic</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Eddic</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>Skaldic</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=160>
+         <P>Example 1</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>BrB</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>vilid</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>13</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=160>
+         <P>Example 2</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>E</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>vsp</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>12</P>
+      </TD>
+      <TD WIDTH=75>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>In the first field, information is
+given as to genre, i.e. <em>Eddic</em> or <em>Skaldic</em>, the later
+referred to by an attribute for the known skald constituted by the
+two first letters of the name and the first letter of the
+patronymicon as shown above. For skalds that have an attributive
+name, i.e. <em>skaldaspillir</em> the first letter in this name is
+given instead of the first letter of the patronymicon. The Eddic
+poems are indicated with an <em>E</em>. Anonymous Skaldic stanzas are
+marked <em>NN</em> and century according to Skj, e.g. NN13 if the
+stanza is dated to the thirteenth century.</P>
+
+<P>In the second field information
+about the individual poem is given. The Eddic stanzas are marked with
+sigla (see below). The Skaldic stanzas are marked with the first word
+as it is given in Skj B, but without accent marks. The special signs
+used in Old Norse-Icelandic texts are changed (&eth;&gt;d,
+&thorn;&gt;t, &aelig;&gt;ae, &ouml;&gt;oe and o caudata&gt;o). In
+cases where the same skald or a number of anonymous skalds from the
+same century has the same first word, a second word is included
+without space.</P>
+
+<P>In the third field the number of
+the stanza is given in relation to <A HREF="HB1-1_literature.xhtml">Skj</A>
+for Skaldic stanzas and <A HREF="HB1-1_literature.xhtml">Bugge
+1867</A> for Eddic
+stanzas.</P>
+
+<P>For a Skaldic stanza attributed to
+the skald Bragi Boddason this should be given as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em>
+   <em id="code">id="BrB.vilid.13"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>And the anonymous stanza number
+four from <em>Eir&iacute;ksm&aacute;l</em> should be encoded as
+follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em>
+   <em id="code">id="NN10.hvat.4"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<h3>9.2.1 Sigla for Eddic poems</h3>
+
+<P>We suggest that the Eddic poems
+should be marked as in the following list. (For technical reasons "o
+caudata" is rendered as "&ouml;" in this list).</P>
+
+<table border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH=320>
+         <P>Poems</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>Sigla</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH=320>
+         <P>Atlakvi&eth;a</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>akv</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Alv&iacute;ssm&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>alv</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Atlam&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>am</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Brot af
+         Sigur&eth;arkvi&eth;u</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>brt</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>F&aacute;fnism&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>fm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Fj&ouml;lsvinnsm&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>fjm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Gr&iacute;mnism&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>grm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Gr&iacute;pissp&aacute;</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>grp</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Grottas&ouml;ngr</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>grs</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Gr&oacute;galdr</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>grg</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Gu&eth;r&uacute;narhv&ouml;t</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>ghv</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Gu&eth;r&uacute;narkvi&eth;a
+         I-III</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>gk1, gk2, gk3</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Ham&eth;ism&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>H&aacute;rbar&eth;slj&oacute;&eth;</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hbl</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>H&aacute;vam&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Helrei&eth;
+         Brynhildar</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hlr</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Helgakvi&eth;a
+         Hj&ouml;rvar&eth;ssonar</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hhj</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Helgakvi&eth;a
+         Hundingsbana I-II</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hh1, hh2</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Hymiskvi&eth;a</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hkv</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Hyndlulj&oacute;&eth;</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hdl</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Lokasenna</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>lks</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Oddr&uacute;nargr&aacute;tr</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>odg</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Reginsm&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>rgm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>R&iacute;gs&thorn;ula</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>rgt</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Sigrdr&iacute;fum&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>sdm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Sigur&eth;arkvi&eth;a en
+         skamma</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>ssk</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Sk&iacute;rnism&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>skm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Vaf&thorn;r&uacute;&eth;nism&aacute;l</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>vfm</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Vegtamskvi&eth;a</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>vtk</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>V&ouml;lundarkvi&eth;a</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>vkv</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>V&ouml;lusp&aacute;</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>vsp</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>&THORN;rymskvi&eth;a</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>trk</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Thereby stanza 13 from
+<em>V&ouml;lusp&aacute;</em> should be rendered as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em>
+   <em id="code">id="E.vsp.13"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<h3>9.2.2 Metrical categories</h3>
+
+<P>With the attribute <em>type</em> it
+is possible to characterise the metrics closer. The stanza can be
+related to the general groups according to the following
+list:</P>
+
+<table border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH=320>
+         <P>Meter</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>Attribute</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH=320>
+         <P>Fornyr&eth;islag (and
+         m&aacute;lah&aacute;ttr)</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>ff</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Lj&oacute;&eth;ah&aacute;ttr</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>lh</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Dr&oacute;ttkv&aelig;tt</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>dk</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Kvi&eth;uh&aacute;ttr</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>kh</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>T&oslash;glag</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>tl</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Ha&eth;arlag</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hl</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Runhenda</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>rh</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=320>
+         <P>Hrynhenda</P>
+      </TD>
+      <TD WIDTH=160>
+         <P>hh</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>For the stanza from
+<em>Eir&iacute;ksm&aacute;l</em> above the metrical group should be
+rendered as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em> <em id="code">id="NN10.hvat.4"
+   type="dk"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<P><A NAME="9.3"></A></P>
+
+<h2>9.3 Markup of the metrics in lines</h2>
+
+<P>Every individual line of a stanza
+should be marked with the element <strong>&lt;l&gt;</strong>. This encoding is
+based on metrics and is a complement to the element
+<strong>&lt;lb/&gt;</strong> for graphically marked line breaks in the
+manuscript text. If there is doubt about a line break in the stanza
+we recommend that the lines are analysed in accordance with
+<A HREF="HB1-1_literature.xhtml">Skj</A>
+and <A HREF="HB1-1_literature.xhtml">Bugge
+1867</A> for Skaldic and Eddic
+poems respectively.</P>
+
+<P>The attribute <em>n</em> in the
+<strong>&lt;l&gt;</strong> element identifies the line number of the
+stanza, e.g. n="1", n="2" and so on. This encoding will be generated
+automatically.</P>
+
+<P>It is also possible to include
+information on number of syllables, alliteration and internal rhymes in
+the markup. In the primary encoding of manuscript text this is of
+course not obligatory.</P>
+
+<P>The attribute <em>ass</em> is used to
+indicate internal rhyme in the stanzaic text. It can be given for each
+individual line of the stanza as in the following example:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">ass="00S0S0"</em><em id="element">&gt;</em>Vask me&eth; gram
+   &thorn;eims gumnum</em><em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">ass="A000A0"</em><em id="element">&gt;</em>goll bau&eth;
+   dr&oacute;ttinhollum</em><em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>In the first line we have an
+example of internal half rhyme (<em>skothending</em>) marked with an S. In
+the second line the internal rhyme is full (<em>a&eth;alhending</em>) which
+is marked with an A. Syllables that are not included in the internal rhyme
+are marked with 0.</P>
+
+<P>The attribute <em>all</em> is used to
+indicate alliteration in the stanzaic text. It can also be given for
+each individual line of the stanza as in the following
+example:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">all="00L0L0"</em><em id="element">&gt;</em>Vask me&eth; gram
+   &thorn;eims gumnum</em><em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">all="L00000"</em><em id="element">&gt;</em>goll bau&eth;
+   dr&oacute;ttinhollum</em><em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>The alliterating syllables are here
+marked with an L, while syllables that are not included in the
+alliteration are marked with 0. When internal rhymes and alliterations are
+marked it is not necessary to mark the text for the number of
+syllables of the line. This system does not include the markup of
+syllable stress.</P>
+
+<P>The attribute <em>met</em> can be
+used to include information on the metrical form of the stanzaic line
+built on Sievers's categorization (<A HREF="HB1-1_literature.xhtml">Sievers
+1893</A>). In the primary
+encoding of manuscript text this is of course not obligatory. It is,
+however, possible to include this markup when it is relevant for a
+specific study of metrics. We suggest that the groups A-E used by
+Sievers should be applied in a first encoding, perhaps with the
+addition of sub-groups (see e.g. <A HREF="HB1-1_literature.xhtml">Gade
+1995</A>: 39). This should be
+given as in the following example:</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">met="B"</em><em id="element">&gt;</em> ... <em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>In the following linegroup we have
+excluded elements such as <strong>&lt;w&gt;</strong>, <strong>&lt;facs&gt;</strong> and
+<strong>&lt;dipl&gt;</strong> to make it easier to see the structure of the
+encoding for a half stanza. We have also silently expanded
+abbreviations not to obscure the structure of the stanza. (The
+orthograhy in this example is slightly regularised.)</P>
+
+<BLOCKQUOTE><em id="element">&lt;lg</em> <em id="code">n="W.00"
+   id="EiG.Setbergs.1" type="dk"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">n="1" ass="S000S0" all="L000L0"
+   met="A2k"</em><em id="element">&gt;</em>Setbergs kve&eth;a sitia<em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">n="2" ass="A000A0" all="L00000"
+   met="A"</em><em id="element">&gt;</em>su&eth;r at ur&eth;ar brunni<em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">n="3" ass="00S00S0" all="00L00L0"
+   met="A2k"</em><em id="element">&gt;</em>sua hefr rammr konungr rem&eth;an<em id="element">&lt;/l&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;<em id="element">&lt;l</em> <em id="code">n="4" ass="0A00A0" all="L00000"
+   met="D4"</em><em id="element">&gt;</em>roms banda s&iacute;k l&ouml;ndum<em id="element">&lt;/l&gt;</em><BR>
+   <em id="element">&lt;/lg&gt;</em></BLOCKQUOTE>
+
+<P>The encoding of metrical type is a time-consuming and demanding task
+that requires scholars with insigths into the metrics of skaldic and Eddic poetry. It is,
+however, possible to limit the markup to the main groups described
+above, and sub-groups can be marked preliminary with an *. The type
+<em>A2k</em> could e.g. be marked <em>A*</em>. Thereby the uncertainty of
+the more detailed analysis is marked.</P>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>
