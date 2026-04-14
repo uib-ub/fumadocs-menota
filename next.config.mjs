@@ -22,13 +22,18 @@ const config = {
       {
         source: '/legacy/handbook/v1/handbok_1/:path*.jpg',
         destination: '/images/hb1/:path*.jpg'
-      },
-      {
-        source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
-        destination: '/handbook/v1-0/:id'
       }
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
+        destination: '/handbook/v1-0/:id',
+        permanent: true
+      }
+    ]
+  }
 };
 
 export default withMDX(config);
