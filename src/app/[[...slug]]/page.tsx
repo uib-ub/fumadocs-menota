@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import EmbeddedPage from '@/components/embedded-page';
+import LegacyPage from '@/components/legacy-page';
 
 export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
@@ -64,7 +64,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
       <DocsBody>
         {(() => {switch (contentGroup) {
           case "hb1":
-            return getLegacyPage(params.slug || []);
+            return <LegacyPage slug={params.slug || []}/>;
           default:
             return (
               <MDX
@@ -96,19 +96,4 @@ export async function generateMetadata(props: PageProps<'/[[...slug]]'>): Promis
       images: getPageImage(page).url,
     },
   };
-}
-
-function getLegacyPage(slug: string[]): React.ReactNode {
-  const notFound = <div>Page not found.</div>;
-  if (slug.length < 2) return notFound;
-  const pageName = slug[2] || 'contents';
-  switch(slug[1]) {
-    case "v1-0": {
-      const source = `/legacy/handbook/v1/HB1-0_${pageName}.html`;
-      return (
-        <EmbeddedPage src={source} name={pageName}/>
-      );
-    }
-  }
-  return <p>{slug.join(" | ")}</p>
 }
