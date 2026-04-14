@@ -11,11 +11,13 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const page = source.getPage(params.slug);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
-    contentGroup: 'hbx' | 'hb3' | 'hb4' | 'main',
-    contentStyle: 'hb-new' | 'menota-main'
+    contentGroup: 'hbx' | 'hb1' | 'hb3' | 'hb4' | 'main',
+    contentStyle: 'hb-new' | 'hb-old' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
+        case "v1-0":
+          return { contentGroup: "hb1", contentStyle: "hb-old" }
         case "v3":
           return { contentGroup: "hb3", contentStyle: "hb-new" };
         case "v4":
@@ -30,8 +32,13 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white dark:bg-black ${contentStyle}`}>
+    <DocsPage 
+      toc={contentStyle == "hb-old" ? undefined : page.data.toc} 
+      full={page.data.full} 
+      className={`bg-white dark:bg-black ${contentStyle}`}>
       {(() => {switch (contentGroup) {
+        case "hb1":
+          return;
         case "hb3":
         case "hb4":
           return (
@@ -54,12 +61,19 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
           );
       }})()}
       <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
+        {(() => {switch (contentGroup) {
+          case "hb1":
+            return getLegacyPage(params.slug || []);
+          default:
+            return (
+              <MDX
+                components={getMDXComponents({
+                  // this allows you to link to other pages with relative file paths
+                  a: createRelativeLink(source, page),
+                })}
+              />
+            )
+        }})()}
       </DocsBody>
     </DocsPage>
   );
@@ -81,4 +95,24 @@ export async function generateMetadata(props: PageProps<'/[[...slug]]'>): Promis
       images: getPageImage(page).url,
     },
   };
+}
+
+function getLegacyPage(slug: string[]): React.ReactNode {
+  const notFound = <div>Page not found.</div>;
+  if (slug.length < 2) return notFound;
+  const pageName = slug[2] || 'contents';
+  //if (slug.length == 2) 
+  switch(slug[1]) {
+    case "v1-0": {
+      const source = `/legacy/handbook/v1/HB1-0_${pageName}.html`;
+      return (
+        <iframe 
+          width="100%"
+          height="100%"
+          src={source}
+        />
+      );
+    }
+  }
+  return <p>{slug.join(" | ")}</p>
 }
