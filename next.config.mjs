@@ -12,12 +12,20 @@ const config = {
         destination: '/llms.mdx/docs/:path*',
       },
       {
+        source: '/legacy/handbook/v1/:id.gif',
+        destination: '/images/:id.gif'
+      },
+      {
         source: '/legacy/handbook/v1/handbok_1/:path*.gif',
         destination: '/images/hb1/:path*.gif'
       },
       {
-        source: '/legacy/handbook/v1/:id.xhtml',
-        destination: '/legacy/handbook/v1/:id.html'
+        source: '/legacy/handbook/v1/handbok_1/:path*.jpg',
+        destination: '/images/hb1/:path*.jpg'
+      },
+      {
+        source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
+        destination: '/handbook/v1-0/:id'
       }
     ];
   },

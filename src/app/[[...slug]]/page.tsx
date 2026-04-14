@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import EmbeddedPage from '@/components/embedded-page';
 
 export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
@@ -101,16 +102,11 @@ function getLegacyPage(slug: string[]): React.ReactNode {
   const notFound = <div>Page not found.</div>;
   if (slug.length < 2) return notFound;
   const pageName = slug[2] || 'contents';
-  //if (slug.length == 2) 
   switch(slug[1]) {
     case "v1-0": {
       const source = `/legacy/handbook/v1/HB1-0_${pageName}.html`;
       return (
-        <iframe 
-          width="100%"
-          height="100%"
-          src={source}
-        />
+        <EmbeddedPage src={source} name={pageName}/>
       );
     }
   }
