@@ -1,0 +1,123 @@
+<html>
+
+  <head>
+    <title>Menota handbook (v. 1.1): Menota XXX conversions</title>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  </head>
+
+  <body>
+
+    <p>
+      <a name="top"></a>
+      <hr>
+      <img SRC="handbok_1/handbook_1-1.gif" width="500" height="100" align="bottom">
+		<hr>
+		<h1>Conversions</h1>
+		<p>Version 1.1.1 (15 February 2005)</p>
+
+    <p>&nbsp;</p>
+
+    <p>
+      <img SRC="pil.gif" width="15" height="15" align="top">
+      <a href="HB1-1_contents.xhtml">Back to list of contents</a>
+    </p>
+
+    <p>&nbsp;</p>
+
+    <p>This script allows you to convert the encoding of an XML file according to one of the choices listed below.</p>
+
+    <p>Simply choose the conversion, use the Browse button to locate the XML file on your own disk and click &quot;Convert&quot;.</p>
+
+      <form
+        enctype="multipart/form-data"
+        name="input"
+        method="post"
+        action="menota_conversions.php"
+      >
+    <blockquote>
+        <p>
+          <select size="4" name="type">
+            <option value="ent_to_ncr" selected="true">
+              1.&nbsp;&nbsp;&nbsp;From Menota 1.0 or 1.1 entities to Unicode numerical (hexadecimal) character references
+            </option>
+            <option value="ent_to_utf">
+              2.&nbsp;&nbsp;&nbsp;From Menota 1.0 or 1.1 entities to UTF-8
+            </option>
+            <option value="ncr_to_ent">
+              3.&nbsp;&nbsp;&nbsp;Unicode numerical (hexadecimal) character references to Menota 1.1 entities
+            </option>
+            <option value="utf_to_ent">
+              4.&nbsp;&nbsp;&nbsp;UTF-8 to Menota 1.1 entities
+            </option>
+          </select>
+        </p>
+
+        <table border="0">
+          <tr>
+            <td valign=top>
+              <p>XML file to be converted:</p>
+            </td>
+            <td width="1">
+            </td>
+            <td valign=top>
+              <p><input type="file" name="input"></p>
+            </td>
+          </tr>
+          <tr>
+            <td valign=top>
+              <p>&nbsp;</p>
+            </td>
+            <td width="1">
+            </td>
+            <td valign=top>
+              <p><input type="submit" name="Submit" value="Convert"/></p>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </blockquote>
+
+    <p>&nbsp;</p>
+
+    <p>Some browsers may not understand the converted file as an XML file or be unable to display XML at all and will therefore display the output incorrectly. Use <em>File &gt; Save As</em> to save the file as an XML file.
+      Then open the file in an XML editor to perform any additional changes and validate the result against the
+      Menota DTD.
+    </p>
+		<p>This conversion tool has been tested with Internet Explorer and <A target="_blank" HREF="http://www.opera.com">Opera </a>on the Windows platform and <A target="_blank" HREF="http://www.omnigroup.com/applications/omniweb/">OmniWeb </a>on the Mac platform.</p>
+		<p>&nbsp;</p>
+		<p><img SRC="pil.gif" width="15" height="15" align="top">
+      <a href="#top">Top of page</a>
+    </p>
+
+    <p>&nbsp;</p>
+
+    <table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+      <thead>
+        <tr>
+
+				</tr>
+      </thead>
+      <tfoot>
+        <tr>
+
+				</tr>
+      </tfoot>
+      <tbody>
+        <tr bgcolor="#D3D3D3">
+          <td>
+            <p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004. Version 1.1.1 published 15 February 2005.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+  </body>
+
+  <!--  TEMPORARILY OUT OF ORDER -->
+
+</html>
+

@@ -30,6 +30,18 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'MUFI-add';
+    src: url('@/lib/webfonts/mufi-additional.woff') format('woff');
+    unicode-range: U+E000-F8FF;
+}
+
+@font-face {
+    font-family: 'Runic';
+    src: url('@/lib/webfonts/uni-runes.woff') format('woff');
+    unicode-range: U+16A0-16F0, U+E000-F8FF;
+}
+
 #nd-docs-layout {
     background-color: white;
     font-family: 'Verdana', sans-serif;
@@ -102,14 +114,16 @@ strong {
 }
 
 .hb-new div.prose p, .hb-new div.prose .highlight {
-    font-size: 1em;
-    font-family: 'Handbook', serif;
     text-align: justify;
 }
 
-.hb-new ol, .hb-new ul {
+.hb-new div.prose p, 
+.hb-new div.prose .highlight, 
+.hb-new ol, 
+.hb-new ul,
+.hb-new td {
     font-size: 1em;
-    font-family: 'Handbook', serif;
+    font-family: 'Runic',  'Handbook', 'MUFI-add', serif;
 }
 
 .hb-new table {
@@ -128,11 +142,9 @@ strong {
 .hb-new td {
     padding: .5em 1em;
     background-color: white;
-    font-size: 1em;
-    font-family: 'Handbook', serif;
 }
 
-.hb-new tbody, .hb3 th, .hb3 td {
+.hb-new tbody, .hb-new th, .hb-new td {
     border: 1px solid #0669ff;
 }
 
@@ -144,7 +156,7 @@ strong {
     margin-left: 1em;
 }
 
-.table-xml-elements td .xml-attvalue:first-child {
+.table-xml-elements td .xml-attvalue:first-child:-moz-first-node {
     margin-left: 2em;
 }
 

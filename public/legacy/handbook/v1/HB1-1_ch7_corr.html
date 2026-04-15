@@ -1,0 +1,1880 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook - Ch. 7 (v. 1.1): Altered, corrected and unreadable text</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Chapter 7. Altered, corrected and unreadable text</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<P><strong>Please note that there will be a number of changes to this chapter
+in Version 2.0 (currently in progress).</strong></P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#7.1">7.1
+Introduction</A><BR>
+<A HREF="#7.2">7.2 Additions,
+deletions and substitutions</A><BR>
+<A HREF="#7.3">7.3 Additions,
+deletions and substitutions made in the transcription of the
+manuscript text</A><BR>
+<A HREF="#7.4">7.4 Damage and
+illegibility</A></P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<P><A NAME="7.1"></A>&nbsp;</P>
+
+<h2>7.1 Introduction</h2>
+
+<P>This chapter deals with the
+encoding of additions, deletions and corrections made in the
+manuscript by the scribe or later users, or similar changes made in
+the transcription, e.g. by the transcriber or encoder of the
+manuscript text. Further, the chapter discusses the encoding of damage
+to the manuscript that effects the reading of the manuscript text. In
+ch. 7.2 corrections, deletions and additions made by the scribe or
+later users of the manuscript are treated. Ch. 7.3 treats
+corrections, deletions and additions made by the transcriber of the
+manuscript text that have been made e.g. from other text witnesses or
+earlier editions of the text. In ch. 7.4 damage to the manuscript
+that effects the reading of the manuscript text are treated. The
+encoding recommended here is based onthe <A target="_blank" HREF="http://www.tei-c.org/P4X/index.html">TEI
+Guidelines</A>,
+<A target="_blank" HREF="http://www.tei-c.org/P4X/PH.html">ch.
+18</A>, where the following
+elements are defined:</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;add&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains letters, words,
+         or phrases inserted in the manuscript text or in the margins
+         of the manuscript by an author, scribe, annotator or
+         corrector.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;del&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains a letter, word or
+         passage deleted, marked as deleted, or otherwise indicated
+         as superfluous or spurious in the manuscript text by an
+         author, scribe, annotator or corrector. </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;supplied&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies text supplied by
+         the transcriber, encoder or editor in place of text which
+         cannot be read, either because of physical damage or loss in
+         the original or because it is illegible for any reason.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;sic&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains text reproduced
+         in the transcription although apparently incorrect or
+         inaccurate.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;corr&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains the correct form
+         of a passage apparently erroneous in the manuscript text.
+         This element should only be used for corrections made in the
+         transcription or encoding of the manuscript text. It should
+         not be used for corrections made within the manuscript (e.g.
+         by the scribe or a later hand).
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;gap/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates a point where
+         material has been omitted in a transcription, normally
+         because the manuscript text is illegible, but potentially
+         for some other reason.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;unclear&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains a word, phrase or
+         passage which cannot be transcribed with certainty because
+         it is illegible in the manuscript.
+         </P>
+      </TD>
+   </TR></tbody>
+</TABLE>
+
+<P>Within the tradition of medieval
+philology there are several different schools concerning the
+transcription and editing of texts. Scholars have construed different
+systems for handling the problems arising when phenomena within the
+manuscript should be rendered in a printed edition. When working with
+electronic transcriptions and encoding of manuscript texts the same
+problems are encountered, and although the electronic medium presents
+possibilities there are obviously parallels between the traditional
+transcription and editing and the work with electronic texts which
+could be used as starting points for a manual for handling the
+latter.</P>
+
+<P>In a discussion on editorial
+practice for Old Norse texts Helle Jensen, with reference to
+<A HREF="HB1-1_literature.xhtml">Stef&aacute;n
+Karlsson 1963</A>, LXVII f.,
+outlines aspects of the manuscript text which should be noted in an
+edition (<A HREF="HB1-1_literature.xhtml">Jensen
+1988</A>). Jensen's suggestions
+start with structural markup of e.g. line breaks in the manuscript.
+She also gives special signs for each of the features that has to do
+with scribal or later changes in the manuscript as follows (Jensen
+1988, 102 f.):</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Sign</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Explanation</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>` &#180;</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Includes something that
+         has been added above the line in the manuscript.<BR>
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>&#180; `</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Includes something that
+         has been added in the margins. Unless stated in a footnote
+         these additions are considered to be the work of the hand
+         that has written the main text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>|- -|</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Text that has been struck
+         through, underdotted or erased is placed within these
+         brackets.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>-| |-</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Dittography and other erroneous repeated text which has not been
+         marked by the scribe.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>&lt;&gt;</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Text not present in the
+         exemplar, but supplied in the edition by the
+         editor.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>*</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The following word is
+         corrected by the editor. In a footnote the original form is
+         given.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>&#91; &#93;</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The text of the manuscript
+         is illegible due to use or damage. The text included could
+         be supplied from another manuscript or be a conjecture made
+         by the transcriber or editor. If the addition is made from
+         another manuscript it should be given diplomatically, if
+         from other sources, such as editions or transcriptions, it
+         should be rendered in a form normalized in accordance with
+         the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>&#91;&#91;
+         &#93;&#93;</P>
+      </TD>
+      <TD>
+         <P>The text of the original
+         has been illegible at the time of a former diplomatic
+         transcription. Characters within double brackets have,
+         however, been legible at the time of the present
+         transcription.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>000</P>
+      </TD>
+      <TD>
+         <P>Unreadable characters or
+         characters lost e.g. through damage to the manuscript. The
+         number of zeros corresponds to the number of characters
+         presumed missing.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>000...000</P>
+      </TD>
+      <TD>
+         <P>The number of unreadable
+         characters is not known.</P>
+      </TD>
+   </TR></tbody>
+</TABLE>
+
+<P>In addition, Helle Jensen suggests
+that uncertain readings should be subpunctuated. In editions from the
+Arnamagn&aelig;an Institutes in Reykjav&iacute;k and Copenhagen these
+suggestions are in general followed, and in most editions of medieval
+Scandinavian texts similar systems are used. This gives us a starting
+point when we are transcribing Old Icelandic and Old Scandinavian
+manuscripts.</P>
+
+<P>The principles presented in this
+handbook are based on the tradition of producing scholarly editions
+of texts and individual manuscripts. The system for printed editions
+outlined by Helle Jensen can therefore very often be translated into
+the electronic markup language presented in this chapter.</P>
+
+<P>Text written in the margins can be
+of various kinds and of varying interest for our knowledge about the
+main text and the history of the manuscript. Notes on the main text
+in the margins are of course valuable when we are interested in the
+text tradition. Other notes could indicate that someone at a certain
+stage has used it for example in a transcription of the
+text.</P>
+
+<P>In medieval manuscripts, however,
+we often also find notes in the margins that have nothing whatsoever
+to do with the manuscript text. These notes can at first sight seem
+to be of no value to philological investigation, but in a larger
+context they can sometimes give information as to where a manuscript
+has been at a certain stage of its history. If e.g. the same
+scribbles are found in a group of manuscripts where one of the
+manuscripts can be geographically pin-pointed, this could indicate
+the whereabouts of the whole group. Information of this kind can also
+lead to the establishing of new connections between manuscripts that
+were not previously seen as connected. There are thus good arguments
+for including information also on this kind of marginal note, but
+these are more properly contained in the manuscript description in
+the header (cf. <A HREF="HB1-1_ch10_msdescript.xhtml">ch.
+10</A>) than within the encoded
+transcription.</P>
+
+<P>The first kind of notes, i.e.
+comments or additions to the main text, are often treated in
+foot-notes in printed editions. They are considered relevant to the
+reading of the text, and are therefore given in relation to the main
+text. Marginal notes that indicate the owner or user of the
+manuscript in any obvious way are often treated in the introduction
+to the edition as they are considered relevant to the history of the
+text or manuscript.</P>
+
+<P>The third category of notes, the
+ones that do not seem to give any relevant information, is often
+excluded or treated only briefly in the introduction. This is of
+course a rational way to handle these scribbles when the printed
+edition sets the limits, and the information often is obscure and
+cannot be easily related to parallel information concerning other
+manuscripts. In the electronic transcription of a manuscript,
+however, there is no reason to make this limitation. The information
+can be given in the same way as for the other categories, and thereby
+give us the possibility to search for all kinds of obscure
+information.</P>
+
+<P>Medieval manuscripts have often
+become damaged through use, sometimes with relevance for our reading
+of the text. Pieces of parchment may for example have been torn out,
+leaving a physical gap in the manuscript. Parts of the text may be
+illegible because of use or deliberate erasure, or they may be
+darkened to such an extent that the text is no longer readable. In
+printed editions, unreadable sections of a text are marked as
+suggested by Helle Jensen. In the introductions to printed editions
+problems related to illegible text and damage to the manuscript are
+often discussed at length. If there are other text witnesses these
+are often used to replace missing stretches of text. In a diplomatic
+transcription of a manuscript text, however, the missing or
+unreadable parts are most often just marked as such. In the following
+sections the relation between the traditional markup of these kinds
+of textual and editorial difficulties and electronic encoding will be
+obvious. It is therefore relevant to take traditional transcription
+and editing as a starting point for the electronic encoding of
+transcriptions of manuscript texts.</P>
+
+<P>The primary aim of the following
+sections is to give recommendations for the transcription and
+encoding of manuscript texts. They do, however, in some instances
+also give recommendations for editorial encoding, e.g. markup that
+refers to corrections or additions made by the transcriber or
+encoder. It is therefore important to keep the transcription and
+encoding of the manuscript text on the one hand and on the other hand
+the editorial changes consistently separated, so that the former
+provides a starting point for the editorial work.</P>
+
+<P><A NAME="7.2"></A>&nbsp;</P>
+
+<h2>7.2 Additions, deletions and
+substitutions</h2>
+
+<P>In the manuscript text and in the
+margins of the manuscript we often find different kinds of
+corrections, deletions and additions that we want to encode. These
+changes can be divided into different groups depending on the nature
+of the change and its relevance for the reading of the manuscript
+text or our knowledge about the manuscript. The main division is
+between additions or substitutions to the manuscript text, within the
+text or in the margins, and deletions made in the manuscript text.
+The former should be marked with the <strong>&lt;add&gt;</strong> element while
+the latter should be marked with the <strong>&lt;del&gt;</strong> element.
+Additions and substitutions made by the transcriber or editor are
+treated in the following chapter (see <A HREF="#7.3">ch.
+7.3</A>).</P>
+
+<P><A NAME="7.2.1"></A>&nbsp;</P>
+
+<h3>7.2.1 Additions</h3>
+
+<P>The following elements are
+recommended for describing additions made by the author of the text,
+a compiler, scribe, annotator or corrector in the manuscript text.
+The TEI Guidelines recommend the use of the <strong>&lt;add&gt;</strong>
+element to describe additions in the manuscript (<A target="_blank" HREF="http://www.tei-c.org/P4X/PH.html#PHCH">ch.
+18.1.4</A>). In the following
+the use of <strong>&lt;add&gt;</strong> in relation to our recommended encoding
+of the individual word within the element <strong>&lt;w&gt;</strong> and on the
+three different levels <strong>&lt;facs&gt;</strong>, <strong>&lt;dipl&gt;</strong> and
+<strong>&lt;norm&gt;</strong> is treated.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;add&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains letters, words,
+         or phrases inserted in the manuscript text or in the margins
+         of the manuscript by an author, scribe, annotator or
+         corrector. Attributes include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>hand</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies the agent which made the addition.
+         The value is an XML IDREF, referring to a <strong>&lt;hand&gt;</strong> element
+         included in the header under <strong>&lt;handList&gt;</strong>. See the
+         <A HREF="HB1-1_ch10_msdescript.xhtml">Menota header</a>.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies the transcriber or editor responsible for identifying the hand.
+         The value is an XML IDREF, referring to an agent described in the header (cf. also
+         <A HREF="HB1-1_ch10_msdescript.xhtml">ch. 10</A>).</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>place</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates where the
+         addition is made. Suggested values include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">inline</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made in a
+         space originally left empty by the scribe.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">supralinear</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made above
+         the line.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">infralinear</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made below
+         the line.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">left</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made in
+         the left margin.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">right</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made in
+         the right margin.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">top</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made in
+         the top margin.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">bottom</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made in
+         the bottom margin.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">verso</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition is made on
+         the other side of the leaf.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>rend</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Describes how the addition
+         should be displayed. The relevant value is:<BR>
+         </P>
+      </TD>
+   </TR>
+   <TR>
+   <TD VALIGN=top WIDTH=160>
+         <p id="indent1">sequence</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The addition consists of a
+         sequence of letters, words, or phrases that should be
+         displayed as a unit.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;addSpan/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>An empty element to be
+         used when an addition straddles structural boundaries, e.g.
+         a <strong>&lt;div&gt;</strong> or when it goes from outside a
+         <strong>&lt;w&gt;</strong> element to within a <strong>&lt;w&gt;</strong>
+         element (or vice versa). The <strong>&lt;addSpan/&gt;</strong> element
+         indicates the beginning of the addition and will typically
+         be linked to an <strong>&lt;anchor/&gt;</strong> element indicating
+         the end of the addition. The <strong>&lt;addSpan/&gt;</strong> element
+         has the same attributes as the <strong>&lt;add&gt;</strong>
+         element.<BR>
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>to</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>This attribute gives the
+         location of the beginning of the addition (e.g. as a line
+         number) and is linked to a corresponding <em>id</em> attribute
+         of an <strong>&lt;anchor/&gt;</strong> element at the end of the
+         addition. Note that the value of the <em>to</em> and the
+         corresponding <em>id</em> attributes must not start with a
+         digit.<BR>
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;anchor/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>An empty element which
+         can be used to indicate e.g. the end of an addition, in
+         conjunction with the <strong>&lt;addSpan/&gt;</strong> element.</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>
+Additions which can be ascribed to the author of a text are rare in
+medieval Nordic manuscripts. The additions being described with the
+above-mentioned attribute <em>hand</em> will therefore primarily be
+ascribed to the values <em>scribe</em>, <em>compiler</em>,
+<em>annotator</em> or <em>corrector</em> as described below.</P>
+
+<P>Scribal additions are probably the
+most common changes to be recorded in the transcription and encoding
+of a manuscript text. These additions, made by the scribe(s) of a
+manuscript, could be encoded as in the passage from
+R&oacute;mverjas&ouml;gur (AM 595 a-b 4to; f. 14r22). Note that for
+the sake of clarity we limit the use of encoding to the relevant
+sequence and we have simplified the orthography (avoiding entities,
+too):</P>
+
+<BLOCKQUOTE>en skyllda &thorn;a til
+   herfararinnar er &thorn;u uillder<BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="scribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="scribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="scribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   g&aelig;yma allz uti ok inni</BLOCKQUOTE>
+
+<P>The addition is here given on all
+three levels within the <strong>&lt;w&gt;</strong> element. It is important to
+note, however, that once the information is given on one of the three
+levels it can be automatically generated for the remaining two
+levels.</P>
+
+<P>The list of hands in the header
+(cf. <A HREF="HB1-1_ch10_msdescript.xhtml">ch.
+10</A>) should identify the
+individual hand, either as anonymous or, if possible, by name. The
+main hand in a manuscript could be marked as main scribe
+(main_scribe) as follows:</P>
+
+<BLOCKQUOTE>en skyllda &thorn;a til
+   herfararinnar er &thorn;u uillder<BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   g&aelig;yma allz uti ok inni</BLOCKQUOTE>
+
+<P>In the markup it is also possible
+to indicate where in the text the addition is made with the attribute
+<em>place</em>. An addition made over the line in the manuscript text
+should be described as follows:</P>
+
+<BLOCKQUOTE>en skyllda &thorn;a til
+   herfararinnar er &thorn;u uillder<BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"
+   place="supralinear"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"
+   place="supralinear"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="mainscribe"
+   place="supralinear"</em><em id="element">&gt;</em>en<em id="element">&lt;/add&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   g&aelig;yma allz uti ok inni</BLOCKQUOTE>
+
+<P>Additions are sometimes made by an
+annotator, i.e. comments to the text. This kind of additions could be
+encoded as the marginal note &#8220;vantar ekkert F. J.&#8221; by
+Finnur J&oacute;nsson in Codex Wormianus (AM 242 fol. p. 60; here
+only presented on the <strong>&lt;facs&gt;</strong> level):</P>
+
+<BLOCKQUOTE><em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence"</em><em id="element">&gt;</em>vantar<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence"</em><em id="element">&gt;</em>ekkert<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence"</em><em id="element">&gt;</em>F&amp;dot;<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence"</em><em id="element">&gt;</em>J&amp;dot;<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR></BLOCKQUOTE>
+
+<P>It is also possible to indicate
+with the attribute <em>place</em> where on the manuscript page the
+annotation is made. Finnur J&oacute;nsson's annotation that is made
+in the bottom margin should be encoded as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence" place="bottom"</em><em id="element">&gt;</em>vantar<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence" place="bottom"</em><em id="element">&gt;</em>ekkert<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence" place="bottom"</em><em id="element">&gt;</em>F&amp;dot;<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em>
+   <em id="code">hand="FJ"
+   rend="sequence" place="bottom"</em><em id="element">&gt;</em>J&amp;dot;<em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR></BLOCKQUOTE>
+
+<P>In cases where the addition reaches
+over structural boundaries in the manuscript, we recommend using an
+<strong>&lt;addSpan/&gt;</strong> element to indicate the beginning of the
+addition and an <strong>&lt;anchor/&gt;</strong> element to indicate the end.
+The <strong>&lt;addSpan/&gt;</strong> element should be specified with the<em>
+to</em> attribute linked to an identical <em>id</em> attribute of the
+<strong>&lt;anchor/&gt;</strong> element:</P>
+
+<BLOCKQUOTE><em id="element">&lt;div&gt;</em><BR>
+   <em id="element">&lt;p&gt;</em>manuscript text runs here<BR>
+   <em id="element">&lt;addSpan</em> <em id="code">hand="scribe" to="page01_line01"</em><em id="element">/&gt;</em><BR>
+   the added text <em id="element">&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;</em> which
+   includes a structural boundary<BR>
+   <em id="element">&lt;anchor</em> <em id="code">id="page01_line01"</em><em id="element">/&gt;</em><BR>
+   the original manuscript text continues here<em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/div&gt;</em></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<P><A NAME="7.2.2"></A></P>
+
+<h3>7.2.2 Deletions</h3>
+
+<P>The TEI Guidelines recommend the
+use of the <strong>&lt;del&gt;</strong> element to describe additions in the
+manuscript (<A target="_blank" HREF="http://www.tei-c.org/P4X/PH.html">ch.
+18.1.4</A>). In the following
+the use of <strong>&lt;del&gt;</strong> in relation to our recommended encoding
+of the individual word within the element <strong>&lt;w&gt;</strong> and on the
+three different levels <strong>&lt;facs&gt;</strong>, <strong>&lt;dipl&gt;</strong> and
+<strong>&lt;norm&gt;</strong> is treated.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;del&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains a letter, word or
+         passage deleted, marked as deleted, or otherwise indicated
+         as superfluous or spurious in the manuscript text by an
+         author, scribe, annotator or corrector. Attributes
+         include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>hand</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies the agent which made the deletion.
+         The value is an XML IDREF, referring to a <strong>&lt;hand&gt;</strong> element
+         included in the header under <strong>&lt;handList&gt;</strong>.
+         </p>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies the editor or transcriber responsible for identifying
+         the hand of the restoration.
+         The value is an XML IDREF, referring to an agent described in the header
+         (cf. <A HREF="HB1-1_ch10_msdescript.xhtml">ch. 10</A>).
+         This information can also be given in the header.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>type</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Classifies the deletion,
+         using any convenient typology. Sample values include:
+         </P>
+      </TD>
+   </TR>
+   <TR>
+   <TD VALIGN=top WIDTH=160>
+         <p id="indent1">overstrike</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The text has been struck
+         through.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">erasure</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The text has been
+         erased.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">bracketed</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Deletion indicated by
+         brackets in the text or margin.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">subpunction</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>Deletion indicated by dots
+         beneath the letters deleted.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>rend<BR>
+         </P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Describes how the deletion
+         should be displayed. The relevant value is:
+         </P>
+      </TD>
+   </TR>
+   <TD VALIGN=top WIDTH=160>
+         <p id="indent1">sequence</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The deletion consists of a
+         sequence of letters, words, or phrases that should be
+         displayed as a unit.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;delSpan/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>An empty element to be
+         used when a deletion straddles structural boundaries, e.g. a
+         <strong>&lt;div&gt;</strong> or when it goes from outside a
+         <strong>&lt;w&gt;</strong> element to within a <strong>&lt;w&gt;</strong>
+         element (or vice versa). The <strong>&lt;delSpan/&gt;</strong> element
+         indicates the beginning of the deletion and will typically
+         be linked to an <strong>&lt;anchor/&gt;</strong> element indicating
+         the end of the deletion. The <strong>&lt;delSpan/&gt;</strong> element
+         has the same attributes as the <strong>&lt;del&gt;</strong>
+         element.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>to</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>This attribute gives the
+         location of the beginning of the deletion (e.g. as a line
+         number) and is linked to a corresponding <em>id</em> attribute
+         of an <strong>&lt;anchor</strong>/&gt; element at the end of the
+         deletion. Note that the value of the <em>to</em> and the
+         corresponding <em>id</em> attributes must not start with a
+         digit.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;anchor/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>An empty element which
+         can be used to indicate e.g. the end of an deletion, in
+         conjunction with the <strong>&lt;delSpan/&gt;</strong> element.</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>
+Deletions that can be ascribed to the author of a manuscript text are
+rare in medieval Nordic manuscripts. The deletions being described
+with the above mentioned attribute <em>hand</em> will therefore
+primarily be ascribed to <em>scribe</em> or
+<em>corrector</em>.</P>
+
+<P>Deletions made by the scribe(s) or
+corrector(s) of a manuscript could be encoded as in the passage from
+R&oacute;mverjas&ouml;gur (AM 595 a-b 4to). Note that we for clarity
+limit the use of encoding to the relevant sequence, and that the
+encoding is only presented on the <strong>&lt;facs&gt;</strong>
+level:</P>
+
+<BLOCKQUOTE>en tuenner flokkar
+   &thorn;eirar &thorn;io&eth;ar er<em id="display">&lt;lb</em> <em id="code">n="3r:15"</em><em id="display">/&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe"
+   rend="sequence"</em><em id="element">&gt;</em>liguri<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe"
+   rend="sequence"</em><em id="element">&gt;</em>h&aelig;ita<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe"
+   rend="sequence"</em><em id="element">&gt;</em>er<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   traceum h&aelig;iter.</BLOCKQUOTE>
+
+<P>In the TEI Guidelines cited above
+there are a number of possible types of deletion described with the
+attribute <em>type</em>. These could be applied to deletions made both
+by scribe(s) and corrector(s). If a deletion is made e.g. by
+<em>overstriking</em> the deleted text it could be encoded as (here
+only presented on the &lt;<strong>facs</strong>&gt; level):</P>
+
+<BLOCKQUOTE>en tuenner flokkar
+   &thorn;eirar &thorn;io&eth;ar er<em id="display">&lt;lb</em> <em id="code">n="3r:15"</em><em id="display">/&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe" type="overstrike"
+   rend="sequence"</em><em id="element">&gt;</em>liguri<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe" type="overstrike"
+   rend="sequence"</em><em id="element">&gt;</em>h&aelig;ita<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+      <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em>
+   <em id="code">hand="mainscribe" type="overstrike"
+   rend="sequence"</em><em id="element">&gt;</em>er<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   traceum h&aelig;iter.</BLOCKQUOTE>
+
+<P>This could then be displayed on the
+computer screen or in a printed edition in the manner suggested above
+(<A HREF="#7.1">ch.
+7.1</A>):</P>
+
+<BLOCKQUOTE>14&nbsp;&nbsp;&nbsp;...en
+   tuenner flokkar &thorn;eirar &thorn;io&eth;ar er<BR>
+   15&nbsp;&nbsp;&nbsp;|-liguri h&aelig;ita er-| traceum
+   h&aelig;iter...</BLOCKQUOTE>
+
+<P>The text that is marked as deleted
+must be at least partly legible in the manuscript so that it can be
+read by the transcriber. If the deleted text is not legible the
+deletion should be marked up with the <strong>&lt;gap/&gt;</strong> element,
+described below (7.4.1). The <strong>&lt;gap/&gt;</strong> element could be
+enclosed in the <strong>&lt;del&gt;</strong> element to indicate that the gap
+is in some way intentional. Parts of the deleted text that are
+legible could be indicated by the <strong>&lt;unclear&gt;</strong> element in
+combination with the <strong>&lt;gap/&gt;</strong> element as described below
+(<A HREF="#7.4.2">ch.
+7.4.2</A>). </P>
+
+<P>In cases where the deletion reaches
+over structural boundaries in the manuscript, we recommend using a
+<strong>&lt;delSpan/&gt;</strong> element to indicate the beginning of the
+addition and an <strong>&lt;anchor/&gt;</strong> element to indicate the end.
+The <strong>&lt;delSpan/&gt;</strong> element should be specified with the<em>
+to</em> attribute linked to an identical <em>id</em> attribute of the
+<strong>&lt;anchor/&gt;</strong> element:</P>
+
+<BLOCKQUOTE><em id="element">&lt;div&gt;</em><BR>
+   <em id="element">&lt;p&gt;</em><em>manuscript text runs here</em><BR>
+   <em id="element">&lt;delSpan</em> <em id="code">hand="scribe" type="overstrike"
+   to="page02_line02"</em><em id="element">/&gt;</em><BR>
+   <em>the deleted text</em> <em id="element">&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;</em>
+   <em>which includes a structural boundary is placed here</em><BR>
+   <em id="element">&lt;anchor</em> <em id="code">id="page02_line02"</em><em id="element">/&gt;</em><BR>
+   <em>the original manuscript text continues here</em><em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/div&gt;</em></BLOCKQUOTE>
+
+<P><A NAME="7.2.3"></A>&nbsp;</P>
+
+<h3>7.2.3 Substitutions</h3>
+
+<P>In medieval manuscripts a rather
+common phenomenon is the combination of deleted text and added text.
+It is not always possible, however, to ascertain the relation between
+the two. If someone has deleted the originally written text inline
+this does not automatically mean that a corresponding addition above
+the line or in the margin is made by the same scribe. It can
+therefore not be stated as certain whether the correspondence is
+intentional or not. We suggest that substitutions made in the
+manuscript should be marked primarily with the two core tags
+<strong>&lt;del&gt;</strong> and <strong>&lt;add&gt;</strong>. In cases where we can be
+relatively sure about the agent of the whole substitution this could
+be indicated with a combination of the <strong>&lt;del&gt;</strong> and the
+<strong>&lt;add&gt;</strong> elements as illustrated below.</P>
+
+<BLOCKQUOTE><em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;del&gt;</em><em>deleted
+   word</em><em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add&gt;</em><em>added
+   word</em><em id="element">&lt;/add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em></BLOCKQUOTE>
+
+<P>If someone has deleted part of the
+manuscript text this could be encoded as has been demonstrated above
+(<A HREF="#7.2.2">ch.
+7.2.2</A>), and if someone, the
+same hand or someone else in the manuscript history, has supplied new
+text for the deletion, this could be encoded as in the following
+example from Codex Wormianus (AM 242 fol.; here only presented on the
+<strong>&lt;facs&gt;</strong> level):</P>
+
+<BLOCKQUOTE><em id="layout">&lt;lb</em> <em id="code">n="5:14"</em><em id="layout">/&gt;</em>
+   ....<BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;del</em> <em id="code">type="subpunction"
+   hand="scribe"</em><em id="element">&gt;</em>bar<em id="element">&lt;/del&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="element">&lt;add</em> <em id="code">place="supralinear"
+   hand="scribe"</em><em id="element">&gt;</em>tok<em id="element">&lt;add&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em></BLOCKQUOTE>
+
+<P>In this case the attribute
+<em>hand</em> indicates that both the subpunction and the supralinear
+addition can be attributed to the scribe of the manuscript
+text.</P>
+
+<P><A NAME="7.3"></A>&nbsp;</P>
+
+<h2>7.3 Additions, deletions and substitutions
+made in the transcription of the manuscript text</h2>
+
+<P>When transcribing medieval material
+we often encounter words or longer sequences of text that we consider
+corrupt in one way or another. Sometimes it may also be obvious that
+text is missing in the manuscript we are transcribing or that the
+scribe has made a mistake. The transcriber of the manuscript text may
+in these instances wish to indicate the mistake or even correct the
+text, either directly from other versions of the same text or based
+on already existing editions of the text. Sometimes the transcriber
+or editor may also wish to make obvious grammatical corrections in
+the text without having any other text witness or precedence in an
+earlier edition. In the following the encoding of corrections made by
+the transcriber of the text or by an editor are treated. Note that we
+do not recommend the use of the attribute <em>hand</em> for the changes
+made in transcription or encoding of the manuscript text. The
+attribute <em>resp</em> should be used consistently for corrections or
+additions made in the transcription or encoding of the text to
+distinguish clearly between what is found in the manuscript text and
+what is made in the transcription and encoding of the
+text.</P>
+
+<P><A NAME="7.3.1"></A>&nbsp;</P>
+
+<h3>7.3.1 Additions made by the transcriber or editor</h3>
+
+<P>If text is obviously missing in the
+manuscript text we may wish to supply it. This could be based on for
+example another text witness or on a earlier edition of the text. The
+markup of such additions should give information about the source as
+well as about the responsibility for the addition. To encode
+additions made in the transcription we recommend the use of the
+<strong>&lt;supplied&gt;</strong> element as described in the TEI Guidelines
+(<A target="_blank" HREF="http://www.tei-c.org/P4X/PH.html#PHCH">ch.
+18.1.5</A>). In the following
+the use of <strong>&lt;supplied&gt;</strong> in relation to our recommended
+encoding of the individual word within the element <strong>&lt;w&gt;</strong>
+and on the three different levels <strong>&lt;facs&gt;</strong>,
+<strong>&lt;dipl&gt;</strong> and <strong>&lt;norm&gt;</strong> is treated.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;supplied&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies text supplied by
+         the transcriber, encoder or editor in place of text which
+         cannot be read, either because of physical damage or loss in
+         the original or because it is illegible for any reason.
+         Attributes include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>source</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>States the source of the
+         supplied text if this can be located.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the individual
+         responsible for the addition of letters, words or passages
+         contained within the <strong>&lt;supplied&gt;</strong> tag. It can be
+         given values like:</P>
+      </TD>
+   </TR>
+   <TR>
+   <TD VALIGN=top WIDTH=160>
+         <p id="indent1">transcriber</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The person responsible for
+         the transcription of the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">encoder</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The person responsible for
+         the encoding of the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">editor</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The editor of the text
+         used for the addition or responsible for the addition in
+         editing the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>reason</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates why the text has
+         had to be supplied</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>agent</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Where the presumed loss of
+         text leading to the supplying of text arises from an
+         identifiable cause, signifies the causative
+         agent.</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>If the transcriber or editor wishes
+to supply text that is missing in the transcribed manuscript text
+from for example another text witness this could be handled with the
+<strong>&lt;supplied&gt;</strong> element. The interpolated text could be
+transcribed as in this instance from R&oacute;mverjas&ouml;gur (AM
+595 a-b 4to). Note that we for clarity limit the use of encoding to
+the relevant sequence, and that the encoding is only presented on the
+<strong>&lt;facs&gt;</strong> level:</P>
+
+<BLOCKQUOTE>&thorn;a uar inumidia
+   a&eth; &thorn;eir er epter uoru latner uoru me&eth; herinum af
+   li&eth;i Calpurnii <em id="layout">&lt;lb</em> <em id="code">n="1v:4"</em><em id="layout">/&gt;</em>fylg&eth;u si&eth;um sins
+   havf&eth;ingia<BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied&gt;</em>ok<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   gior&eth;u marga gl&aelig;psamliga<BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied&gt;</em>luti<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em>.</BLOCKQUOTE>
+
+<P>This could then be displayed on the
+computer screen or in a printed edition in the manner suggested above
+(<A HREF="#7.1">ch.
+7.1</A>):</P>
+
+<BLOCKQUOTE>3&nbsp;&nbsp;&nbsp;...&thorn;a
+   uar inumidia a&eth; &thorn;eir er epter uoru latner uoru me&eth;
+   herinum af li&eth;i Calpurnii<BR>
+   4&nbsp;&nbsp;&nbsp;fylg&eth;u si&eth;um sins havf&eth;ingia
+   &lt;ok&gt; gior&eth;u marga gl&aelig;psamliga &lt;luti&gt;.</BLOCKQUOTE>
+
+<P><A NAME="7.3.2"></A>&nbsp;</P>
+
+<h3>7.3.2 Corrections</h3>
+
+<P>In the manuscript it is not always
+possible to say anything with certainty about the intention of
+changes in the text. When transcribing the text, however, corrections
+of obvious mistakes in the manuscript text could be marked with the
+following tag set recommended in the TEI Guidelines (<A target="_blank" HREF="http://www.tei-c.org/P4X/CO.html#COED">ch.
+6.5.1</A>). In the following
+the use of <strong>&lt;sic&gt;</strong> and <strong>&lt;corr&gt;</strong> in relation to
+our recommended encoding of the individual word within the element
+<strong>&lt;w&gt;</strong> and on the three different levels
+<strong>&lt;facs&gt;</strong>, <strong>&lt;dipl&gt;</strong> and <strong>&lt;norm&gt;</strong> is
+treated.</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;sic&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains text reproduced
+         although apparently incorrect or inaccurate. The
+         <strong>&lt;sic&gt;</strong> element can also be used as an attribute
+         to the <strong>&lt;corr&gt;</strong> element as demonstrated
+         below.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;corr&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains the correct form
+         of a passage apparently erroneous in the manuscript text.
+         The <strong>&lt;corr&gt;</strong> element can also be used as an
+         attribute to the <strong>&lt;sic&gt;</strong> element as demonstrated
+         below.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the individual
+         responsible for the correction of letters, words or passages
+         contained within the <strong>&lt;corr&gt;</strong> and
+         <strong>&lt;sic&gt;</strong> elements. It can be given values
+         like:</P>
+      </TD>
+   </TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">transcriber</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The person responsible for
+         the transcription of the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">encoder</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The person responsible for
+         the encoding of the manuscript text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">editor</p>
+      </TD>
+      <TD>
+         <P>Signifies the editor
+         responsible for suggesting the correction.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>rend</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Describes how incorrect
+         readings in the manuscript text should be displayed. The
+         relevant value is:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=130>
+         <p id="indent1">sequence</p>
+      </TD>
+      <TD VALIGN=top>
+         <P>The incorrect reading in
+         the manuscript text consists of a sequence of letters,
+         words, or phrases that should be displayed as a unit.</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>In a first-level transcription it
+can be relevant just to mark the obviously corrupted instances in the
+manuscript text. This could be done with the <strong>&lt;sic&gt;</strong>
+element as in this instance from R&oacute;mverjas&ouml;gur (AM 595
+a-b 4to). Note that we for clarity limit the use of encoding to the
+relevant sequence, and that the encoding is only presented on the
+<strong>&lt;facs&gt;</strong> level.</P>
+
+<BLOCKQUOTE>ok sua mikinn
+   avruggl&aelig;ik hafa &thorn;eir a&eth; giora illa<BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="note">&lt;sic&gt;</em>uitier</em><em id="note">&lt;/sic&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="layout">&lt;lb</em> <em id="code">n="1r:15"</em><em id="layout">/&gt;</em>lavst a&eth; &aelig;igi munu &thorn;eir af
+   lata nema &thorn;eim se banna&eth;.</BLOCKQUOTE>
+
+<P>In this example the word
+<em>uitier</em> is marked as corrupt. There is no indication as to what
+is corrupt or how it should be corrected. The next step is to correct
+the corrupted instance, which could be made by combining the
+&lt;<strong>sic</strong>&gt; element with <em>corr</em> as an
+attribute.</P>
+
+<BLOCKQUOTE>ok sua mikinn
+   avruggl&aelig;ik hafa &thorn;eir a&eth; giora illa<BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="note">&lt;sic</em>
+   <em id="code">corr="uitis"</em><em id="note">&gt;</em>uitier<em id="note">&lt;/sic&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="layout">&lt;lb</em> <em id="code">n="1r:15"</em><em id="layout">/&gt;</em>lavst a&eth; &aelig;igi munu &thorn;eir af
+   lata nema &thorn;eim se banna&eth;.</BLOCKQUOTE>
+
+<P>This means that the correct reading
+of this passage should be as follows:</P>
+
+<BLOCKQUOTE>ok sua mikinn
+   avruggl&aelig;ik hafa &thorn;eir a&eth; giora illa uitis<em id="layout">&lt;lb</em> <em id="code">n="1r:15"</em><em id="layout">/&gt;</em>lavst a&eth; &aelig;igi munu &thorn;eir af lata
+   nema &thorn;eim se banna&eth;.</BLOCKQUOTE>
+
+<P>With this markup it is possible to
+show the text on the computer screen or in a printed edition in
+accordance with the suggestions above (<A HREF="#7.1">ch.
+7.1</A>):</P>
+
+<BLOCKQUOTE>14&nbsp;&nbsp;&nbsp;...ok
+   sua mikinn avruggl&aelig;ik hafa &thorn;eir a&eth; giora illa
+   *uitis<BR>
+   15&nbsp;&nbsp;&nbsp;lavst a&eth; &aelig;igi munu &thorn;eir af
+   lata nema &thorn;eim se banna&eth;...</BLOCKQUOTE>
+
+<P>with the corrected form from the
+manuscript text underneath the edited text:</P>
+
+<BLOCKQUOTE>* uitier</BLOCKQUOTE>
+
+<P>It is also possible to include
+information about the person responsible for the correction with the
+attribute <em>resp</em> and its values:</P>
+
+<BLOCKQUOTE>ok sua mikinn
+   avruggl&aelig;ik hafa &thorn;eir a&eth; giora illa<BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="note">&lt;sic</em>
+   <em id="code">corr="uitis"
+   resp="transcriber"</em><em id="note">&gt;</em>uitier<em id="note">&lt;/sic&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="layout">&lt;lb</em> <em id="code">n="1r:15"</em><em id="layout">/&gt;</em>lavst a&eth; &aelig;igi munu &thorn;eir af
+   lata nema &thorn;eim se banna&eth;.</BLOCKQUOTE>
+
+<P>It is, of course, also possible to
+use the <strong>&lt;corr&gt;</strong> element with <em>sic</em> as an attribute,
+but we recommend the use of the <strong>&lt;sic&gt;</strong>
+element.</P>
+
+<P><A NAME="7.4"></A>&nbsp;</P>
+
+<h2>7.4 Damage and illegibility</h2>
+
+<P>The following section deals with
+text omitted in the transcription or editing of text due to damage or
+illegibility in the manuscript, and text supplied from other sources
+such as other text witnesses or earlier editions.</P>
+
+<p>&nbsp;</p>
+
+<P><A NAME="7.4.1"></A></P>
+
+<h3>7.4.1 Text omitted from or supplied in the transcription</h3>
+
+<P>When the manuscript is illegible we
+suggest the use of the elements <strong>&lt;gap/&gt;</strong> and
+<strong>&lt;supplied&gt;</strong> to indicate the illegible text, its extension
+and how it has been supplied (for the <strong>&lt;supplied&gt;</strong> element
+see <A HREF="#7.3.1">ch.
+7.3.1</A>).</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;gap/&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Is an element without
+         extention in the encoded manuscript text. It indicates a
+         point where material has been omitted in a transcription
+         because the manuscript text is illegible. Attributes
+         include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>desc</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Gives a description of the
+         omitted text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>reason</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Gives the reason for
+         omission. Sample values include: 'sampling', 'illegible',
+         'irrelevant', 'cancelled', 'cancelled and
+         illegible'.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>extent</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates approximately how
+         much text has been omitted from the transcription, in the
+         way that has been suggested by Helle Jensen refered to above
+         (<A HREF="#7.1">ch.
+         7.1</A>). Values can
+         be given as e.g. number of signs, number of lines or number
+         of pages in the manuscript.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the transcriber,
+         encoder or editor responsible for the decision not to
+         provide any transcription and hence the application of the
+         <strong>&lt;gap/&gt;</strong> element.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>hand</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>In instances where text is
+         omitted from the transcription because of deliberate
+         deletion by an identifiable hand, this attribute signifies
+         the hand which made the deletion.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>agent</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>In instances where text is
+         omitted from the transcription because of damage resulting
+         from an identifiable cause, this attribute signifies the
+         causative agent.</P>
+      </TD>
+   </TR></tbody>
+</TABLE>
+ </P>
+
+<P>In medieval manuscripts we often
+find sections that for some reason are illegible. This can be due to
+e.g. damage or use. In the transcription we primarily wish to
+register the sections that are illegible and the extent of the
+illegibility. We suggest that the illegible sections should be
+indicated by the <strong>&lt;gap/&gt;</strong> element. The extent of the
+illegible section could be encoded as the following two lines from
+<em>V&ouml;lusp&aacute;</em> in Hauksb&oacute;k (AM 544
+4to):</P>
+
+<BLOCKQUOTE><em id="layout">&lt;lb</em>
+   <em id="code">n="20v:41"</em><em id="layout">/&gt;</em>vi&eth;ars ni&eth;ia.<em id="layout">&lt;gap</em>
+   <em id="code">extent="00...00"</em><em id="layout">/&gt;</em>na&eth;r<em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em><BR>
+   <em id="layout">&lt;lb</em>
+   <em id="code">n="20v:42"</em><em id="layout">/&gt;</em>munv halir<em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em>y&eth;ia<em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em>mi&eth;<BR>
+   <em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em></BLOCKQUOTE>
+
+<P>With this markup the extent of the
+illegible section is not defined. It can be presented on the computer
+screen or in a printed edition in the manner suggested above
+(<A HREF="#7.1">ch.
+7.1</A>):</P>
+
+<BLOCKQUOTE>41&nbsp;&nbsp;&nbsp;vi&eth;ars
+   ni&eth;ia. 00...00 na&eth;r 00...00<BR>
+   42&nbsp;&nbsp;&nbsp;munv halir 00...00 y&eth;ia 00...00 mi&eth;
+   00...00 ...</BLOCKQUOTE>
+
+<P>If the transcriber or encoder of
+the text wishes to define the section more accurately it can be done
+as in the following example. The number of missing signs is given as
+a value to the attribute <em>extent</em>. It should be noted that the
+number given in the example is not intended as an exact evaluation of
+the number of signs missing in the present manuscript.</P>
+
+<BLOCKQUOTE><em id="layout">&lt;lb</em>
+   <em id="code">n="20v:41"</em><em id="layout">/&gt;</em>vi&eth;ars ni&eth;ia.<em id="layout">&lt;gap</em> <em id="code">extent="40"</em><em id="layout">/&gt;</em>na&eth;r<em id="layout">&lt;gap</em> <em id="code">extent="17"</em><em id="layout">/&gt;</em><BR>
+   <em id="layout">&lt;lb</em>
+   <em id="code">n="20v:42"</em><em id="layout">/&gt;</em>munv halir<em id="layout">&lt;gap</em> <em id="code">extent="31"</em><em id="layout">/&gt;</em>y&eth;ia<em id="layout">&lt;gap</em> <em id="code">extent="10"</em><em id="layout">/&gt;</em>mi&eth;<BR>
+   <em id="layout">&lt;gap</em> <em id="code">extent="11"</em><em id="layout">/&gt;</em></BLOCKQUOTE>
+
+<P>This could be represented as
+follows on the computer screen or in a printed edition. As the
+accuracy of this kind of evaluation is questionable it should not
+have the highest priority to display this in e.g. a printed
+edition.</P>
+
+<BLOCKQUOTE>41&nbsp;&nbsp;&nbsp;vi&eth;ars
+   ni&eth;ia. 0000000000000000000000000000000000000000na&eth;r
+   00000000000000000<BR>
+   42&nbsp;&nbsp;&nbsp;munv halir
+   0000000000000000000000000000000y&eth;ia 0000000000
+   mi&eth;00000000000 ...</BLOCKQUOTE>
+
+<P>In the above example there are
+other sources available for the illegible text. The text omitted can
+then be supplied from these sources within the
+<strong>&lt;supplied&gt;</strong> element as follows, where the supplied text
+is from Gustav Neckel's edition of the Edda (<A HREF="HB1-1_literature.xhtml">Hans
+Kuhn's revised 5. edition 1983</A>,
+p. 13; Note that for clarity we limit the use of encoding to the
+relevant sequence, and that the encoding is only presented on the
+<strong>&lt;facs&gt;</strong> level).</P>
+
+<BLOCKQUOTE><em id="layout">&lt;lb</em>
+   <em id="code">n="20v:41"</em><em id="layout">/&gt;</em>vi&eth;ars ni&eth;ia.<BR>
+   <em id="layout">&lt;gap</em> <em id="code">extent="32"</em><em id="layout">/&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>Gengr<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>inn<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>m&aelig;ri<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>er<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>af<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>m&oacute;&eth;i<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>drepr<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>neppr<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>at<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em>na&eth;r<BR>
+   <em id="layout">&lt;gap</em> <em id="code">extent="14"</em><em id="layout">/&gt;</em><BR>
+   <em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>i<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>m&ouml;gr<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em><em id="element">&lt;supplied</em> <em id="code">resp="KGJ"
+   source="Neckel1983:13"
+   rend="sequence"</em><em id="element">&gt;</em>Hl&oacute;&eth;yniar<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="layout">&lt;lb</em>
+   <em id="code">n="20v:42"</em><em id="layout">/&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em>munv<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w&gt;</em><em id="display">&lt;facs&gt;</em>halir<em id="element">&lt;/supplied&gt;</em><em id="display">&lt;/facs&gt;</em><em id="element">&lt;/w&gt;</em><BR>
+   <em id="layout">&lt;gap/&gt;</em></BLOCKQUOTE>
+
+<P>The second unreadable part in the
+manuscript text marked with &lt;<strong>gap/</strong>&gt; here starts within a
+word. With this encoding it will be possible to display the text as
+shown in the following example (using "&ouml;" for "o
+ogonek"):</P>
+
+<BLOCKQUOTE>41&nbsp;&nbsp;&nbsp;vi&eth;ars
+   ni&eth;ia. &#91;Gengr inn m&aelig;ri er af m&oacute;&eth;i drepr
+   neppr at&#93; na&eth;r &#91;i m&ouml;gr
+   Hl&oacute;&eth;yniar&#93;<BR>
+   42&nbsp;&nbsp;&nbsp;munv halir &#91; _ _ _ &#93;</BLOCKQUOTE>
+
+<P>This kind of editorial change is,
+however, not suggested as compulsory. In a primary transcription and
+encoding the use of the &lt;<strong>gap/</strong>&gt; element should only give
+the essential manuscript information. The attributes to
+&lt;<strong>gap/</strong>&gt; and &lt;<strong>supplied</strong>&gt;, such as
+<em>source</em> or <em>resp</em>, can of course be included voluntarily
+and to the extent that information is available.</P>
+
+<P><A NAME="7.4.2"></A>&nbsp;</P>
+
+<h3>7.4.2 Uncertain readings in the manuscript</h3>
+
+<P>In medieval manuscripts we often
+encounter problems of illegibility due to use or damage. In the
+following the encoding of such sequences is treated. To some extent
+this has already been treated in the above section (<A HREF="#7.4.1">ch.
+7.4.1</A>). In cases where the
+text is readable to some extent the <strong>&lt;gap/&gt;</strong> and
+<strong>&lt;supplied&gt;</strong> elements should not be used. The TEI
+Guidelines (<A target="_blank" HREF="http://www.tei-c.org/P4X/PH.html#PHPH">ch.
+18.2.3</A>) recommend that the
+<strong>&lt;unclear&gt;</strong> element is used for encoding damage and
+illegibility where the text of the dammaged or illegible area can be
+read with some certainty.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;unclear&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains a letter, word,
+         phrase or passage which cannot be transcribed with certainty
+         because it is illegible in the manuscript text. Attributes
+         include:</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>reason</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates why the material
+         is hard to transcribe.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>resp</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Indicates the individual
+         responsible for the transcription of the letter, word,
+         phrase or passage contained within the <strong>&lt;unclear&gt;</strong>
+         element.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>hand</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Signifies the hand
+         responsible for the action where the difficulty in
+         transcription arises from action (partial deletion, etc.)
+         assignable to an identifiable hand. Note that this attribute
+         has the same function in the <strong>&lt;del&gt;</strong> element above
+         (<A HREF="#7.2.2">ch.
+         7.2.2</A>).</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>agent</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Where the difficulty in
+         transcription arises from an identifiable cause, signifies
+         the causative agent.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P>rend</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Describes how the unclear
+         reading should be displayed. The relevant attribute is:<BR>
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <p id="indent1">sequence</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The unclear reading
+         consists of a sequence of letters, words, or phrases that
+         should be displayed as a unit.<BR>
+         </P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>The example given above from the
+version of <em>V&ouml;lusp&aacute;</em> in Hauksb&oacute;k (AM 544 4to)
+can be further encoded with the <strong>&lt;unclear&gt;</strong> element, to
+indicate that the text marked with the <strong>&lt;unclear&gt;</strong> element
+is read with some certainty while the <strong>&lt;gap/&gt;</strong> element
+indicates fully illegible text. For the sake of simplicity, we have given identical readings on all three levels below.</P>
+
+<BLOCKQUOTE>
+   <em id="layout">&lt;lb</em>
+   <em id="code">n="20v:41"</em><em id="layout">/&gt;</em>
+</blockquote>
+<blockquote>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="note">&lt;unclear&gt;</em>vi&eth;ars<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="note">&lt;unclear&gt;</em>vi&eth;ars<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="note">&lt;unclear&gt;</em>vi&eth;ars<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="note">&lt;unclear&gt;</em>ni&eth;ia<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="note">&lt;unclear&gt;</em>ni&eth;ia<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="note">&lt;unclear&gt;</em>ni&eth;ia<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="note">&lt;unclear&gt;</em>na&eth;r<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="note">&lt;unclear&gt;</em>na&eth;r<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="note">&lt;unclear&gt;</em>na&eth;r<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   &lt;/norm&gt;<BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="layout">&lt;gap</em> <em id="code">extent="00...00"</em><em id="layout">/&gt;</em><BR>
+   <em id="layout">&lt;lb</em>
+   <em id="code">n="20v:42"</em><em id="layout">/&gt;</em>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="note">&lt;unclear&gt;</em>munv<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="note">&lt;unclear&gt;</em>munv<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="note">&lt;unclear&gt;</em>munv<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+</blockquote>
+<BLOCKQUOTE>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em><em id="note">&lt;unclear&gt;</em>halir<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="note">&lt;unclear&gt;</em>halir<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em><em id="note">&lt;unclear&gt;</em>halir<em id="note">&lt;/unclear&gt;</em><em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+</BLOCKQUOTE>
+
+<P>With this encoding the text could
+be presented with subpunction for all the words that the editor can
+not read with absolute certainty.&nbsp;</P>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

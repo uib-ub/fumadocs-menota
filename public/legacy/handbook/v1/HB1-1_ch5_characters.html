@@ -1,0 +1,1934 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook - Ch. 5 (v. 1.1): Characters: typology and encoding</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<img src="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Chapter 5. Characters: typology and encoding</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#5.1">5.1
+Introduction</A><BR>
+<A HREF="#5.2">5.2 Base line
+characters</A><BR>
+<A HREF="#5.3">5.3
+Ligatures</A><BR>
+<A HREF="#5.4">5.4 Modified
+characters</A><BR>
+<A HREF="#5.5">5.5 Complex
+characters</A><BR>
+<A HREF="#5.6">5.6 Punctuation
+marks</A><BR>
+<A HREF="#5.7">5.7 List of
+characters</A>
+&nbsp;</P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+
+<P><A NAME="5.1"></A>&nbsp;</P>
+
+<h2>5.1 Introduction</h2>
+
+<P>The basic characters a-z / A-Z in
+the Latin alphabet can be encoded in virtually any electronic system
+and transferred from one system to another without loss of
+information. Any other characters may cause problems, even well
+established ones such as Modern Scandinavian "&aelig;", "&oslash;"
+and "&aring;". As explained in <A HREF="HB1-1_ch2_basics.html#2.2">ch.
+2.2</A> all characters outside
+a-z / A-Z should be encoded as entities, i.e. given an appropriate
+description and placed between the delimiters "&amp;" and ";".
+</P>
+
+<P>Entities are needed at the bottom
+level, as it were, in an XML transcription of a text. This is
+parallel to the source code of a typical HTML file, which can be
+inspected in most HTML editors and browsers, but is usually not
+shown. Although a number of characters will have to be referred to
+with entities, it is important to note that the transcriber does not
+have to type in entities when s/he is transcribing a manuscript or
+doing proof reading. With appropriate software and fonts the
+transcription can be displayed on screen and printed out with all (or
+at least most) entities shown as readable and recognizable
+characters.</P>
+
+<P>The characters a-z / A-Z are seen
+as base line characters, i.e. characters occupying a separate
+position on the base line of a primary source (typically a
+manuscript) and transcribed one by one in the order they stand. In
+addition to the characters a-z / A-Z there are a number of ligatures,
+i.e. combination of two (or in principle more) characters making up a
+new base line character, such as "&aelig;". There are also a number
+of variant base characters, e.g. a round form of "r" (r rotunda), or
+a tall form of "s", and there is even a whole set of small capitals
+to be reckoned with, especially in Old Icelandic script. Furthermore,
+the base line characters can be modified by a number of diacritics
+(accents, dots, hooks, strokes etc.), so that the theoretical number
+of combinations for any character is very high.</P>
+
+<P>The rules for describing the
+individual elements of characters and their attributes are simple,
+and were described in <A HREF="HB1-1_ch2_basics.html#2.2">ch.
+2.2</A> above. To keep the
+number of entities down we have tried to specify how many of the
+possible character combinations in fact have been used in
+medieval Nordic manuscripts. The discussion below is therefore of
+some length, and the accumulated <A HREF="HB1-1_charlist.xhtml">character
+list</A> includes several
+hundred characters. Although we have tried to make the list as
+exhaustive as possible, we do not believe that it is definitive. It
+should be noted that many characters are open to interpretation, e.g.
+whether a character has double dots or double accents. Thus, some
+characters in our list may prove to be theoretical rather than
+factual combinations of base character and diacritics. This
+especially applies to capital variants of lesser used characters,
+such as some of the ligatures.</P>
+
+<P>In general, we have tried to
+minimize the number of variants, whether of base characters or of
+diacritics. There is, for example, only one base line character "a",
+although this letter may have various forms in the manuscripts, i.e.
+"single-storeyed" (with a neck) or "double-storeyed" (closed without
+a neck). We regard this type of variation as paleographical, and
+suggest that it is not encoded, but that it is described elsewhere,
+e.g. in the TEI header or in the front matter of the electronic
+edition.</P>
+
+<P>We should like to stress that the
+list of characters in this chapter should not be taken as a list of
+minimal and necessary distinctions to be made by the transcriber. We
+have defined two types of "s", a low (or round) one and a tall one.
+This does not mean that the transcriber should use both entities in
+the encoding of whichever manuscript exhibiting them, only that if
+s/he wishes to make the distinction, we suggest how that can be
+done.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.1.1 Glyphs</h3>
+
+<P>Glyphs are the typical shape of a
+character. In this chapter, they are shown in a font based on the
+typeface Courier. Although this is a modern font the distinctive
+traits of each character are basically the same as in medieval
+script.</P>
+
+<P>&nbsp;</P>
+
+<P><strong>5.1.2 Entity
+names</strong></P>
+
+<P>All characters outside the range
+a-z / A-Z are referred to with entity names placed within the
+delimiters "&amp;" and ";". As explained in <a href="HB1-1_ch2_basics.html#2.2.2">ch. 2.2.2</a> above we
+recommend that entities as far as possible conform to the standard
+ISO entity sets. An updated list of ISO conformant entities can be
+found at the Oasis web site:</P>
+
+<P><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><A target="_blank" HREF="http://www.oasis-open.org/cover/xml-ISOents.txt">ISO
+entities</A></P>
+
+<P>The ISO set only covers a minor
+selection of the entites we believe are necessary for the full
+transcription of medieval Nordic manuscripts. This chapter thus
+discusses a number of additional characters with accompanying
+entities. We have tried to adhere to the inventory and syntax of ISO
+entities. For a summary of the entity naming scheme, please refer to
+<A href="#5.5">ch. 5.5</a> below.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.1.3 Unicode values</h3>
+
+<P>We have supplied code points from
+<strong>Unicode 4.0</strong> for all characters (or parts of characters)
+defined in this standard. For the remaining characters we have
+defined code points in the Private Use Area. These are shown in bold
+type (and dark blue). The <A HREF="HB1-1_charlist.xhtml">character
+list</A> contains Unicode
+values for all characters. </P>
+
+<P>&nbsp;</P>
+
+<h3>5.1.4 Descriptive names</h3>
+
+<P>Each character is described
+according to the naming scheme in Unicode, as explained in
+<A HREF="HB1-1_ch2_basics.html#2.2">ch.
+2.2</A>. We also suggest
+descriptive names for those characters not included in the Unicode
+standard.&nbsp;</P>
+
+<P><A NAME="5.2"></A>&nbsp;</P>
+
+<h2>5.2 Base line characters</h2>
+
+<P>Base line characters are unmodified
+characters occupying a separate position on the base line, i.e.
+characters which are not clearly modified by diacritical marks or
+being part of a ligature.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.1 Base line characters in the Modern English alphabet</h3>
+
+<P>These characters are described in
+ISO 646 and are found on the keyboard of virtually any Western
+computer. They are identical to US ASCII positions 32-126 and are
+often referred to as Basic Latin. Characters in Basic Latin are
+encoded without use of entity references.</P>
+
+<P><strong>Unicode 4.0</strong> defines these
+characters as belonging to the range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0000.pdf">Basic
+Latin</A> (positions
+0020-007E).</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Letter</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/a.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>a</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>0061</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER
+         A</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/v-a.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>A</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>0041</P>
+      </TD>
+      <TD>
+         <P>LATIN CAPITAL LETTER
+         A</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P>Note that the distinction between
+minuscule (lowercase) and majuscule (uppercase) characters is an
+inherent trait of the coding scheme; it is not shown by entity names
+such as "&amp;amin;" for "a" and "&amp;amaj;" for "A". However, when
+it comes to the question of small capitals and enlarged minuscules it
+will be necessary to introduce entity names, as discussed in ch.
+5.2.3 and 5.2.4 below.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.2 Base line characters in the Modern Icelandic alphabet</h3>
+
+<P>Modern Icelandic has two characters
+for dental fricatives, "&thorn;" (thorn) and "&eth;" (eth). In ISO
+8859-1 they are referred to with the entity names "&amp;thorn;" and
+"&amp;eth;", also adopted here.</P>
+
+<P><strong>Unicode 4.0</strong> defines
+"&thorn;" (thorn) and "&eth;" (eth) in the range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1
+Supplement</A>.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/dh.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;eth;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00F0</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER
+         ETH</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/v-dh.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;ETH;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00D0</P>
+      </TD>
+      <TD>
+         <P>LATIN CAPITAL LETTER
+         ETH</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/th.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;thorn;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00FE</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER
+         THORN</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/v-th.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;THORN;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00DE</P>
+      </TD>
+      <TD>
+         <P>LATIN CAPITAL LETTER
+         THORN</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>In addition to "&thorn;" and
+"&eth;", Modern Icelandic has seven vowels with diacritical marks,
+"&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;",
+"&yacute;" and "&ouml;", and one ligature, "&aelig;". These will be
+treated as modified characters and discussed below.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.3 Small capitals</h3>
+
+<P>Small capitals have the same form
+as majuscules (capital letters), but are usually drawn with the same
+height as a minuscule (small letter) such as "x". Small capitals were
+used in Old Icelandic to denote geminates, i.e. long consonants, or
+they were used ornamentally (often so in Old Norwegian). The letters
+"B", "D", "G", "M", "N", "R", "S" and "T" were often used as
+geminates, while these and other letters might also be used as
+ornaments in the whole or in parts of highlighted words. Some of the
+small capitals, e.g. "O" and "C", are difficult to distinguish from
+minuscule letters. We suggest that small capitals receive the suffix
+"scap" (for "small capital") in the entity name.</P>
+
+<P><strong>Unicode 4.0</strong> has defined nine
+small capitals in the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0250.pdf">IPA
+Extensions</A> range, sc. "B",
+"G", "H", "I", "L", "N", "&#140;", "R" and "Y", and sixteen in the
+<A target="_blank" HREF="http://www.unicode.org/charts/PDF/U1D00.pdf">Phonetic
+Extensions</A> range, sc. "A",
+"&AElig;", "C", "D", "ETH", "E", "J", "K", "M", "O", "P", "T", "U",
+"V", "W" and "Z". For the remaining small capitals we will have to
+resort to the Private Use Area, i.e. "F", "Q", "S", "THORN" and "X".
+Cf. the <A HREF="HB1-1_charlist.xhtml">character
+list</A> for an extensive
+overview.</P>
+
+<P><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><A target="_blank" HREF="http://std.dkuug.dk/jtc1/sc2/wg2/docs/n2419.pdf">Uralic
+Phonetic Alphabet characters for the
+UCS</A> (20.03.2002) PDF
+file</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/gscap.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;gscap;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>0262</P>
+      </TD>
+      <TD>
+         <P>LATIN LETTER SMALL CAPITAL
+         G</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/mscap.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;mscap;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>1D0D</P>
+      </TD>
+      <TD>
+         <P>LATIN LETTER SMALL CAPITAL
+         M</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P>We recommend that small capitals
+are transcribed as such, irrespective of whether they are being used
+for geminates or for ornamental purposes. Cf. <A HREF="HB1-1_ch6_abbreviations.html#6.2.10">ch.
+6.2.10</A>.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.4 Enlarged minuscules</h3>
+
+<P>Some scholars believe that enlarged
+minuscules should be transcribed as separate characters. The
+traditional view is to interpret these characters as variants of
+capitals (majuscules) and encode them as such. There are
+comparatively few characters which appear as enlarged minuscules, and
+it is sometimes difficult to decide whether a minuscule character is
+enlarged or not. We recommend that enlarged minuscules are
+transcribed as capitals in cases where it seems obvious that they
+function as a capital and as ordinary minuscules elsewhere. If,
+however, the transcriber wishes to make a distinction between
+capitals and enlarged minuscules, we recommend the suffix "enl" (for
+"enlarged") in the entity name.</P>
+
+<P><strong>Unicode 4.0</strong> does not
+recognise enlarged minuscules as separate characters. A small
+selection of enlarged minuscules has been included in the Private Use
+Area, e.g. "a" and "e". Cf. the <A HREF="HB1-1_charlist.xhtml">character
+list</A> for an extensive
+overview.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aenl.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aenl;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EEE0</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         ENLARGED LETTER SMALL A</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/eenl.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;eenl;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EEE6</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         ENLARGED LETTER SMALL E</strong></P>
+      </TD>
+   </TR></tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.5 Insular characters</h3>
+
+<P>A few characters have distinct
+Insular forms, e.g. "r", "f" and "v" (wynn). These characters are
+sometimes transcribed as separate characters, as opposed to their
+Carolingian counterparts. We suggest using the suffix "ins" (for
+"Insular").</P>
+
+<P><strong>Unicode 4.0</strong> does not
+recognise Insular characters as separate characters, with the
+exceptions of "g" (yogh) and "w" (wynn) in <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0180.pdf">Latin
+Extended-B</A>. A few Insular
+characters have been included in the Private Use Area, e.g. "f" and
+"v".</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/fins.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;fins;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F10D</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER INSULAR F</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/vins.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;vins;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F211</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER INSULAR V</strong></P>
+      </TD>
+   </TR>
+</TABLE></tbody>
+ <p>etc.</P>
+
+<P>Insular "g" (yogh) is to our
+knowledge not found in medieval Nordic manuscripts.</P>
+
+<P>As a rule, characters should be
+given identical names across various scripts (Carolingian, Insular,
+Gothic etc.). However, when clearly identifiable letter forms from
+one script appear within the context of another, as is the case with
+some Insular letter forms in Nordic Carolingian script, they may be
+singled out by the transcriber, if s/he wishes to do so.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.6 Uncials</h3>
+
+<P>A few characters may appear with a
+typical Uncial form, especially "d", "e", "m" and "t". These
+characters are sometimes transcribed as separate characters, as is
+the case with Insular letter forms. We suggest using the suffix "unc"
+in the entity name.</P>
+
+<P><strong>Unicode 4.0</strong> does not
+recognise Uncial characters as separate characters. A small selection
+of Uncial characters has been included in the Private Use Area, e.g.
+"d" and "t". Cf. the <A HREF="HB1-1_charlist.xhtml">character
+list</A> for an extensive
+overview. &nbsp;</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/dunc.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;dunc;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F109</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         LETTER UNCIAL D</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/tunc.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;tunc;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F129</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         LETTER UNCIAL T</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P><A NAME="5.2.7"></A>&nbsp;</P>
+
+<h3>5.2.7 Runes</h3>
+
+<P>Runes are normally not used in
+conjunction with the Latin alphabet, but when they appear in isolated
+instances - e.g. in The third grammatical treatise - they should be
+transcribed with appropriate entity names. We suggest using the
+suffix "run" (for "runes").</P>
+
+<P><strong>Unicode 4.0</strong> has defined a
+selection of 81 runes from the Older and Younger Futhark in the
+<A target="_blank" HREF="http://www.unicode.org/charts/PDF/U16A0.pdf">Runic</A>
+range. Note that the descriptive names given below are those chosen
+by Unicode.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/frun.gif" WIDTH=90 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;frun;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>16A0</P>
+      </TD>
+      <TD>
+         <P>RUNIC LETTER FEHU FEOH FE
+         F</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/mrun.gif" WIDTH=90 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;mrun;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>16D8</P>
+      </TD>
+      <TD>
+         <P>RUNIC LETTER
+         LONG-BRANCH-MADR M</P>
+      </TD>
+   </TR>
+</TABLE>
+</tbody>
+<p>etc.</P>
+
+<P>Note that the runes "m" and "f" may
+also be used as abbreviation signs, cf. <A HREF="HB1-1_ch6_abbreviations.html#6.2.6">ch.
+6.2.6-7</A>.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.2.8 Other variants of base line characters</h3>
+
+<P>Some base line characters have
+commonly recognised variants. In general, we recommend that variants,
+e.g. "single storeyed a" and "two storeyd a", are not transcribed as
+separate entities. In many cases it is difficult to decide which of
+the variants to choose from. However, there are a few variants which
+are very distinctive and often recognised in transcriptions. This
+applies to "tall s" and "round r", for which we suggest the suffixes
+"tall" and "rot" (for "rotunda") respectively.</P>
+
+<P><strong>Unicode 4.0</strong> recognises "long
+s" as part of the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0100.pdf">Latin
+Extended-A</A> range, but
+"round r" is not recognised. This has been allocated to code point
+<strong>F20E</strong>
+in the Private Use Area.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/stall.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;slong;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>017F</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER LONG
+         S</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/rrot.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;rrot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F20E</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER R ROTUNDA</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P><A NAME="5.3"></A>&nbsp;</P>
+
+<h2>5.3 Ligatures</h2>
+
+<P>Ligatures are two base line
+characters which are joined so that they form a new, composite base
+line character. Some consist of two identical characters, e.g. "a+a",
+others of different characters, e.g. "a+v". Ligatures may be used to
+denote length, "a+a", diphtong, "a+v", or a distinct vowel quality,
+often mutation (Umlaut), "a+v". A well known example is the ligature
+"&aelig;", formed of "a" and "e", encoded as "&amp;aelig;" in ISO
+8879. In analogy with this usage we suggest that ligatures receive
+the suffix "lig" following those base line characters which make up
+the ligature. </P>
+
+<P><strong>Unicode 4.0</strong> does not
+recognise ligatures in the Latin alphabet as base characters. The
+only exceptions are "&aelig;", "&#156;" and "ij" (not used in
+Nordic). For "&aelig;" see the Unicode range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1
+Supplement</A>, and for
+"&#156;" <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0100.pdf">Latin
+Extended-A</A>. Other ligatures
+must be defined in the Private Use Area. Cf. the <A HREF="HB1-1_charlist.xhtml">character
+list</A> for an extensive
+overview.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+<TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aalig.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aalig;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EF91</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE AA</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/avlig.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;avlig;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EF97</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE AV</strong></P>
+      </TD>
+   </TR>
+</TABLE>
+</tbody>
+ <p>etc.</P>
+
+<P>We recommend that only ligatures
+with a distinctive value should be given an entity name of their own,
+i.e. only those ligatures which possibly reflect a phonological
+opposition. We regard ligatures which are motivated by graphic
+economy as sporadic ligatures and recommend that they should be
+transcribed as separate characters. To this group belong ligatures
+such as "b+b", "p+p" etc. Especially in late Gothic script there are
+many examples of junctures (fusion of bows) which can be interpreted
+as ligatures, but which in our opinion should be encoded as
+individual characters.</P>
+
+<P>If a transcriber wishes to
+transcribe sporadic ligatures as ligatures, we suggest using the
+element <strong>&lt;seg&gt;</strong>
+with the attribute <strong>type="ligature"</strong>,
+e.g.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD>
+         <P>Encoding</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><strong><IMG SRC="handbok_1/ch5/pplig.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></strong></P>
+      </TD>
+      <TD>
+         <P><em id="element">&lt;seg</em>
+         <em id="code">type="ligature"</em><em id="element">&gt;</em>pp<em id="element">&lt;/seg&gt;</em></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+ <A NAME="5.4"></A>&nbsp;</P>
+
+<h2>5.4 Modified characters</h2>
+
+<P>Modified characters are base line
+characters with diacritical marks. They are described according to
+rule (4) in <A HREF="HB1-1_ch2_basics.html#2.2">ch.
+2.2.1</A>. If there is more
+than one modification, they are listed in the sequence specified in
+rule (6).</P>
+
+<P>&nbsp;</P>
+
+<h3>5.4.1 Strokes (slashes)</h3>
+
+<P>The character "&oslash;" is still
+being used in Modern Danish and Norwegian, and is encoded as
+"&amp;oslash;" in ISO 8879. In some manuscripts the stroke may be
+horizontal and in others diagonal, but in general we do not believe
+it is relevant to distinguish between variant strokes.</P>
+
+<P><strong>Unicode 4.0</strong> has defined
+"&oslash;" as part of the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1
+Supplement</A> range.
+</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+<TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/ost.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;oslash;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00F8</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER O WITH
+         STROKE</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/v-ost.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;Oslash;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00D8</P>
+      </TD>
+      <TD>
+         <P>LATIN CAPITAL LETTER O
+         WITH STROKE</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+ <p>etc.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.4.2 Hooks and loops</h3>
+
+<P>A few vowels, especially "o" and
+"e", may have a hook. The latter combination, "e caudata", is common
+in Latin manuscripts, in which the letter form alternates with the
+ligature "&aelig;". The hook may be placed below or above the base
+line character, facing either to the right or to the left. Of these
+combinations, the distinction between left- and right-turning hooks
+may simply be accidental. The two "canonical" forms are the hook
+below to the right and the hook above to the left. We recommend using
+"ogon" for the hook below and "curl" for the hook above (since "hook"
+possibly is more ambiguous).</P>
+
+<P><strong>Unicode 4.0</strong> recognises "a"
+and "e" with hooks in the range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0100.pdf">Latin
+Extended-A</A>, and "o" with
+hook in <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0180.pdf">Latin
+Extended-B</A>. In Unicode, the
+hook is referred to as "ogonek", a Polish word for "little tail". The
+ogonek is also defined as a combining character, 0328 in the range
+<A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0300.pdf">Combining
+Diacritical Marks</A>. The hook
+above may be identified with the tone mark in Vietnamese, 0309 in the
+range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0300.pdf">Combining
+Diacritical Marks</A>. This
+mark, however, has a slightly different form (comparable to the
+recognised distinction between the cedilla and the ogonek). For this
+reason, we suggest using a separate code point in the Private Use
+Area, <strong>F1C4</strong>.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/ohbr.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;oogon;<BR>
+         = o + &amp;combogon;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>01EB<BR>
+         = 006F + 0328</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER O WITH
+         OGONEK<BR>
+         = LATIN SMALL LETTER O + COMBINING OGONEK</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/ohal.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;ocurl;<BR>
+         = o + &amp;combcurl;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>E7D3</strong><BR>
+         = 006F + <strong>F1C4</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER O WITH CURL</strong><BR>
+         = LATIN SMALL LETTER O + <strong>COMBINING
+         CURL</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/ucu.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;ucurl;<BR>
+         = u + &amp;combcurl;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>E731</strong><BR>
+         = 0075 + <strong>F1C4
+         </strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER U WITH CURL</strong><BR>
+         = LATIN SMALL LETTER U + <strong>COMBINING
+         CURL</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P><strong>Loops</strong> are in most cases
+reduced forms of "a" or "o" and can thus be interpreted as
+ligatures. We suggest using the suffix "red" in the entity name, thus
+"oeligred" for the reduced version of the "oe" ligature, and
+"aoligred" for the reduced version of the "ao" ligature. </P>
+
+<P><strong>Unicode 4.0</strong> does not
+recognise loops, either as separate characters or as combining
+diacritical marks. &nbsp;</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/ourl.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;oeligred;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F20D</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE OE WITH MISSING BOTTOM STROKE</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/olll.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aoligred;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F206</strong></P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE AO NECKLESS</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<h3>5.4.3 Single and double accents</h3>
+
+<P>Single and double acute accents are
+quite common in Nordic script. A single acute accent is encoded with
+the suffix "acute" in ISO 8879, e.g. "&amp;aacute;", while double
+acute is encoded with the suffix "dblac". This usage is adopted
+here.</P>
+
+<P><strong>Unicode 4.0</strong> defines "a",
+"e", "i", "o", "u" and "y" with acute accents in the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1
+Supplement</A> range, and
+"&aelig;" and "&oslash;" in the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0180.pdf">Latin
+Extended-B</A> range. The
+vowels "o" and "u" are defined with double acute accents in the
+<A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0100.pdf">Latin
+Extended-A</A> range. Other
+accented characters must be encoded as a combination of a base line
+character and 0301 COMBINING ACUTE ACCENT or 030B COMBINING DOUBLE
+ACUTE ACCENT from the range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0300.pdf">Combining
+Diacritical Marks</A>. As
+explained in <A HREF="HB1-1_ch2_basics.html#2.2">ch.
+2.2</A> this "decomposed"
+encoding can also be used for the precomposed vowels mentioned
+above.<BR>
+</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aac.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aacute;<BR>
+         = a + &amp;combacute;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00E1<BR>
+         = 0061 + 0301</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER A WITH
+         ACUTE<BR>
+         = LATIN SMALL LETTER A + COMBINING ACUTE ACCENT</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/adac.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;adblac;<BR>
+         = a + &amp;combdblac;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>E425</strong><BR>
+         = 0061 + 030B</P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER A WITH DOUBLE
+         ACUTE</strong><BR>
+         = LATIN SMALL LETTER A + COMBINING DOUBLE ACUTE
+         ACCENT</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aaligac.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aaligacute;<BR>
+         = &amp;aalig; + &amp;combacute;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EFE1</strong><BR>
+         = <strong>EF91</strong>
+         + 0301</P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE AA WITH
+         ACUTE</strong><BR>
+         = <strong>LATIN
+         SMALL LIGATURE AA</strong>
+         + COMBINING ACUTE ACCENT</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aaligdac.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aaligdblac;<BR>
+         = &amp;aalig; + &amp;combdblac;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EFEB</strong><BR>
+         = <strong>EF91</strong>
+         + 0301</P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LIGATURE AA WITH DOUBLE
+         ACUTE</strong><BR>
+         = <strong>LATIN
+         SMALL LIGATURE AA</strong>
+         + COMBINING DOUBLE ACUTE ACCENT</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Double acute accent sometimes
+resembles a circumflex, "^", cf. <A HREF="HB1-1_literature.xhtml">Seip
+1954</A>, p. 145.</P>
+
+<P>Grave accent sporadically appears
+in comparatively young Icelandic manuscripts, especially "&egrave;",
+while double grave accent to our knowledge is not found in medieval
+Nordic script at all. If necessary, we suggest using the suffix
+"grave", e.g. "&amp;egrave;", for the single grave accent.</P>
+
+<P>&nbsp;</P>
+
+<h3>5.4.4 Single and double dots</h3>
+
+<P>Single and double dots are quite
+common in Old Norse script. Single dots appear over vowels as well as
+consonants, double dots usually only above vowels. In ISO 8879 the
+suffixes "dot" and "uml" (for "Umlaut") refer to single and double
+dots respectively. This usage is adopted here (although double dots
+in no are way restricted to the original mutated vowels).</P>
+
+<P><strong>Unicode 4.0</strong> defines a number
+of consonants with a single dot above, sc. "b", "d", "f", "h", "m",
+"n", "p", "r", "s", "t", "w", "x" and "long s", and also the vowel
+"y", all in the <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U1E00.pdf">Latin
+Extended Additional</A> range.
+Other dotted characters must be encoded as a combination of a base
+line character and 0307 COMBINING DOT ABOVE or 0308 COMBINING
+DIAERESIS from the range <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0300.pdf">Combining
+Diacritical Marks</A>. As is
+the case with accents, "decomposed" encoding can also be used for the
+precomposed characters mentioned here.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/yda.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;ydot;<BR>
+         = y + &amp;combdot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>1E8F<BR>
+         = 0079 + 0307</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER Y WITH
+         DOT ABOVE<BR>
+         = LATIN SMALL LETTER Y + COMBINING DOT ABOVE</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/odda.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;ouml;<BR>
+         = o + &amp;combuml;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00F6<BR>
+         = 006F + 0308</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER O WITH
+         DOUBLE DOT ABOVE<BR>
+         = LATIN SMALL LETTER O + COMBINING DIAERESIS</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Single dots also appear over a
+number of consonants:</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/kda.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;kdot;<BR>
+         = k + &amp;combdot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>E568</strong><BR>
+         = 006B + 0307</P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         SMALL LETTER K WITH DOT
+         ABOVE</strong> =<BR>
+         = LATIN SMALL LETTER K + COMBINING DOT ABOVE</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/gscapda.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;gscapdot;<BR>
+         = &amp;gscap; + &amp;combdot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>EF20</strong><BR>
+         = 0262 + 0307</P>
+      </TD>
+      <TD>
+         <P><strong>LATIN
+         LETTER SMALL CAPITAL G WITH DOT
+         ABOVE</strong><BR>
+         = LATIN LETTER SMALL CAPITAL G + COMBINING DOT
+         ABOVE</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Single dots above can be seen as a
+type of abbreviation, since the dot usually signifies gemination of
+the characters it is placed above. Cf. <A HREF="HB1-1_ch6_abbreviations.html#6.3.8">ch.
+6.3.8</A>.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="5.5"></A>&nbsp;</P>
+
+<h2>5.5 Complex characters</h2>
+
+<P>The discussion in ch. 5.2-5.4 has
+shown that entity names are built up in a strict sequence with a
+limited number of possible values. The syntax and inventory is shown
+in the table below. Note that not all slots need to be filled in; in
+most cases only one or two slots are used.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Base line
+         character</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Main type</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Variant</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Ligature</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Fixed
+         modification</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Loose
+         modification</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P>a<BR>
+         A</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>comb<BR>
+         enl<BR>
+         ins<BR>
+         run<BR>
+         scap<BR>
+         unc</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>long<BR>
+         rot</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>lig<BR>
+         ligred</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>ogon<BR>
+         slash</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>acute<BR>
+         dblac<BR>
+         dot<BR>
+         curl<BR>
+         grave<BR>
+         uml</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Please note that if there is a
+conflict between the standard ISO entities and the syntax suggested
+here, ISO entites should be preferred.</P>
+
+<P>On the basis of this table we can
+name and describe a number of complex characters (not necessarily
+occuring in medieval Nordic script). Some examples:</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Entity name</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aelighbr.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aeligogon;</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LIGATURE AE
+         WITH OGONEK</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/osthbrac.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;oslashogonacute;</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LETTER O WITH
+         STROKE AND OGONEK AND ACUTE</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/aelighbrdda.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;aeligogonuml;</P>
+      </TD>
+      <TD>
+         <P>LATIN SMALL LIGATURE AE
+         WITH OGONEK AND DIAERESIS</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+ <A NAME="5.6"></A>&nbsp;</P>
+
+<h2>5.6 Punctuation marks</h2>
+
+<P>The punctuation marks in medieval
+Nordic script are basically the same as in the Modern European
+languages, but their use was less consistent, and many manuscripts
+only used a single mark, the dot. There was also some special types
+of punctuation marks.</P>
+
+<P><strong>Unicode 4.0</strong> has the marks in
+the table below in the ranges <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0000.pdf">Basic
+Latin</A> and <A target="_blank" HREF="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1
+Supplement</A>, with the
+exception of the inverted semicolon, the pause mark and the
+triangular dots.</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD WIDTH="15%">
+         <P>Glyph</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Character</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>Unicode</P>
+      </TD>
+      <TD>
+         <P>Descriptive
+         name</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/dot.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>.</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>002E</P>
+      </TD>
+      <TD>
+         <P>FULL STOP</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/midpoint.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;middot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>00B7</P>
+      </TD>
+      <TD>
+         <P>MIDDLE DOT</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/comma.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>,</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>002C</P>
+      </TD>
+      <TD>
+         <P>COMMA</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/colon.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>:</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>003A</P>
+      </TD>
+      <TD>
+         <P>COLON</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/semicolon.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>003B</P>
+      </TD>
+      <TD>
+         <P>SEMICOLON</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/semiinv.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;punctelev;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F161</strong></P>
+      </TD>
+      <TD>
+         <P><strong>PUNCTUATION
+         MARK PUNCTUS ELEVATUS</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/questionmark.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>?</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>003F</P>
+      </TD>
+      <TD>
+         <P>QUESTION MARK</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/question8.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;quest8;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>E501</strong></P>
+      </TD>
+      <TD>
+         <P><strong>QUESTION
+         MARK HORIZONTAL 8 FORM</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/hyphen.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>-</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>002D</P>
+      </TD>
+      <TD>
+         <P>HYPHEN</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/solidus.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>/</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>002F</P>
+      </TD>
+      <TD>
+         <P>SOLIDUS</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/diacom.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;diacom;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F1F2</strong></P>
+      </TD>
+      <TD>
+         <P><strong>PUNCTUATION
+         MARK DIAERESIS ABOVE COMMA*</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <td colspan=3>
+      &nbsp;
+      </td>
+      <TD>
+         <P>* Cf. <A HREF="HB1-1_literature.xhtml">Hreinn
+         Benediktsson 1965</A>,
+         p. 95.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/pause.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;brevdot;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><strong>F1F3</strong></P>
+      </TD>
+      <TD>
+         <P><strong>PUNCTUATION
+         MARK BREVE ABOVE DOT*</strong></P>
+      </TD>
+   </TR>
+   <TR>
+      <td colspan=3>
+	  &nbsp;
+	  </td>
+      <TD>
+         <P>* Cf. <A HREF="HB1-1_literature.xhtml">Seip
+         1954</A>, p.
+         34.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="15%">
+         <P><IMG SRC="handbok_1/ch5/tridots.gif" WIDTH=40 HEIGHT=50 ALIGN=bottom></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>&amp;there4;</P>
+      </TD>
+      <TD WIDTH="15%">
+         <P>2234</P>
+      </TD>
+      <TD>
+         <P>PUNCTUATION MARK
+         UPWARDS-POINTING TRIANGULAR DOTS*</P>
+      </TD>
+   </TR>
+   <TR>
+      <td colspan=3>
+	  &nbsp;
+	  </td>
+      <TD>
+         <P>* Cf. <A HREF="HB1-1_literature.xhtml">Seip
+         1954</A>, p.
+         34.</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+ <A NAME="5.7"></A>&nbsp;</P>
+
+<h2>5.7 List of characters</h2>
+
+<P>An extensive list of characters
+(including punctuation and abbreviation marks) is found in the
+<A HREF="HB1-1_charlist.xhtml">character
+list</A>.</P>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

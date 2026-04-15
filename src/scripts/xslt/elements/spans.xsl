@@ -61,9 +61,9 @@
                 <xsl:text>&lt;/em&gt;</xsl:text>
             </xsl:when>
             <xsl:when test="@rend='glyph'">
-                <xsl:text>&lt;Glyph&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&lt;/Glyph&gt;</xsl:text>
+                <xsl:if test="string() => string-length()">
+                    <xsl:text expand-text="true">&lt;Glyph&gt;{string()}&lt;/Glyph&gt;</xsl:text>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="@rend='red' or @rend='blue'">
                 <xsl:text expand-text="true">&lt;HI color="{@rend}"&gt;</xsl:text>

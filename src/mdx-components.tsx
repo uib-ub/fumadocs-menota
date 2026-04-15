@@ -8,6 +8,7 @@ import Glyph from '@/components/glyph';
 import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
 import Quote from '@/components/quote';
+import UnderConstruction from '@/components/underconstruction';
 import { Att, E, Val } from '@/components/xml';
 import type { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
@@ -29,6 +30,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     LitItem,
     Link,
     Quote,
+    UnderConstruction,
     Val,
     ...components,
   };
