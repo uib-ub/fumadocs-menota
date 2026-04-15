@@ -8,7 +8,7 @@ author:
  - Valerio Nazario Rossetti
  - Ekaterina Vybornova
 changeLog:
- - date: 2026-03-19
+ - date: 2026-03-23
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -85,7 +85,7 @@ look like this:
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/metadata1.png" alt="MenotaBlitz/metadata1.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/metadata1.png" alt="MenotaBlitz/metadata1.png"/>
 
 </Figure>
 
@@ -98,7 +98,7 @@ fol).</Caption>
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/metadata2.png" alt="MenotaBlitz/metadata2.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/metadata2.png" alt="MenotaBlitz/metadata2.png"/>
 
 </Figure>
 
@@ -122,24 +122,44 @@ by Paola Peratello.
 
 In MBC, document structure is encoded using the following tags:
 
-\{div\} ... \{/div\}“division”: These mark the beginning and end of higher level document structures, such as the text itself, sections, or chapters. div tags may be nested within one another.\{p\} ... \{/p\}“paragraph”: These mark the beginning and end of paragraphs and are only permitted within \{div\} ... \{/div\} tags. Multiple p elements are permitted within the same div element, but p elements may not be nested within one another.\{head\} ... \{/head\}“head”: These mark the beginning and end of chapter headings. A head element may only be used at the very beginning of a div element. There may never be more than one head element within the same div element and head elements may not be nested within one another.
+<table>
+<tbody>
+<tr>
+<td>`{div} ... {/div}`</td>
+<td>“division”: These mark the beginning and end of higher level document structures, such as the text itself, sections, or chapters. `div` tags may be nested within one another.</td>
+</tr>
+<tr>
+<td>`{p} ... {/p}`</td>
+<td>“paragraph”: These mark the beginning and end of paragraphs and are only permitted within `{div} ... {/div}` tags. Multiple `p` elements are permitted within the same `div` element, but `p` elements may not be nested within one another.</td>
+</tr>
+<tr>
+<td>`{head} ... {/head}`</td>
+<td>“head”: These mark the beginning and end of chapter headings. A `head` element may only be used at the very beginning of a `div` element. There may never be more than one `head` element within the same `div` element and `head` elements may not be nested within one another.</td>
+</tr>
+</tbody>
+</table>
+
 
 
 Note that **all** transcribed text **must** be
-enclosed within either a p or a head
+enclosed within either a `p` or a `head`
 element!
 
 Thus, the following is the correct hierarchical order of the above listed
-elements:\{div\}
-\{head\} ... \{/head\}
-\{p\} ... \{/p\}
-\{/div\}
+elements:
+```
+{div}
+{head} ... {/head}
+{p} ... {/p}
+{/div}
+```
+
 
 
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/SKB-A-120-1r.png" alt="MenotaBlitz/SKB-A-120-1r.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/SKB-A-120-1r.png" alt="MenotaBlitz/SKB-A-120-1r.png"/>
 
 </Figure>
 
@@ -147,153 +167,157 @@ elements:\{div\}
 
 <Caption title="Ill. XXX">. SKB A 120, fol. 1r.</Caption>
 
-In the case of a fragment starting in medias res, \{head\} is not used: instead, \{div\} is followed by
-\{p\}. For instance, the first two lines of fol. 1r from
-can be encoded in MBC as follows:\{div\}
-\{p\} 
+In the case of a fragment starting in medias res, `{head}` is not used: instead, `{div}` is followed by
+`{p}`. For instance, the first two lines of fol. 1r from
+can be encoded in MBC as follows:
+```
+{div}
+{p} 
 :1r:
 :1: g : i : himiriki : gesus : 
 kruzifiz:2:sus : miild : moþær : te : mik : þæt : iak : 
-\{/p\}
-\{/div\}
+{/p}
+{/div}
+```
+
 
 Upon export, this will result in the following Menota XML:
 ```xml
-<div> 
-   <p> 
-      <pb ed="ms" n="1r"/> 
-      <lb ed="ms" n="1"/> 
-      <w> 
-         <choice> 
-            <me:facs>&gMD;</me:facs> 
-            <me:dipl>g</me:dipl> 
-         </choice> 
-      </w> 
-      <pc> 
-         <choice> 
-            <me:facs>&twodotPM;</me:facs> 
-            <me:dipl>:</me:dipl> 
-         </choice> 
-      </pc> 
-      <w> 
-         <choice> 
-            <me:facs>&iGE;</me:facs> 
-            <me:dipl>i</me:dipl> 
-         </choice> 
+<div>
+   <p>
+      <pb ed="ms" n="1r"/>
+      <lb ed="ms" n="1"/>
+      <w>
+         <choice>
+            <me:facs>&gMD;</me:facs>
+            <me:dipl>g</me:dipl>
+         </choice>
       </w>
       <pc>
          <choice>
-            <me:facs>&twodotPM;</me:facs> 
+            <me:facs>&twodotPM;</me:facs>
             <me:dipl>:</me:dipl>
          </choice>
       </pc>
-      <w> 
+      <w>
          <choice>
-            <me:facs>&hYGL;&iGE;&mYGL;&iGE;&rGE;&iGE;&kYG;&iGE;</me:facs> 
-            <me:dipl>himiriki</me:dipl> 
-         </choice> 
-      </w>
-      <pc> 
-         <choice> 
-            <me:facs>&twodotPM;</me:facs> 
-            <me:dipl>:</me:dipl> 
+            <me:facs>&iGE;</me:facs>
+            <me:dipl>i</me:dipl>
          </choice>
-      </pc> 
-      <w> 
+      </w>
+      <pc>
          <choice>
-            <me:facs>&gMD;&eMD;&sYGL;&uGE;&sYGL;</me:facs> 
-            <me:dipl>gesus</me:dipl> 
-         </choice> 
-      </w> 
-      <pc> 
-         <choice> 
-            <me:facs>&twodotPM;</me:facs> 
+            <me:facs>&twodotPM;</me:facs>
             <me:dipl>:</me:dipl>
-         </choice> 
-      </pc> 
+         </choice>
+      </pc>
+      <w>
+         <choice>
+            <me:facs>&hYGL;&iGE;&mYGL;&iGE;&rGE;&iGE;&kYG;&iGE;</me:facs>
+            <me:dipl>himiriki</me:dipl>
+         </choice>
+      </w>
+      <pc>
+         <choice>
+            <me:facs>&twodotPM;</me:facs>
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
+      <w>
+         <choice>
+            <me:facs>&gMD;&eMD;&sYGL;&uGE;&sYGL;</me:facs>
+            <me:dipl>gesus</me:dipl>
+         </choice>
+      </w>
+      <pc>
+         <choice>
+            <me:facs>&twodotPM;</me:facs>
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
       <w>
          <choice>
             <me:facs>&kYG;&rGE;&uGE;&zMDsht;&iGE;&fGE;&iGE;&zMDsht;<lb 
-               ed="ms" n="2"/>&sYGL;&uGE;&sYGL;</me:facs> 
-            <me:dipl>kruzifiz<lb ed="ms" n="2"/>sus</me:dipl> 
-         </choice> 
+               ed="ms" n="2"/>&sYGL;&uGE;&sYGL;</me:facs>
+            <me:dipl>kruzifiz<lb ed="ms" n="2"/>sus</me:dipl>
+         </choice>
       </w>
-      <pc>
-         <choice> 
-            <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
-         </choice>
-      </pc>
-      <w>
-         <choice> 
-            <me:facs>&mYGL;&iGE;&iGE;&lGE;&dMD;</me:facs>
-            <me:dipl>miild</me:dipl>
-         </choice>
-      </w> 
       <pc>
          <choice>
             <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
-         </choice> 
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
+      <w>
+         <choice>
+            <me:facs>&mYGL;&iGE;&iGE;&lGE;&dMD;</me:facs>
+            <me:dipl>miild</me:dipl>
+         </choice>
+      </w>
+      <pc>
+         <choice>
+            <me:facs>&twodotPM;</me:facs>
+            <me:dipl>:</me:dipl>
+         </choice>
       </pc>
       <w>
          <choice>
             <me:facs>&mYGL;&oYG;&thGE;&aeMD;&rGE;</me:facs>
-            <me:dipl>moþær</me:dipl> 
-         </choice> 
+            <me:dipl>moþær</me:dipl>
+         </choice>
       </w>
       <pc>
-         <choice> 
+         <choice>
             <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
-         </choice> 
-      </pc> 
-      <w> 
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
+      <w>
          <choice>
             <me:facs>&tYG;&eMD;</me:facs>
-            <me:dipl>te</me:dipl> 
+            <me:dipl>te</me:dipl>
          </choice>
-      </w> 
-      <pc> 
-         <choice> 
+      </w>
+      <pc>
+         <choice>
             <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
-         </choice> 
-      </pc> 
-      <w> 
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
+      <w>
          <choice>
             <me:facs>&mYGL;&iGE;&kYG;</me:facs>
             <me:dipl>mik</me:dipl>
-         </choice> 
+         </choice>
       </w>
       <pc>
          <choice>
             <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
-         </choice> 
+            <me:dipl>:</me:dipl>
+         </choice>
       </pc>
       <w>
          <choice>
             <me:facs>&thGE;&aeMD;&tYG;</me:facs>
             <me:dipl>þæt</me:dipl>
-         </choice> 
-      </w> 
-      <pc> 
-         <choice>
-            <me:facs>&twodotPM;</me:facs>
-            <me:dipl>:</me:dipl> 
          </choice>
-      </pc>
-      <w> 
-         <choice>
-            <me:facs>&iGE;&aYG;&kYG;</me:facs>
-            <me:dipl>iak</me:dipl> 
-         </choice> 
-      </w> 
+      </w>
       <pc>
          <choice>
-             <me:facs>&twodotPM;</me:facs>
-             <me:dipl>:</me:dipl> 
+            <me:facs>&twodotPM;</me:facs>
+            <me:dipl>:</me:dipl>
+         </choice>
+      </pc>
+      <w>
+         <choice>
+            <me:facs>&iGE;&aYG;&kYG;</me:facs>
+            <me:dipl>iak</me:dipl>
+         </choice>
+      </w>
+      <pc>
+         <choice>
+            <me:facs>&twodotPM;</me:facs>
+            <me:dipl>:</me:dipl>
          </choice>
       </pc>
    </p>
@@ -301,20 +325,20 @@ Upon export, this will result in the following Menota XML:
 ```
 
 
-In this example, \{div\} marks the start of the document,
+In this example, `{div}` marks the start of the document,
 more specifically the first chapter (which could be more precisely specified as
 `<div type="chapter" n="1">{:xml}` in Menota
-XML) starting in medias res on fol. 1r, and \{/div\} marks its end. The content is then placed between the two: \{p\} marks the beginning first paragraph within chapter 1 and
-\{/p\} marks its end. The same would apply to the
+XML) starting in medias res on fol. 1r, and `{/div}` marks its end. The content is then placed between the two: `{p}` marks the beginning first paragraph within chapter 1 and
+`{/p}` marks its end. The same would apply to the
 following paragraphs of chapter 1.
 
-The beginning of both div and p may
+The beginning of both `div` and `p` may
 coincide with the beginning of the page and/or line. However, a document’s logical
 structure (its division into chapters, paragraphs, section etc.) is independent of
 its physical structure (its division into pages and lines). Therefore, the two are
 encoded separately.
 
-MBC div elements are translated in Menota XML as
+MBC `div` elements are translated in Menota XML as
 unspecified `<div>{:xml}` elements. After export,
 it is recommended to specify these further with attribute like <Att>type</Att>
 (<Val>chapter</Val>, <Val>section</Val>) or <Att>n</Att> (<Val>1</Val>,
@@ -343,9 +367,9 @@ beginning of a new line:
 
 | MenotaBlitz Code | Menota XML | Explanation |
 |-----|-----|-----|
-| :2r: | `<pb ed="ms" n="2r"/>{:xml}` | for the beginning of page “2r” |
-| :3: | `<lb ed="ms" n="3"/>{:xml}` | for the beginning of line “3” |
-| :10v: :1: | `<pb ed="ms" n="10v"/> <lb ed="ms" n="1"/>{:xml}` | for the beginning of page “10v”, which naturally starts with line “1” |
+| `:2r:` | `<pb ed="ms" n="2r"/>{:xml}` | for the beginning of page “2r” |
+| `:3:` | `<lb ed="ms" n="3"/>{:xml}` | for the beginning of line “3” |
+| `:10v: :1:` | `<pb ed="ms" n="10v"/> <lb ed="ms" n="1"/>{:xml}` | for the beginning of page “10v”, which naturally starts with line “1” |
 
 
 Any text of a manuscript can be located on a specific page and on a specific
@@ -358,7 +382,7 @@ in 4.4.2 below).
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/HP-34-4to-86r,1-3.png" alt="MenotaBlitz/HP-34-4to-86r,1-3.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/HP-34-4to-86r,1-3.png" alt="MenotaBlitz/HP-34-4to-86r,1-3.png"/>
 
 </Figure>
 
@@ -368,15 +392,19 @@ in 4.4.2 below).
 1-3.</Caption>
 
 Thus, the first three lines of fol. 86r in Holm perg 34 4to could be
-transcribed in like this in MBC:\{div\}
-\{p\} [...]
+transcribed in like this in MBC:
+```
+{div}
+{p} [...]
 :86r:
 :1: klofa ín [ln:S]tyri_m(&rsup;/aðr) skal leiðsogu_ma(n)n fa en aller tulk . [ln:A]llar
 :2: lester skulu iam_sto&rrot;ar v(&er;/er)a at fullu fare nema sumum hasetom
 :3: se skilld mi(n)ni . lest eða meiri . [ln:S]vo skal hvæ(&er;/r)r . hafa margra punda
 [...]
-\{/p\}
-\{/div\}
+{/p}
+{/div}
+```
+
 
 This translates into the following Menota XML (irrelevant sections cut
 out):
@@ -442,7 +470,7 @@ space within the word.
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/AM-619-4to-4v,8-9.png" alt="MenotaBlitz/AM-619-4to-4v,8-9.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/AM-619-4to-4v,8-9.png" alt="MenotaBlitz/AM-619-4to-4v,8-9.png"/>
 
 </Figure>
 
@@ -453,7 +481,11 @@ space within the word.
 
 See the example on page 4v of AM 619 4to, where the word “huggir” starts
 at the end of line 8, but continues at the beginning of line 9. In MBC, you
-transcribe this as follows:[...] þes er hug-:9:gir o&rrot;ð mín [...]
+transcribe this as follows:
+```
+[...] þes er hug-:9:gir o&rrot;ð mín [...]
+```
+
 
 This will translate into the desired Menota XML:
 ```xml
@@ -498,7 +530,7 @@ this export to work properly (cf. 4.9).
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/HP-34-4to-33r,27-28.png" alt="MenotaBlitz/HP-34-4to-33r,27-28.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/HP-34-4to-33r,27-28.png" alt="MenotaBlitz/HP-34-4to-33r,27-28.png"/>
 
 </Figure>
 
@@ -511,7 +543,7 @@ this export to work properly (cf. 4.9).
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/HP-34-4to-33v,1-2.png" alt="MenotaBlitz/HP-34-4to-33v,1-2.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/HP-34-4to-33v,1-2.png" alt="MenotaBlitz/HP-34-4to-33v,1-2.png"/>
 
 </Figure>
 
@@ -523,7 +555,11 @@ this export to work properly (cf. 4.9).
 The same logic applies if there is a page break within a word, as in Holm perg
 34 4to [HP-34-4to-33r,27-28.png, HP-34-4to-33v,1-2], where the break from page
 33r to 33v falls in middle of the word “heimanfylgia”. Use the usual MBC
-without any whitespace:[...] en heí:33v::1:man_fylgia hennar [...]
+without any whitespace:
+```
+[...] en heí:33v::1:man_fylgia hennar [...]
+```
+
 
 This will translate into the following Menota XML (cf. chapter 5.5 in the
 Menota handbook):
@@ -561,7 +597,7 @@ ch. 16.3 in the Menota handbook):
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/AM-619-4to-47r,14-17.png" alt="MenotaBlitz/AM-619-4to-47r,14-17.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/AM-619-4to-47r,14-17.png" alt="MenotaBlitz/AM-619-4to-47r,14-17.png"/>
 
 </Figure>
 
@@ -585,16 +621,20 @@ elements.
 
 In MBC this same sectioning is achieved by separating line number and section
 by a decimal point, so that the following would be a correct transcription of
-the example from the Menota handbook:[...]
+the example from the Menota handbook:
+```
+[...]
 :15: (&et;/ok) rikir með fæðr (&et;/ok) hælgum anda æin guð utan enda ame&nscap; . 
-\{/p\} 
-\{/div\}
-\{div\} 
-\{head\} :16.2: Jn+dedicatione templ()i . s(&er;/er)mo . \{/head\}
-\{p\}
+{/p} 
+{/div}
+{div} 
+{head} :16.2: Jn+dedicatione templ()i . s(&er;/er)mo . {/head}
+{p}
 :16.1: [i:S]alomon k(onon)gr gerðe fyrst
 :17: mysteri guði . (&et;/ok) bauð lyð sinu(m) at halda hotið þa er
 [...]
+```
+
 
 See sections 4.1, 4.3, 4.6 on how to encode document structure, white space,
 and abbreviations and respectively.
@@ -608,7 +648,7 @@ line break tags.
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/Klepp.png" alt="MenotaBlitz/Klepp.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/Klepp.png" alt="MenotaBlitz/Klepp.png"/>
 
 </Figure>
 
@@ -619,16 +659,20 @@ line break tags.
 The (drawing of the) runic inscription from the church in Klepp [Klepp.png],
 for instance, starts logically on its third line, then continues on the first
 and ends on the second. In MBC it would therefore correctly be encoded like
-this:\{div\}
-\{p\}
+this:
+```
+{div}
+{p}
 :1r:
-:3: artiþ : er &threedotPM; ikib\{eme\{i\}\}arh[lig:ar] : kara:totr : þr\{sic\{u\}cor\{im\}\} : 
-no\{eme\{to\}\}m : æpter : krosmess\{sic\{t\}cor\{o\}\} : um . uar\{sic\{s\}cor\{e\}t
-:1: &crosPM; huær . sa : maþ\{ill 1\}r &threedotPM; runar : þez\{eme\{ar\}\} : sar : þa : 
-sy\{ill 2\} : bater : no\{ill 1\}er : fyrer : søl :
-:2: heþnar : h\{sic\{a\}cor\{i\}\}albe : kuþ : þæim : er : suæ : kerer
-\{/p\}
-\{/div\}
+:3: artiþ : er &threedotPM; ikib{eme{i}}arh[lig:ar] : kara:totr : þr{sic{u}cor{im}} : 
+   no{eme{to}}m : æpter : krosmess{sic{t}cor{o}} : um . uar{sic{s}cor{e}t
+:1: &crosPM; huær . sa : maþ{ill 1}r &threedotPM; runar : þez{eme{ar}} : sar : þa : 
+   sy{ill 2} : bater : no{ill 1}er : fyrer : søl :
+:2: heþnar : h{sic{a}cor{i}}albe : kuþ : þæim : er : suæ : kerer
+{/p}
+{/div}
+```
+
 
 ### 4.5 Special glyphs
 
@@ -648,30 +692,30 @@ All abbreviations present in Old Norse manuscripts and fragments written in the
 Latin Script may be encoded in the same way. I will give three examples with
 different abbreviation marks (remember to follow the [MUFI character
 recommendation](https://folk.uib.no/hnooh/mufi/specs/index.html)). As a general rule all the abbreviations are encoded
-this way: (abbreviation-mark/expansion), i.e. in
+this way: `(abbreviation-mark/expansion)`, i.e. in
 parentheses the abbreviation mark and its expansion, separated by a forward
 slash.
 
-Here, abbreviation-mark represents the symbol (or the
+Here, `abbreviation-mark` represents the symbol (or the
 XML-entity representing it) as it appears in the manuscript and how it will
-appear in the facsimile version, while expansion is the
+appear in the facsimile version, while `expansion` is the
 expanded reading of the abbreviation (which is how it will appear in a
 diplomatic transcription, usually in italics). If a whole word is represented
 by an abbreviation mark, there must be a space both preceding and following the
-(abbreviation-mark/expansion) sequence.
+`(abbreviation-mark/expansion)` sequence.
 
 If only part of a word is represented by an abbreviation mark, a space
-following the (abbreviation-mark/expansion) sequence
+following the `(abbreviation-mark/expansion)` sequence
 must be put if the abbreviation occurs at the end of the word (while a space
 preceding it must be in put if the abbreviation occurs at the beginning of the
 word). If the abbreviation only represents the middle part of a word, there
-must not be any space either preceding or following the (abbreviation-mark/expansion) sequence.
+must not be any space either preceding or following the `(abbreviation-mark/expansion)` sequence.
 
 
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr01.png" alt="MenotaBlitz/abbr01.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr01.png" alt="MenotaBlitz/abbr01.png"/>
 
 </Figure>
 
@@ -683,7 +727,11 @@ The word here is konungr. The only letter written explicitly is
 the first, “k”. The symbol on top is the common zigzag
 abbreviation mark (most typically used to abbreviate “er”), which in this
 case stands for the rest of the word. As such, the word can be encoded this
-way:k(&er;/onungr)
+way:
+```
+k(&er;/onungr)
+```
+
 
  This will translate into the following Menota XML: 
 ```xml
@@ -700,7 +748,7 @@ way:k(&er;/onungr)
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr02.png" alt="MenotaBlitz/abbr02.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr02.png" alt="MenotaBlitz/abbr02.png"/>
 
 </Figure>
 
@@ -714,7 +762,11 @@ manuscripts, it stands for the conjunction ok, which might be
 written “ok”, “oc”, or “og” when not abbreviated in any given
 manuscript. Assuming that our scribe writes the word “ok” when it is not
 abbreviated, we want the the abbreviation to appear as such in the diplomatic
-transcription and we can transcribe as follows:(&etslash;/ok)
+transcription and we can transcribe as follows:
+```
+(&etslash;/ok)
+```
+
 
 This translates into the following Menota XML:
 ```xml
@@ -731,7 +783,7 @@ This translates into the following Menota XML:
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr03.png" alt="MenotaBlitz/abbr03.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr03.png" alt="MenotaBlitz/abbr03.png"/>
 
 </Figure>
 
@@ -741,9 +793,13 @@ This translates into the following Menota XML:
 
 This is the ra abbreviation mark. It is usually expanded as
 “ra”, thus rendering the reading “fram” for our example, which can
-be encoded as follows: f(&ra;/ra)m
+be encoded as follows: 
+```
+f(&ra;/ra)m
+```
 
-This translates into the following Menota XML (given that one has defined f as representative of insular “ꝼ” in the
+
+This translates into the following Menota XML (given that one has defined `f` as representative of insular “ꝼ” in the
 grapheme inventory, cf. 4.9):
 ```xml
 <w>
@@ -761,14 +817,14 @@ The so-called nasal stroke, a bar over the preceding letter, encoded by the
 entity `&bar;{:xml}`, is by far the most
 common abbreviation mark in Old Norse manuscript material. Therefore,
 MenotaBlitz code offers a short-hand transcription alternative for this
-particular symbol: Instead of (&bar;/expansion), one can use (expansion) to the same effect. The parser will interpret
+particular symbol: Instead of `(&bar;/expansion)`, one can use `(expansion)` to the same effect. The parser will interpret
 both in exactly the same way. 
 
 
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr04.png" alt="MenotaBlitz/abbr04.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr04.png" alt="MenotaBlitz/abbr04.png"/>
 
 </Figure>
 
@@ -778,12 +834,20 @@ both in exactly the same way.
 
 The word in this case is konungi, but the two letters in the
 middle, “nu”, are abbreviated by a bar. It can therefore be encoded as
-follows:ko(nu)ngi
+follows:
+```
+ko(nu)ngi
+```
 
-which is a short-hand for the complete synonymous:ko(&bar;/nu)ngi
+
+which is a short-hand for the complete synonymous:
+```
+ko(&bar;/nu)ngi
+```
+
 
 Either one translates into the following Menota XML (provided that one has
-defined i as representative of dotless “ı”
+defined `i` as representative of dotless “ı”
 in the grapheme inventory, cf. 4.9):
 ```xml
 <w>
@@ -799,7 +863,7 @@ in the grapheme inventory, cf. 4.9):
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr05.png" alt="MenotaBlitz/abbr05.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr05.png" alt="MenotaBlitz/abbr05.png"/>
 
 </Figure>
 
@@ -808,7 +872,11 @@ in the grapheme inventory, cf. 4.9):
 <Caption title="Ill. XXX">.</Caption>
 
 The word in this case is the pronoun hann. It can be encoded as
-follows:h(ann)
+follows:
+```
+h(ann)
+```
+
 
 This translates into the following Menota XML:
 ```xml
@@ -830,6 +898,10 @@ thus telling the parser that an abbreviation mark does not have an
 expansion.
 
 Example.
+```
+
+```
+
 
 This translates into the following Menota XML:
 ```xml
@@ -857,7 +929,7 @@ See the following instance of the word honum:
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/abbr06.png" alt="MenotaBlitz/abbr06.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/abbr06.png" alt="MenotaBlitz/abbr06.png"/>
 
 </Figure>
 
@@ -866,7 +938,11 @@ See the following instance of the word honum:
 <Caption title="Ill. XXX">.</Caption>
 
 The bar does not cross the “h”, but is above the “m”. This can be
-correctly transcribed as follows:h(/onu)m()
+correctly transcribed as follows:
+```
+h(/onu)m()
+```
+
 
 This translates into the following Menota XML:
 ```xml
@@ -879,7 +955,7 @@ This translates into the following Menota XML:
 ```
 
 
-Note that the sequence () translates into a nasal stroke
+Note that the sequence `()` translates into a nasal stroke
 on the facsimile level without expansion!
 
 This way, the facsimile edition will have the bar above the “m”, but the
@@ -888,8 +964,8 @@ abbreviated letters in italics will appear in the right position following the
 
 We can conclude:
 
-- Diplomatic expansions that do not directly correspond to any abbreviation marks are encoded as (/expansion).
-- An abbreviation mark that does not (directly) correspond to any expansion, is encoded as (abbreviation-mark/) or as () if this abbreviation mark is a nasal stroke.
+- Diplomatic expansions that do not directly correspond to any abbreviation marks are encoded as `(/expansion)`.
+- An abbreviation mark that does not (directly) correspond to any expansion, is encoded as `(abbreviation-mark/)` or as `()` if this abbreviation mark is a nasal stroke.
 
 ### 4.7 Interpretation and intervention
 
@@ -904,36 +980,52 @@ suppressing text.
 
 All these interventions are encoded using a similar syntax, being enclosed by a
 pair of opening and closing tags. The opening tag always consists of an open curly
-bracket: \{, the tag name and another open curly bracket.
-Two of these tags (add and del) may
+bracket: `{`, the tag name and another open curly bracket.
+Two of these tags (`add` and `del`) may
 have an optional modifier between the tag name and the second open curly bracket,
 separated from the tag name by a space. The closing tag always consists of two
-closed curly brackes: \}\}.
+closed curly brackes: `}}`.
 
-Two tags (gap and ill) may also be
+Two tags (`gap` and `ill`) may also be
 empty, consisting only of the tag name enclosed in curly brackets.
 These may have a modifier, as well, separated from the tag name by a space.
 
-The sic/cor tag has a slightly different syntax.
+The `sic/cor` tag has a slightly different syntax.
 
 Note that the use of space is crucial when transcribing in MBC. If a tag applies
 to one or more characters within a word or numeral, no space should be used
 following the opening tag or preceding the closing tag. In this example, the two
-characters “ia” are encoded as unclear (by way of the ucl tag) and they are entered with no space on either side within the
-curly brackets:s\{ucl\{ia\}\}lfr
+characters “ia” are encoded as unclear (by way of the `ucl` tag) and they are entered with no space on either side within the
+curly brackets:
+```
+s{ucl{ia}}lfr
+```
+
 
 Preceding the opening tag, a space must be used if (and only if) the tag applies
 to the first letter(s) of the word. Conversely, a space following the the closing
 tag must be used if (and only if) the tag applies to the last letter(s) of the
 word. In the example below, the last letter of “sinum” and the first two
-letters of “bonda” are marked as being restored readings:m(&sem;/eð) sinu\{res\{m\}\} \{res\{b\}\}onda
+letters of “bonda” are marked as being restored readings:
+```
+m(&sem;/eð) sinu{res{m}} {res{b}}onda
+```
+
 
 In this example, however, a whole word, “søkia”, has been encoded as unclear
 by the transcriber in the sequence “ok søkia eigi”. The unclear word should
-be entered with a space on either side of the opening and closing tags:ok \{ucl\{ søkia \}\} eigi]]
+be entered with a space on either side of the opening and closing tags:
+```
+ok {ucl{ søkia }} eigi]]
+```
+
 
 Note the use of space around the preceding and following word. The same applies to
-sequences of whole words that the transcriber wants to enclose in a tag:bæðe runum \{add rig\{ (&et;/ok) latinustofu(m) \}\}
+sequences of whole words that the transcriber wants to enclose in a tag:
+```
+bæðe runum {add rig{ (&et;/ok) latinustofu(m) }}
+```
+
 
 Here, the two words “(ok) latinustofu(m)” are marked as being added in the
 right margin.
@@ -950,7 +1042,11 @@ unclear but can be read with some degree of certainty, they are placed
 within the <E>unclear</E> element in Menota XML. For example, in the runic
 inscription N 273, the second character in the word
 “ᚱᛆᛁᛌᛐᛁ” cannot be read with full
-certainty. This would be the transcription in MBC, using the ucl tag (for “unclear”):r\{ucl\{a\}\}isti
+certainty. This would be the transcription in MBC, using the `ucl` tag (for “unclear”):
+```
+r{ucl{a}}isti
+```
+
 
 MenotaBlitz will tranlate this into the following Menota XML:
 ```xml
@@ -963,10 +1059,14 @@ MenotaBlitz will tranlate this into the following Menota XML:
 ```
 
 
-In MBC, if the character is downright illegible, the tag ill (for “illegible”) should be used, supplied with the number
+In MBC, if the character is downright illegible, the tag `ill` (for “illegible”) should be used, supplied with the number
 of characters that seem to be missing. In the following example from N 540,
 the final character is regarded as illegible, and this is stated by the
-number 1:furu\{ill 1\}
+number 1:
+```
+furu{ill 1}
+```
+
 
 This will produce the following Menota XML:
 ```xml
@@ -983,12 +1083,16 @@ According to conventions, the dotted may be displayed by the stylesheet as a
 such (Menota texts), an asterisk (Runic inscriptions), or possibly a number
 of dots. The dotted circle used here should be regarded as an intermediate
 representation in the Menota XML. Note that the number of dotted circle
-corresponds to the value given in the MBC empty ill
+corresponds to the value given in the MBC empty `ill`
 tag.
 
 If possible, the transcriber may want to try and restore the reading. In
-MBC, this is done by inserting the restored reading in an ill tag. In this example, the encoder has decided that the final,
-illegible character most likely is to be restored as an “m”:furu\{ill\{m\}\}
+MBC, this is done by inserting the restored reading in an `ill` tag. In this example, the encoder has decided that the final,
+illegible character most likely is to be restored as an “m”:
+```
+furu{ill{m}}
+```
+
 
 This will produce the following Menota XML:
 ```xml
@@ -1008,11 +1112,15 @@ further details.
 
 Lacunas are a particular challenge for the transcriber, since it in many
 cases is difficult to estimate their size. In MBC, a lacuna should be
-encoded with the empty gap tag whenever the
+encoded with the empty `gap` tag whenever the
 transcriber is unable to restore the text and only wants to state that there
 is a lacuna in the text. In this example from the runic inscription N 63,
 there is a gap with the width of two characters between “risþtu” and
-“tir”:risþtu \{gap 2\} tir
+“tir”:
+```
+risþtu {gap 2} tir
+```
+
 
 Note that in MenotaBlitz Code the number refers to the presumed number of
 lost characters.
@@ -1020,7 +1128,7 @@ lost characters.
 Thus it will produces the following In Menota XML, with the empty
 <E>gap/</E> element, supplemented by a <Att>unit</Att> attribute with
 the value <Val>char</Val> (for “characters”) and a <Att>quantity</Att>
-attribute with value corresponding to the modifier given in the MBC gap tag.
+attribute with value corresponding to the modifier given in the MBC `gap` tag.
 ```xml
 <w>
    <choice>
@@ -1039,7 +1147,7 @@ attribute with value corresponding to the modifier given in the MBC gap tag.
 
 
 If the transcriber would like to restore the missing text, this should be
-done using the res tag described in 4.7.3 below. In
+done using the `res` tag described in 4.7.3 below. In
 this case, the <E>gap/</E> element will be generated automatically on the
 Menota XML facsimile level.
 
@@ -1067,20 +1175,24 @@ was responsible for the addition. We recommend using the <E>add</E>
 element in all cases. One may, however, specify the position of the
 addition.
 
-The table below lists all six possible modifiers of the MBC add tag and their correspondences in Menota XML:
+The table below lists all six possible modifiers of the MBC `add` tag and their correspondences in Menota XML:
 
 | MenotaBlitz code | Menota XML |
 |-----|-----|
-| \{add\{...\}\} | `<add>...</add>{:xml}` |
-| \{add sup\{...\}\} | `<add place="supralinear">...</add>{:xml}` |
-| \{add inl\{...\}\} | `<add place="inline">...</add>{:xml}` |
-| \{add lef\{...\}\} | `<add place="margin-left">...</add>{:xml}` |
-| \{add rig\{...\}\} | `<add place="margin-right">...</add>{:xml}` |
-| \{add top\{...\}\} | `<add place="margin-top">...</add>{:xml}` |
-| \{add bot\{...\}\} | `<add place="margin-bottom">...</add>{:xml}` |
+| `{add{...}}` | `<add>...</add>{:xml}` |
+| `{add sup{...}}` | `<add place="supralinear">...</add>{:xml}` |
+| `{add inl{...}}` | `<add place="inline">...</add>{:xml}` |
+| `{add lef{...}}` | `<add place="margin-left">...</add>{:xml}` |
+| `{add rig{...}}` | `<add place="margin-right">...</add>{:xml}` |
+| `{add top{...}}` | `<add place="margin-top">...</add>{:xml}` |
+| `{add bot{...}}` | `<add place="margin-bottom">...</add>{:xml}` |
 
 
-This is an example of an addition transcribed in MBC, using the add tag (for “addition”) with the modifier sup (for “supralinear”):mis\{add sup\{k\}\}u(n)n
+This is an example of an addition transcribed in MBC, using the `add` tag (for “addition”) with the modifier `sup` (for “supralinear”):
+```
+mis{add sup{k}}u(n)n
+```
+
 
 This translates into the following Menota XML:
 ```xml
@@ -1106,16 +1218,20 @@ one of three modifiers in MBC:
 
 | MenotaBlitz code | Menota XML |
 |-----|-----|
-| \{del\{...\}\} | `<del>...</del>{:xml}` |
-| \{del era\{...\}\} | `<del rend="erasure">...</del>{:xml}` |
-| \{del ovs\{...\}\} | `<del rend="overstrike">...</del>{:xml}` |
-| \{del sub\{...\}\} | `<del rend="subpunction">...</del>{:xml}` |
+| `{del{...}}` | `<del>...</del>{:xml}` |
+| `{del era{...}}` | `<del rend="erasure">...</del>{:xml}` |
+| `{del ovs{...}}` | `<del rend="overstrike">...</del>{:xml}` |
+| `{del sub{...}}` | `<del rend="subpunction">...</del>{:xml}` |
 
 
 This is an example of how two deletions in a manuscript are transcribed in
 MBC, first of a whole word, “þer”, and then of a character within a
 word, “yður”, in which the “u” has been deleted so as to give the
-reading “yðr”:viliu(m) \{del era\{ þer \}\} yð\{del ovs\{u\}\}r
+reading “yðr”:
+```
+viliu(m) {del era{ þer }} yð{del ovs{u}}r
+```
+
 
 Note the use of white space around the complete word “þer”.
 
@@ -1154,7 +1270,7 @@ source text “as is” on the facsimile level. However, mistakes are bound to
 occur in all but the shortest texts, and the transcriber might like to emend
 the text, thus taking the step from being a mere transcriber to an
 fully-fledged editor. In MBC, the following tags are at the editor’s disposal:
-res, eme, dit, exc, and sic/cor.
+`res`, `eme`, `dit`, `exc`, and `sic/cor`.
 They will be exemplified below and the corresponding Menota XML encoding
 explained.
 
@@ -1166,8 +1282,12 @@ as a restoration if the text has been left empty by intention, if it is
 unclear or if it simply is illegible. Below is an example from the
 manuscript AM 677 4to, f. 1v, l. 1, in which space has been allocated for an
 initial, and the character “S” safely can be restored. In MenotaBlitz
-Code this will be recorded by way of the res tag (for
-“restoration”):\{res\{[i:S]\}\}a einn madr
+Code this will be recorded by way of the `res` tag (for
+“restoration”):
+```
+{res{[i:S]}}a einn madr
+```
+
 
 In Menota XML, this translates into a <E>supplied</E> element with a
 <Att>reason</Att> attribute that has the value <Val>restoration</Val> on
@@ -1212,7 +1332,11 @@ hypothesis of what originally was written in a certain location of the
 primary source, an emendation is rather the editor’s suggestion of what
 should have been written. Below is an example from the manuscript AM 619
 4to, f. 14r, l. 26-30, in which “ok mannlegra” has been added (in fact
-based on the Latin source). An MBC transcription uses the eme tag (for “emendation”):guðlegra luta \{eme\{ ok mannlegra \}\}
+based on the Latin source). An MBC transcription uses the `eme` tag (for “emendation”):
+```
+guðlegra luta {eme{ ok mannlegra }}
+```
+
 
 Note the space on either side of the two words. As explained in the
 introduction, space must be used when complete words are enclosed in a
@@ -1260,8 +1384,12 @@ is the dittography, either of a part of a word or of a whole word (or even
 several words). One example among many is found in AM 243 b a fol, f. 2v,
 col. B, l. 18-19, where “sialfr” has been written twice &ndash; first at the
 end of l. 18 and next at the beginning of l. 19. This would be the
-transcription in MenotaBlitz Code, using the dit tag
-(for “dittography”):sialfr :19: \{dit\{ sialfr \}\}
+transcription in MenotaBlitz Code, using the `dit` tag
+(for “dittography”):
+```
+sialfr :19: {dit{ sialfr }}
+```
+
 
 Note that since the dittography is a whole word, it has to be transcribed
 with a space on either side within the curly brackets. Also note the
@@ -1297,7 +1425,7 @@ Sometimes, there will be a piece of text which the editor believes should be
 suppressed due to its lack of meaning or relevance. One should always be
 careful with respect to suppression, for even if the editor does not find a
 the text meaningful, other scholars may be able to give it an acceptable
-interpretation. In MBC one should use the exc tag
+interpretation. In MBC one should use the `exc` tag
 (for “excess”), such as in this example where there are two
 conjunctions, “ok” and “eða”, and one of them, perhaps the first
 one, should be suppressed:
@@ -1350,11 +1478,11 @@ In many cases, the editor will be faced with a piece of text which seems
 incorrect according to grammatical rules, or with respect to pragmatic or
 semantic contents. It is recommended that the text in the source is
 transcribed so that both the original reading and its correction is
-recorded. In MBC, this is achieved by the sic/cor
+recorded. In MBC, this is achieved by the `sic/cor`
 (for “sic” and “correction” respectively) which has a unique
-syntax: it does not only have an opening tag \{sic\{
-and a closing tag \}\} (as always), but also a
-middle-tag \}cor\{ which separates the original from
+syntax: it does not only have an opening tag `{sic{`
+and a closing tag `}}` (as always), but also a
+middle-tag `}cor{` which separates the original from
 the emended reading.
 
 Here, the editor believes that “søkia” should be replaced with
@@ -1421,14 +1549,14 @@ MenotaBlitz offers a streamlined method of encoding (Roman) numerals as outlined
 in section 5.7 of version 3.0 of the Menota handbook.
 
 In MenotaBlitz Code, one can label a Roman numeral by simply entering a number
-sign, “#”, directly preceding the number
+sign, “`#`”, directly preceding the number
 that appears in the text.
 
 
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/AM-764-4to-20r,7.png" alt="MenotaBlitz/AM-764-4to-20r,7.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/AM-764-4to-20r,7.png" alt="MenotaBlitz/AM-764-4to-20r,7.png"/>
 
 </Figure>
 
@@ -1439,9 +1567,13 @@ that appears in the text.
 
 Let’s look at this example from AM 764 4to, a passage which chronicles the
 successions of Roman emperors, and thus contains plenty (!) of numerals. This
-numeral could be transcribed directly in MenotaBlitz code as:[...] li:7:cíní&jacute; #.x. a(&rsup;/r) . Galeríu&sscap; [...]
+numeral could be transcribed directly in MenotaBlitz code as:
+```
+[...] li:7:cíní&jacute; #.x. a(&rsup;/r) . Galeríu&sscap; [...]
+```
 
-Note that the MenotaBlitz software will recognize a number simply based on the # sign, and the Menota XML generated through the export
+
+Note that the MenotaBlitz software will recognize a number simply based on the `#` sign, and the Menota XML generated through the export
 function will reflect this.
 ```xml
 [...]
@@ -1469,13 +1601,13 @@ in MenotaBlitz Code for each grapheme (or graph-type) one wishes to distinguish
 in the resulting transcription(s). As mentioned, these need not be the exact
 correspondences in terms of Unicode points, but must be unique for each symbol
 one wants to distinguish: A scribe may for instance use round “ꝺ”,
-but never straight “d”. In such a case, it is recommended to use “d” in order to transcribe this letter in MBC.
+but never straight “d”. In such a case, it is recommended to use “`d`” in order to transcribe this letter in MBC.
 
 
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/graph_inv.png" alt="MenotaBlitz/graph_inv.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/graph_inv.png" alt="MenotaBlitz/graph_inv.png"/>
 
 </Figure>
 
@@ -1495,13 +1627,13 @@ As mentioned, a grapheme table will be produced based on the symbols used in
 the transcription. These symbols appear in the table in the column labeled
 “base”. In the input fields next to this, one enters the facsimile and
 diplomatic renderings of each grapheme. Drawing on the earlier example, here
-you would enter “&drot;” in the
-“facs” column and “d” in the “dipl”
+you would enter “`&drot;`” in the
+“facs” column and “`d`” in the “dipl”
 column.
 
 Note that the restrictions on possible entries in these input fields are
 somewhat different from those applying to MBC: Here you may use
-any special character you like (e.g. “ǿ”, “ß”, “ÿ”), while XML entities are restricted to those defined in the [emroon entity list](http://www.emroon.no/xml/entities.txt),
+any special character you like (e.g. “`ǿ`”, “`ß`”, “`ÿ`”), while XML entities are restricted to those defined in the [emroon entity list](http://www.emroon.no/xml/entities.txt),
 which is largely identical to the [Menota entity list](https://www.menota.org/menota-entities.txt)
 and follows the [MUFI
 character recommendation](https://folk.uib.no/hnooh/mufi/specs/MUFI-CodeChart-4-0.pdf).
@@ -1510,7 +1642,7 @@ character recommendation](https://folk.uib.no/hnooh/mufi/specs/MUFI-CodeChart-4-
 
 
 <Figure>
-<AutoImage src="/images/hb3/MenotaBlitz/graph_inv_utf.png" alt="MenotaBlitz/graph_inv_utf.png"/>
+<AutoImage src="/images/hb4/MenotaBlitz/graph_inv_utf.png" alt="MenotaBlitz/graph_inv_utf.png"/>
 
 </Figure>
 
@@ -1553,7 +1685,7 @@ input field to disappear.
 You can define a symbol as a punctuation mark by checking of the box labeled
 “pc” in the grapheme table. This typically applies to simple symbols
 like “.” or “:”, but also applies to more complicated ones like
-“”, being represented by “&punctelev;”.
+“”, being represented by “`&punctelev;`”.
 
 If a symbol is defined as a punctuation mark, the machine will generate a
 <E>pc</E> element around any instance of this grapheme occurring, both

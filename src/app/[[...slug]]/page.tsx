@@ -5,33 +5,41 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import LegacyPage from '@/components/legacy-page';
 
 export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
-    contentGroup: 'hbx' | 'hb3' | 'hb4' | 'main',
-    contentStyle: 'hb-new' | 'main'
+    contentGroup: 'hbx' | 'hb1' | 'hb3' | 'hb4' | 'main',
+    contentStyle: 'hb-new' | 'hb-old' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
+        case "v1-0":
+          return { contentGroup: "hb1", contentStyle: "hb-old" }
         case "v3":
           return { contentGroup: "hb3", contentStyle: "hb-new" };
         case "v4":
           return { contentGroup: "hb4", contentStyle: "hb-new" };
         default:
-          return { contentGroup: "hbx", contentStyle: "hb-new" };
+          return { contentGroup: "hbx", contentStyle: "menota-main" };
       }
     }
-    return { contentGroup: 'main', contentStyle: 'main' };
+    return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(params.slug);
 
   const MDX = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} className={`bg-white dark:bg-black ${contentStyle}`}>
+    <DocsPage 
+      toc={contentStyle == "hb-old" ? undefined : page.data.toc} 
+      full={page.data.full} 
+      className={`bg-white dark:bg-black ${contentStyle}`}>
       {(() => {switch (contentGroup) {
+        case "hb1":
+          return;
         case "hb3":
         case "hb4":
           return (
@@ -45,21 +53,28 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
               </div>
             </div>
           );
-        case "main":
+        default:
           return (
-            <div className='flex flex-wrap mb-5'>
+            <div className='flex flex-wrap mb-5 dark:invert'>
               <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
               <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
             </div>
           );
       }})()}
       <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
+        {(() => {switch (contentGroup) {
+          case "hb1":
+            return <LegacyPage slug={params.slug || []}/>;
+          default:
+            return (
+              <MDX
+                components={getMDXComponents({
+                  // this allows you to link to other pages with relative file paths
+                  a: createRelativeLink(source, page),
+                })}
+              />
+            )
+        }})()}
       </DocsBody>
     </DocsPage>
   );
