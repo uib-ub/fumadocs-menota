@@ -1,0 +1,165 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook (v. 1.1): Menota DTD</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+		<HR>
+		<h1>Document Type Definition</h1>
+		<P>Version 1.1.1 (30 June 2004)</P>
+
+<P>&nbsp;</P>
+
+<p><IMG SRC="pil.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<p>&nbsp;</p>
+		<P>All XML-encoded documents should refer to a <strong>Document Type Definition</strong> (DTD) or a schema to ensure consistency in their document structure. We have decided to base our encoding on the XML version of TEI P4. In order to create a single Document Type Definition out of TEI's library of DTD-fragments we have used the PizzaChef program, which is available through the TEI website.</P>
+		<P>We have made some changes to the original DTD to make it better suited to some special needs in our project. One of the more significant changes is the introduction of the <strong>&lt;dipl&gt;</strong>, <strong>&lt;facs&gt;</strong> and
+<strong>&lt;norm&gt;</strong> elements, as well as
+modifications to the elements <strong>&lt;w&gt;</strong> and <strong>&lt;supplied&gt;</strong>.
+We have also included all elements for
+manuscript description as recommended by the MASTER project
+(<A target="_blank" HREF="http://www.hcu.ox.ac.uk/TEI/Master/Reference">MASTER
+reference manual</A>). </P>
+		<p>A complete list of deviations from TEI P4 have been listed <a href="http://helmer.aksis.uib.no/menota/guidelines/tools/dtd/dtd-changes_1-1.html">here</a>.</p>
+		<p>Since May 2001, all changes and modifications to the DTD have been written into the two files <a href="norron.extensions.ent">norron.extensions.ent</a> and <a href="norron.extensions.dtd">norron.extensions.dtd</a>.</p>
+		<p>After first having defined the two extension files mentioned above, a DTD is created by using the <a target="_blank" href="http://www.tei-c.org/pizza.html">PizzaChef</a> program. This way, our extension files constitute a part of the base from which the final DTD is generated.</p>
+		<p>All updates and changes to the DTD have to be written into the extension files, and a new DTD will then have to be created by using the PizzaChef. The procedure for how the DTD is revised and updated is outlined in <a href="HB1-1_dtd-pizza.xhtml">this instruction</a>.</p>
+		<p>* * *</p>
+		<p>After the publication of version 1.1 on 5 May 2004, we have made a number of additional changes to the DTD. These additions were made 30 June 2004 and are listed below. For this reason, the present page has version number 1.1.1.</p>
+		<p>1. A new element &lt;punct&gt; has been added in order to encode punctuation. It has identical contents to the &lt;w&gt; element.<br>
+			2. A new element &lt;expunged&gt; has been added to encode deletions made by the editor/transcriber. The usage of the &lt;expunged&gt; element is parallel to the &lt;supplied&gt; element. Note that the elements &lt;del&gt; and &lt;add&gt; are used for deletions and additions made by the scribe of the manuscript, not the editor/transcriber.<br>
+			3. The element &lt;p&gt; has been extended to contain the elements &lt;lg&gt; and &lt;l&gt;. Thus &quot;inline&quot; poems can be encoded with the &lt;lg&gt; element within &lt;p&gt;.<br>
+			4. The element &lt;lg&gt; has been extended to contain the element &lt;p&gt;. Thus short inline prose parts of poems (e.g. 'inquit') can be encoded with the &lt;p&gt; element within &lt;lg&gt;.<br>
+			5. The element &lt;add&gt; has an compulsory <i>place</i> attribute. Default value is <i>inline</i>.<br>
+			6. A new element &lt;pal&gt; has been introduced in &lt;w&gt;, in order to enable the encoding of detailed paleographical information. It is parallel to the elements &lt;facs&gt;, &lt;dipl&gt; and &lt;norm&gt;.<br>
+			7. The elements &lt;lemma&gt; and &lt;pos&gt; have been added to &lt;w&gt;. Thus, <i>lemma</i> and <i>grammatical form</i> (part of speech) may be encoded by way of elements rather than by way of the attributes <i>lemma</i> and <i>pos</i>. TEI P5 may discourage the latter solution.<br>
+			8. The element &lt;textSpan&gt; has been introduced in order to cover a number of overlapping structures. We recommend using this element rather that &lt;addSpan&gt;, &lt;delSpan&gt;, &lt;suppliedSpan&gt;, &lt;expungedSpan&gt;, &lt;unclearSpan&gt;, etc. However, in order to describe the type of text span, an attribute <i>category</i> has been added. This attribute has the values <i>add</i>, <i>del</i>, <i>supplied</i>, <i>expunged</i>, <i>unclear</i>, <i>gap</i>, <i>seg</i>, <i>sic</i>, <i>corr</i>, <i>other</i>; cf. the deprecated elements &lt;addSpan&gt; and &lt;delSpan&gt;.</p>
+		<p>* * *</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr>
+					
+				</tr></thead>
+	<tfoot><tr>
+					
+				</tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+      <TD>
+         <P><strong>Current version of the
+         DTD</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+		<P><IMG SRC="pil.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="norron.dtd">norron.dtd </a>30 June 2004</P>
+
+<P>The current version will always be
+called <strong>norron.dtd</strong> and located here. Older versions will be
+numbered sequentially and archived below.</P>
+
+<P>&nbsp;</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr>
+					
+				</tr></thead>
+	<tfoot><tr>
+					
+				</tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+      <TD>
+         <P><strong>Archive of older versions of the DTD</strong></P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+		<P><A HREF="old_norron1.dtd">norron1.dtd</A> 25 September 2000<BR>
+<A HREF="old_norron2.dtd">norron2.dtd</A> 24 April 2001<BR>
+<A HREF="old_norron3.dtd">norron3.dtd</A> 1 June 2001<BR>
+<A HREF="old_norron4.dtd">norron4.dtd</A> 8 June 2001<BR>
+<A HREF="old_norron5.dtd">norron5.dtd</A> 15 March 2002<BR>
+<A HREF="old_norron6.dtd">norron6.dtd</A> 26 March 2002<BR>
+<A HREF="old_norron7.dtd">norron7.dtd</A> 3 May 2002<BR>
+<A HREF="old_norron8.dtd">norron8.dtd</A> 23 May 2002<BR>
+<A HREF="old_norron9.dtd">norron9.dtd</A> 15 May 2003<BR>
+<A HREF="old_norron10.dtd">norron10.dtd</A> 20 May 2003<BR>
+<A HREF="old_norron11.dtd">norron11.dtd</A> 6 February 2004<br>
+<A HREF="old_norron12.dtd">norron12.dtd</A> 16 March 2004<br>
+			<A HREF="old_norron13.dtd">norron13.dtd</A> 30 April 2004 (published 5 May 2004)</P>
+		<p>&nbsp;</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+			<thead>
+				<tr>
+					
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr bgcolor="#D3D3D3">
+					<td>
+						<p><strong>Archive of older versions of the extension files</strong></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p><a href="old_extensions_files/norron.extensions3.ent">norron.extensions3.ent</a> 30 May 2001<br>
+			<a href="old_extensions_files/norron.extensions3.dtd">norron.extensions3.dtd</a> 30 May 2001<br>
+			<a href="old_extensions_files/norron.extensions5.ent">norron.extensions5.ent</a> 13 March 2002<br>
+			<a href="old_extensions_files/norron.extensions5.dtd">norron.extensions5.dtd</a> 15 March 2002<br>
+			<a href="old_extensions_files/norron.extensions6.ent">norron.extensions6.ent</a> 22 March 2002<br>
+			<a href="old_extensions_files/norron.extensions6.dtd">norron.extensions6.dtd</a> 26 March 2002<br>
+			<a href="old_extensions_files/norron.extensions7.ent">norron.extensions7.ent</a> 2 May 2002<br>
+			<a href="old_extensions_files/norron.extensions7.dtd">norron.extensions7.dtd</a> 2 May 2002<br>
+			<a href="old_extensions_files/norron.extensions8.ent">norron.extensions8.ent</a> 10 May 2002<br>
+			<a href="old_extensions_files/norron.extensions8.dtd">norron.extensions8.dtd</a> 23 May 2002<br>
+			<a href="old_extensions_files/norron.extensions10.ent">norron.extensions10.ent</a> 20 May 2003<br>
+			<a href="old_extensions_files/norron.extensions10.dtd">norron.extensions10.dtd</a> 15 May 2003<br>
+			<a href="old_extensions_files/norron.extensions11.ent">norron.extensions11.ent</a> 6 February 2004<br>
+			<a href="old_extensions_files/norron.extensions11.dtd">norron.extensions11.dtd</a> 6 February 2004<br>
+			<a href="old_extensions_files/norron.extensions12.ent">norron.extensions12.ent</a> 16 March 2004<br>
+			<a href="old_extensions_files/norron.extensions12.dtd">norron.extensions12.dtd</a> 15 March 2004<br>
+			<a href="old_extensions_files/norron.extensions13.ent">norron.extensions13.ent</a> 30 April 2004 (published 5 May 2004)<br>
+			<a href="old_extensions_files/norron.extensions13.dtd">norron.extensions13.dtd</a> 30 April 2004 (published 5 May 2004)<br>
+		</p>
+		<p>Note that not all versions of the DTD have been generated from updated extension files. The version numbers of the extension files in this list have been synchronised with the version numbers of the DTDs above.</p>
+		<p>&nbsp;</p>
+		<p><IMG SRC="pil.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr>
+					
+				</tr></thead>
+	<tfoot><tr>
+					
+				</tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004. Version 1.1.1 published 30 June 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

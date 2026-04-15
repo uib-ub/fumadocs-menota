@@ -1,0 +1,161 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook (v. 1.1): Revising a DTD with PizzaChef</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Revising a DTD with the help of TEI's PizzaChef</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<p>&nbsp;</p>
+
+<P>The Menota DTD is revised by using
+the <A target="_blank" HREF="http://www.tei-c.org/pizza.html">PizzaChef</A>
+according to the procedure outlined below:</P>
+
+<ol>
+<li>
+<P>Any changes to the DTD are
+written into the files <A HREF="norron.extensions.ent">norron.extensions.ent</A>
+and <A HREF="norron.extensions.dtd">norron.extensions.dtd</A>.
+Minor changes - such as  changes to the entity table - are only made to
+'norron.extensions.ent', while more complex changes - such as
+modifications to element properties - are made by modifying the
+'norron.extensions.ent' file and then the 'norron.extensions.dtd'
+file.</P>
+
+<P>We can use the
+<strong>&lt;supplied&gt;</strong> element to illustrate this. First, a change
+is made to 'norron.extensions.ent'; this is to tell the Pizza Chef that this element
+will be modified in the 'norron.extensions.dtd' and the orginal definition should not be used:</P>
+
+<P id="indent1"><em id="note">&lt;!--</em> supplied is to be modified <em id="note">--&gt;</em><BR>
+<em id="element">&lt;!ENTITY</em> <em id="code">% supplied 'IGNORE'</em><em id="element">&gt;</em></P>
+
+<P>After this modification has been
+made, the new element declaration for &lt;<strong>supplied</strong>&gt; has to
+be written into 'norron.extensions.dtd':</P>
+
+<p id="indent1">
+<em id="note">&lt;!--</em> February 6, 2004 TMB: 'facs', 'dipl' and 'norm' added to the content model of 'supplied' <em id="note">--&gt;</em><br>
+<em id="note">&lt;!--</em> March 15, 2002, TMB: 'lacunaEnd', 'lacunaStart', 'witEnd' and 'witStart' added to the content model of 'supplied' by including 'm.fragmentary'. <em id="note">--&gt;</em>
+</p>
+
+<p id="indent1">
+<em id="element">&lt;!ELEMENT</em> <em id="code">supplied %om.RO;  (#PCDATA | facs | dipl | norm
+| %m.phrase; | %m.inter; | %m.Incl; | %m.fragmentary;)*</em> <em id="element">&gt;</em>
+</p>
+
+<p id="indent1">
+<em id="note">&lt;!--</em> April 24, 2001, ESO: type-attribute added, other attributes are
+as in the original. <em id="note">--&gt;</em><br>
+<em id="element">&lt;!ATTLIST</em> <em id="code">supplied<br>
+&nbsp;&nbsp;%a.global;<br>
+&nbsp;&nbsp;reason CDATA #IMPLIED<br>
+&nbsp;&nbsp;resp CDATA %INHERITED;<br>
+&nbsp;&nbsp;hand IDREF %INHERITED;<br>
+&nbsp;&nbsp;agent CDATA #IMPLIED<br>
+&nbsp;&nbsp;source CDATA #IMPLIED<br>
+&nbsp;&nbsp;type CDATA #IMPLIED</em><em id="element">&gt;</em>
+</p>
+
+<li>
+<P> After the two extension files
+have been saved, it is time to activate the <A target="_blank" HREF="http://www.tei-c.org/pizza.html">PizzaChef</A>
+program.</P>
+
+<li>
+<P>Under "Step 1: Choose your
+base": choose 'Mixed base' in the left column, and then check the
+'prose' and 'verse' boxes.</P>
+
+<li>
+<P>Under "Step 2: Choose your
+toppings": check the 'Linking', 'figures', 'Analysis', 'transcr',
+'textcrit', 'names.dates' and 'corpora' boxes.</P>
+
+<li>
+<P>Under "Step 3: Choose your
+entity set": nothing has to be entered (since a complete set of
+entities has been defined in 'norron.extensions.dtd').</P>
+
+<li>
+<P>Under "Step 4: Review selected
+items": no selections are made.</P>
+
+<li>
+<P>Under "Step 5: Supply your
+modification files": you have to supply the two files
+'norron.extensions.ent' and 'norron.extensions.dtd' to the
+PizzaChef.</P>
+
+<li>
+<P>Under "Step 6: Bake that
+pizza": you simply click on "GENERATE FULL DTD".</P>
+
+<li>
+<P>The complete DTD will now be
+displayed in your browser. At this point, it is often a good idea to
+search the document for the keyword "error" to see if any errors have
+been reported in the file.</P>
+
+<li>
+<P>Choose "Save As" from the file
+menu and save the output under the name "norron.dtd" on the
+preferred server. Remember to archive the previous version before
+deleting it.</P>
+
+<li>
+<p>If there are errors in the DTD the Pizza Chef has made, check this:</p>
+	<ol type=a>
+		<li><p>Make sure the extensions files are valid.</p>
+		<li><p>The files have to be in SGML syntax.</p>
+		<li><p>Characters with hex value greater than 7F are not allowed anywhere
+		in the extension files due to restrictions of the Pizza Chef, not even in comments.</p>
+		<li><p>Comments must not contain series of hyphens.</p>
+		<li><p>Check that all comments are opened and closed properly.</p>
+		<li><p>If this still does not work, quit your net browser and try again.</p>
+		<li><p>Finally, send a message to the Pizza Chef to ask for help.</p>
+	</ol>
+</p>
+</ol>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>
