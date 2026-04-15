@@ -31,6 +31,16 @@ const config = {
         source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
+      },
+      {
+        source: '/legacy/handbook/v1/:id.dtd',
+        destination: '/:id.dtd',
+        permanent: true
+      },
+      {
+        source: '/legacy/handbook/v1/:id.ent',
+        destination: '/:id.ent',
+        permanent: true
       }
     ]
   }
