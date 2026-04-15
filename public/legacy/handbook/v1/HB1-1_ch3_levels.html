@@ -1,0 +1,585 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook - Ch. 3 (v. 1.1): Levels of text representation</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Chapter 3. Levels of text representation</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#3.1">3.1 Introduction</A><BR>
+<A HREF="#3.2">3.2 Levels of text representation</A><BR>
+<A HREF="#3.3">3.3 Bringing it all together</A></P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<P><A NAME="3.1"></A>&nbsp;</P>
+
+<h2>3.1 Introduction</h2>
+
+<P>A transcription is basically a
+representation of a primary source in another format, such as paper
+or the electronic medium. Some transcriptions aim to reproduce the
+source text as closely as possible, others allow for a certain amount
+of generalisation. In transcriptions of speech, a distinction is
+usually drawn between narrow and broad transcriptions, depending on
+the amount of phonetic detail. The same perspective applies to
+transcriptions of manuscript texts. Close (or narrow) transcriptions
+are usually referred to as diplomatic, while regularised
+transcriptions are often referred to as normalised. This is the basic
+distinction drawn in e.g. <A target="_blank" HREF="http://www.nlx.com/titles/titlwnac.htm">Wittgenstein's
+Nachlass: The Bergen Electronic
+Edition</A> (1998-2000). Here,
+all texts are available in two versions, a diplomatic transcription
+and a normalised one. For examples, please refer to <A target="_blank" HREF="http://www.nlx.com/titles/titlwnv3.htm#Diplomatic">this
+page</A>. </P>
+
+<P>We suggest that medieval Nordic
+texts may be transcribed on up to three levels. In addition to the
+<em>normalised</em> level, we identify two closer levels. We shall
+refer to the narrowest level as the <em>facsimile</em> level, while the
+"medium" level is designated as <em>diplomatic</em>. The three levels
+are exemplified in ch. 3.2 below.</P>
+
+<P>The distinction between three
+levels of text representation does not mean that Menota transcription
+should contain all three levels. Many transcribers will probably
+choose a single level for their transcription. Our recommendation is
+to use these levels as a guide, so that a transcription can be
+described as following one of these levels. This information should
+be given in the header, and can optionally be given by use of
+specific elements in the transcription itself, as discussed in ch.
+3.2 below. If a transcriber wishes to deviate from any of these
+levels, and there may be good reasons to do so, we recommend that the
+deviations are specified in the header.</P>
+
+<P>It is convenient to begin by
+looking at a Latin text example, <em>Passio et Miracula Beati
+Olavi</em>. An important source for this work is Corpus Christi
+College, Oxford MS 209, a vellum manuscript from the late 12th
+century. Below is a low
+resolution facsimile from the very beginning of the <em>Passio</em>,
+with an XML-conformant transcription to the right. For a facsimile of
+the whole manuscript in high resolution, please refer to
+<A target="_blank" HREF="http://image.ox.ac.uk/show?collection=corpus&manuscript=ms209">Early
+Manuscripts at Oxford University</A>.</P>
+
+<P>&nbsp;</P>
+
+<BLOCKQUOTE><TABLE WIDTH="100%">
+      <TR>
+         <TD VALIGN=top WIDTH=370>
+            <P><IMG SRC="handbok_1/ch3/CCC209-57r-ex.jpg" WIDTH=344 HEIGHT=340 ALIGN=bottom></P>
+
+            <P><strong>Fig.
+            3.1</strong> CCC 209,
+            fol. 57r., l. 1-15.<BR>
+            &copy; Corpus Christi College, Oxford</P>
+         </TD>
+         <TD VALIGN=top>
+            <P><em id="element">&lt;head&gt;</em>Passio
+            et miracula beati Olavi><em id="element">&lt;/head&gt;</em></P>
+
+            <P><em id="element">&lt;div</em>
+            <em id="code">type="section" n="1"</em><em id="element">&gt;</em><BR>
+            <em id="element">&lt;p&gt;&lt;hi</em>
+            <em id="code">rend="blue"</em><em id="element">&gt;</em>R<em id="element">&lt;/hi&gt;</em>egnante
+            illustrissimo rege Olauo apud Noruuegiam, que est terra
+            pregrandis uersus aquilonem locata, a meridie Daciam
+            habens, eandem ingressi sunt terram pedes
+            euuangelizancium pacem, euuangelizancium
+            bona.<em id="element">&lt;/p&gt;<BR>
+            &lt;/div&gt;</em></P>
+
+            <P><em id="element">&lt;div</em>
+            <em id="code">type="section" n="2"</em><em id="element">&gt;</em><BR>
+            <em id="element">&lt;p&gt;</em>Hactenus
+            sacrilegis ydolorum mancipate ritibus et supersticiosis
+            erroribus deluse nationes ille ueri Dei cultum et fidem
+            audierant; audierant quidem, set multi suscipere
+            contempserant.<em id="element">&lt;/p&gt;<BR>
+            &lt;/div&gt;</em></P>
+
+            <P><em id="element">&lt;div</em>
+            <em id="code">type="section" n="3"</em><em id="element">&gt;</em><BR>
+            <em id="element">&lt;p&gt;</em>Sicut
+            enim loca aquiloni proxima inhabitabant, ita familiarius
+            eas possederat et tenaciori glacie infidelitatis
+            astrinxerat aquilo ille, a quo panditur omne malum super
+            uniuersam faciem terre, et a cuius facie ollam succensam
+            uidet Ieremias, et qui in Ysaia iactanter
+            profert:<em id="element">&lt;/p&gt;<BR>
+            &lt;/div&gt;</em></P>
+
+            <P><em id="element">&lt;div</em>
+            <em id="code">type="section" n="4"</em><em id="element">&gt;</em><BR>
+            <em id="element">&lt;p&gt;&lt;quote&gt;</em>Super
+            astra celi exaltabo solium meum, sedebo in monte
+            testamenti in lateribus
+            Aquilonis.<em id="element">&lt;/quote&gt;&lt;/p&gt;<BR>
+            &lt;/div&gt;</em></P>
+
+            <P>(Adapted from an
+            edition by <A HREF="HB1-1_literature.xhtml">Lars
+            Boje Mortensen 2003</A>,
+            University of Bergen. Cf. also the edition by
+               <A HREF="HB1-1_literature.xhtml">Frederick
+            Metcalfe 1881</A>.)</P>
+         </TD>
+      </TR>
+   </TABLE>
+    </BLOCKQUOTE>
+
+<BLOCKQUOTE>(When the illustrious King
+&Oacute;l&aacute;fr ruled in Norway, a vast country located towards
+the north and having Denmark to the south, there entered into that
+land the feet of them that preach the gospel of peace and bring glad
+tidings of good things. The peoples of that country, previously
+subject to the ungodly rites of idolatry and deluded by superstitious
+error, now heard of the worship and faith of the true God - heard
+indeed, but many scorned to accept. Living in a region close to the
+north, it was the same north, from which comes every evil over the
+whole face of earth, that had possessed them all the more inwardly
+and gripped them all the more firmly in the ice of unbelief. From its
+face Jeremiah saw a seething pot; and in Isaiah there is the boaster
+who says, "I will exalt my throne above the stars of God: I will sit
+also upon the mount of the congregation, in the sides of the north.")
+&#91;Translated by <A HREF="HB1-1_literature.xhtml">Devra
+Kunin 2001</A>.&#93;</blockquote>
+
+<P>The transcription above is easily
+readable, even in its "raw" XML format. In fact, if it was stripped
+for all elements, it would look like a plain ASCI text from any word
+processor:</P>
+
+<BLOCKQUOTE>Passio et miracula beati
+   Olavi Regnante illustrissimo rege Olauo apud Noruuegiam, que est
+   terra pregrandis uersus aquilonem locata, a meridie Daciam habens,
+   eandem ingressi sunt terram pedes euuangelizancium pacem,
+   euuangelizancium bona. Hactenus sacrilegis ydolorum mancipate
+   ritibus et supersticiosis erroribus deluse nationes ille ueri Dei
+   cultum et fidem audierant; audierant quidem, set multi suscipere
+   contempserant. Sicut enim loca aquiloni proxima inhabitabant, ita
+   familiarius eas possederat et tenaciori glacie infidelitatis
+   astrinxerat aquilo ille, a quo panditur omne malum super uniuersam
+   faciem terre, et a cuius facie ollam succensam uidet Ieremias, et
+   qui in Ysaia iactanter profert: Super astra celi exaltabo solium
+   meum, sedebo in monte testamenti in lateribus Aquilonis.</BLOCKQUOTE>
+
+<P>With the help of an XML style
+sheet, the text could be displayed with a certain amount of
+formatting on the basis of the mark-up. For example, the title
+(&lt;head&gt;) might be shown in bold type, the initial might be
+rendered with an enlarged capital in blue colour, sections might be
+set out in separate paragraphs and numbered in bold type, and the
+Biblical quotation could be given in italics:</P>
+
+
+<BLOCKQUOTE><strong>Passio et miracula beati
+   Olavi</strong>
+<br>
+   <strong>1.</strong>
+   <FONT SIZE="+3" COLOR="#0033FF">R</font>egnante
+   illustrissimo rege Olauo apud Noruuegiam, que est terra pregrandis
+   uersus aquilonem locata, a meridie Daciam habens, eandem ingressi
+   sunt terram pedes euuangelizancium pacem, euuangelizancium
+   bona.<BR>
+   <strong>2.</strong> Hactenus sacrilegis ydolorum mancipate ritibus et
+   supersticiosis erroribus deluse nationes ille ueri Dei cultum et
+   fidem audierant; audierant quidem, set multi suscipere
+   contempserant.<BR>
+   <strong>3.</strong> Sicut enim loca aquiloni proxima inhabitabant, ita
+   familiarius eas possederat et tenaciori glacie infidelitatis
+   astrinxerat aquilo ille, a quo panditur omne malum super uniuersam
+   faciem terre, et a cuius facie ollam succensam uidet Ieremias, et
+   qui in Ysaia iactanter profert:<BR>
+   <strong>4.</strong> <em>Super astra celi exaltabo solium meum, sedebo in
+   monte testamenti in lateribus Aquilonis.</em>
+</BLOCKQUOTE>
+
+<P>Medieval Nordic texts need not
+contain any more mark-up than in this example, and they will still be
+fully valid XML. However, in order to comply with the Menota
+standard, it should follow the TEI guidelines. There is thus some
+information that must be entered at the very beginning of the file,
+and there must be a header. For an example of a header, please go to
+the <A HREF="HB1-1_menotaheader.xhtml">Menota
+header</A>. The basic structure
+of the file is thus quite simple:</P>
+
+<BLOCKQUOTE><em id="element">&lt;?xml</em>
+   <em id="code">version="1.0" encoding="UTF-8"</em><em id="element">?&gt;</em><BR>
+   <em id="element">&lt;TEI.2&gt;<BR>
+   &lt;teiHeader&gt;</em><BR>
+   <em>Here goes structured
+   information on the text and the transcription.</em><BR>
+   <em id="element">&lt;/teiHeader&gt;<BR>
+   &lt;text&gt;<BR>
+   &lt;body&gt;</em><BR>
+   <em>Here goes the text as
+   exemplified above.</em><BR>
+   <em id="element">&lt;/body&gt;<BR>
+   &lt;/text&gt;<BR>
+   &lt;/TEI.2&gt;</em>
+</BLOCKQUOTE>
+
+<P>It is important to keep in mind
+that a transcription may be as straightforward and readable as this,
+and it would be fully acceptable as a Menota text.</P>
+
+<P>However, not all primary sources
+are equally straight-forward to transcribe. For most vernacular
+sources entities will be required to deal with additional characters,
+and we might also like to transcribe the text at a more diplomatic
+level than in this example. For example, the last word on the very
+first line is transcribed as "apud". In the facsimile above, we see
+that it has been written with the letters "ap" and a superlinear
+abbreviation mark. Some transcribers might want to record the fact
+that the latter two characters have been expanded by the transcriber,
+for example by using the <strong>&lt;expan&gt;</strong>
+tag:</P>
+
+<BLOCKQUOTE>ap<em id="code">&lt;expan&gt;</em>ud<em id="code">&lt;/expan&gt;</em></BLOCKQUOTE>
+
+<P>Other transcribers would like to
+encode the actual abbreviation mark being used, in this case a
+superlinear bar. This might be encoded with the help of an entity
+such as "&amp;bar;", meaning "a horizontal bar placed above the
+preceding character":</P>
+
+<BLOCKQUOTE>ap&amp;bar;</BLOCKQUOTE>
+
+<P>Yet other transcribers would like
+to encode the fact that the word has been abbreviated with a
+superlinear bar AND that this abbreviation should be expanded as "ud"
+in this particular context. The superlinear bar is highly ambigious;
+in this short extract alone, it should be expanded as "m" in
+"terra<em>m</em>" (l. 4), "ut" in "Sic<em>ut</em>" (l. 9), "ni" in
+"e<em>ni</em>m" (l. 9), "n" in "om<em>n</em>e" (l. 12).</P>
+
+<P>The more information the
+transcriber wants to put into the text, the more complex it will
+become. The next chapters will go into more details.</P>
+
+<P><A NAME="3.2"></A>&nbsp;</P>
+
+<h2>3.2 Levels of text representation</h2>
+
+<P>We believe that there are three
+focal levels of text representation for medieval Nordic texts and
+suggest that a transcription should reflect at least one of these
+levels. Furthermore, a transcription should be easily expandable so
+as to accommodate one or two additional levels. This time, we shall
+use a short extract from an Old Icelandic manuscript, AM 645 4to
+(first quarter of the 13th century).</P>
+
+<BLOCKQUOTE><IMG SRC="handbok_1/ch3/fig3-1.gif" WIDTH=400 HEIGHT=100 ALIGN=bottom>
+<BR>
+   <strong>Fig. 3.2</strong> Enlarged and
+   slightly edited extract from AM 645 4to fol. 55v, l. 14-15 (cf.
+   the photographic facsimile in <A HREF="HB1-1_literature.xhtml">Hreinn
+   Benediktsson 1965</A>, pl. 28)</BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<h3>3.2.1 Facsimile level</h3>
+
+<P>On this level, the text is
+transcribed character for character, line for line. Allographic
+variation is to a great extent reflected in the transcription, and
+abbreviation marks are copied without any expansion. Thus, the text
+in fig. 3.2 would be transcribed as</P>
+
+<BLOCKQUOTE>karin&amp;us; &amp;et;
+   leunti&amp;us; fun&amp;dunc;o&amp;slong;c e&amp;bar;i
+   ig&amp;osup;&lt;<em id="layout">lb/</em>&gt;fo&amp;bar;
+   &amp;slong;ino&amp;bar; eft&amp;er; vp&amp;isup;ri&amp;slong;o
+   c&amp;isup;&amp;slong;z</BLOCKQUOTE>
+
+<P>and displayed (subject to
+appropriate fonts) as</P>
+
+<BLOCKQUOTE><IMG SRC="handbok_1/ch3/fig3-2.gif" WIDTH=400 HEIGHT=50 ALIGN=bottom>
+<br>
+   <strong>Fig.
+   3.3</strong> Facsimile rendering
+   of the example text in fig. 3.2.</BLOCKQUOTE>
+
+<P>Note that the superlinear "i" above
+"p" in the second line most likely is a mistake by the scribe. At the
+facsimile level, the transcriber ought to encode the manuscript
+exactly as it reads, even if it contains obvious mistakes.
+Corrections can be made by inserting a note, or it can be left to the
+diplomatic or normalised level.</P>
+
+<P>&nbsp;</P>
+
+<h3>3.2.2 Diplomatic level</h3>
+
+<P>On this level, not all types of
+allographic variation are transcribed, and line divisons are usually
+not shown in the display of the transcription. Abbreviations are
+expanded, but the expanded part is clearly marked. Some obvious
+mistakes may be corrected, such as "Leuntius" &gt; "Leutius"
+(accepting "ti" for "ci", though), while the superlinear "i" has been
+suppressed. In the transcription expansions are set out by the
+element <strong>&lt;expan&gt;</strong> and in the display usually by italics.
+The text would then be transcribed as</P>
+
+<BLOCKQUOTE>karin<em id="code">&lt;expan&gt;</em>us<em id="code">&lt;/expan&gt;</em>
+   <em id="code">&lt;expan&gt;</em>ok<em id="code">&lt;/expan&gt;</em>
+   leunti<em id="code">&lt;expan&gt;</em>us<em id="code">&lt;/expan&gt;</em>
+   fun&amp;dunc;o&amp;slong;c e<em id="code">&lt;expan&gt;</em>ig<em id="code">&lt;/expan&gt;</em> i
+   ig<em id="code">&lt;expan&gt;</em>ro<em id="code">&lt;/expan&gt;</em><em
+   id="layout">&lt;lb/&gt;</em>fo<em id="code">&lt;expan&gt;</em>m<em id="code">&lt;/expan&gt;</em>
+   &amp;slong;ino<em id="code">&lt;expan&gt;</em>m<em id="code">&lt;/expan&gt;</em>
+   eft<em id="code">&lt;expan&gt;</em>ir<em id="code">&lt;/expan&gt;</em>
+   vp<em id="note">&lt;note&gt;</em>superlinear
+   i suppressed<em id="note">&lt;/note&gt;</em>ri&amp;slong;o
+   c<em id="code">&lt;expan&gt;</em>ri<em id="code">&lt;/expan&gt;</em>&amp;slong;z</BLOCKQUOTE>
+
+<P>and displayed as (now disregarding
+the line break)</P>
+
+<BLOCKQUOTE><IMG SRC="handbok_1/ch3/fig3-3.gif" WIDTH=400 HEIGHT=50 ALIGN=bottom>
+<br>
+   <strong>Fig.
+   3.4</strong> Diplomatic rendering
+   of the example text in fig. 3.2.
+   </BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<h3>3.2.3 Normalised level</h3>
+
+<P>On this level, the orthography is
+regularised according to the norm found in grammars and dictionaries
+for the language in question. For Old Icelandic and Old Norwegian
+texts we recommend the normalisation rules in <A HREF="HB1-1_literature.xhtml">AMKO's
+dictionary</A> (ONP).
+Abbreviations are expanded silently, and punctuation is regularised as
+well. Thus, the text in fig. 3.1 would be transcribed as</P>
+
+<BLOCKQUOTE>Karinus ok Levcius fundusk
+   eigi &amp;iacute; gr&amp;oogon;fum s&amp;iacute;num eptir upprisu
+   Krists</BLOCKQUOTE>
+
+<P>and displayed as</P>
+
+<BLOCKQUOTE><IMG SRC="handbok_1/ch3/fig3-4.gif" WIDTH=400 HEIGHT=50 ALIGN=bottom>
+<br>
+   <strong>Fig.
+   3.5</strong> Normalised rendering
+   of the example text in fig. 3.2.
+   </BLOCKQUOTE>
+
+<P>For a more detailed discussion of
+these levels, please refer to <A HREF="HB1-1_literature.xhtml">Haugen
+1995</A>.&nbsp;&nbsp;</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="3.3"></A>&nbsp;</P>
+
+<h2>3.3 Bringing it all together: more than
+one level of text representation in a transcription</h2>
+
+<P>The transcriptions in ch. 3.2 each
+reflect a specific level of text representation. However, we believe
+that the transcription should be expandable to accommodate more than
+one level. Here, we shall suggest two ways of achieving this. We
+regard both solutions as equivalent, and believe that the choice
+between them will be dictated by practical considerations. In both
+cases, we recommend using the <em id="element">&lt;w&gt;</em> element to group each
+lexical word in the transcription, as explained in <A HREF="HB1-1_ch2_basics.html#2.3">ch.
+2.3</A>.</P>
+
+<P>&nbsp;</P>
+
+<h3>3.3.1 Representing textual
+levels by way of attributes</h3>
+
+<P>We recommend that texts are
+transcribed on a facsimile level, as exemplified in 3.2.1 above. This
+level will be the basic one in the transcription and the content of
+the <strong>&lt;w&gt;</strong> element. The diplomatic level can be supplied by
+the attribute <strong>rend</strong> and the normalised form by the attribute
+<strong>reg</strong>. Since elements are not allowed in attributes, the
+function of the <strong>&lt;expan&gt;</strong> element is taken over by curly
+brackets, e.g. "han{n}" for
+"han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em>". Thus, the text in
+fig. 3.1 could be encoded with all three levels as</P>
+
+<BLOCKQUOTE>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="karin{us}" reg="Karinus"</em><em id="element">&gt;</em>karin&amp;us;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="{oc}"reg="ok</em><em id="element">"&gt;</em>&amp;et;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="leuti{us}" reg="Levcius"</em><em id="element">&gt;</em>leunti&amp;us;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="fundosc" reg="fundusk"</em><em id="element">&gt;</em>fun&amp;dunc;o&amp;slong;c<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="e{ig}i" reg="eigi"</em><em id="element">&gt;</em>e&amp;bar;i<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="i" reg="&amp;iacute;</em><em id="element">"&gt;</em>i<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="g{ro}fu{m}" reg="gr&amp;oogon;fum"</em><em id="element">&gt;</em>g&amp;osup;<em id="layout">&lt;lb/&gt;</em>fo&amp;bar;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="sino{m}" reg="s&amp;iacute;num"</em><em id="element">&gt;</em>&amp;slong;ino&amp;bar;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="eft{ir}" reg="eptir"</em><em id="element">&gt;</em>eft&amp;er;<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="vp{p}riso" reg="upprisu"</em><em id="element">&gt;</em>vp&amp;isup;ri&amp;slong;o<em id="element">&lt;/w&gt;</em><BR>
+   <em id="element">&lt;w</em>
+   		<em id="code">rend="c{ri}sz" reg="Krists"</em><em id="element">&gt;</em>c&amp;isup;&amp;slong;z<em id="element">&lt;/w&gt;</em>
+   </BLOCKQUOTE>
+
+<P>With the help of style sheets in
+XML, the text may be displayed on each level:<BR>
+(a) the facsimile level is the content of the <strong>&lt;w&gt;</strong>
+element, i.e. what the transcription reads when all elements are
+stripped<BR>
+(b) the diplomatic level is the content of the <strong>rend</strong> attribute,
+in which "{" is interpreted as "start italics" and "}" as "end
+italics" in a typical display<BR>
+(c) the normalised level is the content of the <strong>reg</strong>
+attribute</P>
+
+<P>&nbsp;</P>
+
+<h3>3.3.2 Representing textual levels by way of elements </h3>
+
+<P>Here, we suggest that each level is
+identified by elements within <strong>&lt;w&gt;</strong>: <strong>&lt;facs&gt;</strong>
+for the facsimile rendering, <strong>&lt;dipl&gt;</strong> for the diplomatic
+rendering (in which the element <strong>&lt;expan&gt;</strong> is used), and
+<strong>&lt;norm&gt;</strong> for the normalised rendering. This makes for a
+parallel encoding, in which up to three text strings co-exist within
+the boundaries of the <strong>&lt;w&gt;</strong> elements. For the sake of
+clarity, we have set out each word in a paragraph of its
+own:</P>
+
+<BLOCKQUOTE>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>karin&amp;us;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>karin<em id="code">&lt;expan&gt;</em>us<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>Karinus<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>&amp;et;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em><em id="code">&lt;expan&gt;</em>oc<em id="code">&lt;expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>ok<em id="display">&lt;norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>leunti&amp;us;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>leuti<em id="code">&lt;expan&gt;</em>us<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>Leucius<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>fun&amp;dunc;o&amp;slong;c<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>fundosc<em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>fundusk<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>e&amp;bar;i<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>e<em id="code">&lt;expan&gt;</em>ig<em id="code">&lt;/expan&gt;</em>i<em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>eigi&lt;<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>i<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>i<em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>&amp;iacute;<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>g&amp;osup;<em id="layout">&lt;lb/&gt;</em>fo&amp;bar;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>g<em id="code">&lt;expan&gt;</em>ro<em id="code">&lt;/expan&gt;</em><em id="layout">&lt;lb/&gt;</em>fo<em id="code">&lt;expan&gt;</em>m<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>gr&amp;oogon;fum<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>&amp;slong;ino&amp;bar;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>sino<em id="code">&lt;expan&gt;</em>m<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>s&amp;iacute;num<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>eft&amp;er;<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>eft<em id="code">&lt;expan&gt;</em>ir<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>eptir<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>vp&amp;isup;ri&amp;slong;o<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>vp<em id="note">&lt;note&gt;</em>superlinear
+   i suppressed<em id="note">&lt;/note&gt;</em>riso<em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>upprisu<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em><BR>
+<br>
+   <em id="element">&lt;w&gt;</em><BR>
+   <em id="display">&lt;facs&gt;</em>c&amp;isup;&amp;slong;z<em id="display">&lt;/facs&gt;</em><BR>
+   <em id="display">&lt;dipl&gt;</em>c<em id="code">&lt;expan&gt;</em>ri<em id="code">&lt;/expan&gt;</em>sz<em id="display">&lt;/dipl&gt;</em><BR>
+   <em id="display">&lt;norm&gt;</em>Krists<em id="display">&lt;/norm&gt;</em><BR>
+   <em id="element">&lt;/w&gt;</em>
+</BLOCKQUOTE>
+
+<P>The display of the transcription is
+made by style sheets in XML:</P>
+
+<P>(a) the facsimile level is the
+content of the <strong>&lt;facs&gt;</strong> element<BR>
+(b) the diplomatic level is the content of the <strong>&lt;dipl&gt;</strong>
+element, in which the <strong>&lt;expan&gt;</strong> element describes expanded
+abbreviations<BR>
+(c) the normalised level is the content of the <strong>&lt;norm&gt;</strong>
+element</P>
+
+<P>The elements <strong>&lt;facs&gt;</strong>,
+<strong>&lt;dipl&gt;</strong> and <strong>&lt;norm&gt;</strong> are not defined in TEI,
+but are part of the DTD we have defined. Please see the
+<A HREF="HB1-1_dtd.xhtml">DTD</A>
+in the tool chest.</P>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

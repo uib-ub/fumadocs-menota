@@ -11,7 +11,8 @@ compile () {
     xml=$sourcedir/$1
     xsl=$codedir/$2
     out=$contentdir/$3
-    java -jar $saxon -t -s:$xml -xsl:$xsl -o:$out
+    params=${@:4}
+    java -jar $saxon -t -s:$xml -xsl:$xsl -o:$out $params
 }
 
 if [[ $segment == "all" || $segment == "ml" ]]; then
@@ -32,7 +33,7 @@ if [[ $segment == "all" || $segment == "hb3" ]]; then
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             if [[ "$sourceID" =~ ^HB3_ ]]; then
-                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v3/${sourceID}.mdx
+                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v3/${sourceID}.mdx version="3"
             fi
         fi
     done
@@ -45,7 +46,7 @@ if [[ $segment == "all" || $segment == "hb4" ]]; then
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             if [[ "$sourceID" =~ ^HB4_ ]]; then
-                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook3.xsl handbook/v4/${sourceID}.mdx
+                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${sourceID}.mdx version="4"
             fi
         fi
     done

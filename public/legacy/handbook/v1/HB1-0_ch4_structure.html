@@ -1,0 +1,1235 @@
+<HTML>
+<!-- and modified, by hand, by me, M. J. Driscoll, on 05.05.03 -->
+<!--This file created 20.05.03 17:21 by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>Ch. 4. Document structure</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+   <X-CLARIS-WINDOW TOP=63 BOTTOM=792 LEFT=128 RIGHT=918>
+   <X-CLARIS-TAGVIEW MODE=minimal>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><FONT SIZE="-1" FACE="Verdana"><B><A NAME=top></A>
+
+<HR>
+
+<IMG SRC="handbok_1/Handbook.gif" WIDTH=500 HEIGHT=100 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></B></FONT><FONT SIZE="-1">
+
+<HR>
+
+</FONT></P>
+
+<P><FONT SIZE="+1" FACE="Verdana"><B>Chapter 4. Document
+structure</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Version 1.0 (20 May
+2003)</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#4.1"><FONT SIZE="-1" FACE="Verdana">4.1 Introduction:
+The structure of the manuscript vs. the structure of the
+work</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.2"><FONT SIZE="-1" FACE="Verdana">4.2 Main
+divisions of a TEI document</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.3"><FONT SIZE="-1" FACE="Verdana">4.3 Chapters:
+&lt;div&gt;</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.4"><FONT SIZE="-1" FACE="Verdana">4.4 Paragraph
+text: &lt;p&gt;</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.5"><FONT SIZE="-1" FACE="Verdana">4.5 Metrical
+text: &lt;lg&gt; and &lt;l&gt;</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.6"><FONT SIZE="-1" FACE="Verdana">4.6 Headings:
+&lt;head&gt;</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.7"><FONT SIZE="-1" FACE="Verdana">4.7 Page-,
+column-, and linebreaks: &lt;pb/&gt;, &lt;cb/&gt;,
+&lt;lb/&gt;</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#4.8"><FONT SIZE="-1" FACE="Verdana">4.8
+Punctuation</FONT></A></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.1"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.1 Introduction: The structure of the
+manuscript vs. the structure of the work</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Viewed as physical objects, rather
+than as vehicles for texts, manuscripts have a certain structural
+hierarchy. What is regarded as a single manuscript may in fact
+comprise more than one volume; Flateyjarb&oacute;k, for example, is
+bound in two volumes, and the large r&iacute;mur codex Acc. 22 in
+three. A manuscript book is made up of quires or gatherings, each of
+which contains a number of leaves, normally eight. Each leaf has a
+recto side and a verso side, and each side may be further divided
+into columns. The text is then written in lines across the page or
+column. In order to be able to locate a word quickly and easily, all,
+or at least most, of these structural divisions must be registered.
+We need to know that a given word appears in the fifth line of the
+right-hand or b column on the recto side of folio 34. As it is
+customary to foliate manuscripts without regard to their quire
+division, the quires will not normally need to be included in the
+hierarchical structure, but since the quiring can have implications
+for the text itself this division should be indicated, and will also
+generally form part of the &lt;msDescription&gt; element, found in
+the document header.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">At the same time, of course,
+manuscripts obviously do contain texts, which is the reason why most
+of us are interested in them in the first place. A single manuscript
+will often contain more than one work, each of which may, in the case
+of lengthy prose works such as sagas, be divided into chapters or
+sections. In the case of poetry, r&iacute;mur for example, a single
+work (r&iacute;mnaflokkur) will usually consist of several cantos or
+fits, each containing a number of stanzas, made up of a number of
+lines. It may be necessary to group these lines in some other ways as
+well. The stanzas comprising the mans&ouml;ngur should be
+distinguished from the main body of the fit, for example, while to
+facilitate certain types of metrical analysis it might be desirable
+to divide the individual stanzas into couplets. Some types of poetry,
+such as the vikivakakv&aelig;&eth;i, will have a refrain or burden,
+which should ideally also be distinguished from the narrative
+section(s) of the stanza.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">XML has at its foundation the
+notion of a text as a single hierarchical structure, which means that
+it does not work well where there are several competing hierarchies,
+as is obviously the case when one wishes for example to indicate the
+line divisions both in a poem and in the manuscript in which the poem
+is contained. The TEI Guidelines offer various solutions to this
+problem, enabling both the structure of the document and the
+structure of the text to be encoded.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.1.1 Hierarchical
+divisions</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The principal means of representing
+hierarchy is the &lt;div&gt; (i.e. 'division') element. &lt;div&gt;
+elements may freely nest within each other. The &lt;div&gt; element
+has, in addition to the universally available id and n attributes, a
+type attribute, which specifies the name conventionally given to the
+level of division, e.g. 'chapter', 'stanza', 'couplet', if attempting
+to represent the structure of the text, 'page', 'column', 'line' if
+the physical structure of the manuscript is to be preferred. It will
+be convenient to specify a value for the 'type=' attribute in the
+&lt;div&gt; element at least each time a change of level occurs. The
+software, however, will keep count of the levels of nesting even if
+the type attribute is not used.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The complex structure of a work
+such as a set of r&iacute;mur could be represented by using four
+levels of &lt;div&gt; elements, &lt;div type="canto"&gt; for the
+cantos or fits, &lt;div type="part"&gt; for the parts (for example
+the mans&ouml;ngvar), &lt;div type="stanza"&gt; for the stanzas, and
+&lt;div type="line"&gt; for the lines. If the manuscript being
+encoded contains more than one set of r&iacute;mur, as is frequently
+the case, it might be sensible to use &lt;div type="canto"&gt; for
+each set. A simpler form of mark-up is possible, however. Instead of
+&lt;div&gt; elements, the tags &lt;l&gt; (for 'line') and &lt;lg&gt;
+(for 'line-group', i.e. a group of lines functioning as a formal
+unit) can be used, reserving the &lt;div&gt; element for larger
+structural units. The type attribute is then used to identify the
+type of unit, e.g. 'stanza', 'couplet', like in &lt;lg
+type="stanza"&gt;. Here again the type need only be defined once.
+Lines and line-groups can also be numbered and identified using the n
+and id attributes.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This type of markup focusses on the
+hierarchical structure of the text. The actual physical realisation
+of the text is considered of secondary importance - if of importance
+at all - when dealing with modern printed literary works: little
+significance is attached to the page and line breaks in the various
+editions of, say, Orwell's <I>Nineteen Eighty-Four</I>. In some
+cases, however, the early editions of Joyce's works, for example,
+supervised by the author himself, the physical make-up of the text
+can be of great consequence. It may also be necessary to maintain the
+pagination and lineation of standard editions of major works, as
+these are frequently used in citations in scholarly works. In the
+case of chirographically transmitted material, the physical
+organisation of the text is more likley to be recognised as being of
+importance and in need of encoding. This can be done hierarchically,
+as above, using &lt;div&gt; elements, which are then given the
+appropriate type attributes, e.g. 'page', 'column' or 'line', but it
+seems more appropriate to reserve these elements for structural
+divisions in the text, while indicating the physical structure of the
+document through the use of so-called 'milestone' tags.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The rest of this chapter presents
+how the text may be encoded at higher structural levels than
+characters and words. Important elements here are the larger
+divisions of the text, like chapters, paragraphs (with headings), and
+stanzas. This chapter also presents how pagination and foliation,
+together with column-breaks and line-breaks, may be encoded. The
+following </FONT><A HREF="http://www.tei-c.org/"><FONT SIZE="-1" FACE="Verdana">TEI</FONT></A><FONT SIZE="-1" FACE="Verdana">
+elements are presented:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE WIDTH="100%">
+   <TR>
+      <TD WIDTH=200 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE WIDTH="100%">
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;text&gt;,
+         &lt;body&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Main divisions of the
+         text,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">division into chapters
+         (multiple levels are encoded by nesting
+         elements),</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">prose
+         paragraphs,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lg&gt;,
+         &lt;l&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">line groups and
+         lines,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;head&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">headings,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;pb/&gt;,
+         &lt;cb/&gt;, &lt;lb/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">page-, column- and
+         line-breaks.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.2"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.2 Main divisions of a TEI
+document</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The following presentation is based
+on Chapter 7 of the TEI Guidelines.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">A TEI document is always at its
+highest level enclosed by the start tag &lt;TEI.2&gt; and the end tag
+&lt;/TEI.2&gt;. Within the &lt;TEI.2&gt; element, two other elements
+appear in a fixed order, namely the &lt;teiHeader&gt; and the
+&lt;text&gt; elements. Within the &lt;text&gt; element, the body text
+may appear, enclosed in the element &lt;body&gt;. If the text has
+front matter, there will be an element &lt;front&gt;, placed before
+&lt;body&gt; containing it. Similarly, there may be an element
+&lt;back&gt;, placed after &lt;body&gt; and containing back matter.
+The elements &lt;teiHeader&gt;, &lt;text&gt; and &lt;body&gt; are
+required in any TEI-conformant document, while &lt;front&gt; and
+&lt;back&gt; are optional. This, then, is the besic structure of a
+TEI document:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=200 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE WIDTH="100%">
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;TEI.2&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the TEI document begins
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;teiHeader&gt;
+         ... &lt;/teiHeader&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the header goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;text&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the text itself begins
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;front&gt;
+         ... &lt;/front&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">any front matter goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;body&gt;
+         ... &lt;/body&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the main body of the text
+         goes here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;back&gt;
+         ... &lt;/back&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">any back matter goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/text&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the text ends
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=200>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/TEI.2&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the TEI document ends
+         here.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.2.1 Another possible first
+division of the text: More than one &lt;text&gt;
+elements</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The transcriber may want to divide
+a document into more than one different text. This can be done with
+the &lt;group&gt; element, which should be contained in the top level
+&lt;text&gt; element, which means that it takes the place of
+&lt;body&gt; in the simpler scheme illustrated above. The following
+structure appears:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;text&gt;<BR>
+&lt;front&gt; ... &lt;/front&gt;<BR>
+&lt;group&gt;<BR>
+&lt;text&gt;<BR>
+&lt;front&gt; ... &lt;/front&gt;<BR>
+&lt;body&gt; ... &lt;/body&gt;<BR>
+&lt;back&gt; ... &lt;/back&gt;<BR>
+&lt;/text&gt;<BR>
+&lt;text&gt;<BR>
+&lt;front&gt; ... &lt;/front&gt;<BR>
+&lt;body&gt; ... &lt;/body&gt;<BR>
+&lt;back&gt; ... &lt;/back&gt;<BR>
+&lt;/text&gt;<BR>
+&lt;/group&gt;<BR>
+&lt;back&gt; ... &lt;/back&gt;<BR>
+&lt;/text&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The main structure of the text, at
+the levels of work, first main division, second main division, first
+chapter of first main division, second chapter of first main division
+and so on, could be encoded in different ways. If the electronic
+document consists of more than one work, the &lt;group&gt; structure
+illustrated above is the natural choice. In that case one would get
+multiple sets of further structural divisions, one set within each of
+the &lt;body&gt; elements. If the electronic document is considered
+as only one work, and placed in one &lt;text&gt; element, we only
+have one single &lt;body&gt; element that needs further
+divisions.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.3"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.3 Chapters: &lt;div&gt;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Further division of the
+&lt;body&gt; block is achieved through &lt;div&gt; elements, with one
+level nesting inside the other as we move down through the
+hierarchical structure of the text.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.3.1 Type- and level-specified
+&lt;div&gt; elements</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;div&gt; elements may or may not
+be type specified and/or numbered, as said above. With "type" and "n"
+attributes, the three first chapters of a work may be contained in
+&lt;div&gt; elements at the same hierarchical level (siblings) like
+this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;<TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=263 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div
+         type="chapter" n="1"&gt; ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Chapter one goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div
+         type="chapter" n="2"&gt; ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">chapter two goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div
+         type="chapter" n="3"&gt; ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">chapter three goes here
+         (and so on).</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.3.2 Unspecified &lt;div&gt;
+elements</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">One alternative is to use
+&lt;div&gt; elements without specifying their type, like
+this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=263 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;
+         ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Chapter one goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;
+         ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">chapter two goes
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=262>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;
+         ... &lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">chapter three goes here
+         (and so on).</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&lt;div&gt; elements may nest
+inside each other, as was said. For example, the levels of work,
+chapter and then paragraph, can be encoded in the following
+manner:</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.3.3 Nesting &lt;div&gt;
+elements</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div
+         type="work"&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">The whole work starts
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div
+         type="chapter"&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the first subdivision
+         starts here (nested),</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">one paragraph of the
+         subdivision goes here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">end of the
+         subdivision,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">end of the
+         work.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note that while &lt;div&gt;
+elements may nest like this, &lt;p&gt; elements may not.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.4"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.4 Paragraph text:
+&lt;p&gt;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The basic-level element for prose
+text is the paragraph, &lt;p&gt;. Typically, the deepest level
+&lt;div&gt; element will contain one or more &lt;p&gt; elements, like
+this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;
+         </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">A new chapter starts
+         here,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;head&gt;
+         ... &lt;/head&gt; </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">this contains the
+         heading,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">first
+         paragraph,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">second
+         paragraph,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt; </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">third
+         paragraph,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">the chapter ends
+         here.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The &lt;p&gt; element may also
+appear in other contexts, such as the &lt;teiHeader&gt; element (see
+TEI P3, printed edition, p. 1090 f). It may also contain a number of
+other elements, but - as mentioned above - it is not permitted to
+contain other &lt;p&gt; elements (to nest, that is).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.5"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.5 Metrical text: &lt;lg&gt; and
+&lt;l&gt;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Below we present elements that are
+defined and explained in chapter 9 of the TEI Guidelines.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Texts in verse should be encoded
+using &lt;lg&gt; (linegroup), which in turn contains one or more
+&lt;l&gt; elements (lines). As with &lt;div&gt;, &lt;lg&gt; elements
+can nest. According to the TEI Guidelines &lt;lg&gt; is a sibling of,
+i.e. at at the same level as, &lt;p&gt;, and cannot be contained
+within it (unless it appears within a &lt;q&gt; element).
+Example:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;<TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">...
+         &lt;/p&gt; </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Here ends a
+         paragraph,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lg&gt;
+         </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">here starts a
+         linegroup,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">first line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">second line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">third line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/lg&gt;
+         </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">here ends the
+         linegroup,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ...</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">and here starts a new
+         paragraph.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This can create problems for the
+encoding of prosimetrum texts, where lines or verse or even whole
+poems can appear within prose text, often as part of direct speech;
+in such cases it is neceassary to include &lt;lg&gt; directly within
+&lt;p&gt;, which requires a very slight modification to the
+DTD.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Nesting of &lt;lg&gt; elements is
+useful for marking up longer poems. When the poem consists of two
+levels of linegroups we may encode its structure as in the following
+example.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lg
+         type="stanza"&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">Here starts a linegroup on
+         level one, a stanza</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lg
+         type="couplet&gt; </FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">here starts a subgroup, a
+         couplet</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">the first line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">second line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/lg&gt;
+         </FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">and here ends the
+         subgroup, the first of the couplets.</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lg&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">Here starts a new
+         subgroup,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt; </FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150 HEIGHT=5>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;l&gt;
+         ... &lt;/l&gt; </FONT></P>
+      </TD>
+      <TD WIDTH=514 HEIGHT=5>
+         <P><FONT SIZE="-1" FACE="Verdana">line,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/lg&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">here ends the second
+         subgroup,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/lg&gt;</FONT></P>
+      </TD>
+      <TD WIDTH=514>
+         <P><FONT SIZE="-1" FACE="Verdana">and here ends the level
+         one linegroup.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">These elements are defined with
+several attributes, among other things for encoding information about
+rhyme or other metrical phenomena. See </FONT><A HREF="HB1-0_ch9_metrics.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+9</FONT></A><FONT SIZE="-1" FACE="Verdana"> of this handbook for a
+more detailed presentation of metrical encoding.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.6"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.6 Headings: &lt;head&gt;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The element &lt;head&gt; is used
+for containing headings on all levels of the document. If
+&lt;head&gt; is placed at the start of a &lt;div&gt; element, it
+typically contains a chapter heading:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;<TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Here starts a
+         chapter,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;head&gt;
+         ... &lt;/head&gt; </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">its heading,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">first paragraph of the
+         chapter,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;p&gt;
+         ... &lt;/p&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">second
+         paragraph,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;/div&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">and here ends the
+         chapter.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The level for a heading follows
+from the enclosing element. A &lt;head&gt; element within a level
+three &lt;div&gt; element, is a heading for a level three partition
+of the text.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">An overlap problem may occur when,
+as is common in Old Norse manuscripts, headings for chapters are
+placed on the same text line as the last words of the preceeding
+chapter. Graphically, the heading of a following chapter is then in
+fact placed inside the text block of the preceeding chapter. As we,
+in our encoded transcription, want to place headings at the start of
+the textual divisions where they logically belong, we must override
+the structure of the layout. One way to do that, is to ignore the
+heading of the following chapter when transcribing the last lines of
+the preceeding chapter. When that chapter is closed with an end tag
+&lt;/div&gt;, we open the next chapter with its start tag
+&lt;div&gt;, go back one or two lines in the manuscript to where the
+heading starts, and transcribe from there.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">It is generally recommended
+(</FONT><A HREF="#4.7"><FONT SIZE="-1" FACE="Verdana">ch.
+4.7</FONT></A><FONT SIZE="-1" FACE="Verdana">) that line break
+elements &lt;lb/&gt; are put in as we transcribe, every time we move
+down to the next line of text in the manuscript. Following that rule,
+it is obvious that we cannot keep one single series of linebreak
+elements through the intersection between the chapters in the case of
+heading overlap. It is however not invalid according to TEI that
+&lt;lb/&gt; elements carrying the same number occur twice. Our
+recommendation is to use that possibility. When moving up again to
+encode the heading of the following chapter, then assign the actual
+number of that graphic line to its &lt;lb/&gt; element.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Consider the following column (line
+numbers in left margin):</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">05
+...............................<BR>
+06 .... these are the last<BR>
+07 </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000"><B>Header
+for</B></FONT><FONT SIZE="-1" FACE="Verdana"> words of<BR>
+08 </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#FF0000"><B>chapter
+two</B></FONT><FONT SIZE="-1" FACE="Verdana"> chapter 1.<BR>
+09 Here begins the text<BR>
+10 of chapter two .........<BR>
+11 ..............................</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The example would be encoded this
+way (word tags omitted):</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">... &lt;lb n="6"/&gt; these are the
+last &lt;lb n="7"/&gt; words of &lt;lb n="8"/&gt;chapter 1.
+&lt;/p&gt;&lt;/div&gt; &lt;div&gt;&lt;head&gt;&lt;lb
+n="7"/&gt;&lt;head&gt;Header for &lt;lb n="8"/&gt; chapter two
+&lt;/head&gt;&lt;p&gt;&lt;lb n="9"/&gt;Here begins the text &lt;lb
+n="10"/&gt;of chapter two...</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This encoding will not record
+whether the header is placed at the left or right side of the column.
+That information can be included in an attribute, if headers are not
+always placed on the same side. In the latter case one can simply
+state in the TEI header of the electronic transcription how headers
+are placed in this particular manuscript.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">When double numbering of linebreaks
+is used in a transcription, one should make sure that any automatic
+numbering program that is run on the &lt;lb/&gt; elements is set up
+not override manually given numbers.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="4.7"></A></FONT></P>
+
+<P><FONT FACE="Verdana"><B>4.7 Page-, column- and linebreaks:
+&lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.7.1 Page-breaks</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">TEI uses the empty element
+&lt;pb/&gt; to mark page-breaks. This element has an attribute "n="
+which can be used for noting the page number. As it is customary to
+refer to the manuscript leaves, rather than pages, the value of the n
+attribute should indicate front or rear pages (recto, verso).
+Column-breaks will also be also necessary to mark up. To do that, we
+use the TEI element &lt;cb/&gt;. If you want explicit information
+about column numbers, we suggest using "A", "B" and so on, in the n
+attribute of &lt;cb/&gt;. Example:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;<TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150 BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Elements</FONT></P>
+      </TD>
+      <TD BGCOLOR="#CCCCCC">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#000000"><TABLE BORDER=0 WIDTH="100%">
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;pb
+         n="1r"/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">Here
+         starts folio one, page recto,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;cb
+         n="A"/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">here
+         starts first column,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;cb
+         n="B"/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">and here
+         starts second column.</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P></P>
+      </TD>
+      <TD>
+         <P></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;pb
+         n="1v"/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">Here
+         starts folio one, page verso,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;cb
+         n="A"/&gt; </FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">here
+         starts the first column of the verso page,</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH=150>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;cb
+         n="B"/&gt;</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">and here
+         starts second column.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Page-break information from, for
+example, a printed standard edition, can be encoded in addition to
+the &lt;pb/&gt; tagging that refer to the manuscript itself. This may
+be done in the same manner as described for linebreaks,
+below.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>4.7.2 Line-breaks</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">These are also marked with an empty
+element, the &lt;lb/&gt;, which is placed at the start of a new line
+and may be numbered by using the n attribute:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lb
+n="1"/&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0033FF">
+</FONT><FONT SIZE="-1" FACE="Verdana">Here starts line number
+one.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">When transcribing Old Norse
+sources, we recommend that &lt;lb/&gt; is used for indicating the
+linebreaks of the manuscript itself. One might also include more than
+one layer of linebreak encoding, distinguishing them from one another
+with the "type=" attribute. If one for example wanted add linebreak
+information from a standard edition, it could be done by adding tags
+like this:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#000000">&lt;lb
+type="Standard Edition" n="1"/&gt;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="4.8"></A></P>
+
+<P><FONT FACE="Verdana"><B>4.8 Punctuation</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">It is genereally recommended that
+punctuation marks are placed outside the word elements &lt;w&gt;.
+This means that the dot "." is to be placed outside of the &lt;w&gt;
+element when it has a pause function. The dot may however also
+function as an abbreviation sign, or even as both an abbreviation
+sign and a pause mark at the same time. When the dot has an
+abbreviating function, it is recommended that it, like other
+abbreviation signs, be transcribed inside the &lt;w&gt; element using
+an entity (&amp;dot;). If that same dot also is interpreted as a
+pause mark, it is recommended that the transcriber place an
+additional dot immediately following the &lt;w&gt; element and
+enclosed in a &lt;supplied&gt; element. That way it is made explicit
+which of the signs that is added by the transcriber.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In the first of the following
+examples, the dot has only the abbreviating function. In the second
+example it can be interpreted as being also a pause mark:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Manuscript: "kgr. sagdi"<BR>
+Facsimile level: &lt;w&gt;kgr&amp;dot;&lt;/w&gt;
+&lt;w&gt;sagdi&lt;/w&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Manuscript: "nu sagdi kgr."<BR>
+Facsimile level: &lt;w&gt;nu&lt;/w&gt; &lt;w&gt;sagdi&lt;/w&gt;
+&lt;w&gt;kgr&amp;dot;&lt;/w&gt;&lt;supplied resp="transcriber"
+reason="implicit"&gt;.&lt;/supplied&gt;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In the latter case priority is
+given to the abbreviation mark, which is encoded as being present in
+the manuscript. The pause function is considered secondary and only
+implicitly present, wherefore the &lt;supplied&gt; tag is used. One
+may indicate with the "reason=" attribute that the sign is indeed
+implicitly present in the manuscript.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P>&nbsp;</P>
+
+<CENTER><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT><A HREF="#top"><FONT SIZE="-1" FACE="Verdana">Top
+of page</FONT></A></CENTER>
+
+<P>&nbsp;</P>
+
+<P>&nbsp;<TABLE BGCOLOR="#CCCCCC" CELLSPACING=6 CELLPADDING=2 WIDTH="100%">
+   <TR>
+      <TD>
+         <P><FONT SIZE="-2" FACE="Verdana">Preliminary version
+         created 4 March 2002. Version 1.0 published 20 May
+         2003.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+</P>
+</BODY>
+</HTML>

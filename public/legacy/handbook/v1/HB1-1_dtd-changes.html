@@ -1,0 +1,632 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook (v. 1.1): Changes to the Menota DTD</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Changes to the Menota DTD</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<p>&nbsp;</p>
+
+
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+<thead>
+	<tr>
+		<td colspan=2 bgcolor="#D3D3D3">
+		<p>These changes are done according to the TEI P4, <A target="_blank"
+		HREF="http://www.tei-c.org/P4X/MD.html">ch. 29: "Modifying and
+		Customizing the TEI DTD"</a>.</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+		<hr>
+		</td>
+	</tr>
+<thead>
+<tfoot><tr></tr></tfoot>
+<tbody>
+	<tr>
+		<td colspan=2 bgcolor="#D3D3D3">
+			<p>Changes in element classes</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>metrical</p>
+		</td>
+		<td>
+			<p>Defines a set of attributes which certain elements may use
+			to represent metrical information.</p>
+			<p><hr>
+			<p><em>Changes in Menota:</em><br>
+			The attributes <em>ass</em> and <em>all</em> are added to this class.</p>
+			<p><hr></p>
+			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ENTITY</em> <em id="code">% a.metrical '<br>
+			 &nbsp;&nbsp;met CDATA %INHERITED;<br>
+			 &nbsp;&nbsp;real CDATA #IMPLIED<br>
+			 &nbsp;&nbsp;rhyme CDATA #IMPLIED<br>
+			 &nbsp;&nbsp;ass CDATA #IMPLIED<br>
+			 &nbsp;&nbsp;all CDATA #IMPLIED'</em><em id="element">&gt;</em></p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">ass</p>
+		</td>
+		<td>
+			<p>New attribute added by Menota.</p>
+			<p>Indicates assonance in the stanzaic text.</p>
+			<p><hr></p>
+			<p><em>Example:</em><br>
+			See <a href="HB1-1_ch9_metrics.html#9.3">ch. 9.3</a></p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">all</p>
+		</td>
+		<td>
+			<p>New attribute added by Menota.</p>
+			<p>Indicates alliteration in the stanzaic text.</p>
+			<p><hr></p>
+			<p><em>Example:</em><br>
+			See <a href="HB1-1_ch9_metrics.html#9.3">ch. 9.3</a></p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>See further:</em><br>
+			TEI P4 for the <a target=_blank href="http://www.tei-c.org/P4X/ref-METRICAL.html">original
+			declaration</a> and the Menota handbook <a href="HB1-1_ch9_metrics.xhtml">ch. 9</a>
+			on metrical encoding.
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 bgcolor="#D3D3D3">
+			<p>New attributes in elements which are not changed otherwise</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;term&gt;</strong></p>
+		</td>
+		<td>
+			<p>Contains a single-word, multi-word or symbolic designation which is regarded as
+			a technical term.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+		<p id="indent1">reg</p>
+		</td>
+		<td>
+			<p>New attribute added by Menota.</p>
+			<p>Indicates regularised text. Used in chapter
+			<a href="HB1-1_ch10_msdescript.html#10.5">10.5</a> of the Menota
+			handbook. The use of the TEI element <term> with the attributes <em>type</em> and
+			<em>reg</em> allows for more precise searching than would be possible
+			with free text (but is obviously dependent on there being a commonly agreed taxonomy).
+			This use is however questionable and might be removed in later editions.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em><br>
+			&nbsp;&nbsp;<em id="code">term reg CDATA #IMPLIED</em><em id="element">&gt;</em>
+			<p><hr></p>
+			<p><em>See further:</em><br>
+			TEI P4 for the <a target=_blank href="http://www.tei-c.org/P4X/ref-TERM.html">original
+			declaration</a> of the element and the Menota handbook
+			<a href="HB1-1_ch10_msdescript.html#10.5">ch. 10.5</a>
+			for the use of the element in Menota.</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 bgcolor="#D3D3D3">
+			<p>New elements</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p>The following elements (<strong>&lt;dipl&gt;</strong>, <strong>&lt;facs&gt;</strong>
+			and <strong>&lt;norm&gt;</strong>) are all made to be used in the elements
+			<strong>&lt;w&gt;</strong><w> and <strong>&lt;supplied&gt;</strong> and are made using
+			the same template.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;dipl&gt;</strong></p>
+		</td>
+		<td>
+			<p>Contains the <em>diplomatic</em> form of a reading.</p>
+			<p>The element is based on the element <strong>&lt;orig&gt;</strong> in TEI, but with some changes:
+			<strong>&lt;note&gt;</strong> and <em>m.fragmentary</em> are added to the content model,
+			and <em>a.seg</em> is added to the attribute list.</p>
+			<p>The attributes below come in addition to global attributes and those inherited from <em>a.seg</em>.
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">reg</p>
+		</td>
+		<td>
+			<p>Gives a <em>regularised</em> (normalised) form of the text. This is like the same
+			attribute in <strong>&lt;orig&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">resp</p>
+		</td>
+		<td>
+			<p>Identifies the individual <em>responsible</em> for the regularisation of the word
+			or phrase. This is like the same attribute in <strong>&lt;orig&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters, typically the initials of the individual involved,
+			or a role identifier like 'editor' if not known by name.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="display">&lt;dipl&gt;</em>g<em id=code>&lt;expan&gt;</em>ro<em
+			id=display>&lt;/expan&gt;</em><em id="layout">&lt;lb&gt;&lt;/lb&gt;</em>fo<em
+			id="code">&lt;expan&gt;</em>m<em id="code">&lt;/expan&gt;</em><em
+			id=display>&lt;/dipl&gt;</em></p>
+			<p><hr></p>
+			<p><em>Data Description:</em><br>
+			May contain character data and phrase-level elements.</p>
+			<p><hr></p>
+			<p><em>May contain:</em><br>
+			#PCDATA, dimensions, locus, origDate, origPlace, msIdentifier, material, signatures,
+			catchwords, secFol, heraldry, abbr, address, date, dateRange, dateStruct, expan,
+			geogName, measure, name, num, orgName, persName, placeName, rs, time, timeRange,
+			timeStruct, add, app, corr, damage, del, orig, reg, restore, sic, space, supplied,
+			unclear, formula, handShift, distinct, emph, foreign, gloss, hi, mentioned, soCalled,
+			term, title, ptr, ref, xptr, xref, caesura, c, cl, m, phr, s, seg, w, anchor,
+			addSpan, delSpan, gap, alt, altGrp, index, interp, interpGrp, join, joinGrp, link,
+			linkGrp, span, spanGrp, timeline, cb, fw, lb, milestone, pb, note, lacunaEnd, lacunaStart,
+			witEnd, witStart</p>
+			<p><hr></p>
+			<p><em>May occur within:</em><br>
+			<strong>w</strong>, <strong>supplied</strong>
+			<p><hr></p>
+			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ELEMENT</em> <em id="code">dipl %om.RR;
+			(%phrase; | note | %m.fragmentary;)*</em><em id="element">&gt;</em><p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em> <em id="code">dipl<br>
+			&nbsp;&nbsp;%a.global;<br>
+			&nbsp;&nbsp;%a.seg;<br>
+			&nbsp;&nbsp;reg CDATA #IMPLIED<br>
+    		&nbsp;&nbsp;resp CDATA #IMPLIED</em><em id="element">&gt;</em>
+    		<p><hr></p>
+    		<p><em>See further:</em><br>
+			The Menota handbook <a href="HB1-1_ch3_levels.html#3.3">ch. 3.3</a>.</p>
+    	</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;facs&gt;</strong></p>
+		</td>
+		<td>
+			<p>Contains the <em>facsimile</em> form of a reading.</p>
+			<p>The element is based on the element <strong>&lt;orig&gt;</strong> in TEI, but with some changes:
+			<strong>&lt;note&gt;</strong> and <em>m.fragmentary</em> are added to the content model,
+			and <em>a.seg</em> is added to the attribute list.</p>
+			<p>The attributes below come in addition to global attributes and those inherited from <em>a.seg</em>.
+		</td>
+	</tr
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">reg</p>
+		</td>
+		<td>
+			<p>Gives a <em>regularised</em> (normalised) form of the text. This is like the same
+			attribute in <strong>&lt;orig&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">resp</p>
+		</td>
+		<td>
+			<p>Identifies the individual <em>responsible</em> for the regularisation of the word
+			or phrase. This is like the same attribute in <strong>&lt;orig&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters, typically the initials of the individual involved,
+			or a role identifier like 'editor' if not known by name.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="display">&lt;facs&gt;</em>g&osup;<em
+			id="layout">&lt;lb&gt;&lt;/lb&gt;</em>fo&bar;<em id=display>&lt;/facs&gt;</em></p>
+			<p><hr></p>
+			<p><em>Data Description:</em><br>
+			May contain character data and phrase-level elements.</p>
+			<p><hr></p>
+			<p><em>May contain:</em><br>
+			#PCDATA, dimensions, locus, origDate, origPlace, msIdentifier, material, signatures,
+			catchwords, secFol, heraldry, abbr, address, date, dateRange, dateStruct, expan,
+			geogName, measure, name, num, orgName, persName, placeName, rs, time, timeRange,
+			timeStruct, add, app, corr, damage, del, orig, reg, restore, sic, space, supplied,
+			unclear, formula, handShift, distinct, emph, foreign, gloss, hi, mentioned, soCalled,
+			term, title, ptr, ref, xptr, xref, caesura, c, cl, m, phr, s, seg, w, anchor,
+			addSpan, delSpan, gap, alt, altGrp, index, interp, interpGrp, join, joinGrp, link, linkGrp, span, spanGrp, timeline, cb, fw, lb, milestone, pb, note, lacunaEnd, lacunaStart, witEnd, witStart</p>
+			<p><hr></p>
+			<p><em>May occur within:</em><br>
+			<strong>w</strong>, <strong>supplied</strong>
+			<p><hr></p>
+			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ELEMENT</em> <em id="code">facs %om.RR;
+			(%phrase; | note | %m.fragmentary;)*</em><em id="element">&gt;</em><p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em> <em id="code">facs<br>
+			&nbsp;&nbsp;%a.global;<br>
+			&nbsp;&nbsp;%a.seg;<br>
+			&nbsp;&nbsp;reg CDATA #IMPLIED<br>
+    		&nbsp;&nbsp;resp CDATA #IMPLIED</em><em id="element">&gt;</em>
+    		<p><hr></p>
+    		<p><em>See further:</em><br>
+			The Menota handbook <a href="HB1-1_ch3_levels.html#3.3">ch. 3.3</a>.</p>
+    	</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;norm&gt;</strong></p>
+		</td>
+		<td>
+			<p>Contains the <em>normalised</em> form of a reading.</p>
+			<p>The element is based on the element <strong>&lt;reg&gt;</strong> in TEI, but with some changes:
+			<strong>&lt;note&gt;</strong> and <em>m.fragmentary</em> are added to the content model,
+			and <em>a.seg</em> is added to the attribute list.</p>
+			<p>The attributes below come in addition to global attributes and those inherited from <em>a.seg</em>.
+		</td>
+	</tr
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">orig</p>
+		</td>
+		<td>
+			<p>Gives the <em>original</em> (i.e. unregularised) form of the text
+			as found in the source copy. This is like the same
+			attribute in <strong>&lt;reg&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">resp</p>
+		</td>
+		<td>
+			<p>Identifies the individual <em>responsible</em> for the regularisation of the word
+			or phrase. This is like the same attribute in <strong>&lt;reg&gt;</strong>.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Any string of characters, typically the initials of the individual involved,
+			or a role identifier like 'editor' if not known by name.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="element">&lt;w&gt;</em><BR>
+   			<em id="display">&lt;facs&gt;</em>karin&amp;us;<em id="display">&lt;/facs&gt;</em><BR>
+   			<em id="display">&lt;dipl&gt;</em>karin<em id="code">&lt;expan&gt;</em>us<em id="code">&lt;/expan&gt;</em><em id="display">&lt;/dipl&gt;</em><BR>
+   			<em id="display">&lt;norm&gt;</em>Karinus<em id="display">&lt;/norm&gt;</em><BR>
+   			<em id="element">&lt;/w&gt;</em><BR>
+			<p><hr></p>
+			<p><em>Data Description:</em><br>
+			May contain character data and phrase-level elements.</p>
+			<p><hr></p>
+			<p><em>May contain:</em><br>
+			#PCDATA, dimensions, locus, origDate, origPlace, msIdentifier, material, signatures,
+			catchwords, secFol, heraldry, abbr, address, date, dateRange, dateStruct, expan,
+			geogName, measure, name, num, orgName, persName, placeName, rs, time, timeRange,
+			timeStruct, add, app, corr, damage, del, orig, reg, restore, sic, space, supplied,
+			unclear, formula, handShift, distinct, emph, foreign, gloss, hi, mentioned, soCalled,
+			term, title, ptr, ref, xptr, xref, caesura, c, cl, m, phr, s, seg, w, anchor,
+			addSpan, delSpan, gap, alt, altGrp, index, interp, interpGrp, join, joinGrp, link,
+			linkGrp, span, spanGrp, timeline, cb, fw, lb, milestone, pb, note, lacunaEnd,
+			lacunaStart, witEnd, witStart</p>
+			<p><hr></p>
+			<p><em>May occur within:</em><br>
+			<strong>w</strong>, <strong>supplied</strong>
+			<p><hr></p>
+			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ELEMENT</em> <em id="code">norm %om.RR;
+			(%phrase; | note | %m.fragmentary;)*</em><em id="element">&gt;</em><p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em> <em id="code">norm<br>
+			&nbsp;&nbsp;%a.global;<br>
+			&nbsp;&nbsp;%a.seg;<br>
+			&nbsp;&nbsp;orig CDATA #IMPLIED<br>
+    		&nbsp;&nbsp;resp CDATA #IMPLIED</em><em id="element">&gt;</em>
+    		<p><hr></p>
+    		<p><em>See further:</em><br>
+			The Menota handbook <a href="HB1-1_ch3_levels.html#3.3">ch. 3.3</a>.</p>
+    	</td>
+	</tr>
+	<tr>
+		<td colspan=2 bgcolor="#D3D3D3">
+			<p>Changes to elements in TEI P4</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;supplied&gt;</strong></p>
+		</td>
+		<td>
+			<p>Signifies text <em>supplied</em> by the transcriber or editor in place of text
+			which cannot be read, either because of physical damage or loss in the original
+			or because it is illegible for any reason.</p>
+			<p><hr></p>
+			<p><em>Changes in Menota:</em><br>
+			The new elements <strong>&lt;facs&gt;</strong>, <strong>&lt;dipl&gt;</strong>
+			and <strong>&lt;norm&gt;</strong> are added to the content model.
+			<strong>&lt;lacunaEnd&gt;</strong>, <strong>&lt;lacunaStart&gt;</strong>,
+			<strong>&lt;witEnd&gt;</strong> and <strong>&lt;witStart&gt;</strong>
+			are added to the content model by including <em>m.fragmentary</em>.
+			The <em>type</em> attribute is added; other attributes are as in the original.
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">type</p>
+		</td>
+		<td>
+			<p>Indicates the <em>type</em> of the supplied text.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			&#8211;</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="display">&lt;facs&gt;</em><br>
+			<em id="element">&lt;supplied</em> <em id="code">resp="KGJ" source="Neckel1983:13"<br>
+   			rend="sequence"</em><em id="element">&gt;</em>at<em id="element">&lt;/supplied&gt;</em><br>
+   			<em id="display">&lt;/facs&gt;</em></p>
+   			<p><hr></p>
+   			<p><em>Declaration:</em></p>
+			<p id="indent1"><em id="element">&lt;!ELEMENT</em>
+			<em id="code">supplied %om.RO;  (#PCDATA | facs | dipl | norm
+			| %m.phrase; | %m.inter; | %m.Incl; | %m.fragmentary;)*</em> <em id="element">&gt;</em></p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em> <em id="code">supplied<br>
+      		&nbsp;&nbsp;%a.global;<br>
+      		&nbsp;&nbsp;reason CDATA #IMPLIED<br>
+      		&nbsp;&nbsp;resp CDATA %INHERITED;<br>
+      		&nbsp;&nbsp;hand IDREF %INHERITED;<br>
+      		&nbsp;&nbsp;agent CDATA #IMPLIED<br>
+      		&nbsp;&nbsp;source CDATA #IMPLIED<br>
+      		&nbsp;&nbsp;type CDATA #IMPLIED</em><em id="element">&gt;</em></p>
+			<p><hr></p>
+			<p><em>See further:</em><br>
+			TEI P4 for the <a target=_blank href="http://www.tei-c.org/P4X/ref-SUPPLIED.html">original
+			declaration</a> of the element.
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p><strong>&lt;w&gt;</strong></p>
+		</td>
+		<td>
+			<p>Represents a grammatical (not necessarily orthographic) <em>word</em>.</p>
+			<p><hr></p>
+			<p><em>Changes in Menota:</em><br>
+			The new elements <strong>&lt;facs&gt;</strong>, <strong>&lt;dipl&gt;</strong>
+			and <strong>&lt;norm&gt;</strong> are added to the content model.
+			<strong>&lt;lacunaEnd&gt;</strong>, <strong>&lt;lacunaStart&gt;</strong>,
+			<strong>&lt;witEnd&gt;</strong> and <strong>&lt;witStart&gt;</strong>
+			are added to the content model by including <em>m.fragmentary</em>.
+			The additional elements <strong>&lt;hi&gt;</strong>, <strong>&lt;sic&gt;</strong>,
+			<strong>&lt;foreign&gt;</strong>, <strong>&lt;add&gt;</strong>,
+			<strong>&lt;del&gt;</strong>, <strong>&lt;unclear&gt;</strong>
+			and <strong>&lt;supplied&gt;</strong> are added to the content model.
+			The recursive <strong>&lt;w&gt;</strong> element is removed from the
+			content model (we might allow recursive <strong>&lt;w&gt;</strong> again in the future).
+			The attributes <em>pos</em> and <em>reg</em> are added;
+			other attributes are as in the original.
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">pos</p>
+		</td>
+		<td>
+			<p>With the attribute <em>pos</em> we can add information about the morphosyntactic
+			form of the individual representation of a lemma, i.e. the form provided in the
+			element <strong>&lt;facs&gt;</strong> is described morphosyntactically.
+			To be able to make this analysis, it is necessary to create a model for
+			the encoding that describes all the possible morphological forms of each lemma.</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			Cf. the Menota handbook <a href="HB1-1_ch8_lemma.html#8.4">ch. 8.4</a> for details.</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+			<p><hr></p>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="element">&lt;w</em>
+			<em id="code">lemma="sjaundi"
+   			pos="NUOFSN#"</em><em id="element">&gt;</em>sjaunda<em id="element">&lt;/w&gt;</em></p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p id="indent1">reg</p>
+		</td>
+		<td>
+			<p>The diplomatic level can be supplied by the attribute <em>rend</em> and the
+			normalised form by the attribute <em>reg</em>. Since elements are not allowed in
+			attributes, the function of the <strong>&lt;expan&gt;</strong> element is taken over
+			by curly brackets, e.g. "han{n}" for
+			"han<strong>&lt;expan&gt;</strong>n<strong>&lt;/expan&gt;</strong>".</p>
+			<p><hr></p>
+			<p><em>Datatype:</em><br>
+			CDATA</p>
+			<p><hr></p>
+			<p><em>Values:</em><br>
+			&#8211;</p>
+			<p><hr></p>
+			<p><em>Default:</em><br>
+			#IMPLIED</p>
+			<p><hr></p>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="element">&lt;w</em>
+   			<em id="code">rend="c{ri}sz" reg="Krists"</em><em
+   			id="element">&gt;</em>c&amp;isup;&amp;slong;z<em id="element">&lt;/w&gt;</em></p>
+		</td>
+	</tr>
+	<tr>
+		<td width=160 valign=top>
+			<p>&nbsp;</p>
+		</td>
+		<td>
+			<p><em>Example:</em></p>
+			<p id="indent1"><em id="element">&lt;w&gt;</em><BR>
+   			<em id="display">&lt;facs&gt;</em>c&amp;isup;&amp;slong;z<em id="display">&lt;/facs&gt;</em><BR>
+   			<em id="display">&lt;dipl&gt;</em>c<em id="code">&lt;expan&gt;</em>ri<em id="code">&lt;/expan&gt;</em>sz<em id="display">&lt;/dipl&gt;</em><BR>
+   			<em id="display">&lt;norm&gt;</em>Krists<em id="display">&lt;/norm&gt;</em><BR>
+   			<em id="element">&lt;/w&gt;</em></p>
+   			<p><hr></p>
+   			<p><em>Declaration:</em></p>
+   			<p id="indent1"><em id="element">&lt;!ELEMENT</em> <em id="code">w %om.RR;
+			(#PCDATA | seg | m | c | facs | dipl | norm | add | del | unclear | supplied |
+			foreign | hi | sic| %m.fragmentary;| %m.Incl;)*</em> <em id="element">&gt;</em></p>
+			<p id="indent1"><em id="element">&lt;!ATTLIST</em> <em id="code">w<br>
+			&nbsp;&nbsp;%a.global;<br>
+			&nbsp;&nbsp;%a.seg;<br>
+			&nbsp;&nbsp;lemma CDATA #IMPLIED<br>
+			&nbsp;&nbsp;pos CDATA #IMPLIED<br>
+			&nbsp;&nbsp;reg CDATA #IMPLIED</em> <em id="element">&gt;</em></p>
+			<p><hr></p>
+			<p><em>See further:</em><br>
+			TEI P4 for the <a target=_blank href="http://www.tei-c.org/P4X/ref-W.html">original
+			declaration</a> of the element.
+		</td>
+	</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

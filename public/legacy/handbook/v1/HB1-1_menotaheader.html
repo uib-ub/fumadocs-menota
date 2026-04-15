@@ -1,0 +1,674 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota handbook (v. 1.1): Menota header</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Menota header</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<p>&nbsp;</p>
+
+<P>We recommend that all texts in the
+Medieval Nordic Text Archive contain a minimal amount of information
+about the text, its background and its creation. This should be
+entered in the <strong>header</strong>, which is an integral and essential part
+of any XML/TEI document. Below is an example of a header with the
+minimal amount of information. Of course, Menota texts may contain
+much more information than exemplified below.</P>
+
+<P>Cf. <strong>TEI P4</strong> <A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html">ch.
+5</A> for a discussion of
+headers in general and also the notion of minimal headers
+(<A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html#HD7">ch.
+5.6</A>).</P>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH="60%">
+         <P>Header</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Comments</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;teiHeader&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;fileDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The file description is a
+         mandatory part of the header and must include information
+         on the title (<strong>&lt;titleStmt&gt;</strong>), publication
+         (<strong>&lt;publicationStmt&gt;</strong>) and source (<strong>&lt;sourceDescr&gt;</strong>),
+         cf. TEI P4 <A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html#HD2">ch.
+         5.2</A>.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;titleStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;title&gt;</em>Haralds
+         saga ins h&amp;aacute;rfagra as preserved in the manuscript
+         AM 37 fol. : an electronic
+         edition<em id="element">&lt;/title&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The title of the work. We
+         suggest that the traditional title of the work is given as
+         well as the manuscript on which the transcription is based.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;author&gt;</em>Unknown.
+         Possibly <em id="element">&lt;name&gt;</em>Snorri
+         Sturluson<em id="element">&lt;/name&gt;&lt;/author&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>TEI recommends that an
+         author should be specified, even if unknown (TEI P4
+         <A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html#HD7">ch.
+         5.6</A>). This may
+         seem unsuitable for medieval documents which frequently are
+         anonymous.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;respStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;resp&gt;</em>Transcription<em id="element">&lt;/resp&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The type of editorial
+         activity.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;name&gt;</em>Rune
+         Kyrkjeb&amp;oslash;, University of
+         Bergen<em id="element">&lt;/name&gt;</em></P>
+      </TD>
+      <TD valign=top>
+         <P>The name of the
+         transcriber/editor, preferably with affiliation.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/respStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/titleStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;editionStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;edition&gt;</em>First
+         Menota draft,
+         <em id="element">&lt;date&gt;</em>2002-11<em id="element">&lt;/date&gt;.&lt;/edition&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Here, "edition" means
+         roughly the same as "version". Date may be given as year
+         (<strong>2002</strong>), or year and month (<strong>2002-03</strong>), or year,
+         month and day (<strong>2002-03-22</strong>). </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/editionStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;publicationStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;publisher&gt;</em>Medieval
+         Nordic Text Archive<em id="element">&lt;/publisher&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The body (publisher,
+         archive) which has made the text available.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;pubPlace&gt;</em>Bergen<em id="element">&lt;/pubPlace&gt;</em></P>
+      </TD>
+      <TD>
+         <P>Although an electronic
+         archive in a sense is virtual, we suggest that the
+         geographical location of the host university is given as the
+         place of publication.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;date&gt;</em>2002<em id="element">&lt;/date&gt;</em></P>
+      </TD>
+      <TD>
+         <P>The date of publication in
+         the archive. Date format as in &lt;editionStmt&gt;
+         above.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;idno</em>
+         <em id="code">type="Menota"</em><em id="element">&gt;</em>Ms.
+         1<em id="element">&lt;/idno&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>A unique identification of
+         the text. Attribute value: <strong>Menota</strong>. Element content:
+         acquisition number, beginning with <strong>ms. 1</strong>.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;availability</em>
+         <em id="code">status="restricted"</em><em id="element">&gt;&lt;p&gt;</em>This
+         text is available for purposes of academic research and
+         teaching only. Re-distribution in any form without prior
+         permission is prohibited. Short extracts may be cited with
+         full acknowledgment of the
+         source.<em id="element">&lt;/p&gt;&lt;/availability&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Copyright statement.
+         Attribute values (according to TEI P4 <A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html#HD2">ch.
+         5.2.4</A>):
+         <strong>free</strong>, <strong>restricted</strong>, <strong>unknown</strong>. Until
+         further notice we recommend that the status is described as
+         exemplified in the element.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/publicationStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;sourceDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;p&gt;</em>This
+         text has been ...<em id="element">&lt;/p&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Optional information on
+         the background of the text.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;msDescription&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>This part of the source
+         description makes use of elements and attributes not yet
+         included in TEI P4, but recommended by the MASTER project;
+         cf. The Menota handbook <A target="_blank" HREF="http://helmer.hit.uib.no/menota/guidelines/ch10/msdescript_1-1.html">ch.
+         10.1</A>. These
+         elements and attributes have been included in the
+         <A HREF="HB1-1_dtd.xhtml">Menota
+         DTD</A>.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;msIdentifier&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;country</em>
+         <em id="code">reg="DK"</em><em id="element">&gt;</em>Denmark<em id="element">&lt;/country&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The country in which the
+         manuscript is kept. Attribute values: <strong>DK</strong> (Denmark),
+         <strong>IS</strong> (Iceland), <strong>NO</strong> (Norway), <strong>SE</strong> (Sweden).
+         Except for the attribute value the element may be
+         empty.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;settlement&gt;</em>Copenhagen<em id="element">&lt;/settlement&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The place in which the
+         manuscript is kept.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;repository&gt;</em>Det
+         Arnamagn&amp;aelig;anske
+         Institut<em id="element">&lt;/repository&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The manuscript collection
+         or institution, preferably with its official
+         name.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;idno&gt;</em>AM
+         37 fol<em id="element">&lt;/idno&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The manuscript signature.
+         We recommend that signatures are given according to the
+         practice in <A HREF="HB1-1_literature.xhtml">AMKO's
+         dictionary</A>
+         (Indices, 1989).</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;/msIdentifier&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;msHeading&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;textLang</em>
+         <em id="code">langKey="oic"</em><em id="element">&gt;</em>Old
+         Icelandic<em id="element">&lt;/textLang&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>In <A target="_blank" HREF="http://www.hcu.ox.ac.uk/TEI/Master/Cataloguing/name_authority/iso6392.html">ISO
+         6392</A> there is a
+         list of three-letter abbreviations of language names. In
+         addition to the modern languages <strong>dan</strong> (Danish),
+         <strong>ice</strong>/<strong>isl</strong> (Icelandic), <strong>nor</strong> (Norwegain)
+         and <strong>swe</strong>/<strong>sve</strong> (Swedish), there is only one
+         abbreviation for medieval Nordic, sc. <strong>non</strong> (Old Norse,
+         i.e. Old Icelandic and/or Old Norwegian). Since Old Norse is
+         a problematic term (and the abbreviation <strong>non</strong> is
+         idiosyncratic) we recommend the values <strong>oda</strong> (Old
+         Danish), <strong>oic</strong> (Old Icelandic), <strong>onw</strong> (Old
+         Norwegian), <strong>osw</strong> (Old Swedish). In cases of
+         uncertainty, a slash may be used, e.g. <strong>oic</strong>/<strong>onw</strong>
+         for a manuscript which is either Old Icelandic or Old
+         Norwegian (but most probably Old Icelandic),
+         <strong>onw</strong>/<strong>oic</strong> the other way round, etc. For Latin we
+         recommend the abbreviation <strong>lat</strong> (also in ISO 6392). -
+         Except for the attribute value the element may be
+         empty.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;title</em>
+         <em id="code">id="Hkr"</em><em id="element">&gt;</em>Heimskringla<em id="element">&lt;/title&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The title of the text. For
+         Old Norse texts titles should be given according to the list
+         in <A HREF="HB1-1_literature.xhtml">AMKO's
+         dictionary</A>
+         (indices, 1989). Note that an abbreviated form of the title
+         is given as an attribute value; once more this refers to the
+         list in AMKO's dictionary.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;origPlace</em>
+         <em id="code">reg="NO"</em><em id="element">&gt;</em>Norway<em id="element">&lt;/origPlace&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Provenance. The attribute
+         <strong>reg</strong> is used also here, with attributes such as
+         <strong>DK</strong> (Denmark), <strong>IS</strong> (Iceland), <strong>NO</strong>
+         (Norway), <strong>SE</strong> (Sweden). National boundaries should be
+         seen in a medieval context.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;origDate</em>
+         <em id="code">notBefore="..."
+         notAfter="..."</em><em id="element">&gt;</em>1567<em id="element">&lt;/origDate&gt;</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Date of manuscript given
+         as content of the element, as a time span given in the
+         attributes <strong>notBefore</strong> and <strong>notAfter</strong>, or as both
+         - Dates are given as explained in <strong>&lt;editionStmt&gt;</strong> above.
+         - Approximate dates, e.g. "ca. 1275", may be given with a
+         time span of 15 years in each direction, i.e. "notBefore
+         1260" and "notAfter 1290".</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;/msHeading&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/msDescription&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/sourceDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/fileDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;encodingDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>This is an optional part
+         of the header, but we recommend that it contains information
+         on the standard of encoding and level of quality. Cf. TEI P4
+         <A target="_blank" HREF="http://www.tei-c.org/P4X/HD.html#HD5">ch.
+         5.3</A>.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;projectDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;p&gt;</em>This
+         text has been encoded according to the standard set out in
+         <em id="element">&lt;title&gt;</em>The Menota handbook<em id="element">&lt;/title&gt;</em>, version 1.0,
+         at http://www.hit.uib.no/menota/guidelines.<em id="element">&lt;/p&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Not all texts in the
+         archive may confirm wholly to the Menota standard. Those
+         that do should say so explicitly.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/projectDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;editorialDecl&gt;</em></P>
+      </TD>
+      <TD>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;correction</em>
+         <em id="code">status="medium"</em><em id="element">&gt;&lt;p&gt;</em>This
+         text was proofread by Rune Kyrkjeb&amp;oslash; before the
+         first printing of his doctoral thesis
+         (2000)<em id="element">&lt;/p&gt;&lt;/correction&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Level of quality control.
+         Attribute values (according to TEI): <strong>high</strong>,
+         <strong>medium</strong>, <strong>low</strong>, <strong>unknown</strong>. Except for the
+         attribute value the element may be empty. - TEI P4 s.v.
+         <A target="_blank" HREF="http://www.tei-c.org/P4X/ref-CORRECTN.html">correction</A>
+         has these definitions:</P>
+
+         <P><strong>high</strong>: the text has
+         been thoroughly checked and proofread<BR>
+         <strong>medium</strong>: the text has been checked at least once<BR>
+         <strong>low</strong>: the text has not been checked<BR>
+         <strong>unknown</strong>: the correction status of the text is
+         unknown</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/editorialDecl&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/encodingDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;revisionDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>This is an optional part
+         of the header, but it is essential that all changes to the
+         file are recorded.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;change&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;date&gt;</em>2002-11<em id="element">&lt;/date&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Date format as explained
+         in <strong>&lt;editionStmt&gt;</strong> above.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;respStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;name&gt;</em>Rune
+         Kyrkjeb&amp;oslash;, University of
+         Bergen&lt;/name&gt;</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>The name of the person(s)
+         responsible for the change (update).</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/respStmt&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;item&gt;</em>Checked...
+         and corrected ...<em id="element">&lt;/item&gt;</em></P>
+      </TD>
+      <TD>
+         <P>The type of
+         change.</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/change&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P>&lt;<em id="element">/revisionDesc&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/teiHeader&gt;</em></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -17,10 +17,27 @@
         </xsl:choose>
         <xsl:choose>
             <xsl:when test="
-                @rend='plain' or 
-                descendant::tei:cell//tei:lb or 
-                descendant::tei:cell//tei:figure or
-                descendant::tei:cell[number(@rows) > 1]">
+                tei:row[@role='label'] and
+                not(descendant::tei:cell//tei:lb or 
+                    descendant::tei:cell//tei:figure or
+                    descendant::tei:cell[number(@rows) > 1] or
+                    descendant::tei:cell[number(@cols) > 1])">
+                <xsl:for-each select="tei:row">
+                    <xsl:text>&#x0a;|</xsl:text>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:text> </xsl:text>
+                        <xsl:apply-templates/>
+                        <xsl:text> |</xsl:text>
+                    </xsl:for-each>
+                    <xsl:if test="@role='label'">
+                        <xsl:text>&#x0a;|</xsl:text>
+                        <xsl:for-each select="tei:cell">
+                            <xsl:text>-----|</xsl:text>
+                        </xsl:for-each>
+                    </xsl:if>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
                 <xsl:text>&#x0a;&lt;table&gt;</xsl:text>
                 <xsl:if test="tei:row[@role='label']">
                     <xsl:text>&#x0a;&lt;thead&gt;</xsl:text>
@@ -40,8 +57,11 @@
                     <xsl:text>&#x0a;&lt;tr&gt;</xsl:text>
                     <xsl:for-each select="tei:cell">
                         <xsl:text>&#x0a;&lt;td</xsl:text>
+                        <xsl:if test="number(@cols) > 1">
+                            <xsl:text expand-text="true"> colSpan="{@cols}"</xsl:text>
+                        </xsl:if>
                         <xsl:if test="number(@rows) > 1">
-                            <xsl:value-of select="concat(' rowSpan=&quot;', @rows, '&quot;')"/>
+                            <xsl:text expand-text="true"> rowSpan="{@rows}"</xsl:text>
                         </xsl:if>
                         <xsl:text>&gt;</xsl:text>
                         <xsl:choose>
@@ -60,26 +80,6 @@
                 </xsl:for-each>
                 <xsl:text>&#x0a;&lt;/tbody&gt;</xsl:text>
                 <xsl:text>&#x0a;&lt;/table&gt;&#x0a;</xsl:text>
-            </xsl:when>
-            <xsl:when test="tei:row[@role='label']">
-                <xsl:for-each select="tei:row">
-                    <xsl:text>&#x0a;|</xsl:text>
-                    <xsl:for-each select="tei:cell">
-                        <xsl:text> </xsl:text>
-                        <xsl:apply-templates/>
-                        <xsl:text> |</xsl:text>
-                    </xsl:for-each>
-                    <xsl:if test="@role='label'">
-                        <xsl:text>&#x0a;|</xsl:text>
-                        <xsl:for-each select="tei:cell">
-                            <xsl:text>-----|</xsl:text>
-                        </xsl:for-each>
-                    </xsl:if>
-                </xsl:for-each>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#x0a;</xsl:text>
-                <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
         <xsl:if test="@rend">

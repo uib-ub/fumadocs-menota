@@ -1,0 +1,867 @@
+<HTML>
+
+
+<HEAD>
+    <TITLE>Menota handbook - Ch. 10 (v. 1.1): Manuscript description</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+<HR>
+<IMG SRC="handbok_1/handbook_1-1.gif" WIDTH=500 HEIGHT=100 ALIGN=bottom>
+<HR>
+</P>
+
+<h1>Chapter 10. Manuscript description</h1>
+
+<P>Version 1.1 (5 May 2004)</P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#10.1">10.1 Introduction</A><BR>
+<A HREF="#10.2">10.2 The manuscript description tagset</A><BR>
+<A HREF="#10.3">10.3 The manuscript identifier and manuscript heading elements</A><BR>
+<A HREF="#10.4">10.4 Intellectual content</A><BR>
+<A HREF="#10.5">10.5 Codicological features</A><BR>
+<A HREF="#10.6">10.6 The history of the manuscript</A><BR>
+<A HREF="#10.7">10.7 Other information</A><BR>
+<A HREF="#10.8">10.8 Names of persons, places and institutions; bibliographical references</A> </P>
+
+<p><IMG SRC="redarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top>
+<a href="HB1-1_contents.xhtml">Back to list of contents</a></p>
+
+<P><A NAME="10.1"></A>&nbsp;</p>
+
+<h2>10.1 Introduction</h2>
+
+<P>This chapter deals with the
+description - rather than transcription - of manuscripts and other
+primary source materials using TEI-compatible XML, more specifically
+the tagset developed by the MASTER project and the TEI workgroup on
+manuscript description. Although this tagset was designed to work
+within the larger TEI encoding scheme - and makes use of many of the
+standard TEI elements that are treated elsewhere in the present
+handbook -, a number of the elements described in this chapter are new
+and have at the time of writing not yet been formally integrated into
+the rest of the TEI structure. Their use therefore requires the
+definition of a TEI extension set comprising two files,
+<strong>msDesc.ent</strong> and <strong>msDesc.dtd</strong>, the former containing
+definitions of parameter entities and the latter the actual element
+and attribute definitions which make up the required modifications.
+These files, available <A target="_blank" HREF="http://www.hcu.ox.ac.uk/TEI/Master/Reference/DTD/">here</A>,
+should be placed in the same directory as the other TEI DTD files,
+while the document type declaration subset of the individual
+documents should include the following declarations:</P>
+
+<BLOCKQUOTE><em id="element">&lt;!ENTITY</em> <em id="code">%
+   TEI.extensions.ent SYSTEM "msDesc.ent"</em><em id="element">&gt;</em><BR>
+   <em id="element">&lt;!ENTITY</em> <em id="code">% TEI.extensions.dtd SYSTEM "msDesc.dtd"</em><em id="element">&gt;</em></BLOCKQUOTE>
+
+<P>Until such time as these elements
+are formally adopted by the TEI, readers are referred to the MASTER
+reference manual, available online at <A target="_blank" HREF="http://www.hcu.ox.ac.uk/TEI/Master/Reference">http://www.hcu.ox.ac.uk/TEI/Master/Reference</A>,
+for a full list of the elements available for use in manuscript
+descriptions.</P>
+
+<P>The Document Type Definition
+generated for Menota contains all elements included in the MASTER
+scheme, so no additional files are necessary when using this DTD (cf.
+<A HREF="HB1-1_dtd.xhtml">Menota's
+DTD</A>).</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.2"></A></p>
+
+<h2>10.2 The manuscript description tagset</h2>
+
+<P>The <strong>&lt;msDescription&gt;</strong>
+element is the framing element into which the manuscript description
+is put. This element can appear within <strong>&lt;sourceDesc&gt;</strong> in
+the document header, providing information - so-called
+<em>metadata</em> or data on data - on the source of which the body of
+the document is a transcription or excerpt (or a collection of
+digital images). This need consist of no more than the basic
+information necessary to identify the source, i.e. its location, both
+geographical and institutional, and its shelfmark or other
+identifying number or name (e.g. Oslo, Universitetsbibliotek, UB 1042
+8vo), but it is also possible to provide a detailed description of
+the source, analagous to what one would find in the introduction to a
+scholarly edition. Alternatively, the body of the document can
+consist of nothing but <strong>&lt;msDescription&gt;</strong> elements, as in a
+traditional manuscript catalogue. Here again, the descriptions, or
+catalogue entries, can be simple, comprising no more than a few
+lines, or rich in detail and highly structured, spanning dozens or
+even hundreds of pages. In both cases, whether the
+<strong>&lt;msDescription&gt;</strong> element is in the header or body of the
+document, it is up to the editor, cataloguer or scholar to decide how
+much detail he or she wishes to include: the overall structure of the
+source description is essentially the same. It is worth pointing out
+that the same <strong>&lt;msDescription&gt;</strong> can easily serve both
+functions, prefacing a transcription of the manuscript or as a single
+entry in a catalogue. An <strong>&lt;msDescription&gt;</strong> can also appear
+anywhere within a TEI conformant document that a paragraph
+(<strong>&lt;p&gt;</strong>) can, which means a structured source description
+could be embedded within ordinary prose, for example in a scholarly
+monograph.</P>
+
+<P>Within <strong>&lt;msDescription&gt;</strong>
+the following seven elements are available. Of these, only the first
+is mandatory:</P>
+
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#D3D3D3">
+      <TD VALIGN=top WIDTH=160>
+         <P>Elements</P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contents</P>
+      </TD>
+   </TR>
+   </thead>
+   <tfoot><tr></tr></tfoot>
+<tbody>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;msIdentifier&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Groups information that uniquely identifies the manuscript, i.e.
+   its location, holding institution and shelfmark.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;msHeading&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains a brief structured description of the manuscript,
+   including a uniform or supplied title, information on place and
+   date of origin and the language or languages of the
+   contents.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;msContents&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains an itemised list of the intellectual content of the
+   manuscript or manuscript part, with transcriptions of rubrics,
+   incipits, explicits etc., as well as primary bibliographic
+   references.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;physDesc&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <p>Groups
+   information concerning all physical aspects of the manuscript or
+   manuscript part, its material, size, format, script, decoration,
+   binding, marginalia etc.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;history&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Provides
+   information on the history of the manuscript or manuscript part,
+   its origin, provenance and acquisition by its holding
+   institution.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;additional&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Groups other information about the manuscript, in particular,
+   administrative information relating to its availability, custodial
+   history, additional materials associated with it, surrogates
+   etc.
+         </P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH=160>
+         <P><strong>&lt;msPart&gt;</strong></P>
+      </TD>
+      <TD VALIGN=top>
+         <P>Contains
+   in essence a nested <strong>&lt;msDescription&gt;</strong>, in cases of
+   composite manuscripts now regarded as constituting a single unit
+   but made up of two or more parts which were originally physically
+   distinct; since the contents, physical description and history of
+   the individual parts will normally be quite different, an
+   <strong>&lt;msPart&gt;</strong> element can contain all the elements listed
+   above, with the exception of <strong>&lt;msIdentifier&gt;</strong> and
+   <strong>&lt;msHeading&gt;</strong>.
+         </P>
+      </TD>
+   </TR>
+   </tbody>
+</TABLE>
+
+<P>Within each of these elements a
+number of sub-elements is available; <strong>&lt;msContents&gt;</strong>, for
+example, will normally consist of one or more <strong>&lt;msItem&gt;</strong>
+elements, each in turn containing specific elements for
+<strong>&lt;rubric&gt;</strong>, <strong>&lt;incipit&gt;</strong>,
+<strong>&lt;explicit&gt;</strong> and <strong>&lt;colophon&gt;</strong>, as well as the
+standard TEI elements <strong>&lt;author&gt;</strong>, <strong>&lt;title&gt;</strong> and
+<strong>&lt;bibl&gt;</strong> for bibliographic references. The contents need
+not be this structured, however, since with all the elements listed
+above, apart from <strong>&lt;msIdentifier&gt;</strong> and
+<strong>&lt;msHeading&gt;</strong>, there is also the option of using ordinary
+prose, marked up with the <strong>&lt;p&gt;</strong> element. Doing so would
+limit greatly the possibilities both for processing and searching the
+data, but could be preferable when dealing with pre-existing
+descriptions (so-called &#145;legacy data&#146;), the exact form of
+which one may wish, or be required, to maintain.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.3"></A></p>
+
+<h2>10.3 The manuscript identifier and manuscript heading elements </h2>
+
+<P>The only mandatory element, as was
+said above, is <strong>&lt;msIdentifier&gt;</strong>. There is a number of
+sub-elements available within <strong>&lt;msIdentifier&gt;</strong>:
+<strong>&lt;country&gt;</strong>, <strong>&lt;region&gt;</strong>,
+<strong>&lt;settlement&gt;</strong> (the TEI term for what most people would
+call city), <strong>&lt;institution&gt;</strong>, <strong>&lt;repository&gt;</strong>,
+<strong>&lt;collection&gt;</strong> and <strong>&lt;idno&gt;</strong>, all of which are
+self-explanatory. Of these, only <strong>&lt;settlement&gt;</strong>,
+<strong>&lt;repository&gt;</strong> and <strong>&lt;idno&gt;</strong> are required, since
+they provide what is, by common consent, the minimum amount of
+information necessary to identify a manuscript. In many cases, no
+other elements are needed, as common sense will suffice to
+distinguish, say, Paris, France from Paris, Texas, as the location of
+the <em>Biblioth&egrave;que Nationale</em>. For search purposes,
+however, it is a good idea to include as much information as
+possible, such as <strong>&lt;country&gt;</strong> and, where applicable,
+<strong>&lt;region&gt;</strong>. There is one more optional element,
+<strong>&lt;altName&gt;</strong>, which can be used for a former shelfmark or
+some name other than the standard shelfmark by which a manuscript is
+known; the manuscript Uppsala, Universitetsbibilioteket, DG 1, for
+example, is far better known under the name <em>Codex Argenteus</em> or
+the &#145;Silver Bible&#146;. There are many examples of nicknames
+among the manuscripts in the Arnamagn&aelig;an Collection, as
+&Aacute;rni Magn&uacute;sson frequently gave his manuscripts names
+based on the places where they had been made or where he got them
+from or the people whom he knew to have produced or possessed them.
+Occasionally a manuscript can have several such names or perhaps
+rather several forms of the name, typically in different languages.
+These can be dealt with through the <strong>lang</strong> attribute, which is
+available on all TEI elements.</P>
+
+<P>A typical
+<strong>&lt;msIdentifier&gt;</strong> for a manuscript in the Arnamagn&aelig;an
+collection looks like this:</P>
+
+<BLOCKQUOTE><em id="element">&lt;msIdentifier&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;country</em> <em id="code">reg="DK"</em><em id="element">&gt;</em>Danmark<em id="element">&lt;/country&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;settlement&gt;</em>K&oslash;benhavn<em id="element">&lt;/settlement&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;repository&gt;</em>Det Arnamagn&aelig;anske
+   Institut<em id="element">&lt;/repository&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;idno&gt;</em>AM 45 fol.<em id="element">&lt;/idno&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;altName</em> <em id="code">type="nickname" lang="LAT"</em><em id="element">&gt;</em>Codex
+   Frisianus<em id="element">&lt;/altName&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;altName</em> <em id="code">type="nickname"
+   lang="ISL"</em><em id="element">&gt;</em>Fr&iacute;ssb&oacute;k<em id="element">&lt;/altName&gt;</em><BR>
+   <em id="element">&lt;/msIdentifier&gt;</em></BLOCKQUOTE>
+
+<P>The value of the <strong>reg</strong>
+attribute on <strong>&lt;country&gt;</strong>, which is the standard
+international two-letter code, is for search purposes: one could find
+all manuscripts in Danish repositories regardless of whether the
+cataloguer has given the name of the country as &#145;Denmark&#146;
+or &#145;Danmark&#146; (or, for that matter,
+&#145;D&auml;nemark&#146;, &#145;Dinamarca&#146; or &#145;&#x0414;&#x0430;&#x043D;&#x0438;&#x044F;&#146;).
+There are many such attributes in the manuscript description tagset
+which allow for cross-language searches.</P>
+
+<P>The <strong>&lt;msHeading&gt;</strong>
+element is intended to provide a short summary description of the
+manuscript, which, if used in tandem with
+<strong>&lt;msIdentifier&gt;</strong>, may be said to constitute a minimal or
+first-level description, whether the <strong>&lt;msDescription&gt;</strong> is
+to be used in the header or in the body of the document.</P>
+
+<P>The elements available within
+<strong>&lt;msHeading&gt;</strong> are <strong>&lt;author&gt;</strong>,
+<strong>&lt;title&gt;</strong>, <strong>&lt;origPlace&gt;</strong>,
+<strong>&lt;origDate&gt;</strong>, <strong>&lt;textLang&gt;</strong> and
+<strong>&lt;note&gt;</strong>, which can be used to provide information on the
+manuscript which is of particular importance or interest but not
+covered by the other elements. The <strong>&lt;note&gt;</strong> element is
+repeatable, and can be given a <strong>type</strong> attribute, if it is
+thought necessary to distinguish between different kinds of notes (on
+the other hand, if one feels the need to distinguish between many
+different kinds of notes, it is probably preferable to use the
+specific tags described below). The following, the
+<strong>&lt;msHeading&gt;</strong> for the Arnamagn&aelig;an manuscript AM 1 e &#946;
+I fol., is typical:</P>
+
+<BLOCKQUOTE><em id="element">&lt;msHeading&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;title</em> <em id="code">type="uniform" lang="ISL"</em><em id="element">&gt;</em>S&ouml;gubrot
+   af nokkrum fornkonungum &iacute; Dana ok Sv&iacute;a
+   veldi<em id="element">&lt;/title&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;origPlace&gt;</em>Iceland<em id="element">&lt;/origPlace&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;origDate</em> <em id="code">notBefore="1275" notAfter="1325"</em><em id="element">&gt;</em>c.
+   1300<em id="element">&lt;/origDate&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;textLang</em> <em id="code">langKey="NON"</em><em id="element">&gt;</em>Old
+   Norse/Icelandic<em id="element">&lt;/textLang&gt;</em><BR>
+   &nbsp;&nbsp;<em id="note">&lt;note&gt;</em>This manuscript and some fragments of
+   <em id="element">&lt;title&gt;</em>Kn&yacute;tlinga saga<em id="element">&lt;/title&gt;</em> in AM 20b I fol.
+   are presumed originally to have belonged together. Together these
+   fragments constitute the work known as
+   <em id="element">&lt;title&gt;</em>Skj&ouml;ldunga saga<em id="element">&lt;/title&gt;</em>.<em id="note">&lt;/note&gt;</em><BR>
+   <em id="element">&lt;/msHeading&gt;</em></BLOCKQUOTE>
+
+<P>Here, too, the attributes provide
+information for search purposes, such as the <strong>notBefore</strong> and
+<strong>notAfter</strong> attributes on <strong>&lt;origDate&gt;</strong>.</P>
+
+<P>It would, as was said, be possible
+to stop here, as all the basic information on the source has been
+provided in a structured and searchable way. In many cases, however,
+one will wish to describe the source in greater detail.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.4"></A></p>
+
+<h2>10.4 Intellectual content </h2>
+
+<P>Although there is a
+<strong>&lt;title&gt;</strong> element in <strong>&lt;msHeading&gt;</strong>, it is used
+for a uniform title (e.g. <em>Brennu-Nj&aacute;ls saga</em>) or a
+supplied title, which describes the contents of the manuscript as a
+whole (e.g. &#145;Collection of r&iacute;mur&#146;). Detailed
+description of a manuscript&#146;s contents is put in the
+<strong>&lt;msContents&gt;</strong> element, which consists of one or more
+<strong>&lt;msItem&gt;</strong> elements, prefaced, if desired, by an
+<strong>&lt;overview&gt;</strong> element, when only some of the items are to
+be described in detail.</P>
+
+<P><strong>&lt;msItem&gt;</strong> elements are
+allowed to &#145;nest&#146;, by which is meant that an
+<strong>&lt;msItem&gt;</strong> can contain other <strong>&lt;msItem&gt;</strong>
+elements; this is useful where separate items in a manuscript are
+grouped under a single title or rubric, for example in collections of
+prayers.</P>
+
+<P>A <strong>defective</strong> attribute, with
+possible values of &#145;yes&#146;, &#145;no&#146; or
+&#145;unk&#146;, is available on <strong>&lt;msItem&gt;</strong>, providing a
+useful means of distinguishing between texts which are fragmentary
+and those which are not. The attribute is also available on the
+specialised elements for <strong>&lt;incipit&gt;</strong> and
+<strong>&lt;explicit&gt;</strong>. When dealing with collections of fragments,
+each fragment may be given as a separate <strong>&lt;msItem&gt;</strong> and
+the first and last words of each transcribed as defective incipits
+and explicits, as in the following example, a manuscript containing
+four fragments of a single work:</P>
+
+<BLOCKQUOTE><em id="element">&lt;msContents&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;msItem</em> <em id="code">defective="yes"</em><em id="element">&gt;</em><em id="element">&lt;locus</em> <em id="code">from="1r"
+   to="9v"</em><em id="element">&gt;</em>1r-9v<em id="element">&lt;/locus&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;title&gt;</em>Kn&yacute;tlinga saga<em id="element">&lt;/title&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;msItem</em> <em id="code">n="1.1"</em><em id="element">&gt;</em><em id="element">&lt;locus</em>
+   <em id="code">from="1r:1" to="2v:30"</em><em id="element">&gt;</em>1r:1-2v:30<em id="element">&lt;/locus&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;incipit</em>
+   <em id="code">defective="yes"</em><em id="element">&gt;</em>dan<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em>a a
+   engl<em id="code">&lt;expan&gt;</em>an<em id="code">&lt;/expan&gt;</em>di<em id="element">&lt;/incipit&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;explicit</em>
+   <em id="code">defective="yes"</em><em id="element">&gt;</em>en me&eth;an har<em id="code">&lt;expan&gt;</em>aldr<em id="code">&lt;/expan&gt;</em>
+   hein haf&eth;i k<em id="code">&lt;expan&gt;</em>onung<em id="code">&lt;/expan&gt;</em>r
+   v<em id="code">&lt;expan&gt;</em>er<em id="code">&lt;/expan&gt;</em>it yf<em id="code">&lt;expan&gt;</em>ir<em id="element">&lt;/expan&gt;</em>
+   danmork<em id="element">&lt;/explicit&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;/msItem&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="note">&lt;!--</em> msItems 1.2 to 1.4 <em id="note">--&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;/msItem&gt;</em><BR>
+   <em id="element">&lt;/msContents&gt;</em></BLOCKQUOTE>
+
+<P>The standard TEI element
+<strong>&lt;bibl&gt;</strong> (and the grouping &#145;parent&#146; element
+<strong>&lt;listBibl&gt;</strong>) is also available within
+<strong>&lt;msItem&gt;</strong>. This should be used to provide bibliographical
+information on the <strong>&lt;msItem&gt;</strong> level, i.e. concerning
+editions of the item in question. Bibliographical information
+pertaining to the manuscript as a whole can be placed in the
+<strong>&lt;additional&gt;</strong> element, described below.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.5"></A></p>
+
+<h2>10.5 Codicological features</h2>
+
+<P>The next major element in an
+<strong>&lt;msDescription&gt;</strong> is <strong>&lt;physDesc&gt;</strong>, i.e.
+physical description, within which there are available specialised
+elements for <strong>&lt;form&gt;</strong>, i.e. whether the &#145;text
+object&#146; is a codex, roll, tablet etc., <strong>&lt;support&gt;</strong>,
+i.e. whether written on parchment, paper etc., and a description
+thereof, <strong>&lt;extent&gt;</strong>, the number and size of leaves,
+<strong>&lt;collation&gt;</strong>, a description of the quire structure, any
+missing leaves and so on, <strong>&lt;layout&gt;</strong>, the number of
+columns, dimensions of the written area, number of lines per
+page/column etc., <strong>&lt;bindingDesc&gt;</strong>, a description of the
+present binding, if any, and information on any former bindings,
+<strong>&lt;foliation&gt;</strong>, how and, if known, when and by whom the
+manuscript has been paginated/foliated, <strong>&lt;musicNotation&gt;</strong>,
+a description of any musical notation, <strong>&lt;additions&gt;</strong>, i.e.
+a description and/or transcription of any marginalia, glosses etc. in
+the manuscript, and <strong>&lt;condition&gt;</strong>, for a description of
+the present physical state of the manuscript. All these elements
+contain one or more paragraphs tagged with the standard TEI
+<strong>&lt;p&gt;</strong> element, which means that the content can range from
+a single word or phrase to the equivalent of several pages in a
+printed book.</P>
+
+<P>There are also several elements
+available within <strong>&lt;physDesc&gt;</strong> for which one has the option
+of using a series of specific sub-elements. The
+<strong>&lt;msWriting&gt;</strong> element is intended for a description of the
+scribal hand or hands of the manuscript. This too may simply contain
+one or more <strong>&lt;p&gt;</strong> elements, but can also consist of a
+series of <strong>&lt;handDesc&gt;</strong> elements, each of which contains a
+prose description of one of the hands, marked up with
+<strong>&lt;p&gt;</strong>. The level of detail in these descriptions is
+determined entirely by the scholar or cataloguer. The following is an
+example of a short <strong>&lt;msWriting&gt;</strong> element:</P>
+
+<BLOCKQUOTE><em id="element">&lt;msWriting</em>
+   <em id="code">hands="1"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>Written in <em id="element">&lt;term</em> <em id="code">type="script"
+   reg="Hybrida"</em><em id="element">&gt;</em>Gothic hybrid<em id="element">&lt;/term&gt;</em>. The scribe is unknown,
+   but the same hand is found on sections of AM 23 4to and Gl. kgl.
+   S. 25 fol.<em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/msWriting&gt;</em></BLOCKQUOTE>
+
+<P>The use of the TEI element
+<strong>&lt;term&gt;</strong>, with attributes <strong>type</strong> and <strong>reg</strong>
+(&#145;regularised&#146;), allows for more precise searching than
+would be possible with free text (but is obviously dependent on there
+being a commonly agreed taxonomy).</P>
+
+<P>In the following, where a
+<strong>&lt;handDesc&gt;</strong> element is used to describe an individual
+hand (one of six in the manuscript), the <strong>script</strong> attribute is
+used to indicate the type of script. Note also the SCOPE element,
+with possible values of &#145;major&#146;, &#145;minor&#146; and
+&#145;sole&#146;.</P>
+
+<BLOCKQUOTE><em id="element">&lt;msWriting</em>
+   <em id="element">hands="1"</em><em id="code">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;handDesc</em> <em id="code">script="Hybrida"
+   scope="major"</em><em id="element">&gt;</em><em id="element">&lt;p&gt;</em>The main hand (Hand 1) writes
+   <em id="element">&lt;locus&gt;</em>ff. 1r-9r and 16r-118v<em id="element">&lt;/locus&gt;</em> in a practised
+   Gothic hybrid.<em id="element">&lt;/p&gt;</em><em id="element">&lt;/handDesc&gt;</em><BR>
+   &nbsp;&nbsp;<em id="note">&lt;!</em>-- more handDesc elements <em id="note">--&gt;</em><BR>
+   <em id="element">&lt;/msWriting&gt;</em></BLOCKQUOTE>
+
+<P>Here the <strong>&lt;locus&gt;</strong>
+element, which we saw above in <strong>&lt;msItem&gt;</strong>, is used to
+indicate specifically which parts of a manuscript are written in a
+given hand.</P>
+
+<P>As the content of the
+<strong>&lt;handDesc&gt;</strong> element is &#145;p+&#146;, i.e. one or more
+paragraphs, there is no limit to the amount of information which may
+be given on any single hand. Thus, a detailed analysis of
+palaeographical and orthographical features (&#145;/a/ is of the
+two-storey kind&#146;, etc.) is perfectly possible within this
+overall structure.</P>
+
+<P>There is a corresponding element,
+<strong>&lt;decoration&gt;</strong> for the description of illumination and
+other decorational features in the manuscript.
+<strong>&lt;decoration&gt;</strong>, like <strong>&lt;msWriting&gt;</strong>, may simply
+contain one or more paragraphs or a sequence of topically organised
+sub-elements, called <strong>&lt;decoNote&gt;</strong>s, each describing either
+a decorative component of a manuscript (e.g. a single illuminated
+initial) or a homogenous class of such components (e.g. illuminated
+initials generally).</P>
+
+<P>A large number of attributes is
+available on <strong>&lt;decoNote&gt;</strong>, including <strong>type</strong> (e.g.
+&#145;initial&#146;), <strong>subtype</strong> (e.g. &#145;historiated&#146;)
+and <strong>technique</strong> (e.g. &#145;pen and wash&#146;); there are also
+the attributes <strong>figurative</strong> and <strong>illustrative</strong>, with
+possible values &#145;yes&#146;, &#145;no&#146; or
+&#145;unknown&#146; (in the latter case &#145;y&#146;, &#145;n&#146;
+or &#145;u&#146;). All these may be used in order to facilitate
+sophisticated searches.</P>
+
+<P>The following is an example of a
+typical <strong>&lt;decoNote&gt;</strong>:</P>
+
+<BLOCKQUOTE><em id="element">&lt;decoNote</em>
+   <em id="code">type="secondary" subtype="initial" figurative="no"
+   illustrative="n"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>There are red initials on ff. 4r, 5v, 8r,
+   91r, 95r, 100r, 101r, 102r, 104r, 107r, 108r, 110r, 111r, 112r,
+   113 and 116r.<em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/decoNote&gt;</em></BLOCKQUOTE>
+
+<P>The standard TEI
+<strong>&lt;list&gt;</strong> element can also be used if one wishes to list
+separately the individual instances of a particular type of
+decoration, rather than using separate <strong>&lt;decoNote&gt;</strong>
+elements:</P>
+
+<BLOCKQUOTE><em id="element">&lt;decoNote</em>
+   <em id="code">type="miniature" technique="fully coloured" figurative="yes"
+   illustrative="y"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>The manuscript is decorated with 48 framed
+   miniatures depicting scenes from the life of Christ and the life
+   of the Virgin.<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;list&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;item</em>
+   <em id="code">n="1"</em><em id="element">&gt;&lt;locus&gt;</em>2v<em id="element">&lt;/locus&gt;&lt;term&gt;</em>Piet&agrave;<em id="element">&lt;/term&gt;</em>;
+   the dead Christ supported by the Virgin Mary.<em id="element">&lt;/item&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="note">&lt;!--</em> other items <em id="note">--&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;/list&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/decoNote&gt;</em></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.6"></A></p>
+
+<h2>10.6 The history of the manuscript</h2>
+
+<P>The <strong>&lt;history&gt;</strong> element
+contains information on the history of the manuscript. Available
+within it are just three sub-elements: <strong>&lt;origin&gt;</strong>, for
+information on when, where and, if known, by whom the manuscript was
+written, <strong>&lt;provenance&gt;</strong>, in which any evidence of
+ownership and use is provided, and <strong>&lt;acquisition&gt;</strong>, which
+describes when and how the manuscript was acquired by its holding
+institution. Each of these elements contains one or more paragraphs.
+Alternatively, as with the other major elements in a manuscript
+description, the <strong>&lt;history&gt;</strong> element may itself consist
+simply of one or more paragraphs in which the entire history of the
+manuscript is given (or, as the case may be, not given, if nothing is
+known of the manuscript&#146;s previous history).</P>
+
+<P>For manuscripts in the
+Arnamagn&aelig;an collection the principal source of information on
+the manuscript&#146;s history will be &Aacute;rni Magn&uacute;sson
+himself, who frequently provided details on how he had come to
+possess the manuscript and anything he had been able to discover
+about its previous owners. This information is generally written on
+small paper slips which are kept with the manuscript, usually bound
+into the front or back or separately in the manuscript AM 435 a 4to.
+One may wish to provide a full transcription of these comments within
+the <strong>&lt;provenance&gt;</strong> (or <strong>&lt;acquisition&gt;</strong>)
+element, as in the following example:</P>
+
+<BLOCKQUOTE><em id="element">&lt;provenance&gt;<BR></em>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>According to AM 435 a 4to, ff. 54v-56v, the
+   manuscript had been owned by <em id="element">&lt;name</em> <em id="code">type="person"
+   role="owner"</em><em id="element">&gt;</em>Sr. &THORN;&oacute;r&eth;ur J&oacute;nsson
+   &aacute; <em id="element">&lt;name</em> <em id="code">type="place"</em><em id="element">&gt;</em>Sta&eth;asta&eth;<em id="element">&lt;/name&gt;</em>
+   (1672-1720)<em id="element">&lt;/name&gt;</em>, who had got it from <em id="element">&lt;name</em>
+   <em id="code">type="person" role="owner"</em><em id="element">&gt;</em>J&oacute;n H&aacute;konarson a&eth;
+   <em id="element">&lt;name</em> <em id="code">type="place"</em><em id="element">&gt;</em>Vatnshorni<em id="element">&lt;/name&gt;</em> (c.
+   1658-1748)<em id="element">&lt;/name&gt;</em>, who had in turn got it from <em id="element">&lt;name</em>
+   <em id="code">type="person" role="owner"</em><em id="element">&gt;</em>&THORN;orgeir J&oacute;nsson (c.
+   1661-1742)<em id="element">&lt;/name&gt;</em>,
+   <em id="element">&lt;foreign&gt;</em>r&aacute;&eth;sma&eth;ur<em id="element">&lt;/foreign&gt;</em> at
+   <em id="element">&lt;name</em> <em id="code">type="place"</em><em id="element">&gt;</em>H&oacute;lar<em id="element">&lt;/name&gt;</em> and brother of
+   Bishop <em id="element">&lt;name</em> <em id="code">type="person"</em><em id="element">&gt;</em>Steinn
+   J&oacute;nsson<em id="element">&lt;/name&gt;</em>. &THORN;orgeir had got the manuscript,
+   probably in 1696 or 97, at <em id="element">&lt;name</em>
+   <em id="code">type="place"</em><em id="element">&gt;</em>Kalasta&eth;ir<em id="element">&lt;/name&gt;</em>, <em id="element">&lt;name</em>
+   <em id="code">type="place"</em><em id="element">&gt;</em>Hvalfjar&eth;arstr&ouml;nd<em id="element">&lt;/name&gt;</em> from
+   <em id="element">&lt;name</em> <em id="code">type="person" role="owner"</em><em id="element">&gt;</em>&THORN;&oacute;r&eth;ur
+   Illugason<em id="element">&lt;/name&gt;</em>, son of <em id="element">&lt;name</em> <em id="code">type="person"</em><em id="element">&gt;</em>Illugi
+   Vigf&uacute;sson<em id="element">&lt;/name&gt;</em> (c. 1570-1634), son of <em id="element">&lt;name</em>
+   <em id="code">type="person"</em><em id="element">&gt;</em>Vigf&uacute;s J&oacute;nsson,
+   <em id="element">&lt;foreign&gt;</em>s&yacute;sluma&eth;ur<em id="element">&lt;/foreign&gt;</em> (d. c.
+   1595)<em id="element">&lt;/name&gt;</em>. &THORN;orgeir's wife, <em id="element">&lt;name</em>
+   <em id="code">type="person"</em>&gt;</em>Margr&eacute;t
+   Gu&eth;mundsd&oacute;ttir<em id="element">&lt;/name&gt;</em>, and
+   &THORN;&oacute;r&eth;ur Illugason, who had no children of his own,
+   were related
+   (<em id="element">&lt;foreign&gt;</em>&thorn;r&iacute;menningar<em id="element">&lt;/foreign&gt;</em>).<em id="element">&lt;/p&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>The full text of &Aacute;rni's comments
+   reads:<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;q&gt;&lt;p&gt;</em>Compendium
+   Histori&aelig; Norvegic&aelig;, undiqve mutilum, alias fragmentum
+   rarissimum. 4to minori. Komid til min fra &THORN;ordi Jonssyne.
+   en<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> fyrer
+   &thorn;<em id="code">&lt;expan&gt;</em>ad<em id="code">&lt;/expan&gt;</em> var &thorn;ad i eigu
+   &THORN;orgeirs Jonssonar, sem &thorn;ad
+   feck...<em id="element">&lt;/p&gt;</em><em id="layout">&lt;pb/&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;p&gt;</em>Fragmentum histori&aelig;
+   Norvegic&aelig; in octavo /:&thorn;ad sem eg feck af &THORN;orde
+   Jonssyne, en<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em>
+   han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> af Jone Hakonarsyne/: eignadest
+   &THORN;orgeir Jonsson /:m&auml;gur Gudmundar Arnarsonar i
+   Heynese/: &auml; Kalast&oslash;dum &auml; Hvalfiardar
+   str&oslash;nd fyrer 10. eda 11. &auml;rum (fra 1707. ad reikna)
+   &THORN;ad hafdi n&aelig;st f<em id="code">&lt;expan&gt;</em>irir<em id="code">&lt;/expan&gt;</em>
+   han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> &auml;tt &THORN;ordur
+   Jllu<em id="layout">&lt;pb/&gt;</em>gason Vigfussonar, brodurson Orms i Eyum, og
+   h&oslash;fdu &thorn;esse bl&oslash;d vered langfedga eign
+   &thorn;eirra fedga allt fra Vigfuse Jonssyne fordum
+   Syslum<em id="code">&lt;expan&gt;</em>anni<em id="code">&lt;/expan&gt;</em> i Kios, secundum traditionem
+   &thorn;<em id="code">&lt;expan&gt;</em>ess<em id="code">&lt;/expan&gt;</em> folks.<em id="element">&lt;/p&gt;</em><BR>
+   <em id="element">&lt;p&gt;</em>&THORN;egar han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> feck
+   &thorn;esse bl&oslash;d, voru &thorn;au eins mutila &amp;amp; nu
+   eru &thorn;au. <em id="element">&lt;del</em> <em id="code">rend="overstrike"</em><em id="element">&gt;</em>hefur<em id="element">&lt;/del&gt;</em> var
+   &amp;amp; &thorn;ar sem &THORN;orgeir &thorn;au feck,
+   eck<em id="code">&lt;expan&gt;</em>er<em id="code">&lt;/expan&gt;</em>t <em id="layout">&lt;pb/&gt;</em> meira, ecke helldr
+   neinstadar &thorn;ar um kring &auml; str&oslash;ndinne, so
+   v&iuml;tt &THORN;orgeir inqvirerad gat, sem
+   han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> segest
+   m<em id="code">&lt;expan&gt;</em>ed<em id="code">&lt;/expan&gt;</em> flid gi&oslash;rt
+   hafa.<em id="element">&lt;/p&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;p&gt;</em>Eingar utskrifter &aelig;tlar
+   &THORN;orgeir &thorn;ar af vera, ad v&iuml;su seigest
+   han<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> eckert slikt nockurn t&iuml;ma
+   sied hafa. Dixit coram 1707.<em id="element">&lt;/p&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;p&gt;</em>&THORN;orgeir atti eigi leinge
+   &thorn;etta fragment, helldur feck
+   &thorn;<em id="code">&lt;expan&gt;</em>ad<em id="code">&lt;/expan&gt;</em>, so mutilum sem
+   <em id="layout">&lt;pb/&gt;</em> &thorn;ad var, Jone Hakonar syne,
+   en<em id="code">&lt;expan&gt;</em>n<em id="code">&lt;/expan&gt;</em> h<em id="code">&lt;expan&gt;</em>an<em id="code">&lt;/expan&gt;</em>n
+   &THORN;orde Jons syne sem adr er sagt.<em id="element">&lt;/p&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;p&gt;</em>Jon Hakonar son af
+   mi<em id="code">&lt;expan&gt;</em>er<em id="code">&lt;/expan&gt;</em> adspurdr, meinar eingar utskrifter
+   &thorn;ar af vera i landinu, og seigest alldri &thorn;vil&iuml;kt
+   neitt, fyrr edur sidar, sied
+   hafa.<em id="code">&lt;/p&gt;&lt;/q&gt;&lt;/p&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;p&gt;</em>This agrees with the information found on the
+   second (of four) Arnamagn&aelig;an slip, which reads:
+   <em id="element">&lt;q&gt;</em>Eignarm<em id="code">&lt;expan&gt;</em>en<em id="code">&lt;/expan&gt;</em>n
+   &thorn;<em id="code">&lt;expan&gt;</em>ess<em id="code">&lt;/expan&gt;</em>a
+   fragm<em id="code">&lt;expan&gt;</em>en<em id="code">&lt;/expan&gt;</em>ts hafa nylegast vered
+   <em id="element">&lt;list&gt;&lt;item&gt;</em>&THORN;orgeir
+   Jonsson.<em id="element">&lt;/item&gt;&lt;item&gt;</em>Jon
+   Hakonarson.<em id="element">&lt;/item&gt;&lt;item&gt;</em>&THORN;ordr
+   Jonsson.<em id="element">&lt;/item&gt;&lt;item&gt;</em>Eg.<em id="element">&lt;/item&gt;&lt;/list&gt;&lt;/q&gt;&lt;/p&gt;</em><BR>
+   <em id="element">&lt;/provenance&gt;</em></BLOCKQUOTE>
+
+<P>It should be noted the various
+mechanisms for the transcription of primary sources described
+elsewhere in this handbook, expansion of abbreviations and so on, may
+be employed here as well.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.7"></A></p>
+
+<h2>10.7 Other information</h2>
+
+<P>The final large grouping element in
+a manuscript description is, appropriately enough, the
+<strong>&lt;additional&gt;</strong> element. The first subsection of this
+element is called <strong>&lt;adminInfo&gt;</strong>, which, as its name
+suggests, contains information pertaining to the curation and
+management of the manuscript. Such information would not normally
+form part of the introduction to a scholarly edition, but there is no
+reason why it could not be included in the document header.
+Subelements available here include <strong>&lt;custodialHist&gt;</strong>, in
+which information can be given on such matters as conservation, loans
+and exhibitions and so on, either as a series of paragraphs or one or
+more dated <strong>&lt;custEvent&gt;</strong> elements, and the standard TEI
+element <strong>&lt;availability&gt;</strong>, for information on the
+availability of the manuscript, for example any restrictions on its
+use or access etc.</P>
+
+<P>Also available within
+<strong>&lt;additional&gt;</strong> is a <strong>&lt;surrogates&gt;</strong> element for
+information on photographic reproductions. Here it would be possible
+to provide information on, and links to, any digital reproductions
+which may be available of the manuscript.</P>
+
+<P>Another element available within
+<strong>&lt;additional&gt;</strong> is <strong>&lt;accMat&gt;</strong>, for
+&#145;accompanying material&#146;, in which any additional material,
+not originally part of the manuscript but bound with it or otherwise
+accompanying it, can be described and/or transcribed. The
+Arnamagn&aelig;an slips, mentioned above, for example, might better
+be dealt with here, if the information they contain is not
+principally concerned with the manuscript&#146;s history or
+provenance.</P>
+
+<P>Finally, the element
+<strong>&lt;listBibl&gt;</strong> is available within <strong>&lt;additional&gt;</strong>
+for bibliographical information pertaining to the manuscript as a
+whole, rather than individual text-items, which, as was mentioned
+above, should rather be given under the appropriate
+<strong>&lt;msItem&gt;</strong>.</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="10.8"></A></p>
+
+<h2>10.8 Names of persons, places and institutions; bibliographical references</h2>
+
+<P>Most of the elements that have been
+mentioned so far have the character of boxes into which information
+of a certain type can be fitted. But it will be noted in the examples
+cited that there are other kinds of elements which can appear
+anywhere within the document, so-called &#145;phrase-level
+elements&#146;, of which there is a large number available within any
+TEI-conformant document. These are primarily used in oder to
+facilitate certain types of processing and/or for search purposes.
+All names, for example, are tagged as such, using the
+<strong>&lt;name&gt;</strong> element, with a <strong>type</strong> attribute to indicate
+whether they are the names of persons, places or organisations (such
+as religious orders). More detailed information about persons can be
+provided in a <strong>&lt;listPerson&gt;</strong> element within the
+header&#146;s <strong>&lt;profileDesc&gt;</strong>, using the standard TEI
+<strong>&lt;person&gt;</strong> element, to which the value of the <strong>key</strong>
+attribute refers. The individual <strong>&lt;person&gt;</strong> elements
+provide information on birth, death, residence and occupation, either
+as one of more paragraphs of running prose, or through the use of
+specialised sub-elements, and there are also attributes to indicate
+the gender and role of the person.</P>
+
+<P>In the description of the
+provenance of AM 435 a 4to, cited above, instead of providing birth
+and death dates and so on for each of the persons mentioned, one
+could refer using the <strong>key</strong> attribute on name to an external
+<strong>&lt;person&gt;</strong> element, such as the following, for
+&THORN;&oacute;r&eth;ur J&oacute;nsson:</P>
+
+<BLOCKQUOTE><em id="element">&lt;person</em> <em id="code">id="ThorJon"
+   sex="m" role="owner"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;persName</em> <em id="code">lang="ISL"</em><em id="element">&gt;</em>&THORN;&oacute;r&eth;ur
+   J&oacute;nsson<em id="element">&lt;/persName&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;birth</em> <em id="code">notBefore="1672"
+   notAfter="1672"</em><em id="element">&gt;</em>1672<em id="element">&lt;/birth&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;death</em> <em id="code">notBefore="1720-08-21"
+   notAfter="1720-08-21"</em><em id="element">&gt;</em>21 August 1720<em id="element">&lt;/death&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;residence&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;placeName&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;settlement</em>
+   <em id="code">type="farm"</em><em id="element">&gt;</em>Sta&eth;asta&eth;ur<em id="element">&lt;/settlement&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;region</em>
+   <em id="code">type="parish"</em><em id="element">&gt;</em>Sta&eth;arsveit<em id="element">&lt;/region&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;region</em>
+   <em id="code">type="county"</em><em id="element">&gt;</em>Sn&aelig;fellsness&yacute;sla<em id="element">&lt;/region&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;region</em>
+   <em id="code">type="compass"</em><em id="element">&gt;</em>Western<em id="element">&lt;/region&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;country</em>
+   <em id="code">reg="IS"</em><em id="element">&gt;</em>Iceland<em id="element">&lt;/country&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;/placeName&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;/residence&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;occupation&gt;</em>Clergyman<em id="element">&lt;/occupation&gt;</em><BR>
+   <em id="element">&lt;/person&gt;</em></BLOCKQUOTE>
+
+<P>Treating names in this way means
+that each person is uniquely identified with an ID, to which all
+individual instances of that person&#146;s name then refer, whatever
+form those instances take. This solves the problem not only of
+variant spellings but also where, for example, a medieval author is
+known by a Latin name and any number of vernacular forms, many or all
+of which may have claims to &#145;authenticity&#146;. In order to
+ensure uniformity, the method generally employed in the library world
+has been to accept the form found in some authority file, for example
+that of the American Library of Congress, as the &#145;base&#146; or
+&#145;neutral&#146; form. Feelings can run high on this matter,
+however, and people are frequently reluctant to accept as
+&#145;neutral&#146; an overtly &#145;foreign&#146; form of the name
+of some local saint or hero. Within the <strong>&lt;person&gt;</strong> tag any
+number of variant forms of a name can be given, with no
+prioritisation, and hence, less likelihood of offense. The chief
+advantage of treating persons in this way, however, is for searching,
+in particular once one has put together a large body of material. It
+is possible not only to search for persons with a particular name,
+but also born in a particular place at a particular time. The
+<strong>&lt;person&gt;</strong> elements taken as a whole can also function as
+a reference tool, a veritable <em>Who&#146;s who</em> in medieval and
+early-modern Scandinavia. The possibilities as regards scribes are
+especially exciting, as it would be a relatively easy matter to add
+images to the <strong>&lt;person&gt;</strong> elements showing the hand or
+hands of each scribe, making it possible eventually to produce a
+register of all known scribes, searchable in terms of date, location
+etc.</P>
+
+<P>It is possible to treat
+bibliographical references in a similar way. Since many of the same
+works are likely to be referred to again and again it would seem most
+sensible to provide full bibliographical information only once, in a
+separate bibliography, to which all bibliographical references in the
+individual records could then point.</P>
+
+<P>The following is a typical
+bibliographical record as found in the separate bibliography
+file:</P>
+
+<BLOCKQUOTE><em id="element">&lt;bibl</em>
+   <em id="code">id="StudIsl24"</em><em id="element">&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;author&gt;</em>&Oacute;lafur
+   Halld&oacute;rsson<em id="element">&lt;/author&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;title</em> <em id="code">level="m"</em><em id="element">&gt;</em>Helgafellsb&aelig;kur
+   fornar<em id="element">&lt;/title&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;title</em> <em id="code">level="s"</em><em id="element">&gt;</em>Studia
+   Islandica<em id="element">&lt;/title&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;biblScope</em> <em id="element">type="vol"</em><em id="element">&gt;</em>XXIV<em id="element">&lt;/biblScope&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;imprint&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;pubPlace&gt;</em>Reykjav&iacute;k&<em id="element">lt;/pubPlace&gt;</em><BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;<em id="element">&lt;date&gt;</em>1966<em id="element">&lt;/date&gt;</em><BR>
+   &nbsp;&nbsp;<em id="element">&lt;/imprint&gt;</em><BR>
+   <em id="element">&lt;/bibl&gt;</em></BLOCKQUOTE>
+
+<P>While in the description of AM 238
+VII fol., one of the manuscripts discussed in the article, the
+bibliographical reference is given using a <strong>&lt;ref&gt;</strong> element
+within <strong>&lt;bibl&gt;</strong>, as follows:</P>
+
+<BLOCKQUOTE><em id="element">&lt;bibl&gt;&lt;ref</em>
+   <em id="code">target="StudIsl24"</em><em id="element">&gt;</em>&Oacute;lafur Halld&oacute;rsson
+   1966<em id="element">&lt;/ref&gt;</em>, pp. 18 and 22<em id="element">&lt;/bibl&gt;</em></BLOCKQUOTE>
+
+<P>As with the
+<strong>&lt;listPerson&gt;</strong> file, the bibliography file - which can in
+effect become an authorised bibliography of studies in the medieval
+Scandinavian philology - can be searched and browsed separately,
+making it a valuable tool for scholars.</P>
+
+<p>&nbsp;</p>
+		<p><IMG SRC="greenarrow.gif" WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr></tr></thead>
+	<tfoot><tr></tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>
