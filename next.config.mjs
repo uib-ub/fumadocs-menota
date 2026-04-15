@@ -41,6 +41,11 @@ const config = {
         source: '/legacy/handbook/v1/:id.ent',
         destination: '/:id.ent',
         permanent: true
+      },
+      {
+        source: '/legacy/handbook/v1/:id.xls',
+        destination: '/handbook/v1/:id.xls',
+        permanent: true
       }
     ]
   }
