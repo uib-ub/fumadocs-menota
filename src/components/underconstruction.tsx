@@ -6,6 +6,7 @@ export default function UnderConstruction({ children }: { children: React.ReactN
             mt-20 
             border-8 
             border-dashed
+            dark:border-gray-500
             rounded-3xl 
             p-10 
             flex 
