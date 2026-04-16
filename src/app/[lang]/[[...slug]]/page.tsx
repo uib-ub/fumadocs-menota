@@ -36,7 +36,17 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
     <DocsPage 
       toc={contentStyle == "hb-old" ? undefined : page.data.toc} 
       full={page.data.full} 
-      className={`bg-white dark:bg-black ${contentStyle}`}>
+      className={`
+        bg-white dark:bg-black 
+        [&_h1]:text-gray-500 [&_h1]:dark:text-gray-300 [&_h1]:text-2xl
+        [&_h2]:text-gray-500 [&_h2]:dark:text-gray-300 [&_h2]:text-xl
+        [&_h3]:text-gray-500 [&_h3]:dark:text-gray-300 [&_h3]:text-lg
+        [&_ol_a]:text-blue-700 [&_ol_a]:dark:text-orange-300
+        [&_p_a]:text-blue-700 [&_p_a]:dark:text-orange-300
+        [&_td_a]:text-blue-700 [&_td_a]:dark:text-orange-300
+        [&_ul_a]:text-blue-700 [&_ul_a]:dark:text-orange-300
+        ${contentStyle}`
+      }>
       {(() => {switch (contentGroup) {
         case "hb1":
           return;
