@@ -1,11 +1,11 @@
 import { Drill, Wrench } from "lucide-react";
 
-export default function UnderConstruction({ message }: { message?: string }) {
+export default function UnderConstruction({ children }: { children: React.ReactNode }) {
     return (
         <div className={`
             mt-20 
             border-8 
-            border-dashed 
+            border-dashed
             rounded-3xl 
             p-10 
             flex 
@@ -22,7 +22,7 @@ export default function UnderConstruction({ message }: { message?: string }) {
                 text-3xl 
                 text-center
             `}>
-                {message ? <p>{message}</p> : null}
+                {children ? <p>{children}</p> : null}
                 <span className="font-mono">UNDER CONSTRUCTION</span>
             </div>
             <div className="hidden md:block place-self-center">
