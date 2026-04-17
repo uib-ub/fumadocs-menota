@@ -7,9 +7,9 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import LegacyPage from '@/components/legacy-page';
 
-export default async function Page(props: PageProps<'/[[...slug]]'>) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
+  const { lang, slug } = await props.params;
+  const page = source.getPage(slug, lang);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'hbx' | 'hb1' | 'hb3' | 'hb4' | 'main',
@@ -28,7 +28,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
       }
     }
     return { contentGroup: 'main', contentStyle: 'menota-main' };
-  })(params.slug);
+  })(slug);
 
   const MDX = page.data.body;
 
@@ -36,7 +36,17 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
     <DocsPage 
       toc={contentStyle == "hb-old" ? undefined : page.data.toc} 
       full={page.data.full} 
-      className={`bg-white dark:bg-black ${contentStyle}`}>
+      className={`
+        bg-white dark:bg-black 
+        [&_h1]:text-gray-500 [&_h1]:dark:text-gray-300 [&_h1]:text-2xl
+        [&_h2]:text-gray-500 [&_h2]:dark:text-gray-300 [&_h2]:text-xl
+        [&_h3]:text-gray-500 [&_h3]:dark:text-gray-300 [&_h3]:text-lg
+        [&_ol_a]:text-blue-700 [&_ol_a]:dark:text-orange-300
+        [&_p_a]:text-blue-700 [&_p_a]:dark:text-orange-300
+        [&_td_a]:text-blue-700 [&_td_a]:dark:text-orange-300
+        [&_ul_a]:text-blue-700 [&_ul_a]:dark:text-orange-300
+        ${contentStyle}`
+      }>
       {(() => {switch (contentGroup) {
         case "hb1":
           return;
@@ -64,7 +74,7 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
       <DocsBody>
         {(() => {switch (contentGroup) {
           case "hb1":
-            return <LegacyPage slug={params.slug || []}/>;
+            return <LegacyPage slug={slug || []}/>;
           default:
             return (
               <MDX
@@ -84,9 +94,9 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/[[...slug]]'>): Promise<Metadata> {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+export async function generateMetadata(props: PageProps<'/[lang]/[[...slug]]'>): Promise<Metadata> {
+  const { slug, lang } = await props.params;
+  const page = source.getPage(slug, lang);
   if (!page) notFound();
 
   return {

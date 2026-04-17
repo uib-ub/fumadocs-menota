@@ -37,6 +37,7 @@ export default function EmbeddedPage({ src, name }: { src: string, name?: string
             src={src}
             width="100%"
             height="100%"
+            className="dark:invert"
         />
     );
 }
