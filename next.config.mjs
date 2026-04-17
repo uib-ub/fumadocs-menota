@@ -28,6 +28,11 @@ const config = {
   async redirects() {
     return [
       {
+        source: '/forside.xhtml',
+        destination: '/',
+        permanent: true
+      },
+      {
         source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
