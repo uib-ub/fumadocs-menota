@@ -42,6 +42,11 @@ const config = {
         permanent: true
       },
       {
+        source: '/legacy/handbook/v1/HB1-1_:id.xhtml',
+        destination: '/handbook/v1-1/:id',
+        permanent: true
+      },
+      {
         source: '/legacy/handbook/v1/HB1_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
@@ -59,6 +64,11 @@ const config = {
       {
         source: '/legacy/handbook/v1/:id.xls',
         destination: '/handbook/v1/:id.xls',
+        permanent: true
+      },
+      {
+        source: '/handbook/:version/contents',
+        destination: '/handbook/:version',
         permanent: true
       }
     ]
