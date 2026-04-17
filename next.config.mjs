@@ -12,6 +12,10 @@ const config = {
         destination: '/llms.mdx/docs/:path*',
       },
       {
+        source: '/legacy/handbook/v1/:path*.css',
+        destination: '/:path*.css'
+      },
+      {
         source: '/legacy/handbook/v1/:id.gif',
         destination: '/images/:id.gif'
       },

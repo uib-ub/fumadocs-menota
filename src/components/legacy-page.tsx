@@ -13,6 +13,10 @@ export default function LegacyPage({ slug }: { slug: string[] }) {
                 `/legacy/handbook/v1/HB1-0_${pageName}.html`;
             return <EmbeddedPage src={source} name={pageName}/>;
         }
+        case "v1-1": {
+            const source = `/legacy/handbook/v1/HB1-1_${pageName}.html`;
+            return <EmbeddedPage src={source} name={pageName}/>;
+        }
     }
     return <p>{slug.join(" | ")}</p>;
 }
