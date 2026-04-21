@@ -18,6 +18,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
         case "v1-0":
+        case "v1-1":
           return { contentGroup: "hb1", contentStyle: "hb-old" }
         case "v3":
           return { contentGroup: "hb3", contentStyle: "hb-new" };
