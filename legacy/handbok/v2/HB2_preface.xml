@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook Introduction (v.2.0)</title>
+               <respStmt>
+               <resp>Edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Odd Einar Haugen</publisher>
+            <distributor>Medieval Nordic Text Archive</distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Composed in XML for the Menota handbook v. 2.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>14 March 2008</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+      	<change>
+      		<date>20 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Corrected quotation marks
+      	</change>
+      	<change>
+      		<date>16 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Final update before publication
+      	</change>
+      	<change>
+      		<date>15 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Made some minor revisions
+      	</change>
+      	<change>
+      		<date>15 May 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Made this document valid according to Menota 2.0.
+      	</change>
+      	<change>
+            <date>14 May 2008</date>
+            <persName>Odd Einar Haugen</persName>: Wrote the preface.
+         </change>
+         <change>
+            <date>14 March 2008</date>
+            <persName>Odd Einar Haugen</persName>: Began working on the preface
+         </change>
+
+      </revisionDesc>
+   </teiHeader>
+	<text xml:lang="en" n="Introduction">
+      <body>
+         <head>Preface</head>
+
+<p>Version 2.0 (16 May 2008)</p>
+<div>
+<p>The first version of the Menota handbook, v. 1.0, was published on 20 May 2003, and a minor revision, v. 1.1., on 5 May 2004. Both versions are TEI P4 conformant. It was soon agreed among the editors that a new version should be published as soon as TEI P5 was finalised. This took place in November 2007, and the present v. 2.0 of the handbook is now TEI P5 conformant. While the previous versions were written in HTML, the present version is written in XML throughout, which we thought would suit a handbook on how to use XML. All things considered, v. 2.0 of the handbook represents a major revision. </p>
+
+<p>The <ref target="HB1-1_preface.xhtml" type="external">preface</ref> to version 1.1 contains an overview of the background and the contributors to versions 1.0 and 1.1, which need not be repeated here. In the present version, Karl G. Johansson (Oslo) has written a new chapter on names, ch. 9.1, and Tarrin Wills (Sydney/Aberdeen) has made a thorough revision of ch. 9.2 on metrical encoding, making it compatible with the international <ref target="http://skaldic.arts.usyd.edu.au/db.php?table=verses&amp;id=1939" type="external">Skaldic project</ref>. He has also extensively revised ch. 7, which should be regarded as a completely new chapter. Furthermore, he has written a new introduction, <q>What is Menota</q>, aimed at readers who would like to get a brief overview of these guidelines.</p>
+
+<p>The remaining chapters and appendices have been revised by Tone Merete Bruvik and Odd Einar Haugen. Tone Merete Bruvik has checked and validated all examples, given advice on all kinds of encoding questions and developed new TEI P5 conformant schemas. Thus, Appendix D is her work entirely. Due to her long-standing contribution to the handbook she is now included as one of the six authors of the book, as will appear on the new <ref target="HB2_TitlePage.pdf">title page</ref>. The remaining parts of the revision have been implemented by Odd Einar Haugen.</p>
+
+<p>The major changes from v. 1.1  are the following:</p>
+
+<list>
+<item>1. The handbook now offers two schemas for validation of XML files: a DTD schema (as in the previous version) and a RELAX NG schema (which is new). We recommend using a RELAX NG schema rather than a DTD, since RELAX NG allows for namespaces.</item>
+<item>2. The concept of namespace, which was introduced in TEI P5, has been implemented in the handbook. As a consequence,  all Menota-specific elements and attributes are clearly marked as <q>me</q>, e.g. <tag>me:norm</tag> rather than only <tag>norm</tag>. See the new chapter 1.9 for an explanation and a complete list of additional elements and attributes.</item>
+<item>3. As stated above, Tarrin Wills has written a new introduction, <q>What is Menota</q>.</item>
+<item>4. In ch. 1, the poem <q>Upon Julia's Clothes</q> has been replaced with what some thought was a more suitable example, a stanza from the Eddic poem <q>Thrymskvida</q>, and the ensuing discussion has been made TEI P5 conformant.</item>
+<item>5. In ch. 2.2.2 and ch. 5.1 we now advise readers to use Unicode encoding also outside Basic Latin, rather than entities. We insist that entities be used for characters in the Private Use Area.</item>
+<item>6. Ch. 2.2.3 on the element <tag>c</tag> is new.</item>
+<item>7. Ch. 2.3 has been revised with reference to deviation in word division and encoding of word constituents.</item>
+<item>8. Ch. 2.4 on punctuation and white space is new.</item>
+<item>9. In ch. 3, we introduce the new TEI P5 elements <tag>ex</tag> (rather than <tag>expan</tag>) and <tag>am</tag> (rather than <tag>abbr</tag>), see also ch. 6.1.</item>
+<item>10. The example in ch. 3.2 is new, and so is the image and the displays (using the Andron font by Andreas St&ouml;tzner, Leipzig).</item>
+<item>11. In ch. 3.3 and 3.4 an important distinction has been drawn between <q>single-level transcriptions</q> and <q>multi-level transcriptions</q> (the Menota way, as it were). The new TEI element <tag>choice</tag> has been introduced as part of the multi-level transcription. This has also been done for <tag>sic</tag> and <tag>corr</tag> (see ch. 7).</item>
+<item>12. Ch. 4.5 deals in more detail with prosimetrum texts, in which the elements <tag>p</tag> and <tag>lg</tag> are mixed.</item>
+<item>13. Ch. 4.6 has a new solution to the problem of overlapping headings.</item>
+<item>14. Ch. 4.8 on punctuation and hyphenation has been extensively revised.</item>
+<item>15. Ch. 4.9 on initials and highlighted characters (littera notabilior) is new.</item>
+<item>16. Ch. 4.10 on overlapping structures - which is a particularly thorny issue in XML - is completely new.</item>
+<item>17. Ch. 5.1 is new, and part of ch. 5.2 has been moved from ch. 2 (which, as a consequence, has become simpler). Ch. 5 is now Unicode v. 5.0 compatible.</item>
+<item>18. Ch. 6.1 is new, and the whole chapter Unicode v. 5.0 compatible.</item>
+<item>19. As stated above, ch. 7 has been extensively revised by Tarrin Wills, and is for all intents and purposes a new chapter.</item>
+<item>20. Ch. 8 has been extensively revised and introduces a new system for the general encoding of grammatical forms, using the <att>me:msa</att> attribute. It also contains specifications for Old Norse and a discussion of lemmatisation of non-Nordic material. This should also be seen as a new chapter.</item> 
+<item>21. As stated above, ch. 9 has been extensively revised by Karl G. Johansson and Tarrin Wills.</item>
+<item>22. Ch. 10 has been revised on a number of points, and now contains a discussion of the whole header (not only the manuscript description, as in v. 1.1).</item>
+<item>23. The index is new.</item>
+<item>24. The Menota schemas - DTD and RELAX NG - have been updated to TEI P5, and all examples in the handbook have been validated against a RELAX NG schema by Tone Merete Bruvik.</item>
+<item>25. The discussion of headers in Appendix E has been revised and simplified. The downloadable headers in E.4 have been updated.</item>
+</list>
+
+<p>Tor Gjerde (Trondheim) has given detailed and valuable comments on the previous version of the handbook, which proved very useful in the process of revising the book. Vemund Olstad (Bergen) has used his considerable expertise with the FO processor in order to generate the PDF files of the handbook from the underlying XML files. Many thanks to both.</p>
+
+<p>Bergen, 16 May 2008</p>
+<p>Odd Einar Haugen (editor)</p>
+
+</div>
+
+</body></text></TEI>
