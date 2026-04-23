@@ -1,5 +1,5 @@
 ---
-title: "Ch. 10 (v. 2.0): The header"
+title: "10: The header"
 author:
  - Odd Einar Haugen
 changeLog:
@@ -918,7 +918,7 @@ The <E>editorialDecl</E> uses the <E>correction</E> element with the <Att>status
 
 A further specification can be given in prose within a <E>p</E> element.
 
-Next within the <E>editorialDecl</E>element, a <E>normalization</E> element with a <Att>me:level</Att> attribute is used to specify the level on which the text is encoded. The prototypical levels are “facs”, “dipl” and “norm”, but other levels can also be specified, e.g. a “pal” level. See [ch. 3.2](HB2_ch3.xml#sec3.2) for a discussion of these levels. Also here, a description in prose may be added in a <E>p</E> element. Note that more than one level may be specified:
+Next within the <E>editorialDecl</E>element, a <E>normalization</E> element with a <Att>me:level</Att> attribute is used to specify the level on which the text is encoded. The prototypical levels are “facs”, “dipl” and “norm”, but other levels can also be specified, e.g. a “pal” level. See [ch. 3.2](/handbook/v2/HB2_ch3#sec3.2) for a discussion of these levels. Also here, a description in prose may be added in a <E>p</E> element. Note that more than one level may be specified:
 ```xml
 
 <editorialDecl>
@@ -931,7 +931,7 @@ Next within the <E>editorialDecl</E>element, a <E>normalization</E> element with
 ```
 
 
-Finally within the <E>editorialDecl</E> element, an <E>interpretation</E> element is used to specify the amount of lexical and grammatical information in the encoded text. We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values “completely”, “partly” and “none”. A lemmatised text will have lemmata (i.e. dictionary entries) added in the <Att>lemma</Att> attribute of the <E>w</E> element, while a morphologically analysed text will have grammatical forms specified in the <Att>me:msa</Att> of the same element. See [ch. 2.3](HB2_ch2.xml#sec2.3) for a general overview and [ch. 8](/handbook/v2/HB2_ch8) for details on this lexical and morphological encoding. A description in prose may be added in a <E>p</E> element.
+Finally within the <E>editorialDecl</E> element, an <E>interpretation</E> element is used to specify the amount of lexical and grammatical information in the encoded text. We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values “completely”, “partly” and “none”. A lemmatised text will have lemmata (i.e. dictionary entries) added in the <Att>lemma</Att> attribute of the <E>w</E> element, while a morphologically analysed text will have grammatical forms specified in the <Att>me:msa</Att> of the same element. See [ch. 2.3](/handbook/v2/HB2_ch2#sec2.3) for a general overview and [ch. 8](/handbook/v2/HB2_ch8) for details on this lexical and morphological encoding. A description in prose may be added in a <E>p</E> element.
 
 A complete <E>encodingDesc</E> may look like this:
 ```xml

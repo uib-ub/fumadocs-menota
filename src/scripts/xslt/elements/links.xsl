@@ -17,7 +17,7 @@
                 => replace('^HB(1-1)_(\w+)\.xhtml$', '/handbook/v$1/$2')
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB([2-4])_.*?)\.xml#?$', '/handbook/v$2/$1')
-                => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
+                => replace('^(HB([23])_.*?)\.xml#(.+)$', '/handbook/v$2/$1#$3')
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
                 => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')

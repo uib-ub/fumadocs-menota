@@ -1,5 +1,5 @@
 ---
-title: "Ch. 2 (v. 2.0): Basic units: characters and words"
+title: "2: Basic units: characters and words"
 author:
  - Odd Einar Haugen
 changeLog:
@@ -102,7 +102,7 @@ Unicode draws a distinction between small (minuscule) characters such as “a”
 
 Medieval Nordic manuscripts were written in the Latin alphabet from the very beginning. The basic inventory is thus the characters a-z / A-Z. They were supplemented with a number of new (or borrowed) characters, several ligatures and a variety of diacritical marks. There was also a large number of abbreviation marks in use, especially in Old Icelandic and Old Norwegian manuscripts. We shall go through the inventory of ordinary characters, i.e. those based on the set a-z / A-Z, in [ch. 5](/handbook/v2/HB2_ch5) and abbreviation marks in [ch. 6](/handbook/v2/HB2_ch6), and we shall refer to both types as <em>characters</em>. In fact, some abbreviation marks behave as ordinary characters in the sense that they occupy a separate position on the base line. On the other hand, many components of ordinary characters are diacritical, i.e. placed above (or through or below) another character, and thus akin to typical abbreviation marks. This means that the rules for transcribing ordinary characters and abbreviation marks should be identical.
 
-We believe that it is possible to identify a base line in all texts, as shown in fig. 2.2. We recommend that the transcriber identifies each separate character on the base line and record this in the same sequence as in the manuscript. Thus, the characters in fig. 2.2 would be transcribed as “abpþ” or “abp&thorn;”. Note that the last character may be encoded with its Unicode code point, “þ” at 00FE, or with an entity, “&thorn;”. Both encodings are strictly equivalent. Entities are explained in [ch. 1.5](HB2_ch1.xml#sec1.5) and discussed further in [ch. 5.2](HB2_ch5.xml#sec5.2).
+We believe that it is possible to identify a base line in all texts, as shown in fig. 2.2. We recommend that the transcriber identifies each separate character on the base line and record this in the same sequence as in the manuscript. Thus, the characters in fig. 2.2 would be transcribed as “abpþ” or “abp&thorn;”. Note that the last character may be encoded with its Unicode code point, “þ” at 00FE, or with an entity, “&thorn;”. Both encodings are strictly equivalent. Entities are explained in [ch. 1.5](/handbook/v2/HB2_ch1#sec1.5) and discussed further in [ch. 5.2](/handbook/v2/HB2_ch5#sec5.2).
 
 
 
@@ -160,7 +160,7 @@ We suggest the following basic rules for encoding characters, irrespective of wh
 
 As a rule, we would recommend the first solution, since the number of combinations of base line
 			characters and combining abbreviation marks is very high. Cf. the discussion in 
-		 [ch. 6.4](HB2_ch6.xml#sec6.4).
+		 [ch. 6.4](/handbook/v2/HB2_ch6#sec6.4).
 
 6. If there is more than one combining character, they are encoded in this order:
 
@@ -349,7 +349,7 @@ When displaying this text, the contents of the <E>c</E> element can be put in it
 
 The <E>c</E> element should be restricted to contexts in which characters are cited as characters.
 
-The encoding of initials and <em>littera notabilior</em> is discussed in [ch. 4.8](HB2_ch4.xml#sec4.8) below.
+The encoding of initials and <em>littera notabilior</em> is discussed in [ch. 4.8](/handbook/v2/HB2_ch4#sec4.8) below.
 
 ## 2.3 Words [#sec2.3]
 
@@ -473,7 +473,7 @@ Lemmatisation is further discussed in [ch. 8](/handbook/v2/HB2_ch8) below and is
 
 ## 2.4 Punctuation and white space [#sec2.4]
 
-Having introduced elements for the encoding of individual characters and words, it can also be useful to tag punctuation marks specifically. The TEI P5 Guidelines do not have any punctuation element, so this has been added in the Menota namespace, <E>me:punct</E>. Note the prefix “me:” which indicates that the element belongs to the Menota namespace and is not part of the elements defined in TEI P5. See [ch. 1.9](HB2_ch1.xml#sec1.9) above on the use of namespaces in TEI schemes. Remember that namespaces are allowed with RELAX NG schemas, but not with a DTD (as in TEI P4). In the latter case, the prefix “me:” should simply be dropped.
+Having introduced elements for the encoding of individual characters and words, it can also be useful to tag punctuation marks specifically. The TEI P5 Guidelines do not have any punctuation element, so this has been added in the Menota namespace, <E>me:punct</E>. Note the prefix “me:” which indicates that the element belongs to the Menota namespace and is not part of the elements defined in TEI P5. See [ch. 1.9](/handbook/v2/HB2_ch1#sec1.9) above on the use of namespaces in TEI schemes. Remember that namespaces are allowed with RELAX NG schemas, but not with a DTD (as in TEI P4). In the latter case, the prefix “me:” should simply be dropped.
 
 | Element / attribute | Contents |
 |-----|-----|
@@ -514,7 +514,7 @@ etc.
 ```
 
 
-The main reason for doing so will become clear in [ch. 3](/handbook/v2/HB2_ch3), in which several levels of transcription is discussed. At a diplomatic level, the transcriber should encode the punctuation marks exactly where they are in the source, but at a normalised level, some punctuation marks should be suppressed, some should be retained and some should be added. For a full discussion, please see [ch. 4.8](HB2_ch4.xml#sec4.8).
+The main reason for doing so will become clear in [ch. 3](/handbook/v2/HB2_ch3), in which several levels of transcription is discussed. At a diplomatic level, the transcriber should encode the punctuation marks exactly where they are in the source, but at a normalised level, some punctuation marks should be suppressed, some should be retained and some should be added. For a full discussion, please see [ch. 4.8](/handbook/v2/HB2_ch4#sec4.8).
 
 ### 2.4.2 White space [#sec2.4.2]
 

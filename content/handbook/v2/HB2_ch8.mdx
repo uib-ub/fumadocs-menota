@@ -1,5 +1,5 @@
 ---
-title: "Ch. 8 (v. 2.0): Lemmatisation of manuscript text"
+title: "8: Lemmatisation of manuscript text"
 author:
  - Odd Einar Haugen
 changeLog:
@@ -56,7 +56,7 @@ Version 2.0 (16 May 2008). Links updated 12 July 2016.
 
 ## 8.1 Introduction [#sec8.1]
 
-In [ch. 2.3](HB2_ch2.xml#sec2.3) we suggested that the word, <E>w</E>, is a basic unit in any transcription. Each <E>w</E> element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, <Att>lemma</Att> for the dictionary entry and <Att>me:msa</Att> for the grammatical form:
+In [ch. 2.3](/handbook/v2/HB2_ch2#sec2.3) we suggested that the word, <E>w</E>, is a basic unit in any transcription. Each <E>w</E> element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, <Att>lemma</Att> for the dictionary entry and <Att>me:msa</Att> for the grammatical form:
 
 
 
@@ -79,7 +79,7 @@ Medieval Nordic texts sometimes include words, phrases or even whole passages in
 
 ## 8.2 The attribute `@lemma` [#sec8.2]
 
-The element <E>w</E> can be supplied with several lexicographical attributes for each word in a transcription. The attribute <Att>lemma</Att> provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission's [Ordbog over det norrøne prosasprog](HB2_literature.xml#AMKO) ([ONP](HB2_literature.xml#ONP1989)) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
+The element <E>w</E> can be supplied with several lexicographical attributes for each word in a transcription. The attribute <Att>lemma</Att> provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission's [Ordbog over det norrøne prosasprog](/handbook/v2/HB2_literature#AMKO) ([ONP](/handbook/v2/HB2_literature#ONP1989)) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
 ```xml
 <w lemma="hafa">hefir</w>
 ```
@@ -143,7 +143,7 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 
 
 
-In [ch. 2.3](HB2_ch2.xml#sec2.3) the use of <E>w</E> for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as “&fins;” and “&nscap;”, or abbreviations such as “&bar;”. These are described in [ch. 5](/handbook/v2/HB2_ch5) and [ch. 6](/handbook/v2/HB2_ch6).
+In [ch. 2.3](/handbook/v2/HB2_ch2#sec2.3) the use of <E>w</E> for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as “&fins;” and “&nscap;”, or abbreviations such as “&bar;”. These are described in [ch. 5](/handbook/v2/HB2_ch5) and [ch. 6](/handbook/v2/HB2_ch6).
 
 As stated in [ch. 3](/handbook/v2/HB2_ch3), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single <E>w</E> element and the attribute is valid for the whole contents: 
 ```xml
@@ -542,7 +542,7 @@ This category applies only to verbs. Finiteness is denoted by a name token consi
 
 #### 8.3.2.11 Enclitics [#sec8.3.2.11]
 
-Personal pronouns may be attached to finite verbs, e.g. “emk” for “em ek” or “fórtu” for “fórt þú”. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s(i)k” = “kallask”. However, it may be argued that the enclitic pronoun retains it character as a word to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s(i)k”. For this reason, we suggest that enclitic forms are encoded with the <E>seg</E> element, as suggested in  [ch. 2.3.2](HB2_ch2.xml#sec2.3.2) above.:
+Personal pronouns may be attached to finite verbs, e.g. “emk” for “em ek” or “fórtu” for “fórt þú”. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s(i)k” = “kallask”. However, it may be argued that the enclitic pronoun retains it character as a word to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s(i)k”. For this reason, we suggest that enclitic forms are encoded with the <E>seg</E> element, as suggested in  [ch. 2.3.2](/handbook/v2/HB2_ch2#sec2.3.2) above.:
 ```xml
 <seg type="enc">
   <w lemma="vera">em</w>
@@ -1114,7 +1114,7 @@ Quantifiers are encoded for **gender**, **number** and **case**. This category m
 
 ### 8.5.5 Pronouns/determiners (PD) [#sec8.5.5]
 
-This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](HB2_literature.xml#Noreen1923) and [Iversen 1973](HB2_literature.xml#Iversen1973). From a inflectional point of view this is a heterogenous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper (8.5.3) and determiners (8.5.4).
+This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](/handbook/v2/HB2_literature#Noreen1923) and [Iversen 1973](/handbook/v2/HB2_literature#Iversen1973). From a inflectional point of view this is a heterogenous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper (8.5.3) and determiners (8.5.4).
 
 Pronouns/derminers are encoded for **person** (only personal pronouns), **gender**, **number** and **case**.
 
@@ -1569,7 +1569,7 @@ Some words are corrupt, diffcult to analyse, belong to another language or are f
 
 ## 8.6 Specifications for Old Norse [#sec8.6]
 
-In the previous chapter, we have given a few alternative analyses, especially the choice between a broad class of pronouns and a smaller class of pronouns and a new class of determiners. We have also pointed out that Old Swedish and particularly Old Danish texts may require a simpler analysis. There is thus a need for further specification. This chapter will deal with Old Norse, i.e. Old Icelandic up to ca. 1550 and Old Norwegian up to ca. 1350. This is the same period as defined by [Ordbog over det norrøne prosasprog](HB2_literature.xml#AMKO).
+In the previous chapter, we have given a few alternative analyses, especially the choice between a broad class of pronouns and a smaller class of pronouns and a new class of determiners. We have also pointed out that Old Swedish and particularly Old Danish texts may require a simpler analysis. There is thus a need for further specification. This chapter will deal with Old Norse, i.e. Old Icelandic up to ca. 1550 and Old Norwegian up to ca. 1350. This is the same period as defined by [Ordbog over det norrøne prosasprog](/handbook/v2/HB2_literature#AMKO).
 
 ### 8.6.1 Normalised orthography [#sec8.6.1]
 
@@ -1617,7 +1617,7 @@ The word classes in [ONP](http://www.onp.hum.ku.dk/) should be taken as normativ
 
 **Cardinal numbers**. With the exception of “einn”, which has plural forms, there is no need to encode cardinal numbers (i.e. “tveir”, “þrír”, “fjórir”, “fimm”, etc.) for number, nP. For cardinal numbers above one, plural is inherent.
 
-**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the <E>num</E> element, e.g. <E>num</E>.iv.<E>/num</E>. They should not be lemmatised. Cf. the discussion in [ch. 2.4.2](HB2_ch2.xml#sec2.4.2) above.
+**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the <E>num</E> element, e.g. <E>num</E>.iv.<E>/num</E>. They should not be lemmatised. Cf. the discussion in [ch. 2.4.2](/handbook/v2/HB2_ch2#sec2.4.2) above.
 
 **Participles vs. adjectives**. If a participle can be referred to a verb, the infinitive should be used as the lemma. Thus, “búa” should be the lemma for “búinn”, even if this participle is on the verge of being lexicalised as an adjective in Old Norse. For a participle like “ítrborinn” there is no corresponding verb “ítrbera”, so “ítrborinn” should be chosen as lemma and the word class must be adjective, xAJ xRP gN nS cM sI.
 

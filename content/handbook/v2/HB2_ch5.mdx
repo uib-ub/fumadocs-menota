@@ -1,5 +1,5 @@
 ---
-title: "Ch. 5 (v. 2.0): Characters: typology and encoding"
+title: "5: Characters: typology and encoding"
 author:
  - Odd Einar Haugen
 changeLog:
@@ -67,7 +67,7 @@ information. Any other characters may cause problems, even well
 established ones such as Modern Scandinavian “æ”, “ø”
 and “å”. In v. 1 of _The Menota handbook_ we therefore recommended that all characters outside
 a-z / A-Z should be encoded as entities, i.e. given an appropriate
-description and placed between the delimiters “&” and “;”. In the last years, however, all major operating systems have implemented full Unicode support and a growing number of applications, including most web browsers, also support Unicode. We therefore believe that encoders should take full advantage of the Unicode Standard, as recommended in [ch. 2.2.2](HB2_ch2.xml#sec2.2.2) above.
+description and placed between the delimiters “&” and “;”. In the last years, however, all major operating systems have implemented full Unicode support and a growing number of applications, including most web browsers, also support Unicode. We therefore believe that encoders should take full advantage of the Unicode Standard, as recommended in [ch. 2.2.2](/handbook/v2/HB2_ch2#sec2.2.2) above.
 
 As of version 2.0, the character encoding recommended in _The Menota handbook_ has been synchronised with the recommendations by the [Medieval Unicode Font Initiative](http://www.mufi.info). The character recommendations by MUFI contain more than 1,300 characters in the Latin alphabet of potential use for the encoding of Medieval Nordic texts. As a consequence of the synchronisation, the list of entities which is part of the Menota scheme is identical to the one by MUFI. In other words, if a character is encoded with a code point or an entity in the MUFI character recommendation, it will be a valid character encoding also in a Menota text. For more information on this synchronisation, please refer to [Appendix A](/handbook/v2/HB2_A_characters).
 
@@ -75,7 +75,7 @@ From an encoding point of view, three major classes of characters should be kept
 
 **(1) Basic Latin (a-z / A-Z)**. These characters can be encoded as they are, without resorting to entities. Note, however, that a few characters in Basic Latin are used for specific purposes in XML encoding, so if these characters are going to be encoded as such, only entities will do. These characters are the <em>ampersand</em>, “&”,  which must be encoded as “&amp;”;  the <em>less-than sign</em>, “&lt;”,  which must be encoded as “&lt;” and the <em>greater-than sign</em>, “&gt;”,  which must be encoded as “&gt;”.
 
-**(2) All characters in the Unicode Standard outside Basic Latin**. All of these characters can be encoded directly with their Unicode codepoints, e.g. using the code points listed in the [MUFI character recommendation](http://bora.uib.no/handle/1956/10699). MUFI compliant fonts probably contain all characters that are needed. However, as explained in [ch. 2.2](HB2_ch2.xml#sec2.2) above, one may refer to all  characters outside Basic Latin with entities, and one may mix Unicode encoding and encoding with entities in the same document.
+**(2) All characters in the Unicode Standard outside Basic Latin**. All of these characters can be encoded directly with their Unicode codepoints, e.g. using the code points listed in the [MUFI character recommendation](http://bora.uib.no/handle/1956/10699). MUFI compliant fonts probably contain all characters that are needed. However, as explained in [ch. 2.2](/handbook/v2/HB2_ch2#sec2.2) above, one may refer to all  characters outside Basic Latin with entities, and one may mix Unicode encoding and encoding with entities in the same document.
 
 **(3) Characters in the Private Use Area**. A number of characters in Medieval Nordic manuscripts are not part of the Unicode Standard, even if a substantial number of central characters was proposed for Unicode and became part of the standard as of v. 5.1 (April 2008). Characters in the Private Use Area are coordinated by MUFI, and as explained above, Menota synchronises its list of characters with the one by MUFI.
 
@@ -163,7 +163,7 @@ of combinations for any character is very high.
 
 For practical reasons, all characters needed for the transcription of medieval Nordic manuscripts should be given descriptive names. We have found the naming scheme in the Unicode Standard to be a good model. There are, however, a considerable number of characters which so far have not been defined and described in Unicode. For these characters we must resort to the Private Use Area, and we need rules for the naming of such characters.
 
-Descriptive names have basically the same syntax as in rules (6) and (7) in [ch. 2.2.1](HB2_ch2.xml#sec2.2.1) above. The following examples refer to characters in the official Unicode Standard and thus serve to illustrate the naming scheme.
+Descriptive names have basically the same syntax as in rules (6) and (7) in [ch. 2.2.1](/handbook/v2/HB2_ch2#sec2.2.1) above. The following examples refer to characters in the official Unicode Standard and thus serve to illustrate the naming scheme.
 
 1. Base line character.<br/>
 
@@ -224,7 +224,7 @@ Descriptive names have basically the same syntax as in rules (6) and (7) in [ch.
 </div>
 
 
-3. Modification of a base line character touching the base character outside its x-height. As explained in [ch. 2.2.2](HB2_ch2.xml#sec2.2.2) above, this character can be encoded and described in two equivalent ways.<br/>
+3. Modification of a base line character touching the base character outside its x-height. As explained in [ch. 2.2.2](/handbook/v2/HB2_ch2#sec2.2.2) above, this character can be encoded and described in two equivalent ways.<br/>
 
 		
 
@@ -465,7 +465,7 @@ etc.
 We recommend that small capitals
 are transcribed as such, irrespective of whether they are being used
 for geminates or for ornamental purposes. Cf. [ch.
-6.3.10](HB2_ch6.xml#sec6.3.10).
+6.3.10](/handbook/v2/HB2_ch6#sec6.3.10).
 
 ### 5.3.4 Enlarged minuscules [#sec5.3.4]
 
@@ -582,7 +582,7 @@ etc.
 
 Note that the runes “m” and “f” may
 also be used as abbreviation signs, cf. [ch.
-6.3.6-7](HB2_ch6.xml#sec6.3.6).
+6.3.6-7](/handbook/v2/HB2_ch6#sec6.3.6).
 
 ### 5.3.8 Other variants of base line characters [#sec5.3.8]
 
@@ -675,7 +675,7 @@ e.g.
 Modified characters are base line
 characters with diacritical marks. They are described according to
 rule (4) in [ch.
-2.2.1](HB2_ch2.xml#sec2.2.1). If there is more
+2.2.1](/handbook/v2/HB2_ch2#sec2.2.1). If there is more
 than one modification, they are listed in the sequence specified in
 rule (6).
 
@@ -798,7 +798,7 @@ character and 0301 COMBINING ACUTE ACCENT or 030B COMBINING DOUBLE
 ACUTE ACCENT from the range [Combining
 Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf). As
 explained in [ch.
-2.2](HB2_ch2.xml#sec2.2) this “decomposed”
+2.2](/handbook/v2/HB2_ch2#sec2.2) this “decomposed”
 encoding can also be used for the precomposed vowels mentioned
 above.
 
@@ -939,7 +939,7 @@ number of consonants:
 Single dots above can be seen as a
 type of abbreviation, since the dot usually signifies gemination of
 the characters it is placed above. Cf. [ch.
-6.4.8](HB2_ch6.xml#sec6.4.8).
+6.4.8](/handbook/v2/HB2_ch6#sec6.4.8).
 
 ## 5.6 Complex characters [#sec5.6]
 

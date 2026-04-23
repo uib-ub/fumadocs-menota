@@ -36,6 +36,7 @@
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
                 => replace('^Menota handbook (&#x2013; )?(\(v\. 3\.0\): )?', '')
+                => replace('^Ch\. (1?[0-9]) \(v\. 2\.0\)', '$1')
             }"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
