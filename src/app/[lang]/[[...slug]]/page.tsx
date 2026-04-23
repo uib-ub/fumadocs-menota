@@ -12,7 +12,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   const page = source.getPage(slug, lang);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
-    contentGroup: 'hbx' | 'hb1' | 'hb3' | 'hb4' | 'main',
+    contentGroup: 'hbx' | 'hb1' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'hb-old' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
@@ -20,6 +20,8 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         case "v1-0":
         case "v1-1":
           return { contentGroup: "hb1", contentStyle: "hb-old" }
+        case "v2":
+          return { contentGroup: "hb2", contentStyle: "hb-new" };
         case "v3":
           return { contentGroup: "hb3", contentStyle: "hb-new" };
         case "v4":
@@ -51,6 +53,13 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
       {(() => {switch (contentGroup) {
         case "hb1":
           return;
+        case "hb2":
+          return (
+            <div className='dark:invert'>
+              <Image src='/images/hb2/handbook_2-0.gif' alt='Menota handbook 2.0' width={600} height={65}/>
+              <hr className='my-5 border-2 dark:border-gray-500'/>
+            </div>
+          );
         case "hb3":
         case "hb4":
           return (

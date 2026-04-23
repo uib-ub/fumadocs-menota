@@ -1,0 +1,1195 @@
+---
+title: "Menota handbook – Ch. 7 (v. 2.0): Altered, corrected and unreadable text"
+author:
+ - Odd Einar Haugen
+changeLog:
+ - date: 2026-04-23
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2016-07-12
+   author: Odd Einar Haugen
+   changes:
+    - "Updated several links"
+ - date: 2009-01-23
+   author: Odd Einar Haugen
+   changes:
+    - "Made a minor correction in 7.4.3"
+ - date: 2008-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few minor revisions, including correcting quotation marks and fixing links"
+ - date: 2008-05-16
+   author: Odd Einar Haugen
+   changes:
+    - "Updated all internal links, and external links to the TEI P5 Guidelines"
+ - date: 2008-05-14
+   author: Odd Einar Haugen
+   changes:
+    - "Made a couple of minor changes, suggested by Tarrin Wills,"
+ - date: 2008-03-13
+   author: Tone Merete Bruvik and Odd Einar Haugen
+   changes:
+    - "Tone Merete Bruvik and Odd Einar Haugen: Moved section on overlapping structures to ch. 4.10,"
+ - date: 2008-02-12
+   author: Tone Merete Bruvik
+   changes:
+    - "Corrected some errors in the 'me:' prefix, and some invalid examples."
+ - date: 2008-02-10
+   author: Odd Einar Haugen
+   changes:
+    - "Added ch. 7.4.2 on expunctions, exchanged the discussion of the COLT method in ch 7.5.2 with \"Boundar marking with empty elements\", and made a number of minor corrections."
+ - date: 2007-01-08
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated to TEI P5 1.0. Corrected some use of \"i\" elements, into \"hi\" elements with rend='italic'."
+ - date: 2006-11-22
+   author: Tarrin Wills
+   changes:
+    - "Finished revisions to the chapter."
+ - date: 2006-11-07
+   author: Tone Merete Bruvik
+   changes:
+    - "Added referenses to images, and corrected errors in the samples."
+ - date: 2006-11-06
+   author: Tarrin Wills
+   changes:
+    - "Comprehensive revision, including: treatment of overlapping structures according to June 2006 meeting; revision of examples and addition of photographs where available."
+ - date: 2006-06-20
+   author: Tone Merete Bruvik
+   changes:
+    - "Made the chapter valid. Some errors in the xml:id values."
+ - date: 2006-05-09
+   changes:
+    - "2006: Restructured introduction. Added table of transcription levels to introduction. Removed addSpan and delSpan references and moved to §7.5. Moved textSpan discussions to end. Added §7.5 containing a combined, detailed account of the use of textSpan."
+ - date: 2006-05-02
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated to TEI P5 0.3.1, change an example."
+ - date: 2005-12-29
+   author: Tone Merete Bruvik
+   changes:
+    - "First draft in Menota XML P5."
+ - date: 2003-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004. Version 2.0"
+---
+
+
+# Chapter 7. Altered, corrected and unreadable text
+
+Version 2.0 (16 May 2008). Links updated 12 July 2016.
+
+## 7.1 Introduction [#sec7.1]
+
+This chapter deals with the encoding of additions, deletions and
+corrections made in the manuscript by the scribe or later users, or
+similar changes made in the
+transcription, e.g. by the transcriber or encoder of the manuscript
+text. Further, the chapter deals with the encoding of damage to the
+manuscript that affects
+the reading of the manuscript text. In [ch. 7.2](#sec7.2) corrections, deletions
+and additions made by the scribe or later users of the manuscript are
+treated. In [ch. 7.3](#sec7.3) damage to the manuscript that
+affects the reading of the manuscript text is treated. [Ch. 7.4](#sec7.4)
+treats corrections, deletions and additions made by
+the transcriber of the manuscript text that have been made e.g. from
+other text witnesses or earlier editions of the text. [Ch. 7.5](#sec7.5) contains a summary of all elements and attributes discussed in this chapter.
+
+### 7.1.1 Structure [#sec7.1.1]
+
+Because the features described in this chapter 
+are largely non-linguistic, they have more relevance
+to the textual levels (encoded by the elements facs, dipl and norm) than 
+to the linguistic encoding of texts, parts of texts, words and so on. In many 
+cases, therefore, the encoding of these features will form an incompatible 
+hierarchy with the structure of the text. In such cases, and in cases
+where it occurs within a word, the encoder will have
+to encode the features at a particular textual level. These features will, 
+in general, be marked up at the facs level when they correspond to the 
+physical manuscript. Changes to the text made by the editor/transcriber,
+on the other hand, should be encoded at the dipl level where necessary. 
+The norm level contains the final, corrected text without non-linguistic 
+markup. The following table indicates at what level each feature should 
+be marked up, and/or its contents included, where relevant:
+
+| Feature | Element | facs | dipl | norm |
+|-----|-----|-----|-----|-----|
+| addition in ms. | <E>add</E> | text, markup | text | text |
+| deletion in ms. | <E>del</E> | text, markup | (removed) | (removed) |
+| illegible text | <E>gap/</E> | markup | — | — |
+| blank space | <E>space/</E> | markup | — | — |
+| unclear text in ms. | <E>unclear</E> | text, markup | text | text |
+| text supplied by ed. | <E>supplied</E> | — | text, markup | text |
+| error in ms. text | <E>sic</E> | text, markup | (removed or corrected) | (removed or corrected) |
+| text corrected by ed. | <E>corr</E> | — | text, markup | text |
+
+
+Here 'Element' also refers to the value of the 'category' attribute when the 
+<E>me:textSpan/</E> element is used (see [ch. 7.5](#sec7.5)).
+
+### 7.1.2 Elements [#sec7.1.2]
+
+The encoding
+recommended here is based on 
+ 
+[ch. 11 “Representation of Primary Sources”](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)
+of the TEI P5 Guidelines, where the following elements are defined:
+
+| Elements | Contents |
+|-----|-----|
+| <E>add</E> | contains letters, words, or phrases inserted in the manuscript text or in the margins of the manuscript by an author, scribe, annotator or corrector. |
+| <E>del</E> | contains a letter, word or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the manuscript text by an author, scribe, annotator or corrector. |
+| <E>gap/</E> | indicates a point where material has been omitted in a transcription, normally because the manuscript text is illegible, but potentially for some other reason.  |
+| <E>space/</E> | indicates a significant or deliberate space in the manuscript.  |
+| <E>unclear</E> | contains a word, phrase or passage which cannot be transcribed with certainty because it is illegible in the manuscript.  |
+| <E>supplied</E> | signifies text supplied by the transcriber, encoder or editor in place of text which cannot be read, either because of physical damage or loss in the original or because it is illegible for any reason.  |
+| <E>sic</E> | contains text reproduced in the transcription although apparently incorrect or inaccurate.  |
+| <E>corr</E> | contains the correct form of a passage apparently erroneous in the manuscript text. This element should only be used for corrections made in the transcription or encoding of the manuscript text. It should not be used for corrections made within the manuscript (e.g. by the scribe or a later hand).  |
+
+
+### 7.1.3 Philological introduction [#sec7.1.3]
+
+In a discussion on editorial practice for Old Norse texts Helle
+Jensen, with reference to [Stefán Karlsson 1963](HB2_literature.xml), LXVII f.,
+outlines aspects of the manuscript text which should be noted in an
+edition ([Jensen
+1988](HB2_literature.xml)). Jensen's suggestions start with structural
+markup of e.g. linebreaks in the manuscript. She also gives special
+signs for each of the features that has to do with scribal or later
+changes in the manuscript as follows (Jensen 1988, 102 f.):
+
+| Sign | Explanation |
+|-----|-----|
+| ` ´ | Includes something that has been added above the line in the manuscript. |
+| ´ ` | Includes something that has been added in the margins. Unless stated in a footnote the addition is considered to be the work of the hand that has written the main text. |
+| \|- -\| | Text that has been struck through, underdotted or erased is placed within these brackets. |
+| -\| \|- | Text that has been written twice without being marked by the scribe in the manuscript is placed within these brackets. |
+| &lt; &gt; | Text not present in the exemplar, but supplied in the edition by the editor. |
+| * | The following word is corrected by the editor. In a footnote the original form is given. |
+| [ ] | The text of the manuscript is illegible due to use or damage. The text included could be supplied from another manuscript or be a conjecture made by the transcriber or editor. If the addition is made from another manuscript it should be given diplomatically, if from other sources, such as editions or transcriptions, it should be rendered in a form normalized in accordance with the manuscript text.  |
+| [[ ]] | Characters within double brackets have been read for the first time in the present transcription.  |
+| 000 | Unreadable characters or characters lost e.g. through damage to the manuscript. The number of zeros corresponds to the number of characters presumed missing. |
+| 000...000 | The number of unreadable characters is not known. |
+
+
+In addition, Helle Jensen suggests that uncertain readings should be
+subpunctuated. In editions from the Arnamagnæan Institutes in
+Reykjavík and Copenhagen these suggestions are in general
+followed, and in most editions of medieval Scandinavian texts similar
+systems are used. This gives us a starting point when we are
+transcribing Old Icelandic and Old Scandinavian manuscripts.
+
+The principles presented in this handbook are based on the tradition
+of producing scholarly editions of texts and individual manuscripts.
+The system for printed editions outlined by Helle Jensen can therefore
+very often be translated into the electronic markup language presented
+in this chapter.
+
+Text written in the margins can be of various kinds and of varying
+interest for our knowledge about the main text and the history of the
+manuscript. Notes on the main text in the margins are of course
+valuable when we are interested in the text tradition. Other notes
+could indicate that someone at a certain stage has used it for example
+in a transcription of the text.
+
+In medieval manuscripts, however, we often also find notes in the
+margins that have nothing whatsoever to do with the manuscript text.
+These notes can at first sight seem to be of no value to philological
+investigation, but in a larger context they can sometimes give
+information as to where a manuscript has been at a certain stage of its
+history. If e.g. the same type of scribbles are found in a group of manuscripts
+where one of the manuscripts can be geographically pin-pointed, this
+could indicate the whereabouts of the whole group. Information of this
+kind can also lead to the establishing of new connections between
+manuscripts that were not previously seen as connected. There are thus
+good arguments for including information also on this kind of marginal
+note, but these are more properly contained in the manuscript
+description in the header (cf. [ch. 10.2.2](HB2_ch10.xml#sec10.2.2)) than
+within the encoded transcription.
+
+The first kind of notes, i.e. comments or additions to the main
+text, are often treated in foot-notes in printed editions. They are
+considered relevant to the reading of the text, and are therefore given
+in relation to the main text. Marginal notes that indicate the owner or
+user of the manuscript in any obvious way are often treated in the
+introduction to the edition as they are considered relevant to the
+history of the text or manuscript.
+
+The third category of notes, the ones that do not seem to give any
+relevant information, is often excluded or treated only briefly in the
+introduction. This is of course a rational way to handle these
+scribbles when the printed edition sets the limits, and the information
+often is obscure and cannot be easily related to parallel information
+concerning other manuscripts. In the electronic transcription of a
+manuscript, however, there is no reason to make this limitation. The
+information can be given in the same way as for the other categories,
+and thereby give us the possibility to search for all kinds of obscure
+information.
+
+Medieval manuscripts have often become damaged through use,
+sometimes with relevance for our reading of the text. Pieces of
+parchment may for example have been torn out, leaving a physical gap in
+the manuscript. Parts of the text may be illegible because of use or
+deliberate erasure, or they may be darkened to such an extent that the
+text is no longer readable. In printed editions, unreadable sections of
+a text are marked as suggested by Helle Jensen. In the introductions to
+printed editions problems related to illegible text and damage to the
+manuscript are often discussed at length. If there are other text
+witnesses these are often used to replace missing stretches of text. In
+a diplomatic transcription of a manuscript text, however, the missing
+or unreadable parts are most often just marked as such. In the
+following sections the relation between the traditional markup of these
+kinds of textual and editorial difficulties and electronic encoding
+will be obvious. It is therefore relevant to take traditional
+transcription and editing as a starting point for the electronic
+encoding of transcriptions of manuscript texts.
+
+The primary aim of the following sections are to give
+recommendations for the transcription and encoding of manuscript texts.
+It does, however, in some instances also give recommendations for
+editorial encoding, e.g. markup that refers to corrections or additions
+made by the transcriber or encoder. It is therefore important to keep
+the transcription and encoding of the manuscript text on the one hand
+and on the other hand the editorial changes consistently separated, so
+that the former provides a starting point for the editorial work.
+
+## 7.2 Scribal features: Additions, deletions and substitutions [#sec7.2]
+
+In the manuscript text and in the margins of the manuscript we often
+find different kinds of corrections, deletions and additions that we
+want to encode. These changes can be divided into different groups
+depending on the nature of the change and its relevance for the reading
+of the manuscript text or our knowledge about the manuscript. The main
+division is between additions or substitutions to the manuscript text,
+within the text or in the margins, and deletions made in the manuscript
+text. The former should be marked with the <E>add</E> element while
+the latter should be marked with the <E>del</E> element. Additions and
+substitutions made by the transcriber or editor are treated in the
+last section ([ch. 7.4](#sec7.4)).
+
+### 7.2.1 Additions [#sec7.2.1]
+
+This section deals with additions <em>made by a scribal hand only</em>.
+It is a common mistake to use elements designed for this purpose to mark 
+up additions made by an editor - such features are covered below in 
+[ch. 7.4](#sec7.4).
+
+The following elements are recommended for describing additions made by the 
+author of the text, a compiler, scribe, annotator or corrector in the 
+manuscript text. The TEI P5 Guidelines recommend the use of the <E>add</E>
+element to describe additions in the manuscript ([ch. 11.3](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)). In the following 
+the use of <E>add</E> in relation 
+to our recommended encoding of the individual word within the element 
+<E>w</E> and on the three different levels 
+<E>me:facs</E>, <E>me:dipl</E> and 
+<E>me:norm</E> is treated.
+
+| Elements | Contents |
+|-----|-----|
+| <E>add</E> | Contains letters, words or phrases inserted in the manuscript text or in the margins of the manuscript by an author, scribe, annotator or corrector. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>hand</Att> | Signifies the agent which made the addition. The value is an XML IDREF, referring to a <E>handNote</E> element included in the header under <E>handDesc</E>. See the Menota header in [Appendix E](HB2_E_menotaheader.xml). |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Signifies the transcriber or editor responsible for identifying the hand. The value is an XML IDREF, referring to an agent described in the header (cf. also [ch. 10](HB2_ch10.xml)). |
+| &ensp;&ensp;&ensp;<Att>place</Att> | Indicates where the addition is made. Suggested values include: |
+| &ensp;&ensp;&ensp;<Val>inline</Val> | The addition is made in a space originally left empty by the scribe. |
+| &ensp;&ensp;&ensp;<Val>supralinear</Val> | The addition is made above the line. |
+| &ensp;&ensp;&ensp;<Val>infralinear</Val> | The addition is made below the line. |
+| &ensp;&ensp;&ensp;<Val>margin-left</Val> | The addition is made in the left margin. |
+| &ensp;&ensp;&ensp;<Val>margin-right</Val> | The addition is made in the right margin. |
+| &ensp;&ensp;&ensp;<Val>margin-top</Val> | The addition is made in the top margin. |
+| &ensp;&ensp;&ensp;<Val>margin-bot</Val> | The addition is made in the bottom margin. |
+| &ensp;&ensp;&ensp;<Val>nextPage</Val> | The addition is made on the next page. |
+| &ensp;&ensp;&ensp;<Val>previousPage</Val> | The addition is made on the previous page. |
+
+
+Additions which can be ascribed to the author of a text are rare in
+medieval Nordic manuscripts. The additions being described with the
+above-mentioned attribute <Att>hand</Att> will therefore primarily be
+ascribed to the values <Val>scribe</Val>, <Val>compiler</Val>,
+<Val>annotator</Val> or <Val>corrector</Val>. Scribal additions are probably the
+most common changes to be recorded in the transcription and encoding
+of a manuscript text. The list of hands in the header (cf. 
+[ch. 10](HB2_ch10.xml)) should identify the
+individual hand, either as anonymous or, if possible, by name. The
+main hand in a manuscript will normally be marked as <Val>mainscribe</Val>.
+
+If the addition consists of a 
+series of complete words, the <E>add</E> tag should be 
+surrounding the word(s). The following example contains a marginal addition:
+
+
+
+
+<Figure desc={`AM 748 I b 4to, fol. 18r, ll. 5-7`}>
+<AutoImage src="/images/hb2/ch7/AM-4-n748R1a2.18r.5-7.gif" alt="AM 748 I b 4to, fol. 18r, ll. 5-7"/>
+
+</Figure>
+
+
+
+Here (AM 748 I b 4to, fol. 18r, ll. 5-7) the scribe 
+(identified as <Val>mainscribe</Val> in the header)
+has inserted the word 'sigavtr' in the left margin (now 
+partially cut off by the binding) with a  mark after 'skollvalldr'. 
+It should be encoded as follows. Because the addition is a whole word, the 
+tag should enclose the word (Note that for
+the sake of clarity we have limited the use of encoding to the relevant
+sequence and simplified the orthography):
+```xml
+<!-- after skollvalldr -->
+<add place="left" hand="mainscribe">
+  <w>
+    <choice>
+      <me:facs>sig&avlig;tr</me:facs>
+      <me:dipl>sig&avlig;tr</me:dipl>
+    </choice>
+  </w>
+</add>
+```
+
+
+Note that to ensure correct rendering of the addition, no space is 
+included between the <E>add</E> and 
+<E>w</E> elements.
+
+In cases where the addition forms part of a word, the markup should normally
+be restricted to the facsimile level. In any case, the addition need not be 
+marked up as part of the normalised text. Cf. the following:
+
+
+
+
+<Figure desc={`AM 748 I b 4to, fol. 1r, l. 15`}>
+<AutoImage src="/images/hb2/ch7/AM-4-n748R1a2.1r.15.gif" alt="AM 748 I b 4to, fol. 1r, l. 15"/>
+
+</Figure>
+
+
+```xml
+annat af
+<w>
+  <me:facs><add hand="scribe" place="supralinear">v</add>
+     r&eogon;riligv<am>&bar;</am></me:facs>
+  <me:dipl>vr&eogon;riligv<ex>m</ex></me:dipl>
+  <me:norm>uhr&aelig;riligum</me:norm>
+</w>
+annat 
+```
+
+
+The location of the addition in the above markup is indicated by the 
+attribute <Att>place</Att>; in this case, the addition is made above the line of
+the manuscript text and therefore uses the value <Val>supralinear</Val>.
+
+The diplomatic and normalised text will normally include the addition if 
+made by a scribal hand. Additions made by later hands will normally be omitted
+from the diplomatic and normalised text without markup.
+
+Additions are sometimes made by an
+annotator, i.e. comments to the text. This kind of additions could be
+encoded as the marginal note “vantar ekkert F. J.” by
+Finnur Jónsson in Codex Wormianus (AM 242 fol. p. 60):
+```xml
+<add  hand="FJ">
+  <w><me:facs>vantar</me:facs></w>
+  <w><me:facs>ekkert</me:facs></w>
+  <w><me:facs>F&dot;</me:facs></w>
+  <w><me:facs>J&dot;</me:facs></w>
+</add> 
+```
+
+
+It is also possible to indicate
+with the attribute <Att>place</Att> where on the manuscript page the
+annotation is made. Finnur Jónsson's annotation is made
+in the bottom margin, and should be encoded as follows:
+```xml
+<add  hand="FJ" place="bottom">
+  <w><me:facs>vantar</me:facs></w>
+  <w><me:facs>ekkert</me:facs></w>
+  <w><me:facs>F&dot;</me:facs></w>
+  <w><me:facs>J&dot;</me:facs></w>
+</add> 
+```
+
+
+Changes in scribal hands are not considered additions. For the markup of 
+such phenomena, use the empty <E>handShift/</E> element. Note that this element is parallel to empty elements like <E>pb/</E>, <E>cb/</E> and <E>lb/</E> in that it only points to a break in the text (cf. the discussion in [ch. 4.7](HB2_ch4.xml#sec4.7) and [ch. 4.10](HB2_ch4.xml#sec4.10) above).
+
+See §7.5 below for examples of how to mark up additions which 
+span linguistic (<E>w</E>, etc.) boundaries.
+
+### 7.2.2 Deletions [#sec7.2.2]
+
+This section deals with deletions made by a scribal hand only. 
+Text supressed by the editor is dealt with under 'corrections' 
+([ch. 7.4.2](#sec7.4.2)) below.
+
+The TEI P5 Guidelines specify the use of the <E>del</E> 
+element to describe additions in the manuscript 
+([ch. 11.3](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)). 
+In the following the use of <E>del</E> in relation to our 
+recommended encoding of the individual word within the element 
+<E>w</E> and on the three different levels 
+<E>me:facs</E>, <E>me:dipl</E> and
+<E>me:norm</E> is treated.
+
+| Elements | Contents |
+|-----|-----|
+| <E>del</E> | Contains a letter, word or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the manuscript text by an author, scribe, annotator or corrector. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>hand</Att> | Signifies the agent which made the deletion. The value is an XML IDREF, referring to a <E>handNote</E> element included in the header under <E>handDesc</E>.  |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Signifies the editor or transcriber responsible for identifying the hand of the restoration. The value is an XML IDREF, referring to an agent described in the header (cf. [ch. 10](HB2_ch10.xml)). This information can also be given in the header.  |
+| &ensp;&ensp;&ensp;<Att>rend</Att> | Display rendering information in TEI. This attribute is used here speficially to classify the deletion as displayed, using any convenient typology. Sample values include:  |
+| &ensp;&ensp;&ensp;<Val>overstrike</Val> | The text has been struck through. |
+| &ensp;&ensp;&ensp;<Val>erasure</Val> | The text has been erased. |
+| &ensp;&ensp;&ensp;<Val>bracketed</Val> | Deletion indicated by brackets in the text or margin. |
+| &ensp;&ensp;&ensp;<Val>subpunction</Val> | Deletion indicated by dots beneath the letters deleted. |
+
+
+Deletions that can be ascribed to the author of a manuscript text are
+rare in medieval Nordic manuscripts. The deletions being described
+with the above mentioned attribute <Att>hand</Att> will therefore
+primarily be ascribed to <Val>scribe</Val> or
+<Val>corrector</Val>.
+
+Deletions should normally only be marked up at the 'facs' level. The text 
+should be removed without indication at the other textual levels.
+
+The example in [ch. 7.2.1](#sec7.2.1) (Figure 7.1) contains the word
+'skolldvalldr' in which the first 'd' is marked with a dot below signifying 
+deletion. It should be marked up as follows:
+```xml
+<w>
+  <choice>
+    <me:facs>&slong;koll<del hand="mainscribe" rend="subpunction">d</del>
+      valld&rrot;</me:facs>
+    <me:dipl>&slong;kollvalld&rrot;</me:dipl>
+  </choice>
+</w>
+```
+
+
+Deletions of one or more words made by the scribe(s) or
+corrector(s) of a manuscript are encoded as in the passage from
+the Third Grammatical Treatise below. Note that we for clarity
+limit the use of encoding to the relevant manuscript line, and that only the
+<E>me:facs</E> and <E>me:dipl</E> levels are shown, and a few of the 
+words have been suppressed.
+
+
+
+
+<Figure desc={`AM 242 fol., p. 94, ll. 11-13`}>
+<AutoImage src="/images/hb2/ch7/AM-2-n242.94.11-13.gif" alt="AM 242 fol., p. 94, ll. 11-13"/>
+
+</Figure>
+
+
+```xml
+<lb n="94:12"/>
+<w>
+  <choice>
+    <me:facs>liflau<lb/>sum</me:facs>
+    <me:dipl>liflausum</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>lvtv<am>&bar;</am>.</me:facs>
+    <me:dipl>lvtv<ex>m</ex>.</me:dipl>
+  </choice>
+</w>
+
+<del hand="mainscribe" rend="overstrike">
+<w>
+  <choice>
+    <me:facs>v<am>&er;</am>rðr</me:facs>
+    <me:dipl>v<ex>er</ex>ðr</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>an<am>&bar;</am>at</me:facs>
+    <me:dipl>an<ex>n</ex>at</me:dipl>
+  </choice>
+</w>
+<!-- skipping: 'af liflausum lutum. enn annat af lifligum lutum' ... -->
+<w>
+  <choice>
+    <me:facs>lvtv<am>&bar;</am>.</me:facs>
+    <me:dipl>lvtv<ex>m</ex>.</me:dipl>
+  </choice>
+</w>
+</del>
+
+<w>
+  <choice>
+    <me:facs>Hlioð</me:facs>
+    <me:dipl>Hlioð</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þ<am>&bar;</am></me:facs>
+    <me:dipl>þ<ex>at</ex></me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>hæyriz</me:facs>
+    <me:dipl>hæyriz</me:dipl>
+  </choice>
+</w>
+```
+
+
+In the TEI P5 Guidelines cited above
+there are a number of possible types of deletion described with the
+attribute <Att>type</Att>. These could be applied to deletions made both
+by scribe(s) and corrector(s). If a deletion is made e.g. by
+<Val>overstriking</Val> the deleted text it could be encoded as (here
+only presented on the <E>me:facs</E> level):
+```xml
+en tuenner flokkar þeirar þioðar er<lb n="3r:15"/>
+<del hand="mainscribe" rend="overstrike">
+  <w>
+    <me:facs>liguri</me:facs>
+  </w>
+  <w>
+    <me:facs>hæita</me:facs>
+  </w>
+  <w>
+    <me:facs>er</me:facs>
+  </w>
+</del>
+traceum hæiter. 
+```
+
+
+This could then be displayed on the
+computer screen or in a printed edition in the manner suggested above
+([ch.
+7.1](#sec7.1.3)):
+```xml
+14   ...en tuenner flokkar &thorn;eirar &thorn;io&eth;ar er
+15   |-liguri h&aelig;ita er-| traceum h&aelig;iter...
+```
+
+
+The text that is marked as deleted
+must be at least partly legible in the manuscript so that it can be
+read by the transcriber. If the deleted text is not legible the
+deletion should be marked up with the <E>gap/</E> element,
+described below (7.3.1). The <E>gap/</E> element could be
+enclosed in the <E>del</E> element to indicate that the gap
+is in some way intentional. Parts of the deleted text that are
+legible could be indicated by the <E>unclear</E> element in
+combination with the <E>gap/</E> element as described below
+([ch.
+7.3.2](#sec7.3.2)). 
+
+As for the markup of additions using <E>add</E>, if the 
+deletion is of part of a word, it should normally only be marked up at the 
+<E>me:facs</E> level. If the deletion is by a scribal hand, 
+the deleted text will be omitted from the <E>me:dipl</E>
+and <E>me:norm</E> levels without markup.
+
+In some cases, the deletion will conflict with word boundaries. 
+[ch. 7.5](#sec7.5) below describes how to mark up such deletions.
+
+### 7.2.3 Substitutions [#sec7.2.3]
+
+This section describes the markup of  text substituted by a scribe, 
+that is, where a scribe deletes text and replaces it with some other 
+text. In medieval manuscripts a rather
+common phenomenon is the combination of deleted text and added text.
+It is not always possible, however, to ascertain the relation between
+the two. If someone has deleted the originally written text inline
+this does not automatically mean that a corresponding addition above
+the line or in the margin is made by the same scribe. It can
+therefore not be stated as certain whether the correspondence is
+intentional or not. There is no specific element for this type of 
+feature. We suggest that substitutions made in the
+manuscript should be marked primarily with the two core tags
+<E>del</E> and <E>add</E>. 
+In cases where we can be
+relatively sure about the agent of the whole substitution this could
+be indicated with a combination of the <E>del</E> and the
+<E>add</E> elements as illustrated below.
+
+
+
+
+<Figure desc={`AM 748 I b 4to, fol. 13r, l. 25`}>
+<AutoImage src="/images/hb2/ch7/AM-4-n748R1a2.13r.25.gif" alt="AM 748 I b 4to, fol. 13r, l. 25"/>
+
+</Figure>
+
+
+
+Here, the seventh word 'barv' has been altered by the scribe, such 
+that the original 'a' at the end of the word is marked as deleted by 
+subpunctuation and a 'u' has been added as the replacement letter 
+above the line. This word should be marked up as follows (facs and dipl 
+levels only):
+```xml
+<w>
+  <choice>
+    <me:facs>bar<del hand="mainscribe" rend="subpunction">a</del>
+      <add hand="mainscribe" place="supralinear">v</add></me:facs>
+    <me:dipl>barv</me:dipl>
+  </choice>
+</w>
+```
+
+
+As for the <E>del</E> and <E>add</E> elements, markup within words 
+should only be included at the facs level, and the dipl and norm levels should
+include the text which the scribe(s) appears to have intended, as in the 
+example above.
+
+The same type of markup can be used for substitutions which span structural
+boundaries. This type of markup is discussed in more detail in [ch.
+7.5](#sec7.5).
+
+## 7.3 Damage and illegibility [#sec7.3]
+
+The following section deals with
+text omitted in the transcription or editing of text due to damage or
+illegibility in the manuscript, and text supplied from other sources
+such as other text witnesses or earlier editions.
+
+The following detail of a manuscript page will serve to 
+illustrate the markup in the following sections.
+
+
+
+
+<Figure desc={`AM 757 a 4to, fol. 2r, ll. 22-25`}>
+<AutoImage src="/images/hb2/ch7/AM-4-n757a1.2r.22-25.gif" alt="AM 757 a 4to, fol. 2r, ll. 22-25"/>
+
+</Figure>
+
+
+
+### 7.3.1 Text omitted from the transcription [#sec7.3.1]
+
+When the manuscript is illegible we
+suggest the use of the elements <E>gap/</E> and
+<E>supplied</E> to indicate the illegible text, its extension
+and how it has been supplied (for the <E>supplied</E> element
+see [ch. 7.4.1](#sec7.4.1)). The <E>space/</E> 
+element is used to represent deliberate omissions from the manuscript which 
+have some significance, e.g. spaces left for decorated initials or words.
+
+| Elements | Contents |
+|-----|-----|
+| <E>gap/</E> | Is an element without extention in the encoded manuscript text. It indicates a point where material has been omitted in a transcription because the manuscript text is illegible. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>reason</Att> | Gives the reason for omission. Sample values include: 'sampling', 'illegible', 'irrelevant', 'cancelled', 'cancelled and illegible'. |
+| &ensp;&ensp;&ensp;<Att>quantity</Att> | Indicates approximately how much text has been omitted from the transcription, in the way that has been suggested by Helle Jensen refered to above ([ch. 7.1](#sec7.1)). Values can be given as e.g. number of signs, number of lines or number of pages in the manuscript. |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Indicates the transcriber, encoder or editor responsible for the decision not to provide any transcription and hence the application of the <E>gap/</E> element. |
+| &ensp;&ensp;&ensp;<Att>hand</Att> | In instances where text is omitted from the transcription because of deliberate deletion by an identifiable hand, this attribute signifies the hand which made the deletion. |
+| &ensp;&ensp;&ensp;<Att>agent</Att> | In the case of text omitted because of damage, categorizes the cause of the damage, if it can be identified. |
+| <E>space/</E> | Is an element without extention in the encoded manuscript text. It indicates a point in a transcription of a manuscript where the mansucript has a deliberate omission. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>quantity</Att> | The extent of the space. Values can be given as e.g. number of signs, number of lines or number of pages in the manuscript. |
+| &ensp;&ensp;&ensp;<Att>unit</Att> | Names the unit used for describing the extent of the gap. |
+
+
+In medieval manuscripts we often
+find sections that for some reason are illegible. This can be due to
+e.g. damage or use. In the transcription we primarily wish to
+register the sections that are illegible and the extent of the
+illegibility. We suggest that the illegible sections should be
+indicated by the <E>gap/</E> element. The extent of the
+illegible section could be encoded as the following text from 
+the manuscript above, where wearing has occurred next to a 
+hole (bottom left of image):
+```xml
+
+<w>
+  <choice>
+    <me:facs>m<lb n="25"/>al&slong;g<am>&esup;</am>in<am>&rsup;</am>
+      </me:facs>
+    <me:dipl>m<lb n="25"/>al&slong;g<ex>re</ex>in<ex>ar</ex></me:dipl>
+  </choice>
+</w>
+<!-- we know from the other mss that a whole word is missing -->
+<w>
+  <choice>
+    <me:facs><gap /></me:facs>
+    <me:dipl><!-- we can insert text here - see below --></me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>nafn</me:facs>
+    <me:dipl>nafn</me:dipl>
+  </choice>
+</w>
+```
+
+
+With this markup the extent of the illegible section is not defined. It can 
+be presented on the computer screen or in a printed edition in the manner 
+suggested above ([ch. 7.1](#sec7.1)):
+```
+
+malsg(re)in(ar) 00...00 nafn
+
+```
+
+
+If the transcriber or encoder of
+the text wishes to define the section more accurately it can be done
+as in the following example. The number of missing signs is given as
+a value to the attribute <Att>quantity</Att>. It should be noted that the
+number given in the example is not intended as an exact evaluation of
+the number of signs missing in the present manuscript.
+```xml
+
+<w>
+  <choice>
+    <me:facs>m<lb n="25"/>al&slong;g<am>&esup;</am>in<am>&rsup;</am>
+      </me:facs>
+    <me:dipl>m<lb n="25"/>al&slong;g<ex>re</ex>in<ex>ar</ex></me:dipl>
+  </choice>
+</w>
+<!-- we know from the other mss that a whole word is missing -->
+<w>
+  <choice>
+    <me:facs><gap extent="2"/></me:facs>
+    <me:dipl><!-- we can insert text here - see below --></me:dipl>
+</choice>
+</w>
+<w>
+  <choice>
+    <me:facs>nafn</me:facs>
+    <me:dipl>nafn</me:dipl>
+  </choice>
+</w>
+```
+
+
+This could be represented as
+follows on the computer screen or in a printed edition. As the
+accuracy of this kind of evaluation is questionable it should not
+have the highest priority to display this in e.g. a printed
+edition.
+<Quote>
+ malsg(re)in(ar) 00 nafn 
+</Quote>
+
+See below ([ch. 7.4.1](#sec7.4.1)) for an example of text 
+supplied in place of the gap by the editor using the <E>supplied</E> element.
+
+A deliberate space in a manuscript should be indicated by the 
+<E>space/</E> element. For example, in the image above, an initial letter has been 
+omitted, presumably for a coloured or decorated initial to be added later. This is encoded
+as follows:
+```xml
+<lb/><w>
+<!-- initial 'S' is left blank by the scribe here -->
+  <me:facs><space quantity="1" dim="horizontal"/>augn</me:facs>
+</w>
+```
+
+
+In this example, the text has only been encoded on the <em>facs</em> level, so the <E>choice</E> element would be redundant.
+
+If the text omitted in the space is supplied using the 
+<E>supplied</E> element, the <E>space/</E>
+tag will normally be used at the facs level and 
+the <E>supplied</E> element will be used at the dipl
+level (with the <Att>reason="space"</Att> 
+attribute set). See 
+[ch. 7.4.1](#sec7.4.1).
+
+### 7.3.2 Uncertain readings in the manuscript [#sec7.3.2]
+
+In medieval manuscripts we often encounter problems of illegibility due to 
+use or damage. In the following the encoding of such sequences is treated. To 
+some extent this has already been treated in the above section 
+([ch. 7.3.1](#sec7.3.1)). In cases where the text is readable to some 
+extent the <E>gap/</E> and <E>supplied</E> 
+elements should not be used. The TEI P5 Guidelines ([ch. 11.5](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)
+of the TEI P5 Guidelines) recommend that 
+the <E>unclear</E> element is used for encoding damage and 
+illegibility where the text of the damaged or illegible area can be read with 
+some, but not full, certainty.
+
+| Elements | Contents |
+|-----|-----|
+| <E>unclear</E> | Contains a letter, word, phrase or passage which cannot be transcribed with certainty because it is illegible in the manuscript text. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>reason</Att> | Indicates why the material is hard to transcribe. |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Indicates the individual responsible for the transcription of the letter, word, phrase or passage contained within the <E>unclear</E> element. |
+| &ensp;&ensp;&ensp;<Att>hand</Att> | Signifies the hand responsible for the action where the difficulty in transcription arises from action (partial deletion, etc.) assignable to an identifiable hand. Note that this attribute has the same function in the <E>del</E> element above ([ch. 7.2.2](#sec7.2.2)). |
+| &ensp;&ensp;&ensp;<Att>agent</Att> | Where the difficulty in transcription arises from an identifiable cause, signifies the causative agent. |
+| &ensp;&ensp;&ensp;<Att>rend</Att> | Indicates how the element in question was rendered or presented in the source text. |
+
+
+The example given above from AM 757 a 4to includes a section on the second 
+line which can only be partially read. The following is the encoding for the 
+section, only represented at the facs level:
+```xml
+<w>
+  <me:facs>mal&slong;</me:facs>
+</w>.
+<w>
+  <me:facs>h<am>&osup;</am></me:facs>
+</w>
+<w>
+  <me:facs><gap extent="2"/></me:facs>
+</w>
+<unclear reason="worn" resp="TW">
+<w>
+  <me:facs>k&ocurl;llut</me:facs>
+</w>
+<w>
+  <me:facs>ein<am>&bar;</am></me:facs>
+</w>
+<w>
+  <me:facs>hlutr</me:facs>
+</w>
+</unclear>
+<w>
+  <me:facs>af</me:facs>
+</w>
+```
+
+
+The text may also include fully illegible text, as represented above with the 
+<E>gap/</E> element. With this encoding the text could
+be presented with subpunction or as grey text for all the words that the editor can
+not read with absolute certainty.
+
+## 7.4 Editorial interventions [#sec7.4]
+
+When transcribing medieval material
+we often encounter words or longer sequences of text that we consider
+corrupt in one way or another. Sometimes it may also be obvious that
+text is missing in the manuscript we are transcribing or that the
+scribe has made a mistake. The transcriber of the manuscript text may
+in these instances wish to indicate the mistake or even correct the
+text, either directly from other versions of the same text or based
+on already existing editions of the text. Sometimes the transcriber
+or editor may also wish to make obvious grammatical corrections in
+the text without having any other text witness or precedence in an
+earlier edition. In the following the encoding of corrections made by
+the transcriber of the text or by an editor are treated. Note that we
+do not recommend the use of the attribute <Att>hand</Att> for the changes
+made in transcription or encoding of the manuscript text. The
+attribute <Att>resp</Att> should be used consistently for corrections or
+additions made in the transcription or encoding of the text to
+distinguish clearly between what is found in the manuscript text and
+what is made in the transcription and encoding of the text.
+
+### 7.4.1 Additions made by the transcriber or editor [#sec7.4.1]
+
+If text is obviously missing in the
+manuscript text we may wish to supply it. This could be based on, for
+example, another text witness or on a earlier edition of the text. The
+markup of such additions should give information about the source as
+well as about the responsibility for the addition. To encode
+additions made in the transcription we recommend the use of the
+<E>supplied</E> element as described in the TEI P5 Guidelines
+([ch.
+11.3.7](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)). In the following
+the use of <E>supplied</E> in relation to our recommended
+encoding of the individual word within the element <E>w</E>
+and on the three different levels <E>me:facs</E>,
+<E>me:dipl</E> and <E>me:norm</E> is treated.
+
+| Elements | Contents |
+|-----|-----|
+| <E>supplied</E> | Signifies text supplied by the transcriber, encoder or editor in place of text which cannot be read, either because of physical damage or loss in the original or because it is illegible for any reason. Attributes include: |
+| &ensp;&ensp;&ensp;<Att>source</Att> | States the source of the supplied text if this can be located. |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Indicates the individual responsible for the addition of letters, words or passages contained within the <E>supplied</E> tag. It can be given values like: |
+| &ensp;&ensp;&ensp;<Val>transcriber</Val> | The person responsible for the transcription of the manuscript text. |
+| &ensp;&ensp;&ensp;<Val>encoder</Val> | The person responsible for the encoding of the manuscript text. |
+| &ensp;&ensp;&ensp;<Val>editor</Val> | The editor of the text used for the addition or responsible for the addition in editing the manuscript text. |
+| &ensp;&ensp;&ensp;<Att>reason</Att> | Indicates why the text has had to be supplied |
+| &ensp;&ensp;&ensp;<Att>agent</Att> | Where the presumed loss of text leading to the supplying of text arises from an identifiable cause, signifies the causative agent. |
+
+
+If the transcriber or editor wishes
+to supply text that is missing in the transcribed manuscript text
+from for example another text witness, this can be handled with the
+<E>supplied</E> element. The interpolated text could be
+transcribed as in this instance from the detail of AM 757 a 4to above.
+Note that we for clarity limit the use of encoding to
+the relevant sequence:
+```xml
+
+<w>
+  <choice>
+    <me:facs>m<lb n="25"/>al&slong;g<am>&esup;</am>n<am>&rsup;</am>
+      </me:facs>
+    <me:dipl>m<lb n="25"/>al&slong;g<ex>re</ex>n<ex>ar</ex></me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><gap extent="2"/></me:facs>
+    <me:dipl><supplied resp="TW" source="AM 748 I b 4to">&thorn;at
+      </supplied></me:dipl>
+  </choice></w>
+<w>
+  <choice>
+    <me:facs>nafn</me:facs>
+    <me:dipl>nafn</me:dipl>
+  </choice>
+</w>
+```
+
+
+This could then be displayed on the
+computer screen or in a printed edition in the manner suggested above
+([ch. 7.1](#sec7.1)):
+```
+malsg(re)n(ar) <þat> nafn
+```
+
+
+In the above example there are other sources available for the illegible 
+text. This kind of editorial change is,
+however, not suggested as compulsory. In a primary transcription and
+encoding the use of the <E>gap/</E> element should only give
+the essential manuscript information. The attributes to
+<E>gap/</E> and <E>supplied</E>, such as
+<Att>source</Att> or <Att>resp</Att>, can of course be included voluntarily
+and to the extent that information is available.
+
+### 7.4.2 Deletions made by the transcriber or editor [#sec7.4.2]
+
+If a piece of text obviously should be deleted, e.g. duplicated text in a dittography, the transcriber or editor might want to make a deletion. This is the converse action of adding text, and should be distinguished from similar actions made by the scribe. While the elements <E>add</E> and <E>del</E> describe actions by the scribe himself or other scribes, the editorial additions and deletions should be singled out by separate elements. For additions, TEI recommends the element <E>supplied</E>, but there is no parallel to the <E>del</E> element. We suggest the element <E>me:expunged</E>, since the noun <em>expunction</em> and the verb <em>expunge</em> are commonly used for editorial deletion.
+
+| Elements / attributes | Contents |
+|-----|-----|
+| <E>me:expunged</E> | Contains text which the transcriber or editor believes should be expunged. |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Indicates the individual responsible for the expunction of letters, words or passages contained within the <E>me:expunged</E>. It can be given values like: |
+| &ensp;&ensp;&ensp;<Val>transcriber</Val> | The transcriber responsible for the expunction. |
+| &ensp;&ensp;&ensp;<Val>encoder</Val> | The encoder responsible for the expunction. |
+
+
+Note that expunged text will not be deleted from the transcription, but will be contained by the <E>me:expunged</E> element. The editor of the text may decide to dsiplay it with no comments, put it in brackets or suppress it. In a multi-level transcription, expunction will typically not be found on the <E>me:dipl</E> and <E>me:norm</E> levels, but not on the <E>me:facs</E> level.
+
+
+
+
+<Figure desc={`AM 233 a fol, fol. 28vB, l. 39-40`}>
+<AutoImage src="/images/hb2/ch7/AM233afol28vB39-40.gif" alt="AM 233 a fol, fol. 28vB, l. 39-40"/>
+
+</Figure>
+
+
+
+In this example from _Niðrstigningar saga_, AM 233 a fol, the word “menn” has been supplied and thereafter the duplicated word “mæla” has been expunged:
+```xml
+
+<w>
+  <choice>
+    <me:facs>&thorn;<am>&bar;</am>t</me:facs>
+    <me:dipl>&thorn;<ex>uia</ex>t</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&thorn;<am>&bar;</am>r</me:facs>
+    <me:dipl>&thorn;<ex>ei</ex>r</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>villdu</me:facs>
+    <me:dipl>villdu</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ecki</me:facs>
+    <me:dipl>ecki</me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>v<am>&dsup;</am></me:facs>
+    <me:dipl>v<ex>id</ex></me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl><supplied resp="OEH" source="AM 645 4to">menn</supplied>
+      </me:dipl>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>m&aelig;la</me:facs>
+    <me:dipl>m&aelig;la</me:dipl>
+  </choice>
+</w>
+<lb n="40"/>
+<w>
+  <choice>
+    <me:facs>m&aelig;la</me:facs>
+    <me:dipl><me:expunged>m&aelig;la</me:expunged></me:dipl>
+  </choice>
+</w>
+```
+
+
+Depending on the style sheet, the diplomatic text might be displayed this way:
+<Quote>
+þ<em>uia</em>t þ<em>ei</em>r villdu ecki v<em>id</em> &lt;menn&gt; mæla -\|mæla\|-
+</Quote>
+
+### 7.4.3 Corrections [#sec7.4.3]
+
+In the manuscript it is not always
+possible to say anything with certainty about the intention of
+changes in the text. When transcribing the text, however, corrections
+of obvious mistakes in the manuscript text could be marked with the
+following tag set recommended in the TEI P5 Guidelines 
+([ch.
+11.3](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html)). In the following the use of <E>sic</E> and 
+<E>corr</E> in relation to
+our recommended encoding of the individual word within the element
+<E>w</E> and on the three different levels
+<E>me:facs</E>, <E>me:dipl</E> and 
+<E>me:norm</E> is treated.
+
+| Elements / attributes | Contents |
+|-----|-----|
+| <E>sic</E> | Contains text reproduced although apparently incorrect or inaccurate. |
+| <E>corr</E> | Contains the correct form of a passage apparently erroneous in the manuscript text. |
+| &ensp;&ensp;&ensp;<Att>resp</Att> | Indicates the individual responsible for the correction of letters, words or passages contained within the <E>corr</E> and <E>sic</E> elements. It can be given values like: |
+| &ensp;&ensp;&ensp;<Val>transcriber</Val> | The person responsible for the transcription of the manuscript text. |
+| &ensp;&ensp;&ensp;<Val>encoder</Val> | The person responsible for the encoding of the manuscript text. |
+| &ensp;&ensp;&ensp;<Val>editor</Val> | Signifies the editor responsible for suggesting the correction. |
+| &ensp;&ensp;&ensp;<Val>rend</Val> | Indicates how the element in question was rendered or presented in the source text. |
+
+
+In a first-level transcription it
+can be relevant just to mark the obviously corrupted instances in the
+manuscript text. This could be done with the <E>sic</E>
+element as in this instance from AM 242 fol:
+
+
+
+
+<Figure desc={`AM 242 fol, p. 98, ll. 3-4`}>
+<AutoImage src="/images/hb2/ch7/AM-2-n242.98.3-4.gif" alt="AM 242 fol, p. 98, ll. 3-4"/>
+
+</Figure>
+
+
+
+Here the second numeral '.xij.' is written instead of '.ix.', obvious 
+from the context and other manuscripts. The error should be signalled at
+the facs level and corrected at the dipl level:
+```xml
+<w>
+  <choice>
+    <me:facs>en<am>&bar;</am></me:facs>
+    <me:dipl>en<ex>n</ex></me:dipl>
+  </choice>
+</w>
+<num>
+  <choice>
+    <me:facs>.viij.</me:facs>
+    <me:dipl>.viij.</me:dipl>
+  </choice>
+</num>
+<w>
+  <choice>
+    <me:facs><am>.</am>e<am>.</am></me:facs>
+    <me:dipl>e<ex>ða</ex></me:dipl>
+  </choice></w>
+<num>
+  <choice>
+    <me:facs><sic>.xij.</sic></me:facs>
+    <me:dipl><corr>.ix.</corr></me:dipl>
+  </choice>
+</num>
+```
+
+
+With this markup it is possible to
+show the text on the computer screen or in a printed edition in
+accordance with the suggestions above ([ch.
+7.1](#sec7.1)):
+```
+en(n) .viij. e(ða) *.ix.
+```
+
+
+with the corrected form from the
+manuscript text underneath the edited text:
+```
+* .xij. 
+```
+
+
+It is also possible to include
+information about the person responsible for the correction with the
+attribute <Att>resp</Att> and its values.
+
+In this example of a multi-level transcription, the <E>sic</E> element lies on the <em>facs</em> level, while the <E>corr</E> element is introduced on the <em>dipl</em> level, and perhaps silently on the <em>norm</em> level. In a single-level transcription (cf. [ch. 3.3](HB2_ch3.xml#sec3.3)), the <E>choice</E> element should be used to group the <E>sic</E> and <E>corr</E> elements. If, for example, a source has the reading
+<Quote>
+Please look left now!
+</Quote>
+
+in which “left” should be corrected to “right”, this would be the appropriate encoding:
+```xml
+Please look <choice><sic>left</sic><corr>right</corr></choice> now!
+
+```
+
+
+In a single-level transcription, the <E>choice</E> element thus groups <E>sic</E> and <E>corr</E> elements, while in a multi-level transcription it groups readings on different levels, i.e. the <E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> elements. The <E>choice</E> element is simply a neutral mechanism to group alternative readings.
+
+## 7.5 Reference: elements and attributes [#sec7.5]
+
+Because of the large number of elements and attributes introduced in this
+chapter, the following reference material is supplied.
+
+### 7.5.1 Elements [#sec7.5.1]
+
+The following is a list of elements to encode non-linguistic features. In the table, 'level' indicates the textual level at which the feature should be encoded, if it occurs within a word. No such features should be encoded at the 'norm' level, as this level should not include non-linguistic aspects of the text. Some elements are included which are not treated in this chapter. Encoders should refer to the TEI P5 guidelines for more information.
+
+| element | level | section | description | attributes |
+|-----|-----|-----|-----|-----|
+| <E>add</E> | facs | [7.2.1](#sec7.2.1) | addition made by scribe outside the normal flow of text | [type](#att-type), [hand](#att-hand), [place](#att-place), [resp](#att-resp), [cert](#att-cert) |
+| <E>corr</E> | dipl | [7.4.3](#sec7.4.3) | corrected text inserted by editor | [resp](#att-resp), [cert](#att-cert) |
+| <E>damage</E> | facs | N/A | physical damage to the ms | [type](#att-type), [hand](#att-hand), [extent](#att-extent), [agent](#att-agent), [degree](#att-degree), [resp](#att-resp) |
+| <E>del</E> | facs | [7.2.2](#sec7.2.2) | deletion made by the scribe | [type](#att-type), [hand](#att-hand), [resp](#att-resp), [cert](#att-cert), [status](#att-status) |
+| <E>me:expunged</E> | dipl | [7.4.2](#sec7.4.2) | identified by editor to be supressed: spurious or superfluous | [type](#att-type), [resp](#att-resp) |
+| <E>gap/</E> | facs, dipl | [7.3.1](#sec7.3.1) | illegible text in ms | [type](#att-type), [hand](#att-hand), [extent](#att-extent), [agent](#att-agent), [reason](#att-reason), [resp](#att-resp) |
+| <E>restore</E> | facs | N/A | text deleted and then restored | [type](#att-type), [hand](#att-hand), [resp](#att-resp), [cert](#att-cert) |
+| <E>sic</E> | facs | [7.4.3](#sec7.4.3) | incorrect text to be marked as such | &ensp; |
+| <E>space/</E> | facs | [7.3.1](#sec7.3.1) | deliberate space in ms | [extent](#att-extent), [dim](#att-dim), [resp](#att-resp) |
+| <E>supplied</E> | dipl | [7.4.1](#sec7.4.1) | text supplied by the editor | [type](#att-type), [hand](#att-hand), [agent](#att-agent), [reason](#att-reason), [source](#att-source), [resp](#att-resp) |
+| <E>unclear</E> | facs | [7.3.2](#sec7.3.2) | unclear or partially legible text | [hand](#att-hand), [agent](#att-agent), [reason](#att-reason), [resp](#att-resp), [cert](#att-cert) |
+
+
+### 7.5.2 Descriptive attributes [#sec7.5.2]
+
+The following attributes have similar meanings, regardless of which element they are used with.
+
+| attribute | used with | content |
+|-----|-----|-----|
+| <Att>agent</Att> | damage, gap, supplied, unclear | The cause of damage or illegibility in the ms. Suggested values include 'hole', 'cut off', 'worn'. |
+| <Att>cert</Att> | add, corr, del, restore, unclear | The degree of certainty of the editor in identifying the feature being marked up. |
+| <Att>degree</Att> | damage | The extent to which the ms is damaged. This attribute should only be used where the text may be read with some confidence. |
+| <Att>dim</Att> | space | Indicates whether the space is horizontal or vertical. Only two possible values: 'horizontal' or 'vertical'. |
+| <Att>quantity</Att> | damage, gap, space | The physical extent of the feature. An integer representing the approximate number of letters is the recommended unit, although millimetres, minims or other units may also be used. |
+| <Att>hand</Att> | add, damage, del, gap, restore, supplied, unclear | The hand responsible for the feature encoded, or in the case of supplied text, the hand responsible for the feature which necessitates the supplied text. This attribute is in the form of an IDREF to an entry in the handDesc in the header. |
+| <Att>place</Att> | add | The location of the addition made by the scribe. Suggested values include 'inline' (a space originally left by the scribe), 'supralinear' (above the line), 'infralinear' (below the line), 'left' (in the left margin), 'right' (in the right margin), 'top' (in the top margin), 'bottom' (in the bottom margin), 'verso' (overleaf). |
+| <Att>reason</Att> | gap, supplied, unclear | The reason for the gap, unclear text or supplied text in the ms. Suggested values: 'sampling', 'illegible', 'irrelevant', 'cancelled'. |
+| <Att>rend</Att> | (all) | Information on how the element is rendered in the source text. This attribute should not be used where the 'type' attribute is more appropriate. |
+| <Att>resp</Att> | add, corr, damage, del, expunged, gap, restore, space, supplied, unclear | The editor or transcriber responsible for identifying and describing the feature encoded; or (in the case of expunged, corr, supplied) supplying or altering the text. This attribute is an IDREF referring to the teiHeader. |
+| <Att>source</Att> | supplied | The source of the supplied text, for example, another manuscript or an edition. |
+| <Att>status</Att> | del | May be used to indicate faulty deletions, e.g. strikeouts which include too much or too little text. |
+| <Att>type</Att> | add, damage, del, expunged, gap, restore, supplied | The type of feature being encoded. The typology relates to the element itself, for example 'del' may use the values 'subpunction' or 'strikethrough'. |
