@@ -34,7 +34,7 @@
                 => replace('^(Menota handbook) \(v\.( (?:[23]\.0|4\.0 beta))\): List of contents$', '$1$2')
                 => replace('^Menota handbook ch\. ([0-9]+) \(v\. [34]\.[01](?: beta)?\)(: .*)$', '$1$2')
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
-                => replace('^Menota handbook preface .*$', 'Preface')
+                => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
                 => replace('^Menota handbook (&#x2013; )?\(v\. 3\.0\): ', '')
             }"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">

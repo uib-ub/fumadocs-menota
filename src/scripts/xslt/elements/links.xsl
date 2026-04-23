@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
+    xmlns:tei="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:template match="tei:ref">
         <xsl:variable name="samples-path">
@@ -15,6 +14,7 @@
         <xsl:apply-templates/>
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
+                => replace('^HB(1-1)_(\w+)\.xhtml$', '/handbook/v$1/$2')
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^(HB([2-4])_.*?)\.xml#?$', '/handbook/v$2/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')

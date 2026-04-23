@@ -9,7 +9,10 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:list/tei:item">
-        <xsl:text>&#x0a;- </xsl:text>
+        <xsl:text>&#x0a; </xsl:text>
+        <xsl:if test="not(string() => matches('^[0-9]+\. '))">
+            <xsl:text>- </xsl:text>
+        </xsl:if>
         <xsl:apply-templates/>
     </xsl:template>
 </xsl:stylesheet>
