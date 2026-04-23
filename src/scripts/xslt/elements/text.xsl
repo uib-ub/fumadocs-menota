@@ -27,6 +27,7 @@
         <xsl:value-of select=". 
                 => replace('\n +', '&#x0a;')
                 => replace('([\{\|\\\}])', '\\$1')
+                => replace('&amp;', '&amp;amp;')
                 => replace('&lt;', '&amp;lt;')
                 => replace('&gt;', '&amp;gt;')
                 => replace('\s+\+', ' +')

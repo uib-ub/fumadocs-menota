@@ -12,7 +12,7 @@
             <xsl:when test="$input = 'OEH'">
                 <xsl:text>Odd Einar Haugen</xsl:text>
             </xsl:when>
-            <xsl:when test="$input = 'TMB'">
+            <xsl:when test="$input = 'TMB' or $input = 'Tone Merete bruvik'">
                 <xsl:text>Tone Merete Bruvik</xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -83,16 +83,22 @@
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:when test="count(tei:persName) = 1">
-                        <xsl:text expand-text="true">   author: {string(tei:persName)}&#x0a;</xsl:text>
+                        <xsl:text expand-text="true">   author: {
+                            string(tei:persName) 
+                                => menota:normalize-name()}&#x0a;</xsl:text>
                     </xsl:when>
                     <xsl:when test="count(tei:name) > 1">
                         <xsl:text>   author:&#x0a;</xsl:text>
                         <xsl:for-each select="tei:name">
-                            <xsl:text expand-text="true">    - {string() => menota:normalize-name()}&#x0a;</xsl:text>
+                            <xsl:text expand-text="true">    - {
+                                string() 
+                                    => menota:normalize-name()}&#x0a;</xsl:text>
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:when test="count(tei:name) = 1">
-                        <xsl:text expand-text="true">   author: {string(tei:name) => menota:normalize-name()}&#x0a;</xsl:text>
+                        <xsl:text expand-text="true">   author: {
+                            string(tei:name) 
+                                => menota:normalize-name()}&#x0a;</xsl:text>
                     </xsl:when>
                 </xsl:choose>
                 <xsl:text>   changes:&#x0a;</xsl:text>
@@ -113,7 +119,7 @@
                     => replace('^Marco Bianchi: ', '')
                     => replace('^Alex Speed Kjeldsen: ', '')
                     => replace('^Robert K\. Paulsen: ', '')
-                    => replace('^Tone Merete Bruvik: ', '')
+                    => replace('^Tone Merete [Bb]ruvik: ', '')
                     => replace('^(OEH|TMB):? ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')

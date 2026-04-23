@@ -28,9 +28,9 @@ changeLog:
    changes:
     - "Made a number of minor changes."
  - date: 2008-01-08
-   author: Tone Merete bruvik
+   author: Tone Merete Bruvik
    changes:
-    - "Tone Merete bruvik: Updated to TEI P5 1.0."
+    - "Updated to TEI P5 1.0."
  - date: 2006-11-22
    author: Odd Einar Haugen
    changes:
@@ -102,16 +102,16 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 <td rowSpan="5">Nominative</td>
 </tr>
 <tr>
-<td>han<E>am</E>&bar;<E>/am</E></td>
+<td>han<E>am</E>&amp;bar;<E>/am</E></td>
 </tr>
 <tr>
-<td>h<E>am</E>&bar;<E>/am</E></td>
+<td>h<E>am</E>&amp;bar;<E>/am</E></td>
 </tr>
 <tr>
-<td>h<E>am</E>&bar;<E>/am</E>n</td>
+<td>h<E>am</E>&amp;bar;<E>/am</E>n</td>
 </tr>
 <tr>
-<td>ha&nscap;</td>
+<td>ha&amp;nscap;</td>
 </tr>
 <tr>
 <td>hans</td>
@@ -119,13 +119,13 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 <td rowSpan="4">Genitive</td>
 </tr>
 <tr>
-<td>han&slong;</td>
+<td>han&amp;slong;</td>
 </tr>
 <tr>
-<td>h<E>am</E>&bar;<E>/am</E>s</td>
+<td>h<E>am</E>&amp;bar;<E>/am</E>s</td>
 </tr>
 <tr>
-<td>h<E>am</E>&bar;<E>/am</E>&slong;</td>
+<td>h<E>am</E>&amp;bar;<E>/am</E>&amp;slong;</td>
 </tr>
 <tr>
 <td>honum</td>
@@ -136,14 +136,14 @@ Lemmatised texts are useful for any language, and in particular for languages wi
 <td>honom</td>
 </tr>
 <tr>
-<td>h<E>am</E>&bar;<E>/am</E>m</td>
+<td>h<E>am</E>&amp;bar;<E>/am</E>m</td>
 </tr>
 </tbody>
 </table>
 
 
 
-In [ch. 2.3](/handbook/v2/HB2_ch2#sec2.3) the use of <E>w</E> for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as “&fins;” and “&nscap;”, or abbreviations such as “&bar;”. These are described in [ch. 5](/handbook/v2/HB2_ch5) and [ch. 6](/handbook/v2/HB2_ch6).
+In [ch. 2.3](/handbook/v2/HB2_ch2#sec2.3) the use of <E>w</E> for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as “&amp;fins;” and “&amp;nscap;”, or abbreviations such as “&amp;bar;”. These are described in [ch. 5](/handbook/v2/HB2_ch5) and [ch. 6](/handbook/v2/HB2_ch6).
 
 As stated in [ch. 3](/handbook/v2/HB2_ch3), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single <E>w</E> element and the attribute is valid for the whole contents: 
 ```xml
@@ -646,7 +646,7 @@ In other cases it is a questions of related words with variant forms, such as th
 </div>
 
 
-For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter (for the sake of simplicity we are using “í” rather than “&iacute;”):
+For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter (for the sake of simplicity we are using “í” rather than “&amp;iacute;”):
 ```xml
 ... <w lemma="líf | lífi" me:msa="xNC gN nS cD sI | 
 	xNC gN nS cD sI">lifi</w> ...

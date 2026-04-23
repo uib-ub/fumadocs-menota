@@ -452,7 +452,7 @@ document is processed by some other string; this other string can be
 of any length, from a single character to a separate file containing
 millions of bytes, for example a text file or digital image. The name
 of the entity (entity reference) is placed between an ampersand and a
-semicolon: &entityname;. Such entities, which are known as
+semicolon: &amp;entityname;. Such entities, which are known as
 General Entities, are defined in an external entity set which is itself
 referenced in the schema being used (see appendix D for examples). A simple
 declaration for a general entity looks like this:
@@ -462,7 +462,7 @@ declaration for a general entity looks like this:
 
 
 Here, whenever the processing
-software (a parser or browser) encounters the entity &vth; it
+software (a parser or browser) encounters the entity &amp;vth; it
 replaces it with the text “Vingþórr”. In the case of our single
 poem, there is obviously no real advantage to treating the name of
 the protagonist in this way, but in longer documents or collections of
@@ -512,12 +512,12 @@ UTF-8. Numerical character references are either decimal or
 hexidecimal; decimal references begin with an ampersand and the
 number sign or hash mark (#), to which hexidecimal references add an
 x. Thus the hexidecimal character reference for the letter þ is
-&#x00FE;, while the decimal reference is &#254;. These
+&amp;#x00FE;, while the decimal reference is &amp;#254;. These
 numerical character references are supported by standard browsers and
 do not need to be defined specially in the schema. One may, however,
 prefer to use entities which are more immedieately intelligible to
 humans, for reasons of proof-reading or whatever, for example
-“&thorn;” for “þ”. It is a simple matter to define characters
+“&amp;thorn;” for “þ”. It is a simple matter to define characters
 as entities, giving as the replacement text the numerical character
 reference.
 ```xml

@@ -28,21 +28,21 @@ changeLog:
    changes:
     - "Replaced all character images with Andron images, and updated the chapter according to MUFI v. 2.0."
  - date: 2008-02-14
-   author: Tone Merete bruvik
+   author: Tone Merete Bruvik
    changes:
-    - "Tone Merete bruvik: Put an extra linebreak in one of the examples that was to long."
+    - "Put an extra linebreak in one of the examples that was to long."
  - date: 2008-02-11
-   author: Tone Merete bruvik
+   author: Tone Merete Bruvik
    changes:
-    - "Tone Merete bruvik: Updated some invalid examples."
+    - "Updated some invalid examples."
  - date: 2008-02-10
    author: Odd Einar Haugen
    changes:
     - "Revised the chapter; now recommends that Unicode code points are used except for characters in the Private Use Area, and revised the description of character classes according to the MUFI character recommendtaion v. 2.0, and finally updated references to the Unicode Standard v. 5.0"
  - date: 2008-01-08
-   author: Tone Merete bruvik
+   author: Tone Merete Bruvik
    changes:
-    - "Tone Merete bruvik: Updated to TEI P5 1.0."
+    - "Updated to TEI P5 1.0."
  - date: 2005-12-28
    author: Tone Merete Bruvik
    changes:
@@ -67,13 +67,13 @@ information. Any other characters may cause problems, even well
 established ones such as Modern Scandinavian “æ”, “ø”
 and “å”. In v. 1 of _The Menota handbook_ we therefore recommended that all characters outside
 a-z / A-Z should be encoded as entities, i.e. given an appropriate
-description and placed between the delimiters “&” and “;”. In the last years, however, all major operating systems have implemented full Unicode support and a growing number of applications, including most web browsers, also support Unicode. We therefore believe that encoders should take full advantage of the Unicode Standard, as recommended in [ch. 2.2.2](/handbook/v2/HB2_ch2#sec2.2.2) above.
+description and placed between the delimiters “&amp;” and “;”. In the last years, however, all major operating systems have implemented full Unicode support and a growing number of applications, including most web browsers, also support Unicode. We therefore believe that encoders should take full advantage of the Unicode Standard, as recommended in [ch. 2.2.2](/handbook/v2/HB2_ch2#sec2.2.2) above.
 
 As of version 2.0, the character encoding recommended in _The Menota handbook_ has been synchronised with the recommendations by the [Medieval Unicode Font Initiative](http://www.mufi.info). The character recommendations by MUFI contain more than 1,300 characters in the Latin alphabet of potential use for the encoding of Medieval Nordic texts. As a consequence of the synchronisation, the list of entities which is part of the Menota scheme is identical to the one by MUFI. In other words, if a character is encoded with a code point or an entity in the MUFI character recommendation, it will be a valid character encoding also in a Menota text. For more information on this synchronisation, please refer to [Appendix A](/handbook/v2/HB2_A_characters).
 
 From an encoding point of view, three major classes of characters should be kept apart :
 
-**(1) Basic Latin (a-z / A-Z)**. These characters can be encoded as they are, without resorting to entities. Note, however, that a few characters in Basic Latin are used for specific purposes in XML encoding, so if these characters are going to be encoded as such, only entities will do. These characters are the <em>ampersand</em>, “&”,  which must be encoded as “&amp;”;  the <em>less-than sign</em>, “&lt;”,  which must be encoded as “&lt;” and the <em>greater-than sign</em>, “&gt;”,  which must be encoded as “&gt;”.
+**(1) Basic Latin (a-z / A-Z)**. These characters can be encoded as they are, without resorting to entities. Note, however, that a few characters in Basic Latin are used for specific purposes in XML encoding, so if these characters are going to be encoded as such, only entities will do. These characters are the <em>ampersand</em>, “&amp;”,  which must be encoded as “&amp;amp;”;  the <em>less-than sign</em>, “&lt;”,  which must be encoded as “&amp;lt;” and the <em>greater-than sign</em>, “&gt;”,  which must be encoded as “&amp;gt;”.
 
 **(2) All characters in the Unicode Standard outside Basic Latin**. All of these characters can be encoded directly with their Unicode codepoints, e.g. using the code points listed in the [MUFI character recommendation](http://bora.uib.no/handle/1956/10699). MUFI compliant fonts probably contain all characters that are needed. However, as explained in [ch. 2.2](/handbook/v2/HB2_ch2#sec2.2) above, one may refer to all  characters outside Basic Latin with entities, and one may mix Unicode encoding and encoding with entities in the same document.
 
@@ -98,14 +98,14 @@ h&iacute;na fornu.
 ```
 
 
-Four of these characters need not be encoded with entities since they are part of the Unicode Standard, i.e.  “á” and “í” (available in nearly all fonts),  “þ” (available in most fonts) and “ſ” (“long s”, available in some fonts). Two characters are not part of the standard and must be referred to by entities, i.e. the small capital “R” with a dot above, “&rscapdot;”, and the ligature of “a” and “o”, “&aolig;”. They are both located in the Private Use Area. The transcription immediately becomes more legible:
+Four of these characters need not be encoded with entities since they are part of the Unicode Standard, i.e.  “á” and “í” (available in nearly all fonts),  “þ” (available in most fonts) and “ſ” (“long s”, available in some fonts). Two characters are not part of the standard and must be referred to by entities, i.e. the small capital “R” with a dot above, “&amp;rscapdot;”, and the ligature of “a” and “o”, “&amp;aolig;”. They are both located in the Private Use Area. The transcription immediately becomes more legible:
 ```xml
 drottinn vá&rscapdot; baud michaele hofud engli. at fylgia adam
 ok &aolig;llum helgum hans at leida þa i paradiſum hína fornu.
 ```
 
 
-The small capital “R” with a dot could in fact be encoded without resorting to the Private Use Area. It would then have to be decomposed, i.e. encoded as a sequence of a small capital R, 0280 in Unicode, and a dot above, 0307 in Unicode. This combination may not display well in all editors or browsers, so some encoders would prefer to use the 0280 code point for the small capital “R”, but encode the dot above with the entity “&combdot;”. The small capital “R” are not found in all fonts so it may not display properly, but the encoding would be correct (and with a suitable font, the character would display properly):
+The small capital “R” with a dot could in fact be encoded without resorting to the Private Use Area. It would then have to be decomposed, i.e. encoded as a sequence of a small capital R, 0280 in Unicode, and a dot above, 0307 in Unicode. This combination may not display well in all editors or browsers, so some encoders would prefer to use the 0280 code point for the small capital “R”, but encode the dot above with the entity “&amp;combdot;”. The small capital “R” are not found in all fonts so it may not display properly, but the encoding would be correct (and with a suitable font, the character would display properly):
 ```xml
 drottinn váʀ&combdot; baud michaele hofud engli. at fylgia adam
 ok &aolig;llum helgum hans at leida þa i paradiſum hína fornu.
@@ -131,7 +131,7 @@ In this example, the Private Use Area code point for LATIN LETTER SMALL CAPITAL 
 ```
 
 
-In the encoded text, the entity “&aolig;” could be retained and the display would still be correct.
+In the encoded text, the entity “&amp;aolig;” could be retained and the display would still be correct.
 
 ## 5.2 Naming and referring to characters [#sec5.2]
 
@@ -338,7 +338,7 @@ character. In this chapter, they are displayed in the font Andron by Andreas St�
 
 All characters outside the range
 a-z / A-Z are referred to with entity names placed within the
-delimiters “&” and “;”. We
+delimiters “&amp;” and “;”. We
 recommend that entities as far as possible conform to the standard
 ISO entity sets. However, the ISO set only covers a minor
 selection of the entites we believe are necessary for the full
@@ -396,7 +396,7 @@ etc.
 Note that the distinction between
 minuscule (lowercase) and majuscule (uppercase) characters is an
 inherent trait of the coding scheme; it is not shown by entity names
-such as “&amin;” for “a” and “&amaj;” for “A”. However, when
+such as “&amp;amin;” for “a” and “&amp;amaj;” for “A”. However, when
 it comes to the question of small capitals and enlarged minuscules it
 will be necessary to introduce entity names, as discussed in [ch. 5.2.3](#sec5.2.3) and [ch. 5.2.4](#sec5.2.4) below.
 
@@ -404,8 +404,8 @@ will be necessary to introduce entity names, as discussed in [ch. 5.2.3](#sec5.2
 
 Modern Icelandic has two characters
 for dental fricatives, “þ” (thorn) and “ð” (eth). In ISO
-8859-1 they are referred to with the entity names “&thorn;” and
-“&eth;”, also adopted here.
+8859-1 they are referred to with the entity names “&amp;thorn;” and
+“&amp;eth;”, also adopted here.
 
 _Unicode 5.0_ defines
 “þ” (thorn) and “ð” (eth) in the range [Latin-1
@@ -414,10 +414,10 @@ Supplement](http://www.unicode.org/charts/PDF/U0080.pdf).
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/dh.gif" alt="ch5/dh.gif"/> | &eth; | 00F0 | LATIN SMALL LETTER ETH |
-| <AutoImage src="/images/hb2/ch5/v-dh.gif" alt="ch5/v-dh.gif"/> | &ETH; | 00D0 | LATIN CAPITAL LETTER ETH |
-| <AutoImage src="/images/hb2/ch5/th.gif" alt="ch5/th.gif"/> | &thorn; | 00FE | LATIN SMALL LETTER THORN |
-| <AutoImage src="/images/hb2/ch5/v-th.gif" alt="ch5/v-th.gif"/> | &THORN; | 00DE | LATIN CAPITAL LETTER THORN |
+| <AutoImage src="/images/hb2/ch5/dh.gif" alt="ch5/dh.gif"/> | &amp;eth; | 00F0 | LATIN SMALL LETTER ETH |
+| <AutoImage src="/images/hb2/ch5/v-dh.gif" alt="ch5/v-dh.gif"/> | &amp;ETH; | 00D0 | LATIN CAPITAL LETTER ETH |
+| <AutoImage src="/images/hb2/ch5/th.gif" alt="ch5/th.gif"/> | &amp;thorn; | 00FE | LATIN SMALL LETTER THORN |
+| <AutoImage src="/images/hb2/ch5/v-th.gif" alt="ch5/v-th.gif"/> | &amp;THORN; | 00DE | LATIN CAPITAL LETTER THORN |
 </div>
 
 
@@ -455,8 +455,8 @@ Cf. [Appendix A](/handbook/v2/HB2_A_characters) for reference to the complete ov
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/gscap.gif" alt="ch5/gscap.gif"/> | &gscap; | 0262 | LATIN LETTER SMALL CAPITAL G |
-| <AutoImage src="/images/hb2/ch5/mscap.gif" alt="ch5/mscap.gif"/> | &mscap; | 1D0D | LATIN LETTER SMALL CAPITAL M |
+| <AutoImage src="/images/hb2/ch5/gscap.gif" alt="ch5/gscap.gif"/> | &amp;gscap; | 0262 | LATIN LETTER SMALL CAPITAL G |
+| <AutoImage src="/images/hb2/ch5/mscap.gif" alt="ch5/mscap.gif"/> | &amp;mscap; | 1D0D | LATIN LETTER SMALL CAPITAL M |
 </div>
 
 
@@ -490,8 +490,8 @@ Area, e.g. “a” and “e”. Cf. [Appendix A](/handbook/v2/HB2_A_characters) 
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/aenl.gif" alt="ch5/aenl.gif"/> | &aenl; | EEE0 | LATIN ENLARGED LETTER SMALL A |
-| <AutoImage src="/images/hb2/ch5/eenl.gif" alt="ch5/eenl.gif"/> | &eenl; | EEE6 | LATIN ENLARGED LETTER SMALL E |
+| <AutoImage src="/images/hb2/ch5/aenl.gif" alt="ch5/aenl.gif"/> | &amp;aenl; | EEE0 | LATIN ENLARGED LETTER SMALL A |
+| <AutoImage src="/images/hb2/ch5/eenl.gif" alt="ch5/eenl.gif"/> | &amp;eenl; | EEE6 | LATIN ENLARGED LETTER SMALL E |
 </div>
 
 
@@ -515,8 +515,8 @@ characters have been included in the Private Use Area, e.g. “f” and
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/fins.gif" alt="ch5/fins.gif"/> | &fins; | F10D | LATIN SMALL LETTER INSULAR F |
-| <AutoImage src="/images/hb2/ch5/vins.gif" alt="ch5/vins.gif"/> | &vins; | F211 | LATIN SMALL LETTER INSULAR V |
+| <AutoImage src="/images/hb2/ch5/fins.gif" alt="ch5/fins.gif"/> | &amp;fins; | F10D | LATIN SMALL LETTER INSULAR F |
+| <AutoImage src="/images/hb2/ch5/vins.gif" alt="ch5/vins.gif"/> | &amp;vins; | F211 | LATIN SMALL LETTER INSULAR V |
 </div>
 
 
@@ -548,9 +548,9 @@ of Uncial characters has been included in the Private Use Area, e.g.
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/eunc.gif" alt="ch5/eunc.gif"/> | &eunc; | F218 | LATIN SMALL LETTER E UNCIAL FORM |
-| <AutoImage src="/images/hb2/ch5/kunc.gif" alt="ch5/kunc.gif"/> | &kunc; | F208 | LATIN SMALL LETTER K UNCIAL FORM |
-| <AutoImage src="/images/hb2/ch5/munc.gif" alt="ch5/munc.gif"/> | &munc; | F225 | LATIN SMALL LETTER M UNCIAL FORM |
+| <AutoImage src="/images/hb2/ch5/eunc.gif" alt="ch5/eunc.gif"/> | &amp;eunc; | F218 | LATIN SMALL LETTER E UNCIAL FORM |
+| <AutoImage src="/images/hb2/ch5/kunc.gif" alt="ch5/kunc.gif"/> | &amp;kunc; | F208 | LATIN SMALL LETTER K UNCIAL FORM |
+| <AutoImage src="/images/hb2/ch5/munc.gif" alt="ch5/munc.gif"/> | &amp;munc; | F225 | LATIN SMALL LETTER M UNCIAL FORM |
 </div>
 
 
@@ -573,8 +573,8 @@ by Unicode.
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/frun.gif" alt="ch5/frun.gif"/> | &fMedrun; | 16A0 | RUNIC LETTER FEHU FEOH FE F |
-| <AutoImage src="/images/hb2/ch5/mrun.gif" alt="ch5/mrun.gif"/> | &mMedrun; | 16D8 | RUNIC LETTER LONG-BRANCH-MADR M |
+| <AutoImage src="/images/hb2/ch5/frun.gif" alt="ch5/frun.gif"/> | &amp;fMedrun; | 16A0 | RUNIC LETTER FEHU FEOH FE F |
+| <AutoImage src="/images/hb2/ch5/mrun.gif" alt="ch5/mrun.gif"/> | &amp;mMedrun; | 16D8 | RUNIC LETTER LONG-BRANCH-MADR M |
 </div>
 
 
@@ -605,10 +605,10 @@ in the Private Use Area.
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/stall.gif" alt="ch5/stall.gif"/> | &slong; | 017F | LATIN SMALL LETTER LONG S |
-| <AutoImage src="/images/hb2/ch5/drot.gif" alt="ch5/drot.gif"/> | &drot; | F109 | LATIN SMALL LETTER D ROTUNDA |
-| <AutoImage src="/images/hb2/ch5/rrot.gif" alt="ch5/rrot.gif"/> | &rrot; | F20E | LATIN SMALL LETTER R ROTUNDA |
-| <AutoImage src="/images/hb2/ch5/trot.gif" alt="ch5/trot.gif"/> | &trot; | F129 | LATIN SMALL LETTER T ROTUNDA |
+| <AutoImage src="/images/hb2/ch5/stall.gif" alt="ch5/stall.gif"/> | &amp;slong; | 017F | LATIN SMALL LETTER LONG S |
+| <AutoImage src="/images/hb2/ch5/drot.gif" alt="ch5/drot.gif"/> | &amp;drot; | F109 | LATIN SMALL LETTER D ROTUNDA |
+| <AutoImage src="/images/hb2/ch5/rrot.gif" alt="ch5/rrot.gif"/> | &amp;rrot; | F20E | LATIN SMALL LETTER R ROTUNDA |
+| <AutoImage src="/images/hb2/ch5/trot.gif" alt="ch5/trot.gif"/> | &amp;trot; | F129 | LATIN SMALL LETTER T ROTUNDA |
 </div>
 
 
@@ -622,7 +622,7 @@ line character. Some consist of two identical characters, e.g. “a+a”,
 others of different characters, e.g. “a+v”. Ligatures may be used to
 denote length, “a+a”, diphtong, “a+v”, or a distinct vowel quality,
 often mutation (Umlaut), “a+v”. A well known example is the ligature
-“æ”, formed of “a” and “e”, encoded as “&aelig;” in ISO
+“æ”, formed of “a” and “e”, encoded as “&amp;aelig;” in ISO
 8879. In analogy with this usage we suggest that ligatures receive
 the suffix “lig” following those base line characters which make up
 the ligature. 
@@ -639,8 +639,8 @@ must be defined in the Private Use Area. Cf. [Appendix A](/handbook/v2/HB2_A_cha
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/aalig.gif" alt="ch5/aalig.gif"/> | &aalig; | EF91 | LATIN SMALL LIGATURE AA |
-| <AutoImage src="/images/hb2/ch5/avlig.gif" alt="ch5/avlig.gif"/> | &avlig; | EF97 | LATIN SMALL LIGATURE AV |
+| <AutoImage src="/images/hb2/ch5/aalig.gif" alt="ch5/aalig.gif"/> | &amp;aalig; | EF91 | LATIN SMALL LIGATURE AA |
+| <AutoImage src="/images/hb2/ch5/avlig.gif" alt="ch5/avlig.gif"/> | &amp;avlig; | EF97 | LATIN SMALL LIGATURE AV |
 </div>
 
 
@@ -683,7 +683,7 @@ rule (6).
 
 The character “ø” is still
 being used in Modern Danish and Norwegian, and is encoded as
-“&oslash;” in ISO 8879. In some manuscripts the stroke may be
+“&amp;oslash;” in ISO 8879. In some manuscripts the stroke may be
 horizontal and in others diagonal, but in general we do not believe
 it is relevant to distinguish between variant strokes.
 
@@ -695,8 +695,8 @@ Supplement](http://www.unicode.org/charts/PDF/U0080.pdf) range.
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/ost.gif" alt="ch5/ost.gif"/> | &oslash; | 00F8 | LATIN SMALL LETTER O WITH STROKE |
-| <AutoImage src="/images/hb2/ch5/v-ost.gif" alt="ch5/v-ost.gif"/> | &Oslash; | 00D8 | LATIN CAPITAL LETTER O WITH STROKE |
+| <AutoImage src="/images/hb2/ch5/ost.gif" alt="ch5/ost.gif"/> | &amp;oslash; | 00F8 | LATIN SMALL LETTER O WITH STROKE |
+| <AutoImage src="/images/hb2/ch5/v-ost.gif" alt="ch5/v-ost.gif"/> | &amp;Oslash; | 00D8 | LATIN CAPITAL LETTER O WITH STROKE |
 </div>
 
 
@@ -745,13 +745,13 @@ Area, **F1C4**.
 <tbody>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/ohbr.gif" alt="ch5/ohbr.gif"/></td>
-<td>&oogon;<br/> = o + &combogon;</td>
+<td>&amp;oogon;<br/> = o + &amp;combogon;</td>
 <td>01EB<br/> = 006F + 0328</td>
 <td>LATIN SMALL LETTER O WITH OGONEK<br/> = LATIN SMALL LETTER O + COMBINING OGONEK</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/ohal.gif" alt="ch5/ohal.gif"/></td>
-<td>&ocurl;<br/> = o + &combcurl;</td>
+<td>&amp;ocurl;<br/> = o + &amp;combcurl;</td>
 <td>E7D3<br/> = 006F + F1C4</td>
 <td>LATIN SMALL LETTER O WITH CURL<br/> = LATIN SMALL LETTER O + COMBINING CURL</td>
 </tr>
@@ -772,8 +772,8 @@ diacritical marks. &ensp;
 <div className="table-glyph4">
 | Glyph | Entity | Unicode | Descriptive name |
 |-----|-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/ourl.gif" alt="ch5/ourl.gif"/> | &oloop; | F20D | LATIN SMALL LIGATURE OE WITH LOOP |
-| <AutoImage src="/images/hb2/ch5/olll.gif" alt="ch5/olll.gif"/> | &aoligred; | F206 | LATIN SMALL LIGATURE AO NECKLESS |
+| <AutoImage src="/images/hb2/ch5/ourl.gif" alt="ch5/ourl.gif"/> | &amp;oloop; | F20D | LATIN SMALL LIGATURE OE WITH LOOP |
+| <AutoImage src="/images/hb2/ch5/olll.gif" alt="ch5/olll.gif"/> | &amp;aoligred; | F206 | LATIN SMALL LIGATURE AO NECKLESS |
 </div>
 
 
@@ -781,7 +781,7 @@ diacritical marks. &ensp;
 
 Single and double acute accents are
 quite common in Nordic script. A single acute accent is encoded with
-the suffix “acute” in ISO 8879, e.g. “&aacute;”, while double
+the suffix “acute” in ISO 8879, e.g. “&amp;aacute;”, while double
 acute is encoded with the suffix “dblac”. This usage is adopted
 here.
 
@@ -816,25 +816,25 @@ above.
 <tbody>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/aac.gif" alt="ch5/aac.gif"/></td>
-<td>&aacute;<br/> = a + &combacute;</td>
+<td>&amp;aacute;<br/> = a + &amp;combacute;</td>
 <td>00E1<br/> = 0061 + 0301</td>
 <td>LATIN SMALL LETTER A WITH ACUTE<br/> = LATIN SMALL LETTER A + COMBINING ACUTE ACCENT</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/adac.gif" alt="ch5/adac.gif"/></td>
-<td>&adblac;<br/> = a + &combdblac;</td>
+<td>&amp;adblac;<br/> = a + &amp;combdblac;</td>
 <td>E425<br/> = 0061 + 030B</td>
 <td>LATIN SMALL LETTER A WITH DOUBLE ACUTE<br/> = LATIN SMALL LETTER A + COMBINING DOUBLE ACUTE ACCENT</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/aaligac.gif" alt="ch5/aaligac.gif"/></td>
-<td>&aaligacute;<br/> = &aalig; + &combacute;</td>
+<td>&amp;aaligacute;<br/> = &amp;aalig; + &amp;combacute;</td>
 <td>EFE1<br/> = EF91 + 0301</td>
 <td>LATIN SMALL LIGATURE AA WITH ACUTE<br/> = LATIN SMALL LIGATURE AA + COMBINING ACUTE ACCENT</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/aaligdac.gif" alt="ch5/aaligdac.gif"/></td>
-<td>&aaligdblac;<br/> = &aalig; + &combdblac;</td>
+<td>&amp;aaligdblac;<br/> = &amp;aalig; + &amp;combdblac;</td>
 <td>EFEB<br/> = EF91 + 0301</td>
 <td>LATIN SMALL LIGATURE AA WITH DOUBLE ACUTE<br/> = LATIN SMALL LIGATURE AA + COMBINING DOUBLE ACUTE ACCENT</td>
 </tr>
@@ -852,7 +852,7 @@ Grave accent sporadically appears
 in comparatively young Icelandic manuscripts, especially “è”,
 while double grave accent to our knowledge is not found in medieval
 Nordic script at all. If necessary, we suggest using the suffix
-“grave”, e.g. “&egrave;”, for the single grave accent.
+“grave”, e.g. “&amp;egrave;”, for the single grave accent.
 
 ### 5.5.4 Single and double dots [#sec5.5.4]
 
@@ -888,13 +888,13 @@ precomposed characters mentioned here.
 <tbody>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/yda.gif" alt="ch5/yda.gif"/></td>
-<td>&ydot;<br/> = y + &combdot;</td>
+<td>&amp;ydot;<br/> = y + &amp;combdot;</td>
 <td>1E8F<br/> = 0079 + 0307</td>
 <td>LATIN SMALL LETTER Y WITH DOT ABOVE<br/> = LATIN SMALL LETTER Y + COMBINING DOT ABOVE</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/odda.gif" alt="ch5/odda.gif"/></td>
-<td>&ouml;<br/> = o + &combuml;</td>
+<td>&amp;ouml;<br/> = o + &amp;combuml;</td>
 <td>00F6<br/> = 006F + 0308</td>
 <td>LATIN SMALL LETTER O WITH DOUBLE DOT ABOVE<br/> = LATIN SMALL LETTER O + COMBINING DIAERESIS</td>
 </tr>
@@ -920,13 +920,13 @@ number of consonants:
 <tbody>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/kda.gif" alt="ch5/kda.gif"/></td>
-<td>&kdot;<br/> = k + &combdot;</td>
+<td>&amp;kdot;<br/> = k + &amp;combdot;</td>
 <td>E568<br/> = 006B + 0307</td>
 <td>LATIN SMALL LETTER K WITH DOT ABOVE <br/> = LATIN SMALL LETTER K + COMBINING DOT ABOVE</td>
 </tr>
 <tr>
 <td><AutoImage src="/images/hb2/ch5/gscapda.gif" alt="ch5/gscapda.gif"/></td>
-<td>&gscapdot;<br/> = &gscap; + &combdot;</td>
+<td>&amp;gscapdot;<br/> = &amp;gscap; + &amp;combdot;</td>
 <td>EF20<br/> = 0262 + 0307</td>
 <td>LATIN LETTER SMALL CAPITAL G WITH DOT ABOVE<br/> = LATIN LETTER SMALL CAPITAL G + COMBINING DOT ABOVE</td>
 </tr>
@@ -984,9 +984,9 @@ occuring in medieval Nordic script). Some examples:
 <div className="table-glyph3">
 | Glyph | Entity name | Descriptive name |
 |-----|-----|-----|
-| <AutoImage src="/images/hb2/ch5/aelighbr.gif" alt="ch5/aelighbr.gif"/> | &aeligogon; | LATIN SMALL LIGATURE AE WITH OGONEK |
-| <AutoImage src="/images/hb2/ch5/osthbrac.gif" alt="ch5/osthbrac.gif"/> | &oslashogonacute; | LATIN SMALL LETTER O WITH STROKE AND OGONEK AND ACUTE |
-| <AutoImage src="/images/hb2/ch5/aelighbrdda.gif" alt="ch5/aelighbrdda.gif"/> | &aeligogonuml; | LATIN SMALL LIGATURE AE WITH OGONEK AND DIAERESIS |
+| <AutoImage src="/images/hb2/ch5/aelighbr.gif" alt="ch5/aelighbr.gif"/> | &amp;aeligogon; | LATIN SMALL LIGATURE AE WITH OGONEK |
+| <AutoImage src="/images/hb2/ch5/osthbrac.gif" alt="ch5/osthbrac.gif"/> | &amp;oslashogonacute; | LATIN SMALL LETTER O WITH STROKE AND OGONEK AND ACUTE |
+| <AutoImage src="/images/hb2/ch5/aelighbrdda.gif" alt="ch5/aelighbrdda.gif"/> | &amp;aeligogonuml; | LATIN SMALL LIGATURE AE WITH OGONEK AND DIAERESIS |
 </div>
 
 
@@ -1009,17 +1009,17 @@ triangular dots.
 | Glyph | Character | Unicode | Descriptive name |
 |-----|-----|-----|-----|
 | <AutoImage src="/images/hb2/ch5/dot.gif" alt="ch5/dot.gif"/> | . | 002E | FULL STOP |
-| <AutoImage src="/images/hb2/ch5/midpoint.gif" alt="ch5/midpoint.gif"/> | &middot; | 00B7 | MIDDLE DOT |
+| <AutoImage src="/images/hb2/ch5/midpoint.gif" alt="ch5/midpoint.gif"/> | &amp;middot; | 00B7 | MIDDLE DOT |
 | <AutoImage src="/images/hb2/ch5/comma.gif" alt="ch5/comma.gif"/> | , | 002C | COMMA |
 | <AutoImage src="/images/hb2/ch5/colon.gif" alt="ch5/colon.gif"/> | : | 003A | COLON |
 | <AutoImage src="/images/hb2/ch5/semicolon.gif" alt="ch5/semicolon.gif"/> | ; | 003B | SEMICOLON |
-| <AutoImage src="/images/hb2/ch5/semiinv.gif" alt="ch5/semiinv.gif"/> | &punctelev; | F161 | PUNCTUS ELEVATUS |
+| <AutoImage src="/images/hb2/ch5/semiinv.gif" alt="ch5/semiinv.gif"/> | &amp;punctelev; | F161 | PUNCTUS ELEVATUS |
 | <AutoImage src="/images/hb2/ch5/questionmark.gif" alt="ch5/questionmark.gif"/> | ? | 003F | QUESTION MARK |
-| <AutoImage src="/images/hb2/ch5/question8.gif" alt="ch5/question8.gif"/> | &punctinterlemn; | F1F1 | PUNCTUS INTERROGATIVUS LEMNISKATE FORM |
+| <AutoImage src="/images/hb2/ch5/question8.gif" alt="ch5/question8.gif"/> | &amp;punctinterlemn; | F1F1 | PUNCTUS INTERROGATIVUS LEMNISKATE FORM |
 | <AutoImage src="/images/hb2/ch5/hyphen.gif" alt="ch5/hyphen.gif"/> | - | 002D | HYPHEN |
 | <AutoImage src="/images/hb2/ch5/solidus.gif" alt="ch5/solidus.gif"/> | / | 002F | SOLIDUS |
-| <AutoImage src="/images/hb2/ch5/diacom.gif" alt="ch5/diacom.gif"/> | &bidotscomposit; | F1F2 | TWO DOTS OVER COMMA POSITURA |
-| <AutoImage src="/images/hb2/ch5/tridots.gif" alt="ch5/tridots.gif"/> | &tridotsupw; | F1EF | ONE DOT OVER TWO DOTS PUNCTUATION |
+| <AutoImage src="/images/hb2/ch5/diacom.gif" alt="ch5/diacom.gif"/> | &amp;bidotscomposit; | F1F2 | TWO DOTS OVER COMMA POSITURA |
+| <AutoImage src="/images/hb2/ch5/tridots.gif" alt="ch5/tridots.gif"/> | &amp;tridotsupw; | F1EF | ONE DOT OVER TWO DOTS PUNCTUATION |
 </div>
 
 

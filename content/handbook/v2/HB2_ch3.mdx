@@ -28,9 +28,9 @@ changeLog:
    changes:
     - "Revised the chapter."
  - date: 2008-01-08
-   author: Tone Merete bruvik
+   author: Tone Merete Bruvik
    changes:
-    - "Tone Merete bruvik: Updated to TEI P5 1.0."
+    - "Updated to TEI P5 1.0."
  - date: 2006-06-10
    author: Odd Einar Haugen
    changes:
@@ -244,7 +244,7 @@ ap<ex>ud</ex>
 Other transcribers would like to
 encode the actual abbreviation mark being used, in this case a
 superlinear bar. This might be encoded with the help of an entity
-such as “&bar;”, meaning “a horizontal bar placed above the
+such as “&amp;bar;”, meaning “a horizontal bar placed above the
 preceding character”. The element <E>am</E> (for “abbreviation marker”) indicates that the bar is an abbreviation mark, and not, for example, a sign for length (i.e. a macron) or a diacritical sign (like the bar sometimes used above “u” to distinguish this character from “n”):
 ```xml
 ap<am>&bar;</am> 
@@ -377,7 +377,7 @@ and displayed as
 
 
 
-Note that at this level all characters have been encoded using official Unicode code points. So rather than encoding the character “ð” with the entity “&eth;” it has been encoded simply as “ð”, using its code point in Latin-1 Supplement, 00F0. The only exception here is the “o ogonek”, which for practical purposes has been encoded with the entity “&oogon;”, even if this character, too, has a Unicode code point, 01EB in Latin Extended-B. A suitable keyboard layout is helpful for the actual typing of some of these characters, but in general, all Medieval Nordic texts can be encoded without resorting to entities as long as the text is rendered on a normalised level. Many Old Swedish and Old Danish texts can also be encoded with a minimal amount of character entities.
+Note that at this level all characters have been encoded using official Unicode code points. So rather than encoding the character “ð” with the entity “&amp;eth;” it has been encoded simply as “ð”, using its code point in Latin-1 Supplement, 00F0. The only exception here is the “o ogonek”, which for practical purposes has been encoded with the entity “&amp;oogon;”, even if this character, too, has a Unicode code point, 01EB in Latin Extended-B. A suitable keyboard layout is helpful for the actual typing of some of these characters, but in general, all Medieval Nordic texts can be encoded without resorting to entities as long as the text is rendered on a normalised level. Many Old Swedish and Old Danish texts can also be encoded with a minimal amount of character entities.
 
 For a more detailed discussion of
 the three levels discussed here, please refer to [Haugen
