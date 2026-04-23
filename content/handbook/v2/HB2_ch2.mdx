@@ -343,7 +343,7 @@ can be encoded as
 
 
 When displaying this text, the contents of the <E>c</E> element can be put in italics:
-<Quote>
+<Quote straight={true}>
 <em>X</em>, hann er samsettr í látinu af <em>c</em> ok <em>s</em>.
 </Quote>
 
@@ -372,7 +372,7 @@ in the TEI P5 Guidelines.
 
 
 As a rule, medieval Nordic manuscripts in the Latin alphabet are written with a clearly identifiable space between each word. This obviously facilitates the work for the transcriber, since the word is a basic linguistic unit in grammars and dictionaries. In a simple transcription, word division can simply be entered by the space bar on the keyboard. Thus, a piece of text (from _Barlaams ok Josaphats saga_ ch. 48) might be transcribed as
-<Quote>
+<Quote straight={true}>
 En ef ver fallum i hinar fornno syndir oc huerfum aptr til hinna fyrrv misverka sem hundr til spyu sinnar þa kann lettlega at vera at oss kunni til hannda at berazt sem i guðspialleno segir.
 </Quote>
 
@@ -489,7 +489,7 @@ The three levels of text representation, <em>facs</em>, <em>dipl</em> and <em>no
 ### 2.4.1 Punctuation [#sec2.4.1]
 
 In [ch. 2.3.1](#sec2.3.1) above, we said that a text can be encoded character by character. Punctuation marks are simply inserted where they occur in the manuscript, even if the position is wrong according to modern rules. If the actual punctuation in _Barlaams ok Jospahats saga_ is added, the example above looks like this:
-<Quote>
+<Quote straight={true}>
 En ef ver fallum i hinar fornno syndir. oc huerfum aptr. til hinna fyrrv misverka sem hundr til spyu sinnar. þa kann lettlega at vera. at oss kunni til hannda at berazt. sem i guðspialleno segir.
 </Quote>
 
@@ -525,7 +525,7 @@ As for the interpretation and display of spaces in a multi-level transcription, 
 1. A transcription using the <E>w</E> and the <E>me:punct</E> element should be displayed with a space immediately after each element.
 
 The example in [ch. 2.4.1](#sec2.4.1) above would then be interpreted (e.g. by an XSLT style sheet) as
-<Quote>
+<Quote straight={true}>
 En ef ver fallum i hinar fornno syndir . oc huerfum aptr .
 </Quote>
 
@@ -534,24 +534,24 @@ This is correct in so far as there should be a space <em>after</em> each punctua
 2. When displaying the text, there should not be any white space before a <E>me:punct</E> element.
 
 The example above will then be correctly displayed as
-<Quote>
+<Quote straight={true}>
 En ef ver fallum i hinar fornno syndir. oc huerfum aptr.
 </Quote>
 
 That is also true for any sequence of punctuation characters, e.g.
-<Quote>
+<Quote straight={true}>
 Hann segir," Ek veit eigi."
 </Quote>
 
 In this example, no space is displayed before the comma nor before the final sequence of a full stop and a closing quotation mark. However, the position of the space in connection with the opening quotation mark is wrong. For this specific punctuation mark, the space should be <em>before</em>, not <em>after</em>:
-<Quote>
+<Quote straight={true}>
 Hann segir, "Ek veit eigi."
 </Quote>
 
 This will be taken care of by the XSLT style sheet, which treats opening quotation marks as an exception to rule (2).
 
 Another exception are Roman numerals, which typically are delimited by a dot immediately before and after the number:
-<Quote>
+<Quote straight={true}>
 Hann er .xij. vetra gamall.
 </Quote>
 
@@ -578,7 +578,7 @@ Similarly, if numbers are encoded as words, delimiters should be contained in th
 
 
 However, if an ordinary punctuation mark is positioned immediately before a word rather than after the preceding word, we recommend that a <Att>rend</Att> attribute is used with the value “rightlocation”. Thus,
-<Quote>
+<Quote straight={true}>
 Hann kemr .opt.
 </Quote>
 

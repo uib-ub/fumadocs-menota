@@ -70,6 +70,11 @@
                 <xsl:apply-templates/>
                 <xsl:text>&lt;/HI&gt;</xsl:text>
             </xsl:when>
+            <xsl:when test="@rend='blue initial'">
+                <xsl:text>&lt;HI color="blue" style="initial"&gt;</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>&lt;/HI&gt;</xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
             </xsl:otherwise>

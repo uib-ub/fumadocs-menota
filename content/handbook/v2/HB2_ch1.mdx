@@ -210,18 +210,18 @@ first stanzas of the Eddic poem _Þrymskviða_, rendered in normalised orthograp
 <tbody>
 <tr>
 <td>
-<Quote>
+<Quote straight={true}>
  Reiðr var þá Vingþórr<br/> er hann vaknaði<br/> ok síns hamars<br/> um saknaði,<br/> skegg nam at hrista,<br/> skör nam at dýja,<br/> réð Jarðar burr<br/> um at þreifask. 
 </Quote>
-<Quote>
+<Quote straight={true}>
  Ok hann þat orða<br/> alls fyrst um kvað:<br/> Heyrðu nú, Loki<br/> hvat ek nú mæli,<br/> er eigi veit<br/> jarðar hvergi<br/> né upphimins:<br/> áss er stolinn hamri! 
 </Quote></td>
 <td>
-<Quote>
- (Thor was angry<br/> when he awoke,<br/> and missed<br/> his hammer;<br/> his beard bristled,<br/> his hair stood on end,<br/> the son of Earth<br/> began to grope around.<br/>
+<Quote straight={true}>
+ (Thor was angry<br/> when he awoke,<br/> and missed<br/> his hammer;<br/> his beard bristled,<br/> his hair stood on end,<br/> the son of Earth<br/> began to grope around.<br/> 
 </Quote>
-<Quote>
- And these were the first words<br/> that he spoke:<br/>“Listen, Loki,<br/> to what I am saying,<br/> what no one knows<br/> neither on earth,<br/> or in heaven:<br/> the hammer of the God is stolen.”)<br/>
+<Quote straight={true}>
+ And these were the first words<br/> that he spoke:<br/> “Listen, Loki,<br/> to what I am saying,<br/> what no one knows<br/> neither on earth,<br/> or in heaven:<br/> the hammer of the God is stolen.”)<br/> 
 </Quote></td>
 </tr>
 </tbody>
@@ -983,12 +983,12 @@ example, if one wishes to produce normalised and unnormalised texts
 from a single marked-up file).
 
 The above display of an Eddic stanza is the preferred one in many Nordic editions; each line occupies a line in the edition, whether it is a short line (as in fornyrðislag) or a full line (as in ljóðaháttr). In Continental editions such as the standard Neckel&ndash;Kuhn edition, a pair of short lines making up a long line is printed as a single line in the edition, though with a sizeable space between the two lines, thus:
-<Quote>
+<Quote straight={true}>
  Reiðr var þá Vingþórr&ensp;&ensp;&ensp;er hann vaknaði<br/>
  ok síns hamars&ensp;&ensp;&ensp;um saknaði<br/>
  skegg nam at hrista,&ensp;&ensp;&ensp;skör nam at dýja,<br/>
  réð Jarðar burr&ensp;&ensp;&ensp;um at þreifask.<br/>
-
+ 
 </Quote>
 
 For ease of reference, lines are numbered, but in stanzas of normal length only each fourth line (in ljóðaháttr) or each fifth line (in fornyrðislag) are numbered. In an eight-line display such as the one in the screenshot above, the fitfth line of the first stanza is the one beginning with “skegg”. The same applies to the four-line display above, since each short line is counted, irrespective of whether it is displayed in conjunction with another short line or not. So to achieve a “Neckel&ndash;Kuhn display” two operations are necessary, (a) every second short line in the encoded text is displayed on the same line as the previous short line, and with white space in between, and (b) lines are counted and a small number is positioned in the margin in front of every fifth line. This adds an element of transformation to the styling and is not easily done in CSS. In XSLT this is quite simple, even if the instructions may look difficult. An XSLT transforming the text as specified in (a) and (b) would look like this:

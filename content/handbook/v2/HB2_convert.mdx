@@ -296,7 +296,7 @@ To encode the “.” at the end, search for “(\\.)”, replace with
 
 When you have done this, you might have [this](Elis%20utdrag_3.xml)
 document. (Do not open this link in your web browser, but ask your browser to download it to your disk. Then, open it in Oxygen or a similar application. This document is not valid or well formed, but you may download it if you would like to see what the encoding looks like at this stage of the process. In Oxygen, you will get this message: 
-<Quote>
+<Quote straight={true}>
 This document contains long lines which may affect performance when opened in the text editor. The longest line contains 6852 characters. This warning is displayed for lines which contain more than 5000 characters (see the Open/Save page from Preferences). Do you want to format and indent it before open? 
 </Quote>
 
@@ -463,7 +463,7 @@ Among the global attributes which can be used in any element in the TEI are <Att
 1. They should describe what these elements look like in the source, and even if this information might be used to give a special look on screen or in print, it should NOT be used to define how these elements are to be displayed in an edition. That is done by the display system, in most cases a stylesheet. Remember that something that is big and blue in a manuscript, might be shown without any particular layout in an edition of the text.
 
 2. The difference between <Att>rend</Att> and <Att>rendition</Att> is that <Att>rend</Att> might contain any string of text, while <Att>rendition</Att> points to a description of the rendering or presentation used for this element in the source text. If there is a need for a systematic description of the rendition of a text, and this is made, use <Att>rendition</Att>, otherwise use <Att>rend</Att>. The TEI guidelines say further:
-<Quote>
+<Quote straight={true}>
  Where both rendition and rend are supplied, the latter is understood to override or complement the former.<br/>
  Each URI provided should indicate a rendition element defining the intended rendition in terms of some appropriate style language, as indicated by the scheme attribute. 
 </Quote>

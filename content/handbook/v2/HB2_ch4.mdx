@@ -604,12 +604,12 @@ are encoded by adding a new <E>me:punct</E> element in which the <E>me:facs</E>
 and possibly also the <E>me:dipl</E> element will be empty.
 
 A text transcribed as
-<Quote>
+<Quote straight={true}>
 ok nu sagdi hann. þat er eigi sva. sem þu segir
 </Quote>
 
 on the <E>me:dipl</E> level would probably be rendered as
-<Quote>
+<Quote straight={true}>
 “Ok nú,” sagði hann, “Þat er eigi svá sem þú segir.”
 </Quote>
 
@@ -738,12 +738,12 @@ while quotation marks would be added, and also a comma after “nu”. Finally, 
 In many cases, a dot should be interpreted as an abbreviation mark rather
 than a punctuation mark. In such cases, we recommend that the dot is encoded using the ordinary
 full stop in Basic Latin, but that it is placed within the <E>am</E> element. A text transcribed as
-<Quote>
+<Quote straight={true}>
 nu fann kgr. engan mann þar
 </Quote>
 
 on the <E>me:facs</E> level would probably be rendered as
-<Quote>
+<Quote straight={true}>
 nu fann k<em>onon</em>gr engan mann þar
 </Quote>
 
@@ -803,7 +803,7 @@ while it would be expanded into “onon” (or “onun”) on the <E>me:dipl</E>
 
 
 In some cases, a word abbreviated with a dot may occur at the end of a sentence, e.g.
-<Quote>
+<Quote straight={true}>
 nu fann hann eigi kgr.
 </Quote>
 
@@ -1018,7 +1018,7 @@ We will discuss an example of an overlapping structure in AM 673 b 4to (_Plácit
 
 
 The first three lines read approximately:
-<Quote>
+<Quote straight={true}>
 genget fiornes ualdr [quaþ........fr]egr nu \| mun er lægiasc miuks scalldu manra[un sli] \| ca morlin<em>s</em> boþe fi<em>n</em>na uestu i frægre f[rest] 
 </Quote>
 

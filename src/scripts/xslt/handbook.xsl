@@ -6,7 +6,7 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
-    <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change"/>
+    <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change tei:quote"/>
     <xsl:include href="elements/code.xsl"/>
     <xsl:include href="elements/graphics.xsl"/>
     <xsl:include href="elements/head.xsl"/>
@@ -14,6 +14,7 @@
     <xsl:include href="elements/links.xsl"/>
     <xsl:include href="elements/lists.xsl"/>
     <xsl:include href="elements/paragraph.xsl"/>
+    <xsl:include href="elements/quotes.xsl"/>
     <xsl:include href="elements/spans.xsl"/>
     <xsl:include href="elements/tables.xsl"/>
     <xsl:include href="elements/text.xsl"/>
@@ -54,10 +55,5 @@
         <xsl:text>&#x201c;</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>&#x201d;</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei:quote">
-        <xsl:text>&#x0a;&lt;Quote&gt;&#x0a;</xsl:text>
-        <xsl:apply-templates/>
-        <xsl:text>&#x0a;&lt;/Quote&gt;</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
