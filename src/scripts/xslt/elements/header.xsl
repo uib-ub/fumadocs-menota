@@ -32,7 +32,7 @@
         <xsl:text expand-text="true">title: "{tei:title 
                 => replace('\s+', ' ')
                 => replace('^(Menota handbook) \(v\.( (?:[23]\.0|4\.0 beta))\): List of contents$', '$1$2')
-                => replace('^Menota handbook ch\. ([0-9]+) \(v\. [34]\.[01](?: beta)?\)(: .*)$', '$1$2')
+                => replace('^Menota handbook [Cc]h\. ([0-9]+) \(v\. [2-4]\.[01](?: beta|\.)?\)(: .*)$', '$1$2')
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
                 => replace('^Menota handbook &#x2013; ', '')
