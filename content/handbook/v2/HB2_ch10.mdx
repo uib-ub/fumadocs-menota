@@ -85,7 +85,7 @@ This chapter will discuss the minimal amount of information for each of the four
 
 The file description is a mandatory part of the header and must include information on the title, on the publication and on the source, cf.
 [ch. 2.2 “The File Description”](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2)
-of the TEI P5 Guidelines. It contains a number of elements, several of which were discussed in [ch. 9](HB2_ch9.xml) above (<E>name</E>, <E>persName</E>, <E>forename</E>, <E>surname</E> and <E>addName</E>).
+of the TEI P5 Guidelines. It contains a number of elements, several of which were discussed in [ch. 9](/handbook/v2/HB2_ch9) above (<E>name</E>, <E>persName</E>, <E>forename</E>, <E>surname</E> and <E>addName</E>).
 
 ### 10.2.1 Title, edition, extent and publication statement [#sec10.2.1]
 
@@ -210,7 +210,7 @@ If a contributor is responsible for several activities, this may be specified in
 ```
 
 
-As discussed in [ch. 9](HB2_ch9.xml) above, patronymica should not be encoded as surnames, but rather as additional names:
+As discussed in [ch. 9](/handbook/v2/HB2_ch9) above, patronymica should not be encoded as surnames, but rather as additional names:
 ```xml
 
 <name>
@@ -931,7 +931,7 @@ Next within the <E>editorialDecl</E>element, a <E>normalization</E> element with
 ```
 
 
-Finally within the <E>editorialDecl</E> element, an <E>interpretation</E> element is used to specify the amount of lexical and grammatical information in the encoded text. We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values “completely”, “partly” and “none”. A lemmatised text will have lemmata (i.e. dictionary entries) added in the <Att>lemma</Att> attribute of the <E>w</E> element, while a morphologically analysed text will have grammatical forms specified in the <Att>me:msa</Att> of the same element. See [ch. 2.3](HB2_ch2.xml#sec2.3) for a general overview and [ch. 8](HB2_ch8.xml) for details on this lexical and morphological encoding. A description in prose may be added in a <E>p</E> element.
+Finally within the <E>editorialDecl</E> element, an <E>interpretation</E> element is used to specify the amount of lexical and grammatical information in the encoded text. We suggest two attributes, <Att>me:lemmatized</Att> and <Att>me:morphAnalyzed</Att>, both with the values “completely”, “partly” and “none”. A lemmatised text will have lemmata (i.e. dictionary entries) added in the <Att>lemma</Att> attribute of the <E>w</E> element, while a morphologically analysed text will have grammatical forms specified in the <Att>me:msa</Att> of the same element. See [ch. 2.3](HB2_ch2.xml#sec2.3) for a general overview and [ch. 8](/handbook/v2/HB2_ch8) for details on this lexical and morphological encoding. A description in prose may be added in a <E>p</E> element.
 
 A complete <E>encodingDesc</E> may look like this:
 ```xml
@@ -1042,4 +1042,4 @@ A single <E>change</E> may look like this:
 
 ## 10.6 Minimal headers [#sec10.6]
 
-Two complete examples of Menota headers can be accessed in [Appendix E](HB2_E_menotaheader.xml). One header is for a single-text source, such as Holm perg 6 fol (Barlaams ok Josaphats saga) while the other is for a multi-text source, such as AM 242 fol (Codex Wormianus).
+Two complete examples of Menota headers can be accessed in [Appendix E](/handbook/v2/HB2_E_menotaheader). One header is for a single-text source, such as Holm perg 6 fol (Barlaams ok Josaphats saga) while the other is for a multi-text source, such as AM 242 fol (Codex Wormianus).

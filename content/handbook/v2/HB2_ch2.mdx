@@ -60,7 +60,7 @@ Version 2.0 (16 May 2008). Links updated 12 July 2016.
 
 ## 2.1 Introduction [#sec2.1]
 
-When transcribing a text, the transcriber will usually make a distinction between the individual characters, the white space between some of the characters, the words made up by sequences of characters, and the punctuation marks which are inserted between some of the words. The actual encoding can be as straightforward as the example in [ch. 1](HB2_ch1.xml) above, in which characters, punctuation marks and spaces have been typed directly from the keyboard:
+When transcribing a text, the transcriber will usually make a distinction between the individual characters, the white space between some of the characters, the words made up by sequences of characters, and the punctuation marks which are inserted between some of the words. The actual encoding can be as straightforward as the example in [ch. 1](/handbook/v2/HB2_ch1) above, in which characters, punctuation marks and spaces have been typed directly from the keyboard:
 ```xml
 Reiðr var þá Vingþórr
 er hann vaknaði
@@ -79,7 +79,7 @@ In a more complex encoding, the transcriber might like to identify the basic uni
 
 The basic unit in any transcription of an alphabetic script is the individual letters. In a linguistic 
 			context a distinction is 
-			often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a written document. Variant forms are referred to as **allographs**, e.g. the Roman type of <em>s</em> and the Fraktur (black letter) type. The terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general introduction to this terminology, see [Sture Allén 1971](HB2_literature.xml) or, more recently, [Manfred Kohrt 1985](HB2_literature.xml).
+			often drawn between the abstract entity of a **grapheme** and the representation of **graphs** in a written document. Variant forms are referred to as **allographs**, e.g. the Roman type of <em>s</em> and the Fraktur (black letter) type. The terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general introduction to this terminology, see [Sture Allén 1971](/handbook/v2/HB2_literature) or, more recently, [Manfred Kohrt 1985](/handbook/v2/HB2_literature).
 
 In this handbook we shall adopt the terminology of the [Unicode Standard](http://www.unicode.org/). The fundamental distinction drawn is between **characters** and **glyphs**. Characters are, as Unicode defines it, “the smallest components of written language that have semantic value”, while glyphs are “the shapes that characters can have when they are rendered or displayed” (cf. Unicode 4.0, ch. 2.2). What the transcriber sees in the source document is a series of individual glyphs, and the act of transcribing essentially involves connecting these glyphs to the characters at the transcriber's disposal.
 
@@ -100,7 +100,7 @@ The Unicode Standard puts great emphasis on the fact that individual characters 
 
 Unicode draws a distinction between small (minuscule) characters such as “a” and large (majuscule) characters such as “A”, since there is a possible semantic value attached to each set of characters. Thus, “the white house” can refer to any house which is white in colour, while “the White House” refers (normally) to one specific building. It can be argued that the same applies to the distinction between Roman types, “a”, and italics, “<em>a</em>”. For example, while “Metope” refers a poem by the Norwegian author Olaf Bull, <em>Metope</em> (according to a widespread bibliographical practice) refers to the book in which this poem is published (a book which, co-incidentally, bears the same name as one of the poems contained in the book). However, Unicode does not regard italics (or bold type) as individual characters. There are good reasons for this, but the example serves to illustrate the fact that the definition of a character is not always clear-cut.
 
-Medieval Nordic manuscripts were written in the Latin alphabet from the very beginning. The basic inventory is thus the characters a-z / A-Z. They were supplemented with a number of new (or borrowed) characters, several ligatures and a variety of diacritical marks. There was also a large number of abbreviation marks in use, especially in Old Icelandic and Old Norwegian manuscripts. We shall go through the inventory of ordinary characters, i.e. those based on the set a-z / A-Z, in [ch. 5](HB2_ch5.xml) and abbreviation marks in [ch. 6](HB2_ch6.xml), and we shall refer to both types as <em>characters</em>. In fact, some abbreviation marks behave as ordinary characters in the sense that they occupy a separate position on the base line. On the other hand, many components of ordinary characters are diacritical, i.e. placed above (or through or below) another character, and thus akin to typical abbreviation marks. This means that the rules for transcribing ordinary characters and abbreviation marks should be identical.
+Medieval Nordic manuscripts were written in the Latin alphabet from the very beginning. The basic inventory is thus the characters a-z / A-Z. They were supplemented with a number of new (or borrowed) characters, several ligatures and a variety of diacritical marks. There was also a large number of abbreviation marks in use, especially in Old Icelandic and Old Norwegian manuscripts. We shall go through the inventory of ordinary characters, i.e. those based on the set a-z / A-Z, in [ch. 5](/handbook/v2/HB2_ch5) and abbreviation marks in [ch. 6](/handbook/v2/HB2_ch6), and we shall refer to both types as <em>characters</em>. In fact, some abbreviation marks behave as ordinary characters in the sense that they occupy a separate position on the base line. On the other hand, many components of ordinary characters are diacritical, i.e. placed above (or through or below) another character, and thus akin to typical abbreviation marks. This means that the rules for transcribing ordinary characters and abbreviation marks should be identical.
 
 We believe that it is possible to identify a base line in all texts, as shown in fig. 2.2. We recommend that the transcriber identifies each separate character on the base line and record this in the same sequence as in the manuscript. Thus, the characters in fig. 2.2 would be transcribed as “abpþ” or “abp&thorn;”. Note that the last character may be encoded with its Unicode code point, “þ” at 00FE, or with an entity, “&thorn;”. Both encodings are strictly equivalent. Entities are explained in [ch. 1.5](HB2_ch1.xml#sec1.5) and discussed further in [ch. 5.2](HB2_ch5.xml#sec5.2).
 
@@ -140,11 +140,11 @@ We suggest the following basic rules for encoding characters, irrespective of wh
 
 2.2 Characters outside Basic Latin should either be encoded by Unicode codepoints or by entities, e.g. either as “abpþ” or as “abp&thorn;”.<br/>
 
-2.3 Characters which are not part of the Unicode Standard must always be encoded by entities. See [ch. 5](HB2_ch5.xml) for a fuller explanation.
+2.3 Characters which are not part of the Unicode Standard must always be encoded by entities. See [ch. 5](/handbook/v2/HB2_ch5) for a fuller explanation.
 
 3. Abbreviation marks occupying a separate position on the base line are encoded in the same
 			manner as alphabetical characters. This applies to e.g. LATIN SMALL LETTER P WITH STROKE THROUGH DESCENDER (for “per” or “par”), as explained in 
-		 [ch. 6](HB2_ch6.xml) below.
+		 [ch. 6](/handbook/v2/HB2_ch6) below.
 
 4. Alphabetical characters with diacritical marks, e.g. “é”, are encoded in one of two equivalent ways:
 
@@ -194,7 +194,7 @@ If, however, the encoding is specified as
 
 all characters in the Unicode Standard can be encoded with their Unicode code points, without resorting to entities.
 
-In TEI P5, all entities must be declared in a separate list. A complete list of entities for Medieval Nordic texts is part of the Menota schema, and can be consulted in [Appendix D.1](HB2_D_schemas.xml). An encoding using these entities will always be valid with respect to character encoding (but may, of course, be invalid for other reasons). In the Menota schema, entities are linked to code points defined in the [MUFI character recommendation](http://www.mufi.info), so that if a Menota text is displayed with a fully compliant  MUFI font, all entities will be displayed correctly.
+In TEI P5, all entities must be declared in a separate list. A complete list of entities for Medieval Nordic texts is part of the Menota schema, and can be consulted in [Appendix D.1](/handbook/v2/HB2_D_schemas). An encoding using these entities will always be valid with respect to character encoding (but may, of course, be invalid for other reasons). In the Menota schema, entities are linked to code points defined in the [MUFI character recommendation](http://www.mufi.info), so that if a Menota text is displayed with a fully compliant  MUFI font, all entities will be displayed correctly.
 
 If an encoder, for some reason, would like to encode a character which is not in the Menota list of entities, this character has to be declared in the header of the file, or by exchanging the Menota list of entities with an extended list.
 
@@ -376,7 +376,7 @@ As a rule, medieval Nordic manuscripts in the Latin alphabet are written with a 
 En ef ver fallum i hinar fornno syndir oc huerfum aptr til hinna fyrrv misverka sem hundr til spyu sinnar þa kann lettlega at vera at oss kunni til hannda at berazt sem i guðspialleno segir.
 </Quote>
 
-Here, each word is delimited by a space (or a punctuation mark). However, for a more detailed analysis it can be convenient to identify each word with a separate <E>w</E> element (for “word”). The <E>w</E> element functions as a container for information on levels of text representation (cf. [ch. 3](HB2_ch3.xml) below) and morphological analysis (cf. [ch. 8](HB2_ch8.xml)). In this example, each word has been identified by the <E>w</E> element, and the lemma (dictionary entry) specified as an attribute to the <E>w</E> element:
+Here, each word is delimited by a space (or a punctuation mark). However, for a more detailed analysis it can be convenient to identify each word with a separate <E>w</E> element (for “word”). The <E>w</E> element functions as a container for information on levels of text representation (cf. [ch. 3](/handbook/v2/HB2_ch3) below) and morphological analysis (cf. [ch. 8](/handbook/v2/HB2_ch8)). In this example, each word has been identified by the <E>w</E> element, and the lemma (dictionary entry) specified as an attribute to the <E>w</E> element:
 ```xml
 <w lemma="en">En</w>
 <w lemma="ef">ef</w>
@@ -392,7 +392,7 @@ etc.
 
 For practical reasons, each word has a separate line in this encoding. Unless otherwise specified, it is assumed that there is white space between each <E>w</E> element.
 
-[Ch. 3](HB2_ch3.xml) will discuss further levels of transcription (facsimile and normalised), and [ch. 8](HB2_ch8.xml) how words can be marked for morphological categories.
+[Ch. 3](/handbook/v2/HB2_ch3) will discuss further levels of transcription (facsimile and normalised), and [ch. 8](/handbook/v2/HB2_ch8) how words can be marked for morphological categories.
 
 ### 2.3.2 Deviations in word division (words written together or apart) [#sec2.3.2]
 
@@ -469,7 +469,7 @@ Now, if the encoder wishes to add lexicographical (or other) information to the 
 
 This encoding would make a clear distinction between lemmata on the first level of encoding, in this case “veiðikona”, and the base form, <Att>baseForm</Att>, of each constituent part, in this case “veiði” and “kona”.
 
-Lemmatisation is further discussed in [ch. 8](HB2_ch8.xml) below and is here only given as an example of a word-based type of mark-up. Grammatical information can also be conveniently attached to the word through the <Att>msa</Att> (morphosyntactical analysis) attribute. This is also discussed in [ch. 8](HB2_ch8.xml).
+Lemmatisation is further discussed in [ch. 8](/handbook/v2/HB2_ch8) below and is here only given as an example of a word-based type of mark-up. Grammatical information can also be conveniently attached to the word through the <Att>msa</Att> (morphosyntactical analysis) attribute. This is also discussed in [ch. 8](/handbook/v2/HB2_ch8).
 
 ## 2.4 Punctuation and white space [#sec2.4]
 
@@ -484,7 +484,7 @@ Having introduced elements for the encoding of individual characters and words, 
 | <E>num</E> | contains a number, including any delimiters |
 
 
-The three levels of text representation, <em>facs</em>, <em>dipl</em> and <em>norm</em>, will be explained in [ch. 3](HB2_ch3.xml) below. Suffice it here to say that at the facsimile level, the manuscript is recorded in great detail, on the diplomatic level, it is somewhat normalised, and on the normalised level it is fully regularised according to standard grammars and dictionaries.
+The three levels of text representation, <em>facs</em>, <em>dipl</em> and <em>norm</em>, will be explained in [ch. 3](/handbook/v2/HB2_ch3) below. Suffice it here to say that at the facsimile level, the manuscript is recorded in great detail, on the diplomatic level, it is somewhat normalised, and on the normalised level it is fully regularised according to standard grammars and dictionaries.
 
 ### 2.4.1 Punctuation [#sec2.4.1]
 
@@ -514,7 +514,7 @@ etc.
 ```
 
 
-The main reason for doing so will become clear in [ch. 3](HB2_ch3.xml), in which several levels of transcription is discussed. At a diplomatic level, the transcriber should encode the punctuation marks exactly where they are in the source, but at a normalised level, some punctuation marks should be suppressed, some should be retained and some should be added. For a full discussion, please see [ch. 4.8](HB2_ch4.xml#sec4.8).
+The main reason for doing so will become clear in [ch. 3](/handbook/v2/HB2_ch3), in which several levels of transcription is discussed. At a diplomatic level, the transcriber should encode the punctuation marks exactly where they are in the source, but at a normalised level, some punctuation marks should be suppressed, some should be retained and some should be added. For a full discussion, please see [ch. 4.8](HB2_ch4.xml#sec4.8).
 
 ### 2.4.2 White space [#sec2.4.2]
 
@@ -617,4 +617,4 @@ Thus, the following sequence
 
 should be displayed as “alande” on the <E>me:facs</E> and the <E>me:dipl</E> level, with no word division, but as “á landi” on the <E>me:norm</E> level, with word division. In the latter case, rule (1) applies, which states that a space should be displayed after each <E>w</E> element. In the former case, rule (3) entails that there should not be displayed any space after the first of the two words in the <E>seg</E> element. Also see [ch. 2.3.2](#sec2.3.2) above.
 
-If the above-mentioned rules 1-3 are added to the XSLT style sheet, texts should be displayed correctly. See [Appendix F.2](HB2_F_xslt.xml) for an example of how this can be implemented.
+If the above-mentioned rules 1-3 are added to the XSLT style sheet, texts should be displayed correctly. See [Appendix F.2](/handbook/v2/HB2_F_xslt) for an example of how this can be implemented.

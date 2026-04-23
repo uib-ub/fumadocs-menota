@@ -156,9 +156,9 @@ Using these elements and attributes to describe the structure of the text, the m
 
 
 
-(Adapted from an edition by Lars Boje Mortensen, University of Bergen. Cf. also the edition by [Frederick Metcalfe 1881](HB2_literature.xml).)
+(Adapted from an edition by Lars Boje Mortensen, University of Bergen. Cf. also the edition by [Frederick Metcalfe 1881](/handbook/v2/HB2_literature).)
 <Quote>
-(When the illustrious King Óláfr ruled in Norway, a vast country located towards the north and having Denmark to the south, there entered into that land the feet of them that preach the gospel of peace and bring glad tidings of good things. The peoples of that country, previously subject to the ungodly rites of idolatry and deluded by superstitious error, now heard of the worship and faith of the true God &ndash; heard indeed, but many scorned to accept. Living in a region close to the north, it was the same north, from which comes every evil over the whole face of earth, that had possessed them all the more inwardly and gripped them all the more firmly in the ice of unbelief. From its face Jeremiah saw a seething pot; and in Isaiah there is the boaster who says, "I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north.") [Translated by [Devra Kunin 2001](HB2_literature.xml).]
+(When the illustrious King Óláfr ruled in Norway, a vast country located towards the north and having Denmark to the south, there entered into that land the feet of them that preach the gospel of peace and bring glad tidings of good things. The peoples of that country, previously subject to the ungodly rites of idolatry and deluded by superstitious error, now heard of the worship and faith of the true God &ndash; heard indeed, but many scorned to accept. Living in a region close to the north, it was the same north, from which comes every evil over the whole face of earth, that had possessed them all the more inwardly and gripped them all the more firmly in the ice of unbelief. From its face Jeremiah saw a seething pot; and in Isaiah there is the boaster who says, "I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north.") [Translated by [Devra Kunin 2001](/handbook/v2/HB2_literature).]
 </Quote>
 
 The transcription above is easily
@@ -214,7 +214,7 @@ of the file is thus quite simple:
 ```
 
 
-For an example of a Menota header, please go to [Appendix E](HB2_E_menotaheader.xml).
+For an example of a Menota header, please go to [Appendix E](/handbook/v2/HB2_E_menotaheader).
 
 It is important to keep in mind
 that a transcription may be as straightforward and readable as this,
@@ -353,7 +353,7 @@ On this level, the orthography is
 regularised according to the norm found in grammars and dictionaries
 for the language in question. For Old Icelandic and Old Norwegian
 texts we recommend the normalisation rules in [AMKO's
-dictionary](HB2_literature.xml) (ONP).
+dictionary](/handbook/v2/HB2_literature) (ONP).
 Abbreviations are expanded silently, and punctuation is regularised as
 well. Thus, the text in fig. 3.1 would be transcribed as
 ```xml
@@ -381,7 +381,7 @@ Note that at this level all characters have been encoded using official Unicode 
 
 For a more detailed discussion of
 the three levels discussed here, please refer to [Haugen
-2004](HB2_literature.xml).
+2004](/handbook/v2/HB2_literature).
 
 For keyboard layouts and for an overview of Unicode code charts, please see the [MUFI site](http://www.mufi.info/).
 
@@ -398,7 +398,7 @@ helgum hans at leida þa i paradisum hína fornu.</p>
 
 Here, abbreviations have been expanded silently and proper names capitalised, but the punctuation and orthography remain unchanged. 
 The small capital “R” with a dot above in the second word has been interpreted as a geminate, “rr”, while the ligature of “a” and “o” is transcribed with an entity, 
-since this character was not part of the Unicode Standard as of v. 5.0. A correct display of this character thus requires a specific font with a glyph in the Private Use Area (as explained in [ch. 2](HB2_ch2.xml)).
+since this character was not part of the Unicode Standard as of v. 5.0. A correct display of this character thus requires a specific font with a glyph in the Private Use Area (as explained in [ch. 2](/handbook/v2/HB2_ch2)).
 
 If the text is going to be annotated on a lexicographical level, we recommend that each word is contained in a <E>w</E> element. Although not strictly necessary, it is also helpful to identify the level of transcription within each word. This is especially so if the text is going into an archive of texts transcribed on several levels. In the following example, it is clearly stated that each word has been transcribed on a diplomatic level, identified by the <E>me:dipl</E> element:
 ```xml
@@ -670,6 +670,6 @@ element
 As stated above, the elements <E>me:facs</E>,
 <E>me:dipl</E> and <E>me:norm</E> are not defined in TEI,
 but are part of the namespace we have defined for Menota texts. Please see the schemas in
-[Appendix D](HB2_D_schemas.xml).
+[Appendix D](/handbook/v2/HB2_D_schemas).
 
 The three levels discussed here can be seen as **focal** in the sense that they are typical and often used levels of  text representations in Medieval Nordic editions. A number of additional levels can be defined, e.g. a <E>me:pal</E> level for an even more detailed paleographical encoding of the text. This level has been included in the Menota schemas, but is not seen as one of the focal levels.

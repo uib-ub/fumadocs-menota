@@ -16,12 +16,12 @@
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
-                => replace('^(HB([34])_.*?)\.xml#?$', '/handbook/v$2/$1')
+                => replace('^(HB([2-4])_.*?)\.xml#?$', '/handbook/v$2/$1')
                 => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
                 => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
-                => replace('^([\w\-0-9]+\.pdf)', $file-path)
+                => replace('^([\w_\-0-9]+\.pdf)', $file-path)
                 => replace('^(\w+)\.dtd$', '/$1.dtd')
                 => replace('^(\w+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
