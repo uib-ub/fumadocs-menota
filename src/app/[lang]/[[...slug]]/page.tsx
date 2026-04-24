@@ -12,7 +12,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   const page = source.getPage(slug, lang);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
-    contentGroup: 'hbx' | 'hb1' | 'hb3' | 'hb4' | 'main',
+    contentGroup: 'hbx' | 'hb1' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'hb-old' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
@@ -20,6 +20,8 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         case "v1-0":
         case "v1-1":
           return { contentGroup: "hb1", contentStyle: "hb-old" }
+        case "v2":
+          return { contentGroup: "hb2", contentStyle: "hb-new" };
         case "v3":
           return { contentGroup: "hb3", contentStyle: "hb-new" };
         case "v4":
@@ -42,6 +44,10 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         [&_h1]:text-gray-500 [&_h1]:dark:text-gray-300 [&_h1]:text-2xl
         [&_h2]:text-gray-500 [&_h2]:dark:text-gray-300 [&_h2]:text-xl
         [&_h3]:text-gray-500 [&_h3]:dark:text-gray-300 [&_h3]:text-lg
+        [&_h4]:text-gray-500 [&_h4]:dark:text-gray-300 [&_h4]:text-base
+        [&_h5]:text-gray-500 [&_h5]:dark:text-gray-300 [&_h5]:text-sm [&_h5]:font-bold
+        [&_th]:bg-blue-50 [&_th]:text-gray-600 [&_th]:dark:bg-blue-950 [&_th]:dark:text-gray-200
+        [&_td]:bg-white [&_td]:dark:bg-black
         [&_ol_a]:text-blue-700 [&_ol_a]:dark:text-orange-300
         [&_p_a]:text-blue-700 [&_p_a]:dark:text-orange-300
         [&_td_a]:text-blue-700 [&_td_a]:dark:text-orange-300
@@ -51,6 +57,13 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
       {(() => {switch (contentGroup) {
         case "hb1":
           return;
+        case "hb2":
+          return (
+            <div className='dark:invert'>
+              <Image src='/images/hb2/handbook_2-0.gif' alt='Menota handbook 2.0' width={600} height={65}/>
+              <hr className='my-5 border-2 dark:border-gray-500'/>
+            </div>
+          );
         case "hb3":
         case "hb4":
           return (

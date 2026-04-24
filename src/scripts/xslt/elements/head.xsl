@@ -5,7 +5,7 @@
     xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
     <xsl:template match="tei:head">
         <xsl:text>&#x0a;&#x0a;#</xsl:text>
-        <xsl:for-each select="ancestor::tei:div">
+        <xsl:for-each select="ancestor::tei:div|ancestor::tei:list">
             <xsl:text>#</xsl:text>
         </xsl:for-each>
         <xsl:text> </xsl:text>

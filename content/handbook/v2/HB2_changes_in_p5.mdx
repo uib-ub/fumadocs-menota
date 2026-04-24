@@ -1,0 +1,211 @@
+---
+title: "Changes from TEI P4 to TEI P5 which concernes Menota."
+author:
+ - Tone Merete Bruvik
+changeLog:
+ - date: 2026-04-24
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2008-04-10
+   author: Odd Einar Haugen
+   changes:
+    - "Linguistic corrections."
+ - date: 2008-01-10
+   author: Tone Merete Bruvik
+   changes:
+    - "Updates."
+ - date: 2007-12-10
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated after the release of TEI P5 1.0"
+ - date: 2007-11-13
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated after the release of TEI P5 1.0"
+ - date: 2006-02-06
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated with changes in TEI P5 0.3.1 from Januray 2006."
+ - date: 2006-01-04
+   author: Tone Merete Bruvik
+   changes:
+    - "First draft in Menota XML P5."
+ - date: 2006-01-04
+   changes:
+    - "First draft in Menota XML P5."
+ - date: 2004-12-20
+   author:  Tone Merete Bruvik
+   changes:
+    - "Last changed 2004.12.20 by tmb (First draft)."
+---
+
+
+# Changes from TEI P4 to TEI P5 which concerns Menota
+
+TEI P5 1.0 published was published November 2, 2007.
+
+## Changes in the XML Document Prologue
+
+
+	The document type declaration (DTD) had to be changed from the P4 to the P5 version of the Menota schema because entity list are not a legal part of the TEI schemas for P5. In Menota, the entities are important and numerous, and when using P5, a separate file with the entities has to be made and included into all XML documents which need them. The various schema languages does not have support for entities, only DTD has, so all documents using the Menota encoding will have to refer to a DTD, where the entities have been included, as shown in [Appendix D.3: Referring to the Menota schema](http://www.menota.org/guidelines-2/schemes/schemes_simple.page#id35971062).
+
+
+## Changes from P4 to P5
+
+### Root element
+
+The root element has been changed from TEI.2 to TEI
+
+### `@resp` in `<sic>`
+
+The attribute <Att>resp</Att> in the element <E>sic</E> has been removed in P5. It was probably an error to
+	have it declared in P4. Example 22 in chapter 7 of the Menota Handbook used it. This example has been removed from version 2.0 of the handbook.
+
+### `<change>`
+
+The content model of <E>change</E> in <E>revisionDesc</E> is changed, the
+element <E>respStmd</E> is removed, and the content is more narrative. An example may
+look like this:
+
+```xml
+
+<change>On <date value="2006-02-02">2 February 2006</date>, 
+<name>Tone Merete Bruvik</name> edited the file according to the 
+TEI P5 0.3.1 published on 30 January 2006. </change> 
+```
+
+
+### `@langKey` changed into `@mainLang`
+
+The attribute <Att>langKey</Att> in <E>textLang</E> has been changed into
+	<Att>mainLang</Att>:
+
+```xml
+<textLang langKey="oic">Old Icelandic</textLang> 
+```
+
+-&gt;
+
+```xml
+<textLang mainLang="oic">Old Icelandic</textLang></change> 
+```
+
+
+### Encoding of hands
+
+<E>handList</E> has been replaced with <E>handNotes</E>
+
+<E>hand</E> has been replaced with <E>handNote</E>
+
+### Attribute changes
+
+The element <E>date</E> has an attribute <Att>when</Att>, which in P4 was called <Att>value</Att>
+
+## Changes from MASTER to P5
+
+Menota v. 1.1 contained the recommendations from the MASTER project. TEI P5 includes the recommendations from the [TEI Manuscript Description Taskforce](http://www.tei-c.org/Activities/MS/). Although the recommendations from TEI Manuscript Description Task are based on the MASTER recommendations, there are some differences which Menota has to handle.
+
+### Main changes
+
+#### `<msHeading>` has been removed
+
+The element <E>msHeading</E> is not in P5, and the content of this element has to be encoded otherwise.
+
+#### `<msWriting>` is removed
+
+The elementet <E>msWriting</E> has been removed, <E>handDesc</E>should be used in its place.
+
+Encoding in MASTER:
+
+
+
+```xml
+<msWriting hands="1">
+  <handDesc script="Hybrida" scope="major">
+    <p>The main hand (Hand 1) writes <locus>ff. 1r-9r and
+    16r-118v</locus> in a practised Gothic hybrid.</p>
+  </handDesc>
+</msWriting>
+```
+
+
+
+Encoding in P5:
+
+
+
+```xml
+<handDesc hands="1">
+  <handNote script="Hybrida" scope="major">
+    <p>The main hand (Hand 1) writes ff. 1r-9r and
+    16r-118v in a practised Gothic hybrid.</p>
+  </handNote>
+</handDesc>
+
+```
+
+
+
+
+#### Encoding of roles
+
+In MASTER, the attribute <Att>role</Att> in the <E>name</E> element was used to encode the role of the person whose name was stated in the element. This attribute is not available in P5, so the Menota project had to decide how this should be encoded. This example is given in '10.6 The history of the manuscript':
+
+
+	
+```xml
+<provenance>
+  <p>According to AM 435 a 4to, ff. 54v-56v, the manuscript had been owned by 
+  <name type="person" role="owner">Sr. Þórður Jónsson á <name type="place">Staðastað</name>
+  (1672-1720)</name>, who had got it from <name type="person" role="owner">Jón Hákonarson 
+  að <name type="place">Vatnshorni</name> ...
+
+```
+
+
+
+We suggest that <Att>subtype</Att> is used to replace <Att>role</Att> in this case.
+
+#### Changes in `<sourceDesc>`
+
+
+			It is not longer valid to have both <E>p</E> and <E>msDescription</E> as child elements of
+			<E>sourceDesc</E>. A <E>p</E> element should be moved into a <E>summary</E> element
+			like this (sample from _AM 233 a fol_):
+			
+```xml
+<sourceDesc>
+  <msDescription>
+	  <msIdentifier>
+ 	    <country key="DK">Denmark</country>
+ 	    <settlement>Copenhagen</settlement>
+ 	    <repository>The Arnamagn&aelig;an Institute</repository>
+ 	    <idno>AM 233 a fol</idno>
+    </msIdentifier>
+   <msContents>
+     <summary>The source is an anonymous translation from Latin 
+				into Old Norse made in the second half of the 12th century, 
+				possibly in Norway. The original is lost and the text is only 
+				preserved in younger Icelandic manuscripts, including the two 
+				fragments in AM 233 a fol, fol. 28rA (the first column on the 
+				recto page) and 28vB (the second column on the verso page). 
+				This fragment is dated to 1350-1360 in "Ordbog over det 
+				norrøne prosasprog" (Index volume).</summary>
+...
+```
+
+
+### Minor changes
+
+<E>msDescription</E> has been changed into <E>msDesc</E>
+
+#### Attribute values
+
+The value of the attribute <Att>defective</Att> in <E>msItem</E> should have the values 'true' or 'false', not 'yes' or 'no'. This applies to other Boolean attributes as well.
+
+The attributes <Att>technique</Att>, <Att>figurative</Att> and <Att>illustrative</Att> in the <E>decoNote</E> element have been removed in P5.
+			
+
+The attribute <Att>reg</Att> in the <E>country</E> has been removed. Use for instance <Att>key</Att>.
+			

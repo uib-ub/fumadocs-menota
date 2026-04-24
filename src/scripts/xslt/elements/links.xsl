@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:tei_samples="http://www.tei-c.org/ns/Examples">
+    xmlns:tei="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:template match="tei:ref">
         <xsl:variable name="samples-path">
@@ -15,18 +14,19 @@
         <xsl:apply-templates/>
         <xsl:text>]</xsl:text>
         <xsl:text expand-text="true">({@target
+                => replace('^HB(1-1)_(\w+)\.xhtml$', '/handbook/v$1/$2')
                 => replace('^(?:http://www\.menota\.org/)(HB2_.*?)\.xml$', '/handbook/v2/$1')
-                => replace('^(HB([34])_.*?)\.xml#?$', '/handbook/v$2/$1')
-                => replace('^(HB3_.*?)\.xml#(.+)$', '/handbook/v3/$1#$2')
+                => replace('^(HB([2-4])_.*?)\.xml#?$', '/handbook/v$2/$1')
+                => replace('^(HB([23])_.*?)\.xml#(.+)$', '/handbook/v$2/$1#$3')
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
-                => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
+                => replace('^(?:eksempler|samples)/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
-                => replace('^([\w\-0-9]+\.pdf)', $file-path)
-                => replace('^(\w+)\.dtd$', '/$1.dtd')
-                => replace('^(\w+)\.rng$', '/$1.rng') 
+                => replace('^(archive)/([\w\-0-9]+)\.(dtd|(?:compiled\.)?rn[cg]|txt|xml)$', '/$1/$2.$3')
+                => replace('^([\w_\-0-9]+\.pdf)', $file-path)
+                => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
+                => replace('^([\w\-0-9]+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
-                => replace('^(\w+)\.xml$', '/$1.xml')
-                => replace('^([\w_0-9]+)\.xsl$', '/$1.xsl')
+                => replace('^([\w_\-0-9]+)\.(xml|xsl)$', '/$1.$2')
                 => replace(' ', '%20')
             })</xsl:text>
     </xsl:template>

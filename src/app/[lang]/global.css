@@ -42,20 +42,14 @@
     unicode-range: U+16A0-16F0, U+E000-F8FF;
 }
 
+html.dark .shiki,
+html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+}
+
 #nd-docs-layout {
     font-family: 'Verdana', sans-serif;
-}
-
-h4 {
-    color: #666;
-    font-size: 1.0em;
-    font-weight: normal;
-}
-
-h5 {
-    color: #666;
-    font-size: 0.9em;
-    font-weight: normal;
 }
 
 div.prose > p {
@@ -115,15 +109,13 @@ strong {
 }
 
 .hb-new th {
-    background-color: #ebf3ff;
     font-weight: bold;
     font-size: .9em;
-    color: #666;
+    /* color: #666; */
 }
 
 .hb-new td {
     padding: .5em 1em;
-    background-color: white;
 }
 
 .hb-new tbody, .hb-new th, .hb-new td {

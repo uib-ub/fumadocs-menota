@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Menota handbook &ndash; Ch. 3 (v. 2.0): Levels of text representation</title>
+            <respStmt>
+               <resp>Edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Odd Einar Haugen</publisher>
+            <distributor>Medieval Nordic Text Archive</distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Composed from the HTML files of Menota handbook v. 2.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>27 December 2005</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change>
+            <date>12 July 2016</date>
+            <persName>Odd Einar Haugen</persName>: Updated a few links
+         </change>
+      	<change>
+      		<date>20 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Made a number of minor revisions, including correcting quotation marks and fixing links
+      	</change>
+      	<change>
+      		<date>16 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Final update before publication.
+      	</change>
+      	<change>
+      		<date>11 February 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Updated one invalid example.
+      	</change>
+      	<change>
+      		<date>10 February 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Revised the chapter.
+      	</change>
+      	<change>
+      		<date>8 January 2008</date>
+      		<persName>Tone Merete bruvik</persName>: Updated to TEI P5 1.0.
+      	</change>
+      	<change>
+            <date>10 June 2006</date>
+            <persName>Odd Einar Haugen</persName>: Simplified ch. 3.3.1 by removing encoding of levels by way of attributes (no longer supported).
+         </change>
+         <change>
+            <date>27 December 2005</date>
+            
+            	<persName>Tone Merete Bruvik</persName>: XML version.
+         </change>
+         <change>
+            <date>20 May 2003</date>
+            <persName>Odd Einar Haugen</persName>: Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text xml:lang="en">
+      <body><head>Chapter 3. Levels of text representation</head>
+
+         <p>Version 2.0 (16 May 2008). Links updated 12 July 2016.</p>
+         
+<div>
+<head xml:id="sec3.1">3.1 Introduction</head>
+
+<p>A transcription is basically a
+representation of a primary source in another format, such as paper
+or the electronic medium. Some transcriptions aim to reproduce the
+source text as closely as possible, others allow for a certain amount
+of generalisation. In transcriptions of speech, a distinction is
+usually drawn between narrow and broad transcriptions, depending on
+the amount of phonetic detail. The same perspective applies to
+transcriptions of manuscript texts. Close (or narrow) transcriptions
+are usually referred to as diplomatic, while regularised
+transcriptions are often referred to as normalised. This is the basic
+distinction drawn in e.g. <ref target="http://wab.uib.no/wab_BEE.page" type="external">Wittgenstein's
+Nachlass: The Bergen Electronic Edition</ref> (1998-2000). 
+   Here, all texts are available in two versions, a diplomatic transcription and a normalised one.
+   
+<!-- For examples, please refer to <ref
+      target="http://www.nlx.com/titles/titlwnv3.htm#Diplomatic" type="external">this
+page</ref>. -->
+
+</p>
+
+<p>We suggest that medieval Nordic
+texts may be transcribed on up to three levels. In addition to the
+<hi rend="bold">normalised</hi> level, we identify two closer levels. We shall
+refer to the narrowest level as the <hi rend="bold">facsimile</hi> level, while the
+<q>medium</q> level is designated as <hi rend="bold">diplomatic</hi>. The three levels
+are exemplified in <ref target="HB2_ch3.xml#sec3.2">ch. 3.2</ref> below.</p>
+
+<p>The distinction between three
+levels of text representation does not mean that a Menota transcription
+should contain all three levels. Many transcribers will probably
+choose a single level for their transcription. Our recommendation is
+to use these levels as a guide, so that a transcription can be
+described as following one of these levels. This information should
+be given in the header, and can optionally be given by use of
+specific elements in the transcription itself, as discussed in <ref target="HB2_ch3.xml#sec3.2">ch. 3.2</ref> below. If a transcriber wishes to deviate from any of these
+levels, and there may be good reasons to do so, we recommend that the
+deviations are specified in the header.</p>
+
+<p>It is convenient to begin by
+looking at a Latin text example, <title>Passio et Miracula Beati
+Olavi</title>. An important source for this work is Corpus Christi
+College, Oxford MS 209, a vellum manuscript from the late 12th
+century. Below is a low
+resolution facsimile from the beginning of the <title>Passio</title>. For a facsimile of
+the whole manuscript in high resolution, please refer to
+   <ref target="http://image.ox.ac.uk/show?collection=corpus&amp;manuscript=ms209" type="external">Early
+Manuscripts at Oxford University</ref>.</p>
+
+
+   <p><figure><graphic url="ch3/CCC209-57r-ex.gif" width="450" height="443"/>
+      <figDesc n="3.1">CCC 209, fol. 57r., l. 1-15. &copy; Corpus Christi College, Oxford</figDesc></figure></p>
+
+<p>The following elements and attributes will be used in the encoding:</p>
+
+<table>
+ <row role="label">
+   <cell>Element / attribute</cell>
+   <cell>Contents</cell>
+</row>
+  <row>
+   <cell><tag>head</tag></cell>
+   <cell>contains a heading (or title)</cell>
+  </row>
+  <row>
+   <cell><tag>div</tag></cell>
+   <cell>contains a section of the text; can be nested hierarchically</cell>
+  </row>
+  <row>
+   <cell>&nbsp;&nbsp;&nbsp;<att>type</att></cell>
+   <cell>specifies the type of section</cell>
+  </row>
+  <row>
+   <cell>&nbsp;&nbsp;&nbsp;<att>n</att></cell>
+   <cell>specifies the number of a section</cell>
+  </row>
+<row>
+   <cell><tag>p</tag></cell>
+   <cell>contains a paragraph of text</cell>
+  </row>
+  <row>
+   <cell><tag>hi</tag></cell>
+   <cell>contains a highlighted part of the text, e.g. by way of bold, italics, underlining</cell>
+  </row>
+  <row>
+   <cell>&nbsp;&nbsp;&nbsp;<att>rend</att></cell>
+   <cell>specifies how the highlighted text is rendered, e.g. by way of italics</cell>
+  </row>
+</table>
+
+<p>Using these elements and attributes to describe the structure of the text, the manuscript can be transcribed straight away:</p> 
+
+<p><egXML><![CDATA[<head>Passio et miracula beati Olavi></head>
+
+<div type="section" n="1">
+  <p><hi rend="blue">R</hi>egnante illustrissimo rege Olauo
+  apud Noruuegiam, que est terra pregrandis uersus aquilonem 
+  locata, a meridie Daciam habens, eandem ingressi sunt terram
+  pedes euuangelizancium pacem, euuangelizancium bona.</p>
+</div>
+
+<div type="section" n="2">
+  <p>Hactenus sacrilegis ydolorum mancipate ritibus et 
+  supersticiosis erroribus deluse nationes ille ueri Dei cultum
+  et fidem audierant; audierant quidem, set multi suscipere 
+  contempserant.</p>
+</div>
+
+<div type="section" n="3">
+  <p>Sicut enim loca aquiloni proxima inhabitabant, ita 
+  familiarius eas possederat et tenaciori glacie 
+  infidelitatis astrinxerat aquilo ille, a quo panditur omne 
+  malum super uniuersam faciem terre, et a cuius facie ollam 
+  succensam uidet Ieremias, et qui in Ysaia iactanter profert:</p>
+</div>
+
+<div type="section" n="4">
+  <p><quote>Super astra celi exaltabo solium meum, sedebo in 
+  monte testamenti in lateribus Aquilonis.</quote></p>
+</div>]]></egXML>
+      </p>
+   
+<p>(Adapted from an edition by Lars Boje Mortensen, University of Bergen. Cf. also the edition by <ref target="HB2_literature.xml">Frederick Metcalfe 1881</ref>.)</p>
+
+<quote>(When the illustrious King
+&Oacute;l&aacute;fr ruled in Norway, a vast country located towards
+the north and having Denmark to the south, there entered into that
+land the feet of them that preach the gospel of peace and bring glad
+tidings of good things. The peoples of that country, previously
+subject to the ungodly rites of idolatry and deluded by superstitious
+error, now heard of the worship and faith of the true God &ndash; heard
+indeed, but many scorned to accept. Living in a region close to the
+north, it was the same north, from which comes every evil over the
+whole face of earth, that had possessed them all the more inwardly
+and gripped them all the more firmly in the ice of unbelief. From its
+face Jeremiah saw a seething pot; and in Isaiah there is the boaster
+who says, "I will exalt my throne above the stars of God: I will sit
+also upon the mount of the congregation, in the sides of the north.")
+&#91;Translated by <ref target="HB2_literature.xml">Devra
+   Kunin 2001</ref>.&#93;</quote>
+
+<p>The transcription above is easily
+readable, even in its <q>raw</q> XML format. In fact, if it was stripped
+for all elements, it would look like a plain ASCI text from any word
+processor:</p>
+
+<quote>Passio et miracula beati
+   Olavi Regnante illustrissimo rege Olauo apud Noruuegiam, que est
+   terra pregrandis uersus aquilonem locata, a meridie Daciam habens,
+   eandem ingressi sunt terram pedes euuangelizancium pacem,
+   euuangelizancium bona. Hactenus sacrilegis ydolorum mancipate
+   ritibus et supersticiosis erroribus deluse nationes ille ueri Dei
+   cultum et fidem audierant; audierant quidem, set multi suscipere
+   contempserant. Sicut enim loca aquiloni proxima inhabitabant, ita
+   familiarius eas possederat et tenaciori glacie infidelitatis
+   astrinxerat aquilo ille, a quo panditur omne malum super uniuersam
+   faciem terre, et a cuius facie ollam succensam uidet Ieremias, et
+   qui in Ysaia iactanter profert: Super astra celi exaltabo solium
+   meum, sedebo in monte testamenti in lateribus Aquilonis.</quote>
+
+<p>With the help of an XML style
+sheet, the text could be displayed with a certain amount of
+formatting on the basis of the mark-up. For example, the title
+(<tag>head</tag>) might be shown in bold type, the initial might be
+rendered with an enlarged capital in blue colour, sections might be
+set out in separate paragraphs and numbered in bold type, and the
+Biblical quotation could be given in italics:</p>
+
+
+<quote><hi rend="bold">Passio et miracula beati
+   Olavi</hi>
+<lb/>
+   <hi rend="bold">1.</hi>
+   <hi rend="blue initial">R</hi>egnante
+   illustrissimo rege Olauo apud Noruuegiam, que est terra pregrandis
+   uersus aquilonem locata, a meridie Daciam habens, eandem ingressi
+   sunt terram pedes euuangelizancium pacem, euuangelizancium
+      bona.<lb/>
+      <hi rend="bold">2.</hi> Hactenus sacrilegis ydolorum mancipate ritibus et
+   supersticiosis erroribus deluse nationes ille ueri Dei cultum et
+   fidem audierant; audierant quidem, set multi suscipere
+      contempserant.<lb/>
+      <hi rend="bold">3.</hi> Sicut enim loca aquiloni proxima inhabitabant, ita
+   familiarius eas possederat et tenaciori glacie infidelitatis
+   astrinxerat aquilo ille, a quo panditur omne malum super uniuersam
+   faciem terre, et a cuius facie ollam succensam uidet Ieremias, et
+      qui in Ysaia iactanter profert:<lb/>
+      <hi rend="bold">4.</hi> <hi rend="italic">Super astra celi exaltabo solium meum, sedebo in
+   monte testamenti in lateribus Aquilonis.</hi>
+</quote>
+
+<p>Medieval Nordic texts need not
+contain any more mark-up than in this example, and they will still be
+fully valid XML. However, in order to comply with the Menota standard, it should follow the TEI guidelines. A few more elements and attributes will be needed for this:</p>
+
+<table>
+ <row role="label">
+   <cell>Element / attribute</cell>
+   <cell>Contents</cell>
+</row>
+<row>
+   <cell><tag>TEI</tag></cell>
+   <cell>states that the contents of this element is a single TEI conformant document, comprising a header and a text</cell>
+  </row>
+  <row>
+   <cell><tag>teiHeader</tag></cell>
+   <cell>contains structured information on the text according to the recommendations by TEI</cell>
+  </row>
+  <row>
+   <cell><tag>text</tag></cell>
+   <cell>contains the text</cell>
+  </row>
+  <row>
+   <cell><tag>body</tag></cell>
+   <cell>contains the body of the text, excluding and front or back matter</cell>
+  </row>
+</table>
+
+<p>The basic structure
+of the file is thus quite simple:</p>
+
+<egXML><![CDATA[<?xml  version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+      xmlns:me="http://www.menota.org/ns/1.0">
+   <teiHeader>
+      Here goes structured information on the text and the transcription.
+   </teiHeader>
+   <text xml:lang="en">
+      <body>
+         Here goes the text as exemplified above.
+      </body>
+   </text>
+</TEI>]]></egXML>
+
+<p>For an example of a Menota header, please go to <ref target="HB2_E_menotaheader.xml">Appendix E</ref>.</p>
+
+<p>It is important to keep in mind
+that a transcription may be as straightforward and readable as this,
+and it would be fully acceptable as a Menota text.</p>
+
+<p>However, not all primary sources
+are equally straightforward to transcribe. For most vernacular
+sources, entities will be required to deal with additional characters,
+and we might also like to transcribe the text at a more diplomatic
+level than in this example. For example, the last word on the very
+first line is transcribed as <q>apud</q>. In the facsimile above, we see
+that it has been written with the letters <q>ap</q> and a superlinear
+abbreviation mark. Some transcribers might want to record the fact that there is an abbreviation mark at this point, or they might want to show how this abbreviation should be expanded. Two elements will be needed for this:</p>
+
+<table>
+ <row role="label">
+   <cell>Element / attribute</cell>
+   <cell>Contents</cell>
+</row>
+  <row>
+   <cell><tag>ex</tag></cell>
+   <cell>contains the text of an expanded abbreviation</cell>
+  </row>
+  <row>
+   <cell><tag>am</tag></cell>
+   <cell>contains an abbreviation marker</cell>
+  </row>
+</table>
+
+<p>The characters that should be added, i.e. the expansion of the abbreviation, will be contained in the <tag>ex</tag> element:</p>
+   
+<egXML><![CDATA[ap<ex>ud</ex>]]></egXML>
+
+<p>Other transcribers would like to
+encode the actual abbreviation mark being used, in this case a
+superlinear bar. This might be encoded with the help of an entity
+such as <q>&amp;bar;</q>, meaning <q>a horizontal bar placed above the
+preceding character</q>. The element <tag>am</tag> (for <q>abbreviation marker</q>) indicates that the bar is an abbreviation mark, and not, for example, a sign for length (i.e. a macron) or a diacritical sign (like the bar sometimes used above <q>u</q> to distinguish this character from <q>n</q>):</p>
+
+<egXML><![CDATA[ap<am>&bar;</am> ]]></egXML>
+
+<p>Yet other transcribers would like
+to encode the fact that the word has been abbreviated with a
+superlinear bar AND that this abbreviation should be expanded as <q>ud</q>
+in this particular context. The superlinear bar is highly ambigious;
+in this short extract alone, it should be expanded as <q>m</q> in
+<q>terra<hi rend="bold">m</hi></q> (l. 4), <q>ut</q> in <q>Sic<hi rend="bold">ut</hi></q> (l. 9), <q>ni</q> in
+<q>e<hi rend="bold">ni</hi>m</q> (l. 9), <q>n</q> in <q>om<hi rend="bold">n</hi>e</q> (l. 12).</p>
+
+<!-- Suppressed, too reptitive. OEH 20.05.2008
+
+<p>These examples show that a text can be transcribed on more than one level, and that the amount of information on each level varies. Section 3.2 will discuss three prototypical 
+levels of text representation, while sections 3.3 and 3.4 will show how a digital transcription can reflect one or more levels at the same time.</p>
+
+-->
+
+</div><div><head xml:id="sec3.2">3.2 Levels of text representation</head>
+
+<p>We believe that there are three
+focal levels of text representation for medieval Nordic texts and
+suggest that a transcription should reflect at least one of these
+levels. Furthermore, a transcription should be easily expandable so
+as to accommodate one or two additional levels. Since these levels have not been defined by TEI, they have been added in the Menota namespace, <q>me</q>:</p>
+
+<table>
+ <row role="label">
+   <cell>Element / attribute</cell>
+   <cell>Contents</cell>
+</row>
+  <row>
+   <cell><tag>me:facs</tag></cell>
+   <cell>contains a reading on a facsimile level</cell>
+  </row>
+  <row>
+   <cell><tag>me:dipl</tag></cell>
+   <cell>contains a reading on a diplomatic level</cell>
+  </row>
+<row>
+   <cell><tag>me:norm</tag></cell>
+   <cell>contains a reading on a normalised level</cell>
+  </row>
+</table>
+
+	<p><hi rend="bold">Note</hi>: The <q>me</q> prefix can only be used with a RELAX NG schema. It must be left out in texts which will be validated against a DTD.</p>
+
+<p>This time, we shall
+use a short extract from an Old Icelandic manuscript, AM 233 a fol
+(first quarter of the 13th century) as an example:</p>
+
+   <p><figure><graphic url="ch3/AM233afol-28v,1-2.gif" width="800" height="117"/><figDesc n="3.2">AM 233a fol, 28v, l. 1-2. This is a fragment of <title>Ni&eth;rstigningar saga</title>, an Old Norse translation of the apocryphal <title>Evangelium Nicodemi</title>. A fuller example can be found in  <ref target="HB2_literature.xml">Haugen and Pichler 2005</ref>, 220-22.</figDesc></figure></p>
+   
+<div><head xml:id="sec3.2.1">3.2.1 Facsimile level</head>
+
+<p>On this level, the text is
+transcribed character by character, line by line. Allographic
+variation is to a great extent reflected in the transcription, and
+abbreviation marks are copied without any expansion. Thus, the text
+in fig. 3.2 would be transcribed as</p>
+
+<egXML><![CDATA[&drot;&osup;ttin&bar; vá&rscapdot; bau&drot; michaele ho&fins;&dsup; engli.
+at &fins;ylg&ra; a&drot;am ok &aolig;llu&bar; helgu&bar; &hbar;s at lei&drot;a
+þa i &pbardes;a&drot;i&slong;um hína &fins;ornu.]]></egXML>
+   
+<p>and displayed (subject to
+an appropriate font) as</p>
+
+   <p><figure><graphic url="ch3/AM233afol-facs.gif" width="433" height="66"/>
+      <figDesc n="3.3">Facsimile rendering of the example text in fig. 3.2 using the font Andron.</figDesc></figure></p>
+   
+<p>At the facsimile level, the transcriber ought to encode the manuscript
+exactly as it reads, even if it contains obvious mistakes.
+Corrections can be made by inserting a note, or it can be left to the
+diplomatic or normalised level.</p>
+
+</div><div><head xml:id="sec3.2.2">3.2.2 Diplomatic level</head>
+
+<p>On this level, not all types of
+allographic variation are transcribed, and line divisons are usually
+not shown in the display of the transcription. In the transcription, expansions are set out by the
+element <tag>ex</tag> and in the display usually by italics.
+The text would then be transcribed as</p>
+
+<egXML><![CDATA[d<ex>ro</ex>ttin<ex>n</ex> vá&rscapdot; baud michaele hof<ex>ud</ex> engli.
+at fylg<ex>ia</ex>. adam ok &aolig;llu<ex>m</ex> helgu<ex>m</ex> h<ex>an</ex>s
+at leida þa i p<ex>ar</ex>adi&slong;um hína fornu.]]></egXML>
+   
+   <p>and displayed as (now disregarding the line break)</p>
+
+   <p><figure><graphic url="ch3/AM233afol-dipl.gif" width="452" height="59"/>
+      <figDesc n="3.4">Diplomatic rendering
+         of the example text in fig. 3.2 (in Andron).</figDesc></figure></p>
+
+</div><div><head xml:id="sec3.2.3">3.2.3 Normalised level</head>
+
+<p>On this level, the orthography is
+regularised according to the norm found in grammars and dictionaries
+for the language in question. For Old Icelandic and Old Norwegian
+texts we recommend the normalisation rules in <ref target="HB2_literature.xml">AMKO's
+dictionary</ref> (ONP).
+Abbreviations are expanded silently, and punctuation is regularised as
+well. Thus, the text in fig. 3.1 would be transcribed as</p>
+
+<egXML><![CDATA[Dróttinn várr bauð Michaele h&oogon;fuðengli at fylgja Adam ok &oogon;llum
+helgum hans at leiða þá í paradísum hina fornu.]]></egXML>
+
+<p>and displayed as</p>
+
+   <p><figure><graphic url="ch3/AM233afol-norm.gif" width="448" height="57"/>
+      <figDesc n="3.5">Normalised rendering
+   of the example text in fig. 3.2 (in Andron).
+      </figDesc></figure></p>
+
+<p>Note that at this level all characters have been encoded using official Unicode code points. So rather than encoding the character <q>ð</q> with the entity <q>&amp;eth;</q> it has been encoded simply as <q>ð</q>, using its code point in Latin-1 Supplement, 00F0. The only exception here is the <q>o ogonek</q>, which for practical purposes has been encoded with the entity <q>&amp;oogon;</q>, even if this character, too, has a Unicode code point, 01EB in Latin Extended-B. A suitable keyboard layout is helpful for the actual typing of some of these characters, but in general, all Medieval Nordic texts can be encoded without resorting to entities as long as the text is rendered on a normalised level. Many Old Swedish and Old Danish texts can also be encoded with a minimal amount of character entities.</p>
+
+<p>For a more detailed discussion of
+the three levels discussed here, please refer to <ref target="HB2_literature.xml">Haugen
+2004</ref>.</p>
+
+<p>For keyboard layouts and for an overview of Unicode code charts, please see the <ref target="http://www.mufi.info/" type="external">MUFI site</ref>.</p> 
+</div>
+</div>
+
+
+<div><head xml:id="sec3.3">3.3 Single-level transcriptions</head>
+
+<p>A transcription of a Medieval Nordic manuscript may be as simple as the Latin example in section 3.1 above. In a typical 
+diplomatic edition, abbreviations are expanded and sometimes proper names are capitalised. The text in fig. 3.2 above could thus be encoded as: 
+</p>
+
+<egXML><![CDATA[<p>Drottinn várr baud Michaele hofud engli. at fylgia. Adam ok &aolig;llum
+helgum hans at leida þa i paradisum hína fornu.</p>]]></egXML>
+
+<p>Here, abbreviations have been expanded silently and proper names capitalised, but the punctuation and orthography remain unchanged. 
+The small capital <q>R</q> with a dot above in the second word has been interpreted as a geminate, <q>rr</q>, while the ligature of <q>a</q> and <q>o</q> is transcribed with an entity, 
+since this character was not part of the Unicode Standard as of v. 5.0. A correct display of this character thus requires a specific font with a glyph in the Private Use Area (as explained in <ref target="HB2_ch2.xml">ch. 2</ref>).</p>
+
+<p>If the text is going to be annotated on a lexicographical level, we recommend that each word is contained in a <tag>w</tag> element. Although not strictly necessary, it is also helpful to identify the level of transcription within each word. This is especially so if the text is going into an archive of texts transcribed on several levels. In the following example, it is clearly stated that each word has been transcribed on a diplomatic level, identified by the <tag>me:dipl</tag> element:</p>
+
+<egXML><![CDATA[<w>
+  <me:dipl>d<ex>ro</ex>ttin<ex>n</ex></me:dipl>
+</w>
+
+<w>
+  <me:dipl>várr</me:dipl>
+</w>
+
+<w>
+  <me:dipl>baud</me:dipl>
+</w>
+
+<w>
+  <me:dipl>michaele</me:dipl>
+</w>
+
+<w>
+  <me:dipl>hof<ex>ud</ex></me:dipl>
+</w>
+
+<w>
+  <me:dipl>engli</me:dipl>
+</w>
+
+etc.]]></egXML>
+
+<p>As a rule of thumb, if one removes all mark-up in a single-level transcription, the result is a fully readable text. The text of the example above is thus simply:</p>
+
+<egXML><![CDATA[drottinn várr baud michaele hofud engli]]></egXML>
+
+<p>This is equivalent to saving a formated word processor file in a Text Only format. The text string is unchanged, but all information contained in the mark-up is lost.</p>
+
+</div>
+
+
+<div><head xml:id="sec3.4">3.4 Multi-level transcriptions</head>
+
+<p>The transcriptions in <ref target="#sec3.2">ch. 3.2</ref> each
+reflect a specific level of text representation. However, we believe
+that the transcription should be expandable to accommodate more than
+one level. We recommend using the <tag>w</tag> element to group each
+lexical word in the transcription, as explained in <ref target="HB2_ch2.xml#sec2.3">ch.
+2.3</ref>. Within each <tag>w</tag> element, the <tag>choice</tag> element should be used to group 
+levels of text representation. Each level is identified by descriptive elements: <tag>me:facs</tag>
+for the facsimile rendering (in which the element <tag>am</tag> is used for abbreviations), <tag>me:dipl</tag> for the diplomatic
+rendering (in which the element <tag>ex</tag> is used for expansions), and
+<tag>me:norm</tag> for the normalised rendering. This makes for a
+parallel encoding, in which up to three text strings co-exist within
+the boundaries of the <tag>w</tag> elements. Similarly, punctuation marks appear within the <tag>me:punct</tag> element.</p>
+
+
+<table>
+ <row role="label">
+   <cell>Element / attribute</cell>
+   <cell>Contents</cell>
+</row>
+  <row>
+   <cell><tag>choice</tag></cell>
+   <cell>groups a number of alternative encodings for the same point in the text</cell>
+  </row>
+  <row>
+   <cell><tag>me:punct</tag></cell>
+   <cell>contains a punctuation mark</cell>
+  </row>
+</table>
+
+	<p><hi rend="bold">Note</hi>: The <q>me</q> prefix can only be used with a RELAX NG schema. It must be left out in texts which will be validated against a DTD.</p>
+
+<p>For the sake of
+clarity, in the following example we have set out each word in a paragraph of its
+own:</p>
+
+<egXML><![CDATA[<w>
+   <choice>
+      <me:facs>&drot;<am>&osup;</am>ttin<am>&bar;</am></me:facs>
+      <me:dipl>d<ex>ro</ex>ttin<ex>n</ex></me:dipl>
+      <me:norm>Dróttinn</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>vá&rscapdot;</me:facs>
+      <me:dipl>vá&rscapdot;</me:dipl>
+      <me:norm>várr</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>bau&drot;</me:facs>
+      <me:dipl>baud</me:dipl>
+      <me:norm>bauð</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>michaele</me:facs>
+      <me:dipl>michaele</me:dipl>
+      <me:norm>Michaele</me:norm>
+   </choice>
+</w>
+
+
+<w>
+   <choice>
+      <me:facs>ho&fins;<am>&dsup;</am> engli</me:facs>
+      <me:dipl>hof<ex>ud</ex> engli</me:dipl>
+      <me:norm>h&oogon;fuðengli</me:norm>
+   </choice>
+</w>
+
+<me:punct>
+   <choice>
+      <me:facs>.</me:facs>
+      <me:dipl>.</me:dipl>
+      <me:norm></me:norm>
+   </choice>
+</me:punct>
+
+<w>
+   <choice>
+      <me:facs>at</me:facs>
+      <me:dipl>at</me:dipl>
+      <me:norm>at</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>&fins;ylg<am>&ra;</am></me:facs>
+      <me:dipl>fylg<ex>ia</ex></me:dipl>
+      <me:norm>fylgja</me:norm>
+   </choice>
+</w>
+
+<me:punct>
+   <choice>
+      <me:facs>.</me:facs>
+      <me:dipl>.</me:dipl>
+      <me:norm></me:norm>
+   </choice>
+</me:punct>
+
+<w>
+   <choice>
+      <me:facs>a&drot;am</me:facs>
+      <me:dipl>adam</me:dipl>
+      <me:norm>Adam</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>ok</me:facs>
+      <me:dipl>ok</me:dipl>
+      <me:norm>ok</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>&aolig;llu<am>&bar;</am></me:facs>
+      <me:dipl>&aolig;llu<ex>m</ex></me:dipl>
+      <me:norm>&oogon;llum</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>helgu<am>&bar;</am></me:facs>
+      <me:dipl>helgu<ex>m</ex></me:dipl>
+      <me:norm>helgum</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>h<am>&bar;</am>s</me:facs>
+      <me:dipl>h<ex>an</ex>s</me:dipl>
+      <me:norm>hans</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>at</me:facs>
+      <me:dipl>at</me:dipl>
+      <me:norm>at</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>lei&drot;a</me:facs>
+      <me:dipl>leida</me:dipl>
+      <me:norm>leiða</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>þa</me:facs>
+      <me:dipl>þa</me:dipl>
+      <me:norm>þá</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>i</me:facs>
+      <me:dipl>i</me:dipl>
+      <me:norm>í</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs><am>&pbardes;</am>a&drot;i&slong;um</me:facs>
+      <me:dipl>p<ex>ar</ex>adi&slong;um</me:dipl>
+      <me:norm>paradísum</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>hína</me:facs>
+      <me:dipl>hína</me:dipl>
+      <me:norm>hina</me:norm>
+   </choice>
+</w>
+
+<w>
+   <choice>
+      <me:facs>&fins;ornu</me:facs>
+      <me:dipl>fornu</me:dipl>
+      <me:norm>fornu</me:norm>
+   </choice>
+</w>
+
+<me:punct>
+   <choice>
+      <me:facs>.</me:facs>
+      <me:dipl>.</me:dipl>
+      <me:norm>.</me:norm>
+   </choice>
+</me:punct>]]></egXML>
+
+<p>Note: The sequence <q>hofud engli</q> has been analysed as a single word and encoded as suggested in <ref target="HB2_ch2.xml#sec2.3.2">ch. 2.3.2</ref>. Punctuation marks have been set out in the <tag>me:punct</tag> element; for a fuller discussion, see <ref target="HB2_ch4.xml#sec4.8">ch. 4.8</ref>.</p>
+
+<p>The display of the transcription is
+made by style sheets in XML:</p>
+
+<p>(a) the facsimile level is the
+content of the <tag>me:facs</tag> element, in which the <tag>am</tag> element describes abbreviation markers<lb/>
+(b) the diplomatic level is the content of the <tag>me:dipl</tag>
+element, in which the <tag>ex</tag> element describes expanded abbreviations<lb/>
+(c) the normalised level is the content of the <tag>me:norm</tag>
+element</p>
+
+<p><figure><graphic url="ch3/AM233afol-all-levels.gif" width="455" height="192"/>
+      <figDesc n="3.6">A display of all levels contained in the multi-level transcriptions above.</figDesc></figure></p>
+
+<p>As stated above, the elements <tag>me:facs</tag>,
+<tag>me:dipl</tag> and <tag>me:norm</tag> are not defined in TEI,
+but are part of the namespace we have defined for Menota texts. Please see the schemas in
+<ref target="HB2_D_schemas.xml">Appendix D</ref>.</p>
+
+<p>The three levels discussed here can be seen as <hi rend="bold">focal</hi> in the sense that they are typical and often used levels of  text representations in Medieval Nordic editions. A number of additional levels can be defined, e.g. a <tag>me:pal</tag> level for an even more detailed paleographical encoding of the text. This level has been included in the Menota schemas, but is not seen as one of the focal levels.</p>
+
+
+</div>
+
+      </body>
+      </text></TEI>

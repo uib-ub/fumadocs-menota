@@ -27,6 +27,19 @@ if [[ $segment == "all" || $segment == "ml" ]]; then
     done
 fi
 
+if [[ $segment == "all" || $segment == "hb2" ]]; then
+    echo "Compiling handbook v2:"
+    for file in $sourcedir/handbok/v2/*; do
+        if [[ -f "$file" && "$file" == *.xml ]]; then
+            sourceID=$(basename "$file" .xml)
+            if [[ "$sourceID" =~ ^HB2_ ]]; then
+                compile handbok/v2/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${sourceID}.mdx version="2"
+            fi
+        fi
+    done
+    mv $contentdir/handbook/v2/HB2_index.mdx $contentdir/handbook/v2/index.mdx
+fi
+
 if [[ $segment == "all" || $segment == "hb3" ]]; then
     echo "Compiling handbook v3:"
     for file in $sourcedir/handbok/v3/*; do

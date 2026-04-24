@@ -1,0 +1,1035 @@
+---
+title: "1: Text editing and encoding"
+author:
+ - Odd Einar Haugen
+changeLog:
+ - date: 2026-04-24
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2016-07-12
+   author: Odd Einar Haugen
+   changes:
+    - "Updated a few links"
+ - date: 2008-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few minor revisions, including correcting quotation marks and fixing links"
+ - date: 2008-05-16
+   author: Odd Einar Haugen
+   changes:
+    - "Replaces the attribute 'sameAs' with 'key'."
+ - date: 2008-05-16
+   author: Odd Einar Haugen
+   changes:
+    - "Final update before publication"
+ - date: 2008-05-14
+   author: Odd Einar Haugen
+   changes:
+    - "Replaced the previous translation of Thrymskvida in ch. 1.3 with the one by Carolyne Larrington (1997)"
+ - date: 2008-02-11
+   author: Tone Merete Bruvik
+   changes:
+    - "Changes some of the examples which here invalid, and removed 'me:' in front of the category and spanTo attributes of the element 'me:textSpan'."
+ - date: 2008-02-07
+   author: Odd Einar Haugen
+   changes:
+    - "Added ch. 1.9 on name spaces and introduced the distinction between various schemes (Relax NG and DTD) in ch. 1.8"
+ - date: 2006-12-15
+   author: Tone Merete Bruvik
+   changes:
+    - "Did some changes to make the samples valid XML."
+ - date: 2006-12-13
+   author: Odd Einar Haugen
+   changes:
+    - "Changed the example from \"Upon Julia's clothes\" to the two first stanzas of \"Þrymskviða\"."
+ - date: 2005-12-27
+   author: Tone Merete Bruvik
+   changes:
+    - "XML version."
+ - date: 2003-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004."
+ - date: 2006-09-21
+   author: Tarrin Wills
+   changes:
+    - "Added new introductory section."
+---
+
+
+# Chapter 1. Text encoding using XML
+
+Version 2.0 (16 May 2008). Links updated 12 July 2016.
+
+## 1.1 What is XML? [#sec1.1]
+
+XML, Extensible Markup Language, is
+a recommendation, endorsed by the [World
+Wide Web Consortium](http://www.w3.org/XML/), which
+defines a simple yet flexible generic syntax for document markup.
+XML, like its predecessor SGML, Standard Generalised Markup Language,
+developed by IBM in the 1970s and 1980s, allows for the definition of
+system-independent methods of representing texts of any kind in
+electronic form.
+
+The term “markup”, originally used
+for the (hand-written) instructions added to a manuscript or
+typescript to indicate to the compositor how the printed text was to
+look in terms of spacing, font size, use of italics and so on, has
+been carried over into electronic document processing to describe the
+codes used to indicate these same features and other aspects of
+processing. A “markup language” is therefore at its most simple a set
+of codes which are used to indicate or “tag” certain features in the
+text, normally for formatting purposes. In most modern software
+packages the markup is generated with little or no conscious effort
+on the part of the user &ndash; in many modern word processing programs,
+such as the ubiquitous Microsoft Word, the user is not even given the
+option of viewing the codes. But they are there: and to see just how
+many one need only open a document produced in, say, Word or
+WordPerfect in a plain text editor such as Notepad. A text of even a
+few short lines will be prefaced by several dozen lines &ndash; possibly
+even pages &ndash; of code.
+
+The problem is that every program
+has its own set of codes, and it is only rarely possible to convert
+files from one to another without at least some loss of formatting.
+And it isn't just the formatting that goes haywire &ndash; any exotic (read
+non-English) characters are also likely to mutate. SGML was
+originally developed in order to avoid these problems by being
+entirely platform independent &ndash; hence G for generalised. It achieves
+this by identifying the logical elements of the document rather than
+specifying the processing to be performed on it: the markup is
+descriptive, in other words, rather than procedural. With descriptive
+markup, the same document can be processed by many different pieces
+of software, each of which can apply different processing
+instructions to those parts of it which are considered
+relevant.
+
+SGML's greatest success has been
+HTML, Hyper-Text Markup Language, the language of the World Wide Web.
+HTML restricts document authors to a finite set of tags, however,
+most of which are presentationally oriented, and is thus
+inappropriate for most things other than web design. XML is
+essentially “trimmed down” SGML. It is not, in other words, a single,
+predefined markup language like HTML: like SGML it is a metalanguage
+&ndash; a language for describing other languages. The syntax is
+essentially the same as SGML, but some of the more complex and lesser
+used options have been removed.
+
+The great advantage of XML is that
+it brings the power and flexibility of SGML to the Web; an XML
+document can be marked up entirely in accordance with the needs of
+the user and the result displayed in a standard web browser (see
+section 1.8 below). The implications for philologists are
+staggering.
+
+In what follows, most of the more
+relevant areas of XML markup are touched upon. For a more thorough
+grounding, one of the many printed handbooks or websites devoted to
+XML should be consulted. A good place to start would be the World
+Wide Web Consortium's own XML pages: [http://www.w3c.org/XML/](http://www.w3c.org/XML/).
+
+
+## 1.2 Appearance vs. structure [#sec1.2]
+
+It is customary, in English and
+most other Western European languages, to use italic type in texts
+printed otherwise in plain roman to set certain things off the rest.
+_Hart's rules for compositors and readers at the University Press,
+Oxford_ (39th ed.), for example, stipulates that the titles of
+books, films, plays, works of art and periodicals (but not chapters,
+shorter poems, articles) should be printed in italic, as should the
+names of ships (but not public houses), words and short phrases in
+foreign languages (other than those, such as quiche and blitzkrieg,
+that have been sufficiently anglicised so as to render this
+unnecessary), stage directions in plays, theorems in mathematical
+works and biological and zoological nomenclature. Although Hart's
+doesn't mention it, italic is also regularly used to indicate
+emphasis, for example in novels: “I most certainly <em>didn't</em> ask
+him to come.” With ordinary word-processing software, all these
+things would be marked up in the same way, i.e. with the relevant
+codes for “italic-on” and “italic-off”. If you think of the computer
+as a glorified typewriter and are only interested in producing copy
+with the correct formatting, fine. If you wish to take advantage of
+the possibilities offered by sophisticated information retrieval
+systems, however, you're in trouble, since a search engine will not
+be able to distinguish foreign words from book titles or the names of
+ships, for the simple reason that procedural markup such as that
+produced by ordinary word-processing software only indicates how
+something is to be displayed, but not why is it to be displayed that
+way. With descriptive markup, on the other hand, elements in the text
+are tagged according to their function &ndash; titles as titles, foreign
+words as foreign words, stage directions as stage directions and so
+on. These can then be processed in whatever way one desires, for
+example displayed in italics. By concentrating on the structure of
+the document rather than its appearance a great many possibilities
+are opened up. Elements in the text can be marked up even where one
+has no desire to format them in any special way. One might wish, for
+example, to tag the names of persons, so that a search for “King George”, 
+for example, would turn up only persons of that name rather
+than vessels or public houses.
+
+## 1.3 Elements [#sec1.3]
+
+The key concept in SGML/XML markup
+is the element. An element is essentially a textual unit, the idea
+being that texts, like houses, are made up of repeated occurrences of
+basic units arranged in a hierarchical structure; longer works in
+prose will be divided into chapters or sections, and these into
+sub-sections and then further into paragraphs, and there also may be
+lists and tables. Works of poetry may be divided into cantos or fits,
+and these into stanzas, and the stanzas into couplets, the couplets
+into lines, the lines into feet etc. The individual sections, whether
+chapters or cantos, will often have headings, which are not strictly
+speaking part of the main text, but nevertheless belong with it.
+Moreover, these elements will only combine in certain ways. A chapter
+will not begin in the middle of a paragraph, for example, or in a
+footnote. In SGML/XML pairs of tags are used to mark off these units,
+a start tag and an end tag, with the text in between being referred
+to as the element's content. Tags are placed within angle brackets,
+with a solidus to indicate an end tag. Chapters in a book, for
+example, could be demarcated by placing a <E>chapter</E> tag at the
+beginning of each one and a corresponding <E>/chapter</E> tag at the
+end, while within each chapter there would be any number of
+paragraphs, tagged, say, <E>paragraph</E>. The way these two
+elements relate to each other hierarchically is determined by the
+<em>schema</em> being used, which in this case would stipulate
+that a <E>chapter</E> must contain one or more <E>paragraph</E>
+elements (more on schemas in [ch. 1.8](#sec1.8) below). SGML/XML syntax is really quite simple: for each element
+there is a declaration enumerating what other elements it may or must
+contain, how many of each, and if there are any constraints on the
+order. The more elements one has in one's system the more
+complicated, and subtle, that system becomes.
+
+Let us take a concrete example, the two
+first stanzas of the Eddic poem _Þrymskviða_, rendered in normalised orthography (for simplicity of display, we are using “o with diaeresis” rather than “o with tail”). The text is based on the edition by Jón Helgason (1955) and the translation is the one by Carolyne Larrington (1996):
+
+<div className="table-plain">
+<table>
+<tbody>
+<tr>
+<td>
+<Quote straight={true}>
+ Reiðr var þá Vingþórr<br/> er hann vaknaði<br/> ok síns hamars<br/> um saknaði,<br/> skegg nam at hrista,<br/> skör nam at dýja,<br/> réð Jarðar burr<br/> um at þreifask. 
+</Quote>
+<Quote straight={true}>
+ Ok hann þat orða<br/> alls fyrst um kvað:<br/> Heyrðu nú, Loki<br/> hvat ek nú mæli,<br/> er eigi veit<br/> jarðar hvergi<br/> né upphimins:<br/> áss er stolinn hamri! 
+</Quote></td>
+<td>
+<Quote straight={true}>
+ (Thor was angry<br/> when he awoke,<br/> and missed<br/> his hammer;<br/> his beard bristled,<br/> his hair stood on end,<br/> the son of Earth<br/> began to grope around.<br/> 
+</Quote>
+<Quote straight={true}>
+ And these were the first words<br/> that he spoke:<br/> “Listen, Loki,<br/> to what I am saying,<br/> what no one knows<br/> neither on earth,<br/> or in heaven:<br/> the hammer of the God is stolen.”)<br/> 
+</Quote></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+The structure of this poem is clear
+enough: it is made up of two stanzas each of which contains eight
+short lines. This structure could be marked up in the following
+way:
+```xml
+<poem>
+  <stanza>
+    <line>Reiðr var þá Vingþórr</line>
+    <line>er hann vaknaði</line>
+    <line>ok síns hamars</line>
+    <line>um saknaði,</line>
+    <line>skegg nam at hrista,</line>
+    <line>skör nam at dýja,</line>
+    <line>réð Jarðar burr</line>
+    <line>um at þreifask.</line>
+  </stanza>
+  <stanza>
+    <line>Ok hann þat orða</line>
+    <line>alls fyrst um kvað:</line>
+    <line>Heyrðu nú, Loki,</line>
+    <line>hvat ek nú mæli,</line>
+    <line>er eigi veit</line>
+    <line>jarðar hvergi</line>
+    <line>né upphimins:</line>
+    <line>áss er stolinn hamri!</line>
+  </stanza>
+</poem> 
+
+```
+
+
+If we abstract from this and
+attempt to describe the structure of poems in general we could say
+that a poem consists of one or more stanzas each of which is made up
+of one or more lines. This structure could be expressed in a Document
+Type Definition as follows:
+```xml
+<!ELEMENT poem         (stanza+)>
+<!ELEMENT stanza       (line+)>
+<!ELEMENT line         (#PCDATA)>
+```
+
+
+The + sign after stanza and line
+means they are required and repeatable, i.e. can occur one or more
+times (a question mark would indicate an optional element, i.e. one
+which can occur zero or one time, while an asterisk would indicate
+that the element was optional and repeatable, i.e. can occur zero or
+more times; if there is no occurence indicator, the element must
+occur once and only once). #PCDATA is “parsed character data”, which
+essentially means any number of valid characters. There is one
+obvious problem with this model, which is that it requires that all
+poems consist of at least one stanza, which is somewhat
+counter-intuitive, since it could be argued that a poem of only one
+stanza is made up only of lines. To remedy this, the content model
+for the poem element could be given as (line+ \| stanza+); the two are
+separated by a vertical bar, the “or” connector, which shows that
+either can be used but not both, and each is marked with a plus sign
+to show that whichever is used, it can be used more than once. A
+poem, in other words, consists either of one or more lines or of one
+or more stanzas (each comprising one or more lines).
+
+A poem will also normally have a
+title and be attributable to an author (even if that author &ndash; as in 
+the case of _Þrymskviða_ &ndash; is the 
+highly prolific “Anon.”). The name of the author will obviously not
+always appear with the poem, however, for example in a series or
+collection, where there are several poems by the same author. These
+could be added by redefining the content model of poem as:
+```xml
+<!ELEMENT  poem (title, author?, (stanza+ | line+))>
+```
+
+
+Here, the pair of elements stanza
+and line are grouped together in round brackets (parentheses) to show
+they are to be treated together; the comma acts as “sequence
+connector”, indicating that the elements/groups must occur in this
+order. In plain prose this means that a poem must have a title, may
+have an author, and then will have either one or more stanzas or one
+or more lines. This is still not entirely satisfactory, however,
+since there will also be poems without titles (haikus for example),
+which would not be allowed with this content model. Nor would it be
+possible to reverse the order of author and title. The content model
+must therefore ideally allow for optional and non-repeatable title
+and author elements which can appear in either order, but only
+preceding the text of the poem itself. In order to allow for this
+kind of flexibility, the schema needs to become slightly more
+complex:
+```xml
+<!ELEMENT poem (((title | author?) | (author | title?)?), 
+                                     (stanza+ | line+))>
+```
+
+
+Here, the two possibilities are
+grouped together in round brackets with an or connector in between &ndash;
+title with an optional author or author with an optional title &ndash; and
+both possibilities are marked as optional.
+
+A simpler way of dealing with this
+might be to define an element called, say, head, with the following
+content model:
+```xml
+<!ELEMENT head (#PCDATA | author | title)*>
+```
+
+
+This would allow one to preface the
+poem with plain text, author and title elements in any combination.
+This allows much greater flexibility, but also reduces greatly the
+amount of control one has over the document. With this content model,
+for example, there would be nothing to prevent one from having more
+than one title.
+
+It is obvious too that a larger
+unit is required in order to accommodate more poems, for example
+&lt;collection&gt;. If one envisaged this collection as an anthology,
+one would probably wish to divide it into sections, in which poems by
+a particular poet were grouped together; in the case of Eddic poems, one might make a division between mythological poems and heroic lays. Each of these sections would have a heading and possibly some prefatory matter, giving information
+on the author. Given the complex structure of all but the simplest
+documents, it is easy to see how a schema can quickly become very
+complicated indeed.
+
+Other elements used in markup have
+less to do with the overall structural hierarchy of the document and
+are more free-floating, i.e. can appear in a variety of contexts. The
+principal use of tagging such as this is to enable searches: one
+marks things so as to be able to find them later. One might, for
+example, wish to indicate that “Vingþórr” in line one of our poem is the
+name of a person:
+```xml
+<line>Reiðr var þá <name>Vingþórr</name></line>
+
+```
+
+
+## 1.4 Attributes [#sec1.4]
+
+Without further information, the
+usefulness of such tagging is sometimes limited. More specific
+information about a particular element instance can be given as an
+attribute. Looking at the stanzas just cited, one might, for example,
+want to add attributes to the elements <E>poem</E> and
+<E>stanza</E>, using convenient typologies to indicate genre, form,
+metre or rhyme-scheme, and a <Att>number</Att> attribute to the stanza
+and line elements. It might also be an advantage to indicate the type
+of name, in order to distinguish personal names from the the names of
+places, ships, swords etc., or perhaps even have a separate
+element <E>person</E>, with attributes such as <Att>gender</Att> and
+<Att>role</Att>:
+```xml
+<line number="1">
+  Reiðr var þá <person gender="male" role="protagonist">Vingþórr</person> 
+</line>
+
+```
+
+
+One might want to identify the
+name in some more precise or uniform way, for example to make clear that “Vingþórr” is identical to the heathen god otherwise known as “Þórr”; this could be done with an attribute called
+<Att>reg</Att>, for “regularised”, as follows:
+```xml
+<person  reg="Þórr">Vingþórr</person>
+```
+
+
+Like elements, attributes are
+declared in the schema, a list of possible attributes (ATTLIST) being
+given for each element; it is also possible to specify what kind of
+value is acceptable for each attribute, and if necessary a default
+value.
+```xml
+<!ELEMENT person (#PCDATA)>
+<!ATTLIST person gender (male | female | unknown) "unknown"
+                 role   CDATA #IMPLIED
+                 reg CDATA #IMPLIED>
+```
+
+
+When publishing this poem one might want to put all names in italics, small caps or another form of emphasis. Reproducing this would be
+an easy matter if all personal names were tagged as such, but the
+real advantage of this kind of tagging is for search purposes. One
+could, for example, search for references to Þórr in all Old Norse poems, regardless of whether he was called Vingþórr, Ásaþórr, Bergþórr, or simply Þórr &ndash; or by a <em>kenning</em> such as “Jarðar burr”.
+
+Attributes such as **type** and
+**subtype** are useful precisely because they allow for searches
+at varying degrees of abstraction. Markup such as the
+following:
+```xml
+I have a <dog>dog</dog>.
+```
+
+
+is all but pointless, since a
+free-text search for the word “dog” would yield the same result. If,
+on the other hand, one moves to a greater level of abstraction, for
+example to:
+```xml
+I have a <animal class="mammalia" order="carnivora" 
+                 family="canidae" genus="canis" 
+                 species="familiaris">dog</animal>.
+```
+
+
+one could search for all animals, all mammals, all carnivores, all dog-like creatures and finally all
+dogs (wild and domestic), depending on how widely one wished to cast
+one's net. The use of standard international typologies such as this
+also allows for cross-linguistic searches.
+
+## 1.5 Entities [#sec1.5]
+
+The aspects of SGML/XML discussed
+so far are all concerned with the markup of structural elements
+within the document. SGML/XML also provides a mechanism for encoding
+and naming parts of the document's content: through entities. An
+entity is a kind of shorthand, a way of stating that a particular
+string of characters in the document should be replaced when the
+document is processed by some other string; this other string can be
+of any length, from a single character to a separate file containing
+millions of bytes, for example a text file or digital image. The name
+of the entity (entity reference) is placed between an ampersand and a
+semicolon: &amp;entityname;. Such entities, which are known as
+General Entities, are defined in an external entity set which is itself
+referenced in the schema being used (see appendix D for examples). A simple
+declaration for a general entity looks like this:
+```xml
+<!ENTITY vth "Vingþórr">
+```
+
+
+Here, whenever the processing
+software (a parser or browser) encounters the entity &amp;vth; it
+replaces it with the text “Vingþórr”. In the case of our single
+poem, there is obviously no real advantage to treating the name of
+the protagonist in this way, but in longer documents or collections of
+documents it can be an extremely efficient way of dealing with
+repeated content. Entities may also contain XML markup (provided it
+is well-formed) as well as text:
+```xml
+<!ENTITY vth "<god type='áss'>Vingþórr</god>">
+```
+
+
+An entity can also refer to an
+external file, as in the following example: 
+```xml
+<!ENTITY chapter1 SYSTEM "chapter1.xml">
+```
+
+
+Such entities are called system
+entities: instead of the replacement text, the SYSTEM keyword and a
+relative or absolute URL are given. The processing software will then
+replace the entity with the document found at the address given, i.e.
+insert that document into the existing document. The resulting
+document must be well-formed XML, so one must ensure that the
+document to be inserted is itself well-formed (although it need not
+have a single root element) and does not for example contain a
+prologue (i.e. XML and/or DOCTYPE declaration).
+
+A third type of entities are called
+parameter entities; these are used inside markup declarations and
+need not concern us here. 
+
+Entities are particularly useful
+for providing descriptive mappings for non-standard (i.e.
+non-English) characters, such as the accented vowels (“í”,
+“ê”, “ä” etc.) used in many European languages, the German
+“ß”, Icelandic “Þ” or Danish and Norwegian “ø”, which
+are notoriously non-portable. There are standard entity sets for
+characters used in the western-European languages (ISOlat1 and
+ISOlat2), as well as character sets for Greek (ISOgrk1), Cyrillic
+(ISOcyrl1) and other alphabets. The Unicode standard covers all the
+world's languages, living and dead, and also allows for user-defined
+characters; the current version 5.0 contains over 97,000 characters. Each
+of these characters is assigned a unique code point, which can be
+encoded in a variety of ways. The most common, mentioned above, is
+UTF-8. Numerical character references are either decimal or
+hexidecimal; decimal references begin with an ampersand and the
+number sign or hash mark (#), to which hexidecimal references add an
+x. Thus the hexidecimal character reference for the letter þ is
+&amp;#x00FE;, while the decimal reference is &amp;#254;. These
+numerical character references are supported by standard browsers and
+do not need to be defined specially in the schema. One may, however,
+prefer to use entities which are more immedieately intelligible to
+humans, for reasons of proof-reading or whatever, for example
+“&amp;thorn;” for “þ”. It is a simple matter to define characters
+as entities, giving as the replacement text the numerical character
+reference.
+```xml
+<!ENTITY thorn "&#x00FE;">
+```
+
+
+Entity references can also be used
+for characters required for specific kinds of texts; the producer of
+a diplomatic text edition might want to distinguish between single
+and two-storey a, for example, by using separate entities. These
+entities could have the same replacement text, and thus appear
+identical when displayed, but still be available for
+search purposes.
+
+Entities for Old Norse special
+characters are defined, with their Unicode values, in
+[ch.
+5](/handbook/v2/HB2_ch5) and [ch.
+6](/handbook/v2/HB2_ch6). See also [Appendix A](/handbook/v2/HB2_A_characters).
+
+## 1.6 Putting the pieces together [#sec1.6]
+
+These, then, are the basic parts of
+a SGML/XML document. The key is the <em>schema</em>, in which the elements, with
+their attributes, are defined in terms both of their content and
+their relationship to other elements, and entities or entity sets are
+defined or referenced. In this handbook, we offer two closely related schemas, a Document Type Definition (DTD) schema and a RELAX NG schema. As of v. 2.0 of the handbook we recommend the RELAX NG schema, which is more flexible, yet at the same time somewhat stricter than a DTD. Those who are familiar with a DTD will not find the change dramatic at all.
+
+Anyone can, if he or she so wishes, devise a
+schema to meet whatever encoding needs he or she may have. A host of XML
+authoring tools, parsers, browsers and search engines are available,
+many for free over the web. If all you want to do is make a
+searchable list of your CD collection, for instance, it is a
+relatively simple matter to create your own schema. Most people will
+prefer to use an existing application, however. As was said, the most
+successful implementation of SGML to date is HTML (the XML version is
+known as XHTML). But HTML is not flexible enough to deal with all but
+the most basic of texts: there simply aren't enough elements. Another
+fundamental weakness of HTML is that it has, despite its origins in
+SGML, decidedly procedural (rather than descriptive) tendencies, in
+that many elements are used for the effect they will produce when the
+document is displayed rather than to mark up structural features.
+&lt;p&gt;, for paragraph, for example, is used to give white space,
+rather than necessarily indicating the beginning of a paragraph, and
+&lt;ul&gt;, for unordered (i.e. unnumbered) list, is frequently used
+to produce indentation rather than for lists.
+
+The first stanza of _Þrymskviða_, marked up in
+HTML, might look like this:
+```xml
+<html>
+  <body>
+    <h2>Þrymskviða</h2>
+    <h3>Anonymous</h3>
+    <p>Reiðr var þá <i>Vingþórr</i><br>
+       er hann vaknaði<br>
+       ok síns hamars<br>
+       um saknaði,<br>
+       skegg nam at hrista,<br>
+       skör nam at dýja,<br>
+       réð <i>Jarðar burr</i><br>
+       um at þreifask.<br>
+     </p>
+  </body>
+</html>
+```
+
+
+Marked-up in XML, the poem might look
+like this (referring to a DTD schema):
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE poem SYSTEM "poem.dtd" [
+]>
+<poem type="eddic" subtype="epic-dramatic">
+   <title>Þrymskviða</title>
+   <author>Anonymous</author>
+   <stanza number="1" form="fornyrðislag">
+      <line number="1">Reiðr var þá 
+        <person reg="Þórr">Vingþórr</person></line>
+      <line number="2">er hann vaknaði,</line>
+      <line number="3">ok síns hamars</line>
+      <line number="4">um saknaði,</line>
+      <line number="5">skegg nam at hrista,</line>
+      <line number="6">skör nam at dýja,</line>
+      <line number="7">réð <person reg="Þórr">Jarðar burr</person></line>
+      <line number="8">um at þreifask.</line>
+   </stanza>
+</poem>
+```
+
+
+Note that in this example, “Vingþórr” has been indentified as Þórr, and the same has the kenning “Jarðar burr”, literally “son of Earth (the name of Þórr's mother)”. This is one of several ways of facilitating references in the text.
+
+Displayed in a browser, there would
+not necessarily be any difference between this and the same text
+marked-up in HTML, but the underlying information is far greater.
+From the point of view of a search engine, all that can be said about
+the HTML text is that it consists of one paragraph with
+eight line breaks, but there is no indication as to why this
+should be, i.e. there is nothing that says “this is a poem”, “this is
+a stanza”, “this is a line of verse”. The words “Vingþórr” and “Jarðar burr”, in the same
+way, will be rendered in italics, but there is nothing which
+indicates that they are referring to a person, and, in fact, to the same person.
+
+The first line of our XML document
+is the XML declaration, which tells any processing software that the
+document is in XML; it is not strictly speaking necessary to have an
+XML declaration, since any XML-aware software can work out for itself
+whether a document is in XML or not (the *.xml file extension also
+does this), but every XML document should ideally begin with one. The
+value of the <Att>version</Att> attribute is always "1.0"; it is
+possible that there will be further versions. The
+other two attributes are optional: <Att>encoding</Att>, which specifies
+which encoding is to be used (the variable length encoding of the
+Unicode character set, UTF-8, is assumed by all the standard
+browsers), and <Att>standalone</Att>, the possible values for which are
+"yes" and "no", which indicates whether the document makes use of an
+external schema. XML documents do not in fact require a schema, provided
+they are “well formed”, i.e. do not contain any errors in syntax
+(elements which overlap or are opened but not closed etc.); in cases
+where there is no schema the value of the <Att>standalone</Att> attribute
+should be "yes". If the attribute is omitted, the value "no" is
+assumed. The second line, following the XML declaration, is the reference to the schema being used, in this case a
+Document Type Declaration. This line gives the root element (also called
+the document element), i.e. the “outermost” element inside which all
+other elements in the document are contained, in our case collection,
+and states which schema is to be used, given either as a relative or
+absolute URL, i.e. a local file name or a web address. The DTD schema
+referred to in the Document Type Declaration, “poem.dtd”, now looks
+like this:
+```xml
+<!ELEMENT poem (((title, author?) | (author | title?)?), 
+                                    (stanza+ | line+))>
+<!ATTLIST poem type     CDATA #IMPLIED
+               subtype  CDATA #IMPLIED>
+<!ELEMENT author (#PCDATA) >
+<!ATTLIST author norm   CDATA #IMPLIED
+                 reg    CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT stanza (line+)>
+<!ATTLIST stanza number CDATA #IMPLIED
+                 type   CDATA #IMPLIED
+                 form   CDATA #IMPLIED>
+<!ELEMENT line (#PCDATA | person)*>
+<!ATTLIST line number   CDATA #IMPLIED>
+<!ELEMENT person (#PCDATA)>
+<!ATTLIST person gender (male | female | unknown) "unknown"
+                 role   CDATA #IMPLIED
+                 reg CDATA #IMPLIED>
+```
+
+
+A schema, as was said, defines the
+structure of the document, and is thus like a grammar, detailing the
+elements which can appear in the text and their hierarchical
+relationship to each other. In order to ensure that this is done
+correctly, every encoded text needs to be checked against the schema, if
+there is one, or checked for “well-formedness” if there isn't. A
+computer program called a parser runs through the encoding and gives
+an error message if there are errors or inconsistencies in the
+markup, e.g. if elements are not opened and closed correctly, or used
+in the wrong place, or if elements overlap. If the elements in a
+document are correctly opened and closed, and non-overlapping, the
+document is called **well-formed**; a parser can determine
+“well-formedness”, as was mentioned above, without recourse to a schema.
+If, in addition, the content types of elements, the nesting of
+elements and the use of attributes are all done according to the
+specification of the schema, then the document is not only well-formed,
+but also **valid**.
+
+Validation only checks the markup &ndash;
+not the content &ndash; of the document. A document can consist entirely of
+gibberish and still be valid &ndash; as, indeed, can a document with no
+content at all. The correctness of the content is still
+the responsibility of the transcriber.
+
+XML-aware software, such as
+&lt;oXygen/&gt;, SoftQuad's XMetaL or XMLSpy, generally comes with a built-in
+validator (see [Appendix C](/handbook/v2/HB2_C_editors)).
+Separate validator programs are also available.
+
+## 1.7 The Text Encoding Initiative [#sec1.7]
+
+The most widely used SGML/XML
+implementation for more sophisticated text encoding is that devised
+by the Text Encoding Initiative (TEI), an international and
+interdisciplinary standard for the preparation and interchange of
+electronic texts. The TEI began with a planning conference which took
+place at Vassar College in New York on 12-13 November 1987. The
+participants agreed on both the desirability and feasibility of
+creating a common encoding scheme for use both in creating new
+documents and in exchanging existing documents among text and data
+archives, and the TEI began the task of developing a draft set of
+Guidelines for Electronic Text Encoding and Interchange, with working
+committees comprising scholars from all over North America and Europe
+drafting recommendations on various aspects of the problem. These
+were integrated into a first public draft, TEI P1 (P for “Proposal”),
+published in June 1990. A second draft (TEI P2) followed in 1992 and
+1993, and the first official version of the guidelines (TEI P3) was
+published in May 1994. The next version, TEI P4, was released in June 2002. A fully XML-compliant version of TEI P4 is
+available in electronic form at the [TEI
+Guidelines](http://www.tei-c.org/P4X/) web site; a
+print edition is also available from the University of Virginia
+Press. V. 1.0 of the Menota handbook is conformant with TEI P4. On 1 November 2007, TEI P5 was released in electronic form only at [TEI
+Guidelines](http://www.tei-c.org/Guidelines/P5/). This present version of the Menota handbook is conformant with TEI P5.
+
+The TEI began as a research effort
+cooperatively organised by three scholarly societies (the Association
+for Computers and the Humanities, the Association for Computational
+Linguistics, and the Association for Literary and Linguistic
+Computing), and funded solely by research grants from the US National
+Endowment for the Humanities, the European Union, the Canadian Social
+Science Research Council, the Mellon Foundation and others. In
+December 2000, after a year's negotiation, a new non-profit
+corporation called the TEI Consortium was set up to maintain and
+develop the TEI standard. Four universities serve as hosts for this
+consortium, presently two in the United States and two in Europe. The Consortium is
+managed by a Board of Directors, and its technical work is overseen
+by an elected Council.
+
+There are hundreds if not thousands
+of projects currently using the TEI encoding scheme; Menota is one of
+them.
+
+## 1.8 The TEI schemas [#sec1.8]
+
+TEI offers several schemas for defining the structure of an XML file. In TEI P4 and earlier releases, the only schema was the Document Type Definition (DTD) discussed above. As of TEI P5, a RELAX NG schema has been added. We offer both schemas in [Appendix D](/handbook/v2/HB2_D_schemas) to this handbook, but now recommend a RELAX NG schema. The function of a RELAX NG schema is the same as that of a DTD, but it allows users to make a clear distinction between TEI elements and attributes and local elements and attributes by way of establishing a namespace. Consequently, the encoding becomes more transparent. Adding a namespace is explained in [ch. 1.9](#sec1.9) below.
+
+One of the great strengths of the
+TEI schemas - whether a DTD or a RELAX NG - is that they actually consists of a number of different tag
+sets which can be used in a variety of combinations, according to the
+needs of the encoder and nature of the material being encoded. In this way the encoder can tailor the schema to
+his or her individual needs, selecting from the very large number of
+elements available those which are most relevant to the material to
+be encoded.
+
+All TEI conformant documents must
+contain two elements, a header, tagged <E>teiHeader</E>, in which,
+as was mentioned, meta-data, information about the electronic
+document, is provided, and the text itself, tagged <E>text</E>. What
+elements go into the <E>text</E> is to a great extent determined by
+which base and additional tag sets have been chosen.
+
+The TEI tagset for verse has, not
+surprisingly, elements corresponding to line, stanza and so on in the
+DTD presented above. The two first stanzas of _Þrymskviða_, tagged in TEI conformant XML,
+might look like this:
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE text SYSTEM 
+   "http://www.menota.uio.no/menotaP5.dtd">
+<text xml:lang="en">
+    <body>
+        <lg type="lyric" met="fornyrðislag">
+            <head>Þrymskvíða</head>
+            <lg n="1" type="stanza">
+                <l>Reiðr var þá <name key="Þórr">Vingþórr</name></l>
+                <l>er hann vaknaði</l>
+                <l>ok síns hamars</l>
+                <l>um saknaði,</l>
+                <l>skegg nam at hrista,</l>
+                <l>skör nam at dýja,</l>
+                <l>réð <name key="Þórr">Jarðar burr</name></l>
+                <l>um at þreifask.</l>
+            </lg>
+            <lg n="2" type="stanza">
+                <l>Ok hann þat orða</l>
+                <l>alls fyrst um kvað:</l>
+                <l>Heyrðu nú, <name key="Loki">Loki</name>,</l>
+                <l>hvat ek nú mæli,</l>
+                <l>er eigi veit</l>
+                <l>jarðar hvergi</l>
+                <l>né upphimins:</l>
+                <l>áss er stolinn hamri!</l>
+            </lg>
+        </lg>
+    </body>
+</text>
+   
+```
+
+
+The element <E>person</E> and the corresponding attribute <Att>reg</Att> is not defined in TEI, so this has been replaced by the element <E>name</E> and the attribute <Att>key</Att> (this is one of several ways of encoding names in TEI conformant XML). The value of the attribute <Att>key</Att>, in this case “Loki”, would typically refer to a list, which may be part of the XML document or it may be an external list, e.g. a dictionary. The <Att>key</Att> can also be used even if there is no such list.
+
+The element <E>l</E> is used for a
+line of verse (as opposed to line breaks in written or printed texts,
+which are dealt with in another way; see [ch.
+4](/handbook/v2/HB2_ch4)), while <E>lg</E>, for
+“line group”, is used for a group of lines functioning as a formal
+unit &ndash; here both the poem as a whole and the individual stanzas &ndash;
+with a <Att>type</Att> attribute to indicate what sort of unit. The
+advantage of <E>lg</E> over our <E>stanza</E> is that, being more
+abstract, it is also more flexible; <E>lg</E> elements can also
+nest, i.e. appear within each other, which allows quite sophisticated
+markup of complex verse forms. 
+
+In addition to these structural
+elements the TEI also makes available a host of elements for
+indicating features of typography and layout; although these were
+originally intended for use in the description of printed materials
+most if not all are equally applicable to manuscripts. There are also
+tags which can be used for normalisation, grammatical information
+etc. The other chapters in this handbook explain in detail how they
+can be used. 
+
+## 1.9 The namespace: adding elements and attributes [#sec1.9]
+
+In this handbook, we are following the recommendations in the TEI Guidelines P5 as closely as possible. We have, however, added a few elements and attributes in order to enhance the encoding of Medieval Nordic manuscripts (and, we believe, other medieval manuscripts). In TEI P5, any additions of this type should be defined as a <em>namespace</em>, and we have consequently set up a namespace “me” for our usage (“me” being short for “Menota”).
+
+The namespace must be specified at the very beginning of the XML file:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:me="http://www.menota.org/ns/1.0">
+...
+</TEI>
+```
+
+
+In the Menota XML files, all additional elements and attributes will be preceded by “me:”. For example, we recommend that a normalised transcription is contained in a new element, <em>norm</em>. This appears as <E>me:norm</E>, identifying it as an element belonging to the Menota namespace. The advantage of doing this, is that all additional elements and attributes stand out clearly in the encoding; anyone who just glances through a Menota XML file will understand which elements and attributes belong to TEI P5 and which are the additons by Menota.
+
+The following is a complete list of additional elements and attributes in _The Menota handbook_:
+
+### 1.9.1 Elements [#sec1.9.1]
+
+<E>me:norm</E> for readings on a normalised level, cf. [ch. 3.2](/handbook/v2/HB2_ch3#sec3.2).
+
+<E>me:dipl</E> for readings on a diplomatic level, cf. [ch. 3.2](/handbook/v2/HB2_ch3#sec3.2).
+
+<E>me:facs</E> for readings on a facsimile level, cf. [ch. 3.2](/handbook/v2/HB2_ch3#sec3.2).
+
+<E>me:pal</E> for readings on a paleographical level, cf. [ch. 3.4 (end)](/handbook/v2/HB2_ch3#sec3.4).
+
+<E>me:expunged</E> for readings that are deleted by the editor (as opposed to deletions by the scribe, which are encoded by the <em>del</em> element), cf. [ch. 7.4.2](/handbook/v2/HB2_ch7#sec7.4.2).
+
+<E>me:punct</E> for punctuation characters, cf. [ch. 3.4](/handbook/v2/HB2_ch3#sec3.4).
+
+<E>me:textSpan/</E> for encoding any discontinous structures, thus avoiding a full set of elements like <em>addSpan</em>, <em>delSpan</em>, <em>suppliedSpan</em>, <em>expungedSpan</em>, etc. Note that the attribute <em>category</em> is used to specify what type of textspan it is, e.g. addition, deletion, supplement, expunction, etc., cf. [ch. 4.10](/handbook/v2/HB2_ch4#sec4.10).
+
+<E>me:all</E> for alliteration in encoding of verse, cf. [ch. 9.2](/handbook/v2/HB2_ch9#sec9.2).
+
+<E>me:ass</E> for internal rhyme in encoding of verse, cf. [ch. 9.2](/handbook/v2/HB2_ch9#sec9.2).
+
+### 1.9.2 Attributes [#sec1.9.2]
+
+<Att>me:msa</Att> for morphosyntactical analysis, i.e. for specifying the grammatical form of a word. This is an attribute to the <em>w</em> element, cf. [ch. 8.3](/handbook/v2/HB2_ch8#sec8.3).
+
+<Att>me:type</Att> for classification purposes. This is an attribute to the <em>ex</em> and <em>am</em> elements, cf. [ch. 6.1](/handbook/v2/HB2_ch6#sec6.1).
+
+<Att>me:level</Att> for identifying the level on which the text has been transcribed, i.e. facsimile, diplomatic or normalised (see above). This is an attribute to the <em>normalization</em> element used in the header, cf. [ch. 10.3](/handbook/v2/HB2_ch10#sec10.3).
+
+<Att>me:lemmatized</Att> for identifying those texts which have been lemmatised. This is an attribute to the <em>interpretation</em> element used in the header,  cf. [ch. 10.3](/handbook/v2/HB2_ch10#sec10.3).
+
+<Att>me:morphAnalyzed</Att> for identifying those texts which have been morphologically analysed, i.e. given grammatical form. This is an attribute to the <em>interpretation</em> element used in the header,  cf. [ch. 10.3](/handbook/v2/HB2_ch10#sec10.3).
+
+<Att>category</Att> for identifying type of text span. This is an attribute to the <em>me:textSpan</em> element used to encode overlapping structures, cf. [ch. 4.10](/handbook/v2/HB2_ch4#sec4.10).
+
+<Att>spanTo</Att> for identifying the end point of a text span. This is another attribute to the <em>me:textSpan</em> element used to encode overlapping structures, cf. [ch. 4.10](/handbook/v2/HB2_ch4#sec4.10).
+
+## 1.10 Displaying the text [#sec1.10]
+
+We have mentioned several times the
+possibility of displaying XML documents in standard web browers. In
+order to do so, one final piece is necessary: a stylesheet. As has
+been said, XML elements describe, ideally at least, the semantic
+structure of the text, rather than its appearance (although there is
+obviously a degree of overlap). Web browsers have built-in
+stylesheets for displaying HTML and know that in an HTML document
+anything tagged <E>i</E> is to be displayed in italic, because HTML
+markup is essentially presentational: <E>i</E> means “display in
+italic”. XML markup is semantic (and the elements user-defined), and
+in order for a browser to display an XML document, it needs to know
+what formatting to apply to what elements. It needs to be told, for
+example, that things within <E>title</E> tags should be displayed in
+italic. A stylesheet does precisely that.
+
+There are essentially two options,
+Cascading stylesheets (CSS) and Extensible style language
+transformations (XSLT). CSS is a simple, non-XML syntax used to
+describe the appearance of any element in a document. XSLT, on the
+other hand, is itself an XML application which specifies rules by
+which the XML document is transformed into another document, either
+another XML document or something else; its most obvious use is to
+take XML and turn it into something more browser-friendly, i.e. HTML
+(or XHTML). The original document retains its complexity, but for
+viewing purposes it is changed into something even older browsers can
+deal with. This transformation can be done either at the browser-end,
+by the webserver, when the XML document is called up by the user, or
+by the creator of the document, who may not wish to make it available
+in its orginal state.
+
+The stylesheet to be associated
+with the document is indicated by a xml-stylesheet processing
+instruction (or stylesheet link), which comes after the XML
+declaration, either before or after the Document Type Declaration, if
+there is one, but before the root element.
+```xml
+<?xml  version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE poem SYSTEM "poem.dtd">
+<?xml-stylesheet href="poem.css" type="text/css"?>
+```
+
+
+The value of <Att>href</Att> is the URL
+(absolute or relative) where the stylesheet can be found, while the
+value of <Att>type</Att> will either be "text/css" for cascading
+stylesheets or "text/xml" for XSL transformations. There are other
+(pseudo-) attributes, such as <Att>media</Att>, but they need not concern
+us here. The style sheet referred to here is a CSS style sheet, which
+indicates how each of the elements is to be displayed: 
+```xml
+body {
+font-family: "Book Antiqua";
+}
+
+poem {
+display: block;
+font-family: "Book Antiqua";
+margin: 25pt 15pt 15pt 45pt;
+font-size: 13pt;
+line-height: 15pt}
+
+title {
+display: block;
+font-size: 18pt;
+padding: 5pt}
+
+author {
+display:none;}
+
+stanza {
+display: block;
+padding: 5pt}
+
+line {display: block}
+
+person {font-style: italic}
+```
+
+
+Displayed by an XML-aware browser,
+such as [Firefox](http://www.mozilla.com/en-US/firefox/) (Windows, Mac, Linux), [Opera](http://www.opera.com/) (Windows, Mac, Linux), [Safari](http://www.apple.com/safari/) (Mac) or [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) (Windows), the two first stanzas of _Þrymskviða_ will be displayed like this:
+
+
+<AutoImage src="/images/hb2/ch1/Trymskvida-1.gif" alt="ch1/Trymskvida-1.gif"/>
+
+
+Note that browsers may display the same page slightly differently. If it does not look right in one browser, another browser may do the trick.
+
+XSLT is more powerful than CSS.
+With CSS one can determine exactly how the content of an element is
+to be displayed, in terms of font, colour etc., or whether it is to
+be displayed at all (one might not, for example, wish to display some
+of the administrative information contained in the TEI header). CSS will also allow
+you to insert text before and/or after an element (using the
+**before** and **after** pseudo-element selectors). But that's
+about it. With XSLT, on the other hand, one can, for example,
+re-arrange the order of the elements or display the value of an
+element's attribute instead of its actual content (very useful, for
+example, if one wishes to produce normalised and unnormalised texts
+from a single marked-up file).
+
+The above display of an Eddic stanza is the preferred one in many Nordic editions; each line occupies a line in the edition, whether it is a short line (as in fornyrðislag) or a full line (as in ljóðaháttr). In Continental editions such as the standard Neckel&ndash;Kuhn edition, a pair of short lines making up a long line is printed as a single line in the edition, though with a sizeable space between the two lines, thus:
+<Quote straight={true}>
+ Reiðr var þá Vingþórr&ensp;&ensp;&ensp;er hann vaknaði<br/>
+ ok síns hamars&ensp;&ensp;&ensp;um saknaði<br/>
+ skegg nam at hrista,&ensp;&ensp;&ensp;skör nam at dýja,<br/>
+ réð Jarðar burr&ensp;&ensp;&ensp;um at þreifask.<br/>
+ 
+</Quote>
+
+For ease of reference, lines are numbered, but in stanzas of normal length only each fourth line (in ljóðaháttr) or each fifth line (in fornyrðislag) are numbered. In an eight-line display such as the one in the screenshot above, the fitfth line of the first stanza is the one beginning with “skegg”. The same applies to the four-line display above, since each short line is counted, irrespective of whether it is displayed in conjunction with another short line or not. So to achieve a “Neckel&ndash;Kuhn display” two operations are necessary, (a) every second short line in the encoded text is displayed on the same line as the previous short line, and with white space in between, and (b) lines are counted and a small number is positioned in the margin in front of every fifth line. This adds an element of transformation to the styling and is not easily done in CSS. In XSLT this is quite simple, even if the instructions may look difficult. An XSLT transforming the text as specified in (a) and (b) would look like this:
+```xml
+<xsl:template match="stanza">
+<table class="stanza">
+   <xsl:for-each select="child::line[ position() mod 2 = 1]">
+      <tr>
+         <xsl:choose>
+            <xsl:when test="attribute::number mod 5 = 1">
+                <!-- The first line -->
+               <td>
+               	 <xsl:value-of select="parent::stanza/attribute::number"/> .&#160;
+               </td>
+            </xsl:when>
+            <xsl:when test="attribute::number mod 5 = 0">
+               <!-- Line 5 -->
+               <td>
+                  <xsl:attribute name="class">small</xsl:attribute>
+                  <xsl:value-of select="attribute::number"/>
+               </td>
+            </xsl:when>
+            <xsl:otherwise>
+               <td></td>
+            </xsl:otherwise>
+         </xsl:choose>
+         <td><xsl:apply-templates/>&#160;&#160;
+            <xsl:apply-templates select="following-sibling::line[1]"/>
+         </td>               
+      </tr>    
+   </xsl:for-each>
+</table>
+</xsl:template>
+
+```
+
+
+Displayed in an XML-aware browser, the stanzas now look like this:
+
+
+<AutoImage src="/images/hb2/ch1/Trymskvida-2.gif" alt="ch1/Trymskvida-2.gif"/>
+
+
+The display is different, but the XML encoding is not changed at all. It is only a matter of transforming the encoded text using XSLT and adding the required style with CSS. An XML document can also be transformed into a non-XML format, for example, a PDF, RTF or PostScript file. And the same XML file can be transformed again and again into dozens of different formats, without any effect on the content itself.

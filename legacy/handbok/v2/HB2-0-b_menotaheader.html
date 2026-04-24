@@ -1,0 +1,1537 @@
+<HTML>
+
+<HEAD>
+    <TITLE>Menota header</TITLE>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<link href="handbook-web-1.css" rel="stylesheet" type="text/css" media="all">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+</HEAD>
+
+<body>
+
+<P>
+<A NAME=top></A>
+		<HR>
+		<IMG SRC="handbook_2-0-b.gif" alt="">
+		<HR>
+		<h1>Menota header</h1>
+		<P>Version 2.0 beta (8 June 2005)</P>
+		<P>&nbsp;</P>
+		<p><a href="#1">1 Introduction</a><br>
+			<a href="#2">2 Minimal header for a single-text source</a><br>
+			<a href="#3">3 Minimal header for a multi-text source</a></p>
+		<p><img src="redarrow.gif" alt="" width="15" height="15" align="top"> <a href="HB2-0-b_contents.xhtml">Back to list of contents</a></p>
+		<p><a name="1"></a>&nbsp;</p>
+		<h2>1 Introduction</h2>
+		<p>We recommend that all texts in the Medieval Nordic Text Archive contain a minimal amount of information about the text, its background and its encoding. This should be entered in the <em>header</em>, which is an integral and essential part of any XML/TEI document.</p>
+		<p>Below are two examples of headers for Medieval Nordic texts. The first example is of a header for a primary source with only a single text; the other for a source with more than one text.</p>
+		<P>A header may contain much more information than exemplified here. What we have specified in these examples is the recommended minimum amount of information.</P>
+		<p>Cf. <strong>TEI P5</strong> <a href="http://www.tei-c.org/P5/Guidelines/HD.html">ch. 5</a> for a discussion of headers in general and also the notion of minimal and recommended headers (<a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD7">ch. 5.6</a>).</p>
+		<p><a name="2"></a>&nbsp;</p>
+		<h2>2 Minimal header for a single-text source</h2>
+		<p>Many medieval manuscripts contain more than one text. However, some manuscripts only contain a single piece of text, and the same applies to almost all charters. We have chosen Holm perg 6 fol (also referred to as Sth. perg. fol. nr 6) as an example of a single-text source. This manuscript carries the text of <em>Barlaams ok Josaphats saga</em>, although with some parts missing.</p>
+		<p>Please note that the distinction between single-text and multi-text sources is not straightforward and ultimately rests on the definition of key concepts such as &ldquo;text&rdquo; and &ldquo;work&rdquo;. If in doubt, we recommend using the established categories in catalogues and indices, e.g. the index volume of <a href="HB1_literature.xhtml">Ordbog over det norr&oslash;ne prosasprog</a> (Copenhagen 1989).</p>
+		<p>We have chosen Holm perg 6 fol also in order to demonstrate how a cumulative process of text encoding can be documented. This text was initially transcribed and edited in an electronic version by Magnus Rindal in the late 1970ies (the printed edition in 1981 was generated from this file). Subsequently, Jon Erik Hagen and Odd Einar Haugen lemmatised the text, i.e. added information about lemma and grammatical form for each running word. Finally, Christian-Emil Ore converted the file from its original customised format into Menotic XML. Thus, four people have contributed to the making of the present electronic version of the text, and should be credited accordingly.</p>
+		<p><img src="redarrow.gif" alt="" width="15" height="15" align="top"> <a href="eksempler/Holm_perg_6_fol.xml">Download the header below (Holm perg 6 fol) as a sample XML file</a></p>
+		<p>Please note that some browsers may try and interpret and open this sample file. In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) on your browser, unless your browser has other preferences.</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+			<td valign=top></td>
+			<td valign=top width="60%"></td>
+			<thead>
+				<tr bgcolor="#D3D3D3">
+					<td valign=top width="60%">
+						<p>Header</p>
+					</td>
+					<td valign=top>
+						<p>Comments</p>
+					</td>
+				</tr>
+			</thead>
+			<tfoot></tfoot>
+			<tbody>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;teiHeader </em><em id="code">xml:lang=&quot;eng&quot;</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The element <strong>&lt;teiHeader&gt;</strong> states that the header follows the recommendations of the Text Encoding Initiative. The attribute <strong>xml:lang</strong> specifies the language of the header; in this case English. The language of the source is specified below in <strong>&lt;msContents&gt;</strong>. A list of language abbreviations is located in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;fileDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The file description is a mandatory part of the header and must include information on the title (<strong>&lt;titleStmt&gt;</strong>), publication (<strong>&lt;publicationStmt&gt;</strong>) and source (<strong>&lt;sourceDescr&gt;</strong>), cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD2">ch. 5.2</a>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;titleStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;title&gt;</em>Holm perg 6 fol (Barlaams ok Josaphats saga): an electronic edition<em id="element">&lt;/title&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The title of the work. It should specify the primary source (manuscript) on which the transcription is based, and, where applicable, the title of the work. We recommend that the title states that the present text is an electronic edition.</p>
+						<p>Note that manuscript sigla are given according to various standards, so that &ldquo;Holm perg 6 fol&rdquo; in many contexts is given as &ldquo;Sth. perg. 6 fol.&rdquo; We recommend using the sigla in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>).</p>
+						<p>The TEI Guidelines also recommends that the element <strong>&lt;author&gt;</strong> is included in the <strong>&lt;titleStmt&gt;</strong> (cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD7">ch. 5.6</a>). Since almost all Medieval Nordic texts are anonymous we believe this element is not required.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;resp&gt;</em>Edition by <em id="element">&lt;/resp&gt;<br>
+							</em><em id="element">&lt;name&gt;</em>Magnus Rindal<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The type of editorial activity is specified in the <strong>&lt;resp&gt;</strong> element; the minimal contribution will usually be transcription. The name of the transcriber/editor is given in the <strong>&lt;name&gt;</strong> element, preferably with affiliation at the time of publication (in a separate <strong>&lt;name&gt;</strong> element).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;resp&gt;</em>Lemmatisation and morphological encoding by <em id="element">&lt;/resp&gt;<br>
+							</em><em id="element">&lt;name&gt;</em>Jon Erik Hagen<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;<br>
+							</em><em id="element">&lt;name&gt;</em>Odd Einar Haugen<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;resp&gt;</em>Conversion to Menotic XML by <em id="element">&lt;/resp&gt;<br>
+								&lt;name&gt;</em>Christian-Emil Ore<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Oslo<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/titleStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;editionStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The <strong>&lt;editionStmt&gt;</strong> should be used to specify whether the present text is a new or a revised edition of the electronic text as described in the title above.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;p&gt;</em>First draft, <em id="element">&lt;date</em> <em id="code">value=&quot;2004-02-01&quot;</em><em id="element">&gt;</em>1 February 2004<em id="element">&lt;/date&gt;</em><em id="element">&lt;/p&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Here, &ldquo;edition&rdquo; means roughly the same as &ldquo;version&rdquo;. Date may be given as year (<strong>2004</strong>), or year and month (<strong>2004-02</strong>), or year, month and day (<strong>2004-02-01</strong>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/editionStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;publicationStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;distributor&gt;</em>Medieval Nordic Text Archive<em id="element">&lt;/distributor&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The body (publisher, archive) which has made the text available.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;idno</em> <em id="code">type=&quot;Menota&quot;</em><em id="element">&gt;</em>Ms. 1<em id="element">&lt;/idno&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>A unique identification of the text. Attribute value: <strong>Menota</strong>. Element content: acquisition number, beginning with <strong>ms. 1</strong>. Note that this information will be supplied by Menota, if the text is being deposited in this archive.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;</em><em id="element">date</em> <em id="code">value=&quot;2004-03-01&quot;</em><em id="element">&gt;</em>1 March 2004<em id="element">&lt;/date&gt;</em></p>
+					</td>
+					<td>
+						<p>The date of publication in the archive. Date format as in <strong>&lt;editionStmt&gt;</strong> above.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;availability</em> <em id="code">status=&quot;restricted&quot;</em><em id="element">&gt;&lt;p&gt;</em>This text is available for purposes of academic research and teaching only. Re-distribution in any form without prior permission is prohibited. Short extracts may be cited with full acknowledgment of the source.<em id="element">&lt;/p&gt;&lt;/availability&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Copyright statement. Attribute values (according to TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD24">ch. 5.2.4</a> (Specifications, Element: availability): <strong>free</strong>, <strong>restricted</strong>, <strong>unknown</strong>. Until further notice, we recommend that the status is described as exemplified here.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/publicationStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;sourceDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The <strong>&lt;sourceDesc&gt;</strong> is a mandatory part of the header (cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD3">ch. 5.2.7</a>). As of TEI P5, this part of the header includes the recommendations of the MASTER project, notably in the element <strong>&lt;msDescription&gt;</strong>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;p&gt;</em>This text has been ...<em id="element">&lt;/p&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Optional information on the background of the text.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;msDescription&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td width="60%">
+						<p id="indent3"><em id="element">&lt;msIdentifier&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;country</em> <em id="code">reg=&quot;SE&quot;</em><em id="element">&gt;</em>Sweden<em id="element">&lt;/country&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The country in which the manuscript is kept. Attribute values: <strong>DK</strong> (Denmark), <strong>IS</strong> (Iceland), <strong>NO</strong> (Norway), <strong>SE</strong> (Sweden). Except for the attribute value the element may be empty. The values given here are conformant with <a href="http://www.oasis-open.org/cover/country3166.html">ISO 3166</a>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;settlement&gt;</em>Stockholm<em id="element">&lt;/settlement&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The place in which the manuscript is kept.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;repository&gt;</em>Kungliga Biblioteket<em id="element">&lt;/repository&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The manuscript collection or institution, preferably with its official name.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;idno&gt;</em>Holm perg 6 fol<em id="element">&lt;/idno&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The manuscript signature. We recommend that signatures are given according to the practice in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;altName</em><em id="element">&gt;</em><em id="element">&lt;/altName&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Alternative name, often found for major manuscripts. This particular manuscript has no alternative name, so the element is left empty. For an example of an alternative name, see the header of AM 242 fol (Codex Wormianus) below.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;/msIdentifier&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;msContents&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;1r&quot; to=&quot;102v&quot;</em><em id="element">&gt;</em>ff. 1r&#150;102v (pp. 1&#150;204)<em id="element">&lt;/locus&gt;<br>
+							</em><em id="element">&lt;title</em><em id="element">&gt;</em>Barlaams ok Josaphats saga<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Barl<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;onw&quot;</em><em id="element">&gt;</em>Old Norwegian<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>This is where the structure of the source is described. For a single-text source this is done with a single <strong>&lt;msItem&gt;</strong> element. Within this element, the locus of the text is specified (in this case, the whole manuscript), the title and the language.</p>
+						<p>Some manuscripts are usually referred to with folio numbers (e.g. fol. 2r), other with page numbers (e.g. p. 3). We recommend that wherever possible, folio numbers are given as attributes to the <strong>&lt;locus&gt;</strong> element, while the contents may be folio numbers, page numbers, or both, depending on common usage for the manuscript in question.</p>
+						<p>In many contexts, Old Norse works are referred to with abbreviations, e.g. &ldquo;Nj&rdquo; for <i>Nj&aacute;ls saga</i>. A complete list is given in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>). We recommend giving this kind of abbreviation as an additional <strong>&lt;title&gt;</strong> element here.</p>
+						<p>The <strong>&lt;textLang&gt;</strong> element specifies the language of the source using the three-letter abbreviations of <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>. This list may be supplied with additional abbreviations (for example &ldquo;onw&rdquo; used here) which must be declared in <strong>&lt;profileDesc&gt;</strong> below. Please note that this usage is not ISO conformant.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;/msContents&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;physDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The physical description of the primary source.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;objectDesc</em> <em id="code">form=&quot;codex&quot;</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The object description should specify whether the primary source is a manuscript (codex), a charter (diploma) or a fragment, partial leaf or cutting.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent5"><em id="element">&lt;supportDesc</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;support&gt;<br>
+								&lt;p&gt;&lt;material&gt;</em>Parchment<em id="element">&lt;/material&gt;</em>, but with five younger <em id="element">&lt;material&gt;</em>paper<em id="element">&lt;/material&gt;</em> leaves added; two at the front (the last being blank) and three at the back.<br>
+							<em id="element">&lt;/p&gt;<br>
+								&lt;/support&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;extent&gt;</em>102 parchment leaves and 5 paper leaves; 210 mm (height) by 155 mm (width).<em id="element">&lt;/extent&gt;</em><br>
+						</p>
+						<p id="indent5"><em id="element">&lt;foliation&gt;</em><em id="element">&lt;</em><em id="element">p&gt;</em>The manuscript is paginated on the recto pages of the parchment leaves, 1&#150;204.<em id="element">&lt;/p&gt;&lt;/foliation&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;/supportDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The support description specifies the material (parchment, paper) of the source, the extent and size (measured in millimeters), and the foliation (whether it is paginated and/or foliated).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;/objectDesc</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;/physDesc</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;history</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent4"><em id="element">&lt;</em><em id="element">origin&gt;&lt;p&gt;</em>Written in <em id="element">&lt;origPlace&gt;</em>Eastern Norway<em id="element">&lt;/origPlace&gt;</em> <em id="element">&lt;origDate</em> <em id="code">notBefore=&quot;1250&quot; notAfter=&quot;1300&quot;</em><em id="element">&gt;</em>c. 1275<em id="element">&lt;/origDate&gt;</em>.<em id="element">&lt;/p&gt;&lt;/origin&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The provenance of the source is specified in the <strong>&lt;origPlace&gt;</strong> element, and the date in the <strong>&lt;origDate&gt;</strong> element. Most medieval sources (except charters) can not be dated precisely, and are usually dated to quarters, halves or whole centuries. The attributes <strong>notBefore</strong> and <strong>notAfter</strong> should be used to indicate this time span.</p>
+						<p>Approximate dates, e.g. &ldquo;ca. 1275&rdquo;, may be given with a time span of 50 years in each direction, i.e. &ldquo;notBefore 1225&rdquo; and &ldquo;notAfter 1325&rdquo;, unless a more presise range can be given. In this case, the text was probably translated from Latin into Old Norwegian around 1250, so this is an obvious <em>terminus post quem</em> for the present manuscript.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;</em><em id="element">/history&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/msDescription&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/sourceDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;/fileDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;encodingDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The <strong>&lt;encodingDesc&gt;</strong> is an optional part of the header, but we recommend that it contains information on the standard of encoding and level of quality. Cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD5">ch. 5.3</a>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;projectDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;p&gt;</em>This manuscript text has been encoded according to the standard set out in <em id="element">&lt;title</em><em id="element">&gt;</em>The Menota handbook<em id="element">&lt;/title&gt; (</em>version 1.1), at <em id="element">&lt;ref</em> <em id="code">target=&quot;</em>http://www.aksis.uib.no/menota/guidelines<em id="code">&quot;</em><em id="element">&gt; </em>http://www.aksis.uib.no/menota/guidelines<em id="element">&lt;/ref&gt;</em> as of <em id="element">&lt;</em><em id="element">date&gt;</em>2004-05-05<em id="element">&lt;/date&gt;</em>.<em id="element">&lt;/p&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Not all texts in the archive may confirm wholly to the Menota standard. Those that do should say so explicitly.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/projectDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td width="60%">
+						<p id="indent1"><em id="element">&lt;editorialDecl&gt;</em></p>
+					</td>
+					<td>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;correction</em> <em id="code">status=&quot;high&quot;</em><em id="element">&gt;&lt;p&gt;</em>This text was proofread by Magnus Rindal and colleagues before the publication of the printed version in 1981. It is unlikely that it contains any significant number of errors. However, it can not be ruled out that the subsequent conversion of the file may have introduced some systemic errors.<em id="element">&lt;/p&gt;&lt;/correction&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Level of quality control. Attribute values (according to TEI): <strong>high</strong>, <strong>medium</strong>, <strong>low</strong>, <strong>unknown</strong>. Except for the attribute value the element may be empty. &#150; TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD53">ch. 5.3.3</a> (Specifications, Element: correction) has these definitions:</p>
+						<p><strong>high</strong>: the text has been thoroughly checked and proofread<br>
+							<strong>medium</strong>: the text has been checked at least once<br>
+							<strong>low</strong>: the text has not been checked<br>
+							<strong>unknown</strong>: the correction status of the text is unknown</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/editorialDecl&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;/encodingDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p><em id="element">&lt;profileDesc&gt;</em></p></td>
+					<td valign=top><p>The <strong>&lt;profileDescription&gt;</strong> is an optional part of the header. We recommend that it is used to specify the number of hands in the source (if more than one). It should also be used to list language names outside the list in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;langUsage&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;language</em> <em id="code">ident=&quot;oda&quot;</em><em id="element">&gt;</em>Old Danish<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">ident=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">ident=&quot;onw&quot;</em><em id="element">&gt;</em>Old Norwegian<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">ident=&quot;osw&quot;</em><em id="element">&gt;</em>Old Swedish<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">ident=&quot;oic-onw&quot;</em><em id="element">&gt;</em>Old Icelandic with Old Norwegian traits<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">ident=&quot;onw-oic&quot;</em><em id="element">&gt;</em>Old Norwegian with Old Icelandic traits<em id="element">&lt;/language&gt;<br>
+							</em></p></td>
+					<td valign=top><p><a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a> contains a list of three-letter abbreviations of language names. In addition to the modern languages <strong>dan</strong> (Danish), <strong>ice</strong> or <strong>isl</strong> (Icelandic), <strong>nor</strong> (Norwegian) and <strong>swe</strong> (Swedish), there is only one abbreviation for Medieval Nordic, sc. <strong>non</strong> (Old Norse, i.e. Old Icelandic and/or Old Norwegian). Since Old Norse is a problematic term and the abbreviation <strong>non</strong> is idiosyncratic, we recommend introducing the values <strong>oda</strong> (Old Danish), <strong>oic</strong> (Old Icelandic), <strong>onw</strong> (Old Norwegian), <strong>osw</strong> (Old Swedish). In cases of uncertainty, a hyphen may be used, e.g. <strong>oic</strong>-<strong>onw</strong> for a manuscript which is either Old Iceland or Old Norwegian (but most probably Old Icelandic), <strong>onw</strong>-<strong>oic</strong> the other way round, etc. Please note that this usage is not ISO conformant.</p>
+						<p>For Latin we recommend the abbreviation <strong>lat</strong> (as in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;/langUsage&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;handList&gt;</em></p></td>
+					<td valign=top><p>The <strong>&lt;handList&gt;</strong> element specifies the number of hands recognised in the encoding of the source.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;hand</em> <em id="code">xml:id=&quot;h1&quot;</em><em id="element">/&gt;<br>
+								&lt;hand</em> <em id="code">xml:id=&quot;h2&quot;</em><em id="element">/&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;/handList&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p><em id="element">&lt;/profileDesc&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;revisionDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The <strong>&lt;revisionDesc&gt;</strong> is an optional part of the header, but it is essential that all changes to the file are recorded, especially those that are added by other people than the transcriber/editor.</p>
+						<p>The list of changes usually has the most recent changes at the top.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;date&gt;</em>2003<em id="element">&lt;/date&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>Date format as explained in <strong>&lt;editionStmt&gt;</strong> above.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;name&gt;</em>Christian-Emil Ore<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Oslo<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The name of the person(s) responsible for the change, preferably with affiliation at the time of the change.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td width="60%">
+						<p id="indent2"><em id="element">&lt;item&gt;</em>Converted the electronic files (the transcription and the lemmatisation) into XML (Extensible Markup Language) according to the guidelines in the Menota handbook.<em id="element">&lt;/item&gt;</em></p>
+					</td>
+					<td valign="top">
+						<p>The type of change, including the creation of the file.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;date&gt;</em>1988<em id="element">&lt;/date&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;name&gt;</em>Jon Erik Hagen<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;<br>
+								&lt;name&gt;</em>Odd Einar Haugen<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td width="60%">
+						<p id="indent2"><em id="element">&lt;item&gt;</em>Supplied lemmata (dictionary entry words) and grammatical forms for all words in the file. Published separately on microfiche in Norske spr&aring;kdata vol. 22, Bergen 1989.<em id="element">&lt;/item&gt;</em></p>
+					</td>
+					<td valign="top">
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;date&gt;</em>1980<em id="element">&lt;/date&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;name&gt;</em>Magnus Rindal<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Bergen<em id="element">&lt;/name&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/respStmt&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td width="60%">
+						<p id="indent2"><em id="element">&lt;item&gt;</em>Finalised the electronic text and prepared it for publication in book form (published by Norsk Historisk Kjeldeskrift-Institutt in 1981).<em id="element">&lt;/item&gt;</em></p>
+					</td>
+					<td valign="top">
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/change&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p>&lt;<em id="element">/revisionDesc&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;/teiHeader&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>The body follows immediately after the header. This is where the actual transcription is located. Note that the <strong>&lt;div&gt;</strong> element is used to organise the various sections of the manuscript, in this case the individual chapters.</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+			<thead></thead>
+			<tfoot></tfoot>
+			<tbody>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;text </em><em id="code">xml:lang=&quot;onw&quot;</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The source text is placed within the <strong>&lt;text&gt;</strong> element. The attribute <strong>xml:lang</strong> specifies the language of the text (cp. <strong>&lt;profileDesc&gt;</strong> above). If the text contains sporadic words or sentences in another language, e.g. Latin, the attribute <strong>xml:lang</strong> can be used to specify these exception from the rule, whether on the level of the word, <strong>&lt;w&gt;</strong>, paragraph, <strong>&lt;p&gt;</strong> or chapter, <strong>&lt;div&gt;</strong>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;body&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;div&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;p&gt;</em>The text of the first chapter goes here.<em id="element">&lt;/p&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/div&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;div&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent3"><em id="element">&lt;p&gt;&lt;handShift </em><em id="code">new=&quot;h2&quot; old=&quot;h1&quot;</em><em id="element">/&gt;</em>The text of the second chapter goes here.<em id="element">&lt;/p&gt;</em></p>
+					</td>
+					<td valign=top><p>This is an example of how change of scribal hands in the source can be recorded. Note that rather than putting each hand in an element of its own (which would cause problems of overlapping) the actual change is recorded using a milestone element, <strong>&lt;handShift&gt;</strong>. Note that the number of hands must be recorded in the <strong>&lt;profileDesc&gt;</strong> element of the header.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;/div&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2">. . .</p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent2">. . .</p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;/body&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;/text&gt;</em></p>
+					</td>
+					<td valign=top></td>
+				</tr>
+			</tbody>
+		</table>
+		<p></p>
+		<p><a name="3"></a>&nbsp;</p>
+		<h2>3 Minimal header for a multi-text source</h2>
+		<p>AM 242 fol &#150; often referred to as Codex Wormianus or &Oacute;rmsb&oacute;k &#150; is a good example of a multi-text source. It contains the prose version of <em>Edda</em> (by Snorri Sturluson), the four grammatical treatises, and a few other poetic texts (e.g. <em>Mar&iacute;ukv&aelig;&eth;i</em> and <em>R&iacute;gs&thorn;ula</em>). <em>Snorra Edda</em> is usually divided into four sections; the <em>Prologue</em>, <em>Gylfaginning</em>, <em>Skaldskaparm&aacute;l</em> and <em>H&aacute;ttatal</em>. However, in the present manuscript, <em>H&aacute;ttatal</em> is not placed in conjunction with the other sections of <em>Snorra Edda</em>, but towards the end of the manuscript, and <em>Mar&iacute;ukv&aelig;&eth;i</em> has been divided into two parts with a few other texts intervening. The structure is shown in fig. 1.</p>
+		<p><img src="CodWorm-sequence.jpg" alt="" height="167" width="630" border="0"></p>
+		<p><strong>Fig. 1</strong>. The sequence of texts in Codex Wormianus (AM 242 fol). <em>H&aacute;ttatal</em> is commonly regarded as the fourth part of <em>Snorra Edda</em>, but is located towards the end of the manuscript, and <em>Mar&iacute;ukv&aelig;&eth;i</em> has been divided into two parts.</p>
+		<p>&nbsp;</p>
+		<p>Based on an analysis of the contents of the texts, <em>H&aacute;ttatal</em> should be placed as the fourth part of <em>Snorra Edda</em>, but the two parts of <em>Mariukv&aelig;&eth;i</em> have been analysed as separate items and thus not joined. This interpretation is shown in fig. 2.</p>
+		<p>&nbsp;</p>
+		<p><img src="CodWorm-contents.jpg" alt="" height="111" width="631" border="0"></p>
+		<p><strong>Fig. 2</strong>. The contents structure of texts in Codex Wormianus (AM 242 fol). <em>H&aacute;ttatal</em> has been placed as the fourth part of <em>Snorra Edda</em>.</p>
+		<p>&nbsp;</p>
+		<p>Although fig. 2 gives a better representation of the text structure of this particular manuscript, we recommend that the individual parts of the manuscript are encoded in sequential order, as shown in fig. 1. In general, we believe that the encoding of a source should keep closely to the source itself and not impose unnecessary interpretations on it. Even if there are good reasons for regarding e.g. <em>H&aacute;ttatal</em> as the fourth part of <em>Snorra Edda</em>, the transcription should show that it is not located as the fourth part in the manuscript &#150; and that this in fact may be intended by the scribe (or redactor).</p>
+		<p>The header of a multi-text source should specify the various parts of the source within the <strong>&lt;msContents&gt;</strong> element. Here, each part is described as an item, <strong>&lt;msItem&gt;</strong>, and linked with an <em>id</em> number to the relevant section in the text itself. In the text, <strong>&lt;div&gt;</strong> elements identify the corresponding parts of the source.</p>
+		<p>If the source is encoded as recommended here, the text can be displayed in the sequence of the source itself, i.e. as in fig. 1, or by following the <strong>id</strong> numbers, in the order of its contents (as analysed by the transcriber/editor), i.e. as in fig. 2. </p>
+		<p><img src="redarrow.gif" alt="" width="15" height="15" align="top"> <a href="eksempler/AM_242_fol.xml">Download the header below (AM 242 fol) as a sample XML file</a></p>
+		<p>Please note that some browsers may try and interpret and open this sample file. In order to download the file to your disk, use alt-click (Mac) or right-click (Windows) on your browser, unless your browser has other preferences.</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+			<thead>
+			<tr bgcolor="#D3D3D3">
+					<TD VALIGN=top WIDTH="60%">
+         <P>Header</P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Comments</P>
+      </TD>
+				</TR>
+   </thead>
+			<tfoot></tfoot>
+<tbody>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;teiHeader </em><em id="code">xml:lang=&quot;eng&quot;</em><em id="element">&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+						<P>The element <strong>&lt;teiHeader&gt;</strong> states that the header follows the recommendations of the Text Encoding Initiative. The attribute <strong>xml:lang</strong> specifies the language of the header; in this case English. The language of the source is specified below in <strong>&lt;msContents&gt;</strong>. A list of language abbreviations is located in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>.</P>
+					</TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;fileDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The file description is a mandatory part of the header and must include information on the title (<strong>&lt;titleStmt&gt;</strong>), publication (<strong>&lt;publicationStmt&gt;</strong>) and source (<strong>&lt;sourceDescr&gt;</strong>), cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD2">ch. 5.2</a>.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;titleStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+						<p id="indent2"><em id="element">&lt;title&gt;</em>AM 242 fol (Codex Wormianus): an electronic edition<em id="element">&lt;/title&gt;</em></P>
+					</TD>
+					<TD VALIGN=top>
+						<P>The title of the work. It should specify the primary source (manuscript) on which the transcription is based. We recommend that the title states that the present text is an electronic edition.</P>
+						<p>For Old Norse sources, we recommend using the sigla in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>).</p>
+						<p>The TEI Guidelines also recommends that the element <strong>&lt;author&gt;</strong> is included in the <strong>&lt;titleStmt&gt;</strong> (cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD7">ch. 5.6</a>). Since almost all Medieval Nordic texts are anonymous we believe this element is not required.</p>
+					</TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;respStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;resp&gt;</em>Transcription, lemmatisation and morphological encoding by<em id="element">&lt;/resp&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The type of editorial activity is specified in the <strong>&lt;resp&gt;</strong> element; the minimal contribution will usually be transcription.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;name&gt;</em>Karl G. Johansson<em id="element">&lt;/name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Oslo<em id="element">&lt;/name&gt;</em></P>
+      </TD>
+					<TD valign=top>
+         <P>The name of the transcriber/editor is given in the <strong>&lt;name&gt;</strong> element, preferably with affiliation at the time of publication (in a separate <strong>&lt;name&gt;</strong> element).</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/respStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/titleStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;editionStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The <strong>&lt;editionStmt&gt;</strong> should be used to specify whether the present text is a new or a revised edition of the electronic text as described in the title above.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;p&gt;</em>First draft, <em id="element">&lt;date</em> <em id="code">value=&quot;2002-11-01&quot;</em><em id="element">&gt;</em>1 November 2002<em id="element">&lt;/date&gt;</em><em id="element">&lt;/p&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Here, &ldquo;edition&rdquo; means roughly the same as &ldquo;version&rdquo;. Date may be given as year (<strong>2002</strong>), or year and month (<strong>2002-11</strong>), or year,
+         month and day (<strong>2002-11-01</strong>). </P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/editionStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;publicationStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;distributor&gt;</em>Medieval
+         Nordic Text Archive<em id="element">&lt;/distributor&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The body (publisher,
+         archive) which has made the text available.</P>
+      </TD>
+				</TR>
+				<TR>
+					<td valign=top width="60%">
+						<p id="indent2"><em id="element">&lt;idno</em> <em id="code">type=&quot;Menota&quot;</em><em id="element">&gt;</em>Ms. 2<em id="element">&lt;/idno&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>A unique identification of the text. Attribute value: <strong>Menota</strong>. Element content: acquisition number, beginning with <strong>ms. 1</strong>. Note that this information will be supplied by Menota, if the text is being deposited in this archive.</p>
+					</td>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+						<p id="indent2"><em id="element">&lt;</em><em id="element">date</em> <em id="code">value=&quot;2003-03-23&quot;</em><em id="element">&gt;</em> 23 March 2003<em id="element">&lt;/date&gt;</em></P>
+					</TD>
+					<TD>
+         <P>The date of publication in the archive. Date format as in <strong>&lt;editionStmt&gt;</strong> above.</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;availability</em>
+         <em id="code">status="restricted"</em><em id="element">&gt;&lt;p&gt;</em>This
+         text is available for purposes of academic research and
+         teaching only. Re-distribution in any form without prior
+         permission is prohibited. Short extracts may be cited with
+         full acknowledgment of the
+         source.<em id="element">&lt;/p&gt;&lt;/availability&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Copyright statement. Attribute values (according to TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD24">ch. 5.2.4</a> (Specifications, Element: availability): <strong>free</strong>, <strong>restricted</strong>, <strong>unknown</strong>. Until further notice we recommend that the status is described as exemplified here d.</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/publicationStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;sourceDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;p&gt;</em>This
+         text has been ...<em id="element">&lt;/p&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Optional information on
+         the background of the text.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;msDescription&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;msIdentifier&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;country</em>
+         <em id="code">reg="DK"</em><em id="element">&gt;</em>Denmark<em id="element">&lt;/country&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The country in which the
+         manuscript is kept. Attribute values: <strong>DK</strong> (Denmark),
+         <strong>IS</strong> (Iceland), <strong>NO</strong> (Norway), <strong>SE</strong> (Sweden). Except for the attribute value the element may be empty. The values given here are conformant with <a href="http://www.oasis-open.org/cover/country3166.html">ISO 3166</a>.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;settlement&gt;</em>Copenhagen<em id="element">&lt;/settlement&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The place in which the
+         manuscript is kept.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;repository&gt;</em>The Arnamagn&aelig;an Institute<em id="element">&lt;/repository&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The manuscript collection
+         or institution, preferably with its official
+         name.</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;idno&gt;</em>AM 242 fol<em id="element">&lt;/idno&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The manuscript signature. For Old Norse manuscripts, we recommend that signatures are given according to the practice in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>).</P>
+      </TD>
+				</TR>
+				<tr>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;altName </em><em id="code">type=&quot;nickname&quot; xml:lang=&quot;lat&quot;</em><em id="element">&gt;</em>Codex Wormianus<em id="element">&lt;/altName&gt;</em></P>
+					<TD VALIGN=top>
+						<P>Alternative name, often found for major manuscripts, and sometimes in various languages, e.g. <em>Codex Wormianus</em> (Latin), <em>&Oacute;rmsb&oacute;k</em> (Icelandic), <em>Ormsbok</em> (Danish/Norwegian/Swedish).</P>
+						<p>The list of three-letter abbreviations of language names in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a> should be used here, if necessary supplied with the abbreviations specified in the <strong>&lt;langUsage&gt;</strong> of  the <strong>&lt;profileDesc&gt;</strong> below.</p>
+					</TD>
+				</tr>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;/msIdentifier&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;msContents&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;1v&quot; to=&quot;35v&quot;</em><em id="element">&gt;</em>pp. 2&#150;82 (including paper leaves)<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Edda Snorra Sturlusonar<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>SnE<em id="element">&lt;/title&gt;<br>
+								&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1.1&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;1v&quot; to=&quot;4v&quot;</em><em id="element">&gt;</em>pp. 2&#150;8<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Prologus<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1.2&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;4v&quot; to=&quot;20r&quot;</em><em id="element">&gt;</em>pp. 8&#150;44<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Gylfaginning<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1.3&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;20v&quot; to=&quot;35v&quot;</em><em id="element">&gt;</em>pp. 44&#150;82<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Sk&aacute;ldskaparm&aacute;l<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent5"><em id="element"> &lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;36r&quot; to=&quot;54r&quot;</em><em id="element">&gt;</em>pp. 83&#150;119<em id="element">&lt;/locus&gt;<br>
+							</em><em id="element">&lt;title</em><em id="element">&gt;</em>The four grammatical treatises<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Gramm<em id="element">&lt;/title&gt;<br>
+								&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2.1&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;36r&quot; to=&quot;36r&quot;</em><em id="element">&gt;</em>p. 83<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Prologus<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>GrammProl<em id="element">&lt;/title&gt;<br>
+								&lt;/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2.2&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;36v&quot; to=&quot;39v&quot;</em><em id="element">&gt;</em>pp. 84&#150;90<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>First grammatical treatise<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Gramm1<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2.3&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;40r&quot; to=&quot;41v&quot;</em><em id="element">&gt;</em>pp. 91&#150;94<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Second grammatical treatise<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Gramm2<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2.4&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;41v&quot; to=&quot;50r&quot;</em><em id="element">&gt;</em>pp. 94&#150;111<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Third grammatical treatise<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Gramm3<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent6"><em id="element">&lt;msItem</em> <em id="code">n=&quot;2.5&quot;</em><em id="element">&gt;<br>&lt;locus </em><em id="code">from=&quot;50r&quot; to=&quot;54r&quot;</em><em id="element">&gt;</em>pp. 111&#150;119<em id="element">&lt;/locus&gt;<br>&lt;title&gt;</em>Fourth grammatical treatise<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Gramm4<em id="element">&lt;/title&gt;<br>
+								&lt;</em><em id="element">/msItem&gt;</em></p>
+						<p id="indent5"><em id="element"> &lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;3&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;54v&quot; to=&quot;54v&quot;</em><em id="element">&gt;</em>p. 120<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Mar&iacute;ukv&aelig;&eth;i (2)<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;1.4&quot; defective=&quot;true&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;55r&quot; to=&quot;60v&quot;</em><em id="element">&gt;</em>pp. 121&#150;154 (including paper leaves)<em id="element">&lt;/locus&gt;<br>
+							</em><em id="element">&lt;title</em><em id="element">&gt;</em>H&aacute;ttatal<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>SnE<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;4&quot; defective=&quot;true&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;61r&quot; to=&quot;61v&quot;</em><em id="element">&gt;</em>pp. 155&#150;156<em id="element">&lt;/locus&gt;<br>
+							</em><em id="element">&lt;title</em><em id="element">&gt;</em>R&iacute;gs&thorn;ula<em id="element">&lt;/title&gt;<br>
+								&lt;title</em> <em id="code">type=&quot;abbreviated&quot;</em><em id="element">&gt;</em>Edda<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;5&quot; defective=&quot;true&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;62r&quot; to=&quot;63r&quot;</em><em id="element">&gt;</em>pp. 167&#150;169<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>&Oacute;kennd heiti (Orms-eddu-brot)<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;msItem</em> <em id="code">n=&quot;6&quot;</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;locus</em> <em id="code">from=&quot;63v&quot; to=&quot;63v&quot;</em><em id="element">&gt;</em>p. 170<em id="element">&lt;/locus&gt;<br>
+								&lt;title</em><em id="element">&gt;</em>Mar&iacute;ukv&aelig;&eth;i (2)<em id="element">&lt;/title&gt;<br>
+							</em><em id="element">&lt;textLang</em> <em id="code">langKey=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/textLang&gt;</em></p>
+						<p id="indent4"><em id="element">&lt;/msItem&gt;</em></p>
+					</TD>
+					<TD VALIGN=top>
+						<P>This is where the structure of the source is described as a list of items, using the <strong>&lt;msItem&gt;</strong> element. Note that these elements can nest, so that the first item, n=1, contains three sub-items, 1.1, 1.2 and 1.3, etc.</P>
+						<p>Each item contains a reference to its place, <strong>&lt;locus&gt;</strong>, in the manuscript, and its title, <strong>&lt;title&gt;</strong>. Some manuscripts are usually referred to with folio numbers (e.g. fol. 2r), other with page numbers (e.g. p. 3). We recommend that wherever possible, folio numbers are given as attributes to the <strong>&lt;locus&gt;</strong> element, while the contents may be folio numbers, page numbers, or both, depending on common usage for the manuscript in question.</p>
+						<p>In many contexts, Old Norse works are referred to with abbreviations, e.g. &ldquo;Nj&rdquo; for <i>Nj&aacute;ls saga</i>. A complete list is given in the index volume of <em>Ordbog over det norr&oslash;ne prosasprog</em> (also accessible on the <a href="http://www.onp.hum.ku.dk/materiale.html">ONP's web page</a>). We recommend giving this kind of abbreviation as an additional <strong>&lt;title&gt;</strong> element here.</p>
+						<p>The <strong>&lt;textLang&gt;</strong> element specifies the language of the source using the three-letter abbreviations of <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>. This list may be supplied with additional abbreviations (for example &quot;oic&quot; used here) which must be declared in <strong>&lt;profileDesc&gt;</strong> below. Please note that this usage is not ISO conformant.</p>
+						<p></p>
+					</TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;/msContents&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P></P>
+      </TD>
+				</TR>
+				<tr>
+					<td valign=top width="60%"><p id="indent3"><em id="element">&lt;physDesc&gt;</em></p></td>
+					<td valign=top><p>The physical description of the primary source.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent4"><em id="element">&lt;objectDesc</em> <em id="code">form=&quot;codex&quot;</em><em id="element">&gt;</em></p></td>
+					<td valign=top><p>The object description should specify whether the primary source is a manuscript (codex), a charter (diploma) or a fragment, a partial leaf or a cutting.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent5"><em id="element">&lt;supportDesc</em><em id="element">&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;support&gt;&lt;p&gt;&lt;material&gt;</em>Parchment<em id="element">&lt;/material&gt;</em>, but with some <em id="element">&lt;material&gt;</em>paper<em id="element">&lt;/material&gt;</em> leaves added in the 17th century for the purpose of completing the text (pp. 61&#150;72, 121&#150;138, 151&#150;154, 157&#150;166).<em id="element">&lt;/p&gt;&lt;/support&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;extent&gt;</em>85 leaves, including the younger paper leaves; 280 mm (height) by 202 mm (width)<em id="element">&lt;/extent&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;foliation&gt;</em><em id="element">&lt;</em><em id="element">p&gt;</em>The manuscript, including the younger paper leaves, is paginated on the recto pages, 1&#150;169. <em id="element">&lt;/p&gt;&lt;/foliation&gt;</em></p>
+						<p id="indent5"><em id="element">&lt;/supportDesc&gt;</em></p>
+					</td>
+					<td valign=top><p>The support description specifies the material (parchment, paper) of the source, the extent and size (measured in millimeters), and the foliation (whether it is paginated and/or foliated).</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent4"><em id="element">&lt;/objectDesc</em><em id="element">&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent3"><em id="element">&lt;/physDesc</em><em id="element">&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent3"><em id="element">&lt;history</em><em id="element">&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent4"><em id="element">&lt;</em><em id="element">origin&gt;&lt;p&gt;</em>Written in <em id="element">&lt;origPlace&gt;</em>Iceland<em id="element">&lt;/origPlace&gt;</em> in <em id="element">&lt;origDate</em>         <em id="code">notBefore=&quot;1350&quot; notAfter=&quot;1400&quot;</em><em id="element">&gt;</em>the second half of the 14th century<em id="element">&lt;/origDate&gt;</em>; there are many later additions, principally from the 17th century.<em id="element">&lt;/p&gt;&lt;/origin&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+						<P>The provenance of the source is specified in the <strong>&lt;origPlace&gt;</strong> element, and the date in the <strong>&lt;origDate&gt;</strong> element. Most medieval sources (except charters) can not be dated precisely, and are usually dated to quarters, halves or whole centuries. The attributes <strong>notBefore</strong> and <strong>notAfter</strong> should be used to indicate this time span.</P>
+						<p>Approximate dates may be given with a time span of 50 years in each direction, i.e. &ldquo;notBefore 1350&rdquo; and &ldquo;notAfter 1400&rdquo;, unless a more presise range can be given.</p>
+					</TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent3"><em id="element">&lt;</em><em id="element">/history&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P></P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/msDescription&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/sourceDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/fileDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;encodingDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>The <strong>&lt;encodingDesc&gt;</strong> is an optional part of the header, but we recommend that it contains information on the standard of encoding and level of quality. Cf. TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD5">ch. 5.3</a>.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;projectDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;p&gt;</em>This manuscript text has been encoded according to the standard set out in <em id="element">&lt;title</em><em id="element">&gt;</em>The Menota handbook<em id="element">&lt;/title&gt; (</em>version 1.1), at <em id="element">&lt;ref</em> <em id="code">target=&quot;</em>http://www.aksis.uib.no/menota/guidelines<em id="code">&quot;</em><em id="element">&gt; </em>http://www.aksis.uib.no/menota/guidelines<em id="element">&lt;/ref&gt;</em> as of <em id="element">&lt;</em><em id="element">date&gt;</em>2004-05-05<em id="element">&lt;/date&gt;</em>.<em id="element">&lt;/p&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Not all texts in the
+         archive may confirm wholly to the Menota standard. Those
+         that do should say so explicitly.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/projectDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;editorialDecl&gt;</em></P>
+      </TD>
+					<TD>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;correction</em>
+         <em id="code">status=&quot;high&quot;</em><em id="element">&gt;&lt;p&gt;</em>This text has been proofread by <em id="element">&lt;name&gt;</em>Karl G. Johansson<em id="element">&lt;/name&gt;</em>.<em id="element">&lt;/p&gt;&lt;/correction&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Level of quality control. Attribute values (according to TEI): <strong>high</strong>, <strong>medium</strong>, <strong>low</strong>, <strong>unknown</strong>. Except for the attribute value the element may be empty. &#150; TEI P5 <a href="http://www.tei-c.org/P5/Guidelines/HD.html#HD53">ch. 5.3.3</a> (Specifications, Element: correction) has these definitions:</P>
+
+         <P><strong>high</strong>: the text has
+         been thoroughly checked and proofread<BR>
+         <strong>medium</strong>: the text has been checked at least once<BR>
+         <strong>low</strong>: the text has not been checked<BR>
+         <strong>unknown</strong>: the correction status of the text is
+         unknown</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/editorialDecl&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/encodingDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+				<tr>
+					<td valign=top width="60%"><p><em id="element">&lt;profileDesc&gt;</em></p></td>
+					<td valign=top><p>The <strong>&lt;profileDescription&gt;</strong> is an optional part of the header. We recommend that it is used to specify the number of hands in the source (if more than one). It should also be used to list language names outside the list in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;langUsage&gt;</em></p></td>
+					<td valign=top><p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;language</em> <em id="code">xml:id=&quot;oda&quot;</em><em id="element">&gt;</em>Old Danish<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">xml:id=&quot;oic&quot;</em><em id="element">&gt;</em>Old Icelandic<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">xml:id=&quot;onw&quot;</em><em id="element">&gt;</em>Old Norwegian<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">xml:id=&quot;osw&quot;</em><em id="element">&gt;</em>Old Swedish<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">xml:id=&quot;oic-onw&quot;</em><em id="element">&gt;</em>Old Icelandic with Old Norwegian traits<em id="element">&lt;/language&gt;<br>
+								&lt;language</em> <em id="code">xml:id=&quot;onw-oic&quot;</em><em id="element">&gt;</em>Old Norwegian with Old Icelandic traits<em id="element">&lt;/language&gt;<br>
+							</em></p></td>
+					<td valign=top>
+						<p><a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a> contains a list of three-letter abbreviations of language names. In addition to the modern languages <strong>dan</strong> (Danish), <strong>ice</strong> or <strong>isl</strong> (Icelandic), <strong>nor</strong> (Norwegian) and <strong>swe</strong> (Swedish), there is only one abbreviation for Medieval Nordic, sc. <strong>non</strong> (Old Norse, i.e. Old Icelandic and/or Old Norwegian). Since Old Norse is a problematic term and the abbreviation <strong>non</strong> is idiosyncratic, we recommend introducing the values <strong>oda</strong> (Old Danish), <strong>oic</strong> (Old Icelandic), <strong>onw</strong> (Old Norwegian), <strong>osw</strong> (Old Swedish). In cases of uncertainty, a hyphen may be used, e.g. <strong>oic</strong>-<strong>onw</strong> for a manuscript which is either Old Iceland or Old Norwegian (but most probably Old Icelandic), <strong>onw</strong>-<strong>oic</strong> the other way round, etc. Please note that this usage is not ISO conformant.</p>
+						<p>For Latin we recommend the abbreviation <strong>lat</strong> (as in <a href="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2</a>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;/langUsage&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;handList&gt;</em></p></td>
+					<td valign=top><p>The <strong>&lt;handList&gt;</strong> element specifies the number of hands recognised in the encoding of the source.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;hand</em> <em id="code">xml:id=&quot;h1&quot;</em><em id="element">/&gt;<br>
+								&lt;hand</em> <em id="code">xml:id=&quot;h2&quot;</em><em id="element">/&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;/handList&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p><em id="element">&lt;/profileDesc&gt;</em></p></td>
+					<td valign=top><p></p></td>
+				</tr>   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;revisionDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+						<P>The <strong>&lt;revisionDesc&gt;</strong> is an optional part of the header, but it is essential that all changes to the file are recorded, especially those that are added by other people than the transcriber/editor. See the header for Holm perg 6 fol above for an example of this.</P>
+					</TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;change&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;date&gt;</em>2004-05-10<em id="element">&lt;/date&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>Date format as explained
+         in <strong>&lt;editionStmt&gt;</strong> above.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;respStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+						<p id="indent3"><em id="element">&lt;name&gt;</em>Karl G. Johansson<em id="element">&lt;name&gt;<br>
+								&lt;name </em><em id="code">type=&quot;affiliation&quot;</em><em id="element">&gt;</em>University of Oslo<em id="element">&lt;/name&gt;</em></P>
+					</TD>
+					<TD VALIGN=top>
+         <P>The name of the person(s) responsible for the change, preferably with affiliation at the time of the change.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;/respStmt&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD WIDTH="60%">
+         <p id="indent2"><em id="element">&lt;item&gt;</em>Revised the transcription in accordance with v. 1.1 of the Menota handbook and the corresponding Document Type Definition.<em id="element">&lt;/item&gt;</em></P>
+      </TD>
+					<TD valign="top">
+         <P>The type of change, including the creation of the file.</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <p id="indent1"><em id="element">&lt;/change&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P>&lt;<em id="element">/revisionDesc&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   <TR>
+					<TD VALIGN=top WIDTH="60%">
+         <P><em id="element">&lt;/teiHeader&gt;</em></P>
+      </TD>
+					<TD VALIGN=top>
+         <P>&nbsp;</P>
+      </TD>
+				</TR>
+   </tbody>
+</TABLE>
+		<p>The body follows immediately after the header. This is where the actual transcription is located. Note that <strong>&lt;div&gt;</strong> elements are used to organise the various parts of the manuscript, referring to the divisons set out in the <strong>&lt;msContents&gt;</strong> element of the header.</p>
+		<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+			<thead>
+				
+			</thead>
+			<tfoot></tfoot>
+			<tbody>
+				<tr>
+					<td valign=top width="60%">
+						<p><em id="element">&lt;text </em><em id="code">xml:lang=&quot;oic&quot;</em><em id="element">&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p>The source text is placed within the <strong>&lt;text&gt;</strong> element. The attribute <strong>xml:lang</strong> specifies the language of the text (cp. <strong>&lt;msContents&gt;</strong> above). If the text contains sporadic words or sentences in another language, e.g. Latin, the attribute <strong>xml:lang</strong> can be used to specify these exception from the rule, whether on the level of the word, <strong>&lt;w&gt;</strong>, paragraph, <strong>&lt;p&gt;</strong> or chapter, <strong>&lt;div&gt;</strong>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%">
+						<p id="indent1"><em id="element">&lt;body&gt;</em></p>
+					</td>
+					<td valign=top>
+						<p></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;div </em><em id="code">n=&quot;1.1&quot;</em><em id="element">&gt;</em></p></td>
+					<td valign=top><p>The divisions of the text correspond to the list of <strong>&lt;msItem&gt;</strong> elements in <strong>&lt;msContents&gt;</strong> above, using the same numbers (1.1, 1.2, 1.3, 2.1, 2.2, etc.)</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent3"><em id="element">&lt;head </em><em id="code">type=&quot;supplied&quot;</em><em id="element">&gt;</em>Prologus<em id="element">
+								&lt;/head&gt;<br>
+								&lt;p&gt;</em>The text of the first part goes here.<em id="element">&lt;/p&gt;</em></p></td>
+					<td valign=top><p>The <strong>&lt;head&gt;</strong> element specifies the title of the work (or a part of it). If the title is not stated in the source, the attribute <strong>type</strong> with the value <strong>supplied</strong> should be used. If the title is stated as a rubric in the manuscript, the type attribute should still be used, but with the value <strong>rubric</strong>.</p></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;/div&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;div </em><em id="code">n=&quot;1.2&quot;</em><em id="element">&gt;</em></p></td>
+					<td valign=top>
+						
+					</td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent3"><em id="element">&lt;head </em><em id="code">type=&quot;supplied&quot;</em><em id="element">&gt;</em>Gylfaginning<em id="element">
+								&lt;/head&gt;<br>
+								&lt;p&gt;</em>The text of the second part goes here.<em id="element">&lt;/p&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2"><em id="element">&lt;/div&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2">. . .</p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent2">. . .</p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p id="indent1"><em id="element">&lt;/body&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+				<tr>
+					<td valign=top width="60%"><p><em id="element">&lt;/text&gt;</em></p></td>
+					<td valign=top></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>&nbsp;</p>
+		<p><IMG SRC="redarrow.gif" alt=""  WIDTH=15 HEIGHT=15 ALIGN=top><a href="#top">Top of page</a></p>
+		<p>&nbsp;</p>
+
+<table width="100%" border="1" frame="border" cellspacing="0" cellpadding="4">
+	<thead><tr>
+					
+				</tr></thead>
+	<tfoot><tr>
+					
+				</tr></tfoot>
+	<tbody>
+		<tr bgcolor="#D3D3D3">
+			<td>
+				<p>Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004. Version 2.0 beta published 8 June 2005.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

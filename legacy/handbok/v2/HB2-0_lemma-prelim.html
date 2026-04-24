@@ -1,0 +1,3346 @@
+<HTML>
+<!--This file created 29.09.03 13:22 by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>Ch. 8. Lemmatisation of manuscript text</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+   <X-CLARIS-WINDOW TOP=52 BOTTOM=877 LEFT=614 RIGHT=1373>
+   <X-CLARIS-TAGVIEW MODE=minimal>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><FONT SIZE="-1" FACE="Verdana"><B><A NAME=top></A>
+
+<HR>
+
+<IMG SRC="Handbook.gif" WIDTH=500 HEIGHT=100 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></B></FONT><FONT SIZE="-1">
+
+<HR>
+
+</FONT></P>
+
+<P><FONT SIZE="+1" FACE="Verdana"><B>Ch. 8. Lemmatisation of
+manuscript text</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000"><B>Preliminary
+revised version by OEH (25 August 2003)</B></FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A HREF="#8.1"><FONT SIZE="-1" FACE="Verdana">8.1
+Introduction</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#8.2"><FONT SIZE="-1" FACE="Verdana">8.2 The
+attribute <I>lemma</I></FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#8.3"><FONT SIZE="-1" FACE="Verdana">8.3 The
+attribute <I>pos</I></FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#8.4"><FONT SIZE="-1" FACE="Verdana">8.4 Homography
+and zero values</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT><A HREF="#8.5"><FONT SIZE="-1" FACE="Verdana">8.5 Word
+classes</FONT></A><FONT SIZE="-1" FACE="Verdana"><BR>
+</FONT></P>
+
+<P><A NAME="8.1"></A>&nbsp;</P>
+
+<P>&nbsp;</P>
+
+<P><FONT FACE="Verdana"><B>8.1 Introduction</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In </FONT><A HREF="HB1-0_ch2_basics.html#2.3"><FONT SIZE="-1" FACE="Verdana">ch.
+2.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> we suggested that the
+<I>word</I>, &lt;w&gt;, is a basic unit in any transcription. The
+&lt;w&gt; element can easily be supplied with information about the
+dictionary entry and the grammatical analysis for every word in a
+manuscript text. As specified in the TEI guidelines, this information
+can be provided by the two attributes <I>lemma</I> and <I>pos</I>. In
+the present chapter, the basic principles for lemmatisation and
+grammatical encoding of manuscript text are treated. It is important
+to note, that this chapter should be seen as a suggestion rather than
+as definite guidelines. The elements and attributes to be discussed
+are:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE CELLSPACING=3 CELLPADDING=3 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Element</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="80%">
+         <P><FONT SIZE="-1" FACE="Verdana">Contents</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">&lt;<B>w</B>&gt;</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="80%">
+         <P><FONT SIZE="-1" FACE="Verdana">delimits a grammatical
+         word</FONT>.</P>
+      </TD>
+   </TR>
+</TABLE>
+ <TABLE WIDTH="100%">
+   <TR>
+      <TD VALIGN=top WIDTH="5%">
+         <P></P>
+      </TD>
+      <TD VALIGN=top WIDTH="15%">
+         <P><FONT SIZE="-1" FACE="Verdana">lemma</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="80%">
+         <P><FONT SIZE="-1" FACE="Verdana">gives the lexical form of
+         the grammatical word.</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="5%">
+         <P></P>
+      </TD>
+      <TD WIDTH="15%">
+         <P><FONT SIZE="-1" FACE="Verdana">pos</FONT></P>
+      </TD>
+      <TD WIDTH="80%">
+         <P><FONT SIZE="-1" FACE="Verdana">gives the morphosyntactic
+         analysis of the grammatical word.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">It is essential that the
+lemmatisation of Medieval Nordic manuscript text is done in adherence
+to the principles developed for handling large corpora in linguistic
+research. We have found the guidelines provided by </FONT><A HREF="http://www.ilc.pi.cnr.it/EAGLES96/annotate/annotate.html"><FONT SIZE="-1" FACE="Verdana">EAGLES
+(1996)</FONT></A><FONT SIZE="-1" FACE="Verdana"> to be particularly
+useful, but have decided to deviate somewhat from these guidelines in
+order to produce a more self-explanatory, although slightly more
+verbose, system. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The model provided here is aimed at
+Medieval Norwegian and Icelandic texts. For Medieval Swedish and
+Danish texts and also for later Norwegian texts, we can expect a
+radical levelling in the grammatical system, e.g. in the nominal and
+verbal inflections. The model provided here will therefore
+overgenerate when applied to Medieval Swedish and Danish texts, and
+to late Medieval Norwegian texts.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="8.2"></A>&nbsp;</P>
+
+<P><FONT FACE="Verdana"><B>8.2 The attribute
+<I>lemma</I></B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The element &lt;w&gt; can be
+supplied with several lexicographical attributes for each word in a
+transcription. The attribute <I>lemma</I> provides the lexical form
+of each word based on the entries in standard dictionaries. For
+Medieval Norwegian and Icelandic texts we suggest that the word-list
+produced by the Arnamagn&aelig;an Commission's </FONT><A HREF="HB1_literature.html#AMKO"><FONT SIZE="-1" FACE="Verdana">Ordbog
+over det norr&oslash;ne prosasprog</FONT></A><FONT SIZE="-1" FACE="Verdana">
+(</FONT><A HREF="HB1_literature.html#ONP1989"><FONT SIZE="-1" FACE="Verdana">ONP</FONT></A><FONT SIZE="-1" FACE="Verdana">)
+at the University of Copenhagen is used to create the lemma base. The
+attribute would then be marked up as in this example, which states
+that the word "hefir" has "hafa" as its lemma:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   lemma="hafa"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hefir</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">Lemmatised texts are useful for any
+language, and in particular for languages with complex morphology or
+variable orthography. The morphology of Old Norse is more complex
+than that of the modern Nordic languages, but not particularly
+difficult - it is rather like the morphology of Modern German. The
+orhography, however, was far from fixed, and since many
+transcriptions are likely to be fairly diplomatic, any lemma may be
+instantiated by a large number of orthographic forms. For example,
+the pronoun <I>hann</I> has only three forms in the normalised
+orthography of Old Norse: <I>hann</I> (nominative and accusative),
+<I>hans</I> (genitive), and <I>honum</I> (dative). In an actual
+transcription, however, a dozen or more forms may occur, as shown in
+the table below. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Form</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Lemma</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">han</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">h</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">h</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">n</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">ha&amp;scap;</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hans</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">han&amp;stall;</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">h</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">s</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">h</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;stall;</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">honum</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">honom</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">h</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&amp;bar;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana">m</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">hann</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In </FONT><A HREF="HB1-0_ch2_basics.html#2.3"><FONT SIZE="-1" FACE="Verdana">ch.
+2.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> the use of &lt;w&gt;
+for the encoding of graphic words and information concerning their
+description is treated. Note the use of entities for special
+characters, such as "&amp;fins" and "&amp;scap;", or abbreviations
+such as "&amp;bar;". These are described in </FONT><A HREF="HB1-0_ch5_characters.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+5</FONT></A><FONT SIZE="-1" FACE="Verdana"> and </FONT><A HREF="HB1-0_ch6_abbreviations.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+6</FONT></A><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">As stated in </FONT><A HREF="HB1-0_ch3_levels.xhtml"><FONT SIZE="-1" FACE="Verdana">ch.
+3</FONT></A><FONT SIZE="-1" FACE="Verdana">, a text may be encoded on
+a single level of transcription, as exemplified with "hefir" above.
+If the text is transcribed on more than one level there is no need
+for any further attributes, since each word is contained within a
+single &lt;w&gt; element and the attribute is valid for the whole
+contents: </FONT></P>
+
+<DL>
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w lemma
+   ="hafa"&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;facs&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ha&amp;fins;i</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/facs&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;dipl&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ha&amp;fins;i
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;/dipl&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;norm&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hafi</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;/norm&gt;<BR>
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></DD>
+</DL>
+
+<P><FONT SIZE="-1" FACE="Verdana">The next example is slightly more
+complicated since it contains an abbreviation on the &lt;facs&gt;
+level and a corresponding expansion in the &lt;dipl&gt; level, but
+the <I>lemma</I> attribute is unchanged:</FONT>&nbsp;</P>
+
+<DL>
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w lemma
+   ="koma"&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;facs&gt;</FONT><FONT SIZE="-1" FACE="Verdana">co&lt;abbr&gt;&amp;bar;&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/facs&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;dipl&gt;</FONT><FONT SIZE="-1" FACE="Verdana">co</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#996633">&lt;expan&gt;</FONT><FONT SIZE="-1" FACE="Verdana">m</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#996633">&lt;/expan&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;/dipl&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;norm&gt;</FONT><FONT SIZE="-1" FACE="Verdana">kom</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;/norm&gt;<BR>
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></DD>
+</DL>
+
+<P><FONT SIZE="-1" FACE="Verdana">In cases where a graphic word is
+included partially or completely in the element &lt;unclear&gt; this
+can be marked within the element &lt;w&gt; and be related to the
+attribute <I>lemma</I>.</FONT></P>
+
+<DL>
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w lemma
+   ="sv&amp;aacute;"&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;facs&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;unclear
+   reason="faded"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">&lt;abbr&gt;s&amp;ra;&lt;/abbr&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;/unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/facs&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;dipl&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana">s</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#996633">&lt;expan&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ua</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#996633">&lt;/expan&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;/unclear&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;/dipl&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;norm&gt;</FONT><FONT SIZE="-1" FACE="Verdana">sv&amp;aacute;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;/norm&gt;<BR>
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></DD>
+</DL>
+
+<P><FONT SIZE="-1" FACE="Verdana">Text included within the element
+&lt;supplied&gt; is not lemmatized. The following example shows how a
+character, word or phrase that has been supplied is marked with the
+element &lt;w&gt;, but without markup of the <I>lemma</I> as the text
+is not transcribed from the manuscript text.</FONT></P>
+
+<DL>
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;facs&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;supplied
+   reason="illegible" resp="KGJ"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">lei</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;/supplied&gt;</FONT><FONT SIZE="-1" FACE="Verdana">kti</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/facs&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;dipl&gt;</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;supplied
+   reason="illegible" resp="KGJ"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">lei</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666">&lt;/supplied&gt;</FONT><FONT SIZE="-1" FACE="Verdana">kti</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">&lt;/dipl&gt;</FONT></DD>
+   
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;norm&gt;</FONT><FONT SIZE="-1" FACE="Verdana">leikti</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006600">&lt;/norm&gt;<BR>
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></DD>
+</DL>
+
+<P><FONT SIZE="-1" FACE="Verdana">This means that the forms that are
+not marked will not be included in the searchable database under the
+category <I>lemma</I>. We hereby avoid the problem of contamination
+between forms that are from the manuscript text and forms that have
+been supplied by a transcriber or encoder of the text. A basic
+principle is that the lemmatized text should be from the manuscript
+text.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="8.3"></A>&nbsp;</P>
+
+<P><FONT FACE="Verdana"><B>8.3 The attribute
+<I>pos</I></B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The attribute <I>pos</I> (for
+<I>part of speech</I>) adds information about the grammatical form of
+a word. To be able to make this analysis it is necessary to create a
+model which includes all possible morphological forms of each lemma.
+As stated above, the model is based on the morphology of Medieval
+Norwegian and Icelandic, as expounded in standard grammars of Old
+Norse or "norr&oslash;nt".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">We recommend a scheme in which the
+attribute <I>pos</I> contains a set of name tokens, one for each
+morphological category. White space separates each name token. We
+further recommend that the order of the name tokens should be fixed,
+and that there should be one specific order for each word class, as
+specified in </FONT><A HREF="#8.5"><FONT SIZE="-1" FACE="Verdana">ch.
+8.5</FONT></A><FONT SIZE="-1" FACE="Verdana"> below. For words with
+inflection, the first token specifies the word class and the
+following tokens the morphological categories relevant for this
+specific word class. Words belonging to word classes with no
+inflection, such as prepositions and subjunctions, will only receive
+a single name token for the word class itself. In addition to tokens
+for morphologhical categories such as gender, number and case, tokens
+for inflection class may be added.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Each name token consists of two
+parts. The first part specifies the cateory itself and is represented
+by a single lower-case letter. The second part specifies the value of
+the category and is given in one or more upper-case letters. As far
+as possible, mnemonic characters are used, e.g. "c" for "case" and
+"G" for "genitive". The name token "cG" is thus to be understood as
+"case: genitive" and is applicable to all words which can be
+inflected in genitive, such as nouns, adjectives,
+pronouns/determiners, numerals and verb participles.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In Old Norse, nouns are inflected
+for gender, number, case and species (definiteness). Below is an
+example of the mark-up for the word "hestum", dative plural
+indefinite of the masculine noun "hestr". The <I>pos</I> attribute
+opens with a name token for the word class, "xNC" for "noun, common",
+moving on to "gM" for "gender: masculine", "nP" for "number: plural",
+"cD" for "case: dative" and finally "sI" for "species: indefinite".
+</FONT></P>
+
+<DL>
+   <DD><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w lemma
+   ="hestr" pos="xNC gM nP cD sI"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hestum</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></DD>
+</DL>
+
+<P><FONT SIZE="-1" FACE="Verdana">Prepositions, which are not
+inflected, will receive a much simpler encoding, consisting of a
+single name token, "xAP", in which "x" denotes word class and "AP"
+the actual class, prepositions.</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   lemma ="fyrir" pos="xAP"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">fyrir</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;
+   </FONT>&nbsp;</BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">Old Norse has the most complex
+morphology of the Nordic vernaculars and is therefore a suitable
+starting point. For texts with less complex morphology it is simply a
+case of making a selection of relevant categories from the repertoire
+in this chapter. Cf. the discussion on zero values in
+</FONT><A HREF="#8.4.3"><FONT SIZE="-1" FACE="Verdana">ch.
+8.4.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> below.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.1 Invariable
+properties</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Words in inflectional languages
+exhibit variable and invariable properties. Word class is the prime
+example of an invariable property, since a word can belong to one and
+only one word class - the noun "hestr" can not be inflected in
+adjectival and verbal forms. For nouns, gender is an invariable
+property - once again, "hestr" can not be inflected in feminine or
+neutral forms. Adjectives, on the other hand, are inflected in
+gender, so for this word class gender is a variable property. Other
+categories, such as case, number, grade etc., are all
+variable.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Information on inflectional classes
+can be added to the <I>pos</I> attribute, e.g. strong vs. weak verbs,
+stem classes of nouns etc. These are also invariable
+properties.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The name tokens will, in any case,
+make it clear which tokens refer to invariable properties and which
+refer to invariable properties. </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.1.1 Word
+class</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Word class is denoted by a name
+token consisting of the character "x" + an uppercase two-letter
+abbreviation for each class, including commonly recognised subclasses
+(such as the division between common and proper nouns). Inevitably,
+there will be some conflict of categorisation, especially among the
+pronouns and determiners. They will be discussed in ch. 8.5
+below.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="60%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Inflection</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNC</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Noun, common</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNP</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Noun, proper</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAJ</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Adjective</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPE</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Pronoun,
+         personal</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPQ</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Pronoun,
+         interrogative</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPI</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Pronoun,
+         indefinite</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDP</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Determiner,
+         possessive</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDD</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Determiner,
+         demonstrative</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDQ</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Determiner,
+         quantifier</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPD</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Pronoun/Determiner</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNA</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Numeral,
+         cardinal</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNO</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Numeral,
+         ordinal</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xVB</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Verb</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAV</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Adverb</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAT</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Articles</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Yes</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAP</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Preposition
+         (adposition)</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xCC</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Conjunction,
+         coordinating</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xCS</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Conjunction,
+         subordinating</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xIT</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Interjection</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xIM</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Infinitive
+         marker</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xRP</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Relative
+         particle</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">No</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xUA</FONT></P>
+      </TD>
+      <TD WIDTH="60%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unassigned</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P>-</P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.1.2 Inflectional
+class</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Inflectional class is another
+invariable property and can usually be derived from a combination of
+the lemma and the word class. Thus, the lemma "fara" belonging to the
+word class "xVB" (verbs) will be classified as being a strong verb of
+the 6th class, according to most grammars of Old Norse. This is
+information which might be found in a dictionary or a lexicographical
+database of Old Norse.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">If the encoder wishes to include
+information on the inflectional class we recommend that this is being
+done by adding to the <I>pos</I> attribute a name token consisting of
+the lowercase character "i" + an uppercase abbreviation for each
+class. The table below contains examples for the verb class, but can
+easily be extended to other classes. Incidentally, the distinction
+between strong and weak inflection also applies to nouns.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Inflectional
+         class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">iST</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Strong</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">iWK</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Weak</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">iRD</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Reduplicating</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">iPP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Preterito-Presentic</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">etc.</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2 Variable
+properties</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The list of variable properties is
+rather long for an inflectional language such as Old Norse. Note that
+the very first category in this list, gender, is a border line case,
+since it is an invariable (inherent) property for nouns. For other
+word classes, such as adjectives, pronouns/determiners, numerals,
+articles and verb participles, it is a variable property. The
+remaining categories are variable.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.1 Gender</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to nouns,
+adjectives, pronouns/determiners, numerals and verb participles.
+Gender is denoted by a name token consisting of the lowercase
+character "g" + an uppercase abbreviation for each gender. The
+character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Masculine</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gF</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Feminine</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gN</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Neuter</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Some nouns may have two genders,
+e.g. <I>hungr</I> 'hunger', which is either masculine or neutral. For
+words of this type we suggest using name tokens with more than one
+value, "gMF", "gMN" and "gFN". </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gMF</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Masculine or
+         Feminine</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gMN</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Masculine or
+         Neuter</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">gFN</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Feminine or
+         Neuter</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">For words with three possible
+genders, we suggest using the character "U", meaning that the value
+is unspecified, "gU".</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.2 Number</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to nouns,
+adjectives, pronouns/determiners and verbs. Number is denoted by a
+name token consisting of the lowercase character "n" + an uppercase
+abbreviation for each number. The dual form occurs only in the
+inflection of personal pronouns. The character "U" indicates
+unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Singular</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">nD</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Dual</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">nP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Plural</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">nU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.3 Case</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to nouns,
+adjectives, pronouns/determiners and numerals. Case is denoted by a
+name token consisting of the lowercase character "c" + an uppercase
+abbreviation for each case. The character "U" indicates unspecified
+cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Nominative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">cG</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Genitive</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">cD</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Dative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">cA</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Accusative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">cU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;<FONT SIZE="-1" FACE="Verdana"> </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.4 Species</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to nouns and
+adjectives. Species (or definiteness) is denoted by a name token
+consisting of the lowercase character "s" + an uppercase abbreviation
+for each type of species. The character "U" indicates unspecified
+cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In Old Norse, nouns and adjectives
+can have either indefinite or definite forms, e.g. "hestr"
+(indefinite noun) vs. "hestrinn" (definite noun) or "hv&iacute;tr
+&#91;hestr&#93;" (indefinite adjective) vs. "&#91;inn&#93;
+hv&iacute;ti &#91;hestr&#93;" (definite adjective).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Indefinite</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">sD</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Definite</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">sU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.5 Grade</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to adjectives
+and adverbs. Grade is denoted by a name token consisting of the
+lowercase character "r" + an uppercase abbreviation for each grade.
+The character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Memory hint: since the character
+"c" has been reserved for "case", the character "r" can be
+interpreted as "relative", which refers to an aspect of the category
+of grade.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">rP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Positive</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">rC</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Comparative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">rS</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Superlative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">rU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.6 Person</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies to verbs and
+some of the pronouns. Person is denoted by a name token consisting of
+the lowercase character "p" + an uppercase abbreviation for each
+person. The character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">p1</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">1. person</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">p2</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">2. person</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">p3</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">3. person</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">p-</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.7 Tense</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies only to
+verbs. Tense is denoted by a name token consisting of the lowercase
+character "t" + an uppercase abbreviation for each tense. The
+character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">tPS</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Present</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">tPT</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Preterite</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">tU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.8 Mood</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies only to
+verbs. Mood is denoted by a name token consisting of the lowercase
+character "m" + an uppercase abbreviation for each mood. The
+character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">mIN</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Indicative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">mSU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Subjunctive</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">mIP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Imperative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">mU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.9 Voice</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies only to
+verbs. Voice is denoted by a name token consisting of the lowercase
+character "v" + an uppercase abbreviation for each type of voice. The
+character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">vA</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Active</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">vR</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Reflexive</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">vU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.10
+Finiteness</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category applies only to
+verbs. Finiteness is denoted by a name token consisting of the
+lowercase character "g" + an uppercase abbreviation for each type of
+finiteness. The character "U" indicates unspecified cases.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">fF</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Finite</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">fI</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Infinitive
+         (non-finite)</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">fP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Participle
+         (non-finite)</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">fU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.11
+Enclitics</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Personal pronouns may be attached
+to finite verbs, e.g. "emk" for "em ek" or "f&oacute;rtu" for
+"f&oacute;rt &thorn;&uacute;". From a morphological point of view,
+this process is similar to the suffixation in definite noun forms,
+e.g. "hestr + inn" = "hestrinn", or reflexive verb forms, e.g. "kalla
++ sk" = "kallask". However, it may be argued that the enclitic
+pronoun retains it character as a word to a larger extent than the
+suffixed determiner "inn" or the reflexive pronoun "s(i)k". For this
+reason, we suggest that enclitic forms are encoded as a sequence of a
+verb and a pronoun, e.g.</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w&gt;</FONT><FONT SIZE="-1" FACE="Verdana">em</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;&lt;w&gt;</FONT><FONT SIZE="-1" FACE="Verdana">k</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;<BR>
+   &lt;w&gt;</FONT><FONT SIZE="-1" FACE="Verdana">fort</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;&lt;w&gt;</FONT><FONT SIZE="-1" FACE="Verdana">u</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">In lemmatised version:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   lemma="vera"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">em</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;&lt;w
+   lemma="ek"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">k</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;<BR>
+   &lt;w lemma="fara"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">fort</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;&lt;w
+   lemma="&amp;thorn;&amp;uacute;&gt;</FONT><FONT SIZE="-1" FACE="Verdana">u</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note the lack of white space
+between the two word elements, indicating that the two words are
+written with no space in between. Cf. the discussion in
+</FONT><A HREF="HB1-0_ch2_basics.html#2.3"><FONT SIZE="-1" FACE="Verdana">ch.
+2.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> above.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Also note that the segmentation in
+some cases is open to discussion. Thus, the "t" in "fortu" may be
+seen as part of the verb form or as part of the pronoun. From a
+phonological point of view, it is an assimilation product of the
+final "t" in the verb and the initial "&thorn;" in the pronoun. It is
+therefore useful to supply these verb and pronoun forms with a marker
+for enclitication. We suggest a name token "eE" for this purpose, to
+be used in the <I>pos</I> attribute of both words:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">eE</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Enclitic
+         pronoun</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This category is only relevant for
+combinations of a verb and an enclitic pronoun. In all other cases,
+the name token is simply not used.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.3.2.12
+Government</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In the Old Norwegian lemmatised
+corpus, prepositions are encoded for the case which they govern. Thus
+"fyrir" in the phrase. This is valuable syntactic information, but it
+is really not a morphologucal category. We therefore recommend that
+prepositions, which have no inflection in Old Norse (or possibly not
+in any other language), are only encoded for word class in the
+<I>pos</I> attribute, "xAP".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">However, to accomodate the
+information provided in the Old Norwegian lemmatised corpus without
+introducing attributes for syntactic categories we suggest using a
+name token for government, consisting of the lowercase character "y"
++ an uppercase abbreviation for each type of case government. This
+category would apply to prepositions, verbs and some
+adjectives.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="50%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Name token</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Value</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">yG</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Governing
+         Genitive</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">yD</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Governing
+         Dative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">yA</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Governing
+         Accusative</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">yU</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Unspecified
+         government</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="8.4"></A>&nbsp;<A NAME="8.4.1"></A></P>
+
+<P><FONT FACE="Verdana"><B>8.4 Homography and zero
+values</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Two or more words sometimes have
+the same spelling, but different meaning. This is usually referred to
+as <I>homography</I> and it is a basic problem for all morphological
+analysis. We shall distinguish between two types of homography,
+external and internal. The first case must be handled by <I>lemma</I>
+attribute, the second by the <I>pos</I> attribute.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">For the discussion in this chapter,
+we shall adopt the distinction between <I>word form</I>,
+<I>grammatical form</I> and <I>lemma</I> (lexeme). The word form is
+the word as it is spelt in the text, whether normalised or
+unnormalised. The grammatical form is a specific morphological value
+of the word, referred to by the attribute <I>pos</I>. The lemma is
+the common denominator for all of these forms, typically given as a
+dictionary entryand referred to by the attribute
+<I>lemma</I>.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.4.1. External
+homography</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">External homography means that one
+grammatical word can be mapped unto two or more lemmata. In some
+cases the alternative lemmata are different words from a semantic and
+etymological point of view, such as the feminine noun
+<I>&thorn;&yacute;&eth;a</I> 'friendship' in nominative singular and
+the verb <I>&thorn;&yacute;&eth;a</I> 'interpret' in infinitive. In
+all but a few cases, a semantic analysis will disambiguate these
+forms.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In other cases it is a questions of
+related words with variant forms, such as the neutral nouns
+<I>l&iacute;f</I> and <I>l&iacute;fi</I>. In dative singular they
+happen to have the same form, <I>l&iacute;fi</I>:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="60%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Lemma</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word form</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Grammatical
+         form</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">l&iacute;f</FONT></P>
+      </TD>
+      <TD ROWSPAN=2>
+         <P><FONT SIZE="-1" FACE="Verdana">l&iacute;fi</FONT></P>
+      </TD>
+      <TD ROWSPAN=2>
+         <P><FONT SIZE="-1" FACE="Verdana">xNC gN nS cD sI</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">l&iacute;fi</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">For this case of external
+homography we recommend encoding each of the possible lemmata in
+full, using the vertical bar, "|", as delimiter (for the sake of
+simplicity we are using "&iacute;" rather than
+"&amp;iacute;):</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana">...
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma="l&iacute;f
+   | l&iacute;fi" pos="xNC gN nS cD sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">lifi</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT><FONT SIZE="-1" FACE="Verdana">
+   ...</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">A search engine would be able to
+pick out both "l&iacute;f" and "l&iacute;fi" as possible lemmata for
+"l&iacute;fi", and also to keep this example separate from
+unambiguous ones, such as the genitive "l&iacute;fs", which can only
+be mapped to the lemma "l&iacute;f", or the nominative "l&iacute;fi"
+which can only be mapped to the lemma "l&iacute;fi".</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.4.2 Internal
+homography</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Internal homography means that one
+word form can be mapped unto two or more grammatical words. This is
+often referred to as syncretism, and is frequently found in many
+languages, typically as the result of linguistic development. The
+levelling of the morphological system in Medieval Nordic (except
+Icelandic) produced a large amount of syncretism.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The masculine noun <I>granni</I> is
+a case in point. It has the same form, <I>granna</I>, in all three
+non-nominative (oblique) cases in singular:</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="60%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Lemma</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word form</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Grammatical
+         form</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD ROWSPAN=4>
+         <P><FONT SIZE="-1" FACE="Verdana">kona</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">kona</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">xNC gF nS <B>cN</B>
+         sI</FONT></P>
+      </TD>
+   </TR>
+   <TR><TD ROWSPAN=3>
+         <P><FONT SIZE="-1" FACE="Verdana">konu</FONT></P>
+      </TD>
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">xNC gF nS <B>cG</B>
+         sI</FONT></P>
+      </TD>
+   </TR>
+   <TR><TD>
+         <P><FONT SIZE="-1" FACE="Verdana">xNC gF nS <B>cD</B>
+         sI</FONT></P>
+      </TD>
+   </TR>
+   <TR><TD>
+         <P><FONT SIZE="-1" FACE="Verdana">xNC gF nS <B>cA</B>
+         sI</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The encoder may choose to see these
+forms as syncretistic and simply encode case as unspecified for this
+word, using the value "U":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma
+   ="kona" pos="xNC gN nS <B>cU</B> sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">konu</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">This encoding entails that the word
+<I>kona</I> has case as a relevant category, but that the exact value
+has not been determined by the encoder. A search engine would be able
+to list the form as an example of e.g. a feminine noun in singular,
+but not as an example of a feminine noun in dative. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In most cases, however, a syntactic
+or semantic analysis will yield a unique result. For example, in the
+phrase "til konu" the word form <I>konu</I> would be analysed as
+genitive since the preposition <I>til</I> only governs this
+particular case:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma ="til"
+   pos="xAP"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">til</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;
+   &lt;w </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma
+   ="kona" pos="xNC gN nS <B>cG</B> sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">konu</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">In another phrase, e.g. "fyrir
+konu", the encoder might not be willing to make a definitive choice,
+since the preposition <I>fyrir</I> governs both accusative and
+dative. The encoder might then hoose to list both alternatives in the
+<I>pos</I> attribute, using the vertical bar as a delimiter:
+</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma
+   ="fyrir" pos="xAP"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">fyrir</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;
+   &lt;w </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#006666">lemma
+   ="kona" pos="xNC gN nS <B>cA</B> sI | xNC gN nS <B>cD</B>
+   sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">konu</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">A search engine would be able to
+pick out this instance of "kona" as a possible example of accusative
+and of dative. The presence of the delimiter would also make it
+possible to identify this as an instance of syncretism, so that this
+example would not be counted among the unambiguous examples of either
+accusative or dative. Note that the order of the alternatives is
+arbitrary; the encoding above does not imply that accusative is more
+likely than dative.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Finally, it should be pointed out
+that it is a moot question whether <I>konu</I> should be seen as a
+single word form, or as a three homographic word forms representing
+three distinct grammatical forms, <I>konu-GEN</I>, <I>konu-DAT</I>
+and <I>konu-ACC</I>. The answer to this question depends on the
+morphological analysis of the linguistic stage in question. One might
+possibly claim, for example, that in Medieval Norwegian case is a
+relevant distinction to make for all nouns, but that in Late Medieval
+Norwegian the case distinction has collapsed, and that the lemma
+<I>kona</I> only has two grammatical forms, the nominative
+<I>kona</I> and the non-nominative (oblique) <I>konu</I>.</FONT></P>
+
+<P><A NAME="8.4.3"></A>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.4.3 Zero values</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">We believe it is convenient to
+distinguish between two types of zero values in morphological
+encoding, <I>not applicable</I> and <I>not specified</I>.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">(a) <B>Not
+applicable</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">No words have the complete set of
+morphological categories listed in <B>8.3</B> above. For example,
+although verb participles belong to the verb class, they are not
+inflected for mood. There is no need to encode participles for
+"mood:zero" - it is sufficient to leave out the name token for mood.
+In other words, the absence of the name token implies that mood is
+not a relevant category for the word in question.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">(b) <B>Not specified</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In other cases, a word is inflected
+for a certain category, but the encoder is not able to specify a
+value. This may be the case with some proper nouns, for which no
+gender can be given. This is a different type of "zero" value, and we
+therefore suggest to indicate these cases with the character "U" to
+be read as "unspecified". An example:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   lemma="Byblos" pos="xNP gU&gt;</FONT><FONT SIZE="-1" FACE="Verdana">Byblos</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">This encoding entails that the word
+in question is a noun and that it does have a gender (it is thus not
+a case of non-applicability), but that the encoder does not know
+which gender that would be. </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Another example: In Old Norse,
+there is no gender distinction in genitive or dative plural of any
+adjective or determiner. It is possible to encode adjectives and
+determiners for gender based on concord with a noun (if there happens
+to be one), so that in a genitive plural phrase like "spakra manna"
+the adjective "spakra" might be ascribed masculine gender on the
+basis of the noun <I>ma&eth;r</I>, which is masculine. From
+experience, we know that this is time-consuming and not really
+informative encoding. A less specified option would be to use the
+character "U" to indicate non-specification:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;w
+   lemma ="spakr" pos="xNC gU nP cG
+   sI"&gt;</FONT><FONT SIZE="-1" FACE="Verdana">spakra</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0000">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana">A serach engine would be able to
+pick out <I>spakra</I> as an example of an adjective in gentive
+plural, but not as an adjective in masculine (or feminine, or
+neutral) gender.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="8.5"></A>&nbsp;</P>
+
+<P><FONT FACE="Verdana"><B>8.5 Word classes</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This chapter contains examples of
+encoding for each word class. We strongly recommend a fixed order of
+name tokens for each class, beginning with the name token for the
+word class itself. Note, however, that non-relevant categories can
+simply be left out, as recommended in </FONT><A HREF="#8.4.3"><FONT SIZE="-1" FACE="Verdana">ch.
+8.4.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> above. Thus, for late
+Medieval texts the encoding of many word classes may be shorter than
+the one exemplified here.</FONT>&nbsp;</P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.1 Nouns (NC and
+NP)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Nouns are divided into two
+subgroups, </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>common
+noun</B></FONT><FONT SIZE="-1" FACE="Verdana"> (xNC) and
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>proper
+nouns</B></FONT><FONT SIZE="-1" FACE="Verdana"> (xNP). They are
+further encoded for </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>species</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the noun "ymr" in the phrase "&thorn;&aacute; heyr&eth;u
+&thorn;eir ym mikinn ok gny":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="ymr"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xNC gM
+   nS cA sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ym</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Species</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNC<BR>
+         xNP<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI<BR>
+         sD<BR>
+         sU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Possibly, a separate name token for
+oblique case, "cO", might be added. The concept of the oblique case
+covers all non-nominative cases, i.e. genitive, dative and
+accusative.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.2 Adjectives
+(AJ)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Adjectives are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>grade</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>species</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the adjective "langr" in the phrase "seint er um langan
+veg at spyrja t&iacute;&eth;enda":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="langr"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xAJ rP
+   gM nS cA sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">langan</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Grade</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Species</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAJ</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">rP<BR>
+         rC<BR>
+         rS<BR>
+         rU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI<BR>
+         sD<BR>
+         sU</FONT></P>
+         
+         <P></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note that in the comparative form,
+adjectives only have weak (indefinite) inflection. Nevertheless, we
+recommend that they are encoded for species, "sI", throughout. Also
+note that some adjectives have defect comparation, but we still
+recommend that they are encoded for grade.</FONT></P>
+
+<P><A NAME="8.5.3"></A>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.3 Pronouns proper (PE,
+PQ and PI)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In recent grammars the traditional
+category pronoun is usually divided into <I>pronouns </I>in a strict
+sense (words replacing a noun) and <I>determiners</I> (adjunct
+words), and that is our recommendation as well, cf. </FONT><A HREF="#8.5.3"><FONT SIZE="-1" FACE="Verdana">ch.
+8.5.3</FONT></A><FONT SIZE="-1" FACE="Verdana"> and </FONT><A HREF="#8.5.4"><FONT SIZE="-1" FACE="Verdana">8.5.4</FONT></A><FONT SIZE="-1" FACE="Verdana">
+below. However, in some projects (i.e. the Old Norwegian lemmatised
+corpus) there is only a single category pronoun, and we have
+therefore added in </FONT><A HREF="#8.5.5"><FONT SIZE="-1" FACE="Verdana">ch.
+8.5.5</FONT></A><FONT SIZE="-1" FACE="Verdana"> a combined category,
+<I>pronouns and determiners</I>.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Although pronouns in the strict
+sense of "words replacing a noun" is a smaller category than the
+traditional one, there are a nonetheless three distinct
+sub-categories. In the following these are treated separately to
+provide an over-view.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.3.1 Personal pronouns
+(PE)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Personal pronouns are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>person</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+Note that only personal pronouns in 3. person have a gender
+distinction; for pronouns in 1. and 2. person this category is simply
+left out.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the personal pronoun "vit" in the phrase "vit erum
+fegnir" (leaving out the gender category):</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="vit"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xPE p1
+   nD cN</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">vit</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Person</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPE</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">p1<BR>
+         p2<BR>
+         p3<BR>
+         pU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.3.2 Interrogative pronouns
+(PQ)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Interrogative pronouns are encoded
+for </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+Memory hint: in the name token "xPQ" the last character stands for
+"question".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the interrogative pronoun "hverr" in the phrase "Frigg
+spur&eth;i hverr s&aacute; v&aelig;ri me&eth;
+&aacute;sum":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="hverr"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xPQ gM
+   nS cN"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hverr</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPQ</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.3.3 Indefinite pronouns
+(PI)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Indefinite pronouns are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the indefinite pronoun "einnhverr" in the phrase "vill
+hann taka til at &thorn;reyta drykkju vi&eth; einhvern
+mann":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="einnhverr"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xPI gM
+   nS cA"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hverr</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPI</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><A NAME="8.5.4"></A>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.4 Determiners (DP, DD
+and DQ)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The contents of the word class
+determiners vary between languages and grammars. In the present
+analysis, determiners comprise a large part of the traditional word
+class pronouns (as defined in many grammars of Old Norse) with the
+exception of pronouns proper. Determiners have three subcategories:
+possessives, demonstratives and quantifiers.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note that articles and numerals are
+often analysed as determiners, but these traditional classes have
+been retained here. </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.4.1 Possessives
+(DP)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Possessives are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the possessive "sinn" in the phrase "hann hug&eth;isk
+&thorn;&aacute; at reyna afl sitt":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="sinn"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xDP gN
+   nS cA"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">sitt</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDP</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.4.2 Demonstratives
+(DD)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Possessives are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the demonstrative "hinn" in the phrase "hitt fjall er
+h&aacute;tt":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="hinn"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xDD gN
+   nS cN"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">hitt</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDD</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.4.3 Quantifiers
+(DQ)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Quantifiers are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+This category may overlap with Indefinite pronouns.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the demonstrative "mar(g)t" in the phrase "mart folk
+hefir komit h&eacute;r":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="margr"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xDQ gN
+   nS cN"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">mart</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">xDQ</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="25%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><A NAME="8.5.5"></A><FONT SIZE="-1" FACE="Verdana">&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.5 Pronouns/determiners
+(PD)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">This is the traditional category of
+<I>pronoun</I>, as defined in the grammars of e.g. </FONT><A HREF="HB1_literature.html#Noreen1923"><FONT SIZE="-1" FACE="Verdana">Noreen
+1923</FONT></A><FONT SIZE="-1" FACE="Verdana"> and </FONT><A HREF="HB1_literature.html#Iversen1973"><FONT SIZE="-1" FACE="Verdana">Iversen
+1973</FONT></A><FONT SIZE="-1" FACE="Verdana">. From a inflectional
+point of view this is a heterogenous category, but since it has been
+used in much lexicographical work, it is given here as an alternative
+to the two classes pronouns proper (8.5.3) and determiners
+(8.5.4).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Pronouns/derminers are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>person</B></FONT><FONT SIZE="-1" FACE="Verdana">
+(only personal pronouns), </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the pronoun "engi" in the phrase "ormrinn er sl&#156;gari
+en ekki annat kvikendi" (no name token for person, since this
+category is not relevant):</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="engi"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xPD gN
+   nS cN"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ekki</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;
+   </FONT>&nbsp;</BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Person</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xPD</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">p1<BR>
+         p2<BR>
+         p3<BR>
+         pU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nD<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.6 Numerals (NA and
+NO)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The numerals are devided into two
+sub-categories: <I>cardinals</I> (NA) and <I>ordinals</I> (NO). The
+character U is used for "unspecified", so that "xNU" comprises both
+cardinal and ordinal numerals. That happens to be the case for the
+Old Norwegian lemmatised corpus.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Numerals are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">
+(only the cardinals 1-4), </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+(only ordinals), </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>species</B></FONT><FONT SIZE="-1" FACE="Verdana">
+(only relevant for the numerals <I>einn</I>, <I>fyrstr</I>, and
+<I>annarr</I>). Memory hint: since the obvious candidate "NC" for
+"numeral, cardinal" has been reserved for "nouns, common", the
+character "A" in "NA" can be seen as referring to the vowel "a" which
+occurs two times in the word "cardinal".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The numerals <I>hundra&eth;</I>
+'one hundred (and twenty)' and <I>&thorn;&uacute;sund</I> 'one
+thousand (two hundred)' are treated as nouns.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the numeral "sjaundi" in the phrase "in sjaunda
+borg":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="sjaundi"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xNO gF
+   nS cN sD"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">sjaunda</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="16%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+      <TD WIDTH="16%">
+         <P><FONT SIZE="-1" FACE="Verdana">Species</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">xNA<BR>
+         xNO<BR>
+         xNU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="17%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="16%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU-</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="16%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI<BR>
+         sD<BR>
+         sU</FONT></P>
+         
+         <P></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.7 Articles
+(AT)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In recent grammars the traditional
+word class <I>articles</I> is usually classified as part of the word
+class <I>determiners</I>. However, in some projects (i.e. the Old
+Norwegian lemmatised corpus) articles are treated as a separate
+class, and we suggest that as an alternative they may be classified
+as such.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Articles are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>species</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the article "einn" in the phrase "ein kona":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="einn"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xAT gF
+   nS cN sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ein</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Species</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAT</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI<BR>
+         sD<BR>
+         sU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.8 Verbs
+(VB)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Verbs are either
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>finite</B></FONT><FONT SIZE="-1" FACE="Verdana">
+or </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>infinite</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+In the former category, they are inflected for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>tense</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>mood</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>person</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>voice</B></FONT><FONT SIZE="-1" FACE="Verdana">.
+In the latter category, participles are basically inflected as
+adjectives, while infinitives have a very restricted inflection. For
+practical reasons, we recommend that finite and infinite forms are
+treated separately. </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.8.1 Finite
+forms</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Finite verbs are encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>tense</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>mood</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>person</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>voice</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT>
+<FONT SIZE="-1" FACE="Verdana">Optionally, verbs may be encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>inflectional
+class</B></FONT><FONT SIZE="-1" FACE="Verdana">. This may prove
+practical since Old Norse some "pair verbs" with identical lemmatic
+forms such as the strong verb <I>brenna</I> and the weak verb
+<I>brenna</I>. In the Old Norwegian lemmatised corpus, verbs are
+divided into four inflectional classes, as exemplified in the table
+below.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the verb "taldi" in the phrase "hon taldi" (leaving out
+inflectional class):</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="telja"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xVB fF
+   tPT mIN p3 nS vA"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">taldi</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">Finiteness</FONT></P>
+      </TD>
+      <TD WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">Tense</FONT></P>
+      </TD>
+      <TD WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">Mood</FONT></P>
+      </TD>
+      <TD WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">Person</FONT></P>
+      </TD>
+      <TD WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">Voice</FONT></P>
+      </TD>
+      <TD WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">Infl. class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">xVB</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">fF</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">tPS<BR>
+         tPT<BR>
+         tU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">mIN<BR>
+         mSU<BR>
+         mIP<BR>
+         mU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">p1<BR>
+         p2<BR>
+         p3<BR>
+         pU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="12%">
+         <P><FONT SIZE="-1" FACE="Verdana">vA<BR>
+         vR<BR>
+         vU</FONT></P>
+      </TD>
+      <TD WIDTH="13%">
+         <P><FONT SIZE="-1" FACE="Verdana">iST<BR>
+         iWK<BR>
+         iRD<BR>
+         iPP<BR>
+         iU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><A NAME="8.5.8.2"></A>
+&nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>8.5.8.2 Infinite
+forms</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Infinite forms are either
+participles or infinitives, and may be distinguished by the name
+token </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>finiteness</B></FONT><FONT SIZE="-1" FACE="Verdana">
+with "fP" for participles and "fI" for infinitives.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>(a) Participles</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Participles are inflected for the
+verbal categories </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>tense</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>voice</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+and for the nominal categories </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>gender</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>number</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>case
+</B></FONT><FONT SIZE="-1" FACE="Verdana">and
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>species</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>voice</B></FONT><FONT SIZE="-1" FACE="Verdana">
+(in supinum). Optionally, participles may be encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>inflectional
+class</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note that present participles only
+have weak (definite) declension. Preterite (perfect) participles
+usually have strong (indefinite) declension, but may sometimes occur
+with weak (definite) forms. Voice is only relevant for supinum, cf.
+e.g. "hann hefir kallat" vs. "ha hefir kallazk".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the verb "koma" in the phrase "hann er
+kominn":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="koma"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xVB fP
+   tPT gM nS cN sI"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">tel</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="100%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Finiteness</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Tense</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Voice</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Gender</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Number</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Case</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Species</FONT></P>
+      </TD>
+      <TD WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">Infl. class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">xVB<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">fP<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">tPS<BR>
+         tPT<BR>
+         tU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">vA<BR>
+         vR<BR>
+         vU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">gM<BR>
+         gF<BR>
+         gN<BR>
+         gU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">nS<BR>
+         nP<BR>
+         nU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">cN<BR>
+         cG<BR>
+         cD<BR>
+         cA<BR>
+         cU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">sI<BR>
+         sD<BR>
+         sU<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="11%">
+         <P><FONT SIZE="-1" FACE="Verdana">iST<BR>
+         iWK<BR>
+         iRD<BR>
+         iPP<BR>
+         iU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><B>(b) Infinitives</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Infinitives are inflected only for
+the verbal categories </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>tense</B></FONT><FONT SIZE="-1" FACE="Verdana">
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>voice</B></FONT><FONT SIZE="-1" FACE="Verdana">,
+and </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>tense</B></FONT><FONT SIZE="-1" FACE="Verdana">
+only applies to three verbs, <I>munu</I>, <I>skulu</I> and
+<I>vilja</I> (which have preterital forms). Optionally, participles
+may be encoded for </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>inflectional
+class</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the verb "fara" in the phrase "hann mun fara" (with
+optional information on inflectional class):</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="fara"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xVB fI
+   vA iST"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">fara</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="60%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Finiteness</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Tense</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Voice</FONT></P>
+      </TD>
+      <TD WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">Infl. class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">xVB<BR>
+         </FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">fI</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">tPS<BR>
+         tPT<BR>
+         tU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">vA<BR>
+         vR<BR>
+         vU</FONT></P>
+      </TD>
+      <TD VALIGN=top WIDTH="20%">
+         <P><FONT SIZE="-1" FACE="Verdana">iST<BR>
+         iWK<BR>
+         iRD<BR>
+         iPP<BR>
+         iU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.9 Adverbs
+(AV)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Adverbs are only encoded for
+</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>grade</B></FONT><FONT SIZE="-1" FACE="Verdana">.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the adverb "sterkliga" in the phrase "hann svaf ok hraut
+sterkliga":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="sterkliga"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xAV
+   rp"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">sterkliga</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;</FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="30%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Grade</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAV</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">rP<BR>
+         rC<BR>
+         rS<BR>
+         rU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Note that some adverbs have defect
+comparation, but we still recommend that they are encoded for
+grade.</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.10 Prepositions
+(AP)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><I>Prepositions</I> are not
+inflected and only encoded for word class, xAP. The latter is an
+abbreviation for "adposition", which is the hyponymous term for
+"preposition" and "postposition" (found in e.g. Japanese, but not in
+the Nordic languages).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the preposition "at" in the phrase "koma &thorn;eir at
+kveldi til eins b&uacute;anda":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="at"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xAP"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">at</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;
+   </FONT>&nbsp;</BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xAP</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">As stated in <B>8.3.2.12</B> above,
+prepositions in the Old Norwegian lemmatised corpus are encoded for
+the case they govern. Using the name token "y" + case, the example
+above would receive this encoding:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="at"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xAP
+   yD"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">at</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;
+   </FONT>&nbsp;</BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="30%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">Government</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">xAP</FONT></P>
+      </TD>
+      <TD WIDTH="50%">
+         <P><FONT SIZE="-1" FACE="Verdana">yN<BR>
+         yG<BR>
+         yD<BR>
+         yA<BR>
+         yU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.11 Conjunctions and
+subjunctions (CC and CS)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">In recent grammars, the traditional
+word class <I>conjunctions</I> is usually divided into two separate
+classes, <I>conjunctions</I> (e.g. "ok", "en") and
+<I>subjunctions</I> (e.g. "at", "ef"). The former category connects
+phrases on the same syntactical level, while the latter category
+typically introduces clauses. In traditional terminology, this is
+reflected in the subdivision of conjunctions into <I>coordinating</I>
+and <I>subordinating</I>. We recommend making a distinction between
+conjuntions proper = coordinating conjunctions (xCC) and subjunctions
+= subordinating conjunctions (xCS).</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">However, in some schemes (i.e. the
+Old Norwegian lemmatised corpus) only a single word class
+<I>conjunctions</I> is recognised. In that case, the word class may
+be designated "xCU" using the character "U" for
+"unspecified".</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the conjunction "ok" in the phrase "Logi haf&THORN;i etit
+sl&aacute;tr allt ok beinin me&eth;":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="ok"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xCC"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">ok</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;
+   </FONT></BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana" COLOR="#666666"><B>Example</B></FONT><FONT SIZE="-1" FACE="Verdana">:
+Encoding of the subjunction "at" in the phrase "hon sag&eth;i at
+Baldr haf&eth;i &thorn;ar ri&eth;it":</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;w
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#CC0099">lemma="at"
+   </FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#009900">pos="xCS"</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&gt;</FONT><FONT SIZE="-1" FACE="Verdana">at</FONT><FONT SIZE="-1" FACE="Verdana" COLOR="#0000FF">&lt;/w&gt;
+   </FONT>&nbsp;</BLOCKQUOTE>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xCC<BR>
+         xCS<BR>
+         xCU</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.12 Interjections
+(IT)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><I>Interjections</I> are not
+inflected and only marked for word class, xIT.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xIT</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.13 Infinitive marker
+(IM)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The<I> infinitive marker</I> is not
+inflected and encoded as xIM. In Old Norse it usually has the form
+<I>at</I>.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xIM</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.14 Relative particle
+(RP)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">The<I> relative particle</I> is not
+inflected and only marked as xRP. In Old Norse it usually has the
+form <I>er</I> or <I>sem</I>. Some grammarians would classify the
+relative particle as a subjunction, while others tend to look upon it
+as a pronoun.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xRP</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ &nbsp;</FONT></P>
+
+<P>&nbsp;</P>
+
+<P><FONT SIZE="-1">
+
+<HR>
+
+</FONT><FONT SIZE="-1" FACE="Verdana"><B>8.5.15 Unassigned
+(UA)</B></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Some words are corrupt, diffcult to
+analyse, belong to another language or are for other reason
+indeterminate. These words are marked as unassigned, xUA.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=4 WIDTH="20%">
+   <TR BGCOLOR="#CCCCCC">
+      <TD>
+         <P><FONT SIZE="-1" FACE="Verdana">Word class</FONT></P>
+      </TD>
+   </TR>
+   <TR>
+      <TD VALIGN=top>
+         <P><FONT SIZE="-1" FACE="Verdana">xUA</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></P>
+
+<P>&nbsp;</P>
+
+<CENTER><A HREF="#top"><FONT SIZE="-1" FACE="Verdana">Top of
+page</FONT></A></CENTER>
+
+<P>&nbsp;</P>
+
+<P>&nbsp;<TABLE BGCOLOR="#CCCCCC" CELLSPACING=6 CELLPADDING=2 WIDTH="100%">
+   <TR>
+      <TD>
+         <P><FONT SIZE="-2" FACE="Verdana">Created 25 August
+         2003.</FONT></P>
+      </TD>
+   </TR>
+</TABLE>
+</P>
+
+<P>&nbsp;</P>
+</BODY>
+</HTML>

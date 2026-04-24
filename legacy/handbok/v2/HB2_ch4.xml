@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'https://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+         	<title>Menota handbook Ch. 4 (v. 2.0.): Document structure</title>
+            <respStmt>
+               <resp>Edited by</resp>
+               <name>Odd Einar Haugen</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Odd Einar Haugen</publisher>
+            <distributor>Medieval Nordic Text Archive</distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <p></p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Composed from the HTML files of Menota handbook v. 2.0.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>28 December 2005</date>
+         </creation>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change>
+            <date>12 July 2016</date>
+            <persName>Odd Einar Haugen</persName>: Updated a link to the TEI Guidelines
+         </change>
+      	<change>
+      		<date>28 July 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Revised the last example in ch. 4.5, using one div element for each p and lg.
+      	</change>
+      	<change>
+      		<date>20 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Made a number of minor revisions, including correcting quotation marks and fixing links
+      	</change>
+      	<change>
+      		<date>16 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Final update before publication.
+      	</change>
+      	<change>
+      		<date>14 May 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Added a discussion of how to encode prosimetrum texts in ch. 4.5, re-organised and re-numbered ch. 4.7, 4.8 and 4.9, and made a number of minor changes
+      	</change>
+      	<change>
+      		<date>14 March 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Updated the last encoding sample of ch. 4.6
+      	</change>
+      	<change>
+      		<date>13 March 2008</date>
+      		<persName>Tone Merete Bruvik and Odd Einar Haugen</persName>: Included section from ch. 7  on overlapping structures in ch. 4.10.
+      	</change>
+      	<change>
+      		<date>11 February 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Updated some invalid examples.
+      	</change>
+      	<change>
+      		<date>8 February 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Continued the revision of ch. 4.10
+      	</change>
+      	<change>
+      		<date>8 February 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Revised ch. 4.10 on overlapping structures
+      	</change>
+      	<change>
+      		<date>7 February 2008</date>
+      		<persName>Odd Einar Haugen</persName>: Added a new subchapter on initials and littera notabilior, and also on hyphenation
+      	</change>
+      	<change>
+      		<date>8 January 2008</date>
+      		<persName>Tone Merete Bruvik</persName>: Updated to TEI P5 1.0.
+      	</change>
+         <change n="1:01">
+            <date>27 January 2007</date>
+            <persName>Tarrin Wills</persName>: Added ch. 4.9 on overlapping structures.
+         </change>
+         <change n="1:01">
+            <date>23 June 2006</date>
+            <persName>Odd Einar Haugen</persName>: Revised ch. 4,8 on punctuation completely.
+         </change>
+         <change n="1:01">
+            <date>28 December 2005</date>
+            <persName>Tone Merete Bruvik</persName>: First draft in Menota XML P5.
+         </change>
+         <change n="1:01">
+            <date>20 May 2003</date>
+            <persName>Odd Einar Haugen</persName>: Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004.
+         </change>
+      </revisionDesc>
+      
+   </teiHeader>
+   <text xml:lang="en">
+      <body><head>Chapter 4. Document structure</head>
+
+         <p>Version 2.0 (16 May 2008). Links updated 12 July 2016.</p>
+<div>
+<head xml:id="sec4.1">4.1 Introduction: The structure of the
+manuscript vs. the structure of the work</head>
+
+<p>Viewed as physical objects, rather
+than as vehicles for texts, manuscripts have a certain structural
+hierarchy. What is regarded as a single manuscript may in fact
+comprise more than one volume; Flateyjarb&oacute;k, for example, is
+bound in two volumes, and the large r&iacute;mur codex Acc. 22 in
+three. A manuscript book is made up of quires or gatherings, each of
+which contains a number of leaves, normally eight. Each leaf has a
+recto side and a verso side, and each side may be further divided
+into columns. The text is then written in lines across the page or
+column. In order to be able to locate a word quickly and easily, all,
+or at least most, of these structural divisions must be registered.
+We need to know that a given word appears in the fifth line of the
+right-hand or b column on the recto side of folio 34. As it is
+customary to foliate manuscripts without regard to their quire
+division, the quires will not normally need to be included in the
+hierarchical structure, but since the quiring can have implications
+for the text itself this division should be indicated, and will also
+generally form part of the <tag>msDesc</tag> element, found in
+the document header.</p>
+
+<p>At the same time, of course,
+manuscripts obviously do contain texts, which is the reason why most
+of us are interested in them in the first place. A single manuscript
+will often contain more than one work, each of which may, in the case
+of lengthy prose works such as sagas, be divided into chapters or
+sections. In the case of poetry, r&iacute;mur for example, a single
+work (r&iacute;mnaflokkur) will usually consist of several cantos or
+fits, each containing a number of stanzas, made up of a number of
+lines. It may be necessary to group these lines in some other ways as
+well. The stanzas comprising the mans&ouml;ngur should be
+distinguished from the main body of the fit, for example, while to
+facilitate certain types of metrical analysis it might be desirable
+to divide the individual stanzas into couplets. Some types of poetry,
+such as the vikivakakv&aelig;&eth;i, will have a refrain or burden,
+which should ideally also be distinguished from the narrative
+section(s) of the stanza.</p>
+
+<p>XML has at its foundation the
+notion of a text as a single hierarchical structure, which means that
+it does not work well where there are several concurrent hierarchies,
+as is obviously the case when one wishes for example to indicate the
+line divisions both in a poem and in the manuscript in which the poem
+is contained. The TEI Guidelines offer various solutions to this
+problem, enabling both the structure of the document and the
+structure of the text to be encoded.</p>
+
+
+<div>
+<head xml:id="sec4.1.1">4.1.1 Hierarchical divisions</head>
+
+<p>The principal means of representing
+hierarchy is the <tag>div</tag> (i.e. <q>division</q>) element. <tag>div</tag>
+elements may freely nest within each other. The <tag>div</tag> element
+has, in addition to the universally available <att>id</att> and <att>n</att> attributes, a
+<att>type</att> attribute, which specifies the name conventionally given to the
+level of division, e.g. <val>chapter</val>, <val>stanza</val>, <val>couplet</val>, if attempting
+to represent the structure of the text, <val>page</val>, <val>column</val>, <val>line</val> if
+the physical structure of the manuscript is to be preferred. It will
+be convenient to specify a value for the <att>type</att> attribute in the
+<tag>div</tag> element at least each time a change of level occurs. The
+software, however, will keep count of the levels of nesting even if
+the type attribute is not used.</p>
+
+<p>The complex structure of a work
+such as a set of r&iacute;mur could be represented by using four
+levels of <tag>div</tag> elements, <tag>div type="canto"</tag> for the
+cantos or fits, <tag>div type="part"</tag> for the parts (for example
+the mans&ouml;ngvar), <tag>div type="stanza"</tag> for the stanzas, and
+<tag>div type="line"</tag> for the lines. If the manuscript being
+encoded contains more than one set of r&iacute;mur, as is frequently
+the case, it might be sensible to use <tag>div type="canto"</tag> for
+each set. A simpler form of mark-up is possible, however. Instead of
+<tag>div</tag> elements, the tags <tag>l</tag> (for <q>line</q>) and <tag>lg</tag>
+(for <q>line-group</q>, i.e. a group of lines functioning as a formal
+unit) can be used, reserving the <tag>div</tag> element for larger
+structural units. The <att>type</att> attribute is then used to identify the
+type of unit, e.g. <val>stanza</val>, <val>couplet</val>, like in <tag>lg
+type="stanza"</tag>. Here again the type need only be defined once.
+Lines and line-groups can also be numbered and identified using the <att>n</att>
+and <att>id</att> attributes.</p>
+
+<p>This type of markup focusses on the
+hierarchical structure of the text. The actual physical realisation
+of the text is considered of secondary importance &ndash; if of importance
+at all &ndash; when dealing with modern printed literary works: little
+significance is attached to the page and line breaks in the various
+editions of, say, Orwell's <title>Nineteen Eighty-Four</title>. In some
+cases, however, the early editions of Joyce's works, for example,
+supervised by the author himself, the physical make-up of the text
+can be of great consequence. It may also be necessary to maintain the
+pagination and lineation of standard editions of major works, as
+these are frequently used in citations in scholarly works. In the
+case of chirographically transmitted material, the physical
+organisation of the text is more likely to be recognised as being of
+importance and in need of encoding. This can be done hierarchically,
+as above, using <tag>div</tag> elements, which are then given the
+appropriate <att>type</att> attributes, e.g. <val>page</val>, <val>column</val> or <val>line</val>, but it
+seems more appropriate to reserve these elements for structural
+divisions in the text, while indicating the physical structure of the
+document through the use of so-called <q>milestone</q> tags, i.e. <tag>pb/</tag>, <tag>cb/</tag> and <tag>lb/</tag>. These tags make up a separate hierarchy in the file and help to overcome the problem of overlapping structures in the mark-up; see also the discussion in <ref target="HB2_ch4.xml#sec4.10">ch. 4.10</ref> below.</p>
+
+<p>The rest of this chapter presents
+how the text may be encoded at higher structural levels than
+characters and words. Important elements here are the larger
+divisions of the text, like chapters, paragraphs (with headings), and
+stanzas. This chapter also presents how pagination and foliation,
+together with column-breaks and line-breaks, may be encoded. The
+following <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html" type="external">TEI</ref>
+elements are presented:</p>
+
+<table>
+		<row role="label">
+			
+         <cell>Elements</cell>
+         <cell>Contents</cell>
+</row>
+
+   <row>
+      <cell><tag>text</tag>,
+         <tag>body</tag></cell>
+      <cell>Main divisions of the
+         text,</cell>
+   </row>
+   <row>
+      <cell><tag>div</tag></cell>
+      <cell>division into chapters
+         (multiple levels are encoded by nesting
+         elements),</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag></cell>
+      <cell>prose
+         paragraphs,</cell>
+   </row>
+   <row>
+      <cell><tag>lg</tag>,
+         <tag>l</tag></cell>
+      <cell>line groups and
+         lines,</cell>
+   </row>
+   <row>
+      <cell><tag>head</tag></cell>
+      <cell>headings,</cell>
+   </row>
+   <row>
+      <cell><tag>pb/</tag>,
+         <tag>cb/</tag>, <tag>lb/</tag></cell>
+      <cell>page-, column- and
+         line-breaks.</cell>
+   </row>
+</table>
+
+</div></div>
+<div><head xml:id="sec4.2">4.2 Main divisions of a TEI document</head>
+
+<p>The following presentation is based
+on <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html" type="external">ch. 4 <q>Default Text Structure</q></ref>
+of the TEI P5 Guidelines.</p>
+
+<p>A TEI document is always at its
+highest level enclosed by the start tag <tag>TEI</tag> and the end tag
+<tag>/TEI</tag>. Within the <tag>TEI</tag> element, two other elements
+appear in a fixed order, namely the <tag>teiHeader</tag> and the
+<tag>text</tag> elements. Within the <tag>text</tag> element, the body text
+may appear, enclosed in the element <tag>body</tag>. If the text has
+front matter, there will be an element <tag>front</tag>, placed before
+<tag>body</tag> containing it. Similarly, there may be an element
+<tag>back</tag>, placed after <tag>body</tag> and containing back matter.
+The elements <tag>teiHeader</tag>, <tag>text</tag> and <tag>body</tag> are
+required in any TEI-conformant document, while <tag>front</tag> and
+<tag>back</tag> are optional. This, then, is the basic structure of a
+TEI document:</p>
+
+<table>
+	<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+   
+   <row>
+      <cell><tag>TEI</tag></cell>
+      <cell>The TEI document begins
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>teiHeader</tag>
+         ... <tag>/teiHeader</tag></cell>
+      <cell>the header goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>text</tag></cell>
+      <cell>the text itself begins
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>front</tag>
+         ... <tag>/front</tag></cell>
+      <cell>any front matter goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>body</tag>
+         ... <tag>/body</tag></cell>
+      <cell>the main body of the text
+         goes here,</cell>
+   </row>
+   <row>
+      <cell><tag>back</tag>
+         ... <tag>/back</tag></cell>
+      <cell>any back matter goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>/text</tag></cell>
+      <cell>the text ends
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>/TEI</tag></cell>
+      <cell>the TEI document ends
+         here.</cell>
+   </row>
+</table>
+
+<div><head xml:id="sec4.2.1">4.2.1 Another possible first
+division of the text: More than one &lt;text&gt;
+element</head>
+
+<p>The transcriber may want to divide
+a document into more than one text. This can be done with
+the <tag>group</tag> element, which should be contained in the top level
+<tag>text</tag> element taking the place of
+<tag>body</tag> in the simpler scheme illustrated above. The following
+structure appears:</p>
+
+   <egXML><![CDATA[    <text xml:lang="en">
+      <front> ... </front>
+        <group>
+          <text xml:lang="en">
+            <front> ... </front>
+            <body> ... </body>
+            <back> ... </back>
+          </text>
+          <text xml:lang="en">
+            <front> ... </front>
+            <body> ... </body>
+            <back> ... </back>
+          </text>
+        </group>
+      <back> ... </back>
+    </text> ]]>
+</egXML>
+
+<p>The main structure of the text, at
+the levels of work, first main division, second main division, first
+chapter of first main division, second chapter of first main division
+and so on, can be encoded in different ways. If the electronic
+document consists of more than one work, the <tag>group</tag> structure
+illustrated above is the natural choice. In that case, one would get
+multiple sets of further structural divisions, one set within each of
+the <tag>body</tag> elements. If the electronic document is considered
+as a single work, and placed in one <tag>text</tag> element, there will only be a single <tag>body</tag> element that needs further
+divisions.</p>
+
+</div></div>
+<div><head xml:id="sec4.3">4.3 Chapters: &lt;div&gt;</head>
+
+<p>Further division of the
+<tag>body</tag> block is achieved through <tag>div</tag> elements, with one
+level nesting inside the other as the transcriber moves down through the
+hierarchical structure of the text.</p>
+
+
+<div><head xml:id="sec4.3.1">4.3.1 Type- and level-specified
+&lt;div&gt; elements</head>
+
+<p>In a complex document, <tag>div</tag> elements may be specified by <att>type</att> and <att>n</att> attributes. In this example, the three first chapters of a work have been contained in
+<tag>div</tag> elements at the same hierarchical level (siblings):</p>
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+   
+   <row>
+      <cell><tag>div type="chapter" n="1"</tag> ... <tag>/div</tag></cell>
+      <cell>Chapter one goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>div
+         type="chapter" n="2"</tag> ... <tag>/div</tag></cell>
+      <cell>chapter two goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>div type="chapter" n="3"</tag> ... <tag>/div</tag></cell>
+      <cell>chapter three goes here
+         (and so on).</cell>
+   </row>
+</table>
+
+</div>
+<div><head xml:id="sec4.3.2">4.3.2 Unspecified &lt;div&gt; elements</head>
+
+<p>It is also possible to use
+<tag>div</tag> elements without specifying their type:</p>
+
+<table>
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+   <row>
+      <cell><tag>div</tag>
+         ... <tag>/div</tag></cell>
+      <cell>Chapter one goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>div</tag>
+         ... <tag>/div</tag></cell>
+      <cell>chapter two goes
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>div</tag>
+         ... <tag>/div</tag></cell>
+      <cell>chapter three goes here
+         (and so on).</cell>
+   </row>
+</table>
+
+
+</div>
+<div><head xml:id="sec4.3.3">4.3.3 Nesting &lt;div&gt; elements</head>
+
+<p>Note that <tag>div</tag> elements may nest
+inside each other. For example, the levels of work,
+chapter and then paragraph can be encoded in the following
+manner:</p>
+
+
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+   <row>
+      <cell><tag>div type="work"</tag></cell>
+      <cell>The whole work starts
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>div type="chapter"</tag></cell>
+      <cell>the first subdivision
+         starts here (nested),</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>one paragraph of the
+         subdivision goes here,</cell>
+   </row>
+   <row>
+      <cell><tag>/div</tag></cell>
+      <cell>end of the
+         subdivision,</cell>
+   </row>
+   <row>
+      <cell><tag>/div</tag></cell>
+      <cell>end of the
+         work.</cell>
+   </row>
+</table>
+
+<p>While <tag>div</tag>
+elements may nest as shown here, <tag>p</tag> elements may not. They must be encoded sequentially, i.e. as siblings.</p>
+
+</div></div>
+<div><head xml:id="sec4.4">4.4 Paragraph text: &lt;p&gt;</head>
+
+<p>The basic-level element for prose
+text is the paragraph, <tag>p</tag>. Typically, the deepest level
+<tag>div</tag> element will contain one or more <tag>p</tag> elements:</p>
+
+<table>
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+   <row>
+      <cell><tag>div</tag>
+         </cell>
+      <cell>A new chapter starts
+         here,</cell>
+   </row>
+   <row>
+      <cell><tag>head</tag>
+         ... <tag>/head</tag></cell>
+      <cell>this contains the
+         heading,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>first
+         paragraph,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>second
+         paragraph,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>third
+         paragraph,</cell>
+   </row>
+   <row>
+      <cell><tag>/div</tag></cell>
+      <cell>the chapter ends
+         here.</cell>
+   </row>
+</table>
+
+<p>The <tag>p</tag> element may
+appear in other contexts, such as in the <tag>teiHeader</tag> element. It may also contain a number of
+other elements, but &ndash; as underlined above &ndash; it may not
+contain other <tag>p</tag> elements, i.e. it is not allowed to nest.</p>
+
+</div>
+<div><head xml:id="sec4.5">4.5 Metrical text: &lt;lg&gt; and &lt;l&gt;</head>
+
+<p>The elements discussed here are
+defined and explained in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html" type="external">ch. 6 <q>Verse</q></ref>
+of the TEI P5 Guidelines.</p>
+
+<p>Texts in verse should be encoded
+using <tag>lg</tag> (line group), which in turn contains one or more
+<tag>l</tag> elements (lines). As with <tag>div</tag>, <tag>lg</tag> elements
+can nest. According to the TEI Guidelines <tag>lg</tag> is a sibling of,
+i.e. at at the same level as, <tag>p</tag>, and cannot be contained
+within it (unless it appears within a <tag>q</tag> element).
+Example:</p>
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+
+
+   <row>
+      <cell>...
+         <tag>/p</tag></cell>
+      <cell>A paragraph ends here,</cell>
+   </row>
+   <row>
+      <cell><tag>lg</tag>
+         </cell>
+      <cell>a line group starts here,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>first line,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>second line,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>third line,</cell>
+   </row>
+   <row>
+      <cell><tag>/lg</tag>
+         </cell>
+      <cell>the line group ends here,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ...</cell>
+      <cell>and a new paragraph starts here.</cell>
+   </row>
+   
+</table>
+
+<p>Nesting of <tag>lg</tag> elements is
+useful for marking up longer poems. When a poem consists of two
+levels of line groups one may encode its structure as shown here:</p>
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+
+
+   <row>
+      <cell><tag>lg type="stanza"</tag></cell>
+      <cell>Here a line group on
+         level one begins, a stanza,</cell>
+   </row>
+   <row>
+      <cell><tag>lg type="couplet"</tag></cell>
+      <cell>here a subgroup starts, a
+         couplet,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>the first line,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>second line,</cell>
+   </row>
+   <row>
+      <cell><tag>/lg</tag>
+         </cell>
+      <cell>and here the
+         subgroup ends, the first of the couplets.</cell>
+   </row>
+   <row>
+      <cell><tag>lg</tag></cell>
+      <cell>Here a new
+         subgroup starts,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>line,</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>line,</cell>
+   </row>
+   <row>
+      <cell><tag>/lg</tag></cell>
+      <cell>here the second subgroup ends,</cell>
+   </row>
+   <row>
+      <cell><tag>/lg</tag></cell>
+      <cell>and here the level
+         one line group ends.</cell>
+   </row>
+   
+</table>
+
+<p>The <tag>lg</tag> and <tag>l</tag> elements may have
+several attributes, among other things for encoding information about
+rhyme or other metrical phenomena. See <ref target="HB2_ch9.xml#sec9.2">ch. 9.2</ref> of this handbook for a
+more detailed presentation of metrical encoding.</p>
+
+
+
+<p>Having <tag>p</tag> and <tag>lg</tag> as siblings can create problems for the encoding of prosimetrum texts, where lines or verse or even whole
+poems can appear within prose text, often as part of direct speech. However, rather than including <tag>lg</tag> directly within the <tag>p</tag> element, we recommend inserting the <tag>p</tag> and <tag>lg</tag> elements within <tag>div</tag> elements, using one <tag>div</tag> for each of them:</p>
+
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+
+
+   <row>
+      <cell>
+         <tag>div type="chapter" n="1"</tag></cell>
+      <cell>A chapter opens here,</cell>
+   </row>
+   
+   <row>
+      <cell>
+         <tag>div type="text"</tag></cell>
+      <cell>beginning with some prose text, indicated by a <tag>div</tag> element.</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag>
+         </cell>
+      <cell>The text goes here,</cell>
+   </row>
+   <row>
+      <cell>
+         <tag>/div</tag></cell>
+      <cell>and ends here, indicated by the <tag>div</tag> element.</cell>
+   </row>
+
+   <row>
+      <cell><tag>div type="stanza"</tag>
+        </cell>
+      <cell>Then a poem begins, indicated by a new <tag>div</tag> element</cell>
+   </row>
+   <row>
+      <cell><tag>lg</tag>
+        </cell>
+      <cell>with a linegroup (a stanza)</cell>
+   </row>
+   <row>
+      <cell><tag>l</tag>
+         ... <tag>/l</tag></cell>
+      <cell>containing some lines.</cell>
+   </row>
+   <row>
+      <cell><tag>/lg</tag>
+         </cell>
+      <cell>The linegroup ends here,</cell>
+   </row>
+   <row>
+      <cell><tag>/div</tag>
+         ...</cell>
+      <cell>and the poem (i.e. the <tag>div</tag> element) also ends here.</cell>
+   </row>
+
+<row>
+      <cell>
+         <tag>div type="text"</tag></cell>
+      <cell>A new piece of prose text begins, indicated by a new <tag>div</tag> element.</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag>
+         </cell>
+      <cell>The text goes here,</cell>
+   </row>
+
+   <row>
+      <cell>
+         <tag>/div</tag></cell>
+      <cell>and ends here, indicated by the <tag>div</tag> element.</cell>
+   </row>
+
+   <row>
+      <cell><tag>/div</tag>
+     </cell>
+      <cell>The chapter ends here.</cell>
+   </row>
+   
+</table>
+
+
+
+
+</div>
+<div><head xml:id="sec4.6">4.6 Headings: &lt;head&gt;</head>
+
+<p>The element <tag>head</tag> is used
+for containing headings on all levels of the document. If
+<tag>head</tag> is placed at the start of a <tag>div</tag> element, it
+typically contains a chapter heading:</p>
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+
+
+	<row>
+      <cell><tag>div</tag></cell>
+      <cell>Here a chapter begins,</cell>
+   </row>
+   <row>
+      <cell><tag>head</tag>
+         ... <tag>/head</tag></cell>
+      <cell>its heading,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>the first paragraph of the
+         chapter,</cell>
+   </row>
+   <row>
+      <cell><tag>p</tag>
+         ... <tag>/p</tag></cell>
+      <cell>the second
+         paragraph,</cell>
+   </row>
+   <row>
+      <cell><tag>/div</tag></cell>
+      <cell>and here the chapter ends.</cell>
+   </row>
+   
+</table>
+
+<p>The level of a heading follows
+from the enclosing element. A <tag>head</tag> element within a level
+three <tag>div</tag> element, is a heading for a level three partition
+of the text.</p>
+
+<p>An overlap problem may occur when,
+as is common in Old Norse manuscripts, headings for chapters are
+placed on the same text line as the last words of the preceding
+chapter. Graphically, the heading of a following chapter is in fact placed inside the text block of the preceding chapter. 
+As we would like to place headings at the beginning of
+the textual divisions to which they logically belong, we must override
+the structure of the layout. One way to do that is to ignore the
+heading of the following chapter when transcribing the last lines of
+the preceding chapter. When that chapter is closed with an end tag
+<tag>/div</tag>, we open the next chapter with its start tag
+<tag>div</tag>, go back one or two lines in the manuscript to where the
+heading starts and transcribe from there.</p>
+
+<p>It is generally recommended (<ref target="#sec4.7">ch. 4.7</ref> below) that line break elements <tag>lb/</tag> are inserted while transcribing the
+manuscript. Following that rule, it is obvious that one cannot keep
+a single series of line break elements through the intersection
+between the chapters in the case of a heading overlap. However, it is
+not invalid according to TEI that <tag>lb/</tag> elements carrying the
+same number occur twice. Our recommendation is to use that
+possibility: When moving up again to encode the heading of the
+following chapter, then assign the actual number of that graphic line
+to its <tag>lb/</tag> element.</p>
+
+<p>Consider the following column (line
+numbers in left margin):</p>
+
+<p rend="sample">
+05 ...............................<lb/>
+06 .... these are the last<lb/>
+07 <hi rend="bold">Header for</hi> words of<lb/>
+08 <hi rend="bold">chapter two</hi> chapter 1.<lb/>
+09 Here begins the text<lb/>
+10 of chapter two .........<lb/>
+11 .............................. <lb/>
+</p>
+
+
+<p>The example would be encoded this
+way (word tags omitted):</p>
+
+<egXML><![CDATA[<div>
+    <p> ....... 
+      <lb n="6"/> ... these are the last
+      <lb n="7"/>words of<lb n="8"/>chapter 1.</p>
+</div>
+<div>
+  <head rend="inline left"><seg><lb n="7"/>Header for<lb n="8"/>
+       chapter two</seg></head>
+    <p>
+      <lb n="9"/>Here begins the text<lb n="10"/>of chapter two ... 
+      <lb n="11"/> ...... 
+    </p>
+</div> ]]>
+</egXML>
+
+	<p>In this case is it important for the processing of the XML document that the <att>rend</att> attribute in the <tag>head</tag> element gives the information that this headline is 'inline', and that it is located on the left side of the column. The element <tag>seg</tag> is used to encapsulate the <tag>lb/</tag> with the words that are on that particular line in the header. It is possible to make XSLT stylesheets to process this kind of encoding, but it is not simple.</p>
+
+<p>When double numbering of line breaks
+is used in a transcription, one should make sure that any automatic
+numbering program that is run on the <tag>lb/</tag> elements is set up
+not to override manually given numbers.</p>
+</div>
+
+<div><head xml:id="sec4.7">4.7 Page, column and line breaks:
+&lt;pb/&gt;, &lt;cb/&gt;, &lt;lb/&gt;</head>
+
+<div><head xml:id="sec4.7.1">4.7.1 Page breaks and column breaks</head>
+
+<p>TEI uses the empty element <tag>pb/</tag> to indicate page breaks. This element has an attribute <att>n</att>
+which can be used for the page numbers. As it is customary to
+refer to the manuscript leaves, rather than pages, the value of the <att>n</att>
+attribute should indicate front or back pages (recto, verso).
+Column breaks, <tag>cb/</tag>, should also be indicated in manuscripts with two or more columns. Recommended values for the <att>n</att> attribute of the <tag>cb/</tag> element are <q>A</q>, <q>B</q> and so on. Example:</p>
+
+<table>
+		
+			<row role="label">
+      <cell>Elements</cell>
+      <cell>Contents</cell>
+   </row>
+
+
+   <row>
+      <cell><tag>pb n="1r"/</tag></cell>
+      <cell>Folio one, recto page, begins here,</cell>
+   </row>
+   <row>
+      <cell><tag>cb n="A"/</tag></cell>
+      <cell>the first column begins here,</cell>
+   </row>
+   <row>
+      <cell><tag>cb n="B"/</tag></cell>
+      <cell>and the second column begins here.</cell>
+   </row>
+   <row>
+      <cell cols="2">---</cell>
+         </row>
+   <row>
+      <cell><tag>pb n="1v"/</tag></cell>
+      <cell>Folio one, verso page, begins here,</cell>
+   </row>
+   <row>
+      <cell><tag>cb n="A"/</tag></cell>
+      <cell>the first column of the verso page begins here,</cell>
+   </row>
+   <row>
+      <cell><tag>cb n="B"/</tag></cell>
+      <cell>and the second column begins here.</cell>
+   </row>
+</table>
+
+
+<p>Page break information from, for
+example, a printed standard edition, can be encoded in addition to
+the <tag>pb/</tag> tagging that refers to the manuscript itself.
+If one for example would like to add page break
+information from a standard edition, we recommend using the <att>ed</att> attribute:</p>
+
+<egXML><![CDATA[<pb ed="Standard Edition" n="1"/>]]>
+</egXML>
+
+
+</div>
+<div><head xml:id="sec4.7.2">4.7.2 Line breaks</head>
+
+<p>Line breaks are also indicated with an empty
+element, the <tag>lb/</tag>, which is placed at the beginning of a new line
+and may be numbered by using the <att>n</att> attribute:</p>
+
+<egXML><![CDATA[<lb n="1"/>Line number one begins here.]]>
+</egXML>
+
+<p>We recommend that each page, column and line be identified with an element at the very beginning. So for a manuscript with two columns, the three first lines in the first column on the back of the third leaf (folio) would be encoded in this manner:</p>
+
+<egXML><![CDATA[<pb n="3v"/><cb n="A"/><lb n="1"/>This is the first line.
+<lb n="2"/>This is the second line.
+<lb n="3"/>This is the third line.
+etc.]]>
+</egXML>
+
+<p>In other words, there should be as many <tag>pb/</tag> elements as there are pages, as many <tag>cb/</tag> elements as there are columns, and as many <tag>lb/</tag> elements as there are lines. We strongly discourage the use of the <tag>lb/</tag> element in the same way as the <tag>br</tag> element in HTML, in which there typically is one <tag>br</tag> element less than the number of lines (as the <tag>br</tag> element is inserted between the lines).</p>
+
+<p>We recommend that <tag>lb/</tag> is used consistently for indicating the
+line breaks of the manuscript itself. One may include more than
+one layer of line break encoding, distinguishing them from each another
+with the <att>ed</att> attribute, as shown in <ref target="#sec4.7.1">ch. 4.7.1</ref> above. </p>
+</div>
+
+</div>
+
+
+<div><head xml:id="sec4.8">4.8 Punctuation and hyphenation</head>
+
+<div><head xml:id="sec4.8.1">4.8.1 Punctuation</head>
+
+<p>If a text has been encoded with each word within a <tag>w</tag> element, we recommend that
+punctuation is encoded within <tag>me:punct</tag> elements. This element permits the same levels of
+text representation as the <tag>w</tag> element, i.e. <tag>me:facs</tag>, <tag>me:dipl</tag> and <tag>me:norm</tag>.
+While punctuation on the <tag>me:facs</tag> and <tag>me:dipl</tag> levels in most cases will be identical,
+it is often radically different on the <tag>me:norm</tag> level. Here, many dots in the manuscript  will simply be
+suppressed, while other punctuation marks will be added, including
+modern punctuation marks like quotation marks and exclamation marks.
+Suppressing a punctuation mark is simply done by leaving the element empty, while any supplied marks
+are encoded by adding a new <tag>me:punct</tag> element in which the <tag>me:facs</tag>
+and possibly also the <tag>me:dipl</tag> element will be empty.</p>
+
+<p>A text transcribed as</p>
+
+<quote>ok nu sagdi hann. &thorn;at er eigi sva. sem &thorn;u segir</quote>
+
+<p>on the <tag>me:dipl</tag> level would probably be rendered as</p>
+
+<quote><q>Ok n&uacute;,</q> sag&eth;i hann, <q>&THORN;at er eigi sv&aacute; sem &thorn;&uacute; segir.</q></quote>
+
+<p>on  the <tag>me:norm</tag> level, allowing for some variation in
+the type of quotation marks and the order of comma or full stop and quotation mark. In a fully marked-up
+text, the dot after <q>sva</q> would probably be suppressed on the <tag>me:norm</tag> level,
+while quotation marks would be added, and also a comma after <q>nu</q>. Finally, the dot after
+<q>hann</q> would be changed into a comma:</p>
+
+<egXML><![CDATA[
+<me:punct>
+  <choice>
+    <me:dipl></me:dipl>
+    <me:norm>"</me:norm>
+  </choice>
+</me:punct>
+
+<w>
+  <choice>
+    <me:dipl>ok</me:dipl>
+   <me:norm>Ok</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>nu</me:dipl>
+    <me:norm>nú</me:norm>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:dipl></me:dipl>
+    <me:norm>,"</me:norm>
+  </choice>
+</me:punct>
+
+<w>
+  <choice>
+    <me:dipl>sagdi</me:dipl>
+    <me:norm>sagði</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>hann</me:dipl>
+    <me:norm>hann</me:norm>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:dipl>.</me:dipl>
+    <me:norm>, "</me:norm>
+  </choice>
+</me:punct>
+
+<w>
+  <choice>
+    <me:dipl>þat</me:dipl>
+    <me:norm>þat</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>er</me:dipl>
+    <me:norm>er</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>eigi</me:dipl>
+    <me:norm>eigi</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>sva</me:dipl>
+    <me:norm>svá</me:norm>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:dipl>.</me:dipl>
+    <me:norm></me:norm>
+  </choice>
+</me:punct>
+
+<w>
+  <choice>
+    <me:dipl>sem</me:dipl>
+    <me:norm>sem</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>þu</me:dipl>
+    <me:norm>þú</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:dipl>segir</me:dipl>
+    <me:norm>segir</me:norm>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:dipl></me:dipl>
+    <me:norm>."</me:norm>
+  </choice>
+</me:punct>
+]]></egXML> 
+
+<p>In many cases, a dot should be interpreted as an abbreviation mark rather
+than a punctuation mark. In such cases, we recommend that the dot is encoded using the ordinary
+full stop in Basic Latin, but that it is placed within the <tag>am</tag> element. A text transcribed as</p>
+
+<quote>nu fann kgr. engan mann &thorn;ar</quote>
+
+<p>on the <tag>me:facs</tag> level would probably be rendered as</p>
+
+<quote>nu fann k<hi rend="italic">onon</hi>gr engan mann &thorn;ar</quote>
+
+<p>on  the <tag>me:dipl</tag> level. In a fully marked-up
+text, the abbreviationr <q>kgr.</q> would be encoded within an <tag>am</tag> element,
+while it would be expanded into <q>onon</q> (or <q>onun</q>) on the <tag>me:dipl</tag> level:</p>
+
+<egXML><![CDATA[<w>
+  <choice>
+    <me:facs>nu</me:facs>
+    <me:dipl>nu</me:dipl>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>fann</me:facs>
+    <me:dipl>fann</me:dipl>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>kgr<am>.</am></me:facs>
+    <me:dipl>k<ex>onon</ex>gr</me:dipl>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>engan</me:facs>
+    <me:dipl>engan</me:dipl>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>mann</me:facs>
+    <me:dipl>mann</me:dipl>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>þar</me:facs>
+    <me:dipl>þar</me:dipl>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl>.</me:dipl>
+  </choice>
+</me:punct>]]></egXML>
+
+<p>In some cases, a word abbreviated with a dot may occur at the end of a sentence, e.g.</p>
+
+<quote>nu fann hann eigi kgr.</quote>
+
+<p>This dot would be interpreted as an abbreviation mark and possibly also as a punctuation mark.
+On the <tag>me:facs</tag> level it would be encoded as no more than a dot, while on the
+<tag>me:dipl</tag> level it would be suppressed when <q>kgr.</q> had been expanded to <q>konongr</q>.
+The encoder might, however, add a dot as a punctuation mark within a
+<tag>me:punct</tag> element. That would certainly be the case on the <tag>me:norm</tag> level, possibly
+also on the <tag>me:dipl</tag> level:</p>
+
+<egXML><![CDATA[<w>
+  <choice>
+    <me:facs>nu</me:facs>
+    <me:dipl>nu</me:dipl>
+    <me:norm>Nú</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>fann</me:facs>
+    <me:dipl>fann</me:dipl>
+    <me:norm>fann</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>hann</me:facs>
+    <me:dipl>hann</me:dipl>
+    <me:norm>hann</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>eigi</me:facs>
+    <me:dipl>eigi</me:dipl>
+    <me:norm>eigi</me:norm>
+  </choice>
+</w>
+
+<w>
+  <choice>
+    <me:facs>kgr<am>.</am></me:facs>
+    <me:dipl>k<ex>onon</ex>gr</me:dipl>
+    <me:norm>konungr</me:norm>
+  </choice>
+</w>
+
+<me:punct>
+  <choice>
+    <me:facs></me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm>.</me:norm>
+  </choice>
+</me:punct>]]></egXML>
+
+<p>On all three levels, a dot will be displayed after the word <q>konungr</q>, but the dot on the <tag>me:facs</tag> level is
+classified as an abbreviation mark (since it occurs within the <tag>am</tag> element), while the dot on the <tag>me:dipl</tag>
+and the <tag>me:norm</tag> levels is classified as a punctuation mark (since it occurs within the <tag>me:punct</tag> element).</p>
+<p>The dot is by far the most common punctuation mark in Medieval Nordic sources. A question mark was sometimes used, while quotation
+marks and exclamation marks are post-medieval and only seen in normalised editions. There are a few additional punctuation marks, e.g.
+the <hi rend="italic">punctus elevatus</hi> and the <hi rend="italic">virgula</hi>. These marks can be encoded using entities,
+but should otherwise be kept within the <tag>me:punct</tag> element. See also <ref target="HB2_ch6.xml#sec6.3.8">ch. 6.3.8</ref> below.</p>
+
+</div>
+
+<div><head xml:id="sec4.8.2">4.8.2 Hyphenation</head>
+
+<p>In medieval manuscripts, hyphens are frequently used at the end of a line to indicate that the word continues on the next line. In such cases, we recommend that the hyphen is entered immediately before the <tag>lb/</tag> element. This is what it would look like in a single-level transcription (cf. <ref target="HB2_ch3.xml#sec3.3">ch. 3.3</ref>):</p>
+
+<egXML>
+<![CDATA[<lb n="1"/>This is an example of how hyphen-
+<lb n="2"/>ation can be encoded.]]>
+</egXML>
+
+<!-- Suppressed by OEH 12.02.2008
+
+<p>In a multi-level transcription (cf. ch. 3.4), the hyphen and <tag>lb/</tag> element will occur within a <tag>w</tag> element:</p>
+
+<egXML>
+<![CDATA[<lb n="1"/>... <w>how</w> <w>hyphen-<lb n="2"/>ation</w> <w>can</w> ...]]>
+</egXML>
+
+End of suppressed text-->
+
+<p>If the hyphen is missing in the manuscript, we suggest that the element <tag>supplied</tag> is used to contain the hyphen added by the transcriber:</p>
+
+<egXML><![CDATA[<lb n="1"/>This is an example of how hyphen<supplied>-</supplied>
+<lb n="2"/>ation can be encoded.]]>
+</egXML>
+
+<p>If the editor wants to display supplied hyphens differently from those found in the manuscript, that can easily be done by a stylesheet.</p>
+
+<p>In a multi-level transcription,  hyphenation would be contained in the <tag>me:punct</tag> element. Taking the word <q>h&aelig;-g&oacute;ma</q> as an example (from fig. 4.1 below, divided between line 3 and 4), the <tag>me:punct</tag> element  would be placed within each textual level - facsimile, diplomatic and normalised. </p>
+
+<egXML><![CDATA[<w>
+   <choice>
+      <me:facs>hæ<me:punct>-</me:punct><lb n="4"/>góma</me:facs>
+      <me:dipl>hæ<me:punct>-</me:punct><lb n="4"/>góma</me:dipl>
+      <me:norm>hæ<me:punct>-</me:punct><lb n="4"/>góma</me:norm>
+   </choice>
+</w>]]>
+</egXML>
+
+<p>In a display of the facsimile level, hyphens will always be rendered, while they may be suppressed on the diplomatic level, and they will always be suppressed on the normalised level.</p>
+<p>If the hyphen does not occur in the manuscript but is supplied by the transcriber or editor, we recommend adding a <att>type</att> attribute with the value <val>supplied</val>:</p>
+
+<egXML><![CDATA[<w>
+   <choice>
+      <me:facs>hæ<me:punct type="supplied">-</me:punct>
+        <lb n="4"/>góma</me:facs>
+      <me:dipl>hæ<me:punct type="supplied">-</me:punct>
+        <lb n="4"/>góma</me:dipl>
+      <me:norm>hæ<me:punct type="supplied">-</me:punct>
+        <lb n="4"/>góma</me:norm>
+   </choice>
+</w>]]>
+</egXML>
+
+<p>Note that a single line break will appear several times in a multi-level transcriptions, if it occurs within a word. Great caution must therefore be taken with automatic numbering of <tag>lb/</tag> elements.</p>
+
+</div>
+
+</div>
+
+
+<div><head xml:id="sec4.9">4.9 Initials and highlighted characters</head>
+
+<p>Medieval manuscripts often have initials, sometimes quite large and often decorated in various ways. It is also quite common to find a highlighted capital at the beginning of a section in the text, a <hi rend="italic">littera notabilior</hi>. Some transcribers would simply transcribe an initial and a <hi rend="italic">littera notabilior</hi> with capitals and refer to a facsimile for the way they have been drawn. Other transcribers would like to encode these traits of the manuscript. For this purpose, we recommend using the <tag>c</tag> element with a <att>type</att> and a <att>rend</att> attribute.</p>
+
+<p><figure><graphic url="ch4/AM6194to-47r.gif" width="519" height="695"/>
+	<figDesc n="4.1">AM 619 4to, fol. 47r. Note the decorated initial <q>S</q> and the <emph rend="italic">littera notabilior</emph>, beginning with a capital <emph rend="italic">eth</emph>, <q>&ETH;</q>, in the last word of line 2.</figDesc></figure></p>
+
+
+<table>
+  <row role="label">
+      <cell>Elements / attributes</cell>
+      <cell>Contents</cell>
+  </row>
+  <row>
+      <cell><tag>c</tag></cell>
+      <cell>contains a character</cell>
+  </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<att>type</att></cell>
+      <cell>specifies the type of character, e.g. <val>initial</val>, <val>littNot</val></cell>
+  </row>
+  <row>
+      <cell>&nbsp;&nbsp;&nbsp;<att>rend</att></cell>
+      <cell>specifies how the character has been rendered in the source</cell>
+  </row>
+</table>
+
+<p>In fig. 4.1, the last word of line 2 can be encoded as</p>
+
+<egXML><![CDATA[<c type="littNot" rend="black">&ETH;</c>es]]>
+</egXML>
+
+<p>while the first word of line 16 can be encoded as</p>
+
+<egXML><![CDATA[<c type="initial" rend="red and green">S</c>alomon]]>
+</egXML>
+
+<p>This type of encoding is more relevant for the facsimile and possibly the diplomatic level, but not for the normalised level of text representation.</p>
+
+</div>
+
+
+      	<div>
+      		<head xml:id="sec4.10">4.10 Overlapping structures</head>
+
+      		<p>There are no simple ways of encoding overlapping structures in XML, since XML is a strict tree structure in which every element must be part of a
+      			single 'parent' element. For example, a word or sentence may be written over two
+      			manuscript pages. If we represent the manuscript page as an element, the words
+      			will not belong to a single page and a parser error will occur.</p>
+      		<p>This problem is dealt with in the current chapter by using empty elements to
+      			represent page breaks in the manuscript, rather than a page of text (cf. <ref target="#sec4.7">ch. 4.7</ref> above). The same is
+      			true for columns and lines, where words, sentences and paragraphs routinely
+      			overlap with the physical features of the manuscript. These elements, <tag>pb/</tag>, <tag>cb/</tag> and <tag>lb/</tag>, are empty in the sense that they are inserted at a specific point in the structure without any extension. For this reason, they are often referred to as milestones. Note the position of the slash in these elements.</p>
+      		<p>In <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html">ch. 11 <q>Representation of Primary Sources</q></ref> in the TEI P5 Guidelines 
+      			the elements <tag>addSpan/</tag>, <tag>delSpan/</tag> and <tag>damageSpan/</tag> are defined. These 
+      			elements are counterparts to the elements <tag>add</tag>, <tag>del</tag> and <tag>damage</tag>, but are all empty, 
+      			and should be used when the feature to be encoded crosses structural divisions. There are in fact many more elements which can cross structural divisions, e.g. <tag>sic</tag>, <tag>corr</tag>, <tag>unclear</tag> and <tag>supplied</tag>, but there are no corresponding <tag>sicSpan</tag>, <tag>corrSpan</tag>, <tag>unclearSpan</tag> and <tag>suppliedSpan</tag>. Rather that adding these and several other elements we recommend using one generic empty element to cover all cases of overlapping structures.
+      			We have called this new element <tag>me:textSpan/</tag> and given it attributes from the classes <q>att.spanning</q>, 
+      			<q>att.transcriptional</q>, <q>att.typed</q> and <q>att.global</q>, and  the attribute <att>me:category</att>:</p>
+
+<table>
+<row role="label">
+      <cell>Elements / attributes</cell>
+      <cell>Contents</cell>
+   </row>
+   <row>
+      <cell><tag>me:textSpan/</tag></cell>
+      <cell>A generic element to handle overlapping text structures</cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<att>category</att></cell>
+      <cell>Specifies the type of span, restricted to this list of values:</cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>add</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>add</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.2.1</ref></cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>corr</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>corr</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.4.3</ref></cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>del</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>del</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.2.2</ref></cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>damage</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>damage</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.5.1</ref></cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>gap</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>gap/</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.3.1</ref></cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<val>me:expunged</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>me:expunged</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.4.2</ref></cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>sic</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>sic</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.4.3</ref></cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>supplied</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>supplied</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.4.1</ref></cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>unclear</val></cell>
+      <cell>for contents that would otherwise be contained by the <tag>unclear</tag> element, cf. <ref target="HB2_ch7.xml">ch. 7.3.2</ref></cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>other</val></cell>
+      <cell>for any other contents</cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<att>spanTo</att></cell>
+      <cell>Specifies the end point of the text span, using values like:</cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>an1</val></cell>
+      <cell>anchor 1</cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>an2</val></cell>
+      <cell>anchor 2, etc.</cell>
+   </row>
+   <row>
+     <cell><tag>anchor/</tag></cell>
+      <cell>An empty element (milestone) which attaches an identifier to a point within a text</cell>
+   </row>
+   <row>
+      <cell>&nbsp;&nbsp;&nbsp;<att>xml:id</att></cell>
+      <cell>Specifies the identifier corresponding to the one used in the <att>spanTo</att> attribute of the preceding <tag>me:textSpan</tag> element, using values like:</cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>an1</val></cell>
+      <cell>anchor 1</cell>
+   </row>
+   <row>
+     <cell>&nbsp;&nbsp;&nbsp;<val>an2</val></cell>
+      <cell>anchor 2, etc.</cell>
+   </row>
+</table>
+
+      		
+<!-- Suppressed after the reorganisation of chapters 4 and 7. OEH 14.05.2008.
+
+
+<p>In <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">TEI P5 Chapter 20 <q>Non-hierarchical Structures</q> </ref>various techniques to encode non-hierarchical structures are
+      			suggested. The technique we recommend here using the <gi>me:textSpan</gi> element, is a  
+      			variation of the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html#NHBM">Boundary Marking with Empty Elements</ref> suggested by TEI.</p>
+      		
+      		<p>The following is not well formed XML: </p>
+      		<egXML><![CDATA[
+<w>man<supplied>raun</w>
+<w>&slong;li</supplied><lb n="3"/>ca</w>
+                        ]]></egXML>
+      		
+      		
+      		<p> This text might be encoded like this using <gi>me:textSpan</gi>, which makes it well formed and valid 
+      			according to the Menota P5 schema:</p>
+      		<egXML><![CDATA[
+<w>man<me:textSpan category="supplied" spanTo="an1"/>raun</w>
+<w>&slong;li<anchor xml:id="an1"/><lb n="3"/>ca</w> ]]></egXML>
+      		
+      		<p>The use of the <gi>me:textSpan</gi> element has its drawbacks, but so have all techniques which try to handle the problem of overlapping structures in XML. In this case, the main problem is that there is no single element that contains the non-nesting material, which makes it difficult to process the text with XML tools. [OE: Kan du forklare dette litt fyldigare?] The encoding of the text on the other hand is relatively easy, and similar cases can be handled the same way using the same element.</p>
+
+End of suppressed section. -->
+      		
+      		
+      			
+      			<p>We will discuss an example of an overlapping structure in AM 673 b 4to (<title>Pl&aacute;citusdr&aacute;pa</title> 1):</p>
+      			
+      			<p>
+      				<figure><graphic url="ch4/AM-4-n673a2.1r.1-4.gif" width="344"/>
+      					<figDesc n="4.2">AM 673 b 4to, fol. 1r, ll. 1-4</figDesc></figure></p>
+      			
+      			<p>The first three lines read approximately:</p>
+      			
+      			<quote>genget fiornes ualdr [qua&thorn;........fr]egr nu | mun er
+      				l&aelig;giasc miuks
+      				scalldu manra[un sli] | ca morlin<hi rend="italic">s</hi> bo&thorn;e fi<hi rend="italic">n</hi>na uestu
+      				i
+      				fr&aelig;gre f[rest] </quote>
+      			
+      			<p>The letters in brackets were read by earlier editors, especially
+      				Finnur J&oacute;nsson in 1889. For this section, we will discuss the
+      				text at the end of the second line and at the start of the third. It is
+      				clear that part of each word is missing, but the damaged manuscript forms a
+      				single feature. Text can be supplied from Finnur J&oacute;nsson&#8217;s
+      				transcription, but we want to represent both the damage and the
+      				supplied text as a single feature, which overlaps with the middle of
+      				the two words. The simple encoding, without the unclear text marked or
+      				the supplied text, would be:</p>
+      			
+      			<egXML><![CDATA[<w>manra<gap/></w>
+<w><gap/><lb n="3"/>ca</w>]]></egXML>
+      			
+      			<p>With the supplied text encoded in the conventional way, the
+      				following would produce an error:</p>
+      			
+      			<egXML><![CDATA[<!-- WRONG: -->
+<w>manra<supplied resp="FJ">aun</w>
+<!-- the processor stops here because this is not well-formed XML --> 
+<w>sli</supplied><lb n="3"/>ca</w>]]></egXML>
+      			
+      			<p>The <tag>unclear</tag> and <tag>supplied</tag> elements, if used in their conventional
+      				way, would overlap with the <tag>w</tag> elements, meaning that the word tag would
+      				close before an element inside it had closed. That would stop an XML
+      				processor from proceding any further with the document.</p>
+      			
+      			<p>In these guidelines, we offer two solutions to the problem of overlapping
+      				structures. The first is more complex, but more robust. The second is
+      				simpler, but is less machine-readable and may affect the validation of
+      				the document structure in other respects. Even so, we recommend the latter solution.</p>
+      			
+      			<div>
+      				
+      				
+      				<head xml:id="sec4.10.1">4.10.1 Linked segments</head>
+      				
+      				<p>The following approach is more sound from the point of view of an
+      					XML document, but creates extra tagging. The feature is encoded in a
+      					series of separate elements, linked together.</p>
+      				
+      				<p>In order to encode linked segments, the encoder should break the
+      					overlapping feature into parts which fit within the XML structure
+      					(usually within the word or dipl/facs/norm elements). Each part is
+      					identified using the <att>xml:id</att> attribute, and they are linked together using
+      					the following attributes:</p>
+      				
+      				<table>
+      					<row role="label">
+      						<cell>Elements / attributes</cell>
+      						<cell>Contents</cell>
+      					</row>
+      					<row>
+      						<cell><att>xml:id</att></cell>
+      						<cell>provides a unique identifier for the element bearing the attribute</cell>
+      					</row>
+      					<row>
+      						<cell><att>next</att></cell>
+      						<cell>used at the start and in the middle: an IDREF pointing to the 
+      							element which marks the next tag of the same feature</cell>
+      					</row>
+      					<row>
+      						<cell><att>prev</att></cell>
+      						<cell>used in the middle and at the end: an IDREF
+      							pointing to the element which marks the previous tag of the same feature</cell>
+      					</row>
+      				</table>
+      				
+      				<p>The  two-word example above is encoded thus:</p>
+      				
+<egXML><![CDATA[<w>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+     </supplied></w>
+<w><supplied xml:id="sup1.2" prev="sup1.1">&slong;li</supplied>
+     <lb n="3"/>ca</w>
+]]></egXML>
+      				
+      				<p>Adding all three textual levels, including the unclear text encoded
+      					at the facs level, we would have:</p>
+      				
+<egXML><![CDATA[<w>
+  <choice>
+    <me:facs>man<unclear xml:id="unc1.1" next="unc1.2">
+      <gap extent="8"/></unclear></me:facs>
+    <me:dipl>man<supplied source="FJ" xml:id="sup1.1" next="sup1.2">raun
+      </supplied></me:dipl>
+    <me:norm>manraun</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs><unclear xml:id="unc1.2" prev="unc1.1">&slong;li</unclear>
+      <lb n="3"/>ca</me:facs>
+    <me:dipl><supplied xml:id="sup1.2" prev="sup1.1">&slong;li</supplied>
+      <lb />ca</me:dipl>
+    <me:norm>slíka</me:norm>
+  </choice>
+</w>]]></egXML>
+      				
+      				<p>It is recommended that the additional information for the feature
+      					(such as the editor responsible, type, etc.) be only included in the
+      					first element, but editors may wish to include the attributes in all
+      					elements.</p>
+      				
+      				<p>For the purposes of display, the start of a feature can be marked by
+      					selecting the element with the 'next' attribute set, but not the
+      					'prev'; and the end can be marked by selecting the element with the
+      					'prev' attribute set but not the 'next'. </p>
+      				
+      			</div>
+      			
+      			
+      			<!-- The following COLT solution is no longer applicable, and has been replaced with the Boundary Marking with Empty Elements discussed in section 4.10. OEH 08.02.2008
+      				<div>
+      				
+      				<head xml:id="sec7.5.2">7.5.2 Empty elements at the
+      				start and end</head>
+      				
+      				
+      				<p>This is an alternative method that adjusts the content model to
+      				allow marking the beginning and end of each feature with the empty element <gi>textSpan</gi>
+      				with the name as the non-empty elements used in the previous
+      				section as the value of the attribute <att>category</att>. See chapter 4.10 for more details. </p>
+      				
+      				<p>The following would be a valid encoding of the supplied text, as
+      				above:</p>
+      				
+      				<egXML><![CDATA[<w>man<textSpan category="supplied" source="FJ" spanTo="sup1"/>raun</w>
+      				<w>&slong;li<anchor xml:id="sup1" /><lb n="3"/>ca</w>]]></egXML>
+      				
+      				<p>With the three textual levels and extra information at the facs
+      				level:</p>
+      				
+      				<egXML><![CDATA[<w>
+      				<choice>
+      				<facs>man<textSpan category="unclear" spanTo="unc1"/><gap extent="8"/></facs>
+      				<dipl>man<textSpan category="supplies" spanTo="sup1"/>raun</dipl>
+      				<norm>manraun</norm>
+      				</choice>
+      				</w>
+      				<w>
+      				<choice>
+      				<facs>&slong;li<anchor xml:id="unc1" /><lb n="3"/>ca</facs>
+      				<dipl>&slong;li<anchor xml:id="sup1"/><lb />ca</dipl>
+      				<norm>slíka</norm>
+      				</choice>
+      				</w>]]></egXML>
+      				
+      				<p>For the purposes of display, the start of a feature can be marked by
+      				selecting the <gi>textSpan</gi>element ; and the end can be
+      				marked by selecting the <gi>anchor</gi> element with the
+      				corresponding xml:id.</p>
+      				</div>
+      				
+      				This is the end of section 7.5.2, which no longer is applicable. OEH 08.02.2008. -->
+      			
+      			
+      			<div>
+      				<head xml:id="sec4.10.2">4.10.2 Boundary marking with empty elements</head>
+      				
+      				<p>Another solution is to encode the beginning and end of a text span with empty elements. This method has been described in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">ch. 20 <q>Non-hierarchical Structures</q> </ref>of the TEI P5 Guidelines and will be applied here in a slightly modified version. As outlined  above, we have introduced a generic element <tag>me:textSpan/</tag> which is specified by way of a <att>category</att> attribute. If, for example, the overlapping structure to be encoded is a piece of supplied text, this fact is expressed through the value of the <att>category</att> attribute:</p>
+      				
+      				<egXML><![CDATA[<me:textSpan category="supplied"/> ]]></egXML>
+      				
+      				<p>Thus, all instances of supplied text in the file will either be contained in <gi>supplied</gi> elements (in non-overlapping contexts) or in <tag>me:textSpan category="supplied"</tag> elements (in overlapping contexts).</p>
+      				<p>In addition to inserting the empty <tag>me:textSpan/</tag> element at the beginning of the textual span, an attribute <att>spanTo</att> is added with a suitable index, e.g.</p>
+      				
+      				<egXML><![CDATA[<me:textSpan category="supplied" spanTo="an1"/> ]]></egXML>
+      				
+      				<p>It now remains to mark the end of the span, i.e. the extent of the supplied text, with another empty element, the TEI <tag>anchor/</tag> element. This must be specified with an <att>xml:id</att> attribute having the same index as the <att>me:spanTo</att> attribute at the beginning of the span:</p>
+      				
+      				<egXML><![CDATA[<anchor xml:id="an1"/> ]]></egXML> 
+      				
+      				<p>The full encoding will be like this:</p>
+      				
+      				<egXML><![CDATA[<w>man<me:textSpan category="supplied" spanTo="an1"/>raun</w>
+<w>&slong;li<anchor xml:id="an1"/><lb n="3"/>ca</w> ]]></egXML>
+      				
+<p>Note that the value of <att>xml:id</att> attribute must be unique within the whole document.</p>
+
+      				<p>There is no simple answer to the problem of non-hierarchical structures in XML encoding. However, we believe that using empty elements as boundary markers may prove to be the simplest and most general encoding, and it is therefore the solution we recommend. With either technique, only one method should be used in each document.</p>
+      				
+      				
+      				
+      			</div>
+      			
+      	</div>
+		
+				
+</body>
+</text></TEI>
