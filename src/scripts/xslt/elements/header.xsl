@@ -31,13 +31,13 @@
     <xsl:template match="tei:titleStmt">
         <xsl:text expand-text="true">title: "{tei:title 
                 => replace('\s+', ' ')
+                => replace('^(Menota handbook) \(v\.( (?:[23]\.0|4\.0 beta))\): List of contents$', '$1$2')
                 => replace('^Menota handbook \(v\. 2\.0\)(: Characters)$', 'A$1')
                 => replace('^Menota handbook \(v\. 2\.0\)(: Fonts)$', 'B$1')
                 => replace('^Menota handbook \(v\. 2\.0\)(: XML editors)$', 'C$1')
                 => replace('^Menota handbook \(v\. 2\.0\)(: XSLT stylesheets)', 'F$1')
                 => replace('^Menota handbook \(v\. 2\.0\): ', '')
                 => replace('^Menota handbook Appendix ([DE]) \(v\. 2\.0\)(: .*)$', '$1$2')
-                => replace('^(Menota handbook) \(v\.( (?:[23]\.0|4\.0 beta))\): List of contents$', '$1$2')
                 => replace('^Menota handbook [Cc]h\. ([0-9]+) \(v\. [2-4]\.[01](?: beta|\.)?\)(: .*)$', '$1$2')
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
