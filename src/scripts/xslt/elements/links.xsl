@@ -21,13 +21,12 @@
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
                 => replace('^(?:eksempler|samples)/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
+                => replace('^(archive)/([\w\-0-9]+)\.(dtd|(?:compiled\.)?rn[cg]|txt|xml)$', '/$1/$2.$3')
                 => replace('^([\w_\-0-9]+\.pdf)', $file-path)
                 => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
                 => replace('^([\w\-0-9]+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
-                => replace('^([\w\-0-9]+)\.xml$', '/$1.xml')
-                => replace('^(archive)/([\w\-0-9]+)\.(dtd|(?:compiled\.)?rn[cg]|txt|xml)$', '/$1/$2.$3')
-                => replace('^([\w_0-9]+)\.xsl$', '/$1.xsl')
+                => replace('^([\w_\-0-9]+)\.(xml|xsl)$', '/$1.$2')
                 => replace(' ', '%20')
             })</xsl:text>
     </xsl:template>

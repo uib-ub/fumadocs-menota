@@ -34,6 +34,7 @@
                 => replace('^Menota handbook \(v\. 2\.0\)(: Characters)$', 'A$1')
                 => replace('^Menota handbook \(v\. 2\.0\)(: Fonts)$', 'B$1')
                 => replace('^Menota handbook \(v\. 2\.0\)(: XML editors)$', 'C$1')
+                => replace('^Menota handbook \(v\. 2\.0\)(: XSLT stylesheets)', 'F$1')
                 => replace('^Menota handbook \(v\. 2\.0\): ', '')
                 => replace('^Menota handbook Appendix ([DE]) \(v\. 2\.0\)(: .*)$', '$1$2')
                 => replace('^(Menota handbook) \(v\.( (?:[23]\.0|4\.0 beta))\): List of contents$', '$1$2')
