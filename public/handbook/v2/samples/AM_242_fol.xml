@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'http://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+
+<!-- 2008.05.15 Tone Merete Bruvik: Validated according to  Menota 2.0.  -->
+<!-- 2008.01.09 Tone Merete Bruvik: Validated according to  TEI P5 Guidelines, version 1.0  -->
+<!-- 2006.03.30 Tone Merete Bruvik: Validated according to the present version of the upcoming TEI P5 Guidelines: 0.3.1.  -->
+<!-- 2005.06.07 Tone Merete Bruvik: Validated according to the present version of the upcoming TEI P5 Guidelines.  -->
+<!-- 2005.06.01 Odd Einar Haugen: This is an example of a recommended Menota header for a multi-text source, 
+    published as part of the Menota handbook v. 2.0 -->
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:lang="eng">
+        <fileDesc>
+            <titleStmt>
+                <title>AM 242 fol. (Codex Wormianus): an electronic edition</title>
+                <respStmt>
+                    <resp>Transcription, lemmatisation and morphological encoding by </resp>
+                    <name><persName>Karl G. Johansson</persName>,  
+                    	<orgName type="affiliation">University of Oslo</orgName></name>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <p>First draft, <date when="2002-11-01">1 November 2002</date>.</p>
+            </editionStmt>
+            <publicationStmt>
+                <distributor>Medieval Nordic Text Archive</distributor>
+                <idno type="Menota">Ms. 2</idno>
+            	<date when="2003-03-23">23 March 2003</date>
+                <availability status="restricted">
+                    <p>This text is available for purposes of academic research and teaching only. Re-distribution in any form without 
+                        prior permission is prohibited. Short extracts may be cited with full acknowledgment of the source.</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <country key="DK">Denmark</country>
+                        <settlement>Copenhagen</settlement>
+                        <repository>The Arnamagn&aelig;an Institute</repository>
+                        <idno>AM 242 fol</idno>
+                        <msName type="nickname" xml:lang="lat">Codex Wormianus</msName>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem n="1">
+                            <locus from="1v" to="35v">pp. 2-82 (including paper leaves)</locus>
+                            <title>Edda Snorra Sturlusonar</title>
+                            <title type="abbreviated">SnE</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                            <msItem n="1.1">
+                                <locus from="1v" to="4v">pp. 2–8</locus>
+                                <title>Prologus</title>
+                            </msItem>
+                            <msItem n="1.2">
+                                <locus from="4v" to="20r">pp. 8-44</locus>
+                                <title>Gylfaginning</title>
+                            </msItem>
+                            <msItem n="1.3">
+                                <locus from="20v" to="35v">pp. 44-82</locus>
+                                <title>Sk&aacute;ldskaparm&aacute;l</title>
+                            </msItem>
+                        </msItem>
+                        <msItem n="2">
+                            <locus from="36r" to="54r">pp. 83-119</locus>
+                            <title>The four grammatical treatises</title>
+                            <title type="abbreviated">Gramm</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                            <msItem n="2.1">
+                                <locus from="36r" to="36r">p. 83</locus>
+                                <title>Prologus</title>
+                                <title type="abbreviated">GrammProl</title>
+                            </msItem>
+                            <msItem n="2.2">
+                                <locus from="36v" to="39v">pp. 84-90</locus>
+                                <title>First grammatical treatise</title>
+                                <title type="abbreviated">Gramm1</title>
+                            </msItem>
+                            <msItem n="2.3">
+                                <locus from="40r" to="41v">pp. 91-93</locus>
+                                <title>Second grammatical treatise</title>
+                                <title type="abbreviated">Gramm2</title>
+                            </msItem>
+                            <msItem n="2.4">
+                                <locus from="41v" to="50r">pp. 94-111</locus>
+                                <title>Third grammatical treatise</title>
+                                <title type="abbreviated">Gramm3</title>
+                            </msItem>
+                            <msItem n="2.5">
+                                <locus from="50r" to="54r">pp. 111-119</locus>
+                                <title>Fourth grammatical treatise</title>
+                                <title type="abbreviated">Gramm4</title>
+                            </msItem>
+                        </msItem>
+                        <msItem n="3">
+                            <locus from="54v" to="54v">p. 120</locus>
+                            <title>Mar&iacute;ukv&aelig;&eth;i</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                        </msItem>
+                        <msItem n="1.4" defective="true">
+                            <locus from="55r" to="60v">pp. 121-154 (including paper leaves)</locus>
+                            <title>H&aacute;ttatal</title>
+                            <title type="abbreviated">SnE</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                        </msItem>
+                        <msItem n="4" defective="true">
+                            <locus from="61r" to="61v">pp. 155–156</locus>
+                            <title>R&iacute;gs&thorn;ula</title>
+                            <title type="abbreviated">Edda</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                        </msItem>
+                        <msItem n="5" defective="true">
+                            <locus from="62r" to="63r">pp. 167-169</locus>
+                            <title>&Oacute;kennd heiti (Orms-eddu-brot)</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                        </msItem>
+                        <msItem n="6">
+                            <locus from="63v" to="63v">p. 170</locus>
+                            <title>Mar&iacute;ukv&aelig;&eth;i</title>
+                            <textLang mainLang="is">Icelandic</textLang>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="codex">
+                            <supportDesc>
+                                <support>
+                                    <p><material>Parchment</material>, but with some <material>paper</material> leaves 
+                                        added in the 17th century for the purpose of completing the text (pp. 61-72, 121-138, 151-154, 157-166).</p>
+                                </support>
+                                <extent>85 leaves, including the younger paper leaves; 280 mm (height) by 202 mm (width).</extent>
+                                
+                                <foliation>
+                                    <p>The manuscript, including the younger paper leaves, is paginated on the recto pages, 1-169.</p>
+                                </foliation>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <p>Written in <origPlace>Iceland</origPlace> in <origDate notBefore="1350" notAfter="1400">the 
+                                second half of the 14th century</origDate>; there are many later additions, principally from the 17th century.</p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>This manuscript text has been encoded according to the standard set out in <title>The Menota handbook</title> 
+                	(version 2.0), at <ref target="http://www.menota.org/guidelines-2/contents/contents_2-0.page">http://www.menota.org/guidelines-2/contents/contents_2-0.page</ref> 
+                    as of <date>2008-05-15</date>.</p>
+            </projectDesc>
+            <editorialDecl>
+                <correction status="high">
+                    <p>This text has been proofread by <name>Karl G. Johansson</name><name type="affiliation">University of Oslo</name>.</p>
+                </correction>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="is">Icelandic</language>
+            </langUsage>
+            <handNotes>
+                <handNote xml:id="h1"/>
+            	  <handNote xml:id="h2"/>
+            </handNotes>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date>2022-12-31</date>
+                <name>Odd Einar Haugen</name>, <orgName type="affiliation">University of Bergen</orgName>: Corrected language codes.
+            </change>
+	        	<change>
+	        		<date>2008-01-09</date>
+	        		<name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Update to make it valid according to the Menota P5 DTD.
+	        	</change>
+	          <change>
+                <date>2006-04-18</date>
+                <name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Change the attribute use in textLand-element from xml:lang into mainLang.
+            </change>
+            <change>
+                <date>2006-03-30</date>
+                <name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Revised the transcription in accordance with v. 2.0 beta 
+                of the Menota handbook and the corresponding Document Type Definition.
+            </change>
+            <change>
+                <date>2004-05-10</date>
+                <name>Karl G. Johansson</name>, <orgName type="affiliation">University of Oslo</orgName>
+                Revised the transcription in accordance with v. 1.1 of the Menota handbook and the corresponding Document Type Definition.
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    
+    
+	<text xml:lang="is">
+		<body>
+			<div n="1.1">
+				<head>
+					<supplied>Prologus</supplied>
+				</head>
+				<p>The text of part 1.1 goes here.</p>
+			</div>
+			<div n="1.2">
+				<head>
+					<supplied>Gylfaginning</supplied>
+				</head>
+				<p>The text of part 1.2 goes here.</p>
+			</div>
+			<div n="1.3">
+				<head>
+					<supplied>Sk&aacute;ldskaparm&aacute;l</supplied>
+				</head>
+				<p>The text of part 1.3 goes here.</p>
+			</div>
+			<div n="2.1">
+				<head>
+					<supplied>Prologus</supplied>
+				</head>
+				<p>The text of part 2.1 goes here.</p>
+			</div>
+			<div n="2.2">
+				<head>
+					<supplied>The first grammatical treatise</supplied>
+				</head>
+				<p>The text of part 2.2 goes here.</p>
+			</div>
+			<div n="2.3">
+				<head>
+					<supplied>The second grammatical treatise</supplied>
+				</head>
+				<p>The text of part 2.3 goes here.</p>
+			</div>
+			<div n="2.4">
+				<head>
+					<supplied>The third grammatical treatise</supplied>
+				</head>
+				<p>The text of part 2.4 goes here.</p>
+			</div>
+			<div n="2.5">
+				<head>
+					<supplied>The fourth grammatical treatise</supplied>
+				</head>
+				<p>The text of part 2.5 goes here.</p>
+			</div>
+			<div n="3">
+				<head>
+					<supplied>Mar&iacute;ukvæ&eth;i (1)</supplied>
+				</head>
+				<p>The text of part 3 goes here.</p>
+			</div>
+			<div n="1.4">
+				<head>
+					<supplied>H&aacute;ttatal</supplied>
+				</head>
+				<p>The text of part 1.4 goes here.</p>
+			</div>
+			<div n="4">
+				<head>
+					<supplied>R&iacute;gs&thorn;ula</supplied>
+				</head>
+				<p>The text of part 4 goes here.</p>
+			</div>
+			<div n="5">
+				<head>
+					<supplied>&Oacute;kennd heiti</supplied>
+				</head>
+				<p>The text of part 5 goes here.</p>
+			</div>
+			<div n="6">
+				<head>
+					<supplied>Mar&iacute;ukvæ&eth;i (2)</supplied>
+				</head>
+				<p>The text of part 6 goes here.</p>
+			</div>
+		</body>
+	</text>
+</TEI>

@@ -19,7 +19,7 @@
                 => replace('^(HB([2-4])_.*?)\.xml#?$', '/handbook/v$2/$1')
                 => replace('^(HB([23])_.*?)\.xml#(.+)$', '/handbook/v$2/$1#$3')
                 => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
-                => replace('^samples/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
+                => replace('^(?:eksempler|samples)/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
                 => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
                 => replace('^([\w_\-0-9]+\.pdf)', $file-path)
                 => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
