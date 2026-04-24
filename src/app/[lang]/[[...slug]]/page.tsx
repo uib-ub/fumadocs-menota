@@ -46,6 +46,8 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         [&_h3]:text-gray-500 [&_h3]:dark:text-gray-300 [&_h3]:text-lg
         [&_h4]:text-gray-500 [&_h4]:dark:text-gray-300 [&_h4]:text-base
         [&_h5]:text-gray-500 [&_h5]:dark:text-gray-300 [&_h5]:text-sm [&_h5]:font-bold
+        [&_th]:bg-blue-50 [&_th]:text-gray-600 [&_th]:dark:bg-blue-950 [&_th]:dark:text-gray-200
+        [&_td]:bg-white [&_td]:dark:bg-black
         [&_ol_a]:text-blue-700 [&_ol_a]:dark:text-orange-300
         [&_p_a]:text-blue-700 [&_p_a]:dark:text-orange-300
         [&_td_a]:text-blue-700 [&_td_a]:dark:text-orange-300
