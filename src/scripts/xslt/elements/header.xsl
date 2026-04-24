@@ -35,6 +35,7 @@
                 => replace('^Menota handbook [Cc]h\. ([0-9]+) \(v\. [2-4]\.[01](?: beta|\.)?\)(: .*)$', '$1$2')
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
+                => replace('^Menota handbook \(v\. 2\.0\): ', '')
                 => replace('^Menota handbook &#x2013; ', '')
                 => replace('^Ch\. (1?[0-9]) \(v\. 2\.0\)', '$1')
                 => replace('^Menota handbook (&#x2013; )?\(v\. 3\.0\): ', '')
