@@ -37,6 +37,11 @@ const config = {
         permanent: true
       },
       {
+        source: '/HB2_index.xml',
+        destination: '/handbook/v2',
+        permanent: true
+      },
+      {
         source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
