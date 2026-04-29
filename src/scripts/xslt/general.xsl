@@ -4,23 +4,11 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:include href="elements/head.xsl"/>
     <xsl:include href="elements/header.xsl"/>
+    <xsl:include href="elements/links-gen.xsl"/>
     <xsl:include href="elements/text.xsl"/>
     <xsl:template match="/">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="tei:head">
-        <xsl:choose>
-            <xsl:when test="count(ancestor::tei:div) = 0">
-                <xsl:text>&#x0a;# </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 1">
-                <xsl:text>&#x0a;# </xsl:text>
-            </xsl:when>
-            <xsl:when test="count(ancestor::tei:div) = 2">
-                <xsl:text>&#x0a;## </xsl:text>
-            </xsl:when>
-        </xsl:choose>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:p">
@@ -51,21 +39,6 @@
             <xsl:text>/&gt;</xsl:text>
         </xsl:for-each>
         <xsl:text>&#x0a;&lt;/Figure&gt;</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei:ref">
-        <xsl:choose>
-            <xsl:when test="tei:graphic">
-                <xsl:text>&#x0a;&lt;Link href="</xsl:text>
-                <xsl:value-of select="@target"/>
-                <xsl:text>"&gt;</xsl:text>
-                <xsl:apply-templates/>
-                <xsl:text>&#x0a;&lt;/Link&gt;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="concat('[', text(), ']')"/>
-                <xsl:value-of select="concat('(', @target, ')')"/>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:hi[@rend='bold']">
         <xsl:text>**</xsl:text>
