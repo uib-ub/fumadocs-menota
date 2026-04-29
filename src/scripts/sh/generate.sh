@@ -66,6 +66,17 @@ if [[ $segment == "all" || $segment == "hb4" ]]; then
     mv $contentdir/handbook/v4/HB4_index.mdx $contentdir/handbook/v4/index.mdx
 fi
 
+if [[ $segment == "all" || $segment == "cm" ]]; then
+    echo "Compiling council meetings:"
+    for file in $sourcedir/council-meetings/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_RaadsReferat/}"
+            compile council-meetings/${sourceID}.xml scripts/xslt/general.xsl documents/council/meetings/${date}.mdx
+        fi
+    done
+fi
+
 if [[ $segment == "all" || $segment == "rest" ]]; then
     echo "Compiling other content:"
     compile menotec.xml scripts/xslt/general.xsl menotec.en.mdx
