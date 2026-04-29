@@ -5,6 +5,7 @@
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
     <xsl:include href="elements/header.xsl"/>
+    <xsl:include href="elements/text.xsl"/>
     <xsl:template match="/">
         <xsl:apply-templates/>
     </xsl:template>
@@ -90,21 +91,5 @@
         <xsl:text>*</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>*</xsl:text>
-    </xsl:template>
-    <xsl:template match="text()">
-        <xsl:choose>
-            <xsl:when test="ancestor::tei:head">
-                <xsl:value-of select="replace(., '\s+', ' ')"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="replace(
-                        replace(
-                            replace(., '\n +', '&#x0a;'), 
-                            '&lt;', 
-                            '&amp;lt;'
-                        ), '&gt;', '&amp;gt;'
-                    )"/>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>

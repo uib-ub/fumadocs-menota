@@ -21,7 +21,7 @@ if [[ $segment == "all" || $segment == "ml" ]]; then
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-                compile meldinger/${sourceID}.xml scripts/xslt/news.xsl news/${sourceID}.mdx
+                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${sourceID}.mdx
             fi
         fi
     done
@@ -64,4 +64,9 @@ if [[ $segment == "all" || $segment == "hb4" ]]; then
         fi
     done
     mv $contentdir/handbook/v4/HB4_index.mdx $contentdir/handbook/v4/index.mdx
+fi
+
+if [[ $segment == "all" || $segment == "rest" ]]; then
+    echo "Compiling other content:"
+    compile menotec.xml scripts/xslt/general.xsl menotec.en.mdx
 fi
