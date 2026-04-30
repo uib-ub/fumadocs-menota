@@ -1,0 +1,1168 @@
+---
+title: "4: Levels of text representation"
+author:
+ - Haraldur Bernharðsson
+ - Odd Einar Haugen
+changeLog:
+ - date: 2026-04-30
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2019-12-18
+   author: Odd Einar Haugen
+   changes:
+    - "Added a comment on the use of the \"seg\" element for ligatures in ch. 4.3; did not change the version number of the chapter since this is such a small change"
+ - date: 2019-12-12
+   author: Odd Einar Haugen
+   changes:
+    - "Defined this chapter as belonging to v. 3.0 of the handbook (12 December 2019)"
+ - date: 2019-12-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added a new paragraph at the end of 4.1, and on the manuscript used in 4.6.2 right before the first table"
+ - date: 2019-12-07
+   author: Odd Einar Haugen
+   changes:
+    - "Various consistency changes, corrected a link, removed U+ in Unicode codepoints"
+ - date: 2019-12-05
+   author: Odd Einar Haugen
+   changes:
+    - "Revised the indent structure of the egXML sections, made some minor changes to the tables; added a final paragraph with a link to Guðvarður Már Gunnlaugsson 2003, corrected a couple of illegal encodings in egXML"
+ - date: 2019-11-22
+   author: Odd Einar Haugen
+   changes:
+    - "Changed the definition of the choice element in accordance with ch. 5.4"
+ - date: 2019-09-26
+   author:
+    - Odd Einar Haugen
+    - Marco Bianchi
+   changes:
+    - "Changed the “tag” elements to “gi” elements, as recommended by Marco Bianchi; removed remaining blue colour to text added by Odd Einar Haugen; removed old comments in"
+ - date: 2019-09-11
+   author: Odd Einar Haugen
+   changes:
+    - "Added a new chapter 4.5 Single-level transcriptions, and renamed the next chapter (originally entitled “a three-level transcription”) 4.6 Multi-level transcriptions, so as to make this distinction defined for the rest of the handbook, especially ch. 8 and 9. Subchapter 4.6 was consequently revised in several respects."
+ - date: 2019-09-05
+   author: Haraldur Bernharðsson
+   changes:
+    - "Corrected tables and removed blue colour in added text by Odd Einar Haugen (meaning that it was accepted)"
+ - date: 2019-07-03
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few editorial changes"
+ - date: 2019-06-28
+   author: Haraldur Bernharðsson
+   changes:
+    - "Made various changes"
+ - date: 2019-06-10
+   author: Haraldur Bernharðsson
+   changes:
+    - "Made various changes"
+ - date: 2019-02-03
+   author: Odd Einar Haugen
+   changes:
+    - "Revised the table encoding and display towards the end of ch. 4.3"
+ - date: 2018-01-29
+   author: Odd Einar Haugen
+   changes:
+    - "Minor changes to the \"figure\" and \"table\" encoding for better display"
+ - date: 2017-08-27
+   author: Haraldur Bernharðsson
+   changes:
+    - "Revised the chapter to include a more detailed discussion of the facsimile and diplomatic levels"
+ - date: 2017-06-27
+   author: Odd Einar Haugen
+   changes:
+    - "Linked all figures to the new \"ch4\" folder in the \"graphics\" folder."
+ - date: 2017-05-25
+   author: Odd Einar Haugen
+   changes:
+    - "(1) Changed the chapter number from 3 to 4, and updated subchapters and figures accordingly; (2) changed the \"me:punct\" element to \"pc\""
+ - date: 2017-02-08
+   author: Odd Einar Haugen
+   changes:
+    - "A minor correction with respect to the \"aolig\" entity"
+ - date: 2017-01-02
+   author: Odd Einar Haugen
+   changes:
+    - "Changed the chapter number from 4 to 3, since levels of transcription shoud be introduced before the discussion of words, hyphenation and white space; the latter har now been renumbered as ch. 4"
+ - date: 2016-10-27
+   author: Odd Einar Haugen
+   changes:
+    - "Updated links to other parts of the handbook, and also links to images (now located in the same folder as the handbook files)"
+ - date: 2016-10-19
+   author: Odd Einar Haugen
+   changes:
+    - "Replaced character entities (like &eth;) with Unicode characters (like ð) wherever applicable"
+ - date: 2016-08-28
+   author: Odd Einar Haugen
+   changes:
+    - "Renumbered the chapter, from ch. 3 to ch. 4"
+ - date: 2016-06-09
+   author: Odd Einar Haugen
+   changes:
+    - "Made the first draft by copying the text of ch. 3 in v. 2.0 of the handbook, renumbering it as ch. 4"
+---
+
+
+# Chapter 4. Levels of text representation
+
+Version 3.0 (12 December 2019)
+
+by Haraldur Bernharðsson and Odd Einar Haugen
+
+## 4.1 Introduction [#sec4.1]
+
+The electronic transcription of a manuscript text aims to accurately reproduce the
+text with a standardised set of characters. Such transcriptions can obviously never
+replicate every detail of the different shapes of the handwritten letter forms, their
+varying sizes or differing character and line spacing; a certain degree of
+standardisation is inevitable. The level of accuracy and attention to detail may,
+however, vary considerably from one edition to the next, as there is no single
+standard of transcription that can be applied to all editions of all medieval texts.
+One may perhaps, as in phonetics, refer to a spectrum between a broad transcription
+encoding only the most important elements of the text (speech) and a narrow
+transcription recording minute details. 
+
+For the purposes of transcribing medieval Norse texts, three different levels of
+transcription may be defined:
+
+ - **A facsimile level** (<E>me:facs</E>): A letter-by-letter transcription with a selection of palaeographic characteristics and the retention of abbreviations as in the manuscript.
+ - **A diplomatic level** (<E>me:dipl</E>): A letter-by-letter transcription with a small selection of palaeographic features and the expansion and identification of abbreviations.
+ - **A normalised level** (<E>me:norm</E>): A transcription in normalised orthography.
+
+The choice of level of transcription ultimately depends on the aims of the edition
+and the needs of the intended readership. For some, a single-level transcription will
+be sufficient while others may prefer to combine two or even three levels.
+
+The following discussion of these three different levels of transcription is not
+intended to be a firm standard that will fit all projects. Rather, these are
+guidelines that can be used as an example or a model and adjusted to meet the needs
+of other projects. For each project, the editorial policy can be presented in the
+header.
+
+The perspective in this chapter is firmly a West Nordic one, encompassing Old
+Icelandic and Old Norwegian. The range of characters and abbreviation symbols are far
+wider in West Nordic than in East Nordic, so we believe that East Nordic needs are
+abundantly covered in this chapter. In a few cases, however, there are peculiarities
+of East Nordic, and these will be addressed explicitly.
+
+Finally, it should be pointed out that while a rendering of a text on the facsimile level 
+uncontroversially can be called a transcription, and probably also on the diplomatic level, 
+some scholars might argue that a normalised rendering is no longer a transcription, 
+but should be regarded as a kind of edition. The view taken here is that there are aspects 
+of interpretation on all three levels, only more so on the diplomatic and especially on the 
+normalised level. For the sake of terminological consistency, in this chapter we will refer 
+to renderings on all three levels as transcriptions.
+
+## 4.2 The facsimile level [#sec4.2]
+
+The principal aim of an electronic facsimile transcription is to encode as much
+information about the manuscript text as possible. This includes the encoding of a
+wide variety of palaeographic characteristics (allographic variation), different
+types of abbreviation and punctuation, as well as information about the page layout
+(the <em>mis-en-page</em>). It should be stated emphatically that an
+electronic facsimile transcription is not intended to be &ndash; and can never be &ndash; a
+substitute for an image of the manuscript. The main value of an electronic facsimile
+transcription is the searchability afforded by the electronic encoding. An electronic
+facsimile transcription is thus not mainly intended to produce an accurate edition of
+the text for reading, but more a medium to encode electronically detailed information
+about the script, orthography, and layout as a tool for further research. The
+electronic transcription is thus essentially a data base that enables the researcher
+to extract information about the text. For palaeographic research, an accurate
+electronic facsimile transcription can thus be a useful complement to images of the
+manuscript, allowing the researcher to locate instances of particular characters or
+create frequency lists, to mention but two examples.
+
+There are, of course, limits to how accurately the script can be reproduced in a
+facsimile transcription, and some normalisation of the allographic variation in the
+manuscript is inevitable. It is impossible to produce a single set of guidelines in
+this regard that will suit all the different projects. The accuracy of the
+transcription will depend on the aims of the transcription, and, not least, the
+script, scribe, and the date of the manuscript. 
+
+In a typical facsimile transcription, the text would be accurately transcribed letter
+by letter, encoding the following properties:
+
+ - Selected palaeographical characteristics; for instance: “ı”, “ẏ”, “ꝼ”, “ꝛ”, “ꝺ”, “ꞇ”, and “ƶ” (on which see more below)
+ - Abbreviations; for instance: “ꝼᷓ”, “v͛a”, “ħ”, “” (on which see more below)
+ - Different forms of punctuation
+ - Unclear readings
+ - Erased and/or corrected text
+ - Initials and litterae notabiliores
+ - Headings
+ - Line beginnings
+ - Column beginnings
+ - Page beginnings
+
+In most facsimile transcriptions it would seem appropriate to reproduce the
+distinction of “r” and the rotunda “ꝛ”, the round “s” and the long “ſ”, as well
+as the distinction between the Half-Uncial “d”, the Uncial “ꝺ”, and the “ð”, “v” and
+the Insular “ꝩ”, the Caroline “f” and the Insular “ꝼ”, as shown in the table
+below along with a few other distinctions. Similarly, most editors would distinguish
+between some of the main variants of the most common abbreviation symbols, such as
+the “⁊” (&amp;et;) and “” (&amp;etslash;) varieties of the <em>ok</em>
+abbreviation, the ◌͛ (&amp;er;) and ◌ (&amp;ercurl;) varieties of the <em>er</em> abbreviation or ◌ᷓ (&amp;ra;) vs. ◌ (&amp;rabar;) for <em>ra</em>, <em>ar</em> or <em>va</em>. The
+reproduction of the Insular “ꝼ” and the flat-topped “ꞇ” has practical application
+in the transcription, as they can accommodate a superscript abbreviation symbol.
+
+<div className="table-abbr">
+| Manuscript | Facsimile transcription |
+|-----|-----|
+| <Glyph>d ꝺ ð</Glyph> | <Glyph>d ꝺ ð</Glyph> |
+| <Glyph>e </Glyph> | <Glyph>e </Glyph> |
+| <Glyph>f ꝼ</Glyph> | <Glyph>f ꝼ</Glyph> |
+| <Glyph>m </Glyph> | <Glyph>m </Glyph> |
+| <Glyph>r ꝛ</Glyph> | <Glyph>r ꝛ</Glyph> |
+| <Glyph>s ſ</Glyph> | <Glyph>s ſ</Glyph> |
+| <Glyph>t ꞇ</Glyph> | <Glyph>t ꞇ</Glyph> |
+| <Glyph>v ꝩ</Glyph> | <Glyph>v ꝩ</Glyph> |
+| <Glyph>⁊ </Glyph> | <Glyph>⁊ </Glyph> |
+| <Glyph>◌͛   ◌</Glyph> | <Glyph>◌͛   ◌</Glyph> |
+| <Glyph>◌ᷓ   ◌</Glyph> | <Glyph>◌ᷓ   ◌</Glyph> |
+</div>
+
+
+Depending on the aims of the transcription, the editor may choose to go a step
+further and distinguish between, for instance, the principal variants of the letter
+“a”, the different types of the Insular “f”, or reproduce elongated descending
+final minims of the letters “m” and “n”, as shown in the table below with several
+additional contrasts. This will result in a more detailed transcription of the text,
+but it will never be free of normalisation, as the script will doubtless include, for
+instance, several subtypes of the two-bowl variety of the Insular “f” that cannot
+be accurately reproduced.
+
+It is, of course, an editorial decision which of these contrasts to include. It
+should be kept in mind that the inclusion of more contrasts will slow down the
+transcription work and may increase the danger of inconsistency; this must therefore
+be carefully weighed against the aims of the project and the practicalities of
+carrying out the transcription.
+
+<div className="table-abbr">
+| Manuscript | Facsimile transcription |
+|-----|-----|
+| <Glyph>  </Glyph> | <Glyph>a</Glyph> |
+| <Glyph>ꝼ </Glyph> | <Glyph>ꝼ</Glyph> |
+| <Glyph>g ɡ</Glyph> | <Glyph>g</Glyph> |
+| <Glyph>h </Glyph> | <Glyph>h</Glyph> |
+| <Glyph>k  </Glyph> | <Glyph>k</Glyph> |
+| <Glyph>m </Glyph> | <Glyph>m</Glyph> |
+| <Glyph>n </Glyph> | <Glyph>n</Glyph> |
+| <Glyph>r ꞅ</Glyph> | <Glyph>r</Glyph> |
+| <Glyph>z ƶ</Glyph> | <Glyph>z</Glyph> |
+</div>
+
+
+In addition, there is a multitude of finer details that cannot be produced accurately
+in a facsimile transcription, even if they are significant for scribal identification
+and dating of the script. These include, for instance, curves and loops on ascenders
+and descenders, fusions and bitings. A transcription with particular emphasis on
+palaeographic detail could be encoded separately on a palaeographic level:
+<E>me:pal</E>.
+
+A short extract from an Old Icelandic manuscript, AM 233 a fol (mid 14th century) may
+serve as an example of a facsimile transcription:
+
+
+
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM233afol-28v,1-2.gif" alt="ch4/AM233afol-28v,1-2.gif"/>
+
+</Figure>
+
+
+<Caption title="Ill. 4.1">. _Niðrstigningar saga_, an Old Norse
+translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
+l. 1&ndash;2.</Caption>
+
+On the facsimile level, the text is transcribed character by character, line by line.
+Allographic variation is to a great extent reflected in the transcription, and
+abbreviation marks are copied without any expansion. If the transcriber prefers to
+use entities for all characters outside Basic Latin, the transcription of the text in
+ill. 4.1 would look like this:
+```xml
+&drot;&osup;ttin&bar; vá&rscapdot; bau&drot; michaele ho&fins;&dsup; engli.
+at &fins;ylg&ra; a&drot;am ok &aolig;llu&bar; helgu&bar; &hstrok;s at lei&drot;a
+þa i &pbardes;a&drot;i&slong;um hína &fins;ornu.
+```
+
+
+and displayed (subject to an appropriate font) as
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ
+ꝼylgᷓ aꝺam ok ꜵllū <br/>
+ &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;helgū ħs at
+leıꝺa þa ı ꝑaꝺıſum hína ꝼornu.
+
+At the facsimile level, the transcriber ought to encode the manuscript exactly as it
+reads, even if it contains obvious mistakes. Corrections can be made by inserting a
+note, or it can be left to the diplomatic or normalised level.
+
+## 4.3 The diplomatic level [#sec4.3]
+
+The principal aim of a diplomatic transcription is to produce a readable while
+accurate edition of the manuscript text. In a diplomatic transcription, the text is
+accurately transcribed letter by letter, as in a facsimile transcription, but
+increased readability is attained by (a) expanding abbreviations and (b) reducing the
+number of palaeographic contrasts vis-à-vis the facsimile transcription. A diplomatic
+transcription, as defined here, thus requires more editorial intervention than the
+facsimile transcription in the form of the interpretation of abbreviations and the
+normalisation of allographic variation. The resulting transcription will thus be more
+readable for the human eye than the facsimile transcription, which, as discussed
+above, is perhaps more intended for electronic data mining than reading.
+
+The principal characteristics of a typical diplomatic transcription as compared to a
+facsimile transcription are as follows:
+
+ - Abbreviations are expanded, and the expansions are identified (within <E>ex</E> elements); for example
+ - ꝼᷓ → f<em>ra</em>
+ - v͛a → v<em>er</em>a
+ - ħ → h<em>ann</em>
+ -  → <em>ok</em>
+ - Fewer palaeographic contrasts than in the facsimile transcription.
+
+In deciding which palaeographic contrasts to retain, priority is typically granted to
+contrasts that have &ndash; or may potentially have &ndash; phonological value (represent
+phonological contrast in the language), although this varies considerably from one
+edition to the next. In earlier print editions, the availability of non-standard
+characters in the type set also often played a significant role.
+
+The contrast between the Caroline “f” and the Insular “ꝼ”, for example, has no
+phonological basis; it is purely a feature of the script. Even if retained in a
+facsimile transcription, it would not be part of a diplomatic transcription where the
+Insular “ꝼ” would be replaced by the standard Caroline “f”. Typically, a contrast
+between a non-standard symbol in terms of modern typefaces, such as “ꝼ”, and a
+standard symbol such as “f”, would be replaced with the standard symbol. Similarly,
+the contrast between “v” and the Insular “ꝩ” would be normalised as “v”; the
+distinction between the Half-Uncial “d” and the Uncial “ꝺ” would be rendered with “d”
+only, and the distinction of “r” and the rotunda “ꝛ” would be replaced by “r”, as
+shown in the table below. None of these distinction are manifestations of a
+phonological contrast; rather, they are properties of the script only.
+
+It must be kept in mind that for centuries, the use of the rotunda “ꝛ” was
+conditioned by the environment. The expansion of abbreviations in the diplomatic
+transcription may alter this environment, further illustrating the need to replace
+the rotunda “ꝛ” with plain “r” in a diplomatic transcription. The rotunda “ꝛ”
+originated in the ligature “o” + “ʀ” (“oꝛ”); in Icelandic script, the rotunda “ꝛ” was
+then extended to the position immediately following other “round” letters, including
+“þ”, “b”, and “ꝺ”. One common occurrence of the rotunda “ꝛ” is in the abbreviated
+form of the pronominal form <em>þeir</em>, which in a facsimile
+transcription would be rendered as in the manuscript, “ꝥꝛ”, retaining both the
+rotunda “ꝛ” as well as the abbreviation. In a typical diplomatic transcription, on
+the other hand, the abbreviation would be expanded and the rotunda “ꝛ” rendered as
+plain “r”; that is, “þ<em>ei</em>r”. Once the abbreviation has been
+expanded, the rotunda “ꝛ” becomes inadmissible, many would argue, as no 13th- or
+14th-century scribe would have used the rotunda “ꝛ” immediately following the letter
+“i”: “þeıꝛ”.
+
+The distinction between “d”/“ꝺ” and “ð” reflects a phonological distinction between
+the dental stop and the dental fricative; consequently, it would be retained in a
+diplomatic transcription (as “d” vs. “ð”). The contrast between the round “s” and the
+long “ſ” in West Norse manuscripts sometimes reflects the phonological distinction
+between the geminate <em>ss</em> and the short <em>s</em>, respectively. Even if this is not always the case, many editors would retain
+it as a precautionary measure.
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>d ꝺ ð</Glyph> | <Glyph>d ð</Glyph> |
+| <Glyph>e </Glyph> | <Glyph>e</Glyph> |
+| <Glyph>f ꝼ</Glyph> | <Glyph>f</Glyph> |
+| <Glyph>m </Glyph> | <Glyph>m</Glyph> |
+| <Glyph>r ꝛ</Glyph> | <Glyph>r</Glyph> |
+| <Glyph>s ſ</Glyph> | <Glyph>s ſ</Glyph> |
+| <Glyph>t ꞇ</Glyph> | <Glyph>t</Glyph> |
+| <Glyph>v ꝩ</Glyph> | <Glyph>v</Glyph> |
+</div>
+
+
+Diacritics &ndash; accent marks, dots and hooks &ndash; frequently have phonological value, but
+not always. They are often used to denote quantity (marking long vowels or
+consonants) or quality (different vowel qualities, such as <em>ǫ</em>
+vs. <em>o</em>). Sometimes they are, however, without phonological
+value, as, for example, when vowels that almost certainly were short are rendered
+with a superscript acute accent. Rather than attempting to differentiate accurately
+between diacritics with phonological value and those that are superfluous, it seems
+more practical to simply reproduce <em>all diacritics</em> in the
+diplomatic transcription (exactly as in the facsimile transcription). As an exception
+to this rule and in compliance with a long tradition in Norse editorial scholarship,
+the undotted “i” (that is, “ı”) is rendered with a dot in a diplomatic transcription,
+even if it is without a dot in the manuscript and the facsimile transcription. The
+contrast between “ı” and “í” in the manuscript (and the facsimile transcription) is
+thus replaced by the contrast “i” vs. “í” in the diplomatic edition. Similarly, “y”
+is usually rendered without the superscript dot (“ẏ”), as the principal function of
+the dot appears to have been to distinguish “y” from the Insular “ꝩ” (the two are
+otherwise practically identical in many hands).
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>á</Glyph> | <Glyph>á</Glyph> |
+| <Glyph>a̋</Glyph> | <Glyph>a̋</Glyph> |
+| <Glyph>ä</Glyph> | <Glyph>ä</Glyph> |
+| <Glyph>í</Glyph> | <Glyph>í</Glyph> |
+| <Glyph>v́</Glyph> | <Glyph>v́</Glyph> |
+| <Glyph>ǫ</Glyph> | <Glyph>ǫ</Glyph> |
+| <Glyph>ỏ</Glyph> | <Glyph>ỏ</Glyph> |
+| <Glyph>ę</Glyph> | <Glyph>ę</Glyph> |
+| <Glyph>ı</Glyph> | <Glyph>i</Glyph> |
+| <Glyph>ẏ</Glyph> | <Glyph>y</Glyph> |
+</div>
+
+
+Note that diacritics &ndash; both superscript dots and superscript strokes (bars) &ndash; can serve
+as abbreviation symbols. A consonant symbol with a superscript dot or a superscript
+bar would typically denote a geminate (long) consonant. A “g” with a superscript dot
+or “n” with a superscript bar would thus be rendered as such in a facsimile
+transcription, “ġ” and “n̄”, but in a diplomatic edition the diacritics would be
+expanded resulting in “g<em>g</em>” and “n<em>n</em>”,
+respectively, as shown in the table below with some more examples.
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>ġ</Glyph> | <Glyph>gg</Glyph> |
+| <Glyph>ṙ</Glyph> | <Glyph>rr</Glyph> |
+| <Glyph>k̇</Glyph> | <Glyph>kk</Glyph> |
+| <Glyph>n̄</Glyph> | <Glyph>nn</Glyph> |
+| <Glyph>m̄</Glyph> | <Glyph>mm</Glyph> |
+</div>
+
+
+Diacritics are thus treated in two different ways, as illustrated by the contrast
+between, on the one hand, a vowel symbol with a superscript accent or a superscript
+dot, such as “á” or “ȧ”, and, on the other hand, a consonant symbol with a
+superscript dot, such as “ġ”. In both cases, the diacritic serves to denote length,
+but the former is transcribed as is, while the latter is treated as an abbreviation
+and expanded in a diplomatic transcription, “á” or “ȧ” vs. “g<em>g</em>”.
+
+Ligatures and fusions are also treated differently depending on whether they consist
+of vowel symbols or consonant symbols. Vowel ligatures are transcribed as such (and
+diacritics retained) in both a facsimile and a diplomatic transcription, as they
+could (potentially) signify a phonological contrast. This is not always the case, but
+rather than trying to determine if there actually is a contrast or not, these are
+best retained across the board, as shown with some examples in the table below.
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>ꜳ</Glyph> | <Glyph>ꜳ</Glyph> |
+| <Glyph></Glyph> | <Glyph></Glyph> |
+| <Glyph>æ</Glyph> | <Glyph>æ</Glyph> |
+| <Glyph>ǽ</Glyph> | <Glyph>ǽ</Glyph> |
+| <Glyph>ꜵ</Glyph> | <Glyph>ꜵ</Glyph> |
+| <Glyph></Glyph> | <Glyph></Glyph> |
+| <Glyph>ꜹ</Glyph> | <Glyph>ꜹ</Glyph> |
+| <Glyph></Glyph> | <Glyph></Glyph> |
+</div>
+
+
+By contrast, consonant ligatures or fusions, are only optionally reproduced in a
+facsimile transcription and replaced by their individual components in the diplomatic
+transcription, as shown in the table below. In [ch. 6.5.6](/handbook/v3/ch6#sec6.5.6),
+we recommend encoding consonant ligatures by the <E>seg</E> element with the 
+<Att>type="lig"</Att> attribute,
+e.g. &lt;seg type="lig"&gt;bb&lt;/seg&gt;. The <E>seg</E> element offers a convenient way of 
+grouping characters or words, and will also be used in a somewhat different context in [ch. 5.3.1](/handbook/v3/ch5#sec5.3.1) and 
+[ch. 5.3.2](/handbook/v3/ch5#sec5.3.2) below.
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph></Glyph> | <Glyph>af</Glyph> |
+| <Glyph></Glyph> | <Glyph>aꝼ</Glyph> |
+| <Glyph></Glyph> | <Glyph>ap</Glyph> |
+| <Glyph></Glyph> | <Glyph>ar</Glyph> |
+| <Glyph></Glyph> | <Glyph>bb</Glyph> |
+| <Glyph></Glyph> | <Glyph>gg</Glyph> |
+| <Glyph></Glyph> | <Glyph>oc</Glyph> |
+| <Glyph>ﬅ</Glyph> | <Glyph>ſt</Glyph> |
+</div>
+
+
+Small capitals are frequently used in Icelandic manuscripts to denote geminate
+consonants; these are typically not treated as abbreviations, but transcribed as
+small capitals in both facsimile and diplomatic transcriptions. Small capitals may
+also appear with a superscript dot; for example, “ʀ̇”. These should not be treated
+mechanically interpreting the superscript dot as a signal of length, as that is
+almost certainly not what the scribe had in mind. In expanding abbreviations, the
+role of the editor is to expand in such a way as the scribe himself would have
+spelled the word had he decided to write it out in full. It seems highly improbable
+that treating “ʀ̇” as “ʀ<em>ʀ</em>” (or perhaps “r<em>rrr</em>”?!) would be consistent with the scribe’s intention. Instead, small
+capitals with a superscript dot should be transcribed as such both in a facsimile and
+a diplomatic transcription.
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>ɢ</Glyph> | <Glyph>ɢ</Glyph> |
+| <Glyph>ɴ</Glyph> | <Glyph>ɴ</Glyph> |
+| <Glyph>ʀ</Glyph> | <Glyph>ʀ</Glyph> |
+| <Glyph>ɢ̇</Glyph> | <Glyph>ɢ̇</Glyph> |
+| <Glyph>ʀ̇</Glyph> | <Glyph>ʀ̇</Glyph> |
+</div>
+
+
+As mentioned above, this is not a fixed standard, but rather guidelines that can be
+adapted to different projects. The editorial policy can be described in the
+header.
+
+For East Nordic, there is an exception and an addition which should
+be addressed:
+
+<div className="table-abbr">
+| Facsimile level | Diplomatic level |
+|-----|-----|
+| <Glyph>r ꝛ ʀ</Glyph> | <Glyph>r</Glyph> |
+| <Glyph>ʉ</Glyph> | <Glyph>ʉ</Glyph> |
+</div>
+
+
+To the best of our knowledge, there is no phonological distinction between the three
+allographs “r”, “ꝛ” and “ʀ” in East Nordic, so we suggest that they are
+all rendered by the character “r” on the diplomatic level. Also in Old Norwegian, the
+small capital “ʀ” is usually just an ornamental variant of the ordinary “r”,
+such as in “Maʀia” (for <em>Maria</em>, not <em>Marria</em>), but there are some examples of the Icelandic geminate usage, so we
+suggest that the distinction between “r” and “ʀ” is kept for Old Norwegian. The
+final character, the barred “ʉ” is frequently found in Old Danish manuscripts. It has
+often been rendered with “y”, possibly because it is lacking in many typefaces.
+However, since it is now part of the official Unicode Standard at `0289`, we believe
+it should be kept at the diplomatic level (although it might be rendered as “y” on
+the normalised level).
+
+As an example of a typical diplomatic transcription, let us return to the short
+passage from the Old Icelandic manuscript, AM 233 a fol (in ill. 4.1 above):
+
+In this transcription, expansions are set out by the element <E>ex</E> and in the
+display usually by italics. The text would then be transcribed as
+```xml
+d<ex>ro</ex>ttin<ex>n</ex> vá&rscapdot; baud michaele hof<ex>ud</ex> engli.
+at fylg<ex>ia</ex>. adam ok &aolig;llu<ex>m</ex> helgu<ex>m</ex> h<ex>an</ex>s
+at leida þa i p<ex>ar</ex>adi&slong;um hína fornu.
+```
+
+
+and displayed as
+
+&ensp;&ensp;&ensp;&ensp;&ensp;d<em>ro</em>ttin<em>n</em>
+vá baud michaele hof<em>ud</em> engli. at fylg<em>ia</em> adam ok ꜵllu<em>m</em><br/>
+&ensp;&ensp;&ensp;&ensp;&ensp;helgu<em>m</em> h<em>an</em>s at leıda þa i p<em>ar</em>adiſum hína
+fornu.
+
+In what is often called semi-diplomatic editions, such as the majority in the series
+_Editiones Arnamagnæanæ_ (København 1958&ndash;), abbreviations are
+expanded silently, i.e., without the use of italics. In electronic editions, this decision can be left to the
+stylesheet. As long as the information is kept in the <E>ex</E> element a
+display with italics can easily be restored.
+
+## 4.4 The normalised level [#sec4.4]
+
+The normalisation of the orthography is intended to further enhance the readability
+of the text. Medieval orthography is not as consistent as modern orthography and
+typically varies from one scribe to another, from one period to another, and,
+moreover, within the work of the same scribe. While removing this variation can
+inevitably result in the loss of some information, it will yield a much more readable
+text.
+
+There is no single standard for normalising Old Norse texts. Icelandic texts are
+frequently normalised to conform to the Icelandic language around or shortly after
+1200; this is the standard used by series such as <em>Íslenzk
+fornrit</em>. For Old Norwegian, <em>Gammelnorsk ordboksverk</em>
+(The Old Norwegian Dictionary), applied a slightly different standard. Yet other
+standards have been used for Old Danish and Old Swedish.
+
+See further on normalised orthography in [ch.
+10](/handbook/v3/ch10).
+
+As an example of an Icelandic text normalised according to the standard used in the
+<em>Íslenzk fornrit</em> series, we can once more return to the
+passage from AM 233 a fol. (ill. 4.1) which would be rendered as
+```xml
+Dróttinn várr bauð Michaele h&oogon;fuðengli at fylgja Adam ok &oogon;llum
+helgum hans at leiða þá í paradísum hina fornu.
+```
+
+
+and displayed as
+
+&ensp;&ensp;&ensp;&ensp;&ensp;Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam
+ok ǫllum<br/>
+ &ensp;&ensp;&ensp;&ensp;&ensp;helgum hans at leiða þá í paradísum hina
+fornu.
+
+Note that at this level all characters have been encoded using official Unicode code
+points. So rather than encoding the character “ð” with the entity
+“&amp;eth;” it has been encoded simply as “ð”, using its code point in
+Latin-1 Supplement, `00F0`. The only exception here is the “o ogonek”, which for
+practical purposes has been encoded with the entity “&amp;oogon;”, even if this
+character, too, has a Unicode code point, `01EB` in Latin Extended-B. A suitable
+keyboard layout is helpful for the actual typing of some of these characters, but in
+general, all Medieval Nordic texts can be encoded without resorting to entities as
+long as the text is rendered on a normalised level. Many Old Swedish and Old Danish
+texts can also be encoded with a minimal amount of character entities.
+
+## 4.5 Single-level transcriptions [#sec4.5]
+
+While this handbook contains a number of examples of texts that have been transcribed on two or three levels, i.e. what we refer to as multi-level transcriptions, it should be emphasised that a text may be transcribed on a single level and be fully Menota compatible. This is indeed the default case for printed editions. For an archive such as Menota, the most frequent level is the diplomatic one, as described in [ch. 4.3](#sec4.3) above. For example, all texts stemming from Gammelnorsk Ordboksverk are single-level transcriptions on the diplomatic level.
+
+| Elements | Contents |
+|-----|-----|
+| <E>w</E> | Contains a word. |
+| <E>pc</E> | Contains a punctuation mark. |
+| <E>me:facs</E> | Contains a reading on the facsimile level. |
+| <E>me:dipl</E> | Contains a reading on the diplomatic level. |
+| <E>me:norm</E> | Contains a reading on the normalised level. |
+
+
+The table above list the most important elements in a single-level transcription. First of all, each word should be encoded in a <E>w</E> element and each punctuation mark in a <E>pc</E> element. As explained in [ch. 5.3](/handbook/v3/ch5#sec5.3) below, the <E>w</E> element simplifies the encoding of words written apart or together, the position of line beginnings and hyphens, and, perhaps of greatest importance, it makes the transcribed text ready for any kind of grammatical annotation. In addition to these two elements, the level of transcription should be specified by one of the elements <E>me:facs</E>, <E>me:dipl</E> or <E>me:norm</E>.
+
+**Note**: The “me” prefix can only be used with a RELAX NG
+schema. It must be left out in texts which will be validated against a DTD.
+
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM-619-4to-2v,15-21.jpg" alt="ch4/AM-619-4to-2v,15-21.jpg"/>
+
+</Figure>
+
+
+<Caption title="Ill. 4.2">. From the translation of Alcuin’s _De virtutibus et vitiis_ in the _Old Norwegian Homily Book_, the section on <em>grið</em>, ‘peace’. AM 619 4to, f. 2v, l. 15&ndash;21.</Caption>
+
+The following example from the _Old Norwegian Homily Book_ in ill. 4.2 above renders the text on a diplomatic level. It is a single-level encoding, and since it is on the diplomatic level, we would refer to it as a <em>single-level encoding on the diplomatic level.</em>
+```xml
+<pb ed="ms" n="2v"/>
+. . . 
+<lb ed="ms" n="15"/>
+<w><me:dipl>GRøðare</me:dipl></w>
+<w><me:dipl>hæims</me:dipl></w>
+<w><me:dipl>þa</me:dipl></w>
+<w><me:dipl>er</me:dipl></w>
+<w><me:dipl>h<ex>ann</ex></me:dipl></w>
+<w><me:dipl>stæig</me:dipl></w>
+<w><me:dipl>upp</me:dipl></w>
+<w><me:dipl>til</me:dipl></w>
+<w><me:dipl>faður</me:dipl></w>
+<w><me:dipl>sins</me:dipl></w>
+<w><me:dipl>í</me:dipl></w>
+<w><me:dipl>hi<ex>m</ex>na</me:dipl></w>
+<lb ed="ms" n="16"/>
+<w><me:dipl>þa</me:dipl></w>
+<w><me:dipl>gaf</me:dipl></w>
+<w><me:dipl>h<ex>ann</ex></me:dipl></w>
+<w><me:dipl>lǽre svæinu<ex>m</ex></me:dipl></w>
+<w><me:dipl>sinu<ex>m</ex></me:dipl></w>
+<w><me:dipl>boðorð</me:dipl></w>
+<w><me:dipl>friðar</me:dipl></w>
+. . .
+```
+
+
+Single-level transcriptions may also be on the facsimile level, as illustrated in the transcription below. In this case, it is not fundamentally different from the diplomatic level, since many Old Norwegian manuscripts have rather few abbreviations. We note, however, that the round “s” has been rendered with the long “s” of the source, and that the abbreviation marks are rendered in  <E>am</E> elements, while they were expanded in <E>ex</E> elements in the diplomatic transcription.
+```xml
+<pb ed="ms" n="2v"/>
+. . . 
+<lb ed="ms" n="15"/>
+<w><me:facs>GRøðare</me:facs></w>
+<w><me:facs>hæimſ</me:facs></w>
+<w><me:facs>þa</me:facs></w>
+<w><me:facs>er</me:facs></w>
+<w><me:facs>h<am>&bar;</am></me:facs></w>
+<w><me:facs>ſtæig</me:facs></w>
+<w><me:facs>upp</me:facs></w>
+<w><me:facs>til</me:facs></w>
+<w><me:facs>faður</me:facs></w>
+<w><me:facs>ſinſ</me:facs></w>
+<w><me:facs>í</me:facs></w>
+<w><me:facs>hi<am>&bar;</am>na</me:facs></w>
+<lb ed="ms" n="16"/>
+<w><me:facs>þa</me:facs></w>
+<w><me:facs>gaf</me:facs></w>
+<w><me:facs>h<am>&bar;</am></me:facs></w>
+<w><me:facs>lǽre ſvæinu<am>&bar;</am></me:facs></w>
+<w><me:facs>ſinu<am>&bar;</am></me:facs></w>
+<w><me:facs>boðorð</me:facs></w>
+<w><me:facs>friðar</me:facs></w>
+. . .
+```
+
+
+A single-level transcription may contain the normalised level only, but this is rare. A normalisation is usually not done directly from the source, but by way of a diplomatic rendering. However, keeping to the normalised level only may be useful for the encoding of an existing, normalised version of a text, as long as this keeps closely to the document structure of the source.
+```xml
+<pb ed="ms" n="2v"/>
+. . . 
+<lb ed="ms" n="15"/>
+<w><me:norm>Grǿðari</me:norm></w>
+<w><me:norm>heims</me:norm></w>
+<w><me:norm>þá</me:norm></w>
+<w><me:norm>er</me:norm></w>
+<w><me:norm>hann</w></me:norm>
+<w><me:norm>steig</me:norm></w>
+<w><me:norm>upp</me:norm></w>
+<w><me:norm>til</me:norm></w>
+<w><me:norm>fǫður</me:norm></w>
+<w><me:norm>síns</me:norm></w>
+<w><me:norm>í</me:norm></w>
+<w><me:norm>himna</me:norm></w>
+<lb ed="ms" n="16"/>
+<w><me:norm>þá</me:norm></w>
+<w><me:norm>gaf</me:norm></w>
+<w><me:norm>hann</me:norm></w>
+<w><me:norm>lǽrisveinum</me:norm></w>
+<w><me:norm>sínum</me:norm></w>
+<w><me:norm>boðorð</me:norm></w>
+<w><me:norm>friðar</me:norm></w>
+. . .
+```
+
+
+As discussed in [ch. 10.3](/handbook/v3/ch10#sec10.3) below and exemplified in [ch. 10.4.2](/handbook/v3/ch10#sec10.4.2), this normalisation of the orthography follows the rules of the _Ordbog over det norrøne prosasprog_.
+
+## 4.6 Multi-level transcriptions [#sec4.6]
+
+Multi-level transcriptions allow the transcriber to render various aspects of the text in one or more specific levels. While the facsimile level can be seen as an “as is” level, rendering the text in the source with as little interpretation as possible, the two next levels, the diplomatic and normalised levels, allow for specifications of the transcriber’s perspective and interpretation of the text.
+
+The levels of a multi-level transcription should be grouped in a <E>choice</E> element, and this element comes in addition to those discussed above for single-level transcriptions.
+
+| Element | Contents |
+|-----|-----|
+| <E>choice</E> | Groups alternative readings, such as <E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E>. |
+
+
+In the following, we shall discuss some of the options for a multi-level transcription. As will be seen, having several levels at disposal allow for a more detailed and distributed encoding, so that some elements may be used on one level and other elements on complimentary levels.
+
+### 4.6.1 Editorial intervention [#sec4.5.1]
+
+Editorial intervention is sometimes required to produce a readable text &ndash; or, in
+some cases, a text which can be annotated for syntax or information structure.
+Corrections of scribal errors, the insertion of individual letters, words or even
+phrases (accidentally) omitted by the scribe, conjectures about illegible words,
+or insertion of punctuation may be called for to enhance the quality of the text.
+The level of editorial intervention will, of course, depend on the aims of the
+transcription and the needs of the intended readership. This will also depend on
+the number of levels transcribed. Typically, the facsimile transcription is free
+of any such intervention; after all, faithfulness to the manuscript is the
+hallmark of the facsimile transcription. Any such editorial intervention is,
+therefore, best left to the diplomatic or normalised level. The division between
+the two may vary somewhat. In the absence of a normalised transcription, the
+diplomatic level would be the appropriate place for the editor to step in and emend the
+text for the benefit of the reader. By the same token, the normalised level would
+be best suited for this in a transcription with both diplomatic and normalised
+level. The facsimile transcription and the normalised transcription are, as if it
+were, at the opposite ends of the spectrum of editorial intervention, where the
+facsimile transcription allows only minimal intervention while the normalised
+level is produced by maximising the role of the editor.
+
+The question of editorial intervention will be discussed in more detail in [ch. 9.3](/handbook/v3/ch9#sec9.3) below, giving a number of examples of
+single-level and multi-level transcriptions. Although a single-level transcription
+can be made on either of the three levels discussed here, it is as a rule done on
+the diplomatic level.
+
+### 4.6.2 Special characters [#sec4.6.2]
+
+In a transcription on all three levels &ndash; facsimile, diplomatic, and normalised &ndash;
+the transcription of any given word can be different at the three levels, as shown
+with some examples below. In “leɢıa”, the undotted “ı” is replaced by dotted “i”
+at the diplomatic level, but the small capital “ɢ” is retained as it has
+phonological value. In the normalised orthography, the geminate <em>g</em> is spelled with the digraph “gg” and the “i” is replaced by “j”. In
+“ſıðan”, the long “ſ” is retained at the diplomatic level but replaced by “s” in
+the normalised orthography. The undotted “ı” is replaced by dotted “i” at the
+diplomatic level, but in the normalised orthography it is rendered with an acute
+accent, “í”, in order to represent a long vowel. In “gıỏꝼ”, the undotted “ı” and
+the Insular “ꝼ” are replaced by dotted “i” and Caroline “f”, respectively, at
+the diplomatic level, while the “ỏ” remains. In the normalised orthography, “i”
+and “ỏ” are replaced by “j” and “ǫ”, respectively.
+
+In the three tables below, transcriptions and renderings are illustrated with 
+images from the Icelandic law manuscript [GKS 3270 4to](https://handrit.is/en/manuscript/view/is/GKS04-3270) (ca. 1340&ndash;1360).
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Facsimile</th>
+<th>Transcriptions</th>
+<th>Renderings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/01_leggja.jpg" alt="ch4/01_leggja.jpg"/></td>
+<td>&lt;me:facs&gt;le&amp;gscap;&amp;inodot;a&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;le&amp;gscap;ia&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;leggja&lt;/me:norm&gt; </td>
+<td>leɢıa<br/> leɢia<br/> leggja</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/02_sidan.jpg" alt="ch4/02_sidan.jpg"/></td>
+<td>&lt;me:facs&gt;&amp;slong;&amp;inodot;ðan&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;&amp;slong;iðan&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;síðan&lt;/me:norm&gt; </td>
+<td>ſıðan<br/> ſiðan<br/> síðan</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/03_gjof.jpg" alt="ch4/03_gjof.jpg"/></td>
+<td>&lt;me:facs&gt;g&amp;inodot;&amp;ocurl;&amp;fins;&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;gi&amp;ocurl;f&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;gjǫf&lt;/me:norm&gt; </td>
+<td>gıỏꝼ<br/> giỏf<br/> gjǫf</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+The facsimile transcription is the most detailed one and often requires the
+transcription of palaeographic detail that is not retained at neither the
+diplomatic level nor in a normalised version. Since the degree of palaeographic
+detail is significantly reduced at the diplomatic level, it sometimes is identical
+with the normalised level. Consequently, the facsimile transcription often is
+different from the two other transcriptions, as shown below. In “henꝺꝛ”, the
+Uncial “ꝺ” and the rotunda “ꝛ” are retained only at the facsimile level, but
+replaced with the standard “d” and “r” at the diplomatic level. In “haꝼðı”, the
+Insular “ꝼ” and the undotted “ı” are reproduced at the facsimile level only,
+but replaced with standard “f” and “i” at the diplomatic level. In “váꞇꞇar”, the
+flat-topped “ꞇ” only belongs to the facsimile transcription, but is replaced by
+standard “t” at the other levels.
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Facsimile</th>
+<th>Transcriptions</th>
+<th>Renderings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/04_hendr.jpg" alt="ch4/04_hendr.jpg"/></td>
+<td>&lt;me:facs&gt;hen&amp;drot;&amp;rrot;&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;hendr&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;hendr&lt;/me:norm&gt;</td>
+<td>hendꝛ<br/> hendr<br/> hendr</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/05_hafdi.jpg" alt="ch4/05_hafdi.jpg"/></td>
+<td>&lt;me:facs&gt;ha&amp;fins;ð&amp;inodot;&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;haꝼðı&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;hafði&lt;/me:norm&gt;</td>
+<td>haꝼðı<br/> hafði<br/> hafði</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/06_vattar.jpg" alt="ch4/06_vattar.jpg"/></td>
+<td>&lt;me:facs&gt;vá&amp;trot;&amp;trot;ar&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;váttar&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;váttar&lt;/me:norm&gt; </td>
+<td>váꞇꞇar<br/> váttar<br/> váttar</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+Occasionally, all three levels are identical:
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Facsimile</th>
+<th>Transcriptions</th>
+<th>Renderings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/07_er.jpg" alt="ch4/07_er.jpg"/></td>
+<td>&lt;me:facs&gt;er&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;er&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;er&lt;/me:norm&gt; </td>
+<td>er<br/> er<br/> er</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/08_maela.jpg" alt="ch4/08_maela.jpg"/></td>
+<td>&lt;me:facs&gt;mæla&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;mæla&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;mæla&lt;/me:norm&gt; </td>
+<td>mæla<br/> mæla<br/> mæla</td>
+</tr>
+<tr>
+<td><AutoImage src="/images/hb3/ch4/09_kona.jpg" alt="ch4/09_kona.jpg"/></td>
+<td>&lt;me:facs&gt;kona&lt;/me:facs&gt;<br/> &lt;me:dipl&gt;kona&lt;/me:dipl&gt;<br/> &lt;me:norm&gt;kona&lt;/me:norm&gt; </td>
+<td>kona<br/> kona<br/> kona</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+If the text is normalised according to the rules of ONP, however, the verb <em>mæla</em> would be spelt with an accent over the vowel, “mǽla” (cf. [ch. 10.3.1.4](/handbook/v3/ch10#sec10.3.1.4) below).
+
+### 4.6.3 Structural properties [#sec4.6.3]
+
+Page beginnings (<E>pb/</E>), column beginnings (<E>cb/</E>), and line beginnings
+(<E>lb/</E>) sometimes occur in the middle of a word. As these structural
+properties can be relevant at all three levels of transcription, it is recommended
+that they be indicated at all levels (repeated in all three transcriptions of the
+word). A break that occurs between words, falls outside the <E>w</E> element,
+and needs not to be repeated. See [ch. 3](/handbook/v3/ch3) for an
+inventory of structural encoding.
+
+### 4.6.4 Punctuation [#sec4.6.4]
+
+In the facsimile transcription, the punctuation of the manuscript is accurately
+reproduced. The normalised transcription (or the diplomatic transcription, if
+there is no normalised transcription) may need different punctuation or the
+insertion of punctuation marks missing at the facsimile level. In such cases, the
+punctuation in the <E>pc</E> element will only be inserted in the
+<E>me:norm</E> level. See [ch. 5.4](/handbook/v3/ch5#sec5.4)
+for more details on the encoding of punctuation. 
+
+### 4.6.5 A sample encoding of a three-level transcription [#sec4.6.5]
+
+In a three-level transcription, the elements are the same as in a single-level transcription. 
+The main difference is that the levels are encoded so that up to three text strings 
+co-exist within the boundaries of the <E>w</E> elements. In order to make this 
+sctructure fully transparent, we recommend using the <E>choice</E> element for the 
+grouping of the <E>me:facs</E>, <E>me:dipl</E> and <E>me:norm</E> elements.
+
+As an example of the encoding of a three-level transcription, we can once more
+turn to the passage from AM 233 a fol in ill. 4.1 above. Here, we are using 
+character entities to a higher degree than necessary (as
+discussed in [ch. 4.2](#sec4.2) above).
+```xml
+<w>
+  <choice>
+    <me:facs>&drot;<am>&osup;</am>ttin<am>&bar;</am></me:facs>
+    <me:dipl>d<ex>ro</ex>ttin<ex>n</ex></me:dipl>
+    <me:norm>Dróttinn</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>vá&rscapdot;</me:facs>
+    <me:dipl>vá&rscapdot;</me:dipl>
+    <me:norm>várr</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>bau&drot;</me:facs>
+    <me:dipl>baud</me:dipl>
+    <me:norm>bauð</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>michaele</me:facs>
+    <me:dipl>michaele</me:dipl>
+    <me:norm>Michaele</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ho&fins;<am>&dsup;</am> engli</me:facs>
+    <me:dipl>hof<ex>ud</ex> engli</me:dipl>
+    <me:norm>h&oogon;fuðengli</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm></me:norm>
+  </choice>
+</pc>
+<w>
+  <choice>
+    <me:facs>at</me:facs>
+    <me:dipl>at</me:dipl>
+    <me:norm>at</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&fins;ylg<am>&ra;</am></me:facs>
+    <me:dipl>fylg<ex>ia</ex></me:dipl>
+    <me:norm>fylgja</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm></me:norm>
+  </choice>
+</pc>
+<w>
+  <choice>
+    <me:facs>a&drot;am</me:facs>
+    <me:dipl>adam</me:dipl>
+    <me:norm>Adam</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>ok</me:facs>
+    <me:dipl>ok</me:dipl>
+    <me:norm>ok</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&aolig;llu<am>&bar;</am></me:facs>
+    <me:dipl>&aolig;llu<ex>m</ex></me:dipl>
+    <me:norm>&oogon;llum</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>helgu<am>&bar;</am></me:facs>
+    <me:dipl>helgu<ex>m</ex></me:dipl>
+    <me:norm>helgum</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>h<am>&bar;</am>s</me:facs>
+    <me:dipl>h<ex>an</ex>s</me:dipl>
+    <me:norm>hans</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>at</me:facs>
+    <me:dipl>at</me:dipl>
+    <me:norm>at</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>lei&drot;a</me:facs>
+    <me:dipl>leida</me:dipl>
+    <me:norm>leiða</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>þa</me:facs>
+    <me:dipl>þa</me:dipl>
+    <me:norm>þá</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>i</me:facs>
+    <me:dipl>i</me:dipl>
+    <me:norm>í</me:norm>
+   </choice>
+</w>
+<w>
+   <choice>
+    <me:facs><am>&pbardes;</am>a&drot;i&slong;um</me:facs>
+    <me:dipl>p<ex>ar</ex>adi&slong;um</me:dipl>
+    <me:norm>paradísum</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>hína</me:facs>
+    <me:dipl>hína</me:dipl>
+    <me:norm>hina</me:norm>
+  </choice>
+</w>
+<w>
+  <choice>
+    <me:facs>&fins;ornu</me:facs>
+    <me:dipl>fornu</me:dipl>
+    <me:norm>fornu</me:norm>
+  </choice>
+</w>
+<pc>
+  <choice>
+    <me:facs>.</me:facs>
+    <me:dipl>.</me:dipl>
+    <me:norm>.</me:norm>
+  </choice>
+</pc>
+```
+
+
+The rather verbose encoding illustrated above becomes much more concise when displayed by a suitable stylesheet. Typically, the stylesheet will pick one of the levels for the display so that the text string becomes linear, as it is in the source.
+
+#### 4.6.5.1 Display of levels [#sec4.6.5.1]
+
+The display of levels varies with the stylesheets being used, but probably all stylesheets will agree on the display of the characters as such.
+
+
+
+<Figure>
+<AutoImage src="/images/hb3/ch4/AM233afol-28v,1-2.gif" alt="ch4/AM233afol-28v,1-2.gif"/>
+
+</Figure>
+
+
+<Caption title="Ill. 4.3">. _Niðrstigningar saga_, an Old Norse
+translation of the apocryphal _Evangelium Nicodemi_. AM 233a fol, 28v,
+l. 1&ndash;2. This is identical to ill. 4.1 above, repeated here for the sake of convenience.</Caption>
+
+This is an approximate rendering of the display in the Menota archive of the text in ill. 4.3:
+<DisplayFrame>
+
+
+<table>
+<thead>
+<tr>
+<th>Facsimile display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1&ensp;ꝺ ͦꞇꞇın̄ vá bauꝺ mıchaele hoꝼᷘ englı. aꞇ ꝼylgᷓ aꝺam ok ꜵllū<br/> 2&ensp;helgū ħs at leıꝺa þa ı ꝑaꝺıſum hína ꝼornu. </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<table>
+<thead>
+<tr>
+<th>Diplomatic display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1&ensp;drottinn vá baud michaele hofud engli. at fylgia adam ok ꜵllum<br/> 2&ensp;helgum hans at leıda þa i paradiſum hína fornu. </td>
+</tr>
+</tbody>
+</table>
+
+
+
+<table>
+<thead>
+<tr>
+<th>Normalised display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1&ensp;Dróttinn várr bauð Michaele hǫfuðengli at fylgja Adam ok ǫllum<br/> 2&ensp;helgum hans at leiða þá í paradísum hina fornu. </td>
+</tr>
+</tbody>
+</table>
+
+
+</DisplayFrame>
+
+
+For reasons of line alignment in the Menota archive, the stylesheet will present 
+the text on all levels with line beginnings and line numbers. In other stylesheets, line beginnings 
+will not be displayed on the diplomatic and the normalised levels. This applies to the stylesheets in [app. F.3](/handbook/v3/F_xslt#secF.3) below.
+
+#### 4.6.5.2 Focal levels [#sec4.6.5.2]
+
+As stated above, the elements <E>me:facs</E>, <E>me:dipl</E> and
+<E>me:norm</E> are not defined in TEI, but are part of the namespace we
+have defined for Menota texts. Please see the schemas in [app. D](/handbook/v3/D_schemas).
+
+The three levels discussed here can be seen as **focal** in the
+sense that they are typical and frequently used levels of text representations in
+Medieval Nordic editions (as defined in [Haugen
+2004](/handbook/v3/literature#Haugen2004)). Several additional levels can be added, e.g. a <E>me:pal</E>
+level for an even more detailed palaeographical encoding of the text. This level
+has been included in the Menota schemas, but is not seen as one of the focal
+levels.
+
+[Guðvarður Már Gunnlaugsson
+2003](/handbook/v3/literature#Gunnlaugsson2003) offers a more detailed typology of editorial levels in the Old Norse editorial tradition. 
+For example, a level between the diplomatic and normalised, usually called “halvdiplomatrisk”
+(semi-diplomatic), is the standard level in many of the Arnmagnæan editions.

@@ -1,0 +1,1674 @@
+---
+title: "8: Lemmatisation of manuscript text"
+author:
+ - Odd Einar Haugen
+changeLog:
+ - date: 2026-04-30
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2016-07-12
+   author: Odd Einar Haugen
+   changes:
+    - "Updated a few links (problems with EAGLES)"
+ - date: 2008-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few minor revisions, including correcting quotation marks and fixing links"
+ - date: 2008-05-16
+   author: Odd Einar Haugen
+   changes:
+    - "Final update before publication."
+ - date: 2008-02-12
+   author: Tone Merete Bruvik
+   changes:
+    - "Made some examples valid, and put the prefix 'me:' infront of the attribute 'msa' a lot of places."
+ - date: 2008-02-07
+   author: Odd Einar Haugen
+   changes:
+    - "Made a number of minor changes."
+ - date: 2008-01-08
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated to TEI P5 1.0."
+ - date: 2006-11-22
+   author: Odd Einar Haugen
+   changes:
+    - "Changing the pos attribute to msa. Adding ch. 8.6. Adding ch. 8.7. A number of minor revisions."
+ - date: 2006-06-10
+   author: Odd Einar Haugen
+   changes:
+    - "A number of minor corrections."
+ - date: 2005-12-29
+   author: Tone Merete Bruvik
+   changes:
+    - "First draft in Menota XML P5."
+ - date: 2003-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004. Version 2.0 beta published 30 May 2005."
+---
+
+
+# Ch. 8. Lemmatisation of manuscript text
+
+Version 2.0 (16 May 2008). Links updated 12 July 2016.
+
+## 8.1 Introduction [#sec8.1]
+
+In [ch. 2.3](/handbook/v2/ch2#sec2.3) we suggested that the word, <E>w</E>, is a basic unit in any transcription. Each <E>w</E> element in a manuscript text can easily be supplied with information about the dictionary entry and the grammatical analysis of the word in question. We recommend that this information is provided by two attributes, <Att>lemma</Att> for the dictionary entry and <Att>me:msa</Att> for the grammatical form:
+
+
+
+<div className="table-abbr">
+| Element / attribute | Contents |
+|-----|-----|
+| <E>w</E> | delimits a grammatical word. |
+| &ensp;&ensp;&ensp;<Att>lemma</Att> | states the lemma (lexical entry) of the word |
+| &ensp;&ensp;&ensp;<Att>me:msa</Att> | states the grammatical (morphosyntactial) form of the word. |
+</div>
+
+
+It is essential that the lemmatisation of Medieval Nordic manuscript text is done in adherence to the principles developed for handling large corpora in linguistic research. We have found the guidelines provided by [EAGLES (1996)](/handbook/v2/literature) to be particularly useful, but have decided to deviate somewhat from these guidelines in order to produce a more self-explanatory, although slightly more verbose, system. 
+
+The model provided here is aimed at Medieval Norwegian and Icelandic texts. For Medieval Swedish and Danish texts and also for later Norwegian texts, we can expect a radical levelling in the grammatical system, e.g. in the nominal and verbal inflections. The model provided here will therefore overgenerate when applied to Medieval Swedish and Danish texts, and to late Medieval Norwegian texts.
+
+This chapter is intended as a discussion of the basic principles for lemmatisation and grammatical encoding of manuscript text. It should be read as a suggestion rather than as definite guidelines.
+
+Medieval Nordic texts sometimes include words, phrases or even whole passages in other languages, particularly in Latin. The encoding of such passages is discussed in [ch. 8.7](#sec8.7) below.
+
+## 8.2 The attribute `@lemma` [#sec8.2]
+
+The element <E>w</E> can be supplied with several lexicographical attributes for each word in a transcription. The attribute <Att>lemma</Att> provides the lexical form of each word based on the entries in standard dictionaries. For Medieval Norwegian and Icelandic texts we suggest that the word-list produced by the Arnamagnæan Commission's [Ordbog over det norrøne prosasprog](/handbook/v2/literature#AMKO) ([ONP](/handbook/v2/literature#ONP1989)) at the University of Copenhagen is used to create the lemma base. The attribute would then be marked up as in this example, which states that the word “hefir” has “hafa” as its lemma:
+```xml
+<w lemma="hafa">hefir</w>
+```
+
+
+Lemmatised texts are useful for any language, and in particular for languages with complex morphology or variable orthography. The morphology of Old Norse is more complex than that of the modern Nordic languages, but not particularly difficult &ndash; it is rather like the morphology of Modern German. The orthography, however, was far from fixed, and since many transcriptions are likely to be fairly diplomatic, any lemma may be instantiated by a large number of orthographic forms. For example, the pronoun “hann” has only three forms in the normalised orthography of Old Norse: “hann” (nominative and accusative), “hans” (genitive), and “honum” (dative). In an actual transcription, however, a dozen or more forms may occur, as shown in the table below. 
+
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Lemma</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hann</td>
+<td rowSpan="5">hann</td>
+<td rowSpan="5">Nominative</td>
+</tr>
+<tr>
+<td>han<E>am</E>&amp;bar;<E>/am</E></td>
+</tr>
+<tr>
+<td>h<E>am</E>&amp;bar;<E>/am</E></td>
+</tr>
+<tr>
+<td>h<E>am</E>&amp;bar;<E>/am</E>n</td>
+</tr>
+<tr>
+<td>ha&amp;nscap;</td>
+</tr>
+<tr>
+<td>hans</td>
+<td rowSpan="4">hann</td>
+<td rowSpan="4">Genitive</td>
+</tr>
+<tr>
+<td>han&amp;slong;</td>
+</tr>
+<tr>
+<td>h<E>am</E>&amp;bar;<E>/am</E>s</td>
+</tr>
+<tr>
+<td>h<E>am</E>&amp;bar;<E>/am</E>&amp;slong;</td>
+</tr>
+<tr>
+<td>honum</td>
+<td rowSpan="3">hann</td>
+<td rowSpan="3">Dative</td>
+</tr>
+<tr>
+<td>honom</td>
+</tr>
+<tr>
+<td>h<E>am</E>&amp;bar;<E>/am</E>m</td>
+</tr>
+</tbody>
+</table>
+
+
+
+In [ch. 2.3](/handbook/v2/ch2#sec2.3) the use of <E>w</E> for the encoding of graphic words and information concerning their description is treated. Note the use of entities for special characters, such as “&amp;fins;” and “&amp;nscap;”, or abbreviations such as “&amp;bar;”. These are described in [ch. 5](/handbook/v2/ch5) and [ch. 6](/handbook/v2/ch6).
+
+As stated in [ch. 3](/handbook/v2/ch3), a text may be encoded on a single level of transcription, as exemplified with “hefir” above. If the text is transcribed on more than one level there is no need for any further attributes, since each word is contained within a single <E>w</E> element and the attribute is valid for the whole contents: 
+```xml
+<w lemma="hafa">
+  <choice>  
+    <me:facs>ha&fins;i</me:facs> 
+    <me:dipl>ha&fins;i</me:dipl> 
+    <me:norm>hafi</me:norm>
+  </choice>
+</w>
+```
+
+
+The next example is slightly more complicated since it contains an abbreviation on the facsimile level and a corresponding expansion in the diplomatic level, but the <Att>lemma</Att> attribute is unchanged:
+```xml
+<w lemma="koma">  
+  <choice>
+    <me:facs>co<am>&bar;</am></me:facs> 
+    <me:dipl>co<ex>m</ex></me:dipl> 
+    <me:norm>kom</me:norm>
+  </choice>
+</w>
+```
+
+
+In cases where a graphic word is included partially or completely in the element <E>unclear</E> this can be encoded within the element <E>w</E> and be related to the attribute <Att>lemma</Att>.
+```xml
+<w lemma="sv&aacute;">  
+  <choice>
+    <me:facs><unclear reason="faded">s<am>&ra;</am></unclear></me:facs> 
+    <me:dipl><unclear>s<ex>ua</ex></unclear></me:dipl> 
+    <me:norm>sv&aacute;</me:norm>
+  </choice>
+</w>
+```
+
+
+Text included within the element <E>supplied</E> is not lemmatized. The following example shows how a character, word or phrase that has been supplied is encoded with the element <E>w</E>, but without any <Att>lemma</Att> attribute as the text is not transcribed from the manuscript itself.
+```xml
+<w> 
+  <choice>
+    <me:facs><supplied reason="illegible" resp="KGJ">lei
+      </supplied>kti</me:facs> 
+    <me:dipl><supplied reason="illegible" resp="KGJ">lei
+      </supplied>kti</me:dipl> 
+    <me:norm>leikti</me:norm>
+  </choice>
+</w> 
+```
+
+
+This means that the forms that are not marked will not be included in the searchable database under the category <Att>lemma</Att>. We hereby avoid the problem of contamination between forms that are from the manuscript text and forms that have been supplied by a transcriber or encoder of the text. A basic principle is that the lemmatized text should be from the manuscript text.
+
+## 8.3 The attribute `@me:msa` [#sec8.3]
+
+The attribute <Att>me:msa</Att> (for **morphosyntactical analysis**) adds information about the grammatical form of a word. To be able to make this analysis it is necessary to create a model which includes all possible morphological forms of each lemma. As stated above, the model is based on the morphology of Medieval Norwegian and Icelandic, as expounded in standard grammars of Old Norse or “norrønt”.
+
+We recommend a scheme in which the attribute <Att>me:msa</Att> contains a set of name tokens, one for each morphological category. White space separates each name token. We further recommend that the order of the name tokens should be fixed, and that there should be one specific order for each word class, as specified in [ch. 8.5](#sec8.5) below. For words with inflection, the first token specifies the word class and the following tokens the morphological categories relevant for this specific word class. Words belonging to word classes with no inflection, such as prepositions and subjunctions, will only receive a single name token for the word class itself. In addition to tokens for morphologhical categories such as gender, number and case, tokens for inflection class may be added.
+
+Each name token consists of two parts. The first part specifies the category itself and is represented by a single lower-case letter. The second part specifies the value of the category and is given in one or more upper-case letters. As far as possible, mnemonic characters are used, e.g. “c” for “case” and “G” for “genitive”. The name token “cG” is thus to be understood as “case: genitive” and is applicable to all words which can be inflected in genitive, such as nouns, adjectives, pronouns/determiners, numerals and verb participles.
+
+In Old Norse, nouns are inflected for gender, number, case and species (definiteness). Below is an example of the mark-up for the word “hestum”, dative plural indefinite of the masculine noun “hestr”. The <Att>me:msa</Att> attribute opens with a name token for the word class, “xNC” for “noun, common”, moving on to “gM” for “gender: masculine”, “nP” for “number: plural”, “cD” for “case: dative” and finally “sI” for “species: indefinite”. 
+```xml
+<w lemma="hestr" me:msa="xNC gM nP cD sI">hestum</w>
+```
+
+
+Prepositions, which are not inflected, will receive a much simpler encoding, consisting of a single name token, “xAP”, in which “x” denotes word class and “AP” the actual class, prepositions.
+```xml
+<w lemma="fyrir" me:msa="xAP">fyrir</w>
+```
+
+
+Old Norse has the most complex morphology of the Nordic vernaculars and is therefore a suitable starting point. For texts with less complex morphology it is simply a case of making a selection of relevant categories from the repertoire in this chapter. Cf. the discussion on zero values in [ch. 8.4.3](#sec8.4.3) below.
+
+### 8.3.1 Invariable properties [#sec8.3.1]
+
+Words in inflectional languages exhibit variable and invariable properties. Word class is the prime example of an invariable property, since a word can belong to one and only one word class &ndash; the noun “hestr” can not be inflected in adjectival and verbal forms. For nouns, gender is an invariable property &ndash; once again, “hestr” can not be inflected in feminine or neutral forms. Adjectives, on the other hand, are inflected in gender, so for this word class gender is a variable property. Other categories, such as case, number, grade etc., are all variable.
+
+Information on inflectional classes can be added to the <Att>me:msa</Att> attribute, e.g. strong vs. weak verbs, stem classes of nouns etc. These are also invariable properties.
+
+The name tokens will, in any case, make it clear which tokens refer to invariable properties and which refer to invariable properties.
+
+#### 8.3.1.1 Word class [#sec8.3.1.1]
+
+Word class is denoted by a name token consisting of the character “x” + an uppercase two-letter abbreviation for each class, including commonly recognised subclasses (such as the division between common and proper nouns). Inevitably, there will be some conflict of categorisation, especially among the pronouns and determiners. They will be discussed in [ch. 8.5](#sec8.5) below.
+
+<table>
+<thead>
+<tr>
+<th>Name token</th>
+<th>Word class</th>
+<th>Inflection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNC</td>
+<td>Noun, common</td>
+<td rowSpan="15">Yes</td>
+</tr>
+<tr>
+<td>xNP</td>
+<td>Noun, proper</td>
+</tr>
+<tr>
+<td>xAJ</td>
+<td>Adjective</td>
+</tr>
+<tr>
+<td>xPE</td>
+<td>Pronoun, personal</td>
+</tr>
+<tr>
+<td>xPQ</td>
+<td>Pronoun, interrogative</td>
+</tr>
+<tr>
+<td>xPI</td>
+<td>Pronoun, indefinite</td>
+</tr>
+<tr>
+<td>xDP</td>
+<td>Determiner, possessive</td>
+</tr>
+<tr>
+<td>xDD</td>
+<td>Determiner, demonstrative</td>
+</tr>
+<tr>
+<td>xDQ</td>
+<td>Determiner, quantifier</td>
+</tr>
+<tr>
+<td>xPD</td>
+<td>Pronoun/Determiner</td>
+</tr>
+<tr>
+<td>xNA</td>
+<td>Numeral, cardinal</td>
+</tr>
+<tr>
+<td>xNO</td>
+<td>Numeral, ordinal</td>
+</tr>
+<tr>
+<td>xVB</td>
+<td>Verb</td>
+</tr>
+<tr>
+<td>xAV</td>
+<td>Adverb</td>
+</tr>
+<tr>
+<td>xAT</td>
+<td>Articles</td>
+</tr>
+<tr>
+<td>xAP</td>
+<td>Preposition (adposition)</td>
+<td rowSpan="6">No</td>
+</tr>
+<tr>
+<td>xCC</td>
+<td>Conjunction, coordinating</td>
+</tr>
+<tr>
+<td>xCS</td>
+<td>Conjunction, subordinating</td>
+</tr>
+<tr>
+<td>xIT</td>
+<td>Interjection</td>
+</tr>
+<tr>
+<td>xIM</td>
+<td>Infinitive marker</td>
+</tr>
+<tr>
+<td>xRP</td>
+<td>Relative particle</td>
+</tr>
+<tr>
+<td>xUA</td>
+<td>Unassigned</td>
+<td>&ndash;</td>
+</tr>
+</tbody>
+</table>
+
+
+
+#### 8.3.1.2 Inflectional class [#sec8.3.1.2]
+
+Inflectional class is another invariable property and can usually be derived from a combination of the lemma and the word class. Thus, the lemma “fara” belonging to the word class “xVB” (verbs) will be classified as being a strong verb of the 6th class, according to most grammars of Old Norse. This is information which might be found in a dictionary or a lexicographical database of Old Norse.
+
+If the encoder wishes to include information on the inflectional class we recommend that this is being done by adding to the <Att>me:msa</Att> attribute a name token consisting of the lowercase character “i” + an uppercase abbreviation for each class. The table below contains examples for the verb class, but can easily be extended to other classes. Incidentally, the distinction between strong and weak inflection also applies to nouns.
+
+<div className="table-abbr">
+| Name token | Inflectional class |
+|-----|-----|
+| iST | Strong |
+| iWK | Weak |
+| iRD | Reduplicating |
+| iPP | Preterito-Presentic |
+| etc. |  |
+</div>
+
+
+Since inflectional class is an invariable property of the word there is no compelling reason to specify it as part of the morphosyntactical analysis. The major verb classes listed above are a possible exception, since there are some pair verbs which must be disambiguated by way of inflectional class, e.g. the weak (and transitive) verb “brenna” vs. the homonymuous strong (and intransitive) verb “brenna”.
+
+The distinction between strong and weak inflection is an invariable property in verbs and nouns, i.e. a verb or a noun has either weak or strong inflection. For example, the noun “armr” has a strong inflection, while “granni” has weak inflection. What has been termed “species” (or “finiteness”) here, is a variable property. This applies to nouns and adjectives, e.g. “hestr” vs. “hestrinn” and “hvítr [hestr]” vs. “[inn] hvíti [hestr]”. Cf. [ch. 8.3.2.4](#sec8.3.2.4) below.
+
+### 8.3.2 Variable properties [#sec8.3.2]
+
+The list of variable properties is rather long for an inflectional language such as Old Norse. Note that the very first category in this list, gender, is a borderline case, since it is an invariable (inherent) property for nouns. For other word classes, such as adjectives, pronouns/determiners, numerals, articles and verb participles, it is a variable property. The remaining categories are variable.
+
+#### 8.3.2.1 Gender [#sec8.3.2.1]
+
+This category applies to nouns, adjectives, pronouns/determiners, numerals and verb participles. Gender is denoted by a name token consisting of the lowercase character “g” + an uppercase abbreviation for each gender. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| gM | Masculine |
+| gF | Feminine |
+| gN | Neuter |
+| gU | Unspecified |
+</div>
+
+
+Some nouns may have two genders, e.g. “hungr” (hunger), which is either masculine or neutral. For words of this type we suggest using name tokens with more than one value, “gMF”, “gMN” and “gFN”.
+
+We recommend that gender is ascribed on the basis of standard dictionaries. Even if a text at a certain point may point to a specific gender, e.g. in the collocation “mikill hungr” (meaning that “hungr” is masculine), any disambiguation is of limited value. So rather than trying to distinguish between (a) sure cases of “hungr” being masculine, gM, (b) sure cases of “hungr” being neuter, gN, and (c) ambiguous cases, gMN, we recommend the classification “gMN” in all cases (since this is what the dictionary states).
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| gMF | Masculine or Feminine |
+| gMN | Masculine or Neuter |
+| gFN | Feminine or Neuter |
+</div>
+
+
+For words with three possible genders, we suggest using the character “U”, meaning that the value is unspecified, “gU”.
+
+#### 8.3.2.2 Number [#sec8.3.2.2]
+
+This category applies to nouns, adjectives, pronouns/determiners and verbs. Number is denoted by a name token consisting of the lowercase character “n” + an uppercase abbreviation for each number. The dual form occurs only in the inflection of personal pronouns. The character “U” indicates unspecified cases.
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| nS | Singular |
+| nD | Dual |
+| nP | Plural |
+| nU | Unspecified |
+</div>
+
+
+#### 8.3.2.3 Case [#sec8.3.2.3]
+
+This category applies to nouns, adjectives, pronouns/determiners and numerals. Case is denoted by a name token consisting of the lowercase character “c” + an uppercase abbreviation for each case. The character “U” refers to words that cannot be specified for case.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| cN | Nominative |
+| cG | Genitive |
+| cD | Dative |
+| cA | Accusative |
+| cU | Unspecified |
+</div>
+
+
+#### 8.3.2.4 Species [#sec8.3.2.4]
+
+This category applies to nouns and adjectives. Species (or definiteness) is denoted by a name token consisting of the lowercase character “s” + an uppercase abbreviation for each type of species. The character “U” indicates unspecified cases.
+
+In Old Norse, nouns and adjectives can have either indefinite or definite forms, e.g. “hestr” (indefinite noun) vs. “hestrinn” (definite noun) or “hvítr [hestr]” (indefinite adjective) vs. “[inn] hvíti [hestr]” (definite adjective).
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| sI | Indefinite |
+| sD | Definite |
+| sU | Unspecified |
+</div>
+
+
+#### 8.3.2.5 Grade [#sec8.3.2.5]
+
+This category applies to adjectives and adverbs. Grade is denoted by a name token consisting of the lowercase character “r” + an uppercase abbreviation for each grade. The character “U” indicates unspecified cases.
+
+Memory hint: since the character “g” has been reserved for “gender”, the character “r” can be interpreted as “relative”, which refers to an aspect of the category of grade.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| rP | Positive |
+| rC | Comparative |
+| rS | Superlative |
+| rU | Unspecified |
+</div>
+
+
+#### 8.3.2.6 Person [#sec8.3.2.6]
+
+This category applies to verbs and some of the pronouns. Person is denoted by a name token consisting of the lowercase character “p” + an uppercase abbreviation for each person. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| p1 | 1. person |
+| p2 | 2. person |
+| p3 | 3. person |
+| pU | Unspecified |
+</div>
+
+
+#### 8.3.2.7 Tense [#sec8.3.2.7]
+
+This category applies only to verbs. Tense is denoted by a name token consisting of the lowercase character “t” + an uppercase abbreviation for each tense. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| tPS | Present |
+| tPT | Preterite |
+| tU | Unspecified |
+</div>
+
+
+Preterite-present verbs are classified according to their logical tense, not their historical formation. Thus, “veit” has the present tense of “vita” (even if it has a preterite formation) and “vissti” the preterite tense.
+
+#### 8.3.2.8 Mood [#sec8.3.2.8]
+
+This category applies only to verbs. Mood is denoted by a name token consisting of the lowercase character “m” + an uppercase abbreviation for each mood. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| mIN | Indicative |
+| mSU | Subjunctive |
+| mIP | Imperative |
+| mU | Unspecified |
+</div>
+
+
+#### 8.3.2.9 Voice [#sec8.3.2.9]
+
+This category applies only to verbs. Voice is denoted by a name token consisting of the lowercase character “v” + an uppercase abbreviation for each type of voice. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| vA | Active |
+| vR | Reflexive |
+| vU | Unspecified |
+</div>
+
+
+#### 8.3.2.10 Finiteness [#sec8.3.2.10]
+
+This category applies only to verbs. Finiteness is denoted by a name token consisting of the lowercase character “f” + an uppercase abbreviation for each type of finiteness. The character “U” indicates unspecified cases.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| fF | Finite |
+| fI | Infinite (non-finite) |
+| fP | Participle (non-finite) |
+| fU | Unspecified |
+</div>
+
+
+#### 8.3.2.11 Enclitics [#sec8.3.2.11]
+
+Personal pronouns may be attached to finite verbs, e.g. “emk” for “em ek” or “fórtu” for “fórt þú”. From a morphological point of view, this process is similar to the suffixation in definite noun forms, e.g. “hestr + inn” = “hestrinn”, or reflexive verb forms, e.g. “kalla + s(i)k” = “kallask”. However, it may be argued that the enclitic pronoun retains it character as a word to a larger extent than the suffixed determiner “inn” or the reflexive pronoun “s(i)k”. For this reason, we suggest that enclitic forms are encoded with the <E>seg</E> element, as suggested in  [ch. 2.3.2](/handbook/v2/ch2#sec2.3.2) above.:
+```xml
+<seg type="enc">
+  <w lemma="vera">em</w>
+  <w lemma="ek">k</w>
+</seg>	 	      	
+```
+
+```xml
+<seg type="enc">
+  <w lemma="fara">fort</w>
+  <w lemma="&thorn;&uacute;">u</w>
+</seg>	 	      	
+```
+
+
+The segmentation is in several cases open to discussion. Thus, the “t” in “fortu” may be seen as part of the verb form or as part of the pronoun. From a phonological point of view, it is an assimilation product of the final “t” in the verb and the initial “þ” in the pronoun. It is therefore useful to supply these verb and pronoun forms with a marker for enclitication. We suggest a name token “eE” for this purpose, to be used in the <Att>me:msa</Att> attribute of both words:
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| eE | Enclitic pronoun |
+</div>
+
+
+This category is only relevant for combinations of a verb and an enclitic pronoun. In all other cases, the name token is simply not used.
+
+#### 8.3.2.12 Government [#sec8.3.2.12]
+
+In the Old Norwegian lemmatised corpus, prepositions are encoded for the case which they govern. This is valuable syntactic information, but it is really not a morphological category. We therefore recommend that prepositions, which have no inflection in Old Norse (or possibly not in any other language), are only encoded for word class in the <Att>me:msa</Att> attribute, “xAP”.
+
+However, to accomodate the information provided in the Old Norwegian lemmatised corpus without introducing attributes for syntactic categories we suggest using a name token for government, consisting of the lowercase character “y” + an uppercase abbreviation for each type of case government. This category would apply to prepositions, verbs and some adjectives.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| yG | Governing Genitive |
+| yD | Governing Dative |
+| yA | Governing Accusative |
+| yU | Unspecified government |
+</div>
+
+
+In the Old Norwegian lemmatised corpus, also conjunctions (i.e. subjunctions) are encoded for the mood which they govern. This is not a morphological category, but the information can be retained by adding a name token for government, consisting of the lowercase character “y” + an uppercase abbreviation for each type of mood government.
+
+
+
+<div className="table-abbr">
+| Name token | Value |
+|-----|-----|
+| yIN | Governing Indicative |
+| ySU | Governing Subjunctive |
+| yU | Unspecified government |
+</div>
+
+
+## 8.4 Homography and zero values [#sec8.4]
+
+Two or more words sometimes have the same spelling, but different meanings. This is usually referred to as “homography” and it is a basic problem for all morphological analysis. We shall distinguish between two types of homography, external and internal. The first case must be handled by the <Att>lemma</Att> attribute, the second by the <Att>me:msa</Att> attribute.
+
+For the discussion in this chapter, we shall adopt the distinction between **word
+			form**, **grammatical form** and **lemma** (lexeme). The word form is the word as it is spelt in the text, whether normalised or unnormalised. The grammatical form is a specific morphological value of the word, referred to by the attribute <Att>me:msa</Att>. The lemma is the common denominator for all of these forms, typically given as a dictionary entry and referred to by the attribute <Att>lemma</Att>.
+
+### 8.4.1. External homography [#sec8.4.1.]
+
+External homography means that one grammatical word can be mapped onto two or more lemmata. In
+		some cases the alternative lemmata are different words from a semantic and etymological point of
+		view, such as the feminine noun **þýða** “friendship” in
+		nominative singular and the verb **þýða** “interpret” in infinitive. In all but a few cases, a semantic analysis will disambiguate these forms.
+
+In other cases it is a questions of related words with variant forms, such as the neutral nouns
+		**líf** and **lífi**. In dative singular they
+		happen to have the same form, **lífi**:
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Word form</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>líf</td>
+<td rowSpan="2">lífi</td>
+<td rowSpan="2">xNC gN nS cD sI</td>
+</tr>
+<tr>
+<td>lífi</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+For this case of external homography we recommend encoding each of the possible lemmata in full, using the vertical bar, “\|”, as delimiter (for the sake of simplicity we are using “í” rather than “&amp;iacute;”):
+```xml
+... <w lemma="líf | lífi" me:msa="xNC gN nS cD sI | 
+	xNC gN nS cD sI">lifi</w> ...
+```
+
+
+Note that for each possible **lemma** value there must be a corresponding **me:msa** value, even if they happen to be identical (as in this example). Thus, the first possible lemma is “líf” and the corresponding me:msa value is “xNC gN nS cD sI”. The second possible lemma is “lífi” and the corresponding me:msa value “NC gN nS cD sI”. The general form is thus:
+```xml
+... <w lemma="alt.1 | alt.2" me:msa="alt.1 | alt.2">homograph</w> ...
+```
+
+
+A search engine would be able to pick out both “líf” and “lífi” as possible lemmata for “lífi”, and also to keep this example separate from unambiguous ones, such as the genitive “lífs”, which can only be mapped to the lemma “líf”, or the nominative “lífi” which can only be mapped to the lemma “lífi”.
+
+### 8.4.2 Internal homography [#sec8.4.2]
+
+Internal homography means that one word form can be mapped onto two or more grammatical words. This is often referred to as syncretism, and is frequently found in many languages, typically as the result of linguistic change (such as phonological mergers). The levelling of the morphological system in Medieval Nordic (except Icelandic) produced a large amount of syncretism.
+
+The feminine noun “kona” is a case in point. It has the same form, “konu”, in all three non-nominative (oblique) cases in singular:
+
+
+
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Word form</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowSpan="4">kona</td>
+<td>kona</td>
+<td>xNC gF nS **cN** sI</td>
+</tr>
+<tr>
+<td rowSpan="3">konu</td>
+<td>xNC gF nS **cG** sI</td>
+</tr>
+<tr>
+<td>xNC gF nS **cD** sI</td>
+</tr>
+<tr>
+<td>xNC gF nS **cA** sI</td>
+</tr>
+</tbody>
+</table>
+
+
+
+The encoder may choose to see these forms as syncretistic and simply encode case as unspecified for this word, using the value “U”:
+```xml
+<w lemma ="kona" me:msa="xNC gN nS cU sI">konu</w>
+```
+
+
+This encoding entails that the word “kona” has case as a relevant category, but that the exact value has not been determined by the encoder. A search engine would be able to list the form as an example of e.g. a feminine noun in singular, but not as an example of a feminine noun in dative.
+
+In most cases, however, a syntactic or semantic analysis will yield a unique result. For example, in the phrase “til konu” the word form “konu” would be analysed as genitive since the preposition “til” only governs this particular case:
+```xml
+<w lemma="til" me:msa="xAP">til</w> 
+<w lemma="kona" me:msa="xNC gF nS cG sI">konu</w>
+```
+
+
+In another phrase, e.g. “fyrir konu”, the encoder might not be willing to make a definitive choice, since the preposition “fyrir” governs both accusative and dative. The encoder might therefore decide to list both alternatives in the <Att>me:msa</Att> attribute, using the vertical bar as a delimiter:
+```xml
+<w lemma="fyrir" me:msa="xAP">fyrir</w> 
+<w lemma="kona | kona" me:msa="xNC gF nS cA sI | xNC gF nS cD sI">konu</w>
+```
+
+
+Note that also in this case should there be a lemma value specified for each <Att>me:msa</Att> value, even if the lemma values are identical, i.e.
+```xml
+... <w lemma="alt.1 | alt.2" me:msa="alt.1 | alt.2">homograph</w> ...
+```
+
+
+A search engine would be able to pick out this instance of “kona” as a possible example of accusative and of dative. The presence of the delimiter would also make it possible to identify this as an instance of syncretism, so that this example would not be counted among the unambiguous examples of either accusative or dative. The order of the alternatives is arbitrary; the encoding above does not imply that accusative is more likely than dative.
+
+Finally, it should be pointed out that it is a moot question whether “konu” should be seen as a single word form, or as a three homographic word forms representing three distinct grammatical forms, “konu-GEN”, “konu-DAT” and “konu-ACC”. The answer to this question depends on the morphological analysis of the linguistic stage in question. One might possibly claim, for example, that in Medieval Norwegian case is a relevant distinction to make for all nouns, but that in Late Medieval Norwegian the case distinction has collapsed, and that the lemma “kona” only has two grammatical forms, the nominative “kona” and the non-nominative (oblique) “konu”.
+
+### 8.4.3 Combinations of external and internal homography [#sec8.4.3]
+
+In more complex cases, there may be a combination of external and internal homography. For example, the word form “sinni” may be a dative of the noun “sinn” or it may be either dative or accusative of the noun “sinni”. In other words, the combinations are:
+
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Word form</th>
+<th>Grammatical form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sinn</td>
+<td rowSpan="3">sinni</td>
+<td>xNC gN nS **cD** sI</td>
+</tr>
+<tr>
+<td rowSpan="2">sinni</td>
+<td>xNC gN nS **cD** sI</td>
+</tr>
+<tr>
+<td>xNC gN nS **cA** sI</td>
+</tr>
+</tbody>
+</table>
+
+
+
+A unique way of encoding this structure would be to list the three alternatives in such an order that the first lemma value corresponds to the first me:msa value, the second lemma value corresponds to the second me:msa value, and the third lemma value corresponds to the third me:msa value. In other words:
+```xml
+... <w lemma="alt.1 | alt.2 | alt.3" me:msa="alt.1 | alt.2 | alt.3">
+	homograph</w> ...
+```
+
+
+or
+```xml
+... <w lemma="sinn | sinni | sinni" me:msa="xNC gN nS cD sI 
+	| xNC gN nS cD sI | xNC gN nS cA sI">sinni</w> ...
+```
+
+
+This way of encoding homography is verbose, but it is unambiguous and simple to process.
+
+### 8.4.4 Zero values [#sec8.4.4]
+
+We believe it is convenient to distinguish between two types of zero values in morphological
+		encoding, **not applicable** and **not specified**.
+
+(a) **Not applicable**
+
+No words have the complete set of morphological categories listed in [8.3](#sec8.3) above. For example, although verb participles belong to the verb class, they are not inflected for mood. There is no need to encode participles for “mood:zero” &ndash; it is sufficient to leave out the name token for mood. In other words, the absence of the name token implies that mood is not a relevant category for the word in question.
+
+(b) **Not specified**
+
+In other cases, a word is inflected for a certain category, but the encoder is not able to specify a value. This may be the case with some proper nouns, for which no gender can be given. This is a different type of “zero” value, and we therefore suggest to indicate these cases with the character “U” to be read as “unspecified”. An example:
+```xml
+<w lemma="Byblos" me:msa="xNP gU">Byblos</w>
+```
+
+
+This encoding entails that the word in question is a noun and that it does have a gender (it is thus not a case of non-applicability), but that the encoder does not know which gender that would be. 
+
+Another example: In Old Norse, there is no gender distinction in genitive or dative plural of
+			any adjective or determiner. It is possible to encode adjectives and determiners for gender based
+			on concord with a noun (if there happens to be one), so that in a genitive plural phrase like
+			“spakra manna” the adjective “spakra” might be ascribed masculine gender on
+			the basis of the noun maðr, which is masculine. From experience, we know that this is time-consuming and not really informative encoding. A less specified option would be to use the character “U” to indicate non-specification:
+```xml
+<w lemma="spakr" me:msa="xNC gU nP cG sI">spakra</w>
+```
+
+
+A search engine would be able to pick out “spakra” as an example of an adjective in genitive plural, but not as an adjective in masculine (or feminine, or neutral) gender.
+
+## 8.5 General model for Medieval Nordic [#sec8.5]
+
+This chapter contains examples of encoding for each word class in a Medieval Nordic text. As pointed out in the introduction, the model is based on the grammar of Old Norse, and will thus be more detailed than needed for Old Danish and possibly also for Old Swedish. For these linguistic stages and for Middle Norwegian, the model can be scaled down, but we believe that the general framework will still be useful.
+
+ We strongly recommend a fixed order of name tokens for each class, beginning with the name token for the word class itself. Note, however, that non-relevant categories can simply be left out, as recommended in [ch. 8.4.3](#sec8.4.3) above. Thus, for late Medieval texts the encoding of many word classes may be shorter than the one exemplified here.&ensp;
+
+### 8.5.1 Nouns (NC and NP) [#sec8.5.1]
+
+Nouns are divided into two subgroups, **common noun** (xNC) and **proper nouns** (xNP). They are further encoded for **gender**, **number**, **case** and **species**
+
+**Example**: Encoding of the noun “ymr” in the phrase “þá heyrðu þeir ym mikinn ok gny”:
+```xml
+<w lemma="ymr" me:msa="xNC gM nS cA sI">ym</w>
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNC<br/> xNP<br/></td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+Possibly, a separate name token for oblique case, “cO”, might be added. The concept of the oblique case covers all non-nominative cases, i.e. genitive, dative and accusative.
+
+### 8.5.2 Adjectives (AJ) [#sec8.5.2]
+
+Adjectives are encoded for **grade**, **gender**, **number**, **case** and **species**.
+
+**Example**: Encoding of the adjective “langr” in the phrase “seint er um langan veg at spyrja tíðenda”:
+```xml
+<w lemma="langr" me:msa="xAJ rP gM nS cA sI">langan</w>
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Grade</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAJ</td>
+<td>rP<br/> rC<br/> rS<br/> rU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+Note that in the comparative form, adjectives only have weak (indefinite) inflection. Nevertheless, we recommend that they are encoded for species, “sI”, throughout. Also note that some adjectives have defect comparation, but we still recommend that they are encoded for grade.
+
+### 8.5.3 Pronouns proper (PE, PQ and PI) [#sec8.5.3]
+
+In recent grammars the traditional category pronoun is usually divided into <HI style="bold">pronouns </HI>in a strict sense (words replacing a noun) and
+				“determiners” (adjunct words), and that is our recommendation as well, cf. [ch. 8.5.3](#sec8.5.3) and [8.5.4](#sec8.5.4) below. However, in some projects (i.e. the Old Norwegian lemmatised corpus) there is only a single category pronoun, and we have therefore added in [ch. 8.5.5](#sec8.5.5) a combined category, **pronouns and determiners**.
+
+Although pronouns in the strict sense of “words replacing a noun” is a smaller category than the traditional one, there are a nonetheless three distinct sub-categories. In the following these are treated separately to provide an over-view.
+
+#### 8.5.3.1 Personal pronouns (PE) [#sec8.5.3.1]
+
+Personal pronouns are encoded for **person**, **gender**, **number** and **case**. Note that only personal pronouns in 3. person have a gender distinction; for pronouns in 1. and 2. person this category is simply left out.
+
+**Example**: Encoding of the personal pronoun “vit” in the phrase “vit erum fegnir” (leaving out the gender category):
+```xml
+<w lemma="vit" me:msa="xPE p1 nD cN">vit</w>
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Person</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPE</td>
+<td>p1<br/> p2<br/> p3<br/> pU</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+#### 8.5.3.2 Interrogative pronouns (PQ) [#sec8.5.3.2]
+
+Interrogative pronouns are encoded for **gender**, **number** and **case**. Memory hint: in the name token “xPQ” the last character stands for “question”.
+
+**Example**: Encoding of the interrogative pronoun “hverr” in the phrase “Frigg spurði hverr sá vǽri með ásum”:
+```xml
+<w lemma="hverr" me:msa="xPQ gM nS cN">hverr</w>
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPQ</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+#### 8.5.3.3 Indefinite pronouns (PI) [#sec8.5.3.3]
+
+Indefinite pronouns are encoded for **gender**, **number** and **case**. 
+
+**Example**: Encoding of the indefinite pronoun “einnhverr” in the phrase “vill hann taka til at þreyta drykkju við einhvern mann”:
+```xml
+<w lemma="einnhverr" me:msa="xPI gM nS cA">einhvern</w>
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPI</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.4 Determiners (DP, DD and DQ) [#sec8.5.4]
+
+The contents of the word class determiners vary between languages and grammars. In the present analysis, determiners comprise a large part of the traditional word class pronouns (as defined in many grammars of Old Norse) with the exception of pronouns proper. Determiners have three subcategories: possessives, demonstratives and quantifiers.
+
+Note that articles and numerals are often analysed as determiners, but these traditional classes have been retained here. 
+
+#### 8.5.4.1 Possessives (DP) [#sec8.5.4.1]
+
+Possessives are encoded for **gender**, **number** and **case**.
+
+**Example**: Encoding of the possessive “sinn” in the phrase “hann hugðisk þá at reyna afl sitt”:
+```xml
+<w lemma="sinn" me:msa="xDP gN nS cA">sitt</w>
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDP</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+#### 8.5.4.2 Demonstratives (DD) [#sec8.5.4.2]
+
+Possessives are encoded for **gender**, **number** and **case**.
+
+**Example**: Encoding of the demonstrative “hinn” in the phrase “hitt fjall er hátt”:
+```xml
+<w lemma="hinn" me:msa="xDD gN nS cN">hitt</w>
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDD</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+#### 8.5.4.3 Quantifiers (DQ) [#sec8.5.4.3]
+
+Quantifiers are encoded for **gender**, **number** and **case**. This category may overlap with Indefinite pronouns.
+
+**Example**: Encoding of the demonstrative “mar(g)t” in the phrase “mart folk hefir komit hér”:
+```xml
+<w lemma="margr" me:msa="xDQ gN nS cN">mart</w>
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xDQ</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.5 Pronouns/determiners (PD) [#sec8.5.5]
+
+This is the traditional category of “pronoun”, as defined in the grammars of e.g. [Noreen 1923](/handbook/v2/literature#Noreen1923) and [Iversen 1973](/handbook/v2/literature#Iversen1973). From a inflectional point of view this is a heterogenous category, but since it has been used in much lexicographical work, it is given here as an alternative to the two classes pronouns proper (8.5.3) and determiners (8.5.4).
+
+Pronouns/derminers are encoded for **person** (only personal pronouns), **gender**, **number** and **case**.
+
+**Example**: Encoding of the pronoun “engi” in the phrase “ormrinn er slǿgari en ekki annat kvikendi” (no name token for person, since this category is not relevant):
+```xml
+<w lemma="engi" me:msa="xPD gN nS cN">ekki</w>  
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Person</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xPD</td>
+<td>p1<br/> p2<br/> p3<br/> pU</td>
+<td>gM<br/> gF<br/> gN<br/> gU<br/></td>
+<td>nS<br/> nD<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.6 Numerals (NA and NO) [#sec8.5.6]
+
+The numerals are devided into two sub-categories: “cardinals” (NA) and “ordinals” (NO). The character U is used for “unspecified”, so that “xNU” comprises both cardinal and ordinal numerals - the case for the Old Norwegian lemmatised corpus.
+
+Numerals are encoded for **gender** (only the cardinals 1-4), **number** (only ordinals), **case**, and **species** (only relevant for the numerals “einn”, “fyrstr”, and “annarr”). Memory hint: since the obvious candidate “NC” for “numeral, cardinal” has been reserved for “nouns, common”, the character “A” in “NA” can be seen as referring to the vowel “a” which occurs two times in the word “cardinal”.
+
+The numerals hundrað “one hundred (and twenty)” and þúsund “one thousand (two hundred)” are treated as nouns.
+
+**Example**: Encoding of the numeral “sjaundi” in the phrase “in sjaunda borg”:
+```xml
+<w lemma="sjaundi" me:msa="xNO gF nS cN sD">sjaunda</w>  
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xNA<br/> xNO<br/> xNU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.7 Articles (AT) [#sec8.5.7]
+
+In recent grammars the traditional word class “articles” is usually classified as part of the word class “determiners”. However, in some projects (i.e. the Old Norwegian lemmatised corpus) articles are treated as a separate class, and we suggest that as an alternative they may be classified as such.
+
+Articles are encoded for **gender**, **number**, **case**, and **species**.
+
+**Example**: Encoding of the article “einn” in the phrase “ein kona”:
+```xml
+<w lemma="einn" me:msa="xAT gF nS cN sI">ein</w>  
+```
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+<th>Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAT</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>nS<br/> nP<br/> nU<br/></td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>sI<br/> sD<br/> sU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.8 Verbs (VB) [#sec8.5.8]
+
+Verbs are either **finite** or **infinite**. In the former category, they are inflected for **tense**, **mood**, **person**, **number** and **voice**. In the latter category, participles are basically inflected as adjectives, while infinitives have a very restricted inflection. For practical reasons, we recommend that finite and infinite forms are treated separately. 
+
+#### 8.5.8.1 Finite forms [#sec8.5.8.1]
+
+Finite verbs are encoded for **tense**, **mood**, **person**, **number**, and **voice**. Optionally, verbs may be encoded for **inflectional class**. This may prove practical since Old Norse has some “pair verbs” with identical lemmatic forms such as the strong verb “brenna” and the weak verb “brenna”. In the Old Norwegian lemmatised corpus, verbs are divided into four inflectional classes, as exemplified in the table below.
+
+**Example**: Encoding of the verb “telja” in the phrase “hon taldi” (leaving out inflectional class):
+```xml
+<w lemma="telja" me:msa="xVB fF tPT mIN p3 nS vA">taldi</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Tense</th>
+<th>Mood</th>
+<th>Person</th>
+<th>Number</th>
+<th>Voice</th>
+<th>Infl. class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB</td>
+<td>fF</td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>mIN<br/> mSU<br/> mIP<br/> mU</td>
+<td>p1<br/> p2<br/> p3<br/> pU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>vA<br/> vR<br/> vU</td>
+<td>iST<br/> iWK<br/> iRD<br/> iPP<br/> iU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+#### 8.5.8.2 Infinite forms [#sec8.5.8.2]
+
+Infinite forms are either participles or infinitives, and may be distinguished by the name token **finiteness** with “fP” for participles and “fI” for infinitives.
+
+##### (a) Participles
+
+Participles are inflected for the verbal categories **tense** and **voice**, and for the nominal categories **gender**, **number**, **case** and **species** and **voice** (in supinum). Optionally, participles may be encoded for **inflectional class**.
+
+Note that present participles only have weak (definite) declension. Preterite (perfect)
+			participles usually have strong (indefinite) declension, but may sometimes occur with weak
+			(definite) forms. Voice is only relevant for supinum, cf. e.g. “hann hefir kallat” vs. “hann hefir kallazk”.
+
+**Example**: Encoding of the verb “koma” in the phrase “hann er kominn”:
+```xml
+<w lemma="koma" me:msa="xVB fP tPT vA gM nS cN sI">kominn</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Tense</th>
+<th>Voice</th>
+<th>Gender</th>
+<th>Number</th>
+<th>Case</th>
+<th>Species</th>
+<th>Infl. class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB<br/></td>
+<td>fP<br/></td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>vA<br/> vR<br/> vU</td>
+<td>gM<br/> gF<br/> gN<br/> gU</td>
+<td>nS<br/> nP<br/> nU</td>
+<td>cN<br/> cG<br/> cD<br/> cA<br/> cU</td>
+<td>sI<br/> sD<br/> sU<br/></td>
+<td>iST<br/> iWK<br/> iRD<br/> iPP<br/> iU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+##### (b) Infinitives
+
+Infinitives are inflected only for the verbal categories **tense** and **voice**, and **tense** only applies to three verbs, “munu”, “skulu” and “vilja” (which have preterital forms). Optionally, participles may be encoded for **inflectional class**.
+
+**Example**: Encoding of the verb “fara” in the phrase “hann mun fara” (with optional information on inflectional class):
+```xml
+<w lemma="fara" me:msa="xVB fI tPS vA iST">fara</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Finiteness</th>
+<th>Tense</th>
+<th>Voice</th>
+<th>Infl. class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xVB<br/></td>
+<td>fI</td>
+<td>tPS<br/> tPT<br/> tU</td>
+<td>vA<br/> vR<br/> vU</td>
+<td>iST<br/> iWK<br/> iRD<br/> iPP<br/> iU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.9 Adverbs (AV) [#sec8.5.9]
+
+Adverbs are only encoded for **grade**.
+
+**Example**: Encoding of the adverb “sterkliga” in the phrase “hann svaf ok hraut sterkliga”:
+```xml
+<w lemma="sterkliga" me:msa="xAV rP">sterkliga</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAV</td>
+<td>rP<br/> rC<br/> rS<br/> rU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+Note that some adverbs have defect comparation, but we still recommend that they are encoded for grade.
+
+### 8.5.10 Prepositions and particles (AP and VP) [#sec8.5.10]
+
+“Prepositions” are not inflected and only encoded for word class, xAP. The latter is an abbreviation for “adposition”, which is the hyponymous term for “preposition” and “postposition” (found in e.g. Japanese, but not in the Nordic languages).
+
+**Example**: Encoding of the preposition “at” in the phrase “koma þeir at kveldi til eins búanda”:
+```xml
+<w lemma="at" me:msa="xAP">at</w>  
+```
+
+
+There is seldom any doubt about the word class for prepositions in prepositional phrases like “í hendi”, “á landi”, “til þings”, etc. However, when prepositions appear without complementation (in absolute position) or as verbal particles, it is convenient to have an alternative word class. We suggest xVP for this use of prepositions.
+
+<div className="table-abbr">
+| Word class | Specification |
+|-----|-----|
+| xAP | all prototypical prepositions |
+| xVP | in absolute or adverbial use (e.g. as verbal particles) |
+</div>
+
+
+The words “of” and “um” are frequently used as so-called expletive particles in Eddic poems. This usage is so specific that many encoders would like a separate class for this type. See [ch. 8.3.2.15](#sec8.3.2.15) below  
+
+As stated in [8.3.2.12](#sec8.3.2.12) above, prepositions in the Old Norwegian lemmatised corpus are encoded for the case they govern. Using the name token “y” + case, the example above would receive this encoding:
+```xml
+<w lemma="at" me:msa="xAP yD">at</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Government</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAP</td>
+<td>yN<br/> yG<br/> yD<br/> yA<br/> yU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.11 Conjunctions and subjunctions (CC and CS) [#sec8.5.11]
+
+In recent grammars, the traditional word class “conjunctions” is usually divided into two separate classes, “conjunctions” (e.g. “ok”, “en”) and “subjunctions” (e.g. “at”, “ef”). The former category connects phrases on the same syntactical level, while the latter category typically introduces clauses. In traditional terminology, this is reflected in the subdivision of conjunctions into “coordinating” and “subordinating”. We recommend making a distinction between conjunctions proper = coordinating conjunctions (xCC) and subjunctions = subordinating conjunctions (xCS).
+
+However, in some schemes (i.e. the Old Norwegian lemmatised corpus) only a single word class “conjunctions” is recognised. In that case, the word class may be designated “xCU” using the character “U” for “unspecified”.
+
+**Example**: Encoding of the conjunction “ok” in the phrase “Logi hafði etit slátr allt ok beinin með”:
+```xml
+<w lemma="ok" me:msa="xCC">ok</w>  
+```
+
+
+**Example**: Encoding of the subjunction “at” in the phrase “hon sagði at Baldr hafði þar riðit”:
+```xml
+<w lemma="at" me:msa="xCS">at</w>  
+```
+
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xCC<br/> xCS<br/> xCU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+As stated in [8.3.2.12](#sec8.3.2.12) above, conjunctions in the Old Norwegian lemmatised corpus are encoded for the mood they govern. This information can be retained by adding a name token for government, consisting of the lowercase character “y” + an uppercase abbreviation for mood.
+
+
+
+<div className="table-abbr">
+<table>
+<thead>
+<tr>
+<th>Word class</th>
+<th>Government</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xCU</td>
+<td>yIN<br/> ySU<br/> yU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+### 8.5.12 Interjections (IT) [#sec8.5.12]
+
+“Interjections” are not inflected and only marked for word class, xIT.
+
+
+
+<div className="table-abbr">
+| Word class |
+|-----|
+| xIT |
+</div>
+
+
+### 8.5.13 Infinitive marker (IM) [#sec8.5.13]
+
+The **infinitive marker** is not inflected and encoded as xIM. In Old Norse it usually has the form “at”.
+
+
+
+<div className="table-abbr">
+| Word class |
+|-----|
+| xIM |
+</div>
+
+
+### 8.5.14 Relative particle (RP) [#sec8.5.14]
+
+The relative particle is not inflected and only marked as xRP. In Old Norse it usually has the form “er” or “sem”. Some grammarians would classify the relative particle as a subjunction, while others tend to look upon it as a pronoun.
+
+
+
+<div className="table-abbr">
+| Word class |
+|-----|
+| xRP |
+</div>
+
+
+### 8.5.15 Expletive particle (EX) [#sec8.5.15]
+
+The expletive particles “of” and “um” are frequently found in Eddic poems. From one point of view, they can be seen as prepositions in absolute position. However, the specific usage in Eddic poems has led many grammarians to distinguish them from the prepositions “of” and “um”. We suggest that they are classified as expletive particles, xEX.
+
+
+
+<div className="table-abbr">
+| Word class |
+|-----|
+| xEX |
+</div>
+
+
+### 8.5.16 Unassigned (UA) [#sec8.5.16]
+
+Some words are corrupt, diffcult to analyse, belong to another language or are for other reason indeterminate. These words are marked as unassigned, xUA. See, however, the discussion of non-Nordic words in [ch. 8.7](#sec8.7) below.
+
+<div className="table-abbr">
+| Word class |
+|-----|
+| xUA |
+</div>
+
+
+## 8.6 Specifications for Old Norse [#sec8.6]
+
+In the previous chapter, we have given a few alternative analyses, especially the choice between a broad class of pronouns and a smaller class of pronouns and a new class of determiners. We have also pointed out that Old Swedish and particularly Old Danish texts may require a simpler analysis. There is thus a need for further specification. This chapter will deal with Old Norse, i.e. Old Icelandic up to ca. 1550 and Old Norwegian up to ca. 1350. This is the same period as defined by [Ordbog over det norrøne prosasprog](/handbook/v2/literature#AMKO).
+
+### 8.6.1 Normalised orthography [#sec8.6.1]
+
+There is some variation in the normalised orthography of Old Norse in standard grammars, dictionaries and editions. We recommend that the orthography of the [ONP](http://www.onp.hum.ku.dk/) dictionary in Copenhagen is taken as normative, irrespective of whether the source is Old Icelandic or Old Norwegian. The lemma is above all an address, and as such there should be no variation. Thus, in a Old Norwegian text, the word “hnakki” might be normalised to “nakki” (or even “nakke”) in an edition, but the lemma should be “hnakki”. Otherwise, Norwegian and Icelandic examples of this word will appear under two different lemmata, “nakki” and “hnakki”.
+
+The main points in the ONP orthography are the following:
+
+1. All long vowels have accents, including “ǽ” (not just “æ”) and “ǿ” (not “œ”).
+
+2. The asyllabic semivowel is spelt “j”, not “i”, e.g. “jafn”, “hjarta”.
+
+3. The privative prefix is spelt “ó-”, e.g. “ójafn”.
+
+4. No lengthening of stressed vowels in words like “sjalfr” and “holmi”.
+
+5. The consonant cluster “pt” should be rendered with “ft”, thus “oft” and “eftir” rather than “opt” and “eptir”.
+
+The last point is a recent decision by ONP. An updated list of lemmata is kept by ONP, and should be consulted before finalising a lemmatisation.
+
+### 8.6.2 Choice of lemma [#sec8.6.2]
+
+We recommend that the lemmatisation is coordinated with the list of lemmata in [ONP](http://www.onp.hum.ku.dk/). At present, three volumes have been published (a-em), and in addition, the dictionary has made available a complete list of planned lemmata for the remaining volumes.
+
+**Alternative lemmata**. In some cases, ONP has two or more lemmata, e.g. “blóðigr, blóðugr”. We recommend using the first lemma.
+
+**Hypothetical lemmata**. Some lemmata are not attested in the sources. This applies to a few verbs with no known infinitive, a few adjectives with no known positive form, and some nouns with no known singular form. For example, ONP lists the singular noun forms “ørlag” and “skap” rather than the plural forms “ørlǫg” and “skǫp”. However, ONP has not listed the hypothetical singular form “dur” as lemma for the attested plural form “dyrr” (door). We have identified a few words where we would like to deviate from ONP:
+
+ørlǫg (xNC)
+
+skǫp (xNC)
+
+This list is preliminary and will be supplied.
+
+### 8.6.3 Word classes [#sec8.6.3]
+
+The word classes in [ONP](http://www.onp.hum.ku.dk/) should be taken as normative. In the great majority of cases, there will be no doubt as the word class identification. Some problems remain, though. This is a list of the most frequent ones.
+
+**Pronouns vs. determiners**. Recent grammars make a distinction between pronouns in the original sense of the word (pro nomen) and determiners. This would also apply to Medieval nordic, from a syntactical point of view as well as a morphological point of view. The inflection of determiners is clearly different from that of the pronouns. However, there is a long-standing tradition for a broad definition of the word class pronouns, and since this is used in standard dictionaries like _Norrøn ordbok_ and the _ONP dictionary_, we recommend using the wordclass xPD in the encoding of Old Norse.
+
+**Prepositions vs. adverbs**. Prepositions in absolute position (i.e. with no complementation) can be analysed as adverbs or verbal particles. We recommend that prepositions with complementation, e.g. “í hendi”, “til matar”, “undir honum”, are classified as xAP, while prepositions without any complementation are classified as xVP. This is a simple rule, and there should be no need for the encoder to distinguish in the latter case between cases where a complementation can be recovered from the context (i.e. prepositions in absolute positions) and cases where there is no obvious complementation (i.e. prepositions as verbal particles). Finally, the expletive particles “of” and “um” in Eddic poems should be recognised as a class of its own, xEX.
+
+**Adjectives in adverbial usage**. Adjectives in neuter are often used as adverbs, e.g. “hann kallaði hátt” (he called loudly), in which the adjective “hár” has the form neuter singular accusative, i.e. xAJ xRP gN nS cA. Some encoders would like to indicate the adverbial usage by encoding xAJ xRP gN nS cA \| xAV. However, we believe that the simplest solution is to encode the adjective as an adjective, and leave the rest for a syntactical analysis of the text. In other words, only xAJ xRP gN nS cA.
+
+**Supinum**. In periphrastic constructions, the verb “hafa” is typically followed by supinum, e.g. “hann hefir keypt hús” (he has bought a house). From a morphological point of view, this form is identical with the perfect participle in neuter singular accusative, i.e. xVB fP tPT gN nS cA, and we would recommend to analyse supinum this way. Note that this analysis also applies to the older construction of verb + object + object predicative, e.g. “hann hefir hús keypt ” (literally, he has a house in bought condition).
+
+**Cardinal numbers**. With the exception of “einn”, which has plural forms, there is no need to encode cardinal numbers (i.e. “tveir”, “þrír”, “fjórir”, “fimm”, etc.) for number, nP. For cardinal numbers above one, plural is inherent.
+
+**Roman numerals**. Roman numerals are frequent in Medieval Nordic texts, and should be encoded as numbers using the <E>num</E> element, e.g. <E>num</E>.iv.<E>/num</E>. They should not be lemmatised. Cf. the discussion in [ch. 2.4.2](/handbook/v2/ch2#sec2.4.2) above.
+
+**Participles vs. adjectives**. If a participle can be referred to a verb, the infinitive should be used as the lemma. Thus, “búa” should be the lemma for “búinn”, even if this participle is on the verge of being lexicalised as an adjective in Old Norse. For a participle like “ítrborinn” there is no corresponding verb “ítrbera”, so “ítrborinn” should be chosen as lemma and the word class must be adjective, xAJ xRP gN nS cM sI.
+
+As a rule, we recommend encoders to avoid duplication of words. So rather than distinguishing between the numeral “einn”, the pronoun “einn” and the article “einn”, we recommend mapping this word to a single word class. Only in cases where there is a morphological distinction, should potentially homonynmuous words be disambiguated. One example is the verb “brenna”, which is inflected as a weak verb when transitive (“hann brenndi húsit”), and as a strong verb when intransive (“húsit brann”). Inevitably, there will be some variance between encoded texts in this matter, but as long as the same lemma has been used, this should not cause any major problems. Users should, however, be aware of some recurring borderline cases:
+
+| Lemma | Recommended word class | Alternative word class(es) |
+|-----|-----|-----|
+| einn | xPD | xAT, xNU |
+| fyrstr | xAJ (superlative of “fyrri”) | xNU, xPD |
+| annarr | xPD | xNU |
+| inn/enn | xPD | xAT |
+| allr | xPD | xAJ |
+| margr | xPD | xAJ |
+
+
+## 8.7 Lemmatisation of non-Nordic material [#sec8.7]
+
+The dominant language in a transcription should be specified as an attribute to the <E>text</E> element. For a Menota transcription, that will typically be one of the Medieval Nordic languages. In this example, the text is specified as Old Swedish (“osw”):
+```xml
+<text xml:lang="osw">
+   <body>The whole text of the source comes here.</body>
+</text>  
+```
+
+
+If there is only one language in the text, no further specification is needed. If there are words, phrases or passages in another language, they should be set out by the <Att>xml:lang</Att> attribute, preferably one for each word. Since the other language most likely will have a different morphology from Medieval Nordic (in the case of Latin and Greek, a more complex one) we recommend a simplified morphosyntactical analysis, perhaps only identifying the word class. For example, the phrase “per omnia saecula saeculorum” might be encoded in this manner:
+```xml
+
+<w lemma="per" me:msa="xAP" xml:lang="lat">per</w>
+<w lemma="omnis" me:msa="xPD" xml:lang="lat">omnia</w>
+<w lemma="saecula" me:msa="xNC" xml:lang="lat">saecula</w>
+<w lemma="saecula" me:msa="xNC" xml:lang="lat">saeculorum</w>
+
+```
+
+
+If there is a lengthy passage in another language, the attribute can also be given at a higher level in the encoding, e.g. to a <E>div</E> element.
+
+All <Att>xml:lang</Att> attributes should be defined in the header. This is part of the <E>profileDesc</E> element, which must contain a list of all languages referred to in the encoded text. We recommend this standard set of Medieval Nordic languages plus Greek and Latin:
+```xml
+<langUsage> 
+  <language ident="oic">Old Icelandic</language> 
+  <language ident="onw">Old Norwegian</language>
+  <language ident="oda">Old Danish</language>
+  <language ident="osw">Old Swedish</language> 
+  <language ident="lat">Latin</language>
+  <language ident="grc">Ancient Greek</language>
+</langUsage> 
+```
+
+
+Note that the Profile Description may list more languages than actually referred to in the text.
+
+The three-letter language codes for Latin and Ancient Greek are conformant with the ISO 639-2 standard, while the codes for the Medieval Nordic languages are not. ISO 639-2 only has “non” for Old Norse, which in our view is not sufficient.

@@ -33,12 +33,12 @@ if [[ $segment == "all" || $segment == "hb2" ]]; then
     for file in $sourcedir/handbok/v2/*; do
         if [[ -f "$file" && "$file" == *.xml ]]; then
             sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB2_/}"
             if [[ "$sourceID" =~ ^HB2_ ]]; then
-                compile handbok/v2/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${sourceID}.mdx version="2"
+                compile handbok/v2/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${chapter}.mdx version="2"
             fi
         fi
     done
-    mv $contentdir/handbook/v2/HB2_index.mdx $contentdir/handbook/v2/index.mdx
 fi
 
 if [[ $segment == "all" || $segment == "hb3" ]]; then
@@ -46,12 +46,12 @@ if [[ $segment == "all" || $segment == "hb3" ]]; then
     for file in $sourcedir/handbok/v3/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB3_/}"
             if [[ "$sourceID" =~ ^HB3_ ]]; then
-                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v3/${sourceID}.mdx version="3"
+                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v3/${chapter}.mdx version="3"
             fi
         fi
     done
-    mv $contentdir/handbook/v3/HB3_index.mdx $contentdir/handbook/v3/index.mdx
 fi
 
 if [[ $segment == "all" || $segment == "hb4" ]]; then
@@ -59,12 +59,12 @@ if [[ $segment == "all" || $segment == "hb4" ]]; then
     for file in $sourcedir/handbok/v4/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB4_/}"
             if [[ "$sourceID" =~ ^HB4_ ]]; then
-                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${sourceID}.mdx version="4"
+                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${chapter}.mdx version="4"
             fi
         fi
     done
-    mv $contentdir/handbook/v4/HB4_index.mdx $contentdir/handbook/v4/index.mdx
 fi
 
 if [[ $segment == "all" || $segment == "cm" ]]; then

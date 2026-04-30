@@ -34,6 +34,7 @@
                 => replace('\s+\+', ' +')
                 => replace('&#x00a0;', '&amp;ensp;')
                 => replace('&#x2013;', '&amp;ndash;')
+                => replace('', 'ð')
                 => menota:simple-spaces(.)
             "/>
     </xsl:template>

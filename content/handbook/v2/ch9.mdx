@@ -1,0 +1,477 @@
+---
+title: "9: Additional features: Names and metrical encoding"
+author:
+ - Odd Einar Haugen
+changeLog:
+ - date: 2026-04-30
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2016-07-12
+   author: Odd Einar Haugen
+   changes:
+    - "Updated a link"
+ - date: 2008-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few minor revisions, including correcting quotation marks and fixing links"
+ - date: 2008-05-16
+   author: Odd Einar Haugen
+   changes:
+    - "Final update before publication"
+ - date: 2008-05-14
+   author: Odd Einar Haugen
+   changes:
+    - "Added a type attribute to \"l\" (line), as suggested by Tarrin Wills, and updated a link to TEI P5 Guidelines"
+ - date: 2008-02-12
+   author: Tone Merete Bruvik
+   changes:
+    - "Made some examples valid."
+ - date: 2008-02-10
+   author: Odd Einar Haugen
+   changes:
+    - "Made a few minor revisions of the chapter."
+ - date: 2008-01-08
+   author: Tone Merete Bruvik
+   changes:
+    - "Updated to TEI P5 1.0."
+ - date: 2007-02-16
+   author: Odd Einar Haugen
+   changes:
+    - "Continued the revision of ch. 9.1."
+ - date: 2007-02-02
+   author: Tarrin Wills
+   changes:
+    - "Finished revisions of 9.2, including formatted examples and marked-up examples, including suggestions and corrections from OEH and TMB."
+ - date: 2007-01-29
+   author: Odd Einar Haugen
+   changes:
+    - "Revised version of ch. 9.1 (names)."
+ - date: 2007-01-20
+   author: Karl G. Johansson
+   changes:
+    - "Karl G. Johansson: First draft of ch. 9.1 (names)."
+ - date: 2006-12-28
+   author: Tarrin Wills
+   changes:
+    - "Made some deletions."
+ - date: 2006-01-02
+   author: Tone Merete Bruvik
+   changes:
+    - "First draft in Menota XML P5."
+ - date: 2003-05-20
+   author: Odd Einar Haugen
+   changes:
+    - "Version 1.0 published 20 May 2003. Version 1.1 published 5 May 2004."
+---
+
+
+# Ch. 9. Additional features: Names and metrical encoding
+
+Version 2.0 (16 May 2008). Links updated 12 July 2016.
+
+## 9.1 Encoding of names [#sec9.1]
+
+Medieval manuscripts contain an abundance of names: personal names for historical, fictional and mythological beings, place names relating to historical as well as to mythological locations, animal names for domestic, wild and mythological creatures, and artefact names for weapons, ships, buildings, etc. In the following, the encoding of names is presented according to the recommendations in [ch. 13 “Names, Dates, People, and Places”](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html) of the TEI P5 Guidelines.
+
+The basic element for encoding names of any type is <E>name</E>, supplied with the <Att>type</Att> attribute.
+
+<div className="table-abbr">
+| Elements &amp; attributes | Explanation |
+|-----|-----|
+| <E>name</E> | contains a name, i.e. a proper noun or a noun phrase  |
+| &ensp;&ensp;&ensp;<Att>type</Att> | Indicates what type of name it is |
+</div>
+
+
+Some examples from Old Norse sources:
+```xml
+<name>Egill Skallagrímsson</name>
+<name>Borg</name>
+<name>Sleipnir</name>
+<name>Skiðblaðnir</name>
+```
+
+
+A distinction may be drawn between e.g. personal names, place names, animal names and artefact names by using the <Att>type</Att> attribute:
+```xml
+<name type="person">Egill Skallagrímsson</name>
+<name type="place">Borg</name>
+<name type="animal">Sleipnir</name>
+<name type="artefact">Skiðblaðnir</name>
+```
+
+
+For many encoders, the <E>name</E> element is all that is needed for a simple identification of names in the text. The <Att>type</Att> attribute may be added simultaneously or at a later stage.
+
+For a more detailed encoding of personal names and place names, we recommend using the elements <E>persName</E> and <E>placeName</E> respectively. They should be treated as strictly equivalent with the <E>name</E> element and the <Att>type</Att> attribute with the values “person” and “place”:
+```xml
+<name type="person">Egill Skallagrímsson</name>
+= <persName>Egill Skallagrímsson</persName>
+```
+
+```xml
+<name type="place">Borg</name>
+= <placeName>Borg</placeName>
+```
+
+
+The element <E>persName</E> can contain several other elements and can thus be used for a more detailed name analysis, e.g. for making a distinction between forenames, patronymica and surnames. This level of detail is recommended in the header (cf. [ch. 10](/handbook/v2/ch10) below), and will also be necessary for any encoding of a text which should make the basis for a name index. In a similar way, the element <E>placeName</E> can contain elements for various types of geographical locations. For both elements, TEI P5 offers an additional tagset, which will be discussed and exemplified below.
+
+### 9.1.1 Personal names [#sec9.1.1]
+
+Personal names may be divided into several categories, depending on the source and the naming conventions of the time.
+
+<div className="table-abbr">
+| Elements &amp; attributes | Explanation |
+|-----|-----|
+| <E>persName</E> | The name of a person, consisting of one or more words.  |
+| <E>forename</E> | The first name of a person.  |
+| <E>addName</E> | An additional name of a person.  |
+| &ensp;&ensp;&ensp;<Att>type</Att> | Indicates whether the name is a patronym, a metronym, a nickname or an epithet. |
+| <E>surname</E> | The family name of a person, excluding patronyms and metronyms.  |
+| <E>roleName</E> | The name for a role held by a person.  |
+| &ensp;&ensp;&ensp;<Att>type</Att> | Indicates the role of the person, e.g. in the form of a title.  |
+</div>
+
+
+#### Forenames and patronymica
+
+Forenames are encoded with the element <E>forename</E> contained in the <E>persName</E> element:
+```xml
+<persName>
+  <forename>Egill</forename>
+</persName>
+```
+
+
+We recommend that patronymica, i.e. a father’s name such as Haraldsson or Haraldsdóttir, should be encoded with the element <E>addName</E> and the <Att>type</Att> attribute set to “patronym”:
+```xml
+<persName>
+  <forename>Egill</forename>
+  <addName type="patronym">Skallagrímsson</addName>
+</persName>
+```
+
+
+It could probably be questioned whether Egil Skallagrímsson should be considered a historical or a fictional person when he appears in _Egils saga Skallagrímssonar_. The <Att>type</Att> attribute might be used to specify this:
+```xml
+<persName type="historical">
+  <forename>Egill</forename>
+  <addName type="patronym">Skallagrímsson</addName>
+</persName>
+```
+
+
+Mythological and legendary names could be seen as forming a group, once again using the <Att>type</Att> attribute to establish the category. This example is found in the _Poetic Edda_:
+```xml
+<persName type="mythological">
+  <forename>Loki</forename>
+  <addName type="metronym">Laufeyjarson</addName>
+</persName>
+```
+
+
+As Loki has the second name from his mother Laufey, the value of the attribute is “metronym” (meaning that it is derived from the name of the person’s mother).
+
+#### Surnames
+
+In the Scandinavian and Old Icelandic material, surnames were introduced in the 14th and 15th centuries, in most cases for people belonging to the elite. These names could be encoded with the <E>surname</E> element:
+```xml
+<persName>
+  <forename>Bengt</forename>
+  <addName type="patronym">Jönsson</addName>
+  <surname>Oxenstierna</surname>
+</persName>
+```
+
+
+#### Nicknames, Epithets and Titles
+
+Medieval texts contain an abundancy of nicknames, epithets and titles. With the additonal tagset these could be treated in the same manner as forenames and surnames, with the elements <E>addName</E> and <E>roleName</E>. In _Egils saga Skallagrímssonar_, a man named Þorgils gjallandi ‘the screaming’ appears. His nickname might be encoded as a type of <E>addName</E>:
+```xml
+<persName>
+  <forename>Þorgils</forename>
+  <addName type="nickname">gjallandi</addName>
+</persName>
+```
+
+
+Epithets indicating the providence of a person should also be encoded with the <E>addName</E> element, specified by the <Att>type</Att> attribute. Thus, Eyvindr austmaðr Bjarnarson in _Njáls saga_ has “austmaðr” as an epithet and “Bjarnarson” as his patronym:
+```xml
+<persName>
+  <forename>Eyvindr</forename>
+  <addName type="epithet">austmaðr</addName>
+  <addName type="patronym">Bjarnarson</addName>
+</persName>
+```
+
+
+Titles such as “konungr”, “jarl” and “hersir” could be encoded by using the <E>roleName</E> element in addition to the <E>addName</E> element:
+```xml
+
+<persName>
+  <forename>Óláfr</forename>
+  <roleName type="political">konungr</roleName>
+  <addName type="patronym">Tryggvason</addName>
+</persName>
+```
+
+
+The <Att>type</Att> attribute indicates that the title is considered to refer to the political system of the Old Norwegian society.
+
+### 9.1.2 Place names [#sec9.1.2]
+
+The encoding of place names should be rather straight-forward, but there are a few things that need to be mentioned and exemplified. The starting point is the above-mentioned encoding of all place names with the element <E>name</E> and an attribute <Att>type</Att> with the value “place”:
+```xml
+<name type="place">Borg</name>
+```
+
+
+A more detailed encoding is achieved by the additional tagset. We recommend that this tagset is used in cases when place names are to be more thoroughly encoded:
+
+<div className="table-abbr">
+| Elements &amp; attributes | Explanation |
+|-----|-----|
+| <E>placeName</E> | A name of a specific location.  |
+| <E>settlement</E> | The name of the smallest component of a place name expressed as a hierarchy of geo-political or administrative units.  |
+| <E>region</E> | Larger or administratively superior to the settlement and smaller or administratively less important than the country.  |
+| <E>country</E> | Larger or administratively superior to the region.  |
+</div>
+
+
+The additional element <E>settlement</E> adds information about administrative units, i.e. farms, villages or cities. In this example, we have chosen Skara, one of the oldest cities of modern-day Sweden:
+```xml
+<placeName>
+  <settlement>Skara</settlement>
+</placeName>
+```
+
+
+A region is a larger administrative unit than the district or settlement, as e.g. the province of Västergötland, in the medieval material refered to as “Vestra Gautland”:
+```xml
+<placeName>
+  <region>Vestra Gautland</region>
+</placeName>
+```
+
+
+The region of Västergötland forms a part of the country referred to as Svíþjóð in medieval texts:
+```xml
+<placeName>
+  <country>Svíþjóð</country>
+</placeName>
+```
+
+
+### 9.1.3 Other names [#sec9.1.3]
+
+There are other groups of names that might be singled out in the encoding. In the following, we present suggestions as to how animal names and names of artefacts could be treated. The <Att>type</Att> attribute is used liberally to enhance searchability.
+
+#### Animal names
+
+Medieval texts contain names for horses, dogs and other domestic animals. These could be encoded with the <E>name</E> element and the <Att>type</Att> attribute. On a basic level we would suggest that all animal names are marked with the attribute value “animal”:
+```xml
+<name type="animal">Freyfaxi</name>
+```
+
+
+It should also be possible to give more specific information in the <Att>type</Att> attribute. The name “Freyfaxi” might be specified as the name of a horse:
+```xml
+<name type="horse">Freyfaxi</name>
+```
+
+
+There are also names of animals in relation to myths and legends. For example, Sigurðr Fáfnisbani had a horse named Grani. If we wish to encode a mythological or legendary name this could be done by specifying the value “horse” of the <Att>type</Att> attribute, and “legendary” in the <Att>subtype</Att> attribute:
+```xml
+<name type="horse" subtype="legendary">Grani</name>
+```
+
+
+There is no element <E>animalName</E> on par with <E>persName</E> and <E>placeName</E>. For all but the most detailed encodings, we suggest that the type value “animal” is sufficient.
+
+#### Artefact names
+
+There are a number of names for artefacts in the medieval material, e.g. for weapons and ships. These names could be encoded in the same fashion as the ones described above. The ship belonging to the god Freyr in _Snorra Edda_ could then be encoded as follows:
+```xml
+<name type="artefact">Skiðblaðnir</name>
+```
+
+
+This artefact could be specified as a ship:
+```xml
+<name type="ship">Skiðblaðnir</name>
+```
+
+
+And it could further be encoded as a mythological name:
+```xml
+<name type="ship" subtype="mythological">Skiðblaðnir</name>
+```
+
+
+There is no element <E>artefactName</E>. In most cases, we believe that the attribute value “artefact” is sufficient.
+
+## 9.2 Encoding of metrical structures [#sec9.2]
+
+It is recommended that passages of verse in manuscripts should be 
+encoded as such. The basic encoding of verse is covered in chapter 4.5 above, where it 
+is recommended that verse be encoded in line groups (i.e. stanzas) and lines.
+
+The following section extends the basic mark-up of verse to include: (1) references to the relevant stanza 
+within the whole poetic corpus, so that poetry can be cross-referenced between manuscript versions; and (2) markup
+of metrical features within verses and lines.
+
+There are good reasons to establish
+a system for the encoding of metrics in the medieval manuscripts even
+if this structure is not generally represented graphically in the
+manuscripts. For many users of the established text the stanzas are
+of great interest and it is therefore practical to mark them in a way
+that makes it possible to find and delimit them from the surrounding
+text. A more detailed encoding of the stanzas can open up for new
+ways of research on different metrical variants, concerning e.g.
+alliteration, internal rhyme and stress.
+
+The same rules that apply for prose
+are relevant also for the encoding of stanzas. In addition to these
+rules we suggest codes that facilitate the search for and
+identification of stanzas. We also give guidelines as to the encoding
+of the metrics. It should be pointed out, however, that these codes
+would have to be given a more detailed form if the stanzas should be
+analysed in a more detailed way.
+
+The verse will normally be marked up only at the <E>me:dipl</E> and <E>me:norm</E> levels of the transcription. 
+For the <E>me:facs</E> level, verse will be included as if prose, in accordance with the practice of the 
+medieval manuscripts.
+
+On the primary level we recommend
+that the stanzas are encoded with the following elements and
+attributes:
+
+<div className="table-abbr">
+| Elements / attributes | Explanation |
+|-----|-----|
+| <E>lg</E> | Marks the stanza in relation to the surrounding prose text.  |
+| &ensp;&ensp;&ensp;<Att>n</Att> | Indicates the identity of the stanza within the manuscript, i.e. its number in the manuscript.  |
+| &ensp;&ensp;&ensp;<Att>xml:id</Att> | Indicates the identity of the stanza within the medieval poetic corpus. The id should refer to a standard edition of the works. Menota recommends using the sigla for verses used by the Skaldic Poetry project ([http://skaldic.arts.usyd.edu.au](http://skaldic.arts.usyd.edu.au)) for non-Eddic verse, and the numbering in Neckel and Kuhn 1983 for Eddic verse. If no standard corpus contains the verse (e.g. rímur), it should be indicated by a separate typology.  |
+| &ensp;&ensp;&ensp;<Att>type</Att> | Indicates the general metrical form of the stanza, e.g. <Val>dróttkvætt</Val> or <Val>fornyrðislag.</Val> |
+| <E>l</E> | Marks the line within the stanza. |
+| &ensp;&ensp;&ensp;<Att>n</Att> | Indicates the line number within the stanza. Lines are broken according to Norse-Icelandic conventions, that is, alliterative lines are treated as two lines, with a break at the caesura. |
+| &ensp;&ensp;&ensp;<Att>type</Att> | Indicates the type of line for formatting purposes; the implied value, 'normal', is not indented; use 'b-line' for the b-line of eddic metres which should have the caesura represented by a long space; use 'ljod-long' for ljóðaháttr long lines, which should have a line break and be indented. |
+| &ensp;&ensp;&ensp;<Att>met</Att> | Indicates the metrical form of the line. The form should be according to a standard typology, e.g. types A-E of the common germanic verse form. Sub-types can also be represented, using, e.g. Gade 1995. Alternatively, the actual scansion of the line can be represented using a series of symbols (e.g. '/' for a lift, '\\' for a secondary stress, 'x' for a dip and '\|' for a syntactic caesura; or cf. MUFI recommendation for metrical symbols).  |
+| <E>me:all</E> | Indicates the alliteration of the line.  |
+| <E>me:ass</E> | Indicates the internal rhymes of the line, where relevant.  |
+</div>
+
+
+The following example is from _Guta saga_ (ed. by Peel 1999, 2), in which the correction of the word “reð” has been suppressed for the sake of simplicity:
+
+<div className="table-plain">
+<table>
+<tbody>
+<tr>
+<td>
+<Quote straight={true}>
+ Hann reþ draum þinna so:<br/> <br/> Alt ir baugum bundit<br/> Boland al þitta varþa<br/> ok faum þria syni aiga 
+</Quote></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+The basic encoding of a verse within a prose work is thus:
+```xml
+<p><!-- ... --> <w>hann</w> <w>reþ</w> <w>dra<lb n="16"/>um</w>
+     <w>þinna</w> <w>so</w>.</p>
+  <lg n="1" xml:id="Guta-v1" type="germ">
+   <l n="1"><w>Alt</w> <w>ír</w> <w>baugum</w> <w>bundit</w>
+     <lb n="17"/></l>
+   <l n="2"><w>bo land</w> <w>al</w> <w>þitta</w> <w>warþa</w></l>
+   <l n="3"><w>oc</w> <w>faum</w> <pb n="1v"/> <w>þria</w> <w>syni</w>
+     <w>aiga</w></l>
+  </lg>
+```
+
+
+The verse is numbered as the first in the manuscript, and the value of <Att>xml:id</Att> is according to its own typology (this verse 
+does not occur in most poetic corpora). The value of <Att>type</Att> simply represents that this is in the common Germanic metre. No
+attempt has been made here to do more detailed metrical analysis.
+
+The following example is of a more complex, skaldic example from _Skáldskaparmál_ in AM 748 II 4to. The verse (from Bragi 
+Boddason's _Ragnarsdrápa_ (stanza 5) is thus:
+
+<div className="table-plain">
+<table>
+<tbody>
+<tr>
+<td>
+<Quote straight={true}>
+ þar sua at giordu gyrdan<br/> golfhaulkuis sa fylkis<br/> segls naglfara siglur<br/> saums anduanar standa<br/> urdu snemst ok saurli<br/> samrada þeir hamdir<br/> halum herdi mylum<br/> hergautz vínum bardir. 
+</Quote></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+The transcription is encoded thus (long 's' is normalised to 's'; encoded at the diplomatic level):
+```xml
+<lg n="3" xml:id="Bragi-Rdr-5" type="dróttkvætt">
+  <l n="1" met="A3-2">
+    <w><me:dipl>þ<ex>ar</ex></me:dipl></w>
+    <w><me:dipl>s<ex>ua</ex> at</me:dipl></w>
+    <w><me:dipl><me:all>g</me:all><me:ass>iord</me:ass>u</me:dipl></w>
+    <w><me:dipl><me:all>g</me:all><me:ass>yrd</me:ass>an</me:dipl></w>
+  </l>
+  <l n="2" met="X">
+    <w><me:dipl><me:all>g</me:all>olfh<me:ass>aul<lb n="19"/>k</me:ass>
+      uis</me:dipl></w> 
+    <w><me:dipl>sa</me:dipl></w>
+    <w><me:dipl>f<me:ass>ylk</me:ass>is</me:dipl></w>
+  </l>
+  <l n="3" met="D2">
+    <w><me:dipl><me:all>s</me:all><me:ass>egl</me:ass>s</me:dipl></w>
+    <w><me:dipl>naglf<ex>ar</ex>a</me:dipl></w> 
+    <w><me:dipl><me:all>s</me:all><me:ass>igl</me:ass>ur</me:dipl></w>
+  </l>
+  <l n="4" met="D2">
+    <w><me:dipl><me:all>s</me:all>aums</me:dipl></w>
+    <w><me:dipl><me:ass>and</me:ass>uana<add place="supralinear">r</add>
+      </me:dipl></w>
+    <w><me:dipl>st<me:ass>and</me:ass>a</me:dipl></w>
+  </l>
+  <l n="5" met="X">
+    <w><me:dipl>urdu</me:dipl></w> <lb n="20"/> 
+    <w><me:dipl><me:all>s</me:all>nemst</me:dipl></w> 
+    <w><me:dipl><ex>ok</ex></me:dipl></w>
+    <w><me:dipl><me:all>s</me:all>aurli</me:dipl></w>
+  </l>
+  <l n="6" met="X">
+    <w><me:dipl><me:all>s</me:all><me:ass>am</me:ass>rada</me:dipl></w>
+    <w><me:dipl>þ<ex>ei</ex>r</me:dipl></w> 
+    <w><me:dipl>h<me:ass>am</me:ass>d<ex>ir</ex></me:dipl></w>
+  </l>
+  <l n="7" met="A1-1">
+    <w><me:dipl><me:all>h</me:all><me:ass>al</me:ass>um</me:dipl></w>
+    <w><me:dipl><me:all>h</me:all><ex>er</ex>di</me:dipl></w> 
+    <w><me:dipl>m<me:ass>yl</me:ass>um</me:dipl></w>
+  </l>
+  <l n="8" met="X">
+    <w><me:dipl><me:all>h</me:all><ex>er</ex>gautz</me:dipl></w> 
+    <w><me:dipl>vín<lb n="21"/>um</me:dipl></w>
+    <w><me:dipl>bardir</me:dipl></w><me:punct>.</me:punct>
+  </l>
+</lg>
+```
+
+
+The value of <Att>n</Att> is 3, as this is the third verse recorded in the manuscript. The verse's <Att>xml:id</Att> is the siglum from the  
+[skaldic project](http://skaldic.arts.usyd.edu.au/db.php?table=verses&id=1939). The type of metre is 'dróttkvætt', 
+but this categorisation is unnecessary, as the link to the skaldic project also provides information on the metrical category of each verse. 
+Each line is encoded with the <E>l</E> element, with the line number given and the metrical categorisation (here, from Gade 1995; 'X' means 
+uncategorised).
+
+The alliterative staves are indicated using the <E>me:all</E> element, and the internal rhymes using <E>me:ass</E>. Both elements are defined by Menota and belong to the Menota namespace (cf. [ch. 1.9](/handbook/v2/ch1#sec1.9) above).
