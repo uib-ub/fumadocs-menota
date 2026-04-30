@@ -21,6 +21,7 @@
                         => replace('^HB_index.xml$', '/handbook')
                         => replace('^HB2-0-b_contents.xhtml$', '/handbook/v2')
                         => replace('^HB(1-1)_([\w_0-9]*).xhtml$', '/handbook/v$1/$2')
+                        => replace('^ML_(.*?).xml$', '/news/$1')
                         => replace('^(StyrenominasjonMenota.pdf)$', '/documents/board/$1')
                     })</xsl:text>
             </xsl:otherwise>

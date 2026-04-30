@@ -20,8 +20,9 @@ if [[ $segment == "all" || $segment == "ml" ]]; then
     for file in $sourcedir/meldinger/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
+            date="${sourceID/ML_/}"
             if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${sourceID}.mdx
+                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${date}.mdx
             fi
         fi
     done
