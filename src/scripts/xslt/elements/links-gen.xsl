@@ -6,7 +6,8 @@
     <xsl:template match="tei:ref">
         <xsl:variable name="target">
             <xsl:value-of select="@target
-                => replace('^DOK_(depo)(1-2).xhtml$', '/documents/$1/$2')
+                => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
+                => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', '/documents/council/notice/$1')
                 => replace('^DOK_RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xml$', '/documents/council/meetings/$1')
                 => replace('^DOK_Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xhtml$', '/documents/editorial-board/$1')
                 => replace('^DOK_(vedtekter-(?:utkast|1)).xhtml$', '/documents/statutes/$1')

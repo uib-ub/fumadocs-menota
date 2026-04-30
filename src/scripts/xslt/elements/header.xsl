@@ -131,6 +131,7 @@
                     => replace('^Robert K\. Paulsen: ', '')
                     => replace('^Tone Merete [Bb]ruvik: ', '')
                     => replace('^Vemund Olstad: ', '')
+                    => replace('^Karl G\. Johansson: ', '')
                     => replace('^(ASK|OEH|TMB):? ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')
