@@ -7,9 +7,12 @@
         <xsl:variable name="target">
             <xsl:value-of select="@target
                 => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
-                => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', '/documents/council/notice/$1')
-                => replace('^DOK_RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xml$', '/documents/council/meetings/$1')
-                => replace('^DOK_Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xhtml$', '/documents/editorial-board/$1')
+                => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', 
+                    '/documents/council/notice/$1')
+                => replace('^DOK_RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xml$', 
+                    '/documents/council/meetings/$1')
+                => replace('^DOK_Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xhtml$', 
+                    '/documents/editorial-board/$1')
                 => replace('^DOK_(vedtekter-(?:utkast|1)).xhtml$', '/documents/statutes/$1')
                 => replace('^HB_index.xml$', '/handbook')
                 => replace('^HB2-0-b_contents.xhtml$', '/handbook/v2')
@@ -17,7 +20,9 @@
                 => replace('^HB(2)_([\w_0-9]*).xml$', '/handbook/v$1/$2')
                 => replace('^ML_(.*?).xml$', '/news/$1')
                 => replace('^(StyrenominasjonMenota.pdf)$', '/documents/board/$1')
-                => replace('^(standoff.odp)$', '/documents/presentations/$1')"/>
+                => replace('^(standoff.odp)$', '/documents/presentations/$1')
+                => replace('^http://www\.menota\.org/internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
+                    '/documents/council/meetings/$1')"/>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="tei:graphic">
