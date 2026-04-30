@@ -9,6 +9,9 @@
     <xsl:function name="menota:normalize-name" as="xs:string">
         <xsl:param name="input" as="xs:string"/>
         <xsl:choose>
+            <xsl:when test="$input = 'ASK'">
+                <xsl:text>Alex Speed Kjeldsen</xsl:text>
+            </xsl:when>
             <xsl:when test="$input = 'OEH'">
                 <xsl:text>Odd Einar Haugen</xsl:text>
             </xsl:when>
@@ -79,6 +82,7 @@
                     => replace('Oct(ober)?', '10')
                     => replace('November', '11')
                     => replace('December', '12')
+                    => replace('\.([0-2][0-9])$', '.20$1')
                     => replace('^([0-3][0-9])\.([01][0-9])\.(20[0-2][0-9])$', '$3-$2-$1')
                 }&#x0a;</xsl:text>
                 <xsl:choose>
@@ -115,7 +119,7 @@
                     => replace('^(January|February|March|April|May|[Jj]une|July|[Aa]ugust|September|Oct(ober)?|November|December) ', '')
                     => replace('^20[0-2][0-9]:? ', '')
                     => replace('and 15 May 2017 ', '')
-                    => replace('^[0-3][0-9]\.[01][0-9]\.20[0-2][0-9]', '')
+                    => replace('^[0-3][0-9]\.[01][0-9]\.(20)?[0-2][0-9]', '')
                     => replace('^Beeke Stegmann(:| and)? ', '')
                     => replace('^Odd Einar Haugen(:| and) ', '')
                     => replace('^Tarrin Wills: ', '')
@@ -127,7 +131,7 @@
                     => replace('^Robert K\. Paulsen: ', '')
                     => replace('^Tone Merete [Bb]ruvik: ', '')
                     => replace('^Vemund Olstad: ', '')
-                    => replace('^(OEH|TMB):? ', '')
+                    => replace('^(ASK|OEH|TMB):? ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')
                     => replace('&quot;', '\\&quot;')
