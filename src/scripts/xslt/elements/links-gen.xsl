@@ -20,14 +20,16 @@
                 => replace('^HB_index.xml$', '/handbook')
                 => replace('^HB2-0-b_contents.xhtml$', '/handbook/v2')
                 => replace('^HB(1-1)_([\w_0-9]*).xhtml$', '/handbook/v$1/$2')
-                => replace('^HB(2)_([\w_0-9]*).xml$', '/handbook/v$1/$2')
+                => replace('^HB([23])_([\w_0-9]*).xml$', '/handbook/v$1/$2')
                 => replace('^ML_(.*?).xml$', '/news/$1')
                 => replace('^([\w0-9\-]+.pdf)$', '/documents/$1')
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
                 => replace('^internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
                     '/documents/council/meetings/$1')
+                => replace('^(helpdesk)$', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
-                => replace('^(menotec)\.xml$', '/en/$1')"/>
+                => replace('^(menotec)\.xml$', '/en/$1')
+                => replace('/index$', '')"/>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="tei:graphic">
