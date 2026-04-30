@@ -9,6 +9,7 @@
                 => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
                 => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', 
                     '/documents/council/notice/$1')
+                => replace('^DOK_raad(20[0-2][0-9]-20[0-2][0-9]).xml', '/documents/council/members/$1')
                 => replace('^DOK_RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xml$', 
                     '/documents/council/meetings/$1')
                 => replace('^DOK_Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9]).xhtml$', 
