@@ -4,6 +4,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" method="text"/>
     <xsl:strip-space elements="*"/>
+    <xsl:include href="elements/graphics-gen.xsl"/>
     <xsl:include href="elements/head.xsl"/>
     <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/links-gen.xsl"/>
@@ -19,26 +20,6 @@
         <xsl:text>_</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>_</xsl:text>
-    </xsl:template>
-    <xsl:template match="tei:figure">
-        <xsl:text>&#x0a;&#x0a;&lt;Figure</xsl:text>
-        <xsl:if test="tei:figDesc">
-            <xsl:text> caption={`</xsl:text>
-            <xsl:value-of select="tei:figDesc"/>
-            <xsl:text>`}</xsl:text>
-        </xsl:if>
-        <xsl:text>&gt;</xsl:text>
-        <xsl:for-each select="tei:graphic">
-            <xsl:text>&#x0a;&lt;AutoImage</xsl:text>
-            <xsl:text> src="</xsl:text>
-            <xsl:value-of select="concat('/images/', @url)"/>
-            <xsl:text>"</xsl:text>
-            <xsl:text> alt="</xsl:text>
-            <xsl:value-of select="@url"/>
-            <xsl:text>"</xsl:text>
-            <xsl:text>/&gt;</xsl:text>
-        </xsl:for-each>
-        <xsl:text>&#x0a;&lt;/Figure&gt;</xsl:text>
     </xsl:template>
     <xsl:template match="tei:hi[@rend='bold']">
         <xsl:text>**</xsl:text>

@@ -6,6 +6,8 @@
     <xsl:template match="tei:ref">
         <xsl:variable name="target">
             <xsl:value-of select="@target
+                => replace('^http://(www\.)?menota\.org/', '')
+                => replace('^http://www\.aksis\.uib\.no/menota/', '')
                 => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
                 => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', 
                     '/documents/council/notice/$1')
@@ -20,11 +22,12 @@
                 => replace('^HB(1-1)_([\w_0-9]*).xhtml$', '/handbook/v$1/$2')
                 => replace('^HB(2)_([\w_0-9]*).xml$', '/handbook/v$1/$2')
                 => replace('^ML_(.*?).xml$', '/news/$1')
-                => replace('^(StyrenominasjonMenota.pdf)$', '/documents/board/$1')
+                => replace('^([\w0-9\-]+.pdf)$', '/documents/$1')
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
-                => replace('^http://www\.menota\.org/internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
+                => replace('^internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
                     '/documents/council/meetings/$1')
-                => replace('^http://www.menota.org/oversettelser.xml$', '/translations')"/>
+                => replace('^oversettelser\.xml$', '/translations')
+                => replace('^(menotec)\.xml$', '/en/$1')"/>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="tei:graphic">
