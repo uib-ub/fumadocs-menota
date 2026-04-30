@@ -15,7 +15,9 @@ export const i18nUI = defineI18nUI(i18n, {
     no: {
       displayName: 'Norsk',
       search: 'Søk',
-      toc: 'På denne siden'
+      toc: 'På denne siden',
+      previousPage: 'Forrige side',
+      nextPage: 'Neste side'
     },
     en: {
       displayName: 'English'
