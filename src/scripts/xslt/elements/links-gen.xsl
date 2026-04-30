@@ -13,9 +13,10 @@
                 <xsl:text>&#x0a;&lt;/Link&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text expand-text="true">[{text()}]</xsl:text>
+                <xsl:text expand-text="true">[{text() => normalize-space()}]</xsl:text>
                 <xsl:text expand-text="true">({@target
-                        => replace('^DOK_(vedtekter-utkast).xhtml$', '/documents/statutes/$1')
+                        => replace('^DOK_(depo)(1-2).xhtml$', '/documents/$1/$2')
+                        => replace('^DOK_(vedtekter-(?:utkast|1)).xhtml$', '/documents/statutes/$1')
                         => replace('HB_index.xml$', '/handbook/v1-0')
                     })</xsl:text>
             </xsl:otherwise>
