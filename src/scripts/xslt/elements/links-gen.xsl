@@ -16,8 +16,10 @@
                 <xsl:text expand-text="true">[{text() => normalize-space()}]</xsl:text>
                 <xsl:text expand-text="true">({@target
                         => replace('^DOK_(depo)(1-2).xhtml$', '/documents/$1/$2')
+                        => replace('^DOK_Referat(2006-06-21).xhtml$', '/documents/editorial-board/$1')
                         => replace('^DOK_(vedtekter-(?:utkast|1)).xhtml$', '/documents/statutes/$1')
                         => replace('^HB_index.xml$', '/handbook')
+                        => replace('^HB2-0-b_contents.xhtml$', '/handbook/v2')
                         => replace('^HB(1-1)_([\w_0-9]*).xhtml$', '/handbook/v$1/$2')
                     })</xsl:text>
             </xsl:otherwise>
