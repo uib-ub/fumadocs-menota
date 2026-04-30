@@ -17,7 +17,8 @@
                 <xsl:text expand-text="true">({@target
                         => replace('^DOK_(depo)(1-2).xhtml$', '/documents/$1/$2')
                         => replace('^DOK_(vedtekter-(?:utkast|1)).xhtml$', '/documents/statutes/$1')
-                        => replace('HB_index.xml$', '/handbook/v1-0')
+                        => replace('^HB_index.xml$', '/handbook/v1-0')
+                        => replace('^HB(1-1)_([\w_0-9]*).xhtml$', '/handbook/v$1/$2')
                     })</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
