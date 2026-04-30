@@ -14,7 +14,8 @@
                     ancestor::tei:quote|
                     ancestor::tei:cell|
                     ancestor::tei:head|
-                    ancestor::tei:item
+                    ancestor::tei:item|
+                    ancestor::tei:ref
                 ]">
                 <xsl:value-of select="replace($s, '\s+', ' ')"/>
             </xsl:when>

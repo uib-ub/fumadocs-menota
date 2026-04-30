@@ -6,7 +6,7 @@
     <xsl:template match="tei:ref">
         <xsl:variable name="target">
             <xsl:value-of select="@target
-                => replace('^http://(www\.)?menota\.org/', '')
+                => replace('^https?://(www\.)?menota\.org/', '')
                 => replace('^http://www\.aksis\.uib\.no/menota/', '')
                 => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
                 => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', 
@@ -42,7 +42,9 @@
                     text() => normalize-space()}&lt;/a&gt;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text expand-text="true">[{text() => normalize-space()}]</xsl:text>
+                <xsl:text>[</xsl:text>
+                <xsl:apply-templates/>
+                <xsl:text>]</xsl:text>
                 <xsl:text expand-text="true">({$target})</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
