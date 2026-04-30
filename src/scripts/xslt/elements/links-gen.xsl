@@ -23,7 +23,8 @@
                 => replace('^(StyrenominasjonMenota.pdf)$', '/documents/board/$1')
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
                 => replace('^http://www\.menota\.org/internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
-                    '/documents/council/meetings/$1')"/>
+                    '/documents/council/meetings/$1')
+                => replace('^http://www.menota.org/oversettelser.xml$', '/translations')"/>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="tei:graphic">
