@@ -40,6 +40,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   return (
     <DocsPage 
       toc={contentStyle == "old" ? undefined : page.data.toc} 
+      breadcrumb={{enabled: false}}
       full={page.data.full} 
       className={`
         bg-white dark:bg-black 
