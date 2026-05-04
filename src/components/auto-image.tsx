@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function AutoImage({ src, alt }: { 
+export default function AutoImage({ src, alt, className }: { 
     src: string, 
-    alt?: string
+    alt?: string,
+    className?: string
 }) {
     const [dimensions, setDimensions] = useState({ width: 500, height: 500 });
     return (
@@ -20,7 +21,7 @@ export default function AutoImage({ src, alt }: {
                     height: img.currentTarget.naturalHeight * 100
                 })
             }}
-            className="IMAGE shadow [td_.FIGURE_&]:mt-1 [td_.FIGURE_&]:mb-9 [td>&]:my-1"
+            className={`IMAGE shadow [td_.FIGURE_&]:mt-1 [td_.FIGURE_&]:mb-9 [td>&]:my-1 ${className}`}
             style={{width: 'auto', height: 'auto'}}
         />
     );
