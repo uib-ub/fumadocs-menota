@@ -23,7 +23,8 @@ export default function LegacyPage({ slug }: { slug: string[] }) {
             return <EmbeddedPage src={source} name={pageName}/>;
         }
         case "documents": {
-            if (slug.join("/") == "documents/statutes/draft")
+            const route = slug.join("/");
+            if (route == "documents/statutes/draft")
                 return <EmbeddedPage src={'/legacy/documents/statutes/DOK_vedtekter-utkast.html'}/>;
         }
     }

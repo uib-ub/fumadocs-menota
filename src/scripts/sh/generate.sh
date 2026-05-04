@@ -78,6 +78,17 @@ if [[ $segment == "all" || $segment == "cm" ]]; then
     done
 fi
 
+if [[ $segment == "all" || $segment == "mm" ]]; then
+    echo "Compiling council members:"
+    for file in $sourcedir/council-members/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_raad/}"
+            compile council-members/${sourceID}.xml scripts/xslt/general.xsl documents/council/members/${date}.mdx
+        fi
+    done
+fi
+
 if [[ $segment == "all" || $segment == "rest" ]]; then
     echo "Compiling other content:"
     compile menotec.xml scripts/xslt/general.xsl menotec.en.mdx
