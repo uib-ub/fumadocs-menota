@@ -16,6 +16,10 @@ const config = {
         destination: '/:path*.css'
       },
       {
+        source: '/legacy/documents/:id.gif',
+        destination: '/images/:id.gif'
+      },
+      {
         source: '/legacy/handbook/v1/:id.gif',
         destination: '/images/:id.gif'
       },

@@ -81,4 +81,5 @@ fi
 if [[ $segment == "all" || $segment == "rest" ]]; then
     echo "Compiling other content:"
     compile menotec.xml scripts/xslt/general.xsl menotec.en.mdx
+    compile DOK_vedtekter-1.xml scripts/xslt/general.xsl documents/statutes/index.mdx
 fi

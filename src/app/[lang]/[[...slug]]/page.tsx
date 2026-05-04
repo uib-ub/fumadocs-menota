@@ -12,14 +12,14 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   const page = source.getPage(slug, lang);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
-    contentGroup: 'hbx' | 'hb1' | 'hb2' | 'hb3' | 'hb4' | 'main',
-    contentStyle: 'hb-new' | 'hb-old' | 'menota-main'
+    contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
+    contentStyle: 'hb-new' | 'old' | 'menota-main'
   } = (slug => {
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
         case "v1-0":
         case "v1-1":
-          return { contentGroup: "hb1", contentStyle: "hb-old" }
+          return { contentGroup: "html", contentStyle: "old" }
         case "v2":
           return { contentGroup: "hb2", contentStyle: "hb-new" };
         case "v3":
@@ -27,9 +27,11 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         case "v4":
           return { contentGroup: "hb4", contentStyle: "hb-new" };
         default:
-          return { contentGroup: "hbx", contentStyle: "menota-main" };
+          return { contentGroup: "main", contentStyle: "menota-main" };
       }
     }
+    if (slug && slug.join("/") == "documents/statutes/draft")
+      return { contentGroup: 'html', contentStyle: 'old'};
     return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(slug);
 
@@ -37,7 +39,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
 
   return (
     <DocsPage 
-      toc={contentStyle == "hb-old" ? undefined : page.data.toc} 
+      toc={contentStyle == "old" ? undefined : page.data.toc} 
       full={page.data.full} 
       className={`
         bg-white dark:bg-black 
@@ -55,7 +57,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         ${contentStyle}`
       }>
       {(() => {switch (contentGroup) {
-        case "hb1":
+        case "html":
           return;
         case "hb2":
           return (
@@ -87,7 +89,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
       }})()}
       <DocsBody>
         {(() => {switch (contentGroup) {
-          case "hb1":
+          case "html":
             return <LegacyPage slug={slug || []}/>;
           default:
             return (
