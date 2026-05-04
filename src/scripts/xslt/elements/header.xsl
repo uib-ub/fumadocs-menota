@@ -9,6 +9,9 @@
     <xsl:function name="menota:normalize-name" as="xs:string">
         <xsl:param name="input" as="xs:string"/>
         <xsl:choose>
+            <xsl:when test="$input = 'ASK'">
+                <xsl:text>Alex Speed Kjeldsen</xsl:text>
+            </xsl:when>
             <xsl:when test="$input = 'OEH'">
                 <xsl:text>Odd Einar Haugen</xsl:text>
             </xsl:when>
@@ -42,8 +45,8 @@
                 => replace('^Menota handbook appendix ([A-I]) \(v\. 3\.0\)(: .*)$', '$1$2')
                 => replace('^Menota handbook (preface .*|Introduction \(v\.2\.0\))$', 'Preface')
                 => replace('^Menota handbook &#x2013; ', '')
+                => replace('\(v\. 3\.0\): ', '')
                 => replace('^Ch\. (1?[0-9]) \(v\. 2\.0\)', '$1')
-                => replace('^Menota handbook (&#x2013; )?\(v\. 3\.0\): ', '')
             }"&#x0a;</xsl:text>
         <xsl:if test="tei:author|tei:respStmt/tei:name">
             <xsl:text>author:&#x0a;</xsl:text>
@@ -79,6 +82,8 @@
                     => replace('Oct(ober)?', '10')
                     => replace('November', '11')
                     => replace('December', '12')
+                    => replace('^o(2)', '0$1')
+                    => replace('\.([0-2][0-9])$', '.20$1')
                     => replace('^([0-3][0-9])\.([01][0-9])\.(20[0-2][0-9])$', '$3-$2-$1')
                 }&#x0a;</xsl:text>
                 <xsl:choose>
@@ -115,19 +120,21 @@
                     => replace('^(January|February|March|April|May|[Jj]une|July|[Aa]ugust|September|Oct(ober)?|November|December) ', '')
                     => replace('^20[0-2][0-9]:? ', '')
                     => replace('and 15 May 2017 ', '')
-                    => replace('^[0-3][0-9]\.[01][0-9]\.20[0-2][0-9]', '')
+                    => replace('^[o0-3][0-9]\.[01][0-9]\.(20)?[0-2][0-9]', '')
+                    => replace('^20[0-2][0-9]-[0-2][0-9]-[0-3][0-9]', '')
                     => replace('^Beeke Stegmann(:| and)? ', '')
                     => replace('^Odd Einar Haugen(:| and) ', '')
                     => replace('^Tarrin Wills: ', '')
                     => replace('^Haraldur Bernharðsson: ', '')
-                    => replace('^Nina Stensaker( and Odd Einar Haugen)?: ', '')
+                    => replace('^Nina Stensaker( (and|og) Odd Einar Haugen)?:? ', '')
                     => replace('^Friederike Richter(( ?:)? )?', '')
                     => replace('^Marco Bianchi: ', '')
                     => replace('^Alex Speed Kjeldsen: ', '')
                     => replace('^Robert K\. Paulsen: ', '')
                     => replace('^Tone Merete [Bb]ruvik: ', '')
                     => replace('^Vemund Olstad: ', '')
-                    => replace('^(OEH|TMB):? ', '')
+                    => replace('^Karl G\. Johansson: ', '')
+                    => replace('^(ASK|OEH|TMB)( og (Nina Stensaker|Odd Einar Haugen))?:? ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')
                     => replace('&quot;', '\\&quot;')

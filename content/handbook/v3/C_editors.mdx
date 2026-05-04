@@ -1,0 +1,96 @@
+---
+title: "C: XML Editors"
+author:
+ - Alex Speed Kjeldsen
+changeLog:
+ - date: 2026-04-30
+   author: Robert K. Paulsen
+   changes:
+    - "Converted file from XML to MDX."
+ - date: 2019-12-12
+   author: Odd Einar Haugen
+   changes:
+    - "Defined this appendix as belonging to v. 3.0 of the handbook (12 December 2019)"
+ - date: 2019-12-07
+   author: Odd Einar Haugen
+   changes:
+    - "Made some minor changes"
+ - date: 2019-10-05
+   author: Alex Speed Kjeldsen
+   changes:
+    - "Revised the chapter, added information about more XML aware editors"
+ - date: 2019-09-23
+   author: Odd Einar Haugen
+   changes:
+    - "Prepared the page for Alex Speed Kjeldsen"
+ - date: 2017-01-02
+   author: Odd Einar Haugen
+   changes:
+    - "Set up the page"
+---
+
+
+# Appendix C: XML Editors [#secC]
+
+Version 3.0 (12 December 2019)
+
+by Alex Speed Kjeldsen
+
+## C.1 Introduction [#secC.1]
+
+In order to write and edit XML one needs some sort of editing tool. Due to
+the nature of XML almost any text editing tool can be used, but there are
+also some specialised editors on the market. The decision on what kind of
+editor to use depends more or less entirely on personal preference and what
+kind of software the individual users are familiar with.
+
+An XML aware editor offers various kinds of help or assistance not
+found in plain text editors, e.g. syntax highlighting, completion of
+element names, attributes and attribute values, automatic appending of
+closing tags, (real time) verification of the XML source based on an XML
+schema or XML DTD. This speeds up the working process and generally
+leads to more consistent and well-formed XML documents. In addition,
+some editors make it possible to run XSLT transformations directly from
+the editor and offer helpful XSLT debugging features.
+
+The suggestions made below are only meant to be a guide to what we feel
+are convenient tools based upon our own experience within the Menota
+community.
+
+## C.2 &lt;oXygen/&gt; [#secC.2]
+
+&lt;oXygen/&gt; is a dedicated (pure) XML editor with quite a few
+specialised functions that are not normally found in generic text
+editors, and it is probably the most used XML editor in the Menota
+community. It offers all help and assistance mentioned in section [C.1](#secC.1) above, and XSLT workflows are especially well
+supported from within the editor.
+
+&lt;oXygen/&gt; is cross platform and can be used on GNU/Linux, Mac
+OS and Windows. It is a good choice if you prefer a dedicated XML editor
+with a lot of built-in features and do not mind switching to more generic
+editors for other writing tasks, and if you do not mind using proprietary
+(closed source) software.
+
+
+## C.3 GNU Emacs [#secC.3]
+
+GNU Emacs is not a dedicated XML editor but a more generic text editor with
+excellent support for working with XML through its built-in NXML mode. It
+supports most of the features found in &lt;oXygen/&gt;, but some features, like
+the direct support for XSLT tranformations, are not supported out of the
+box. GNU Emacs is therefore somewhat more difficult to set up.
+
+GNU Emacs is cross platform and works on even more systems than
+&lt;oXygen/&gt;. It is an excellent choice if you want to stick to one
+editor and to perform all your text related tasks in one editor, and also if
+programmability is essential, and if you prefer working with
+non-proprietary, free software.
+
+## C.4 Alternatives [#secC.4]
+
+Apart from &lt;oXygen/&gt; and GNU Emacs there are several other XML
+aware editors. For example, Altova XMLSpy and XMetaL are good candidates, but they have the
+downside of only working on Windows systems.
+
+For an updated comparison of XML aware editors, see the dedicated [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_XML_editors)
+article.
