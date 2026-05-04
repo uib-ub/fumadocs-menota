@@ -133,7 +133,7 @@
                     => replace('^Tone Merete [Bb]ruvik: ', '')
                     => replace('^Vemund Olstad: ', '')
                     => replace('^Karl G\. Johansson: ', '')
-                    => replace('^(ASK|OEH|TMB):? ', '')
+                    => replace('^(ASK|OEH|TMB)( og (Nina Stensaker|Odd Einar Haugen))?:? ', '')
                     => replace('\\', '\\\\')
                     => replace('&#x2013;', '\\u2013')
                     => replace('&quot;', '\\&quot;')
