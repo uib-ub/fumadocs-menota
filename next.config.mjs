@@ -16,7 +16,7 @@ const config = {
         destination: '/:path*.css'
       },
       {
-        source: '/legacy/documents/:id.gif',
+        source: '/legacy/documents/statutes/:id.gif',
         destination: '/images/:id.gif'
       },
       {
