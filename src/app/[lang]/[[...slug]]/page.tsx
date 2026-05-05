@@ -15,6 +15,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'old' | 'menota-main'
   } = (slug => {
+    const route = slug?.join("/") || '';
     if (slug && slug[0] == "handbook") {
       switch (slug[1]) {
         case "v1-0":
@@ -30,7 +31,9 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
           return { contentGroup: "main", contentStyle: "menota-main" };
       }
     }
-    if (slug && slug.join("/") == "documents/statutes/draft")
+    if (route == "documents/statutes/draft")
+      return { contentGroup: 'html', contentStyle: 'old'};
+    if (route.match(/^documents\/council\/members\/200[24]-200[36]$/))
       return { contentGroup: 'html', contentStyle: 'old'};
     return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(slug);
