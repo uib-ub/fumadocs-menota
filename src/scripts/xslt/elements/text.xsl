@@ -17,7 +17,7 @@
                     ancestor::tei:item|
                     ancestor::tei:ref
                 ]">
-                <xsl:value-of select="replace($s, '\s+', ' ')"/>
+                <xsl:value-of select="$s => replace('\s+', ' ')"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$s"/>

@@ -3,7 +3,8 @@
 import EmbeddedPage from "@/components/embedded-page";
 
 export default function LegacyPage({ slug }: { slug: string[] }) {
-    const notFound = <div>Page not found.</div>;
+    const route = slug.join("/");
+    const notFound = <div>Page not found: {route}</div>;
     switch (slug[0]) {
         case "handbook": {
             if (slug.length < 2) return notFound;
@@ -23,8 +24,11 @@ export default function LegacyPage({ slug }: { slug: string[] }) {
             return <EmbeddedPage src={source} name={pageName}/>;
         }
         case "documents": {
-            if (slug.join("/") == "documents/statutes/draft")
-                return <EmbeddedPage src={'/legacy/documents/DOK_vedtekter-utkast.html'}/>;
+            if (route == "documents/statutes/draft")
+                return <EmbeddedPage src={'/legacy/documents/statutes/DOK_vedtekter-utkast.html'}/>;
+            if (route.match(/^documents\/council\/members\//))
+                return <EmbeddedPage src={`/legacy/documents/council/DOK_raad${slug[3]}.html`}/>;
         }
     }
+    return notFound;
 }
