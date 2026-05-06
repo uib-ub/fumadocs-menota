@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import LegacyPage from '@/components/legacy-page';
 
 export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   const { lang, slug } = await props.params;
@@ -33,7 +32,8 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
     }
     if (route == "documents/statutes/draft"
       || route.match(/^documents\/council\/members\/200[24]-200[36]$/)
-      || route.match(/^documents\/depo\//))
+      || route.match(/^documents\/depo\//)
+      || route.match(/^documents\/editorial-board\//))
       return { contentGroup: 'html', contentStyle: 'old'};
     return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(slug);
@@ -92,19 +92,12 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
           );
       }})()}
       <DocsBody>
-        {(() => {switch (contentGroup) {
-          case "html":
-            return <LegacyPage slug={slug || []}/>;
-          default:
-            return (
-              <MDX
-                components={getMDXComponents({
-                  // this allows you to link to other pages with relative file paths
-                  a: createRelativeLink(source, page),
-                })}
-              />
-            )
-        }})()}
+        <MDX
+          components={getMDXComponents({
+            // this allows you to link to other pages with relative file paths
+            a: createRelativeLink(source, page),
+          })}
+        />
       </DocsBody>
     </DocsPage>
   );
