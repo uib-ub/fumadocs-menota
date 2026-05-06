@@ -27,6 +27,8 @@
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
                 => replace('^internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
                     '/documents/council/meetings/$1')
+                => replace('^internmappe/sakspapir/Innkalling([\w\-]+)\.page$', 
+                    '/documents/council/notice/$1')
                 => replace('^(helpdesk)$', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
                 => replace('^(menotec)\.xml$', '/en/$1')

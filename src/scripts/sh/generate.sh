@@ -89,6 +89,17 @@ if [[ $segment == "all" || $segment == "mm" ]]; then
     done
 fi
 
+if [[ $segment == "all" || $segment == "notice" ]]; then
+    echo "Compiling notices of meeting:"
+    for file in $sourcedir/innkallinger/*; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_[iI]nnkalling/}"
+            compile innkallinger/${sourceID}.xml scripts/xslt/general.xsl documents/council/notice/${date}.mdx
+        fi
+    done
+fi
+
 if [[ $segment == "all" || $segment == "rest" ]]; then
     echo "Compiling other content:"
     compile menotec.xml scripts/xslt/general.xsl menotec.en.mdx
