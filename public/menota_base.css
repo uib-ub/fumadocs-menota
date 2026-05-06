@@ -1,0 +1,441 @@
+/* 2006.03.27 Tone Merete Bruvik: Base CSS stylesheet for the Menota pages. Covering basic HTML elements. */
+
+body		{ 
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		margin-top: 0px;
+		margin-right: 35px; 
+		margin-left: 35px;
+		margin-bottom: 20px; 
+		background-color: #FFFFFF; 
+     		}
+
+header		{ 
+		margin-top: 1em;
+		margin-bottom: 1em;
+     		}
+     		
+h1 		{ 
+		color: #666; 
+		font-size: 1.2em;  
+		}
+h2		{
+		color: #666; 
+		font-size: 1.0em;  
+		}
+h3 		{
+		color: #666; 
+		font-size: 1.0em;
+		}
+h4 		{
+		color: #666; 
+		font-size: 0.8em;
+		}
+h6 		{ color: #666; 
+		font-size: 0.6em; 
+		}
+p 		{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		text-align: left; 
+		}
+p#indent1	{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		margin-left: 28px; 
+		}
+p#indent2	{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		margin-left: 56px; 
+		}
+p#indent3	{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		margin-left: 84px; 
+		}
+p#indent4	{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		margin-left: 112px; 
+		}
+		
+blockquote.quote 	{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		margin-right: 20px; 
+		margin-left: 28px; 
+		}
+pre 	{
+    font-family: Courier, monospace;
+		font-size: 0.9em; 
+		margin-left: -10px; 
+		
+		}
+dd 		{
+		font-size: 0.8em; 
+		line-height: 1.3; 
+		text-align: left; 
+		}
+em 		{
+		font-style: italic;
+		}
+em#code		{
+		color: #0000CC;
+		font-weight: normal;
+		font-style: normal;
+		}
+em#element	{
+		color: #0000CC;
+		font-weight: bolder;
+		font-style: normal;
+		}
+em#display	{
+		color: #CC0099;
+		font-weight: bolder;
+		font-style: normal;
+		}
+em#layout	{
+		color: #009900;
+		font-weight: bolder;
+		font-style: normal;
+		}
+em#note		{
+		color: #32CD32;
+		font-weight: bolder;
+		font-style: normal;
+		}
+strong 		{
+		color: #666;
+		font-weight: bold; 
+		}
+		
+:link {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(37,62,80,.25);
+}
+
+a, a:link, a:active, a:visited {
+	color:#0000FF;
+	/*text-decoration: none*/
+}
+
+a:hover {
+	border-bottom: 1px solid black;
+}
+		
+/* Don´t use underline when lenks are in lists,there we use only red arrows infront 
+li.item a, li.item a:link, li.item a:active, li.item a:visited, li.item {
+	color:#0000FF;
+	text-decoration: none
+}*/
+
+b 		{
+		color: #666; 
+		}
+		
+img {
+    border: 0px;
+}
+
+ul.list {
+  padding-left:1em;
+  list-style-type: none;
+}
+
+li.item {
+  padding-left: 1em;
+  background-image: url(raudpil.gif);
+  background-position: 0 0;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+}
+
+
+.item1 { grid-area: ikon; 
+        margin-top: 1em;
+        margin-bottom: 1em;}
+.item2 { grid-area: main; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'ikon main';
+  gap: 15px;
+}
+
+.grid-container > div {
+  text-align: left;
+}
+/* Nye css-stiler for tekstarkiv */
+.tekstliste {
+    border-collapse: collapse;
+    font-size: 0.8em;
+    line-height: 1.0em;
+}
+
+tr.tekstlisteHead  {
+    background-color: #575757;
+    line-height: 1.3em;
+}
+
+td.tekstlisteHeadItem {
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 1.5em;
+    color: white;
+}
+
+.container1 {
+    clear: both;
+    min-width: 60px;
+    text-align: center;
+}
+
+div.tekstMangler {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid black;
+    float: left;
+    color: gray;
+    height: 1.1em;
+    text-align: center;
+    width: 1.1em;
+    display: block;
+}
+
+div.tekstTilstede {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid black;
+    float: left;
+    font-weight: bold;
+    height: 1.1em;
+    text-align: center;
+    width: 1.1em;
+}
+
+div.white-square {
+    float: left;
+    height: 1.1em;
+    width: 5px;
+}
+
+div.fine-line {
+    float: right;
+    height: 0px;
+    width: 1px;
+    display: inline-block;
+}
+
+a.korpusLenke {
+    font-size: 0.75em;
+    color: #005473;
+    text-decoration: none;  /* Should probably be like this, otherwise will the text be full of underlines? */
+}
+
+a.korpusLenke:hover {
+    font-size: 0.75em;
+    color: #008000;
+    cursor: pointer;
+    border-bottom: none;
+}
+
+div.statusFerdig {
+    background: none repeat scroll 0 0 green;
+    float: left;
+    height: 1em;
+    width: 3em;
+}
+
+div.statusArbeid {
+    background: none repeat scroll 0 0 yellow;
+    float: left;
+    height: 1em;
+    width: 2em;
+}
+
+div.statusUferdig {
+    background: none repeat scroll 0 0 red;
+    float: left;
+    height: 1em;
+    width: 1em;
+}
+
+/*@media (min-width: 1200px) {
+    div.mainpage {
+        display: flex;
+        column-count: 2;
+        margin: 10px;
+    }
+}
+
+div.front_main {
+   flex: 2;
+   margin: 10px;
+}
+
+div.front_part {
+   flex: 1;
+   margin: 10px;
+}
+
+div.body_part {
+   flex: 1;
+   margin-left: 0px;
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+}*/
+
+
+td.tekstlisteKolonne {
+    border-right: 2px dotted lightgray;
+    padding: 4px 14px 4px 16px;
+    /*padding: 4px 8px 4px 8px;*/
+}
+
+tr.jamnRad {
+    background-color: #ebf3ff;
+}
+
+tr.oddeRad {
+    background-color: #FFFFFF;
+}
+
+tr.oddRad {
+    padding: 8px;
+}
+tr.jamnRad {
+    padding: 8px;
+}
+
+/* Slutt nye stiler */
+
+tr.headerHead {
+background-color: #bbbbbb;
+font-weight: bold; 
+line-height: 1.3em;
+color: #FFFFFF;
+}
+
+table.header {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 1em;
+line-height: 1.3em;
+width: 100%;
+}
+
+table.line {
+line-height: 1.5em;
+}
+
+.headerTitle {
+color:              #0000FF;
+}
+
+/* Stiler for søkeside */
+
+
+.fieldset {
+    border: 1px solid red;
+}
+
+/*.simpleSearch {
+    border: 1px solid blue;
+    float: left;
+    padding: 10px;
+    font-size: 9pt;
+    font-family: Helvetica;
+}*/
+
+.text {
+    margin-bottom: 5px;
+}
+
+.submit-row {
+    text-align: center;
+}
+
+.navigasjonsboks {
+    text-align: left;
+    vertical-align: top;
+}
+
+.alternativboks {
+/*    border: 1px solid green;*/
+    float: left;
+    padding: 10px;
+    font-size: 80%;
+    font-family: Helvetica;
+    /*display: none;*/
+}
+
+.visAlternativer {
+    color: blue;
+    font-size: 80%;
+}
+
+.visAlternativer:hover {
+    color: blue;
+    font-size: 80%;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.skjulAlternativer {
+    color: blue;
+    font-size: 80%;
+    display: none;
+}
+
+.skjulAlternativer:hover {
+    color: blue;
+    font-size: 80%;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.alternativer {
+    /*display: none;*/
+}
+
+.alternativ {
+    /*margin-top: 5px;*/
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.altOverskrift {
+    font-size: 110%
+}
+
+.kryssAlt {
+    /*margin-left: 10px;*/
+    overflow: hidden;
+}
+
+.kryssValg {
+    /*margin-left: 10px;*/
+    
+}
+
+.grammKol {
+    vertical-align: top;
+    padding: 5px;
+    
+}
+
+.grammHead {
+    font-weight: bold;
+}
+
+.corpusList {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.corpusHead {
+    font-weight: normal;
+    text-align: center;
+}
