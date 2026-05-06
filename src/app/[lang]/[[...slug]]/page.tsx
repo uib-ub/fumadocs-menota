@@ -31,9 +31,9 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
           return { contentGroup: "main", contentStyle: "menota-main" };
       }
     }
-    if (route == "documents/statutes/draft")
-      return { contentGroup: 'html', contentStyle: 'old'};
-    if (route.match(/^documents\/council\/members\/200[24]-200[36]$/))
+    if (route == "documents/statutes/draft"
+      || route.match(/^documents\/council\/members\/200[24]-200[36]$/)
+      || route.match(/^documents\/depo\//))
       return { contentGroup: 'html', contentStyle: 'old'};
     return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(slug);
