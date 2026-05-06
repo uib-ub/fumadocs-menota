@@ -28,6 +28,8 @@ export default function LegacyPage({ slug }: { slug: string[] }) {
                 return <EmbeddedPage src={'/legacy/documents/statutes/DOK_vedtekter-utkast.html'}/>;
             if (route.match(/^documents\/council\/members\//))
                 return <EmbeddedPage src={`/legacy/documents/council/DOK_raad${slug[3]}.html`}/>;
+            if (route.match(/^documents\/depo\//))
+                return <EmbeddedPage src={`/legacy/documents/depo/DOK_depo${slug[2]}.html`}/>;
         }
     }
     return notFound;
