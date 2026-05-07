@@ -3,6 +3,7 @@ import InlineImage from '@/components/inline-image';
 import AutoImage from '@/components/auto-image';
 import Caption from '@/components/caption';
 import DisplayFrame from '@/components/display-frame';
+import EmbeddedPage from '@/components/embedded-page';
 import Figure from '@/components/figure';
 import Glyph from '@/components/glyph';
 import HI from '@/components/hi';
@@ -22,6 +23,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Caption,
     DisplayFrame,
     E,
+    EmbeddedPage,
     Figure,
     Glyph,
     HI,

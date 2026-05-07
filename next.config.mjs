@@ -12,8 +12,8 @@ const config = {
         destination: '/llms.mdx/docs/:path*',
       },
       {
-        source: '/legacy/handbook/v1/:path*.css',
-        destination: '/:path*.css'
+        source: '/legacy/:path*/:id.css',
+        destination: '/:id.css'
       },
       {
         source: '/legacy/documents/:path/:id.gif',
@@ -30,6 +30,10 @@ const config = {
       {
         source: '/legacy/handbook/v1/handbok_1/:path*.jpg',
         destination: '/images/hb1/:path*.jpg'
+      },
+      {
+        source: '/legacy/documents/editorial-board/:path*.jpg',
+        destination: '/images/:path*.jpg'
       }
     ];
   },
@@ -46,22 +50,32 @@ const config = {
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
+        source: '/:path*/DOK_Referat:date.xhtml',
+        destination: '/documents/editorial-board/:date',
+        permanent: true
+      },
+      {
+        source: '/:path*/HB_index.xml',
+        destination: '/handbook',
+        permanent: true
+      },
+      {
+        source: '/:path*/HB1-0_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-1_:id.xhtml',
+        source: '/:path*/HB1-1_:id.xhtml',
         destination: '/handbook/v1-1/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-1-1_:id.xhtml',
+        source: '/:path*/HB1-1-1_:id.xhtml',
         destination: '/handbook/v1-1/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1_:id.xhtml',
+        source: '/:path*/HB1_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
       },
