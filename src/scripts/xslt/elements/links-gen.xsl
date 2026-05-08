@@ -25,6 +25,8 @@
                 => replace('^ML_(.*?).xml$', '/news/$1')
                 => replace('^([\w0-9\-_]+.pdf)$', '/documents/pdf/$1')
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
+                => replace('^guidelines-(2)/contents/contents_2-0\.page$', '/handbook/v$1')
+                => replace('^guidelines-(2)/(preface)/preface_2-0\.page$', '/handbook/v$1/$2')
                 => replace('^internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
                     '/documents/council/meetings/$1')
                 => replace('^internmappe/sakspapir/Innkalling([\w\-]+)\.page$', 
