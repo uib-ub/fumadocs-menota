@@ -28,6 +28,8 @@
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
                 => replace('^guidelines-(2)/contents/contents_2-0\.page$', '/handbook/v$1')
                 => replace('^guidelines-(2)/(preface)/preface_2-0\.page$', '/handbook/v$1/$2')
+                => replace('^redaksjon/Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.html', 
+                    '/documents/editorial-board/$1')
                 => replace('^referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.(?:html|page)$', 
                     '/documents/council/meetings/$1')
                 => replace('^(?:innkallinger|sakspapir)/Innkalling([\w\-]+)\.(?:html|page)$', 
