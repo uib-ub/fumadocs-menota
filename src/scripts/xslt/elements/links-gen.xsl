@@ -35,6 +35,7 @@
                 => replace('^(?:innkallinger|sakspapir)/Innkalling([\w\-]+)\.(?:html|page)$', 
                     '/documents/council/notice/$1')
                 => replace('^(handbook|helpdesk)(?:\.xml)?$', '/$1')
+                => replace('(images/.*?\.jpg)', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
                 => replace('^(menotec)\.xml$', '/en/$1')
                 => replace('^texts$', 'https://clarino.uib.no/menota/catalogue/menota')
