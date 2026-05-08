@@ -29,7 +29,7 @@
                     '/documents/council/meetings/$1')
                 => replace('^internmappe/sakspapir/Innkalling([\w\-]+)\.page$', 
                     '/documents/council/notice/$1')
-                => replace('^(helpdesk)$', '/$1')
+                => replace('^(handbook|helpdesk)(?:\.xml)?$', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
                 => replace('^(menotec)\.xml$', '/en/$1')
                 => replace('/index$', '')"/>
