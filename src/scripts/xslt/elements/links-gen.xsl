@@ -34,6 +34,7 @@
                 => replace('^(handbook|helpdesk)(?:\.xml)?$', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
                 => replace('^(menotec)\.xml$', '/en/$1')
+                => replace('^texts$', 'https://clarino.uib.no/menota/catalogue/menota')
                 => replace('/index$', '')"/>
         </xsl:variable>
         <xsl:choose>
