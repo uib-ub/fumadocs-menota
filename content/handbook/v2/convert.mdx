@@ -4,7 +4,7 @@ author:
  - Odd Einar Haugen, University of Bergen
  - Tone Merete Bruvik, Aksis, Unifob AS
 changeLog:
- - date: 2026-04-30
+ - date: 2026-05-12
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -42,8 +42,7 @@ By Tone Merete Bruvik (Aksis, Unifob) and Odd Einar Haugen (University of Bergen
 This document contains recommendations on how texts can be made into Menotic XML
 documents.
 
-The following text will be used as an example: [Elis saga i DG
-4&ndash;7, fol. 9v](Elis-utdrag.doc).
+The following text will be used as an example: [Elis saga i DG 4&ndash;7, fol. 9v](Elis-utdrag.doc).
 
 &ensp;
 
@@ -95,8 +94,7 @@ encoding has been converted to Unicode and the encoding expressed by formatting 
 
 **Answer**: Convert the characters into Unicode, and use a Unicode font.
 If there are characters in use which are not in Unicode, look at [chapter 5](http://www.menota.org/guidelines-2/ch5/characters_2-0.page) of
-the Menota Handbook and the [MUFI
-recommendation](http://www.mufi.info/specs/).
+the Menota Handbook and the [MUFI recommendation](http://www.mufi.info/specs/).
 
 Example: The first line below has partly wrong character encoding. The second line shows the correct
 characters: 
@@ -156,8 +154,7 @@ Oxygen is a relatively complex application, and it takes time to master it. You 
 
 **Question**: How should I transform line breaks?
 
-**Answer**: In the [Elis saga i DG 4&ndash;7, fol.
-9v](Elis-utdrag.doc) text, the line breaks of the manuscript have been encoded with “/”. Replace
+**Answer**: In the [Elis saga i DG 4&ndash;7, fol. 9v](Elis-utdrag.doc) text, the line breaks of the manuscript have been encoded with “/”. Replace
 these with <E>lb/</E>: 
 
 
@@ -218,8 +215,7 @@ The line numbers produced by this script are on the form "[page number]-[line nu
 **Question**: How should I transform page breaks?
 
 **Answer**: If the page breaks have been encoded, transform them into Menotic
-code. To do these kind of changes you might use search and replace functions with [regular
-expressions](http://en.wikipedia.org/wiki/Regular_expression), which is available in Oxygen and most other editors.
+code. To do these kind of changes you might use search and replace functions with [regular expressions](http://en.wikipedia.org/wiki/Regular_expression), which is available in Oxygen and most other editors.
 
 In this case, where the pages are from the Kölbing 1881 edition, it is simple to
 search for “side=(\\d+)”, and replace it with “<E>pb ed="Kölbing1881" n="$1"/</E>”. This is an example of how  a regular expression is used.
@@ -365,8 +361,7 @@ the default namespace.
 
 **Question**: What is a teiHeader, and what should it look like?
 
-**Answer**: See appendix [E. Menota
-header](http://www.menota.org/guidelines-2/header/menotaheader_2-0.page) of the Menota handbook. A simple teiHeader might look like this:
+**Answer**: See appendix [E. Menota header](http://www.menota.org/guidelines-2/header/menotaheader_2-0.page) of the Menota handbook. A simple teiHeader might look like this:
 ```xml
 <teiHeader xml:lang="eng">
 	<fileDesc>
