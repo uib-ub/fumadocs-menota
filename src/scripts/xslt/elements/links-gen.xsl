@@ -8,6 +8,7 @@
             <xsl:value-of select="@target
                 => replace('^https?://(www\.)?menota\.org/', '')
                 => replace('^http://www\.aksis\.uib\.no/menota/', '')
+                => replace('^internmappe/', '')
                 => replace('^DOK_(depo)(1-2)\.xhtml$', '/documents/$1/$2')
                 => replace('^DOK_innkalling(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.xml$', 
                     '/documents/council/notice/$1')
@@ -25,13 +26,19 @@
                 => replace('^ML_(.*?).xml$', '/news/$1')
                 => replace('^([\w0-9\-_]+.pdf)$', '/documents/pdf/$1')
                 => replace('^(standoff.odp)$', '/documents/presentations/$1')
-                => replace('^internmappe/referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.page$', 
+                => replace('^guidelines-(2)/contents/contents_2-0\.page$', '/handbook/v$1')
+                => replace('^guidelines-(2)/(preface)/preface_2-0\.page$', '/handbook/v$1/$2')
+                => replace('^redaksjon/Referat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.html', 
+                    '/documents/editorial-board/$1')
+                => replace('^referat/RaadsReferat(20[0-2][0-9]-[01][0-9]-[0-3][0-9])\.(?:html|page)$', 
                     '/documents/council/meetings/$1')
-                => replace('^internmappe/sakspapir/Innkalling([\w\-]+)\.page$', 
+                => replace('^(?:innkallinger|sakspapir)/Innkalling([\w\-]+)\.(?:html|page)$', 
                     '/documents/council/notice/$1')
-                => replace('^(helpdesk)$', '/$1')
+                => replace('^(handbook|helpdesk)(?:\.xml)?$', '/$1')
+                => replace('(images/.*?\.jpg)', '/$1')
                 => replace('^oversettelser\.xml$', '/translations')
                 => replace('^(menotec)\.xml$', '/en/$1')
+                => replace('^texts$', 'https://clarino.uib.no/menota/catalogue/menota')
                 => replace('/index$', '')"/>
         </xsl:variable>
         <xsl:choose>
