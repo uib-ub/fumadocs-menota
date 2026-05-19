@@ -56,12 +56,12 @@ fi
 
 if [[ $segment == "all" || $segment == "hb4" ]]; then
     echo "Compiling handbook v4:"
-    for file in $sourcedir/handbok/v4/*; do
+    for file in $sourcedir/handbok/handbok_4/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             chapter="${sourceID/HB4_/}"
             if [[ "$sourceID" =~ ^HB4_ ]]; then
-                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${chapter}.mdx version="4"
+                compile handbok/handbok_4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${chapter}.mdx version="4"
             fi
         fi
     done
