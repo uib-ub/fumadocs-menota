@@ -18,7 +18,7 @@ compile () {
 if [[ $segment == "all" || $segment == "ml" ]]; then
     echo "Compiling news items:"
     for file in $sourcedir/meldinger/*; do
-        if [ -f "$file" ]; then
+        if [[ -f "$file" && "$file" == *.xml ]]; then
             sourceID=$(basename "$file" .xml)
             date="${sourceID/ML_/}"
             if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
