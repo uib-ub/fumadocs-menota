@@ -91,11 +91,11 @@ fi
 
 if [[ $segment == "all" || $segment == "notice" ]]; then
     echo "Compiling notices of meeting:"
-    for file in $sourcedir/innkallinger/*; do
+    for file in $sourcedir/dokumenter/DOK_[iI]nnkalling*.xml; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             date="${sourceID/DOK_[iI]nnkalling/}"
-            compile innkallinger/${sourceID}.xml scripts/xslt/general.xsl documents/council/notice/${date}.mdx
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/notice/${date}.mdx
         fi
     done
 fi
