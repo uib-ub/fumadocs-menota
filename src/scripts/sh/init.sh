@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Populating public/legacy/ ..."
+echo "Populating '${pwd}/public/legacy' ..."
 
 # Remove possible artefacts from previous build
 rm -rf public/legacy

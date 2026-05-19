@@ -1,7 +1,7 @@
 #!/bin/bash
 
 saxon=./lib/java/SaxonHE12-5J/saxon-he-12.5.jar
-sourcedir=./legacy
+sourcedir=./legacy/content-menota
 codedir=./src
 contentdir=./content
 
@@ -69,11 +69,11 @@ fi
 
 if [[ $segment == "all" || $segment == "cm" ]]; then
     echo "Compiling council meetings:"
-    for file in $sourcedir/council-meetings/*; do
+    for file in $sourcedir/dokumenter/DOK_RaadsReferat*.xml; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             date="${sourceID/DOK_RaadsReferat/}"
-            compile council-meetings/${sourceID}.xml scripts/xslt/general.xsl documents/council/meetings/${date}.mdx
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/meetings/${date}.mdx
         fi
     done
 fi
