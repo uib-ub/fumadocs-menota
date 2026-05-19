@@ -80,11 +80,11 @@ fi
 
 if [[ $segment == "all" || $segment == "mm" ]]; then
     echo "Compiling council members:"
-    for file in $sourcedir/council-members/*; do
+    for file in $sourcedir/dokumenter/DOK_raad*.xml; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
             date="${sourceID/DOK_raad/}"
-            compile council-members/${sourceID}.xml scripts/xslt/general.xsl documents/council/members/${date}.mdx
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/members/${date}.mdx
         fi
     done
 fi
