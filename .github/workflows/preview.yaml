@@ -30,7 +30,7 @@ jobs:
       - name: Pull submodules
         run: git submodule update --init --recursive
       - name: Create symlinks
-        run: echo "P A T H : $(pwd)"
+        run: echo "P A T H    $(pwd)" && ls
         #run: mkdir public/legacy/handbook && cd public/legacy/handbok && ln -s ../../../legacy/content-menota/handbok/handbok_1 v1
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
