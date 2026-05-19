@@ -29,5 +29,7 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Pull submodules
         run: git submodule update --init --recursive
+      - name: Create symlinks
+        run: mkdir public/legacy/handbook && ln -s legacy/content-menota/handbok/handbok_1 public/legacy/handbook/v1
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
