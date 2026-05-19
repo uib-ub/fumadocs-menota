@@ -30,12 +30,12 @@ fi
 
 if [[ $segment == "all" || $segment == "hb2" ]]; then
     echo "Compiling handbook v2:"
-    for file in $sourcedir/handbok/v2/*; do
+    for file in $sourcedir/handbok/handbok_2-0/*; do
         if [[ -f "$file" && "$file" == *.xml ]]; then
             sourceID=$(basename "$file" .xml)
             chapter="${sourceID/HB2_/}"
             if [[ "$sourceID" =~ ^HB2_ ]]; then
-                compile handbok/v2/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${chapter}.mdx version="2"
+                compile handbok/handbok_2-0/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${chapter}.mdx version="2"
             fi
         fi
     done
