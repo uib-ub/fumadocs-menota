@@ -113,13 +113,12 @@ condCopyGroup $content/handbok/handbok_4/graphics/ch18 *.jpg public/images/hb4/c
 condCopyGroup $content/handbok/handbok_4/graphics/MenotaBlitz *.png public/images/hb4/MenotaBlitz
 
 rm -f public/images/Handbook.gif
-rm -f public/images/handbook_1-1.gif
-rm -f public/images/handbook_2-0.gif
-#rm -f public/images/handbook_2-0-b.gif
+rm -f public/images/handbook_*
 condCopy $content/graphics/Handbook.gif public/images/hb1
 condCopy $content/graphics/handbook_1-1.gif public/images/hb1
-condCopy $content/graphics/handbook_2-0.gif public/images/hb2
-#condCopy $content/graphics/handbook_2-0-b.gif public/images/hb2
+condCopyGroup $content/graphics handbook_2-0* public/images/hb2
+condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
+condCopyGroup $content/graphics handbook_4b.* public/images/hb4
 
 condCopy $content/handbok/handbok_2-0/graphics/ch6/bosupg.gif public/images/hb2/ch6
 condCopy $content/handbok/handbok_2-0/graphics/ch6/cona.gif public/images/hb2/ch6
