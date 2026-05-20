@@ -62,3 +62,7 @@ condCopyGroup $content/handbok/handbok_3/samplefiles "*" public/handbook/v3/samp
 condCopyGroup $content/handbok/handbok_3/documents/samples "*" public/handbook/v3/samples
 ### 4
 condCopyGroup $content/handbok/handbok_4/samplefiles "*" public/handbook/v4/samples
+
+## Helpdesk
+echo "Populating '${pwd}/public/helpdesk' ..."
+condCopyGroup $content/helpdesk *.pdf public/helpdesk
