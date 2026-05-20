@@ -60,3 +60,5 @@ condCopy $content/pdf/HB3_TitlePage.pdf public/handbook/v3
 condCopyGroup $content/handbok/handbok_3/graphics/facsimiles *.jpg public/handbook/v3/samples
 condCopyGroup $content/handbok/handbok_3/samplefiles "*" public/handbook/v3/samples
 condCopyGroup $content/handbok/handbok_3/documents/samples "*" public/handbook/v3/samples
+### 4
+condCopyGroup $content/handbok/handbok_4/samplefiles "*" public/handbook/v4/samples
