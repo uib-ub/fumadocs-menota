@@ -72,6 +72,7 @@ condCopyGroup $content/helpdesk *.pdf public/helpdesk
 echo "Populating '${pwd}/public/images' ..."
 
 condCopyGroup $content/graphics *.gif public/images
+condCopyGroup $content/graphics *.jpg public/images
 condCopyGroup $content/graphics *.png public/images
 condCopyGroup $content/graphics/photos *.jpg public/images/photos
 condCopyGroup $content/graphics/images "*" public/images
@@ -111,43 +112,14 @@ condCopyGroup $content/handbok/handbok_4/graphics/ch17 *.jpg public/images/hb4/c
 condCopyGroup $content/handbok/handbok_4/graphics/ch18 *.jpg public/images/hb4/ch18
 condCopyGroup $content/handbok/handbok_4/graphics/MenotaBlitz *.png public/images/hb4/MenotaBlitz
 
-#condCopy $content/graphics/Annotert-setning-KGS-2.png public/images
-#condCopy $content/graphics/danmark.gif public/images
-condCopy $content/graphics/EAE-logos.jpg public/images
-condCopy $content/graphics/EAE-title-page-3.jpg public/images
-condCopy $content/graphics/Eirikur-Kristjansson-KGS-annotasjon.jpg public/images
-condCopy $content/graphics/Fartein-Overland-KGS-annotasjon.jpg public/images
-#condCopy $content/graphics/greenarrow.gif public/images
-condCopy $content/graphics/HolmPerg-4-fol-11v,7-17.jpg public/images
-#condCopy $content/graphics/IngvilBudalYouTube2018.png public/images
-#condCopy $content/graphics/island.gif public/images
-condCopy $content/graphics/Juliane-Tiemann-KGS-annoterer.jpg public/images
-#condCopy $content/graphics/MENOTAbanner.gif public/images
-#condCopy $content/graphics/Menota-banner.gif public/images
-#condCopy $content/graphics/Menota-banner-3.gif public/images
-condCopy $content/graphics/Menota-beer-2022-08-19.jpg public/images
-condCopy $content/graphics/Menota-dinner-2022-08-19.jpg public/images
-condCopy $content/graphics/Menota-meeting-2022-08-19.jpg public/images
-condCopy $content/graphics/Menota-meeting-zoom-2022-08-19.jpg public/images
-#condCopy $content/graphics/norge.gif public/images
-#condCopy $content/graphics/N-initial.gif public/images
-#condCopy $content/graphics/Omslag-AM-132-fol.png public/images
-#condCopy $content/graphics/oversettelse-logo.gif public/images
-condCopy $content/graphics/Paola-Peratello-demonstrerer-koding.jpg public/images
-#condCopy $content/graphics/pil.gif public/images
-#condCopy $content/graphics/raudpil.gif public/images
-#condCopy $content/graphics/redarrow.gif public/images
-#condCopy $content/graphics/Reykjavik-zoom-2020-08-24.png public/images
-#condCopy $content/graphics/Reykjavik-zoom-2021-08-23.png public/images
-condCopy $content/graphics/Rune-Kyrkjebo-fotografi.jpg public/images
-#condCopy $content/graphics/R-initial.gif public/images
-#condCopy $content/graphics/sverige.gif public/images
-#condCopy $content/graphics/S-initial.gif public/images
-condCopy $content/graphics/Thorsteinn-Vilhjalmsson-KGS-annotasjon.jpg public/images
-condCopy $content/graphics/Uppsala-2016-08-26.jpg public/images
+rm -f public/images/Handbook.gif
+rm -f public/images/handbook_1-1.gif
+rm -f public/images/handbook_2-0.gif
+#rm -f public/images/handbook_2-0-b.gif
 condCopy $content/graphics/Handbook.gif public/images/hb1
 condCopy $content/graphics/handbook_1-1.gif public/images/hb1
 condCopy $content/graphics/handbook_2-0.gif public/images/hb2
+#condCopy $content/graphics/handbook_2-0-b.gif public/images/hb2
 
 condCopy $content/handbok/handbok_2-0/graphics/ch6/bosupg.gif public/images/hb2/ch6
 condCopy $content/handbok/handbok_2-0/graphics/ch6/cona.gif public/images/hb2/ch6
