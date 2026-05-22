@@ -96,7 +96,8 @@ condCopyGroup $content/handbok/handbok_2-0/graphics/header "*" public/images/hb2
 condCopyGroup $content/handbok/handbok_2-0/graphics/stylesheets "*" public/images/hb2/stylesheets
 condCopyGroup $content/handbok/handbok_3/graphics/ch2 "*" public/images/hb3/ch2
 condCopyGroup $content/handbok/handbok_3/graphics/ch3 *.jpg public/images/hb3/ch3
-#condCopyGroup $content/handbok/handbok_3/graphics/ch4 *.jpg public/images/hb3/ch4
+condCopyGroup $content/handbok/handbok_3/graphics/ch4 *.gif public/images/hb3/ch4
+condCopyGroup $content/handbok/handbok_3/graphics/ch4 *.jpg public/images/hb3/ch4
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.gif public/images/hb3/ch5
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.jpg public/images/hb3/ch5
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.png public/images/hb3/ch5
@@ -119,63 +120,6 @@ condCopy $content/graphics/handbook_1-1.gif public/images/hb1
 condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
 condCopyGroup $content/graphics handbook_4b.* public/images/hb4
-
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/bosupg.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/cona.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/cross.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/d.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/dotkgrdot.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/dotsdot.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/eorum.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/es.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/et.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/frabar.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/frun.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/HakonSsharp.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/hanasup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/hanbar.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/herscapa.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/hstalllig.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/ihc.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/kbarkbaria.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/kslig.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/kstalllig.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/laus.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/legdotabia.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/masup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/med.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/mosupbar.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/mrun.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/mrunasup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/ockur.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/Ottarscapsup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/pbar.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/pbarbl.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/pflourfat.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/pplig.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/Rognvcolon.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/sra.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/thbar.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/thegrsup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/thrarm.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/thstalllig.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/varscapdotab.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/ver.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/visuptha.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/vtsupisup.gif public/images/hb2/ch6
-#condCopy $content/handbok/handbok_2-0/graphics/ch6/xpm.gif public/images/hb2/ch6
-
-condCopy $content/handbok/handbok_3/graphics/ch4/01_leggja.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/02_sidan.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/03_gjof.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/04_hendr.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/05_hafdi.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/06_vattar.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/07_er.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/08_maela.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/09_kona.jpg public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/AM233afol-28v,1-2.gif public/images/hb3/ch4
-condCopy $content/handbok/handbok_3/graphics/ch4/AM-619-4to-2v,15-21.jpg public/images/hb3/ch4
 
 condCopy $content/handbok/handbok_3/graphics/ch7/A-1-148r,B,1-9_montage.jpg public/images/hb3/ch7
 condCopy $content/handbok/handbok_3/graphics/ch7/AM-4-4to-3r,11-18.jpg public/images/hb3/ch7
