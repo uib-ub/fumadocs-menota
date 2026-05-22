@@ -60,7 +60,6 @@ condCopy $content/pdf/HB3_TitlePage.pdf public/handbook/v3
 condCopyGroup $content/handbok/handbok_3/graphics/facsimiles *.jpg public/handbook/v3/samples
 condCopyGroup $content/handbok/handbok_3/samplefiles "*" public/handbook/v3/samples
 condCopyGroup $content/handbok/handbok_3/documents/samples "*" public/handbook/v3/samples
-#condCopyGroup $content/handbok/handbok_3/graphics/samples "*" public/handbook/v3/samples
 ### 4
 condCopyGroup $content/handbok/handbok_4/samplefiles "*" public/handbook/v4/samples
 
@@ -108,10 +107,9 @@ condCopyGroup $content/handbok/handbok_3/graphics/ch9 *.png public/images/hb3/ch
 condCopyGroup $content/handbok/handbok_3/graphics/ch10 "*" public/images/hb3/ch10
 condCopyGroup $content/handbok/handbok_3/graphics/ch16 "*" public/images/hb3/ch16
 condCopyGroup $content/handbok/handbok_3/graphics/characters *.png public/images/hb3/characters
-#condCopyGroup $content/handbok/handbok_3/graphics/stylesheets "*" public/images/hb3/stylesheets
 condCopyGroup $content/handbok/handbok_3/graphics/stylesheets *.gif public/images/hb3/stylesheets
 condCopyGroup $content/handbok/handbok_3/graphics/stylesheets *.png public/images/hb3/stylesheets
-#condCopyGroup $content/handbok/handbok_3/graphics/tutorial *.png public/images/hb3/tutorial
+condCopyGroup $content/handbok/handbok_3/graphics/tutorial *.png public/images/hb3/tutorial
 condCopyGroup $content/handbok/handbok_4/graphics/ch17 *.jpg public/images/hb4/ch17
 condCopyGroup $content/handbok/handbok_4/graphics/ch18 *.jpg public/images/hb4/ch18
 condCopyGroup $content/handbok/handbok_4/graphics/MenotaBlitz *.png public/images/hb4/MenotaBlitz
@@ -124,21 +122,3 @@ condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
 condCopyGroup $content/graphics handbook_4b.* public/images/hb4 
 condCopy $content/handbok/handbok_3/graphics/samples/NRA-58-C-3r,B,1-18.jpg public/images/hb3/samples
-
-#condCopy $content/handbok/handbok_3/graphics/stylesheets/output-choose.gif public/images/hb3/stylesheets
-#condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-Apply-transform-scenario.png public/images/hb3/stylesheets
-#condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-scenario-step2.png public/images/hb3/stylesheets
-#condCopy $content/handbok/handbok_3/graphics/stylesheets/parameter-choose.gif public/images/hb3/stylesheets
-
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-A-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-A-Windows.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-B-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-B-Windows.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-C-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-C-Windows.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-D-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-D-Windows.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-E-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-E-Windows.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-F-Mac.png public/images/hb3/tutorial
-condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-F-Windows.png public/images/hb3/tutorial
