@@ -102,7 +102,7 @@ condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.gif public/images/hb3/ch
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.jpg public/images/hb3/ch5
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.png public/images/hb3/ch5
 condCopyGroup $content/handbok/handbok_3/graphics/ch7 *.jpg public/images/hb3/ch7
-#condCopyGroup $content/handbok/handbok_3/graphics/ch8 "*" public/images/hb3/ch8
+condCopyGroup $content/handbok/handbok_3/graphics/ch8 "*" public/images/hb3/ch8
 #condCopyGroup $content/handbok/handbok_3/graphics/ch9 "*" public/images/hb3/ch9
 condCopyGroup $content/handbok/handbok_3/graphics/ch10 "*" public/images/hb3/ch10
 condCopyGroup $content/handbok/handbok_3/graphics/ch16 "*" public/images/hb3/ch16
@@ -120,16 +120,6 @@ condCopy $content/graphics/handbook_1-1.gif public/images/hb1
 condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
 condCopyGroup $content/graphics handbook_4b.* public/images/hb4
-
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-309-fol,42v,10-19.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-619-4to-9v,23-30.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-619-4to,35v,15-22.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-619-4to,62v-63r.png public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-619-4to-quires-8-10.png public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-645-4to-51v,32-35.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/AM-655-IX-4to,2r,1-5.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/NKS-235-g-4to,1r.jpg public/images/hb3/ch8
-condCopy $content/handbok/handbok_3/graphics/ch8/XNRA-7-2v-mounted.jpg public/images/hb3/ch8
 
 condCopy $content/handbok/handbok_3/graphics/ch9/AM-242-fol-p1-explanatory-comment.png public/images/hb3/ch9
 condCopy $content/handbok/handbok_3/graphics/ch9/AM-243-ba-fol-2vB,18-21.png public/images/hb3/ch9
