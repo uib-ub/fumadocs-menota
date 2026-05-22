@@ -103,7 +103,8 @@ condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.jpg public/images/hb3/ch
 condCopyGroup $content/handbok/handbok_3/graphics/ch5 *.png public/images/hb3/ch5
 condCopyGroup $content/handbok/handbok_3/graphics/ch7 *.jpg public/images/hb3/ch7
 condCopyGroup $content/handbok/handbok_3/graphics/ch8 "*" public/images/hb3/ch8
-#condCopyGroup $content/handbok/handbok_3/graphics/ch9 "*" public/images/hb3/ch9
+condCopyGroup $content/handbok/handbok_3/graphics/ch9 *.jpg public/images/hb3/ch9
+condCopyGroup $content/handbok/handbok_3/graphics/ch9 *.png public/images/hb3/ch9
 condCopyGroup $content/handbok/handbok_3/graphics/ch10 "*" public/images/hb3/ch10
 condCopyGroup $content/handbok/handbok_3/graphics/ch16 "*" public/images/hb3/ch16
 condCopyGroup $content/handbok/handbok_3/graphics/characters *.png public/images/hb3/characters
@@ -119,23 +120,7 @@ condCopy $content/graphics/Handbook.gif public/images/hb1
 condCopy $content/graphics/handbook_1-1.gif public/images/hb1
 condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
-condCopyGroup $content/graphics handbook_4b.* public/images/hb4
-
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-242-fol-p1-explanatory-comment.png public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-243-ba-fol-2vB,18-21.png public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-243-ba-fol-5ra,24-26.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-619-4to-8v,23-26.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-619-4to-13v,8-10.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-619-4to-14r,26-30.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-619-4to-26v,7-11.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-619-4to-47r,8-10.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-645-4to-51v,32-35.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-645-4to-55v,5-7.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/AM-677-4to-1v,1-3.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/HolmPerg-34-4to-8r,17-19.jpg public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/Holm-B59-6v,8-10.png public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/NKS-66-8vo-73r,9-13.png public/images/hb3/ch9
-condCopy $content/handbok/handbok_3/graphics/ch9/NKS-66-8vo-73v,1-2.png public/images/hb3/ch9
+condCopyGroup $content/graphics handbook_4b.* public/images/hb4 
 
 condCopy $content/handbok/handbok_3/graphics/samples/NRA-58-C-3r,B,1-18.jpg public/images/hb3/samples
 
