@@ -109,6 +109,8 @@ condCopyGroup $content/handbok/handbok_3/graphics/ch10 "*" public/images/hb3/ch1
 condCopyGroup $content/handbok/handbok_3/graphics/ch16 "*" public/images/hb3/ch16
 condCopyGroup $content/handbok/handbok_3/graphics/characters *.png public/images/hb3/characters
 #condCopyGroup $content/handbok/handbok_3/graphics/stylesheets "*" public/images/hb3/stylesheets
+condCopyGroup $content/handbok/handbok_3/graphics/stylesheets *.gif public/images/hb3/stylesheets
+condCopyGroup $content/handbok/handbok_3/graphics/stylesheets *.png public/images/hb3/stylesheets
 #condCopyGroup $content/handbok/handbok_3/graphics/tutorial *.png public/images/hb3/tutorial
 condCopyGroup $content/handbok/handbok_4/graphics/ch17 *.jpg public/images/hb4/ch17
 condCopyGroup $content/handbok/handbok_4/graphics/ch18 *.jpg public/images/hb4/ch18
@@ -121,13 +123,12 @@ condCopy $content/graphics/handbook_1-1.gif public/images/hb1
 condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
 condCopyGroup $content/graphics handbook_4b.* public/images/hb4 
-
 condCopy $content/handbok/handbok_3/graphics/samples/NRA-58-C-3r,B,1-18.jpg public/images/hb3/samples
 
-condCopy $content/handbok/handbok_3/graphics/stylesheets/output-choose.gif public/images/hb3/stylesheets
-condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-Apply-transform-scenario.png public/images/hb3/stylesheets
-condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-scenario-step2.png public/images/hb3/stylesheets
-condCopy $content/handbok/handbok_3/graphics/stylesheets/parameter-choose.gif public/images/hb3/stylesheets
+#condCopy $content/handbok/handbok_3/graphics/stylesheets/output-choose.gif public/images/hb3/stylesheets
+#condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-Apply-transform-scenario.png public/images/hb3/stylesheets
+#condCopy $content/handbok/handbok_3/graphics/stylesheets/Oxygen-scenario-step2.png public/images/hb3/stylesheets
+#condCopy $content/handbok/handbok_3/graphics/stylesheets/parameter-choose.gif public/images/hb3/stylesheets
 
 condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-A-Mac.png public/images/hb3/tutorial
 condCopy $content/handbok/handbok_3/graphics/tutorial/Samples-A-Windows.png public/images/hb3/tutorial
