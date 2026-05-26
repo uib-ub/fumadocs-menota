@@ -38,6 +38,7 @@ cp $content/dokumenter/DOK_vedtekter-utkast.html public/legacy/documents/statute
 cp $content/handbok/handbok_1/*.html public/legacy/handbook/v1
 
 ## archive
+echo "Populating '${pwd}/public/archive' ..."
 cp -r $schema/archive public
 
 # Populate updatable files
