@@ -140,4 +140,5 @@ condCopyGroup $content/translations *.pdf public/translations
 
 ## CSS
 echo "Populating '${pwd}/public/css' ..."
-condCopyGroup $content/css *.css public/css
+condCopy $content/css/handbook-web-1.css public/css
+condCopy $content/css/menota_base.css public/css
