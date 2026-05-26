@@ -20,9 +20,11 @@ condCopyGroup () {
 }
 
 content="legacy/content-menota"
+schema="legacy/schema-menota"
 
 # Remove possible artefacts from previous build
 rm -rf public/legacy
+rm -rf public/archive
 
 # Create directories for legacy data
 mkdir -p public/legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}
@@ -34,6 +36,9 @@ cp $content/dokumenter/DOK_depo*.html public/legacy/documents/depo
 cp $content/dokumenter/DOK_Referat*.html public/legacy/documents/editorial-board
 cp $content/dokumenter/DOK_vedtekter-utkast.html public/legacy/documents/statutes
 cp $content/handbok/handbok_1/*.html public/legacy/handbook/v1
+
+## archive
+cp -r $schema/archive public
 
 # Populate updatable files
 
