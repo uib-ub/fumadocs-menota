@@ -25,6 +25,7 @@ schema="legacy/schema-menota"
 # Remove possible artefacts from previous build
 rm -rf public/legacy
 rm -rf public/archive
+rm -rf public/old_extensions_files
 
 # Create directories for legacy data
 mkdir -p public/legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}
@@ -40,6 +41,10 @@ cp $content/handbok/handbok_1/*.html public/legacy/handbook/v1
 ## archive
 echo "Populating '${pwd}/public/archive' ..."
 cp -r $schema/archive public
+
+## old extensions files
+echo "Populating '${pwd}/public/old_extensions_files' ..."
+cp -r $schema/old_extensions_files public
 
 # Populate updatable files
 
