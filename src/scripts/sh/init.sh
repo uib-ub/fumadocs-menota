@@ -133,3 +133,7 @@ condCopyGroup $content/graphics handbook_2-0* public/images/hb2
 condCopyGroup $content/graphics handbook_3-b.* public/images/hb3
 condCopyGroup $content/graphics handbook_4b.* public/images/hb4 
 condCopy $content/handbok/handbok_3/graphics/samples/NRA-58-C-3r,B,1-18.jpg public/images/hb3/samples
+
+## Translations
+echo "Populating '${pwd}/public/translations' ..."
+condCopyGroup $content/translations *.pdf public/translations
