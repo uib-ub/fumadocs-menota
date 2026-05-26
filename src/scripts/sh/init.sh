@@ -137,3 +137,7 @@ condCopy $content/handbok/handbok_3/graphics/samples/NRA-58-C-3r,B,1-18.jpg publ
 ## Translations
 echo "Populating '${pwd}/public/translations' ..."
 condCopyGroup $content/translations *.pdf public/translations
+
+## CSS
+echo "Populating '${pwd}/public/css' ..."
+condCopyGroup $content/css *.css public/css

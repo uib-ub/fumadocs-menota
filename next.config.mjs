@@ -13,7 +13,7 @@ const config = {
       },
       {
         source: '/legacy/:path*/:id.css',
-        destination: '/:id.css'
+        destination: '/css/:id.css'
       },
       {
         source: '/legacy/documents/:path/:id.gif',

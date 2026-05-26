@@ -1,0 +1,524 @@
+
+body {
+  font-family: verdana,sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  background-attachment: fixed;
+}
+
+td {
+  font-family: verdana,sans-serif;
+  font-size: 10pt;
+}
+  
+a {
+  text-decoration: none;
+}
+
+.mainbar a:hover {
+  border-bottom: 1px dashed #999999;
+}
+
+  
+
+table.master {
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+
+
+
+/* MENUBAR */
+
+.menubar {
+  font-size: 8pt;
+  padding: 5px;
+}
+
+.menubar td {
+  font-size: 8pt;
+}
+
+.menubar a {
+  border: 1px dashed white;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
+}
+
+.menubar a.active {
+}
+
+.menubar a:hover {
+  color: #000000;
+  border: 1px dashed #999999;
+}
+
+.menubar td.corplogos {
+
+}
+
+.menubar .corplogos a {
+  border: 0px solid #ffffff;
+}
+.menubar .corplogos a:hover {
+  border: 0px solid #ffffff;
+}
+
+.menubar a.adm {
+  color: #cccccc;
+}
+
+
+/* HEADBAR BOX */
+
+.headbar .box {
+  background-color: #ffffff;
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 5px;
+}      
+
+
+
+/* SIDEBAR */
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+}
+
+
+/* SIDEBAR BOX */
+
+.sidebar .box {
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  color: #999999;
+  display: block;
+  padding: 5px;
+  font-size: 8pt;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar div.box:hover {
+  border: 1px solid #cccccc;
+  color: #666666;
+  background-color: #ffffff;
+}
+
+.sidebar .box .head {
+  background-color: #eeeeee;
+  padding: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.sidebar .box .item {
+  display: block;
+  padding: 3px;
+  background-color: #f8f8f8;
+  margin-top: 3px;
+}
+
+.sidebar .box img {
+  margin: 3px;
+}
+
+.sidebar .box a.item {
+  color: #999999;
+  border-bottom: 0px;
+}
+
+.sidebar .box a.item:hover {
+  color: #000000;
+  text-decoration: none;
+  background-color: #f0f0f0;
+}
+
+
+/* SIDEBAR PAGEBOX */
+
+.sidebar .pagebox {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  display: block;
+  padding: 5px;
+  font-size: 8pt;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar .pagebox .head {
+  background-color: #bbbbbb;
+  color: #ffffff;
+  padding: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidebar .pagebox .item {
+  display: block;
+  padding: 3px;
+  background-color: #f0f0f0;
+  margin-top: 3px;
+}
+
+.sidebar .pagebox a.item {
+  color: #000000;
+  border-bottom: 0px;
+}
+
+.sidebar .pagebox a.item.edit {
+  color: #999999;
+}
+
+.sidebar .pagebox a.item:hover {
+  color: #000000;
+  text-decoration: none;
+  background-color: #dddddd;
+}
+
+.sidebar .pagebox a.item.active {
+  background-color: #e0e0e0;
+}
+
+
+
+/* SIDEBAR IMGBOX */
+
+.sidebar .imgbox {
+  border: 1px dashed #cccccc;
+  background-color: #ffffff;
+  padding: 5px;
+  font-size: 8pt;
+  margin: 5px;
+  margin-bottom: 10px;
+}        
+
+
+
+/* MAINBAR */
+
+.mainbar .box {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  display: block;
+  padding: 13px;
+  padding-bottom: 0px;
+  margin: 5px;
+  margin-bottom: 0px;
+  font-size: 10pt;
+  min-height: 400px;
+  text-align: left;
+}
+
+.mainbar .box .head {
+  padding: 3px;
+  margin: 3px;
+  font-size: 14pt;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.mainbar .box .item {
+  display: block;
+  padding: 3px;
+  margin: 3px;
+  margin-top: 15px;
+}
+
+.mainbar .box .item .head {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10pt;
+  font-weight: bold;
+  color: #000000;
+  border-bottom: 1px dashed #eeeeee;
+}
+
+
+
+div.xbox {
+  border: 1px solid black;
+}
+
+.idoc-section {
+  margin-bottom: 20px;
+  x-margin-top: 30px;
+}
+
+
+
+.sign {
+  font-size: 8pt;
+  color: #999999;
+  margin: 5px;
+  text-align: right;
+}
+
+
+
+h1 {
+  font-size: 14pt;
+  font-weight: normal;
+  margin-top: 0px;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.idoc-body p {
+  text-align: justify;
+}
+
+
+
+/* DL.flat i idoc-section */
+
+.idoc-section dl.flat dt {
+  font-size: 8pt;
+  color: #666666;
+}
+
+.idoc-section dl.flat dd {
+  margin-left: 0px;
+}
+
+
+
+/* NEWS */
+
+.news-index .news-item {
+  margin-bottom: 20pt;
+  x-border: 1px solid #cccccc;
+}
+
+.news-index .news-item .date {
+  font-size: 8pt;
+}
+
+.news-index .news-item .title {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+
+.news-item .date {
+  font-size: 8pt;
+}
+
+.news-item .title {
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.news-item .intro {
+  margin-top: 15px;
+  font-size: 10pt;
+}
+
+.news-item .main {
+  margin-top: 15px;
+}
+
+
+
+/* PROJECT */
+
+.project-index .project-item {
+  margin-bottom: 12pt;
+}
+
+.project-index .project-item .title {
+  font-size: 10pt;
+}
+
+.project-index .project-item .title a {
+  font-weight: bold;
+}
+
+.project-index .project-item .title .tail {
+  font-size: 8pt;
+  font-weight: normal;
+  color: #666666;
+}
+
+
+.project-item .title {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.project-item .description {
+  margin-top: 15pt;
+  margin-bottom: 30pt;
+}
+
+.project-item .date {
+  font-size: 8pt;
+  color: #999999;
+}
+
+
+
+/* OBJECT (general) */
+
+.obj-index .obj-item {
+  margin-bottom: 12pt;
+}
+
+.obj-index .obj-item .title {
+  font-size: 10pt;
+}
+
+.obj-index .obj-item .title a {
+  font-weight: bold;
+}
+
+.obj-index .obj-item .title .tail {
+  font-size: 8pt;
+  font-weight: normal;
+  color: #666666;
+}
+
+
+.obj-item .title {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.obj-item .description {
+  margin-top: 15pt;
+  margin-bottom: 30pt;
+}
+
+.obj-item .date {
+  font-size: 8pt;
+  color: #999999;
+}
+
+
+/* PEOPLE */
+
+table.people-index {
+}
+
+.people-index td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 20px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 8pt;
+}
+
+.people-index td.header {
+  font-size: 10pt;
+}
+
+.people-index .people-item td.name {
+  font-size: 10pt;
+}
+
+.people-index .people-item .name a {
+  font-weight: bold;
+}
+
+.people-item .name {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.people-item .position {
+  font-size: 8pt;
+}
+
+.people-item .description {
+  margin-top: 15pt;
+}
+
+
+
+
+
+
+/* BLOCK */
+
+.block {
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+}
+
+.block .label {
+  font-size: 8pt;
+  color: #666666;
+}
+
+.block .data {
+}
+
+.block .data .tail {
+  font-size: 8pt;
+  color: #999999;
+}
+
+ 
+/* MISC */
+
+.small {
+  font-size: 8pt;
+}
+
+
+
+
+/* PRINT */
+
+@media print {
+  
+  .menubar {
+    display: none;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+  
+  .headbar {
+    display: none;
+  }
+  
+  body {
+    background-image: none;
+  }
+  
+  .mainbar .box {
+    margin: 0px;
+    margin-top: 50px;
+    border: 0px solid white;
+    padding: 0px;
+  }
+
+  table.master {
+    width: 100%;
+  }
+      
+  
+  
+}
+
+
+
+
+

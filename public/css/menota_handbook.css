@@ -1,0 +1,200 @@
+/* 2006.03.27 Tone Merete Bruvik:
+CSS stylesheet to show XML encoded text which is encoded
+using Menota handbook, 2.0 b (TEI P5 version).
+This is a complete CSS definition for Menota styles,
+included in the present XSLT style sheet.
+Thus it is possible to use this style sheet offline.
+We recommend using MUFI compliant fonts,
+which are listed in a preferential sequence 
+as values for the font-family. These fonts are available from 
+http://www.hit.uib.no/mufi/fonts.html.
+However, structural elements may use another font, like Verdana.
+ * 
+ * 2022.11.24 Tone Merete Bruvik: Change to relativ font-sizes.
+*/
+
+.pagebreak {
+                font-family:        Verdana, serif;
+                font-size:          1em;
+                font-weight:        normal;
+                color:              #BEBEBE;
+                vertical-align:     middle;
+}
+
+.linecount {
+                font-family:        Verdana, serif;
+                font-size:          0.9em;
+                font-weight:        normal;
+                color:              #BEBEBE;
+                padding-right:      15px;
+                float:              left;
+                text-align:         right;
+                width:              25px;
+}
+
+.head1 {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-weight:        normal;
+                font-size:          4em;
+                color:              #0000FF;
+                text-align:         left;
+                margin-bottom:      10px;
+}
+
+.head2 {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-weight:        normal;
+                font-size:          3em;
+                color:              #0000FF;
+                text-align:         left;
+                margin-bottom:      10px;
+}
+
+.head3 {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-weight:        normal;
+                font-size:          2em;
+                color:              #0000FF;
+                text-align:         left;
+                margin-bottom:      10px;
+}
+
+.head4 {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-weight:        normal;
+                font-size:          1.2em;
+                color:              #0000FF;
+                text-align:         left;
+                margin-bottom:      10px;
+}
+
+.divwork {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          1.8em;
+                font-weight:        normal;
+                color:              #0000FF;
+                margin-top:         10px;
+                margin-bottom:      10px;
+                text-align:         left;
+}
+
+.divchapter {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          1.6em;
+                font-weight:        normal;
+                color:              #0000FF;
+                margin-top:         20px;
+                margin-bottom:      10px;
+                text-align:         left;
+}
+
+.paragraph {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          1.1em;
+                font-weight:        normal;
+                color:              #000000;
+                line-height:        140%;
+}
+
+.linegroup {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          1.1em;
+                font-weight:        normal;
+                color:              #000000;
+                line-height:        140%;
+                margin-left:        25px;
+}                                                         
+
+.lglines {
+                font-family:        Verdana, serif;
+                font-size:          0.9em;
+                font-weight:        normal;
+                color:              #BEBEBE;
+                padding-right:      5px;
+                float:              left;
+                text-align:         right;
+                width:              25px;
+}
+
+.note {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          0.8em;
+                font-weight:        normal;
+                color:              #0000FF;
+                text-decoration:    none;
+                vertical-align:     super;
+}
+
+.app {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          0.8em;
+                font-weight:        normal;
+                color:              #008000;
+                text-decoration:    none;
+                vertical-align:     super;
+}
+
+.foot {
+                font-family:        Verdana, serif;
+                font-size:          0.8em;
+                font-weight:        normal;
+                color:              #0000FF;
+                text-decoration:    none;
+                float:              left;
+                width:              15px;
+                padding-right:      5px;
+                text-align:         right;
+}
+
+.footnote {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          0.9em;;
+                font-weight:        normal;
+                color:              #000000;
+}
+
+.expan {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-style:         italic;
+                font-weight:        normal;
+}
+                
+.notecritical {
+                font-size:          80%;
+                color:              #0076AE;
+}
+
+.noteplain {
+                font-size:          80%;
+                color:              #008080;
+}
+
+.supplied {
+                font-family:        'Andron Corpus', 'Andron Scriptor Web', Junicode, Cardo, LeedsUni, Verdana, Times, serif;
+                font-size:          100%;
+}
+
+.gap {
+                font-size:          80%;
+                color:              #0076AE;
+}
+
+.add {
+                color:              #008000;
+}
+
+.rdg {
+                color:              #008000;
+}
+
+.ed {           font-size:          80%;
+                color:              #008000;
+}
+
+.emph {
+                color:              #0000FF;
+}
+
+.divHeader {  margin-bottom: 10px;
+}
+
