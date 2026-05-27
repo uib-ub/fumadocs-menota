@@ -36,8 +36,16 @@ const config = {
         destination: '/images/:path*.jpg'
       },
       {
+        source: '/:file.dtd',
+        destination: '/dtd/:file.dtd'
+      },
+      {
         source: '/:file.ent',
         destination: '/ent/:file.ent'
+      },
+      {
+        source: '/:file.rng',
+        destination: '/rng/:file.rng'
       },
       {
         source: '/:file.txt',
