@@ -53,6 +53,10 @@ echo "Populating '${pwd}/public/ent' ..."
 cp $schema/*.txt public/ent
 cp $schema/*.ent public/ent
 
+## DTD
+echo "Populating '${pwd}/public/dtd' ..."
+cp -r $schema/*.dtd public/dtd
+
 # Populate updatable files
 
 ## Documents
