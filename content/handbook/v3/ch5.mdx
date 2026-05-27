@@ -5,7 +5,7 @@ author:
  - Beeke Stegmann
  - Odd Einar Haugen
 changeLog:
- - date: 2026-04-30
+ - date: 2026-05-27
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -254,14 +254,12 @@ a linguistic context a distinction is often drawn between the abstract entity of
 written document. Variant forms are referred to as **allographs**, e.g.
 the Roman type of “s” and the Fraktur (black letter) type. The
 terminology is analogous to the distinction between <em>phonemes</em>, <em>phones</em> and <em>allophones</em>. For a general
-introduction to this terminology, see e.g. [Sture Allén
-1971](/handbook/v3/literature#Allen1971), [Manfred Kohrt 1985](/handbook/v3/literature#Kohrt1985) or [Christa Dürscheid 2016](/handbook/v3/literature#Durscheid2016).
+introduction to this terminology, see e.g. [Sture Allén 1971](/handbook/v3/literature#Allen1971), [Manfred Kohrt 1985](/handbook/v3/literature#Kohrt1985) or [Christa Dürscheid 2016](/handbook/v3/literature#Durscheid2016).
 
 In this handbook we shall adopt the terminology of the [Unicode Standard](http://www.unicode.org/). The fundamental
 distinction drawn is between **characters** and **glyphs**. Characters are, as Unicode defines it, “the smallest components of
 written language that have semantic value”, while glyphs are “the shapes that
-characters can have when they are rendered or displayed” (cf. Unicode v. 12.0, [ch. 2.2
-Unicode Design Principles](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf)). 
+characters can have when they are rendered or displayed” (cf. Unicode v. 12.0, [ch. 2.2 Unicode Design Principles](http://www.unicode.org/versions/Unicode12.0.0/ch02.pdf)). 
 What the transcriber sees in a manuscript is a series
 of individual glyphs, and the act of transcribing essentially involves linking these
 glyphs to the characters at the transcriber’s disposal.
@@ -684,8 +682,7 @@ Here, each word is delimited by a space (although, as discussed in [ch. 5.5](#se
 a word sometimes extends over a linebreak). While the space bar in many cases would be a sufficient way of delimiting words,
 for several reasons we recommend that each word is identified with a separate
 <E>w</E> element (for “word”). The <E>w</E> element functions as a
-container for information on levels of text representation ([ch. 4](/handbook/v3/ch4) above) and morphological analysis ([ch.
-11](/handbook/v3/ch11) below). In this example, each word has been identified by the <E>w</E> element,
+container for information on levels of text representation ([ch. 4](/handbook/v3/ch4) above) and morphological analysis ([ch. 11](/handbook/v3/ch11) below). In this example, each word has been identified by the <E>w</E> element,
 and the lemma (dictionary entry) specified as an attribute to the <E>w</E>
 element:
 ```xml
@@ -1834,8 +1831,7 @@ simply by hitting the space bar several times. In our experience, there is no si
 in Medieval Nordic manuscripts. If, however, a transcriber believes there are more than
 one length of the space, the simplest way of encoding this is probably to define the
 standard space, `0020`, as the default space and to define deviating spaces with
-reference to the list of various space lenghts in the Unicode chart [General
-Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](/handbook/v3/literature#MUFIrec).
+reference to the list of various space lenghts in the Unicode chart [General Punctuation](https://www.unicode.org/charts/PDF/U2000.pdf), codepoints `2000–200B`. For recommended entities, see the [MUFI character recommendation](/handbook/v3/literature#MUFIrec).
 
 
 

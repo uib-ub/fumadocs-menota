@@ -3,7 +3,7 @@ title: "3: Levels of text representation"
 author:
  - Odd Einar Haugen
 changeLog:
- - date: 2026-04-30
+ - date: 2026-05-27
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -62,8 +62,7 @@ the amount of phonetic detail. The same perspective applies to
 transcriptions of manuscript texts. Close (or narrow) transcriptions
 are usually referred to as diplomatic, while regularised
 transcriptions are often referred to as normalised. This is the basic
-distinction drawn in e.g. [Wittgenstein's
-Nachlass: The Bergen Electronic Edition](http://wab.uib.no/wab_BEE.page) (1998-2000). 
+distinction drawn in e.g. [Wittgenstein's Nachlass: The Bergen Electronic Edition](http://wab.uib.no/wab_BEE.page) (1998-2000). 
 Here, all texts are available in two versions, a diplomatic transcription and a normalised one.
 
 
@@ -95,8 +94,7 @@ College, Oxford MS 209, a vellum manuscript from the late 12th
 century. Below is a low
 resolution facsimile from the beginning of the _Passio_. For a facsimile of
 the whole manuscript in high resolution, please refer to
-[Early
-Manuscripts at Oxford University](http://image.ox.ac.uk/show?collection=corpus&manuscript=ms209).
+[Early Manuscripts at Oxford University](http://image.ox.ac.uk/show?collection=corpus&manuscript=ms209).
 
 
 
@@ -352,8 +350,7 @@ and displayed as (now disregarding the line break)
 On this level, the orthography is
 regularised according to the norm found in grammars and dictionaries
 for the language in question. For Old Icelandic and Old Norwegian
-texts we recommend the normalisation rules in [AMKO's
-dictionary](/handbook/v2/literature) (ONP).
+texts we recommend the normalisation rules in [AMKO's dictionary](/handbook/v2/literature) (ONP).
 Abbreviations are expanded silently, and punctuation is regularised as
 well. Thus, the text in fig. 3.1 would be transcribed as
 ```xml
@@ -380,8 +377,7 @@ and displayed as
 Note that at this level all characters have been encoded using official Unicode code points. So rather than encoding the character “ð” with the entity “&amp;eth;” it has been encoded simply as “ð”, using its code point in Latin-1 Supplement, 00F0. The only exception here is the “o ogonek”, which for practical purposes has been encoded with the entity “&amp;oogon;”, even if this character, too, has a Unicode code point, 01EB in Latin Extended-B. A suitable keyboard layout is helpful for the actual typing of some of these characters, but in general, all Medieval Nordic texts can be encoded without resorting to entities as long as the text is rendered on a normalised level. Many Old Swedish and Old Danish texts can also be encoded with a minimal amount of character entities.
 
 For a more detailed discussion of
-the three levels discussed here, please refer to [Haugen
-2004](/handbook/v2/literature).
+the three levels discussed here, please refer to [Haugen 2004](/handbook/v2/literature).
 
 For keyboard layouts and for an overview of Unicode code charts, please see the [MUFI site](http://www.mufi.info/).
 
@@ -444,8 +440,7 @@ The transcriptions in [ch. 3.2](#sec3.2) each
 reflect a specific level of text representation. However, we believe
 that the transcription should be expandable to accommodate more than
 one level. We recommend using the <E>w</E> element to group each
-lexical word in the transcription, as explained in [ch.
-2.3](/handbook/v2/ch2#sec2.3). Within each <E>w</E> element, the <E>choice</E> element should be used to group 
+lexical word in the transcription, as explained in [ch. 2.3](/handbook/v2/ch2#sec2.3). Within each <E>w</E> element, the <E>choice</E> element should be used to group 
 levels of text representation. Each level is identified by descriptive elements: <E>me:facs</E>
 for the facsimile rendering (in which the element <E>am</E> is used for abbreviations), <E>me:dipl</E> for the diplomatic
 rendering (in which the element <E>ex</E> is used for expansions), and

@@ -18,15 +18,19 @@
                 => replace('^(?:http://www\.menota\.org/)HB2_(.*?)\.xml$', '/handbook/v2/$1')
                 => replace('^HB([2-4])_(.*?)\.xml#?$', '/handbook/v$1/$2')
                 => replace('^HB([2-4])_(.*?)\.xml#(.+)$', '/handbook/v$1/$2#$3')
-                => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', $samples-path)
-                => replace('^(?:eksempler|samples)/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', $samples-path)
-                => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', '/documents/workgroup/$1')
-                => replace('^(archive)/([\w\-0-9]+)\.(dtd|(?:compiled\.)?rn[cg]|txt|xml)$', '/$1/$2.$3')
-                => replace('^([\w_\-0-9]+\.pdf)', $file-path)
-                => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
-                => replace('^([\w\-0-9]+)\.rng$', '/$1.rng') 
-                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
-                => replace('^([\w_\-0-9]+)\.(xml|xsl)$', '/$1.$2')
+                => replace('^(?:https://menota.org/handbok_4/)?samplefiles/(.+\.xml)$', 
+                    $samples-path)
+                => replace('^(?:eksempler|samples)/(.+\.(?:jpg|pdf|html|plx|xml|xsl))$', 
+                    $samples-path)
+                => replace('^https://www.menota.org/DOK_Arbeidsgruppe(.*)\.xml', 
+                    '/documents/workgroup/$1')
+                => replace('^(archive)/([\w\-0-9]+)\.(dtd|(?:compiled\.)?rn[cg]|txt|xml)$', 
+                    '/$1/$2.$3')
+                => replace('^([\w\-0-9]+/[\w\-0-9]+\.gif)', $file-path)
+                => replace('^(Electronic-editions-2009-11-18\.pdf)$', '/documents/pdf/$1')
+                => replace('^([\w_\-0-9]+\.pdf)$', $file-path)
+                => replace('^(\w+(-\w+)*)\.txt$', '/ent/$1.txt')
+                => replace('^([\w_\-0-9]+)\.(dtd|rng|xml|xsl)$', '/$2/$1.$2')
                 => replace(' ', '%20')
             })</xsl:text>
     </xsl:template>

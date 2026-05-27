@@ -3,7 +3,7 @@ title: "D: Menota schemes"
 author:
  - Tone Merete Bruvik
 changeLog:
- - date: 2026-04-30
+ - date: 2026-05-27
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -83,7 +83,7 @@ In version 2 of the Menota handbook, additions and changes have been made with r
 						ROMA allows users to choose between several outputs: a DTD, a RELAX NG schema (which, in spite of its name, 
 						can be a stricter schema than a DTD), or a W3C schema.
 
-On the basis of the ODD file for Menota and the entity list, a Document Type Definition (DTD) and a RELAX NG schema for Menota have been generated with the help of ROMA. Those who prefer a W3C schema or a RELAX NG schema with compact syntax, may produce that themselves, using the [Menota ODD file](/menotaP5.xml) and the tool [ROMA](http://tei.oucs.ox.ac.uk/Roma/). 
+On the basis of the ODD file for Menota and the entity list, a Document Type Definition (DTD) and a RELAX NG schema for Menota have been generated with the help of ROMA. Those who prefer a W3C schema or a RELAX NG schema with compact syntax, may produce that themselves, using the [Menota ODD file](/xml/menotaP5.xml) and the tool [ROMA](http://tei.oucs.ox.ac.uk/Roma/). 
 
 ### D.1.1 Current versions of Menota schemas [#secD.1.1]
 
@@ -94,7 +94,7 @@ This is a list of all current Menota schemas. Earlier versions of these files ha
 The ODD file is an XML file which specifies all changes to the TEI Guidelines P5.
 							
 
- - [Menota 2.0 ODD file](/menota-v2-P5.xml) for TEI P5 (9 February 2012) &ndash; XML file
+ - [Menota 2.0 ODD file](/xml/menota-v2-P5.xml) for TEI P5 (9 February 2012) &ndash; XML file
 						
 
 #### (2) Entity list
@@ -102,14 +102,14 @@ The ODD file is an XML file which specifies all changes to the TEI Guidelines P5
 The entity list specifies recommended entities. This is not an obligatory part of a schema, but it is an important part of Menota encoding since a large number of characters have to be encoded by entities. It is essential that characters in the Private Use Area of the Unicode Standard are encoded with entities. The entity list is an ordinary text file.
 							
 
- - [Menota Entities](/menota-entities.txt) (13 May 2016) &ndash; text file
+ - [Menota Entities](/ent/menota-entities.txt) (13 May 2016) &ndash; text file
 
 #### (3) Document Type Definition (DTD)
 
 The DTD is one of several schemas that are allowed in TEI P5. 
 							
 
- - [Menota DTD](/menota-v2-P5.dtd) (1 July 2010) &ndash; text file
+ - [Menota DTD](/dtd/menota-v2-P5.dtd) (1 July 2010) &ndash; text file
 
 Some browsers will attach the extension .xml to this file when downloaded. Just change the extension back to .dtd
 
@@ -118,7 +118,7 @@ Some browsers will attach the extension .xml to this file when downloaded. Just 
 The version given here has been generated on the basis of the same ODD file and entity file as the DTD above. Using a RELAX NG schema, data values can be validated to a higher extent than what is possible with a DTD. This applies both to attribute and content values. For example, the attributes “notBefore” and “notAfter” in the element <E>origDate</E> have to contain a valid date value if the RELAX NG schema is used. The RELAX NG schema also supports name spaces, which is useful if one wants to mix schemas as we do in Menota.
 							
 
- - [Menota RELAX NG](/menota-v2-P5.rng) (7 February 2012) &ndash; XML file
+ - [Menota RELAX NG](/rng/menota-v2-P5.rng) (7 February 2012) &ndash; XML file
 
 ### D.1.2 Archive of older versions of Menota schemas [#secD.1.2]
 

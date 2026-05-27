@@ -3,7 +3,7 @@ title: "6: Abbreviations: typology and encoding"
 author:
  - Odd Einar Haugen
 changeLog:
- - date: 2026-04-30
+ - date: 2026-05-27
    author: Robert K. Paulsen
    changes:
     - "Converted file from XML to MDX."
@@ -111,8 +111,7 @@ In a multi-level transcription, the <E>am</E> element typically belongs to the <
 ```
 
 
-The <E>am</E> element may have a <Att>me:type</Att> attribute specifying what kind of abbreviation it is. The same applies to the <E>ex</E> element. We have not given examples of these attributes in the present chapter, but users may refer to the typology in  [ch.
-6.2](#sec6.2) below if they would like to make a more detailed encoding.
+The <E>am</E> element may have a <Att>me:type</Att> attribute specifying what kind of abbreviation it is. The same applies to the <E>ex</E> element. We have not given examples of these attributes in the present chapter, but users may refer to the typology in  [ch. 6.2](#sec6.2) below if they would like to make a more detailed encoding.
 
 | Element | Contents |
 |-----|-----|
@@ -127,10 +126,8 @@ In this chapter, we shall give a typology of abbreviation and then exemplify a n
 ## 6.2 Typology [#sec6.2]
 
 Abbreviations are usually divided
-into four categories (see e.g. [Hreinn
-Benediktsson 1965](/handbook/v2/literature), p. 85 and,
-for a more detailed classification, [Kristian
-Kålund 1907](/handbook/v2/literature), pp. viii-x):
+into four categories (see e.g. [Hreinn Benediktsson 1965](/handbook/v2/literature), p. 85 and,
+for a more detailed classification, [Kristian Kålund 1907](/handbook/v2/literature), pp. viii-x):
 
 (1) **Suspensions**. The first
 part of the word, often the initial letter only, is written out,
@@ -191,10 +188,8 @@ a handful of abbreviation characters and only a few of interest for
 our use. The great majority of abbreviation characters must therefore
 be defined as code values in the Private Use Area. The only
 exceptions are the full stop, colon and semicolon, which are part of
-the range [Basic
-Latin](http://www.unicode.org/charts/PDF/U0000.pdf) in Unicode, and the
-Tironian sign for et, in the range [General
-Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
+the range [Basic Latin](http://www.unicode.org/charts/PDF/U0000.pdf) in Unicode, and the
+Tironian sign for et, in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
 
 For a complete list of suggested
 Unicode values, see [Appendix A](/handbook/v2/A_characters) below.
@@ -204,8 +199,7 @@ Unicode values, see [Appendix A](/handbook/v2/A_characters) below.
 As is the case with ordinary
 characters (cf. [ch. 5](/handbook/v2/ch5)) we adhere to the naming scheme in Unicode.
 Since _Unicode 5.0_ only defines one abbreviation mark in the
-Latin alphabet, the TIRONIAN SIGN ET in the range [General
-Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf), and only one
+Latin alphabet, the TIRONIAN SIGN ET in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf), and only one
 in each of the Armenian, Syriac, Devanagari, Thai and Khmer
 alphabets, we do not have completley clear examples of descriptive
 names. We suggest ABBREVIATION SIGN “000” as a general name for
@@ -228,8 +222,7 @@ recommend using the entity name “&amp;et;”, reflecting the Latin
 origin of the abbreviation.
 
 In _Unicode 5.0_ this
-character is located at 204A in the range [General
-Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
+character is located at 204A in the range [General Punctuation](http://www.unicode.org/charts/PDF/U2000.pdf).
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -249,8 +242,7 @@ dental consonant, often in the preposition “með”. We recommend
 “&amp;sem;” as entity name.
 
 In _Unicode 5.0_ the semicolon
-is located at 003B in the range [Basic
-Latin](http://www.unicode.org/charts/PDF/U0000.pdf). When the semicolon
+is located at 003B in the range [Basic Latin](http://www.unicode.org/charts/PDF/U0000.pdf). When the semicolon
 is used as a punctuation mark, it should be transcribed as such, i.e.
 simply as “;”. When it is used as an abbreviation mark we recommend
 that it is transcribed with an entity, “&amp;sem;”. Note that there is another form of this abbreviation mark, looking like the number “3”. This is included in the [MUFI character recommendation](http://bora.uib.no/handle/1956/10699) at code point F155 and can be encoded with the entity “&amp;etfin;”.
@@ -267,8 +259,7 @@ that it is transcribed with an entity, “&amp;sem;”. Note that there is anoth
 A sign resembling a backwards “c”
 was often used for “con” in Latin and “kon” in Nordic words. This “con” mark is
 similar to 0254 LATIN SMALL LETTER OPEN O in the range
-[IPA
-Extensions](http://www.unicode.org/charts/PDF/U0250.pdf) of _Unicode 5.0_ and may be identified with this character.
+[IPA Extensions](http://www.unicode.org/charts/PDF/U0250.pdf) of _Unicode 5.0_ and may be identified with this character.
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -316,8 +307,7 @@ of _Unicode 5.0_.
 The runic character for “m” was
 sometimes used for the word “maðr” (including case forms with the
 stem “mann-”). We recommend the entity name “&amp;mMedrun;”, as
-introduced in [ch.
-5.3.7](/handbook/v2/ch5#sec5.3.7).
+introduced in [ch. 5.3.7](/handbook/v2/ch5#sec5.3.7).
 
 _Unicode 5.0_ has defined a
 selection of 81 runes from the Older and Younger Futhark in the
@@ -334,8 +324,7 @@ range. This range includes the “m” rune.
 The runic character may appear with
 interlinear marks (“a”, “i”, “e”, “n”, “z”) for various inflected
 forms of the word “maðr”, e.g. “manna”, “manni”/“manne”, “mann”,
-“mannz”. The encoding of this type is discussed in [ch.
-6.4.7](#sec6.4.7) below. 
+“mannz”. The encoding of this type is discussed in [ch. 6.4.7](#sec6.4.7) below. 
 
 ### 6.3.7 The “f” rune [#sec6.3.7]
 
@@ -361,8 +350,7 @@ abbreviation marks, typically for suspensions, e.g. “s.” for “sonr”
 (or “segja”, “svara”). They may sometimes appear on both sides of the
 abbreviated word, “.s.”. We recommend that the dot is transcribed in
 the same manner as a full stop, i.e. with the “.” mark in
-[Basic
-Latin](http://www.unicode.org/charts/PDF/U0000.pdf). Thus, no entity name
+[Basic Latin](http://www.unicode.org/charts/PDF/U0000.pdf). Thus, no entity name
 is called for. 
 
 <div className="table-abbr">
@@ -404,16 +392,14 @@ entity.
 
 In Old Icelandic, small capitals
 were used to denote geminated (long) consonants or they were simply
-used ornamentally (especially in Old Norwegian). In [ch.
-5.3.3](/handbook/v2/ch5#sec5.3.3) above we recommended that they were encoded as entities in both
+used ornamentally (especially in Old Norwegian). In [ch. 5.3.3](/handbook/v2/ch5#sec5.3.3) above we recommended that they were encoded as entities in both
 cases. The use of small capitals can be seen as a form of
 abbreviation, but there will be a number of cases where the usage is
 open to interpretation. We recommend that the transcriber copies the
 text as it is, transcribing a small capital as a small capital
 irrespective of whether it is being used to denote gemination or as
 an ornament. Thus, exactly the same entities will be used here as
-introduced in [ch.
-5.3.3](/handbook/v2/ch5#sec5.3.3).
+introduced in [ch. 5.3.3](/handbook/v2/ch5#sec5.3.3).
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -423,8 +409,7 @@ introduced in [ch.
 
 
 For the encoding of small capitals
-with dot above, please see [ch.
-6.4.8](#sec6.4.8) below.
+with dot above, please see [ch. 6.4.8](#sec6.4.8) below.
 
 ## 6.4 Combining abbreviation marks [#sec6.4]
 
@@ -433,13 +418,11 @@ are placed above, through or below a base line character. It could be
 argued that they really refer to the whole word, but from an
 analytical point of view we recommend that they are encoded
 immediately after the base line character to which they seem most
-closely associated. Cf. the rules in [ch.
-2.2.1](/handbook/v2/ch2#sec2.2.1).
+closely associated. Cf. the rules in [ch. 2.2.1](/handbook/v2/ch2#sec2.2.1).
 
 It is sometimes difficult to decide
 whether a sign is placed on the base line or above another base line
-character. For example, the “us” mark (cf. [ch.
-6.4.3](#sec6.4.3) below) may sometimes
+character. For example, the “us” mark (cf. [ch. 6.4.3](#sec6.4.3) below) may sometimes
 occupy a position of its own, although slightly raised above the base
 line. The classification in this chapter is based on what we believe
 are the prototypical positions of the abbreviation marks. 
@@ -457,8 +440,7 @@ immediately preceding character.
 
 This horizontal bar is partially
 similar to 0304 COMBINING MACRON and 0305 COMBINING OVERLINE in the
-range [Combining
-Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf)of _Unicode 5.0_, and
+range [Combining Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf)of _Unicode 5.0_, and
 may be identified with the latter.
 
 <div className="table-abbr">
@@ -484,8 +466,7 @@ name “&amp;barbl;” (for “bar below”).
 
 The horizontal bar below is
 partially similar to 0331 COMBINING MACRON BELOW or 0332 COMBINING
-LOW LINE in the range [Combining
-Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf) of _Unicode 5.0_, and
+LOW LINE in the range [Combining Diacritical Marks](http://www.unicode.org/charts/PDF/U0300.pdf)[](http://www.unicode.org/charts/PDF/U2000.pdf) of _Unicode 5.0_, and
 may be identified with the latter.
 
 <div className="table-abbr">
@@ -544,8 +525,7 @@ frequently used as abbreviation of a front vowel (including
 diphtongs) + “r”, e.g. “ir”, “er”, “eir”, “ær”. The earliest
 form resembles a horizontal stroke with a descender to the left and
 an ascender to the right. It later acquired a zigzag-like form and
-even later resembles the letter “u” turned upside-down. This abbreviation mark has now become part of the Unicode Standard (based on its usage in Lithuanian) in the range [Combining
-diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
+even later resembles the letter “u” turned upside-down. This abbreviation mark has now become part of the Unicode Standard (based on its usage in Lithuanian) in the range [Combining diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -578,8 +558,7 @@ The syllable “ur” (sometimes “yr”)
 can be abbreviated by a mark resembling a small version of the number
 2. A second form of this mark resemble a tilde, and a third form a horizontal version
 of the number 8 (equal to the lemniskate symbol), cf.
-[Hreinn
-Benediktsson 1965](/handbook/v2/literature), p. 91. Due
+[Hreinn Benediktsson 1965](/handbook/v2/literature), p. 91. Due
 to the considerable variation in form we suggest that it might be
 useful to distinguish between three main forms, using the entity
 “&amp;urrot;” for the first type, “&amp;ur;” for the second and “&amp;urlemn;” for the third. The code points are respectively F153, F1C3 and F1C2 (all in the Private Use Area).
@@ -605,8 +584,7 @@ the character itself + “sup” (for “superscript”), e.g. “&amp;asup;”
 _Unicode 5.0_ includes a
 selection of 13 superscript characters, namely “a”, “e”, “i”, “o”,
 “u”, “c”, “d”, “h”, “m”, “r”, “t”, “v”, “x”. They are located at the
-end of the range [Combining
-diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf),
+end of the range [Combining diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf),
 0363-036F. We suggest that these characters are used to display
 interlinear characters and that characters outside this selection
 are given separate code points in the Private Use Area. 
@@ -623,8 +601,7 @@ are given separate code points in the Private Use Area.
 
 
 The runic character “m”, which
-itself can be used as an abbreviation (cf. [ch.
-6.3.6](#sec6.3.6) above), can appear
+itself can be used as an abbreviation (cf. [ch. 6.3.6](#sec6.3.6) above), can appear
 with an interlinear abbreviation mark. The encoding follows the
 pattern above.
 
@@ -652,8 +629,7 @@ the entity name “&amp;combdot;” (for “combining dot
 above”).
 
 _Unicode 5.0_ has a combining
-dot above in the range [Combining
-diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
+dot above in the range [Combining diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -665,8 +641,7 @@ diacritical marks](http://www.unicode.org/charts/PDF/U0300.pdf).
 Sometimes the dot is used above
 small capitals. Since small capitals themselves are a way of
 representing gemination, the dot above is redundant. The encoding
-will simply be the same as above. Cf. [ch.
-6.3.10](#sec6.3.10) above.
+will simply be the same as above. Cf. [ch. 6.3.10](#sec6.3.10) above.
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |
@@ -708,22 +683,19 @@ appropriate display of the manuscript text, since the bar will be
 shown as extending over the whole word. However, it may be argued
 that there is only a single bar in each example, and that this bar
 simply happens to extend over more than one character. This problem
-is discussed more fully in [ch.
-6.5.5](#sec6.5.5) below.
+is discussed more fully in [ch. 6.5.5](#sec6.5.5) below.
 
 ### 6.5.2 Interlinear characters in other contexts [#sec6.5.2]
 
 Interlinear (superscript)
 characters are used in various ways, not always as abbreviations.
-According to [de
-Leeuw van Weenen 2000](/handbook/v2/literature):
+According to [de Leeuw van Weenen 2000](/handbook/v2/literature):
 36-43 there are four types:
 
 **(a) as abbreviation**
 
 This type is discussed in
-[ch.
-6.4.7](#sec6.4.7) above. Here, we
+[ch. 6.4.7](#sec6.4.7) above. Here, we
 recommend the usage of entities such as “&amp;asup;”.
 
 **(b) as addition**
@@ -733,8 +705,7 @@ used for adding characters which were left out by the scribe we
 recommend that this is encoded by use of the element
 <E>add</E>
 and the attribute <Att>place="supralinear"</Att> (cf.
-[ch.
-7.2](/handbook/v2/ch7#sec7.2)). There is no need for
+[ch. 7.2](/handbook/v2/ch7#sec7.2)). There is no need for
 an entity of the type “&amp;asup;” since the location of the
 character is indicated by the element.
 
@@ -795,8 +766,7 @@ There are a few examples of base
 line characters which are abbreviated with an abbreviation mark which
 is itself abbreviated. An example is the base line character “m” with
 an interlinear “o” which in turn has a horizontal bar. According to
-rule 7 in [ch.
-2.2.1](/handbook/v2/ch2#sec2.2) above this
+rule 7 in [ch. 2.2.1](/handbook/v2/ch2#sec2.2) above this
 abbreviation should be encoded as the sequence “m” + “&amp;osup;” +
 “&amp;bar;”.
 
@@ -854,8 +824,7 @@ since it connects to left and right. Cf. the reference in
 
 ### 6.5.6 Sporadic ligatures with abbreviation marks [#sec6.5.6]
 
-In [ch.
-5.4](/handbook/v2/ch5#sec5.4) we recommended that
+In [ch. 5.4](/handbook/v2/ch5#sec5.4) we recommended that
 sporadic ligatures should not be encoded by use of separate entities
 but by the element <E>seg</E>
 with the attribute <Att>type="ligature"</Att>.
@@ -934,8 +903,7 @@ interlinear “r”.
 In late Old Norwegian, the “sharp s” appears in a number of abbreviations, e.g. for “skilling”,
 “smør” and “son”. The German character “sharp s” is defined in
 _Unicode 5.0_ as 00DF LATIN SMALL LETTER SHARP S in the range
-[Latin-1 Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend uisng the ISO entity “&amp;szlig;” also when this character is used as an abbreviation mark. The element <E>am</E> will indicate clearly that it is an abbreviation mark, not an ordinary character. See the discussion on the full stop in [ch.
-6.3.8](#sec6.3.8) above.
+[Latin-1 Supplement](http://www.unicode.org/charts/PDF/U0080.pdf). We recommend uisng the ISO entity “&amp;szlig;” also when this character is used as an abbreviation mark. The element <E>am</E> will indicate clearly that it is an abbreviation mark, not an ordinary character. See the discussion on the full stop in [ch. 6.3.8](#sec6.3.8) above.
 
 <div className="table-abbr">
 | Abbreviated form | Expanded form | Encoding | Abbreviation mark code point |

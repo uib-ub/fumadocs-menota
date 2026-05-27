@@ -13,7 +13,7 @@ const config = {
       },
       {
         source: '/legacy/:path*/:id.css',
-        destination: '/:id.css'
+        destination: '/css/:id.css'
       },
       {
         source: '/legacy/documents/:path/:id.gif',
@@ -34,6 +34,14 @@ const config = {
       {
         source: '/legacy/documents/editorial-board/:path*.jpg',
         destination: '/images/:path*.jpg'
+      },
+      {
+        source: '/:file.ent',
+        destination: '/ent/:file.ent'
+      },
+      {
+        source: '/:file.txt',
+        destination: '/ent/:file.txt'
       }
     ];
   },
