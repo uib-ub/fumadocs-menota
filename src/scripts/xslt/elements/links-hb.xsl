@@ -29,7 +29,7 @@
                 => replace('^([\w\-0-9]+/[\w\-0-9]+\.gif)', $file-path)
                 => replace('^(Electronic-editions-2009-11-18\.pdf)$', '/documents/pdf/$1')
                 => replace('^([\w_\-0-9]+\.pdf)$', $file-path)
-                => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
+                => replace('^([\w\-0-9]+)\.(dtd)$', '/$2/$1.$2')
                 => replace('^([\w\-0-9]+)\.rng$', '/$1.rng') 
                 => replace('^(\w+(-\w+)*)\.txt$', '/ent/$1.txt')
                 => replace('^([\w_\-0-9]+)\.(xml)$', '/$1.$2')
