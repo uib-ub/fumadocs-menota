@@ -30,6 +30,7 @@ rm -rf public/ent
 rm -rf public/dtd
 rm -rf public/rng
 rm -rf public/xml
+rm -rf src/lib/webfonts
 
 # Create directories for legacy data
 mkdir -p public/{dtd,ent,legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}},rng,xml}
@@ -66,6 +67,10 @@ cp -r $schema/*.rng public/rng
 ## XML
 echo "Populating '${pwd}/public/xml' ..."
 cp -r $schema/*.xml public/xml
+
+## WOFF
+echo "Populating '${pwd}/src/lib/webfonts' ..."
+cp -r $schema/woff src/lib/webfonts
 
 # Populate updatable files
 
