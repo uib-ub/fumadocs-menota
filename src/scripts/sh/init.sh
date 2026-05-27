@@ -28,9 +28,11 @@ rm -rf public/archive
 rm -rf public/old_extensions_files
 rm -rf public/ent
 rm -rf public/dtd
+rm -rf public/rng
+rm -rf public/xml
 
 # Create directories for legacy data
-mkdir -p public/{dtd,ent,legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}}
+mkdir -p public/{dtd,ent,legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}},rng,xml}
 
 # Populate legacy html
 echo "Populating '${pwd}/public/legacy' ..."
