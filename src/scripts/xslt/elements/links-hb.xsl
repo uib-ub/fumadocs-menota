@@ -31,8 +31,9 @@
                 => replace('^([\w_\-0-9]+\.pdf)$', $file-path)
                 => replace('^([\w\-0-9]+)\.dtd$', '/$1.dtd')
                 => replace('^([\w\-0-9]+)\.rng$', '/$1.rng') 
-                => replace('^(\w+(-\w+)*)\.txt$', '/$1.txt')
-                => replace('^([\w_\-0-9]+)\.(xml|xsl)$', '/$1.$2')
+                => replace('^(\w+(-\w+)*)\.txt$', '/ent/$1.txt')
+                => replace('^([\w_\-0-9]+)\.(xml)$', '/$1.$2')
+                => replace('^([\w_\-0-9]+)\.(xsl)$', '/$2/$1.$2')
                 => replace(' ', '%20')
             })</xsl:text>
     </xsl:template>

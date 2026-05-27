@@ -510,7 +510,7 @@ document using a system entity:
 In recent years, the TEI community has moved towards the use of the <E>g</E> element (for “gaiji”, Japanese for ‘external character’) in order to encode non-standard characters. So rather than, for example, using an entity like `&ocurl;{:xml}` for the character “”, one might encode it as e.g. &lt;g ref="#ocurl"/&gt; using the <em>gaiji</em> module, as described in the TEI Guidelines P5, [ch. 5.2](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html).
 This requires an extensive <E>charDecl</E> section in the header of the document defining each “gaiji” character.
 
-As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](/menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
+As can be seen throughout the chapters in this handbook, we use the tested and tried mechanism of character entities for the large number of non-standard characters. These entities will be introduced in [ch. 5](/handbook/v3/ch5), and an abundance of them will be found in e.g. [ch. 6](/handbook/v3/ch6). For Menota files, it remains the fastest and simplest option of encoding non-standard characters. As stated above, these characters are defined in a single document, the text file called [menota-entities.txt](/ent/menota-entities.txt). Like the schemas needed for the validation of the Menota file, this text file is located at the Menota repository, presently held at the University Library in Bergen. If a new entity is added to this file, it can immediately be used by all Menota XML files without any further declarations &ndash; for the `&ocurl;{:xml}` entity, for example, only a single line is required:
 ```xml
 <!-- LATIN SMALL LETTER O WITH CURL --> <!ENTITY ocurl "&#xE7D3;">
 ```
@@ -518,7 +518,7 @@ As can be seen throughout the chapters in this handbook, we use the tested and t
 
 In this example, the entity is referring to a codepoint in the Private Use Area, which can be seen from its hexadecimal value, `E7D3`. If this character at a later stage is admitted into the official Unicode Standard (and that has indeed happened with a number of the Medieval Nordic characters) one only has to change the hexadecimal value in this line, and it will be applicable to all Menota XML files.
 
-The [menota-entities.txt](/menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/D_schemas#secD.1.1) below. 
+The [menota-entities.txt](/ent/menota-entities.txt) file can be downloaded in [app. D.1.1 (2)](/handbook/v3/D_schemas#secD.1.1) below. 
 
 ## 2.6 The Text Encoding Initiative and TEI conformant schemas [#sec2.6]
 
