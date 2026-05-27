@@ -26,6 +26,8 @@ schema="legacy/schema-menota"
 rm -rf public/legacy
 rm -rf public/archive
 rm -rf public/old_extensions_files
+rm -f public/*.txt
+rm -f public/*.ent
 
 # Create directories for legacy data
 mkdir -p public/legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}
@@ -45,6 +47,11 @@ cp -r $schema/archive public
 ## old extensions files
 echo "Populating '${pwd}/public/old_extensions_files' ..."
 cp -r $schema/old_extensions_files public
+
+## Entities
+echo "Populating '${pwd}/public/ent' ..."
+cp $schema/*.txt public/ent
+cp $schema/*.ent public/ent
 
 # Populate updatable files
 
