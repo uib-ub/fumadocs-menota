@@ -59,6 +59,14 @@ cp $schema/*.ent public/ent
 echo "Populating '${pwd}/public/dtd' ..."
 cp -r $schema/*.dtd public/dtd
 
+## RNG
+echo "Populating '${pwd}/public/rng' ..."
+cp -r $schema/*.rng public/rng
+
+## XML
+echo "Populating '${pwd}/public/xml' ..."
+cp -r $schema/*.xml public/xml
+
 # Populate updatable files
 
 ## Documents
