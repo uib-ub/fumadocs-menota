@@ -34,6 +34,14 @@ const config = {
       {
         source: '/legacy/documents/editorial-board/:path*.jpg',
         destination: '/images/:path*.jpg'
+      },
+      {
+        source: '/:file.ent',
+        destination: '/ent/:file.ent'
+      },
+      {
+        source: '/:file.txt',
+        destination: '/ent/:file.txt'
       }
     ];
   },

@@ -26,11 +26,10 @@ schema="legacy/schema-menota"
 rm -rf public/legacy
 rm -rf public/archive
 rm -rf public/old_extensions_files
-rm -f public/*.txt
-rm -f public/*.ent
+rm -rf public/ent
 
 # Create directories for legacy data
-mkdir -p public/legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}
+mkdir -p public/{ent,legacy/{handbook/v1,documents/{council,depo,editorial-board,statutes}}}
 
 # Populate legacy html
 echo "Populating '${pwd}/public/legacy' ..."
