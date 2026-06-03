@@ -13,6 +13,10 @@ changeLog:
    author: Robert K. Paulsen
    changes:
     - Updated links.
+ - date: 2026-06-03
+   author: Tarrin Wills
+   changes:
+    - Major changes to structure
 ---
 
 # Medieval Nordic Text Archive (Menota)
@@ -26,7 +30,7 @@ archive will contain texts in the Nordic languages as well as in Latin. There ar
 Menota (see bottom of the page) and new members are welcome to join the network. Since its founding 
 in 2001 and until the end of 2022, Menota was led by Odd Einar Haugen at the University of Bergen. After him, Alex Speed 
 Kjeldsen at the University of Copenhagen took over. Since 16 May 2025, Beeke Stegmann, Árni Magnússon 
-Institute for Icelandic Studies, has been the chairman.
+Institute for Icelandic Studies, has been the chair.
 
 ---
 
@@ -45,33 +49,23 @@ Institute for Icelandic Studies, has been the chairman.
 
 <InlineImage src='/images/N-initial.gif'/>
 
-Menota can now offer almost 100 Medieval Nordic texts (a total of over 2 million words), several of 
-which are fully lemmatised. The majority of the texts are Old Icelandic or Old Norwegian, but there 
-are also some Old Swedish texts and a couple of Old Danish ones. Latin texts (from the Nordic 
-countries) are most welcome. A catalogue with full search facilities was opened on 29 June 2007.
+Menota now offers almost 100 medieval Nordic texts, comprising more than 2 million words,
+several of them fully lemmatised. Most are Old Icelandic or Old Norwegian,
+but the collection also includes Old Swedish, Old Danish, and Latin texts from the Nordic countries.
+A searchable catalogue was opened on 29 June 2007.
+The texts are encoded on one or more levels, primarily diplomatic (Dipl), with some also
+available in facsimile (Facs) or normalised (Norm) form. These levels are indicated in the catalogue,
+and the texts can be accessed by clicking the file name.
 
-The texts have been encoded on one or more levels. The most widely used level is the diplomatic 
-level (as seen in many Old Norse editions), while some texts have also been encoded on a facsimile 
-level (i.e. in a very close transcription) and some on a normalised level (as in the Íslenzk 
-fornrit series). These levels are specified under **Facs**, **Dipl** and **Norm** in the 
-catalogue. By clicking the file name in the second column of the catalogue, you will be able to 
-read the text on one or more levels, depending on how many levels have been encoded.
+- [Menota archive](https://clarino.uib.no/menota/catalogue/menota)
+- [Andre arkiver](/other/archives)
 
-The archive also contains around 180 charters (diplomas) in Norwegian. All charters up to and 
-including 1310 is included in this selection, as well as a few younger ones.
-
-Finally, the archive contains a selection of 100 Norwegian inscriptions in the younger runes.
-
-- [Menota main archive](https://clarino.uib.no/menota/catalogue/menota)
-- [Menota charter archive](https://clarino.uib.no/menota/catalogue/menota-diploma)
-- [Menota runic inscription archive](https://clarino.uib.no/menota/catalogue/menota-rune)
-
-Arkivet er bygd i applikasjonen [Corpuscle](https://clarino.uib.no/korpuskel/home) ved Clarino 
+The archive is built in the [Corpuscle](https://clarino.uib.no/korpuskel/home) application at Clarino
 Bergen Center, UiB.
 
-Se våre [User guides](https://clarino.uib.no/menota/documentation/menota-user-guides) for en 
-forklaring på innholdet av katalogen og visningen av tekstene. Her får man også informasjon om de 
-tekstkritiske tegn som er brukt, og hvordan man kan søke i tekstene.
+See our [User guides](https://clarino.uib.no/menota/documentation/menota-user-guides) for an
+explanation of the content of the archive and display of texts. Here there is also information
+about the text-critical signs used and how to search the texts.
 
 ---
 
@@ -86,11 +80,11 @@ been the general editor of the handbook up to an including version 3.0. So far, 
 textual scholars from Iceland, Norway, Sweden, Denmark and Germany have contributed to the 
 handbook.
 
-Version 4.0 is presently in preparation and has Beeke Stegmann as the general editor. In addition, 
-there will be a number of chapter authors, as in earlier versions of the handbook.
+Several supplements to version 3 (originally conceived as version 4) are being prepared under the
+general editorship of Beeke Stegmann.
 
 - [The Menota Handbook v. 3.0](/handbook/v3) (the latest complete version, published 12 December 2019)
-- [Menotas håndbok v. 4.0 β](/handbook/v4) (in preparation, so far a few chapters have been published in draft)
+- [Supplements to Menotas håndbok v. 3](/handbook/v4) (in preparation)
 
 Older versions: [The Menota Handbook from v. 1.0 onwards](/handbook).
 
@@ -98,77 +92,98 @@ Older versions: [The Menota Handbook from v. 1.0 onwards](/handbook).
 
 ---
 
-## Translations
+## Other resources
 
-<InlineImage src='/images/oversettelse-logo.gif'/>
+<Cards>
+  <Card
+    title="Other archives"
+    href="/other/archives"
+    description={`
+      Menota’s Corpuscle application hosts other archives: a selection of around 100 Norwegian charters,
+      a selection of 100 runic inscriptions in the younger futhark, and resources in Italian.
+    `}
+  />
+  <Card
+    title="Menotec"
+    href="/other/menotec"
+    description={`
+      Menotec was an infrastructure project funded by the Norwegian Research Council (2010-2012)
+with the aim of transcribing and annotating a corpus of Old Norwegian texts. The transcribed texts
+have been (and will be) published in the Medieval Nordic Text Archive, while the annotated texts
+have been added to the treebank of the PROIEL project, as well as being made accessible through the
+INESS portal.
+    `}
+  />
+  <Card
+    title="Oversettelser - frittstående"
+    href="/other/translations"
+    description={`
+      Menota hosts freestanding translations including for those otherwise published in the archive,
+      including _Jóns saga helga_ and _Niðrstigningar saga_, with the hope of more.
+      The translations will be published in PDF with open CC licenses.
+    `}
+  />
+  <Card
+    title="Oversettelser - parallelle"
+    href="/other/parallel-translations"
+    description={`
+      Menota hosts parallel translations of some texts in the archive, particularly of the
+      hosted charter and runic archives.
+    `}
+  />
+  <Card
+    title="Lexicographic resources"
+    href="/other/dictionaries"
+    description={`
+      Several dictionaries of medieval Nordic languages are available on the internet.
+      These are in different formats and interfaces, but represent extremely useful resources.
+    `}
+  />
+  <Card
+    title="Special characters (MUFI)"
+    href="https://mufi.info"
+    description={`
+      MMany texts in Menota contain a number of special characters, especially at the facsimile textual
+level. Menota strives to align with the recommendations of the Medieval Unicode Font Inititative, which offers
+an extensive overview of relevant special characters, and from which several free fonts with these
+characters can be downloaded.
+    `}
+  />
+</Cards>
 
-Menota now publishes translations of Medieval Nordic texts. At first, two texts are offered, 
-_Jóns saga helga_ and _Niðrstigningar saga_, but we soon hope to welcome more translations in the 
-archive.
-
-The translations will be published in open [CC licenses](https://creativecommons.org/licenses/). 
-For the time being, they will be published in PDF.
-
-<br/>
-
-- [Translations]() (katalog opprettet 1. oktober 2016)
 
 ---
 
-## Menotec project
+## Cooperating institutions
 
-<InlineImage src='/images/S-initial.gif'/>
+#### Denmark
+- [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk)
+  (including [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/)
+  and [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
+- [Det Kongelige Bibliotek](https://www.kb.dk/)
+- [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
 
-Menotec was an infrastructure project funded by the Norwegian Research Council (2010&ndash;2012) 
-with the aim of transcribing and annotating a corpus of Old Norwegian texts. The transcribed texts 
-have been (and will be) published in the Medieval Nordic Text Archive, while the annotated texts 
-have been added to the treebank of the PROIEL project, as well as being made accessible through the 
-INESS portal. [More.](/en/menotec)
-<br/>
+#### Iceland
+- [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
+- [Háskóli Íslands](https://hi.is/)
 
----
+#### Norway
+- [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
+- [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/)
+  (including [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
+- [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
+- [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
+- [Nasjonalbiblioteket](https://www.nb.no/)
 
-## Lexicographical resources
-
-Several dictionaries of Medieval Nordic languages are accessible on the web. They are presently in 
-different formats and the interfaces are not uniform, but they do represent an extremely useful 
-resource:
-
-- [Fritzner’s dictionary](https://www.dok.hf.uio.no/perl/search/search.cgi?appid=86&tabid=1275) {/* link is dead */} 
-  (Icelandic and Norwegian) 
-- [Söderwall](https://spraakbanken.gu.se/karp/?mode=soederwall) and [Schlyter](https://spraakbanken.gu.se/karp/?mode=schlyter)’s dictionaries (Swedish) 
-    &ndash; queries in _Fornsvensk lexikalisk databas_
-- [Kalkar’s dictionary](https://www.hist.uib.no/kalkar/) (Danish) 
-    &ndash; scanned images of the printed dictionary (launched in 2000)
-- [Kalkar’s dictionary](https://kalkarsordbog.dk/) (Danish) 
-    &ndash; full search capabilities (launched in 2017) 
-
-A project headed by Hans Fix, University of Greifswald, has made Walter Baetke’s 
-_Wörterbuch zur altnordischen Prosaliteratur_ accessible in an updated version for free usage. The 
-dictionary can be downloaded as a PDF file (75 MB). A fast connection is thus essential.
-
-- [Walter Baetke’s dictionary digital](hhttps://epub.ub.uni-greifswald.de/frontdoor/deliver/index/docId/7761/file/baetke_digital.pdf)
-
-Les også om igangværende ordboksprosjekter:
-
-- [Ordbog over det norrøne prosasprog](https://onp.ku.dk) (Icelandic and Norwegian)
-- [Gammeldansk ordbog](https://dsl.dk/diverse/sprog/ordboger-og-sprogteknologi/gammeldansk-ordbog) 
-    &ndash; presentation of the dictionary project
-- [Gammeldansk ordbog](https://gammeldanskordbog.dk/) &ndash; beta version of the dictionary with 
-    search capabilities
+#### Sweden
+- [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
+- [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
+- [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
+- [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
+- [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
+- [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
 
 ---
-
-## Special characters
-
-Many texts in Menota contain a number of special characters, especially at the facsimile textual 
-level. Menota adheres to the recommendations of the Medieval Unicode Font Inititative, which offers 
-an extensive overview of relevant special characters, and from which several free fonts with these 
-characters can be downloaded:
-
-- [Medieval Unicode Font Initiative](https://www.mufi.info/)
-
---- 
 
 ## Organisation
 
@@ -225,36 +240,5 @@ license):
 
 - [Depositor license](/documents/depo/1-2) - v. 1.2 (8. September 2003)
 - [Depositor license](/documents/depo/1-3) - v. 1.3 (1. September 2015)
-
----
-
-## Cooperating institutions
-
-#### Denmark
-- [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk) 
-  (including [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/) 
-  and [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
-- [Det Kongelige Bibliotek](https://www.kb.dk/)
-- [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
-
-#### Iceland
-- [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
-- [Háskóli Íslands](https://hi.is/)
-
-#### Norway
-- [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
-- [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/) 
-  (including [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
-- [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
-- [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
-- [Nasjonalbiblioteket](https://www.nb.no/)
-
-#### Sweden
-- [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
-- [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
-- [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
-- [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
-- [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
-- [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
 
 ---
