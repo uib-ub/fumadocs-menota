@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+h1, h2 {
+    color: red;
+}
+
+div#intro {
+    @apply 
+        bg-[url('/images/nordr.jpeg')]
+        p-10 place-content-end min-h-150
+        rounded-2xl;
+    background-size: cover;
+}
+
+div#intro h1 {
+    font-size: x-large;
+    color: white;
+}
+
+div#intro p {
+    margin-top: 2em;
+    width: 35%;
+    color: white;
+    font-size: 14px; 
+}
