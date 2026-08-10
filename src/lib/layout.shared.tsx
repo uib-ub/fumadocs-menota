@@ -1,7 +1,6 @@
 import { defineI18nUI } from 'fumadocs-ui/i18n';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { i18n } from '@/lib/i18n';
-import Image from 'next/image';
 
 // fill this with your actual GitHub info, for example:
 export const gitConfig = {
