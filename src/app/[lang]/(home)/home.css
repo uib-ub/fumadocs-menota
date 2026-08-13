@@ -1,1 +1,33 @@
 @import 'tailwindcss';
+
+ul, ol {
+    @apply my-3 text-sm text-slate-800;
+}
+
+p {
+    @apply text-slate-800;
+}
+
+#hero p {
+    @apply text-slate-100;
+}
+
+h3 {
+    @apply text-slate-800 font-bold text-xl;
+}
+
+a {
+    @apply hover:text-green-800;
+}
+
+p a, li a {
+    @apply underline decoration-green-800;
+}
+
+.card p, li {
+    @apply text-left;
+}
+
+[id] {
+    scroll-margin-top: 150px;
+}
