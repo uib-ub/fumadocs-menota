@@ -6,6 +6,7 @@ import DisplayFrame from '@/components/display-frame';
 import EmbeddedPage from '@/components/embedded-page';
 import Figure from '@/components/figure';
 import Glyph from '@/components/glyph';
+import Hero from '@/components/hero';
 import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
 import Quote from '@/components/quote';
@@ -26,6 +27,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     EmbeddedPage,
     Figure,
     Glyph,
+    Hero,
     HI,
     Image,
     InlineImage,

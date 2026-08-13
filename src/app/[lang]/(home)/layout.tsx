@@ -10,7 +10,7 @@ export default async function Layout({ params, children }: LayoutProps<'/[lang]'
       className='min-h-screen flex'
       {...base}
     >
-      <div className='homepage m-10'>
+      <div className='homepage'>
         {children}
       </div>
     </HomeLayout>
