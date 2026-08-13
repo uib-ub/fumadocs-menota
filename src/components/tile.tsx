@@ -6,7 +6,7 @@ export default function Tile({ title, image, children }: {
     children: React.ReactNode 
 }) {
     return (
-        <div className="m-10 w-3/5 min-w-170 rounded-3xl p-10 bg-white/60">
+        <div className="m-10 w-3/5 min-w-170 rounded-3xl p-10 bg-white/60 backdrop-blur-xs">
             <h2 id={title} className="mb-5 text-3xl font-bold text-green-800">{title}</h2>
             <div className="flex flex-row">
                 {image ? <TileImage src={image}/> : null}
