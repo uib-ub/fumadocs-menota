@@ -4,6 +4,10 @@ author:
  - Robert K. Paulsen
  - Beeke Stegmann
 changeLog:
+ - date: 2026-08-13
+   author: Robert K. Paulsen
+   changes:
+    - Introduced <Hero> and <Tile>.
  - date: 2026-04-17
    author: Robert K. Paulsen
    changes:
@@ -20,8 +24,7 @@ changeLog:
     - Major changes to structure
 ---
 
-# Arkiv for nordiske middelaldertekster (Menota)
-
+<Hero>
 Menota er et nettverk av ledende nordiske arkiver, biblioteker og institutter som arbeider med 
 middelaldertekster og håndskriftsfaksimiler. Målet for Menota er å bevare, formidle og publisere 
 middelaldertekster i digital form, og å utvikle de standarder som kreves for dette. Arkivet 
@@ -29,24 +32,18 @@ omfatter tekster på de nordiske folkespråkene og på latin. Det er nå 16 medl
 nederst på siden), og nye medlemmer ønskes velkommen. Siden opprettelsen i 2001 ble arkivet ledet av Odd Einar Haugen 
 ved Universitetet i Bergen frem til utgangen av 2022, da Alex Speed Kjeldsen, Københavns Universitet overtok ledelsen. 
 Fra 16. mai 2025 overtok Beeke Stegmann, Stofnun Árna Magnússonar í íslenskum fræðum, som ny leder.
+</Hero>
 
----
-
-## Nyheter
-
+<Tile title="Nyheter">
 - [Hele _Möðruvallabók_ (AM 132 fol) er nå publisert i Menota](/news/ML_2025-01-10) (10.01.2025).
 - [Utgaven av eddadiktene i _Editiones Arnamagnæanæ Electronicæ_ er fullført](/news/ML_2024-12-03) (03.12.2024).
 - [Til minne om Rune Kyrkjebø](/news/ML_2024-01-18) (18.01.2024).
 - [Arkivet har modtaget de første danske tekster &ndash; tilmed i runeskrift](/news/ML_2023-02-25) (25.02.2023).
 - [Full morfologisk og syntaktisk annotasjon av _Konungs skuggsjá_](/news/ML_2022-05-31) (31.05.2022).
 - [Riksbankens Jubileumsfond gir generøs støtte til digitaliseringsprosjekt](/news/ML_2021-10-29) (29.10.2021).
+</Tile>
 
----
-
-## Tekstarkiv
-
-<InlineImage src='/images/N-initial.gif'/>
-
+<Tile title="Tekstarkiv" image="/images/N-initial.gif">
 Tekstarkivet i Menota inneholder nær 100 håndskriftstekster og -fragmenter med over 2 millioner ord.
 Tekstene er kodet på ulike nivåer, først og fremst diplomatarisk (Dipl), men enkelte finnes også i
 faksimilert (Facs) eller normalisert form (Norm). De fleste tekstene er på gammelislandsk eller
@@ -63,13 +60,9 @@ Bergen Center, UiB.
 Se våre [User guides](https://clarino.uib.no/menota/documentation/menota-user-guides) for en 
 forklaring på innholdet av katalogen og visningen av tekstene. Her får man også informasjon om de 
 tekstkritiske tegn som er brukt, og hvordan man kan søke i tekstene.
+</Tile>
 
----
-
-## Håndbok
-
-<InlineImage src='/images/R-initial.gif'/>
-
+<Tile title="Håndbok" image="/images/R-initial.gif">
 _The Menota handbook_ tilbyr detaljerte retningslinjer for koding av middelalderhåndskrifter i XML, 
 alle nødvendige verktøy for dette, og en praktisk veiledning (“tutorial”) for nybegynnere på 
 feltet. Den er kompatibel med versjon P5 av [TEI Guidelines](https://tei-c.org/guidelines/p5/). 
@@ -86,141 +79,100 @@ med Beeke Stegmann som hovedredaktør.
 Eldre versjoner: [Menota Handbook fra og med v. 1.0](/handbook).
 
 - [Handboksredaksjon](/handbook/editorial-board)
+</Tile>
 
----
-
-## Andre ressurser
-
-<Cards>
-  <Card
-    title="Andre arkiver"
-    href="/other/archives"
-    description={`
+<Tile title="Andre ressurser">
+  <Cards>
+    <Card title="Andre arkiver" href="/other/archives">
       Menotas Corpuscle-applikation er vert for andre arkiver: et utvalg på rundt 180 norskspråklige diplomer,
       et utvalg på 100 norske runeinnskrifter i det yngre runealfabetet, og ressourcer på italiensk.
-    `}
-  />
-  <Card
-    title="Menotec"
-    href="/en/other/menotec"
-    description={`
+    </Card>
+    <Card title="Menotec" href="/en/other/menotec">
       Menotec var et infrastrukturprosjekt finansiert av Norges forskningsråd (2010-2012) for å
-utføre transkripsjon og annotasjon av et større korpus gammelnorske tekster. De transkriberte
-tekstene er blitt (og vil bli) publisert i Menota.
-    `}
-  />
-  <Card
-    title="Oversettelser - frittstående"
-    href="/other/translations"
-    description={`
+      utføre transkripsjon og annotasjon av et større korpus gammelnorske tekster. De transkriberte
+      tekstene er blitt (og vil bli) publisert i Menota.
+    </Card>
+    <Card title="Oversettelser - frittstående" href="/other/translations">
       Menota er vert for frittstående oversettelser, også for tekster som ellers ikke er utgitt i
       arkivet. I første omgang dreier det seg om to tekster, _Jóns saga helga_ og _Niðrstigningar saga_,
       men etter hvert håper vi at flere ønsker å legge ut sine oversettelser i arkivet.
       Oversettelsene vil bli publisert i PDF med åpent tilgjengelige CC-lisenser.
-    `}
-  />
-  <Card
-    title="Oversettelser - parallelle"
-    href="/other/parallel-translations"
-    description={`
+    </Card>
+    <Card title="Oversettelser - parallelle" href="/other/parallel-translations">
       Menota er vert for parallele oversettelser av flere av tekstene i arkivet,
       særlig av diplomer og runeinnskrifter (i hovedarkivet, diplomarkivet og runearkivet).
-    `}
-  />
-  <Card
-    title="Ordboksressurser"
-    href="/other/dictionaries"
-    description={`
+    </Card>
+    <Card title="Ordboksressurser" href="/other/dictionaries">
       Flere ordbøker over nordiske middelalderspråk er nå tilgjengelige på nettet. Foreløpig ligger de
-ute i ulike formater og har ulike grensesnitt, men representerer allerede en svært verdifull
-ressurs.
-    `}
-  />
-  <Card
-    title="Spesialtegn (MUFI)"
-    href="https://mufi.info"
-    description={`
+      ute i ulike formater og har ulike grensesnitt, men representerer allerede en svært verdifull
+      ressurs.
+    </Card>
+    <Card title="Spesialtegn (MUFI)" href="https://mufi.info">
       Mange av tekstene i Menota inneholder en lang rekke spesialtegn, særlig på det faksimilære
-tekstnivået. Menota følger anbefalingene i Medieval Unicode Font Inititative (MUFI), hvor man kan finne en
-utførlig oversikt over aktuelle spesialtegn, og hvor man også kan laste ned gratisfonter med slike
-tegn.
-    `}
-  />
-</Cards>
+      tekstnivået. Menota følger anbefalingene i Medieval Unicode Font Inititative (MUFI), hvor man kan finne en
+      utførlig oversikt over aktuelle spesialtegn, og hvor man også kan laste ned gratisfonter med slike
+      tegn.
+    </Card>
+  </Cards>
+</Tile>
 
----
+<Tile title="Samarbeidende institusjoner">
+  <Cards>
+    <Card title="Danmark">
+      - [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk)
+        (herunder [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/)
+        og [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
+      - [Det Kongelige Bibliotek](https://www.kb.dk/)
+      - [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
+    </Card>
+    <Card title="Island">
+      - [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
+      - [Háskóli Íslands](https://hi.is/)
+    </Card>
+    <Card title="Norge">
+      - [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
+      - [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/)
+        (herunder [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
+      - [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
+      - [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
+      - [Nasjonalbiblioteket](https://www.nb.no/)
+    </Card>
+    <Card title="Sverige">
+      - [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
+      - [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
+      - [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
+      - [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
+      - [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
+      - [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
+    </Card>
+  </Cards>
+</Tile>
 
-## Samarbeidende institusjoner
+<Tile title="Organisasjon">
 
-### Danmark
-- [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk)
-  (herunder [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/)
-  og [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
-- [Det Kongelige Bibliotek](https://www.kb.dk/)
-- [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
+  - [Innkalling til neste rådsmøtet](/documents/council/notice)
 
-### Island
-- [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
-- [Háskóli Íslands](https://hi.is/)
-
-### Norge
-- [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
-- [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/)
-  (herunder [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
-- [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
-- [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
-- [Nasjonalbiblioteket](https://www.nb.no/)
-
-### Sverige
-- [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
-- [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
-- [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
-- [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
-- [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
-- [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
-
----
-
-## Organisasjon
-
-- [Innkalling til neste rådsmøtet](/documents/council/notice)
-
-<Cards>
-  <Card 
-    title="Stiftelse" 
-    href="/documents/council/meetings/2001-09-10"
-    description={`
+  <Cards>
+    <Card title="Stiftelse" href="/documents/council/meetings/2001-09-10">
       Menota ble opprettet 10.09.2001 på et møte i Oslo med representanter for sentrale nordiske 
       utgivelsesinstitusjoner.
-    `}
-  />
-  <Card 
-    title="Vedtekter"
-    href="/documents/statutes"
-    description={
-      `På rådsmøtet i København 14.09.2002 ble det lagt frem forslag til vedtekter for rådet. Disse 
+    </Card>
+    <Card title="Vedtekter" href="/documents/statutes">
+      På rådsmøtet i København 14.09.2002 ble det lagt frem forslag til vedtekter for rådet. Disse 
       har sirkulert og ble vedtatt på rådsmøtet i Reykjavík 06.09.2003.
-    `
-  }/>
-  <Card 
-    title="Råd" 
-    href="/documents/council" 
-    description={`
+    </Card>
+    <Card title="Råd" href="/documents/council">
       Det er opprettet et rådgivende organ for arkivet. Hver institusjon kan ha én representant i 
       rådet, men om ønskelig kan det gis møte- og talerett til flere representanter. Ulike 
       institutter eller avdelinger ved samme universitet blir regnet som separate institusjoner.
-    `}/>
-  <Card 
-    title="Styre" 
-    href="/documents/board"
-    description="Rådet oppnevner et styre for en periode på tre år av gangen."
-  />
-</Cards>
+    </Card>
+    <Card title="Styre" href="/documents/board">
+      Rådet oppnevner et styre for en periode på tre år av gangen.
+    </Card>
+  </Cards>
+</Tile>
 
----
-
-## Deponeringsavtale
-
+<Tile title="Deponeringsavtale">
 Menota har nå åpnet for å ta imot tekster fra andre institusjoner eller forskere. Ta kontakt med en 
 av styremedlemmene i rådet (se lengre oppe i denne spalten). Det er utarbeidet en avtale for hvilke 
 rettigheter som tekstleverandørene og arkivet har, basert på en tilsvarende avtale for Oxford Text 
@@ -231,5 +183,4 @@ ligger her):
 
 - [Deponeringsavtale](/documents/depo/1-2) - v. 1.2 (8. sept. 2003)
 - [Deponeringsavtale](/documents/depo/1-3) - v. 1.3 (1. sept. 2015)
-
----
+</Tile>

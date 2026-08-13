@@ -1,14 +1,17 @@
 import { getPageImage, source } from '@/lib/source';
 import Image from 'next/image';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 
-export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/[lang]/documents/[[...slug]]'>) {
   const { lang, slug } = await props.params;
-  const page = source.getPage(slug, lang);
+  const page = source.getPage(["documents", ...slug || []], lang);
+  console.log(`lang: '${lang}'`);
+  console.log(slug);
+  console.log(page);
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
@@ -107,9 +110,9 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/[lang]/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/[lang]/documents/[[...slug]]'>): Promise<Metadata> {
   const { slug, lang } = await props.params;
-  const page = source.getPage(slug, lang);
+  const page = source.getPage(["documents", ...slug || []], lang);
   if (!page) notFound();
 
   return {

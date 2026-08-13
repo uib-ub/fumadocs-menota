@@ -4,6 +4,10 @@ author:
  - Robert K. Paulsen
  - Beeke Stegmann
 changeLog:
+ - date: 2026-08-13
+   author: Robert K. Paulsen
+   changes:
+    - Introduced <Hero> and <Tile>.
  - date: 2026-04-17
    author: Robert K. Paulsen
    changes:
@@ -19,8 +23,7 @@ changeLog:
     - Major changes to structure
 ---
 
-# Medieval Nordic Text Archive (Menota)
-
+<Hero>
 Menota is a network of leading Nordic archives, libraries and research departments working with 
 medieval texts and manuscript facsimiles. The aim of Menota is to preserve and publish medieval 
 texts in digital form and to adapt and develop encoding standards necessary for this work. The 
@@ -29,24 +32,18 @@ Menota (see bottom of the page) and new members are welcome to join the network.
 in 2001 and until the end of 2022, Menota was led by Odd Einar Haugen at the University of Bergen. After him, Alex Speed 
 Kjeldsen at the University of Copenhagen took over. Since 16 May 2025, Beeke Stegmann, Árni Magnússon 
 Institute for Icelandic Studies, has been the chair.
+</Hero>
 
----
-
-## News (in Norwegian/Danish)
-
+<Tile title="News (in Norwegian/Danish)">
 - [Hele _Möðruvallabók_ (AM 132 fol) er nå publisert i Menota](/news/ML_2025-01-10) (10.01.2025).
 - [Utgaven av eddadiktene i _Editiones Arnamagnæanæ Electronicæ_ er fullført](/news/ML_2024-12-03) (03.12.2024).
 - [Til minne om Rune Kyrkjebø](/news/ML_2024-01-18) (18.01.2024).
 - [Arkivet har modtaget de første danske tekster &ndash; tilmed i runeskrift](/news/ML_2023-02-25) (25.02.2023).
 - [Full morfologisk og syntaktisk annotasjon av _Konungs skuggsjá_](/news/ML_2022-05-31) (31.05.2022).
 - [Riksbankens Jubileumsfond gir generøs støtte til digitaliseringsprosjekt](/news/ML_2021-10-29) (29.10.2021).
+</Tile>
 
----
-
-## Text Archive
-
-<InlineImage src='/images/N-initial.gif'/>
-
+<Tile title="Text Archive" image="/images/N-initial.gif">
 Menota now offers almost 100 medieval Nordic texts, comprising more than 2 million words,
 several of them fully lemmatised. Most are Old Icelandic or Old Norwegian,
 but the collection also includes Old Swedish, Old Danish, and Latin texts from the Nordic countries.
@@ -64,13 +61,9 @@ Bergen Center, UiB.
 See our [User guides](https://clarino.uib.no/menota/documentation/menota-user-guides) for an
 explanation of the content of the archive and display of texts. Here there is also information
 about the text-critical signs used and how to search the texts.
+</Tile>
 
----
-
-## Encoding guidelines
-
-<InlineImage src='/images/R-initial.gif'/>
-
+<Tile title="Encoding guidelines" image="/images/R-initial.gif">
 _The Menota Handbook_ offers detailed advice on the encoding of medieval manuscripts in XML, all 
 necessary schemas for doing this, and a full tutorial for first-time encoders. It is compatible 
 with version P5 of the [TEI Guidelines](https://tei-c.org/guidelines/p5/). Odd Einar Haugen has 
@@ -87,142 +80,97 @@ general editorship of Beeke Stegmann.
 Older versions: [The Menota Handbook from v. 1.0 onwards](/handbook).
 
 - [Handbook contributors](/handbook/editorial-board)
+</Tile>
 
----
-
-## Other resources
-
-<Cards>
-  <Card
-    title="Other archives"
-    href="/other/archives"
-    description={`
+<Tile title="Other resources">
+  <Cards>
+    <Card title="Other archives" href="/other/archives">
       Menota’s Corpuscle application hosts other archives: a selection of around 100 Norwegian charters,
       a selection of 100 runic inscriptions in the younger futhark, and resources in Italian.
-    `}
-  />
-  <Card
-    title="Menotec"
-    href="/en/other/menotec"
-    description={`
+    </Card>
+    <Card title="Menotec" href="/en/other/menotec">
       Menotec was an infrastructure project funded by the Norwegian Research Council (2010-2012)
-with the aim of transcribing and annotating a corpus of Old Norwegian texts. The transcribed texts
-have been (and will be) published in the Medieval Nordic Text Archive.
-    `}
-  />
-  <Card
-    title="Freestanding translations"
-    href="/en/other/translations"
-    description={`
+      with the aim of transcribing and annotating a corpus of Old Norwegian texts. The transcribed texts
+      have been (and will be) published in the Medieval Nordic Text Archive.
+    </Card>
+    <Card title="Freestanding translations" href="/en/other/translations">
       Menota hosts freestanding translations including for those otherwise published in the archive,
       including _Jóns saga helga_ and _Niðrstigningar saga_, with the hope of more.
       The translations will be published in PDF with open CC licenses.
-    `}
-  />
-  <Card
-    title="Parallel translations"
-    href="/en/other/parallel-translations"
-    description={`
+    </Card>
+    <Card title="Parallel translations" href="/en/other/parallel-translations">
       Menota hosts parallel translations of some texts in the archive, particularly of the
       hosted charter and runic archives.
-    `}
-  />
-  <Card
-    title="Lexicographic resources"
-    href="/en/other/dictionaries"
-    description={`
+    </Card>
+    <Card title="Lexicographic resources" href="/en/other/dictionaries">
       Several dictionaries of medieval Nordic languages are available on the internet.
       These are in different formats and interfaces, but represent extremely useful resources.
-    `}
-  />
-  <Card
-    title="Special characters (MUFI)"
-    href="https://mufi.info"
-    description={`
+    </Card>
+    <Card title="Special characters (MUFI)" href="https://mufi.info">
       Many texts in Menota contain a number of special characters, especially at the facsimile textual
-level. Menota strives to align with the recommendations of the Medieval Unicode Font Inititative, which offers
-an extensive overview of relevant special characters, and from which several free fonts with these
-characters can be downloaded.
-    `}
-  />
-</Cards>
+      level. Menota strives to align with the recommendations of the Medieval Unicode Font Inititative, which offers
+      an extensive overview of relevant special characters, and from which several free fonts with these
+      characters can be downloaded.
+    </Card>
+  </Cards>
+</Tile>
 
+<Tile title="Cooperating institutions">
+  <Cards>
+    <Card title="Denmark">
+      - [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk)
+        (including [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/)
+        and [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
+      - [Det Kongelige Bibliotek](https://www.kb.dk/)
+      - [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
+    </Card>
+    <Card title="Iceland">
+      - [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
+      - [Háskóli Íslands](https://hi.is/)
+    </Card>
+    <Card title="Norway">
+      - [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
+      - [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/)
+        (including [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
+      - [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
+      - [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
+      - [Nasjonalbiblioteket](https://www.nb.no/)
+    </Card>
+    <Card title="Sweden">
+      - [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
+      - [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
+      - [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
+      - [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
+      - [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
+      - [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
+    </Card>
+  </Cards>
+</Tile>
 
----
+<Tile title="Organisation">
+  - [Notice of next council meeting]()
+  <Cards>
+      <Card title="Foundation" href="/documents/council/meetings/2001-09-10">
+        Menota was established on 10 September 2001 at a meeting in Oslo between major Nordic 
+        institutions.
+      </Card>
+      <Card title="Statutes" href="/documents/statutes">
+        The Menota statutes were passed at the council meeting in Reykjavík on 6 September 
+        2003.
+      </Card>
+      <Card title="Council" href="/documents/council">
+        The council is an advisory body in which each participating institution is represented 
+        by one member. Different departments or sections at the same university are recognised 
+        as individual institutions. In addition to the permanent members, other representatives 
+        may join the meeting at the discretion of the board.
+      </Card>
+      <Card title="Board" href="/documents/board">
+        The council appoints a board for a period of three years.
+      </Card>
+  </Cards>
+</Tile>
 
-## Cooperating institutions
-
-#### Denmark
-- [Institut for Nordiske Studier og Sprogvidenskab (NorS), Københavns Universitet](http://nors.ku.dk)
-  (including [Den Arnamagnæanske håndskriftsamling](https://nors.ku.dk/forskning/samlinger/haandskriftsamling/)
-  and [Ordbog over det norrøne prosasprog](https://onp.ku.dk/))
-- [Det Kongelige Bibliotek](https://www.kb.dk/)
-- [Det Danske Sprog- og Litteraturselskab](https://dsl.dk/)
-
-#### Iceland
-- [Stofnun Árna Magnússonar í íslenskum fræðum](https://www.arnastofnun.is/is)
-- [Háskóli Íslands](https://hi.is/)
-
-#### Norway
-- [Nasjonalarkivet](https://www.nasjonalarkivet.no/)
-- [Institutt for nordiske og lingvistiske studier, Universitetet i Oslo](https://www.hf.uio.no/iln/)
-  (including [Tekstlaboratoriet](https://www.hf.uio.no/iln/om/organisasjon/tekstlab/))
-- [Institutt for lingvistiske, litterære og estetiske studier, Universitetet i Bergen](https://www.uib.no/lle)
-- [Universitetsbiblioteket i Bergen](https://www.uib.no/ub)
-- [Nasjonalbiblioteket](https://www.nb.no/)
-
-#### Sweden
-- [Språkbanken, Göteborgs universitet](https://spraakbanken.gu.se/)
-- [Svenskt Diplomatarium, Riksarkivet](https://sok.riksarkivet.se/amnesomrade/medeltid/)
-- [Svenska fornskriftsällskapet](https://www.svenskafornskriftsallskapet.se/)
-- [Handskriftsenheten, Kungliga Biblioteket, Stockholm](https://www.kb.se/upptack-samlingarna/alla-vara-samlingar/handskrifter.html)
-- [Institutionen för svenska språket, Linnéuniversitetet](https://lnu.se/mot-linneuniversitetet/Organisation/fakulteten-for-konst-och-humaniora/mot-fakulteten/svenska/)
-- [Institutionen för nordiska språk, Uppsala universitet](https://www.uu.se/institution/nordiska/)
-
----
-
-## Organisation
-
-- [Notice of next council meeting]()
-
-<Cards>
-    <Card 
-        title="Foundation" 
-        href="/documents/council/meetings/2001-09-10"
-        description={`
-            Menota was established on 10 September 2001 at a meeting in Oslo between major Nordic 
-            institutions.
-        `}
-    />
-    <Card 
-        title="Statutes"
-        href="/documents/statutes"
-        description={`
-            The Menota statutes were passed at the council meeting in Reykjavík on 6 September 
-            2003.
-        `}
-    />
-    <Card 
-        title="Council" 
-        href="/documents/council" 
-        description={`
-            The council is an advisory body in which each participating institution is represented 
-            by one member. Different departments or sections at the same university are recognised 
-            as individual institutions. In addition to the permanent members, other representatives 
-            may join the meeting at the discretion of the board.
-        `}
-    />
-    <Card 
-        title="Board" 
-        href="/documents/board"
-        description="The council appoints a board for a period of three years."
-    />
-</Cards>
-
----
-
-## Depositor license
-
+<Tile title="Depositor license">
 Menota now welcomes texts from other institutions or individual researchers, but cannot presently 
 offer assistance in converting texts to XML. Please contact one of the board members (see above) if 
 you would like to deposit a text in the archive. We encourage potential depositors to read the 
@@ -236,5 +184,4 @@ license):
 
 - [Depositor license](/documents/depo/1-2) - v. 1.2 (8. September 2003)
 - [Depositor license](/documents/depo/1-3) - v. 1.3 (1. September 2015)
-
----
+</Tile>
