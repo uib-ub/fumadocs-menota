@@ -157,5 +157,48 @@ strong {
 }
 
 td .FIGURE {
-    margin: 0;
+    @apply m-0;
+}
+
+.docspage {
+    @apply bg-white dark:bg-black;
+}
+
+.docspage h1, h2, h3, h4, h5 {
+    @apply text-gray-500 dark:text-gray-300;
+}
+
+.docspage h1 {
+    @apply text-2xl;
+}
+
+.docspage h2 {
+    @apply text-xl;
+}
+
+.docspage h3 {
+    @apply text-lg;
+}
+
+.docspage h4 {
+    @apply text-base;
+}
+
+.docspage h5 {
+    @apply text-sm font-bold;
+}
+
+.docspage th {
+    @apply bg-blue-50 dark:bg-blue-950 text-gray-600 dark:text-gray-200;
+}
+
+.docspage td {
+    @apply bg-white dark:bg-black;
+}
+
+.docspage ol a, 
+.docspage p a, 
+.docspage td a, 
+.docspage ul a {
+    @apply text-blue-700 dark:text-orange-300;
 }
