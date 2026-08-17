@@ -20,13 +20,13 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
 
   return (
     <DocsPage 
+      toc={page.data.toc}
       breadcrumb={{enabled: false}}
       full={page.data.full} 
       className="docspage menota-main"
     >
       <div className='flex flex-wrap mb-5 dark:invert'>
-        <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
-        <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
+        <Image src='/images/Menota-banner-new.svg' alt='Menota banner' width={900} height={100}/>
       </div>
       <DocsBody>
         <MDX

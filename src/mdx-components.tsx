@@ -11,6 +11,7 @@ import Hero from '@/components/hero';
 import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
 import Quote from '@/components/quote';
+import Size from '@/components/size';
 import Tile from '@/components/tile';
 import UnderConstruction from '@/components/underconstruction';
 import { Att, E, Val } from '@/components/xml';
@@ -38,6 +39,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     LitItem,
     Link,
     Quote,
+    Size,
     Tile,
     UnderConstruction,
     Val,
