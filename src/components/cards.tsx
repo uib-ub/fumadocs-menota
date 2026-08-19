@@ -8,7 +8,7 @@ export function Card({ title, href, children }: {
     children: React.ReactNode 
 }) {
     return (
-        <a href={href || undefined}className="
+        <Frame href={href || undefined} className="
             card 
             rounded-xl border p-4
             bg-fd-card/80 text-fd-card-foregroundblock transition-colors 
@@ -17,6 +17,15 @@ export function Card({ title, href, children }: {
         ">
             <h3 className="mb-1 text-lg font-medium ">{title}</h3>
             <div>{children}</div>
-        </a>
+        </Frame>
     );
+}
+
+function Frame({ href, className, children }: {
+    href: string | undefined,
+    className: string,
+    children: React.ReactNode
+}) {
+    if (href) return <a href={href} className={className}>{children}</a>;
+    return <div className={className}>{children}</div>
 }
