@@ -5,31 +5,18 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import { getCustomPage } from '@/utils/utils';
+import Footer from '@/components/footer';
 
 export default async function Page(props: PageProps<'/[lang]/other/[[...slug]]'>) {
   const { lang, slug } = await props.params;
-  const page = source.getPage(["other", ...slug || []], lang);
+  const page = getCustomPage({ slug, lang, basePath: "other" })
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'old' | 'menota-main'
   } = (slug => {
     const route = slug?.join("/") || '';
-    if (slug && slug[0] == "handbook") {
-      switch (slug[1]) {
-        case "v1-0":
-        case "v1-1":
-          return { contentGroup: "html", contentStyle: "old" }
-        case "v2":
-          return { contentGroup: "hb2", contentStyle: "hb-new" };
-        case "v3":
-          return { contentGroup: "hb3", contentStyle: "hb-new" };
-        case "v4":
-          return { contentGroup: "hb4", contentStyle: "hb-new" };
-        default:
-          return { contentGroup: "main", contentStyle: "menota-main" };
-      }
-    }
     if (route == "documents/statutes/draft"
       || route.match(/^documents\/council\/members\/200[24]-200[36]$/)
       || route.match(/^documents\/depo\//)
@@ -50,31 +37,10 @@ export default async function Page(props: PageProps<'/[lang]/other/[[...slug]]'>
       {(() => {switch (contentGroup) {
         case "html":
           return;
-        case "hb2":
-          return (
-            <div className='dark:invert'>
-              <Image src='/images/hb2/handbook_2-0.gif' alt='Menota handbook 2.0' width={600} height={65}/>
-              <hr className='my-5 border-2 dark:border-gray-500'/>
-            </div>
-          );
-        case "hb3":
-        case "hb4":
-          return (
-            <div className='mb-5 border-b border-solid border-black pb-3'>
-              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
-                Menota Handbook {contentGroup == "hb3" ? "3.0" : "4.0 β"}
-              </div>
-              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
-                Guidelines for the electronic encoding of<br/>
-                Medieval Nordic primary sources
-              </div>
-            </div>
-          );
         default:
           return (
             <div className='flex flex-wrap mb-5 dark:invert'>
-              <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
-              <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
+              <Image src='/images/Menota-banner-new.svg' alt='Menota banner' width={900} height={100}/>
             </div>
           );
       }})()}
@@ -86,6 +52,7 @@ export default async function Page(props: PageProps<'/[lang]/other/[[...slug]]'>
           })}
         />
       </DocsBody>
+      <Footer log={page.data.changeLog} lang={lang}/>
     </DocsPage>
   );
 }

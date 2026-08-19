@@ -3,8 +3,11 @@ import Image from 'next/image';
 import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/docs/page';
 import { notFound, redirect } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
-import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import Footer from '@/components/footer';
+import { getCustomPage } from '@/utils/utils';
+
+import type { Metadata } from 'next';
 
 export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>) {
   const { lang, slug } = await props.params;
@@ -14,7 +17,7 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
     if (!newest) redirect('/');
     redirect(newest.url);
   }
-  const page = source.getPage(["news", ...slug], lang);
+  const page = getCustomPage({ slug, lang, basePath: "news" });
   if (!page) notFound();
   const MDX = page.data.body;
 
@@ -36,6 +39,7 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
           })}
         />
       </DocsBody>
+      <Footer log={page.data.changeLog} lang={lang}/>
     </DocsPage>
   );
 }

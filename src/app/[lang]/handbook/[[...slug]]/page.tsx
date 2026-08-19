@@ -5,10 +5,12 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import { getCustomPage } from '@/utils/utils';
+import Footer from '@/components/footer';
 
 export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]]'>) {
   const { lang, slug } = await props.params;
-  const page = source.getPage(["handbook", ...slug || []], lang);
+  const page = getCustomPage({ slug, lang, basePath: "handbook" })
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
@@ -81,6 +83,7 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
           })}
         />
       </DocsBody>
+      { contentGroup == "html" ? null : <Footer log={page.data.changeLog} lang={lang}/> }
     </DocsPage>
   );
 }

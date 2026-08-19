@@ -12,7 +12,7 @@ export default async function Layout({ params, children }: LayoutProps<'/[lang]'
   const { lang } = await params;
   return (  
     <html lang={lang} className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen bg-white dark:bg-black">
+      <body className="flex flex-col min-h-screen bg-white dark:bg-black scroll-smooth">
         <RootProvider i18n={i18nUI.provider(lang)}>
           {children}
         </RootProvider>

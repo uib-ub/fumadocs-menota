@@ -1,19 +1,20 @@
 import { baseOptions } from '@/lib/layout.shared';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 
-const translations: Record<
-  "archive" | 
-  "board" |
-  "council" |
-  "foundation" | 
-  "hb" | 
-  "main_archive" | 
-  "news" | 
-  "org" | 
-  "other_archives" |
-  "statutes",
-  {en: string, no: string}
-> = {
+const translatables = [
+  "archive",
+  "board",
+  "council",
+  "foundation",
+  "hb",
+  "main_archive",
+  "news",
+  "org",
+  "other_archives",
+  "statutes"
+] as const;
+
+const translations: Record<typeof translatables[number], {en: string, no: string}> = {
   archive: {
     en: "Text Archive",
     no: "Tekstarkiv"
