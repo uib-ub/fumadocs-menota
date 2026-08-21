@@ -16,8 +16,6 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'old' | 'menota-main'
   } = (slug => {
-    const route = slug?.join("/") || '';
-    console.log(route);
     if (slug) {
       switch (slug[0]) {
         case "v1-0":

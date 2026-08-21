@@ -9,6 +9,5 @@ export function getCustomPage({slug, lang, basePath: baseURL}: {
   const page = baseURL 
     ? source.getPage([baseURL, ...slug || []], lang) 
     : source.getPage([...slug || []], lang);
-  console.log(page?.data);
   if (page) return page as CustomPage;
 }

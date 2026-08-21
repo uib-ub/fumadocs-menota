@@ -26,7 +26,7 @@ export default async function Page(props: PageProps<'/[lang]'>) {
               a: createRelativeLink(source, page),
           })}
       />
-      <Footer log={page.data.changeLog} lang={lang} className='bg-white/80 p-10 pb-15'/>
+      <Footer log={page.data.changeLog} lang={lang} className='bg-slate-50/80 dark:bg-slate-900/80 p-10 pb-15'/>
     </>
   );
 }

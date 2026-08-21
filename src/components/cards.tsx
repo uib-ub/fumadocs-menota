@@ -12,7 +12,7 @@ export function Card({ title, href, children }: {
             card 
             rounded-xl border p-4
             bg-fd-card/80 text-fd-card-foregroundblock transition-colors 
-            text-slate-700
+            text-slate-700 dark:text-slate-300
             @max-lg:col-span-full hover:bg-green-200/20
         ">
             <h3 className="mb-1 text-lg font-medium ">{title}</h3>
