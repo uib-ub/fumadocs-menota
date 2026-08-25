@@ -15,7 +15,6 @@ export default function Hero({ children }: { children: React.ReactNode }) {
                     sm:m-5 sm:rounded-xl sm:text-base 
                     md:m-10 md:max-w-170 md:p-10 md:rounded-3xl md:text-lg/relaxed md:bg-black/0
                     [@media(max-height:750px)]:max-w-250
-                    [@media(max-height:700px)]:-mt-5
                     backdrop-blur-xs
                     text-white text-justify
                 ">{children}</div>
