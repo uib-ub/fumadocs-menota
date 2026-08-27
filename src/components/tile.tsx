@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-export default function Tile({ title, image, children }: { 
+export default function Tile({ title, image, alt, children }: { 
     title: string, 
     image?: string,
+    alt?: string,
     children: React.ReactNode 
 }) {
     return (
@@ -17,7 +18,7 @@ export default function Tile({ title, image, children }: {
                 sm:mb-5 sm:text-3xl 
             ">{title}</h2>
             <div className="flex flex-row">
-                {image ? <TileImage src={image}/> : null}
+                {image ? <TileImage src={image} alt={alt}/> : null}
                 <div className="
                     sm:mr-5 
                     text-sm text-justify
@@ -27,10 +28,10 @@ export default function Tile({ title, image, children }: {
     );
 }
 
-function TileImage({ src }: { src: string }) {
+function TileImage({ src, alt }: { src: string, alt?: string }) {
     return (
         <div className="hidden sm:block min-w-40">
-            <img src={src} height={120} width={120}/>
+            <img src={src} alt={alt || ""} height={120} width={120}/>
         </div>
     );
 }

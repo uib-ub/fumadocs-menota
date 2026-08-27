@@ -56,11 +56,11 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
         case "hb3":
         case "hb4":
           return (
-            <div className='mb-5 border-b border-solid border-black pb-3'>
-              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
+            <div className='mb-5 border-b border-solid border-slate-900 dark:border-slate-100 pb-3'>
+              <div className='text-3xl font-semibold text-blue-900 dark:text-blue-400'>
                 Menota Handbook {contentGroup == "hb3" ? "3.0" : "4.0 β"}
               </div>
-              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
+              <div className='text-lg text-green-800 dark:text-green-300'>
                 Guidelines for the electronic encoding of<br/>
                 Medieval Nordic primary sources
               </div>

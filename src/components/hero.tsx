@@ -10,6 +10,7 @@ export default function Hero({ children }: { children: React.ReactNode }) {
                     md:m-10 md:max-w-3/5 md:min-w-170 md:p-10 md:rounded-3xl 
                     bg-white/70 backdrop-blur-xs
                 "/>
+                <h1 className="hidden">Medieval Nordic Text Archive</h1>
                 <div className="
                     m-1 mb-5 p-3 rounded-lg text-sm bg-black/30 
                     sm:m-5 sm:rounded-xl sm:text-base 
