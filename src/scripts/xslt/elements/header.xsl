@@ -57,6 +57,9 @@
                 <xsl:text expand-text="true"> - {.}&#x0a;</xsl:text>
             </xsl:for-each>
         </xsl:if>
+        <xsl:if test="$date">
+            <xsl:text expand-text="true">date: {$date}&#x0a;</xsl:text>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="tei:revisionDesc">
         <xsl:text>changeLog:&#x0a;</xsl:text>

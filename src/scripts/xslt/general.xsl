@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" method="text"/>
@@ -9,6 +10,7 @@
     <xsl:include href="elements/header.xsl"/>
     <xsl:include href="elements/links-gen.xsl"/>
     <xsl:include href="elements/text.xsl"/>
+    <xsl:param name="date" as="xs:string"/>
     <xsl:template match="/">
         <xsl:apply-templates/>
     </xsl:template>

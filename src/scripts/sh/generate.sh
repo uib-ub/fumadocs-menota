@@ -22,7 +22,7 @@ if [[ $segment == "all" || $segment == "ml" ]]; then
             sourceID=$(basename "$file" .xml)
             date="${sourceID/ML_/}"
             if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${date}.mdx
+                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${date}.mdx date=${date}
             fi
         fi
     done

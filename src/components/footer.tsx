@@ -17,10 +17,12 @@ export default function Footer({ log, lang, className }: {
                     <UiBLogo className="w-100 fill-black dark:fill-white"/>
                     <span className="hidden">Universitetet i Bergen</span>
                 </a>
+                {/*
                 <a href="https://www.ku.dk/" target="_blank" className="pt-3">
                     <KULogo className="w-70"/>
                     <span className="hidden">Københavns Universitet</span>
                 </a>
+                */}
             </div>
             <div className="pb-2">
                 { lang == "no" ? 
