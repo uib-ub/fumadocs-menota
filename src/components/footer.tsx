@@ -29,8 +29,9 @@ export default function Footer({ log, lang, className }: {
                     `Opprettet ${getEuroDate(first?.date) || '?'}. ` : 
                     `Created ${getISODate(first?.date) || '?'}. ` }
                 { last ? (lang == "no" ? 
-                    `Sist oppdatert ${getEuroDate(last.date)}.` : 
-                    `Last changed ${getISODate(last.date)}`) : ''}
+                    `Sist oppdatert ${getEuroDate(last.date)}. ` : 
+                    `Last changed ${getISODate(last.date)}. `) : '. '}
+                <a href="mailto:robert.paulsen@uib.no">{ lang == "no" ? "Epost til vevsjef" : "Mail to webmaster"}</a>
             </div>
             <div>
                 <a 
