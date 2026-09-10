@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { getCustomPage } from '@/utils/utils';
+import { getCustomPage } from '@/utils/custom-page';
 import Footer from '@/components/footer';
 
 export default async function Page(props: PageProps<'/[lang]/documents/[[...slug]]'>) {
