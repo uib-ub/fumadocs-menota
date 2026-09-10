@@ -11,8 +11,10 @@ export const docs = defineDocs({
     schema: {
       ...pageSchema,
       frontmatter: z.object({
+        author: z.array(z.string()).optional(),
+        date: z.date().optional(),
         changeLog: z.array(z.object({
-          date: z.string(),
+          date: z.date(),
           author: z.string(),
           changes: z.array(z.string())
         }))

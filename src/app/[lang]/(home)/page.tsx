@@ -4,7 +4,7 @@ import { getMDXComponents } from '@/mdx-components';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import type { Metadata } from 'next';
 import Footer from '@/components/footer';
-import { getCustomPage } from '@/utils/utils';
+import { getCustomPage } from '@/utils/custom-page';
 
 export default async function Page(props: PageProps<'/[lang]'>) {
   const { lang } = await props.params;

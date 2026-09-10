@@ -1,4 +1,4 @@
-import type { Change } from "@/types/changes";
+import type { Change } from "@/types/custom";
 import UiBLogo from "@/components/uib-logo";
 import KULogo from "@/components/ku-logo";
 

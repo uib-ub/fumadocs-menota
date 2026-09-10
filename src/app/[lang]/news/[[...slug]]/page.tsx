@@ -5,7 +5,7 @@ import { notFound, redirect } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import Footer from '@/components/footer';
-import { getCustomPage } from '@/utils/utils';
+import { getCustomPage } from '@/utils/custom-page';
 
 import type { Metadata } from 'next';
 
