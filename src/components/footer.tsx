@@ -1,6 +1,5 @@
 import type { Change } from "@/types/custom";
 import UiBLogo from "@/components/uib-logo";
-import KULogo from "@/components/ku-logo";
 
 export default function Footer({ log, lang, className }: { 
     log: Change[], 
