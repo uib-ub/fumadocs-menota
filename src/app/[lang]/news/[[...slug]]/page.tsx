@@ -1,10 +1,11 @@
 import { getPageImage, source } from '@/lib/source';
 import Image from 'next/image';
-import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound, redirect } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import Footer from '@/components/footer';
+import AutoImage from '@/components/auto-image';
 import { getCustomPage } from '@/utils/custom-page';
 
 import type { Metadata } from 'next';
@@ -26,10 +27,18 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
       toc={page.data.toc}
       breadcrumb={{enabled: false}}
       full={page.data.full} 
+      footer={{items: {}}}
+      //slots={{ footer: <Footer context="news"/> }}
       className="docspage menota-main"
     >
       <div className='flex flex-wrap mb-5 dark:invert'>
-        <Image src='/images/Menota-banner-new.svg' alt='Menota banner' width={900} height={100}/>
+        <AutoImage src='/images/Menota-banner-new.svg' className="
+          border
+          p-1 rounded-lg
+          sm:p-3 sm:rounded-xl
+          md:p-10 md:rounded-3xl 
+          bg-white/80 backdrop-blur-xs
+        "/>
       </div>
       <DocsBody>
         <MDX
@@ -39,7 +48,7 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
           })}
         />
       </DocsBody>
-      <Footer log={page.data.changeLog} lang={lang}/>
+      <Footer context="news"/>
     </DocsPage>
   );
 }

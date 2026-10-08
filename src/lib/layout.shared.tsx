@@ -1,6 +1,7 @@
 import { defineI18nUI } from 'fumadocs-ui/i18n';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { i18n } from '@/lib/i18n';
+import { navbarItems } from '@/utils/navbar-items';
 
 export const gitConfig = {
   user: 'uib-ub',
@@ -15,7 +16,8 @@ export const i18nUI = defineI18nUI(i18n, {
       search: 'Søk',
       toc: 'På denne siden',
       previousPage: 'Forrige side',
-      nextPage: 'Neste side'
+      nextPage: 'Neste side',
+      chooseLanguage: 'Velg språk'
     },
     en: {
       displayName: 'English'
@@ -23,11 +25,12 @@ export const i18nUI = defineI18nUI(i18n, {
   }
 })
 
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions(lang: "en" | "no"): BaseLayoutProps {
   return {
     nav: {
       title: <span className='pl-2 text-green-800 dark:text-green-300 font-bold font-sans'>www.menota.org</span>
     },
+    links: navbarItems(lang),
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
     i18n: true,
     searchToggle: {

@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getCustomPage } from '@/utils/custom-page';
 import Footer from '@/components/footer';
+import AutoImage from '@/components/auto-image';
 
 export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]]'>) {
   const { lang, slug } = await props.params;
@@ -41,6 +42,8 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
       toc={contentStyle == "old" ? undefined : page.data.toc} 
       breadcrumb={{enabled: false}}
       full={page.data.full} 
+      footer={{items: {}}}
+      //slots={{ footer: contentGroup == "html" ? null : <Footer context="handbook"/> }}
       className={`docspage ${contentStyle}`}
     >
       {(() => {switch (contentGroup) {
@@ -69,7 +72,13 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
         default:
           return (
             <div className='flex flex-wrap mb-5 dark:invert'>
-              <Image src='/images/Menota-banner-new.svg' alt='Menota banner' width={900} height={100}/>
+              <AutoImage src='/images/Menota-banner-new.svg' className="
+                  border
+                  p-1 rounded-lg
+                  sm:p-3 sm:rounded-xl
+                  md:p-10 md:rounded-3xl 
+                  bg-white/80 backdrop-blur-xs
+              "/>
             </div>
           );
       }})()}
@@ -81,7 +90,7 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
           })}
         />
       </DocsBody>
-      { contentGroup == "html" ? null : <Footer log={page.data.changeLog} lang={lang}/> }
+      { contentGroup == "html" ? null : <Footer context="handbook"/> }
     </DocsPage>
   );
 }

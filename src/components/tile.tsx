@@ -11,7 +11,7 @@ export default function Tile({ title, image, alt, children }: {
             mx-1 my-5 rounded-lg p-3
             sm:m-5 sm:rounded-xl sm:p-5
             md:m-10 md:w-3/5 md:min-w-170 md:rounded-3xl md:p-10 
-            bg-white/60 dark:bg-slate-950/70 backdrop-blur-xs
+            bg-white/80 dark:bg-slate-950/70 backdrop-blur-xs
         ">
             <h2 id={title} className="
                 mb-3 text-xl

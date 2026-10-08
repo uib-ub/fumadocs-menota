@@ -58,6 +58,15 @@ html.dark .shiki span {
     font-family: 'Verdana', sans-serif;
 }
 
+#nd-sidebar a, 
+#nd-sidebar button,
+#nd-subnav a,
+#nd-subnav button,
+#nd-nav a,
+#nd-nav button {
+    @apply text-slate-900 dark:text-slate-100;
+}
+
 div.prose > p, .homepage, .docspage ol, .docspage ul {
     @apply text-[0.8em]/[1.3];
 }
@@ -165,7 +174,7 @@ td .FIGURE {
 }
 
 .docspage h1, h2, h3, h4, h5 {
-    @apply text-gray-500 dark:text-gray-300;
+    @apply text-slate-800 dark:text-slate-100;
 }
 
 .docspage h1 {
@@ -221,10 +230,6 @@ td .FIGURE {
 
 .homepage ul, ol {
     @apply my-3 text-sm text-slate-800 dark:text-slate-50;
-}
-
-.homepage #hero p {
-    @apply text-slate-100;
 }
 
 .homepage h2 {
