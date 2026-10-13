@@ -14,9 +14,10 @@
                     ancestor::tei:quote|
                     ancestor::tei:cell|
                     ancestor::tei:head|
-                    ancestor::tei:item
+                    ancestor::tei:item|
+                    ancestor::tei:ref
                 ]">
-                <xsl:value-of select="replace($s, '\s+', ' ')"/>
+                <xsl:value-of select="$s => replace('\s+', ' ')"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$s"/>
@@ -24,14 +25,17 @@
         </xsl:choose>
     </xsl:function>
     <xsl:template match="text()">
-        <xsl:value-of select=". 
+        <xsl:value-of select=".
+                => replace('&#8232;', '&#x0a;')
                 => replace('\n +', '&#x0a;')
                 => replace('([\{\|\\\}])', '\\$1')
+                => replace('&amp;', '&amp;amp;')
                 => replace('&lt;', '&amp;lt;')
                 => replace('&gt;', '&amp;gt;')
                 => replace('\s+\+', ' +')
                 => replace('&#x00a0;', '&amp;ensp;')
                 => replace('&#x2013;', '&amp;ndash;')
+                => replace('', 'ð')
                 => menota:simple-spaces(.)
             "/>
     </xsl:template>
