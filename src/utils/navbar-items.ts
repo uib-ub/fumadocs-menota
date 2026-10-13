@@ -1,4 +1,4 @@
-import { LinkItemType } from "fumadocs-ui/utils/link-item"
+import { LinkItemType } from "fumadocs-ui/layouts/shared";
 
 export function navbarItems(lang: "en" | "no"): LinkItemType[] {
     return items.map(item => {
