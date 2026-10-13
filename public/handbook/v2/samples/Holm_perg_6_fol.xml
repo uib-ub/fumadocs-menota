@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI SYSTEM "http://www.menota.org/menotaP5.dtd"
+[
+<!ENTITY % Menota_entities SYSTEM
+'http://www.menota.org/menota-entities.txt'   >
+%Menota_entities;]>
+<!-- 2008.01.09 Tone Merete Bruvik: Validated according to  TEI P5 Guidelines, version 1.0  -->
+<!-- 2006.03.30 Tone Merete Bruvik: Validated according to the present version of the upcoming TEI P5 Guidelines: 0.3.1.  -->
+<!-- 2005.06.07 Tone Merete Bruvik: Validated according to the present version of the upcoming TEI P5 Guidelines.  -->
+<!-- 2005.06.01 Odd Einar Haugen: This is an example of a recommended Menota header for a single-text source, 
+     published as part of the Menota handbook v. 2.0 -->
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:lang="eng">
+        <fileDesc>
+            <titleStmt>
+                <title>Holm perg 6 fol (Barlaams ok Josaphats saga): an electronic edition</title>
+                <respStmt>
+                    <resp>Edition by </resp>
+                    <name>Magnus Rindal 
+                    	<orgName type="affiliation">University of Bergen</orgName></name>
+                </respStmt>
+                <respStmt>
+                    <resp>Lemmatisation and morphological encoding by </resp>
+                    
+                    <name>Jon Erik Hagen 
+                    	<orgName type="affiliation">University of Bergen</orgName></name>
+                    <name>Odd Einar Haugen 
+                    	<orgName type="affiliation">University of Bergen</orgName></name>
+                </respStmt>
+                <respStmt>
+                    <resp>Conversion to Menotic XML by </resp>
+                    <name>Christian-Emil Ore 
+                    <orgName type="affiliation">University of Oslo</orgName></name>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <p>First draft, <date when="2004-02-01">1 February 2004</date>
+                </p>
+            </editionStmt>
+            <publicationStmt>
+                <distributor>Medieval Nordic Text Archive</distributor>
+                <idno type="Menota">Ms. 1</idno>
+                <date when="2004-03-01">1 March 2004</date>
+                <availability status="restricted">
+                    <p>This text is available for purposes of academic research and teaching only. Re-distribution 
+                        in any form without prior permission is prohibited. Short extracts may be cited with full 
+                        acknowledgment of the source.</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <country  key="SE">Sweden</country>
+                        <settlement>Stockholm</settlement>
+                        <repository>Kungliga Biblioteket</repository>
+                        <idno>Holm perg 6 fol</idno>
+                        <msName>Barlaams ok Josaphats saga</msName>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem n="1">
+                            <locus from="1r" to="102v">ff. 1r–102v (pp. 1–204)</locus>
+                            <title type="main">Barlaams ok Josaphats saga</title>
+                            <title type="abbreviated">Barl</title>
+                            <textLang mainLang="no">Norwegian</textLang>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="codex">
+                            <supportDesc>
+                                <support>
+                                    <p><material>Parchment</material>, but with five younger <material>paper</material> 
+                                        leaves added; two at the front (the last being blank) and three at the back.</p>
+                                </support>
+                                
+                                <extent>102 parchment leaves and 5 paper leaves; 210 mm (height) by 155 mm (width).</extent>
+                                <foliation>
+                                    <p>The manuscript is paginated on the recto pages of the parchment leaves, 1–204.</p>
+                                </foliation>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <p>Written in <origPlace>Eastern Norway</origPlace> <origDate notBefore="1250" notAfter="1300">c. 1275</origDate>.</p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>This manuscript text has been encoded according to the standard set out in <title>The Menota handbook</title> 
+                	(version 2.0), at <ref target="http://www.menota.org/guidelines-2/contents/contents_2-0.page">http://www.menota.org/guidelines-2/contents/contents_2-0.page</ref> 
+                    as of <date>2008-05-15</date>.</p>
+            </projectDesc>
+            <editorialDecl>
+                <correction status="high">
+                    <p>This text was proofread by Magnus Rindal and colleagues before the publication of the printed version in 1981. 
+                        It is unlikely that it contains any significant number of errors. However, it can not be ruled out that the 
+                        subsequent conversion of the file may have introduced some systemic errors.</p>
+                </correction>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="no">Norwegian</language>
+            </langUsage>
+            <handNotes>
+                <handNote xml:id="h1"/>
+            	<handNote xml:id="h2"/>
+            </handNotes>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date>2022-12-31</date>
+                <name>Odd Einar Haugen</name>, <orgName type="affiliation">University of Bergen</orgName>: Corrected language codes.
+            </change>
+        	<change>
+        		<date>2008-01-09</date>
+        		<name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Update to make it valid according to the Menota P5 DTD.
+        	</change>
+        	<change>
+                <date>2006-04-18</date>
+                <name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Change the attribute use in textLand-element from xml:id into mainLang.
+            </change>
+            <change>
+                <date>2006-03-30</date>
+                <name>Tone Merete Bruvik</name>, <orgName type="affiliation">Aksis</orgName>: Revised the 
+                transcription in accordance with v. 2.0 beta of the Menota handbook and the corresponding Document Type Definition.
+            </change>
+            <change>
+                <date>2003</date>
+                <name>Christian-Emil Ore</name>, <orgName type="affiliation">University of Oslo</orgName>: Converted the electronic files 
+                (the transcription and the lemmatisation) into XML (Extensible Markup Language) according to the guidelines in the Menota handbook.
+            </change>
+            <change>
+                <date>1988</date>
+                <name>Jon Erik Hagen</name>, <orgName type="affiliation">University of Bergen</orgName> and 
+                    <name>Odd Einar Haugen</name>, <orgName type="affiliation">University of Bergen</orgName>:
+                Supplied lemmata (dictionary entry words) and grammatical forms for all words in the file. Published separately on 
+                    microfiche in Norske språkdata vol. 22, Bergen 1989.
+            </change>
+            <change>
+                <date>1980</date>
+                <name>Magnus Rindal</name>
+                <orgName type="affiliation">University of Bergen</orgName>: Finalised the electronic text and prepared it 
+                for publication in book form (published by Norsk Historisk Kjeldeskrift-Institutt in 1981).
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text xml:lang="no">
+        <body>
+            <div>
+                <p>The text of the first chapter goes here.</p>
+            </div>
+            <div>
+                <p><handShift new="h2"/>The text of the second chapter goes here.</p>
+            </div>
+            <div>
+                <p>The text of the third chapter goes here.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

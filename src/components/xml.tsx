@@ -28,7 +28,10 @@ export async function Val({ children }: { children: string }) {
 async function parse(input: string, lang: 'xml' | 'js' | 'sh') {
     return (await codeToHtml(input, {
         lang, 
-        theme: 'github-light',
+        themes: {
+            light: 'github-light',
+            dark: 'github-dark'
+        },
         transformers: [
             transformerCompactLineOptions(),
             transformerRemoveLineBreak()

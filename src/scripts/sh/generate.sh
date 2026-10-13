@@ -1,7 +1,7 @@
 #!/bin/bash
 
 saxon=./lib/java/SaxonHE12-5J/saxon-he-12.5.jar
-sourcedir=./legacy
+sourcedir=./legacy/content-menota
 codedir=./src
 contentdir=./content
 
@@ -18,10 +18,24 @@ compile () {
 if [[ $segment == "all" || $segment == "ml" ]]; then
     echo "Compiling news items:"
     for file in $sourcedir/meldinger/*; do
-        if [ -f "$file" ]; then
+        if [[ -f "$file" && "$file" == *.xml ]]; then
             sourceID=$(basename "$file" .xml)
+            date="${sourceID/ML_/}"
             if [[ "$sourceID" =~ ^ML_[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-                compile meldinger/${sourceID}.xml scripts/xslt/news.xsl news/${sourceID}.mdx
+                compile meldinger/${sourceID}.xml scripts/xslt/general.xsl news/${date}.mdx date=${date}
+            fi
+        fi
+    done
+fi
+
+if [[ $segment == "all" || $segment == "hb2" ]]; then
+    echo "Compiling handbook v2:"
+    for file in $sourcedir/handbok/handbok_2-0/*; do
+        if [[ -f "$file" && "$file" == *.xml ]]; then
+            sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB2_/}"
+            if [[ "$sourceID" =~ ^HB2_ ]]; then
+                compile handbok/handbok_2-0/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v2/${chapter}.mdx version="2"
             fi
         fi
     done
@@ -29,26 +43,66 @@ fi
 
 if [[ $segment == "all" || $segment == "hb3" ]]; then
     echo "Compiling handbook v3:"
-    for file in $sourcedir/handbok/v3/*; do
+    for file in $sourcedir/handbok/handbok_3/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB3_/}"
             if [[ "$sourceID" =~ ^HB3_ ]]; then
-                compile handbok/v3/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v3/${sourceID}.mdx version="3"
+                compile handbok/handbok_3/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v3/${chapter}.mdx version="3"
             fi
         fi
     done
-    mv $contentdir/handbook/v3/HB3_index.mdx $contentdir/handbook/v3/index.mdx
 fi
 
 if [[ $segment == "all" || $segment == "hb4" ]]; then
     echo "Compiling handbook v4:"
-    for file in $sourcedir/handbok/v4/*; do
+    for file in $sourcedir/handbok/handbok_4/*; do
         if [ -f "$file" ]; then
             sourceID=$(basename "$file" .xml)
+            chapter="${sourceID/HB4_/}"
             if [[ "$sourceID" =~ ^HB4_ ]]; then
-                compile handbok/v4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${sourceID}.mdx version="4"
+                compile handbok/handbok_4/${sourceID}.xml scripts/xslt/handbook.xsl handbook/v4/${chapter}.mdx version="4"
             fi
         fi
     done
-    mv $contentdir/handbook/v4/HB4_index.mdx $contentdir/handbook/v4/index.mdx
+fi
+
+if [[ $segment == "all" || $segment == "cm" ]]; then
+    echo "Compiling council meetings:"
+    for file in $sourcedir/dokumenter/DOK_RaadsReferat*.xml; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_RaadsReferat/}"
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/meetings/${date}.mdx
+        fi
+    done
+fi
+
+if [[ $segment == "all" || $segment == "mm" ]]; then
+    echo "Compiling council members:"
+    for file in $sourcedir/dokumenter/DOK_raad*.xml; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_raad/}"
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/members/${date}.mdx
+        fi
+    done
+fi
+
+if [[ $segment == "all" || $segment == "notice" ]]; then
+    echo "Compiling notices of meeting:"
+    for file in $sourcedir/dokumenter/DOK_[iI]nnkalling*.xml; do
+        if [ -f "$file" ]; then
+            sourceID=$(basename "$file" .xml)
+            date="${sourceID/DOK_[iI]nnkalling/}"
+            compile dokumenter/${sourceID}.xml scripts/xslt/general.xsl documents/council/notice/${date}.mdx
+        fi
+    done
+fi
+
+if [[ $segment == "all" || $segment == "rest" ]]; then
+    echo "Compiling other content:"
+    compile Menotec/menotec.xml scripts/xslt/general.xsl menotec.en.mdx
+    compile dokumenter/DOK_vedtekter-1.xml scripts/xslt/general.xsl documents/statutes/index.mdx
+    #compile helpdesk/overview.xml scripts/xslt/general.xsl helpdesk/overview.en.mdx
 fi

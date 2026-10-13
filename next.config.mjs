@@ -12,8 +12,12 @@ const config = {
         destination: '/llms.mdx/docs/:path*',
       },
       {
-        source: '/legacy/handbook/v1/:path*.css',
-        destination: '/:path*.css'
+        source: '/legacy/:path*/:id.css',
+        destination: '/css/:id.css'
+      },
+      {
+        source: '/legacy/documents/:path/:id.gif',
+        destination: '/images/:id.gif'
       },
       {
         source: '/legacy/handbook/v1/:id.gif',
@@ -26,6 +30,26 @@ const config = {
       {
         source: '/legacy/handbook/v1/handbok_1/:path*.jpg',
         destination: '/images/hb1/:path*.jpg'
+      },
+      {
+        source: '/legacy/documents/editorial-board/:path*.jpg',
+        destination: '/images/:path*.jpg'
+      },
+      {
+        source: '/:file.dtd',
+        destination: '/dtd/:file.dtd'
+      },
+      {
+        source: '/:file.ent',
+        destination: '/ent/:file.ent'
+      },
+      {
+        source: '/:file.rng',
+        destination: '/rng/:file.rng'
+      },
+      {
+        source: '/:file.txt',
+        destination: '/ent/:file.txt'
       }
     ];
   },
@@ -37,22 +61,37 @@ const config = {
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-0_:id.xhtml',
+        source: '/HB2_index.xml',
+        destination: '/handbook/v2',
+        permanent: true
+      },
+      {
+        source: '/:path*/DOK_Referat:date.xhtml',
+        destination: '/documents/editorial-board/:date',
+        permanent: true
+      },
+      {
+        source: '/:path*/HB_index.xml',
+        destination: '/handbook',
+        permanent: true
+      },
+      {
+        source: '/:path*/HB1-0_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-1_:id.xhtml',
+        source: '/:path*/HB1-1_:id.xhtml',
         destination: '/handbook/v1-1/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1-1-1_:id.xhtml',
+        source: '/:path*/HB1-1-1_:id.xhtml',
         destination: '/handbook/v1-1/:id',
         permanent: true
       },
       {
-        source: '/legacy/handbook/v1/HB1_:id.xhtml',
+        source: '/:path*/HB1_:id.xhtml',
         destination: '/handbook/v1-0/:id',
         permanent: true
       },
