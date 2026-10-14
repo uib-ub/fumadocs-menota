@@ -8,10 +8,10 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p tei:hi tei:item tei:change tei:quote"/>
     <xsl:include href="elements/code.xsl"/>
-    <xsl:include href="elements/graphics.xsl"/>
+    <xsl:include href="elements/graphics-hb.xsl"/>
     <xsl:include href="elements/head.xsl"/>
     <xsl:include href="elements/header.xsl"/>
-    <xsl:include href="elements/links.xsl"/>
+    <xsl:include href="elements/links-hb.xsl"/>
     <xsl:include href="elements/lists.xsl"/>
     <xsl:include href="elements/paragraph.xsl"/>
     <xsl:include href="elements/quotes.xsl"/>

@@ -1,9 +1,8 @@
 import { defineI18nUI } from 'fumadocs-ui/i18n';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { i18n } from '@/lib/i18n';
-import Image from 'next/image';
+import { navbarItems } from '@/utils/navbar-items';
 
-// fill this with your actual GitHub info, for example:
 export const gitConfig = {
   user: 'uib-ub',
   repo: 'fumadocs-menota',
@@ -11,24 +10,29 @@ export const gitConfig = {
 };
 
 export const i18nUI = defineI18nUI(i18n, {
-  translations: {
-    no: {
-      displayName: 'Norsk',
-      search: 'Søk',
-      toc: 'På denne siden'
-    },
-    en: {
-      displayName: 'English'
-    }
+  no: {
+    displayName: 'Norsk',
+    search: 'Søk',
+    toc: 'På denne siden',
+    previousPage: 'Forrige side',
+    nextPage: 'Neste side',
+    chooseLanguage: 'Velg språk'
+  },
+  en: {
+    displayName: 'English'
   }
 })
 
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions(lang: "en" | "no"): BaseLayoutProps {
   return {
     nav: {
       title: <span className='pl-2 text-green-800 dark:text-green-300 font-bold font-sans'>www.menota.org</span>
     },
+    links: navbarItems(lang),
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
     i18n: true,
+    searchToggle: {
+      enabled: false
+    }
   };
 }
