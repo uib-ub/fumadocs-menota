@@ -8,6 +8,22 @@ import { z } from 'zod';
 export const docs = defineDocs({
   dir: 'content/',
   docs: {
+    schema: pageSchema.extend({
+      author: z.string()
+        .or(z.array(z.string()))
+        .transform(value => Array.isArray(value) ? value : [value])
+        .optional(),
+      date: z.coerce.date().optional(),
+      changeLog: z.array(z.object({
+        date: z.coerce.date(),
+        author: z.string()
+          .or(z.array(z.string()))
+          .transform(value => Array.isArray(value) ? value : [value])
+          .optional(),
+        changes: z.array(z.string())
+      })).optional()
+    }),
+    /*
     schema: {
       ...pageSchema,
       frontmatter: z.object({
@@ -20,6 +36,7 @@ export const docs = defineDocs({
         }))
       })
     },
+    */
     postprocess: {
       includeProcessedMarkdown: true,
     },
