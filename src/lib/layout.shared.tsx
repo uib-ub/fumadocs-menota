@@ -10,18 +10,16 @@ export const gitConfig = {
 };
 
 export const i18nUI = defineI18nUI(i18n, {
-  translations: {
-    no: {
-      displayName: 'Norsk',
-      search: 'Søk',
-      toc: 'På denne siden',
-      previousPage: 'Forrige side',
-      nextPage: 'Neste side',
-      chooseLanguage: 'Velg språk'
-    },
-    en: {
-      displayName: 'English'
-    }
+  no: {
+    displayName: 'Norsk',
+    search: 'Søk',
+    toc: 'På denne siden',
+    previousPage: 'Forrige side',
+    nextPage: 'Neste side',
+    chooseLanguage: 'Velg språk'
+  },
+  en: {
+    displayName: 'English'
   }
 })
 
