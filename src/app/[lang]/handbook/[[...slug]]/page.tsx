@@ -1,22 +1,24 @@
 import { getPageImage, source } from '@/lib/source';
 import Image from 'next/image';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
+import { getCustomPage } from '@/utils/custom-page';
+import Footer from '@/components/footer';
+import AutoImage from '@/components/auto-image';
 
-export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]]'>) {
   const { lang, slug } = await props.params;
-  const page = source.getPage(slug, lang);
+  const page = getCustomPage({ slug, lang, basePath: "handbook" })
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
     contentGroup: 'html' | 'hb2' | 'hb3' | 'hb4' | 'main',
     contentStyle: 'hb-new' | 'old' | 'menota-main'
   } = (slug => {
-    const route = slug?.join("/") || '';
-    if (slug && slug[0] == "handbook") {
-      switch (slug[1]) {
+    if (slug) {
+      switch (slug[0]) {
         case "v1-0":
         case "v1-1":
           return { contentGroup: "html", contentStyle: "old" }
@@ -30,11 +32,6 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
           return { contentGroup: "main", contentStyle: "menota-main" };
       }
     }
-    if (route == "documents/statutes/draft"
-      || route.match(/^documents\/council\/members\/200[24]-200[36]$/)
-      || route.match(/^documents\/depo\//)
-      || route.match(/^documents\/editorial-board\//))
-      return { contentGroup: 'html', contentStyle: 'old'};
     return { contentGroup: 'main', contentStyle: 'menota-main' };
   })(slug);
 
@@ -45,21 +42,10 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
       toc={contentStyle == "old" ? undefined : page.data.toc} 
       breadcrumb={{enabled: false}}
       full={page.data.full} 
-      className={`
-        bg-white dark:bg-black 
-        [&_h1]:text-gray-500 [&_h1]:dark:text-gray-300 [&_h1]:text-2xl
-        [&_h2]:text-gray-500 [&_h2]:dark:text-gray-300 [&_h2]:text-xl
-        [&_h3]:text-gray-500 [&_h3]:dark:text-gray-300 [&_h3]:text-lg
-        [&_h4]:text-gray-500 [&_h4]:dark:text-gray-300 [&_h4]:text-base
-        [&_h5]:text-gray-500 [&_h5]:dark:text-gray-300 [&_h5]:text-sm [&_h5]:font-bold
-        [&_th]:bg-blue-50 [&_th]:text-gray-600 [&_th]:dark:bg-blue-950 [&_th]:dark:text-gray-200
-        [&_td]:bg-white [&_td]:dark:bg-black
-        [&_ol_a]:text-blue-700 [&_ol_a]:dark:text-orange-300
-        [&_p_a]:text-blue-700 [&_p_a]:dark:text-orange-300
-        [&_td_a]:text-blue-700 [&_td_a]:dark:text-orange-300
-        [&_ul_a]:text-blue-700 [&_ul_a]:dark:text-orange-300
-        ${contentStyle}`
-      }>
+      footer={{items: {}}}
+      //slots={{ footer: contentGroup == "html" ? null : <Footer context="handbook"/> }}
+      className={`docspage ${contentStyle}`}
+    >
       {(() => {switch (contentGroup) {
         case "html":
           return;
@@ -73,11 +59,11 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         case "hb3":
         case "hb4":
           return (
-            <div className='mb-5 border-b border-solid border-black pb-3'>
-              <div style={{fontSize: '1.8em', fontWeight: '600', color: 'rgb(24, 41, 131)'}}>
+            <div className='mb-5 border-b border-solid border-slate-900 dark:border-slate-100 pb-3'>
+              <div className='text-3xl font-semibold text-blue-900 dark:text-blue-400'>
                 Menota Handbook {contentGroup == "hb3" ? "3.0" : "4.0 β"}
               </div>
-              <div style={{fontSize: '1.1em', fontWeight: '400', color: 'rgb(16, 93, 71)'}}>
+              <div className='text-lg text-green-800 dark:text-green-300'>
                 Guidelines for the electronic encoding of<br/>
                 Medieval Nordic primary sources
               </div>
@@ -86,8 +72,13 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
         default:
           return (
             <div className='flex flex-wrap mb-5 dark:invert'>
-              <Image src='/images/Menota-banner.gif' alt='Menota banner' width={300} height={65}/>
-              <Image src='/images/Menota-banner-3.gif' alt='Menota banner' width={304} height={64}/>
+              <AutoImage src='/images/Menota-banner-new.svg' className="
+                  border
+                  p-1 rounded-lg
+                  sm:p-3 sm:rounded-xl
+                  md:p-10 md:rounded-3xl 
+                  bg-white/80 backdrop-blur-xs
+              "/>
             </div>
           );
       }})()}
@@ -99,6 +90,7 @@ export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
           })}
         />
       </DocsBody>
+      { contentGroup == "html" ? null : <Footer context="handbook"/> }
     </DocsPage>
   );
 }
@@ -107,9 +99,9 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/[lang]/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/[lang]/handbook/[[...slug]]'>): Promise<Metadata> {
   const { slug, lang } = await props.params;
-  const page = source.getPage(slug, lang);
+  const page = source.getPage(["handbook", ...slug || []], lang);
   if (!page) notFound();
 
   return {
