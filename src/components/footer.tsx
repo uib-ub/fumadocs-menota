@@ -11,7 +11,6 @@ export default function Footer({ context, className }: {
     const { slug, lang } = useParams();
     const page = getCustomPage({ slug: slug as string[], lang: lang as string, basePath: context });
     const log = page?.data.changeLog || [];
-    console.log(log[0]);
     log?.sort((a, b) => a.date?.toISOString().localeCompare(b.date?.toISOString?.()) || 0);
     const first = log?.[0];
     const last = log?.length > 1 ? log?.[log.length - 1] : undefined;
