@@ -12,8 +12,8 @@ export default function Footer({ context, className }: {
     const page = getCustomPage({ slug: slug as string[], lang: lang as string, basePath: context });
     const log = page?.data.changeLog || [];
     log?.sort((a, b) => a.date?.toISOString().localeCompare(b.date?.toISOString?.()) || 0);
-    const first = log?.[0];
-    const last = log?.length > 1 ? log?.[log.length - 1] : undefined;
+    const first: Date = log[0]?.date || page?.data.date;
+    const last: Date | undefined = log?.length > 1 ? log?.[log.length - 1].date : undefined;
     return (
         <footer className={`w-full border-t-2 mt-5 p-3 text-sm text-center ${className}`}>
             <div className="flex flex-row justify-center *:mb-5 *:mx-5">
@@ -30,11 +30,11 @@ export default function Footer({ context, className }: {
             </div>
             <div className="pb-2">
                 { lang == "no" ? 
-                    `Opprettet ${getEuroDate(first?.date) || '?'}. ` : 
-                    `Created ${getISODate(first?.date) || '?'}. ` }
+                    `Opprettet ${getEuroDate(first) || '?'}. ` : 
+                    `Created ${getISODate(first) || '?'}. ` }
                 { last ? (lang == "no" ? 
-                    `Sist oppdatert ${getEuroDate(last?.date)}. ` : 
-                    `Last changed ${getISODate(last?.date)}. `) : '. '}
+                    `Sist oppdatert ${getEuroDate(last)}. ` : 
+                    `Last changed ${getISODate(last)}. `) : ''}
                 <a href="mailto:robert.paulsen@uib.no">{ lang == "no" ? "Epost til vevsjef" : "Mail to webmaster"}</a>
             </div>
             <div>

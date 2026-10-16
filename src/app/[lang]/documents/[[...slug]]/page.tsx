@@ -1,5 +1,4 @@
 import { getPageImage, source } from '@/lib/source';
-import Image from 'next/image';
 import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';

@@ -12,12 +12,14 @@ import type { Metadata } from 'next';
 
 export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>) {
   const { lang, slug } = await props.params;
+  /*
   if (!slug) {
     const newsPages = source.getPages().filter(page => page.slugs[0] == "news");
     const newest = newsPages.sort((a, b) => b.url.localeCompare(a.url))[0];
     if (!newest) redirect('/');
     redirect(newest.url);
   }
+    */
   const page = getCustomPage({ slug, lang, basePath: "news" });
   if (!page) notFound();
   const MDX = page.data.body;

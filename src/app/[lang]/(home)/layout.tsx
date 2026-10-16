@@ -8,6 +8,9 @@ export default async function Layout({ params, children }: LayoutProps<'/[lang]'
     <HomeLayout
       className='homepage min-h-screen flex'
       {...base}
+      nav={{
+        ...base.nav
+      }}
     >
       <div>
         <div className='fixed inset-0 bg-[url("/images/nordr.jpeg")] bg-cover bg-right -z-10'/>
