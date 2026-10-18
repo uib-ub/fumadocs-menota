@@ -10,6 +10,7 @@ import Glyph from '@/components/glyph';
 import Hero from '@/components/hero';
 import HI from '@/components/hi';
 import LitItem from '@/components/lit-item';
+import NewsArchive from '@/components/news-archive';
 import NewsItems from '@/components/news-items';
 import Quote from '@/components/quote';
 import Size from '@/components/size';
@@ -39,6 +40,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     InlineImage,
     LitItem,
     Link,
+    NewsArchive,
     NewsItems,
     Quote,
     Size,
