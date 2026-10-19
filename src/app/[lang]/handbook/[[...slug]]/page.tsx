@@ -43,7 +43,6 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
       breadcrumb={{enabled: false}}
       full={page.data.full} 
       footer={{items: {}}}
-      //slots={{ footer: contentGroup == "html" ? null : <Footer context="handbook"/> }}
       className={`docspage ${contentStyle}`}
     >
       {(() => {switch (contentGroup) {

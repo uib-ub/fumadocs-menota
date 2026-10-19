@@ -9,11 +9,8 @@ export default async function Layout({ params, children }: LayoutProps<'/[lang]/
     <DocsLayout 
       {...base}
       tabMode="sidebar"
-      nav={{ 
-        ...nav, 
-        mode: "top" }}
+      nav={{ ...nav, mode: "top" }}
       tree={source.getPageTree(lang)} 
-      
     >
       {children}
     </DocsLayout>

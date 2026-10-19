@@ -2,15 +2,15 @@ import { getPageImage, source } from '@/lib/source';
 import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
-import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getCustomPage } from '@/utils/custom-page';
 import Footer from '@/components/footer';
 import AutoImage from '@/components/auto-image';
 
+import type { Metadata } from 'next';
+
 export default async function Page(props: PageProps<'/[lang]/documents/[[...slug]]'>) {
   const { lang, slug } = await props.params;
-  //const page = source.getPage(["documents", ...slug || []], lang);
   const page = getCustomPage({ slug, lang, basePath: "documents" })
   if (!page) notFound();
   const { contentGroup, contentStyle }: { 
@@ -34,7 +34,6 @@ export default async function Page(props: PageProps<'/[lang]/documents/[[...slug
       breadcrumb={{enabled: false}}
       full={page.data.full} 
       footer={{items: {}}}
-      //slots={{ footer: contentGroup == "html" ? null : <Footer context="documents"/> }}
       className={`docspage ${contentStyle}`}
     >
       {(() => {switch (contentGroup) {

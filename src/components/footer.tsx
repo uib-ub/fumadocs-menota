@@ -10,10 +10,16 @@ export default function Footer({ context, className }: {
 }) {
     const { slug, lang } = useParams();
     const page = getCustomPage({ slug: slug as string[], lang: lang as string, basePath: context });
+    console.log("Language: " + page?.data.lang);
     const log = page?.data.changeLog || [];
     log?.sort((a, b) => a.date?.toISOString().localeCompare(b.date?.toISOString?.()) || 0);
-    const first: Date = log[0]?.date || page?.data.date;
-    const last: Date | undefined = log?.length > 1 ? log?.[log.length - 1].date : undefined;
+    const first: Date = page?.data.date || log[0]?.date;
+    const last: Date | undefined = (() => {
+        if (log?.length) {
+            if (log.length > 1) return log[log.length - 1].date;
+            if (log[0]?.date != first) return log[0].date;
+        }
+    })();
     return (
         <footer className={`w-full border-t-2 mt-5 p-3 text-sm text-center ${className}`}>
             <div className="flex flex-row justify-center *:mb-5 *:mx-5">

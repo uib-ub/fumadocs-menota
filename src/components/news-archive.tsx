@@ -17,7 +17,6 @@ export default function NewsArchive() {
         return newsByYears;
     }, {});
     const years: string[] = Object.keys(archive).sort().reverse();
-    console.log(years);
     return (
         <Accordions type="single">
             {years.map(year => { return (
@@ -26,7 +25,7 @@ export default function NewsArchive() {
                         { archive[year]
                             .reverse()
                             .map(item => { return (
-                                <li>
+                                <li key={item?.path}>
                                     <a href={item?.url}>{item?.data.title}</a>
                                 </li>
                             )})

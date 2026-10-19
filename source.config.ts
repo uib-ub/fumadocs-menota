@@ -14,6 +14,7 @@ export const docs = defineDocs({
         .transform(value => Array.isArray(value) ? value : [value])
         .optional(),
       date: z.coerce.date().optional(),
+      lang: z.enum(["da", "en", "no", "sv"]).optional(),
       changeLog: z.array(z.object({
         date: z.coerce.date(),
         author: z.string()
@@ -23,20 +24,6 @@ export const docs = defineDocs({
         changes: z.array(z.string())
       })).optional()
     }),
-    /*
-    schema: {
-      ...pageSchema,
-      frontmatter: z.object({
-        author: z.array(z.string()).optional(),
-        date: z.date().optional(),
-        changeLog: z.array(z.object({
-          date: z.date(),
-          author: z.string(),
-          changes: z.array(z.string())
-        }))
-      })
-    },
-    */
     postprocess: {
       includeProcessedMarkdown: true,
     },

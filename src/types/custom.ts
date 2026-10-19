@@ -4,6 +4,7 @@ export type CustomPage = ReturnType<typeof source.getPage> & {
   data: {
     author?: string[],
     date?: Date,
+    lang?: "da" | "en" | "no" | "sv",
     changeLog: Change[]
   }
 }
