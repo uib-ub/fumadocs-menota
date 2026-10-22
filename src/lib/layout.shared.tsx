@@ -1,7 +1,7 @@
-import { defineI18nUI } from 'fumadocs-ui/i18n';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { i18n } from '@/lib/i18n';
 import { navbarItems } from '@/utils/navbar-items';
+import { uiTranslations } from 'fumadocs-ui/i18n';
 
 export const gitConfig = {
   user: 'uib-ub',
@@ -9,19 +9,19 @@ export const gitConfig = {
   branch: 'main',
 };
 
-export const i18nUI = defineI18nUI(i18n, {
-  no: {
-    displayName: 'Norsk',
-    search: 'Søk',
-    toc: 'På denne siden',
-    previousPage: 'Forrige side',
-    nextPage: 'Neste side',
-    chooseLanguage: 'Velg språk'
-  },
-  en: {
-    displayName: 'English'
-  }
-})
+export const translations = i18n
+  .translations()
+  .extend(uiTranslations())
+  .add({
+    en: {
+      displayName: 'English'
+    },
+    no: {
+      displayName: 'Norsk',
+      "Choose a language(language switcher)": 'Velg språk:',
+      "Choose a language(language switcher)(aria-label)": 'Velg språk'
+    }
+  });
 
 export function baseOptions(lang: "en" | "no"): BaseLayoutProps {
   return {
