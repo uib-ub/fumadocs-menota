@@ -31,14 +31,16 @@ export default async function Page(props: PageProps<'/[lang]/news/[[...slug]]'>)
           bg-white/80 backdrop-blur-xs
         "/>
       </div>
-      <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
-      </DocsBody>
+      <div lang={page.data.lang || 'no'}>
+        <DocsBody>
+          <MDX
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+      </div>
       <Footer context="news"/>
     </DocsPage>
   );
