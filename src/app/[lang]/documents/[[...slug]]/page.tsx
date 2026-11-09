@@ -42,7 +42,7 @@ export default async function Page(props: PageProps<'/[lang]/documents/[[...slug
         default:
           return (
             <div className='flex flex-wrap mb-5 dark:invert'>
-              <AutoImage src='/images/Menota-banner-new.svg' className="
+              <AutoImage src='/images/Menota-banner-new.svg' loading='eager' className="
                 border
                 p-1 rounded-lg
                 sm:p-3 sm:rounded-xl
