@@ -3,6 +3,7 @@ import '@/app/global.css';
 import { Inter } from 'next/font/google';
 import { translations } from '@/lib/layout.shared';
 import { i18nProvider } from 'fumadocs-ui/i18n';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 
 const inter = Inter({
@@ -17,6 +18,7 @@ export default async function Layout({ params, children }: LayoutProps<'/[lang]'
         <RootProvider i18n={i18nProvider(translations, lang)}>
           {children}
         </RootProvider>
+        <Analytics/>
       </body>
     </html>
   );
