@@ -52,14 +52,16 @@ export default async function Page(props: PageProps<'/[lang]/documents/[[...slug
             </div>
           );
       }})()}
-      <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
-      </DocsBody>
+      <div lang={page.data.lang || 'no'}>
+        <DocsBody>
+          <MDX
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+      </div>
       { contentGroup == "html" ? null : <Footer context="documents"/> }
     </DocsPage>
   );

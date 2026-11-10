@@ -58,7 +58,7 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
         case "hb3":
         case "hb4":
           return (
-            <div className='mb-5 border-b border-solid border-slate-900 dark:border-slate-100 pb-3'>
+            <div className='mb-5 border-b border-solid border-slate-900 dark:border-slate-100 pb-3' lang='en'>
               <div className='text-3xl font-semibold text-blue-900 dark:text-blue-400'>
                 Menota Handbook {contentGroup == "hb3" ? "3.0" : "4.0 β"}
               </div>
@@ -81,14 +81,16 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
             </div>
           );
       }})()}
-      <DocsBody>
-        <MDX
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
-      </DocsBody>
+      <div lang='en'>
+        <DocsBody>
+          <MDX
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+      </div>
       { contentGroup == "html" ? null : <Footer context="handbook"/> }
     </DocsPage>
   );
