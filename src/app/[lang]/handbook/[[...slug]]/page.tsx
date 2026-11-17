@@ -81,7 +81,7 @@ export default async function Page(props: PageProps<'/[lang]/handbook/[[...slug]
             </div>
           );
       }})()}
-      <div lang='en'>
+      <div lang='en' className={contentGroup == "html" ? 'h-full' : ''}>
         <DocsBody>
           <MDX
             components={getMDXComponents({

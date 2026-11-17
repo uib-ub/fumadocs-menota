@@ -52,7 +52,7 @@ export default async function Page(props: PageProps<'/[lang]/documents/[[...slug
             </div>
           );
       }})()}
-      <div lang={page.data.lang || 'no'}>
+      <div lang={page.data.lang || 'no'} className={contentGroup == "html" ? 'h-full' : ''}>
         <DocsBody>
           <MDX
             components={getMDXComponents({
