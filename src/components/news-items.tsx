@@ -21,6 +21,9 @@ export default function NewsItems({ limit }: { limit: number }) {
                     </a>
                 </li>
             ))}
+            <li key='all-news'>
+                ... <a href='/news' className='font-bold'>{lang == "no" ? 'Nyhetsarkiv' : 'News Archive'}</a>
+            </li>
         </ul>
     );
 }
