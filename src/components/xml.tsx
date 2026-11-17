@@ -29,8 +29,8 @@ async function parse(input: string, lang: 'xml' | 'js' | 'sh') {
     return (await codeToHtml(input, {
         lang, 
         themes: {
-            light: 'github-light',
-            dark: 'github-dark'
+            light: 'github-light-high-contrast',
+            dark: 'github-dark-high-contrast'
         },
         transformers: [
             transformerCompactLineOptions(),
